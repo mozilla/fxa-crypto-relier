@@ -1,8 +1,6 @@
 /* global __dirname, require, module*/
 
-const path = require('path');
-
-const env = require('yargs').argv.env; // use --env with webpack 2
+const env = require('yargs').argv.env;
 const webpack = require('webpack');
 
 const MODULE_CONFIG = {
@@ -25,7 +23,7 @@ let min = '';
 
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
-if (env === 'build') {
+if (env === 'min') {
   PLUGINS.push(new UglifyJsPlugin({minimize: true}));
   min = 'min.';
 }
@@ -59,8 +57,25 @@ const config = [
     module: MODULE_CONFIG,
     plugins: PLUGINS
   }
-
-
 ];
+
+if (env === 'build') {
+  const amdConfig = {
+    entry: {
+      deriver: __dirname + '/src/deriver/index.js',
+    },
+    output: {
+      path: __dirname + '/dist/fxa-crypto-relier',
+      filename: `fxa-crypto-deriver.amd.js`,
+      library: 'fxaCryptoDeriver',
+      libraryTarget: 'amd',
+      umdNamedDefine: true
+    },
+    module: MODULE_CONFIG,
+    plugins: []
+  };
+
+  config.push(amdConfig);
+}
 
 module.exports = config;

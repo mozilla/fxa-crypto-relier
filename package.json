@@ -3,12 +3,10 @@
   "version": "1.0.2",
   "description": "Scoped Encryption Keys for Firefox Accounts Util Library",
   "scripts": {
-    "build": "webpack && webpack --config=webpack.config.amd.js",
+    "build": "webpack --env=build",
     "dev": "webpack --progress --colors --watch --env dev",
-    "dev-amd": "webpack --progress --colors --watch --env dev --config=webpack.config.amd.js",
     "test": "karma start test/karma.conf.js --single-run",
     "test-dev": "karma start test/karma.conf.js",
-    "lint": "eslint .",
     "precommit": "npm run build && npm run docs",
     "docs": "jsdoc2md --template docs/template.hbs src/**/*.js > docs/README.md; jsdoc2md src/**/*.js --private > docs/PRIVATE.md; echo"
   },
@@ -34,9 +32,8 @@
     "karma-firefox-launcher": "^1.0.1",
     "karma-mocha": "^1.3.0",
     "mocha": "^4.0.0",
-    "sinon": "4.0.0",
     "webpack": "3.8.1",
-    "yargs": "10.0.3"
+    "yargs": "^10.0.3"
   },
   "repository": {
     "type": "git",
