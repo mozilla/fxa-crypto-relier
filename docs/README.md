@@ -5,11 +5,9 @@
 
 **Example**  
 ```js
-const clientId = 'YOUR_CLIENT_ID';
 const fxaKeysUtil = new fxaCryptoRelier.OAuthUtils();
 
-fxaKeysUtil.launchWebExtensionKeyFlow(clientId, {
-  pkce: true,
+fxaKeysUtil.launchWebExtensionKeyFlow('YOUR_CLIENT_ID', {
   redirectUri: browser.identity.getRedirectURL(),
   scopes: ['profile', 'https://identity.mozilla.org/apps/lockbox'],
 }).then((loginDetails) => {

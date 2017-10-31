@@ -45,7 +45,14 @@ Used by the Firefox Accounts content server
 
 **Example**  
 ```js
+const scopedKeys = new fxaCryptoDeriver.ScopedKeys();
 
+return scopedKeys.deriveScopedKeys({
+  identifier: 'https://identity.mozilla.com/apps/notes',
+  inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
+  keyMaterial: '0000000000000000000000000000000000000000000000000000000000000000',
+  timestamp: 1494446722583
+});
 ```
 
 * [deriver-ScopedKeys](#module_deriver-ScopedKeys)
@@ -59,13 +66,13 @@ Derive a scoped key
 
 **Kind**: inner method of [<code>deriver-ScopedKeys</code>](#module_deriver-ScopedKeys)  
 
-| Param |
-| --- |
-| options | 
-| options.inputKey | 
-| options.keyMaterial | 
-| options.timestamp | 
-| options.identifier | 
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | required set of options to derive a scoped key |
+| options.inputKey | <code>string</code> | input key that the scoped key is derived from |
+| options.keyMaterial | <code>string</code> | a 32-byte string of additional entropy specific |
+| options.timestamp | <code>number</code> | a 10-digit number, the timestamp at which this scoped key most recently changed |
+| options.identifier | <code>string</code> | a unique URI identifying the requested scoped key |
 
 <a name="module_deriver-ScopedKeys.._deriveHKDF"></a>
 
@@ -94,11 +101,9 @@ OAuth methods to authenticate with Firefox Accounts and get scoped keys
 
 **Example**  
 ```js
-const clientId = 'YOUR_CLIENT_ID';
 const fxaKeysUtil = new fxaCryptoRelier.OAuthUtils();
 
-fxaKeysUtil.launchWebExtensionKeyFlow(clientId, {
-  pkce: true,
+fxaKeysUtil.launchWebExtensionKeyFlow('YOUR_CLIENT_ID', {
   redirectUri: browser.identity.getRedirectURL(),
   scopes: ['profile', 'https://identity.mozilla.org/apps/lockbox'],
 }).then((loginDetails) => {
@@ -180,7 +185,7 @@ Creates a random base64url string of given length
 
 | Param | Type | Description |
 | --- | --- | --- |
-| length | <code>integer</code> | Length of the random string |
+| length | <code>number</code> | Length of the random string |
 
 <a name="module_relier-util..sha256base64url"></a>
 
