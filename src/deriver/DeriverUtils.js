@@ -25,14 +25,14 @@ class DeriverUtils {
 
     return jose.JWK.asKey(appPublicKeyJwk)
       .then(function (key) {
-        var recipient = {
+        const recipient = {
           key: key,
           header: {
             alg: 'ECDH-ES'
           }
         };
 
-        var jwe = jose.JWE.createEncrypt({
+        const jwe = jose.JWE.createEncrypt({
           format: 'compact',
           contentAlg: 'A256GCM'
         }, recipient);

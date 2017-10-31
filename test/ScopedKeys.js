@@ -2,8 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-var assert = chai.assert;
-
 describe('ScopedKeys', function () {
   const scopedKeys = new window.fxaCryptoDeriver.ScopedKeys();
   const sampleKb = 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a';
