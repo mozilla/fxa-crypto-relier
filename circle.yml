@@ -1,0 +1,13 @@
+machine:
+  node:
+    version: 6
+
+test:
+  override:
+    - npm test
+
+dependencies:
+  pre:
+    - pip install mozdownload mozinstall
+    - mozdownload --version 56.0 --destination firefox.tar.bz2
+    - mozinstall firefox.tar.bz2
