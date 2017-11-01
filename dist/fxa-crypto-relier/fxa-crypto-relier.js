@@ -59240,7 +59240,7 @@ var OAuthUtils = function () {
       var SCOPES = options.scopes || [];
 
       var state = util.createRandomString(16);
-      var codeVerifier = util.createRandomString(32);
+      var codeVerifier = jose.util.base64url.encode(util.createRandomString(32));
       var queryParams = {
         access_type: 'offline', // eslint-disable-line camelcase
         client_id: clientId, // eslint-disable-line camelcase
