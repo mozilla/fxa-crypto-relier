@@ -72,22 +72,22 @@ class OAuthUtils {
       state: state
     };
 
-    let authUrl = `${this.oauthServer}/authorization`;
-
     return util.sha256base64url(codeVerifier).then(codeChallenge => {
       queryParams.response_type = 'code'; // eslint-disable-line camelcase
       queryParams.code_challenge_method = 'S256'; // eslint-disable-line camelcase
       queryParams.code_challenge = codeChallenge; // eslint-disable-line camelcase
-      authUrl += util.objectToQueryString(queryParams);
 
       return fxaKeyUtils.createApplicationKeyPair();
     }).then((keyTypes) => {
       const base64JwkPublicKey = jose.util.base64url.encode(JSON.stringify(keyTypes.jwkPublicKey), 'utf8');
-      const finalAuth = `${authUrl}&keys_jwk=${base64JwkPublicKey}`;
+
+      queryParams.keys_jwk = base64JwkPublicKey; // eslint-disable-line camelcase
+
+      const authUrl = `${this.oauthServer}/authorization` + util.objectToQueryString(queryParams);
 
       return browserApi.identity.launchWebAuthFlow({
         interactive: true,
-        url: finalAuth
+        url: authUrl
       });
     }).then((redirectURL) => {
       const redirectState = util.extractUrlParam(redirectURL, 'state');
