@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 describe('OAuthUtils', function () {
+  const util = window.fxaCryptoRelier.OAuthUtils.__util;
   let keysJwk;
   let keysJwe;
   let exampleScope = 'https://identity.mozilla.org/apps/notes';
@@ -15,23 +16,26 @@ describe('OAuthUtils', function () {
     }
   };
 
-  const browserApi = {
-    identity: {
-      launchWebAuthFlow: (args) => {
-        keysJwk = args.url.split('&').pop().split('=')[1];
+  function getBrowserApi(options = {}) {
+    return {
+      identity: {
+        launchWebAuthFlow: (args) => {
+          const state = options.state || util.extractUrlParam(args.url, 'state');
+          keysJwk = util.extractUrlParam(args.url, 'keys_jwk');
 
-        const keysJwk2 = window.fxaCryptoDeriver.jose.util.base64url.decode(JSON.stringify(keysJwk));
-        const fxaDeriverUtils = new window.fxaCryptoDeriver.DeriverUtils();
+          const keysJwk2 = window.fxaCryptoDeriver.jose.util.base64url.decode(JSON.stringify(keysJwk));
+          const fxaDeriverUtils = new window.fxaCryptoDeriver.DeriverUtils();
 
-        return fxaDeriverUtils.encryptBundle(keysJwk2, JSON.stringify(keySample))
-          .then((bundle) => {
-            keysJwe = bundle;
+          return fxaDeriverUtils.encryptBundle(keysJwk2, JSON.stringify(keySample))
+            .then((bundle) => {
+              keysJwe = bundle;
 
-            return 'mock_url';
-          });
+              return `https://some.example.com?state=${state}&code=foo`;
+            });
+        }
       }
-    }
-  };
+    };
+  }
 
   const getBearerTokenRequest = function () {
     return new Promise((resolve) => {
@@ -45,9 +49,8 @@ describe('OAuthUtils', function () {
 
   it('should encrypt and decrypt the bundle', () => {
     return oAuthUtils.launchWebExtensionKeyFlow('clientId', {
-      browserApi: browserApi,
+      browserApi: getBrowserApi(),
       getBearerTokenRequest: getBearerTokenRequest,
-      pkce: true,
     }).then((result) => {
       const key = result.keys[exampleScope];
 
@@ -55,6 +58,18 @@ describe('OAuthUtils', function () {
       assert.equal(key.kty, 'oct');
       assert.equal(key.scope, exampleScope);
       assert.equal(key.kid.length, 58);
+    });
+
+  });
+
+  it('fails if state does not match', () => {
+    return oAuthUtils.launchWebExtensionKeyFlow('clientId', {
+      browserApi: getBrowserApi({
+        state: 'foo'
+      }),
+      getBearerTokenRequest: getBearerTokenRequest,
+    }).catch((err) => {
+      assert.equal(err.message, 'State does not match');
     });
 
   });

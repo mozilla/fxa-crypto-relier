@@ -59267,7 +59267,12 @@ var OAuthUtils = function () {
           url: finalAuth
         });
       }).then(function (redirectURL) {
-        var code = util.extractAccessToken(redirectURL);
+        var redirectState = util.extractUrlParam(redirectURL, 'state');
+        var code = util.extractUrlParam(redirectURL, 'code');
+
+        if (state !== redirectState) {
+          throw new Error('State does not match');
+        }
 
         return getBearerTokenRequest(_this.oauthServer, code, clientId, codeVerifier);
       }).then(function (tokenResult) {
@@ -59358,18 +59363,17 @@ var jose = __webpack_require__(31);
  */
 
 /**
- * @method extractAccessToken
- * @desc Extracts the `code` parameter from a given redirectUri
- * @param {string} redirectUri - OAuth redirect URI
+ * @method extractUrlParam
+ * @desc Extracts a parameter from a given URL
+ * @param {string} redirectUri - URL
+ * @param {string} param - Param we want to extract from the givem URL
  * @returns {string}
  */
-function extractAccessToken(redirectUri) {
-  var m = redirectUri.match(/[#?](.*)/);
+function extractUrlParam(redirectUri, param) {
+  var url = new URL(redirectUri);
+  var params = new URLSearchParams(url.search);
 
-  if (!m || m.length < 1) return null;
-  var params = new URLSearchParams(m[1].split('#')[0]);
-
-  return params.get('code');
+  return params.get(param);
 }
 
 /**
@@ -59429,7 +59433,7 @@ function objectToQueryString(obj) {
 module.exports = {
   createQueryParam: createQueryParam,
   createRandomString: createRandomString,
-  extractAccessToken: extractAccessToken,
+  extractUrlParam: extractUrlParam,
   objectToQueryString: objectToQueryString,
   sha256base64url: sha256base64url,
   Buffer: Buffer

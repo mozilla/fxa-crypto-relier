@@ -90,7 +90,12 @@ class OAuthUtils {
         url: finalAuth
       });
     }).then((redirectURL) => {
-      const code = util.extractAccessToken(redirectURL);
+      const redirectState = util.extractUrlParam(redirectURL, 'state');
+      const code = util.extractUrlParam(redirectURL, 'code');
+
+      if (state !== redirectState) {
+        throw new Error('State does not match');
+      }
 
       return getBearerTokenRequest(this.oauthServer, code, clientId, codeVerifier);
     }).then((tokenResult) => {

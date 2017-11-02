@@ -24,17 +24,17 @@ describe('relier.util', function () {
     });
   });
 
-  describe('extractAccessToken', () => {
-    const e = util.extractAccessToken;
+  describe('extractUrlParam', () => {
+    const e = util.extractUrlParam;
 
     it('extracts the code', () => {
-      assert.equal(e('https://some.example.com/?test=1&code=foo'), 'foo');
-      assert.equal(e('https://some.example.com/?code=foo'), 'foo');
-      assert.equal(e('https://some.example.com/?test=1&code=foo&test=5'), 'foo');
+      assert.equal(e('https://some.example.com/?test=1&code=foo', 'code'), 'foo');
+      assert.equal(e('https://some.example.com/?code=foo', 'code'), 'foo');
+      assert.equal(e('https://some.example.com/?test=1&code=foo&test=5', 'code'), 'foo');
     });
 
     it('returns null when there is no code', () => {
-      assert.equal(e('https://some.example.com/?test=1'), null);
+      assert.equal(e('https://some.example.com/?test=1', 'code'), null);
     });
   });
 

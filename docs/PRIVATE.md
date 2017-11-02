@@ -160,22 +160,23 @@ Relier utility functions
 **Access**: private  
 
 * [relier-util](#module_relier-util) ℗
-    * [~extractAccessToken(redirectUri)](#module_relier-util..extractAccessToken) ⇒ <code>string</code>
+    * [~extractUrlParam(redirectUri, param)](#module_relier-util..extractUrlParam) ⇒ <code>string</code>
     * [~createRandomString(length)](#module_relier-util..createRandomString) ⇒ <code>string</code>
     * [~sha256base64url(str)](#module_relier-util..sha256base64url) ⇒ <code>Promise</code>
     * [~createQueryParam(key, value)](#module_relier-util..createQueryParam) ⇒ <code>String</code>
     * [~objectToQueryString(obj)](#module_relier-util..objectToQueryString) ⇒ <code>String</code>
 
-<a name="module_relier-util..extractAccessToken"></a>
+<a name="module_relier-util..extractUrlParam"></a>
 
-### relier-util~extractAccessToken(redirectUri) ⇒ <code>string</code>
-Extracts the `code` parameter from a given redirectUri
+### relier-util~extractUrlParam(redirectUri, param) ⇒ <code>string</code>
+Extracts a parameter from a given URL
 
 **Kind**: inner method of [<code>relier-util</code>](#module_relier-util)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| redirectUri | <code>string</code> | OAuth redirect URI |
+| redirectUri | <code>string</code> | URL |
+| param | <code>string</code> | Param we want to extract from the givem URL |
 
 <a name="module_relier-util..createRandomString"></a>
 

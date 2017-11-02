@@ -10,18 +10,17 @@ const jose = require('node-jose');
  */
 
 /**
- * @method extractAccessToken
- * @desc Extracts the `code` parameter from a given redirectUri
- * @param {string} redirectUri - OAuth redirect URI
+ * @method extractUrlParam
+ * @desc Extracts a parameter from a given URL
+ * @param {string} redirectUri - URL
+ * @param {string} param - Param we want to extract from the givem URL
  * @returns {string}
  */
-function extractAccessToken(redirectUri) {
-  const m = redirectUri.match(/[#?](.*)/);
+function extractUrlParam(redirectUri, param) {
+  const url = new URL(redirectUri);
+  const params = new URLSearchParams(url.search);
 
-  if (! m || m.length < 1) return null;
-  const params = new URLSearchParams(m[1].split('#')[0]);
-
-  return params.get('code');
+  return params.get(param);
 }
 
 /**
@@ -82,7 +81,7 @@ function objectToQueryString(obj) {
 module.exports = {
   createQueryParam,
   createRandomString,
-  extractAccessToken,
+  extractUrlParam,
   objectToQueryString,
   sha256base64url,
   Buffer
