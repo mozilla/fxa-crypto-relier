@@ -57,7 +57,7 @@ return scopedKeys.deriveScopedKeys({
 
 * [deriver-ScopedKeys](#module_deriver-ScopedKeys)
     * [~deriveScopedKeys(options)](#module_deriver-ScopedKeys..deriveScopedKeys) ⇒ <code>Promise</code>
-    * [~_deriveHKDF(keyMaterial, inputKey, context)](#module_deriver-ScopedKeys.._deriveHKDF) ⇒ <code>Promise</code> ℗
+    * [~_deriveHKDF(keyMaterial, inputKey, context, keyLength)](#module_deriver-ScopedKeys.._deriveHKDF) ⇒ <code>Promise</code> ℗
 
 <a name="module_deriver-ScopedKeys..deriveScopedKeys"></a>
 
@@ -69,14 +69,14 @@ Derive a scoped key
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | required set of options to derive a scoped key |
-| options.inputKey | <code>string</code> | input key that the scoped key is derived from |
-| options.keyMaterial | <code>string</code> | a 32-byte string of additional entropy specific |
-| options.timestamp | <code>number</code> | a 10-digit number, the timestamp at which this scoped key most recently changed |
-| options.identifier | <code>string</code> | a unique URI identifying the requested scoped key |
+| options.inputKey | <code>string</code> | input key hex string that the scoped key is derived from |
+| options.keyMaterial | <code>string</code> | a 32-byte hex string of additional entropy specific to this scoped key |
+| options.timestamp | <code>number</code> | A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed |
+| options.identifier | <code>string</code> | a unique URI string identifying the requested scoped key |
 
 <a name="module_deriver-ScopedKeys.._deriveHKDF"></a>
 
-### deriver-ScopedKeys~_deriveHKDF(keyMaterial, inputKey, context) ⇒ <code>Promise</code> ℗
+### deriver-ScopedKeys~_deriveHKDF(keyMaterial, inputKey, context, keyLength) ⇒ <code>Promise</code> ℗
 Derive a key using HKDF
 
 **Kind**: inner method of [<code>deriver-ScopedKeys</code>](#module_deriver-ScopedKeys)  
@@ -86,7 +86,8 @@ Derive a key using HKDF
 | --- | --- | --- |
 | keyMaterial | <code>string</code> | Hex string |
 | inputKey | <code>string</code> | Hex string |
-| context | <code>string</code> | String |
+| context | <code>string</code> | Hex string |
+| keyLength | <code>number</code> | Key length |
 
 <a name="module_relier-KeyUtils"></a>
 
