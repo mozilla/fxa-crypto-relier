@@ -82047,10 +82047,6 @@ var jose = __webpack_require__(104);
  * Scoped key deriver utilities
  * @module deriver-DeriverUtils
  * @private
- * @example
- * ```js
- *
- * ```
  */
 
 var DeriverUtils = function () {

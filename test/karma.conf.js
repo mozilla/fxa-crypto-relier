@@ -3,7 +3,7 @@ module.exports = function (config) {
   config.set({
     frameworks: ['mocha', 'chai'],
     files: [
-      '*.js'
+      '**/*.js'
     ],
     browsers: ['Firefox'],
     nocache: true,

@@ -10,10 +10,17 @@ let jose = require('node-jose');
  * @private
  */
 class KeyUtils {
+  /**
+   * @constructor
+   */
   constructor() {
     this.keystore = null;
   }
-
+  /**
+   * @method createApplicationKeyPair
+   * @desc Returns a JWK public key
+   * @returns {Promise}
+   */
   createApplicationKeyPair() {
     const keystore = jose.JWK.createKeyStore();
 
@@ -26,17 +33,24 @@ class KeyUtils {
         };
       });
   }
-
+  /**
+   * @method decryptBundle
+   * @desc Decrypts a given bundle using the JWK key store
+   * @param {string} bundle
+   * @returns {Promise}
+   */
   decryptBundle(bundle) {
-    if (! this.keystore) {
-      throw new Error('No Key Store. Use .createApplicationKeyPair() to create it first.');
-    }
+    return new Promise((resolve) => {
+      if (! this.keystore) {
+        throw new Error('No Key Store. Use .createApplicationKeyPair() to create it first.');
+      }
 
-    return jose.JWE.createDecrypt(this.keystore)
-      .decrypt(bundle)
-      .then((result) => {
-        return JSON.parse(jose.util.utf8.encode(result.plaintext));
-      });
+      return jose.JWE.createDecrypt(this.keystore)
+        .decrypt(bundle)
+        .then((result) => {
+          resolve(JSON.parse(jose.util.utf8.encode(result.plaintext)));
+        });
+    });
 
   }
 }

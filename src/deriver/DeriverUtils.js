@@ -8,10 +8,6 @@ let jose = require('node-jose');
  * Scoped key deriver utilities
  * @module deriver-DeriverUtils
  * @private
- * @example
- * ```js
- *
- * ```
  */
 class DeriverUtils {
   /**

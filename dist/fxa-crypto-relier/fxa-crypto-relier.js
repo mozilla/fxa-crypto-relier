@@ -22316,11 +22316,20 @@ var jose = __webpack_require__(31);
  */
 
 var KeyUtils = function () {
+  /**
+   * @constructor
+   */
   function KeyUtils() {
     _classCallCheck(this, KeyUtils);
 
     this.keystore = null;
   }
+  /**
+   * @method createApplicationKeyPair
+   * @desc Returns a JWK public key
+   * @returns {Promise}
+   */
+
 
   _createClass(KeyUtils, [{
     key: 'createApplicationKeyPair',
@@ -22337,15 +22346,26 @@ var KeyUtils = function () {
         };
       });
     }
+    /**
+     * @method decryptBundle
+     * @desc Decrypts a given bundle using the JWK key store
+     * @param {string} bundle
+     * @returns {Promise}
+     */
+
   }, {
     key: 'decryptBundle',
     value: function decryptBundle(bundle) {
-      if (!this.keystore) {
-        throw new Error('No Key Store. Use .createApplicationKeyPair() to create it first.');
-      }
+      var _this2 = this;
 
-      return jose.JWE.createDecrypt(this.keystore).decrypt(bundle).then(function (result) {
-        return JSON.parse(jose.util.utf8.encode(result.plaintext));
+      return new Promise(function (resolve) {
+        if (!_this2.keystore) {
+          throw new Error('No Key Store. Use .createApplicationKeyPair() to create it first.');
+        }
+
+        return jose.JWE.createDecrypt(_this2.keystore).decrypt(bundle).then(function (result) {
+          resolve(JSON.parse(jose.util.utf8.encode(result.plaintext)));
+        });
       });
     }
   }]);

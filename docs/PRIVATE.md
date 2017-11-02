@@ -24,10 +24,6 @@
 Scoped key deriver utilities
 
 **Access**: private  
-**Example**  
-```js
-
-```
 <a name="module_deriver-DeriverUtils..encryptBundle"></a>
 
 ### deriver-DeriverUtils~encryptBundle(appPublicKeyJwk, bundle) ⇒ <code>Promise</code>
@@ -95,6 +91,28 @@ Derive a key using HKDF
 Scoped key utilities
 
 **Access**: private  
+
+* [relier-KeyUtils](#module_relier-KeyUtils) ℗
+    * [~createApplicationKeyPair()](#module_relier-KeyUtils..createApplicationKeyPair) ⇒ <code>Promise</code>
+    * [~decryptBundle(bundle)](#module_relier-KeyUtils..decryptBundle) ⇒ <code>Promise</code>
+
+<a name="module_relier-KeyUtils..createApplicationKeyPair"></a>
+
+### relier-KeyUtils~createApplicationKeyPair() ⇒ <code>Promise</code>
+Returns a JWK public key
+
+**Kind**: inner method of [<code>relier-KeyUtils</code>](#module_relier-KeyUtils)  
+<a name="module_relier-KeyUtils..decryptBundle"></a>
+
+### relier-KeyUtils~decryptBundle(bundle) ⇒ <code>Promise</code>
+Decrypts a given bundle using the JWK key store
+
+**Kind**: inner method of [<code>relier-KeyUtils</code>](#module_relier-KeyUtils)  
+
+| Param | Type |
+| --- | --- |
+| bundle | <code>string</code> | 
+
 <a name="module_relier-OAuthUtils"></a>
 
 ## relier-OAuthUtils
