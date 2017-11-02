@@ -26,7 +26,7 @@ See the [documentation](docs/README.md).
 ## Dependencies
 
 - [base64url](https://github.com/brianloveswords/base64url): For encoding to/from base64urls
-- [node-hkdf](https://github.com/benadida/node-hkdf): HKDF key derivation function
+- [node-hkdf](https://github.com/zaach/node-hkdf): HKDF key derivation function
 - [node-jose](https://github.com/cisco/node-jose.git): A JavaScript implementation of the JSON Object Signing and Encryption (JOSE) for current web browsers and node.js-based servers
 
 ## License

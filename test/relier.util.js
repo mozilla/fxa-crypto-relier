@@ -17,10 +17,10 @@ describe('relier.util', function () {
 
   describe('createRandomString', () => {
     it('can create strings', () => {
-      const s = util.createRandomString;
+      const c = util.createRandomString;
 
-      assert.equal(s(3).length, 3);
-      assert.equal(s(0).length, 0);
+      assert.equal(c(3).length, 3);
+      assert.equal(c(0).length, 0);
     });
   });
 

@@ -85,4 +85,5 @@ module.exports = {
   extractAccessToken,
   objectToQueryString,
   sha256base64url,
+  Buffer
 };

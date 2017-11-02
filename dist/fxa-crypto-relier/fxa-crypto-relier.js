@@ -59344,7 +59344,7 @@ module.exports = OAuthUtils;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(Buffer) {
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -59431,8 +59431,10 @@ module.exports = {
   createRandomString: createRandomString,
   extractAccessToken: extractAccessToken,
   objectToQueryString: objectToQueryString,
-  sha256base64url: sha256base64url
+  sha256base64url: sha256base64url,
+  Buffer: Buffer
 };
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ })
 /******/ ]);
