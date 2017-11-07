@@ -43,7 +43,7 @@ Used by the Firefox Accounts content server
 ```js
 const scopedKeys = new fxaCryptoDeriver.ScopedKeys();
 
-return scopedKeys.deriveScopedKeys({
+return scopedKeys.deriveScopedKey({
   identifier: 'https://identity.mozilla.com/apps/notes',
   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
   keyMaterial: '0000000000000000000000000000000000000000000000000000000000000000',
@@ -52,12 +52,12 @@ return scopedKeys.deriveScopedKeys({
 ```
 
 * [deriver-ScopedKeys](#module_deriver-ScopedKeys)
-    * [~deriveScopedKeys(options)](#module_deriver-ScopedKeys..deriveScopedKeys) ⇒ <code>Promise</code>
+    * [~deriveScopedKey(options)](#module_deriver-ScopedKeys..deriveScopedKey) ⇒ <code>Promise</code>
     * [~_deriveHKDF(keyMaterial, inputKey, context, keyLength)](#module_deriver-ScopedKeys.._deriveHKDF) ⇒ <code>Promise</code> ℗
 
-<a name="module_deriver-ScopedKeys..deriveScopedKeys"></a>
+<a name="module_deriver-ScopedKeys..deriveScopedKey"></a>
 
-### deriver-ScopedKeys~deriveScopedKeys(options) ⇒ <code>Promise</code>
+### deriver-ScopedKeys~deriveScopedKey(options) ⇒ <code>Promise</code>
 Derive a scoped key
 
 **Kind**: inner method of [<code>deriver-ScopedKeys</code>](#module_deriver-ScopedKeys)  

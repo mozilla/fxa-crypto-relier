@@ -15,7 +15,7 @@ const KEY_LENGTH = 32;
  * ```js
  * const scopedKeys = new fxaCryptoDeriver.ScopedKeys();
  *
- * return scopedKeys.deriveScopedKeys({
+ * return scopedKeys.deriveScopedKey({
  *   identifier: 'https://identity.mozilla.com/apps/notes',
  *   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
  *   keyMaterial: '0000000000000000000000000000000000000000000000000000000000000000',
@@ -26,7 +26,7 @@ const KEY_LENGTH = 32;
 class ScopedKeys {
   /**
    * Derive a scoped key
-   * @method deriveScopedKeys
+   * @method deriveScopedKey
    * @param {object} options - required set of options to derive a scoped key
    * @param {string} options.inputKey - input key hex string that the scoped key is derived from
    * @param {string} options.keyMaterial - a 32-byte hex string of additional entropy specific to this scoped key
@@ -35,7 +35,7 @@ class ScopedKeys {
    * @param {string} options.identifier - a unique URI string identifying the requested scoped key
    * @returns {Promise}
    */
-  deriveScopedKeys(options) {
+  deriveScopedKey(options) {
     return new Promise((resolve) => {
       if (! options.inputKey) {
         throw new Error('inputKey required');
@@ -79,9 +79,7 @@ class ScopedKeys {
 
           scopedKey.kid = keyTimestamp + '-' + base64url(kidKey);
 
-          resolve({
-            [options.identifier]: scopedKey
-          });
+          resolve(scopedKey);
         });
     });
   }

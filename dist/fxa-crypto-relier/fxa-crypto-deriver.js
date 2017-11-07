@@ -82098,8 +82098,6 @@ module.exports = DeriverUtils;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
@@ -82119,7 +82117,7 @@ var KEY_LENGTH = 32;
  * ```js
  * const scopedKeys = new fxaCryptoDeriver.ScopedKeys();
  *
- * return scopedKeys.deriveScopedKeys({
+ * return scopedKeys.deriveScopedKey({
  *   identifier: 'https://identity.mozilla.com/apps/notes',
  *   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
  *   keyMaterial: '0000000000000000000000000000000000000000000000000000000000000000',
@@ -82134,11 +82132,11 @@ var ScopedKeys = function () {
   }
 
   _createClass(ScopedKeys, [{
-    key: 'deriveScopedKeys',
+    key: 'deriveScopedKey',
 
     /**
      * Derive a scoped key
-     * @method deriveScopedKeys
+     * @method deriveScopedKey
      * @param {object} options - required set of options to derive a scoped key
      * @param {string} options.inputKey - input key hex string that the scoped key is derived from
      * @param {string} options.keyMaterial - a 32-byte hex string of additional entropy specific to this scoped key
@@ -82147,7 +82145,7 @@ var ScopedKeys = function () {
      * @param {string} options.identifier - a unique URI string identifying the requested scoped key
      * @returns {Promise}
      */
-    value: function deriveScopedKeys(options) {
+    value: function deriveScopedKey(options) {
       var _this = this;
 
       return new Promise(function (resolve) {
@@ -82189,7 +82187,7 @@ var ScopedKeys = function () {
 
           scopedKey.kid = keyTimestamp + '-' + base64url(kidKey);
 
-          resolve(_defineProperty({}, options.identifier, scopedKey));
+          resolve(scopedKey);
         });
       });
     }

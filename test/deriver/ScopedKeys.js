@@ -11,14 +11,14 @@ describe('ScopedKeys', function () {
   const keyMaterial = '0000000000000000000000000000000000000000000000000000000000000000';
 
   it('should have HKDF work', () => {
-    return scopedKeys.deriveScopedKeys({
+    return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
       keyMaterial: keyMaterial,
       timestamp: timestamp,
       identifier: identifier
     })
       .then((key) => {
-        const k = key[identifier];
+        const k = key;
         const importSpec = {
           name: 'AES-CTR',
         };
@@ -39,7 +39,7 @@ describe('ScopedKeys', function () {
   });
 
   it('validates timestamp', () => {
-    return scopedKeys.deriveScopedKeys({
+    return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
       keyMaterial: keyMaterial,
       timestamp: 100,
