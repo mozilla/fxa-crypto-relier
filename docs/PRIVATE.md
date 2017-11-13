@@ -29,10 +29,10 @@ Scoped key deriver utilities
 ### deriver-DeriverUtils~encryptBundle(appPublicKeyJwk, bundle) ⇒ <code>Promise</code>
 **Kind**: inner method of [<code>deriver-DeriverUtils</code>](#module_deriver-DeriverUtils)  
 
-| Param | Type |
-| --- | --- |
-| appPublicKeyJwk | <code>string</code> | 
-| bundle | <code>object</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| appPublicKeyJwk | <code>string</code> | base64url encoded string of the public key JWK |
+| bundle | <code>string</code> | String bundle to encrypt using the provided key |
 
 <a name="module_deriver-ScopedKeys"></a>
 
