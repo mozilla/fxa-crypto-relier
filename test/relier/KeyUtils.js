@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 describe('KeyUtils', function () {
+  const jose = window.fxaCryptoDeriver.jose;
 
   describe('createApplicationKeyPair', () => {
     it('should output a JWK public key', () => {
@@ -41,7 +42,8 @@ describe('KeyUtils', function () {
 
       return keyUtils.createApplicationKeyPair()
         .then((keys) => {
-          return deriverUtils.encryptBundle(keys.jwkPublicKey, JSON.stringify(derivedKeys))
+          const base64JwkPublicKey = jose.util.base64url.encode(JSON.stringify(keys.jwkPublicKey), 'utf8');
+          return deriverUtils.encryptBundle(base64JwkPublicKey, JSON.stringify(derivedKeys))
         })
         .then((res) => {
           return keyUtils.decryptBundle(res) // notes

@@ -8,7 +8,6 @@ describe('DeriverUtils', function () {
   describe('encryptBundle', () => {
     it('can encrypt the bundle', () => {
       const appPublicKeyJwk = 'eyJrdHkiOiJFQyIsImtpZCI6ImduUGtGWjE2dHNyeTFsajdDUHdXaENxVkxPSGwtMXFETmJIbG5FNTJzOVEiLCJjcnYiOiJQLTI1NiIsIngiOiJFS3lFOWRta3U2aTNhclpOVVBqdkl0bmo2V2pPUzBldzdENkZQaDR2OFFZIiwieSI6IjRhX3VHenM2Rl9uN0ZrNTZIaDlUZGlMZHNjblg4UHdjTnlXZ3lqeG9td0kifQ';
-      const key = window.fxaCryptoDeriver.jose.util.base64url.decode(JSON.stringify(appPublicKeyJwk));
       const exampleScope = 'https://identity.mozilla.org/apps/notes';
       const keySample = {
         [exampleScope]: {
@@ -19,7 +18,7 @@ describe('DeriverUtils', function () {
         }
       };
 
-      return deriverUtils.encryptBundle(key, JSON.stringify(keySample)).then((enc) => {
+      return deriverUtils.encryptBundle(appPublicKeyJwk, JSON.stringify(keySample)).then((enc) => {
         assert.equal(enc.length, 632);
       });
     });

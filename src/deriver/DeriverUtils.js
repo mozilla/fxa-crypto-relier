@@ -12,14 +12,15 @@ let jose = require('node-jose');
 class DeriverUtils {
   /**
    * @method encryptBundle
-   * @param {string} appPublicKeyJwk
-   * @param {object} bundle
+   * @param {string} appPublicKeyJwk - base64url encoded string of the public key JWK
+   * @param {string} bundle - String bundle to encrypt using the provided key
    * @returns {Promise}
    */
   encryptBundle(appPublicKeyJwk, bundle) {
     bundle = jose.util.asBuffer(bundle);
+    const appJwk = jose.util.base64url.decode(appPublicKeyJwk);
 
-    return jose.JWK.asKey(appPublicKeyJwk)
+    return jose.JWK.asKey(appJwk)
       .then(function (key) {
         const recipient = {
           key: key,

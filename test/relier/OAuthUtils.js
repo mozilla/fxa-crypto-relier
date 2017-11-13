@@ -23,10 +23,9 @@ describe('OAuthUtils', function () {
           const state = options.state || util.extractUrlParam(args.url, 'state');
           keysJwk = util.extractUrlParam(args.url, 'keys_jwk');
 
-          const keysJwk2 = window.fxaCryptoDeriver.jose.util.base64url.decode(JSON.stringify(keysJwk));
           const fxaDeriverUtils = new window.fxaCryptoDeriver.DeriverUtils();
 
-          return fxaDeriverUtils.encryptBundle(keysJwk2, JSON.stringify(keySample))
+          return fxaDeriverUtils.encryptBundle(keysJwk, JSON.stringify(keySample))
             .then((bundle) => {
               keysJwe = bundle;
 

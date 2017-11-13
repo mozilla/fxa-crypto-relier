@@ -63,7 +63,7 @@ class OAuthUtils {
     const SCOPES = options.scopes || [];
 
     const state = util.createRandomString(16);
-    const codeVerifier = jose.util.base64url.encode(util.createRandomString(32));
+    const codeVerifier = util.createRandomString(43);
     const queryParams = {
       access_type: 'offline', // eslint-disable-line camelcase
       client_id: clientId, // eslint-disable-line camelcase
