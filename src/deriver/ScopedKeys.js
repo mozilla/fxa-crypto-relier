@@ -5,7 +5,7 @@
 const HKDF = require('node-hkdf');
 const base64url = require('base64url');
 
-const KEY_LENGTH = 32;
+const KEY_LENGTH = 48;
 
 /**
  * Scoped key deriver
@@ -59,27 +59,23 @@ class ScopedKeys {
 
       const context = 'identity.mozilla.com/picl/v1/scoped_key\n' +
         options.identifier;
-      const contextKid = 'identity.mozilla.com/picl/v1/scoped_kid\n' +
-        options.identifier;
       const inputKeyBuf = Buffer.from(options.inputKey, 'hex');
       const keyRotationSecretBuf = Buffer.from(options.keyRotationSecret, 'hex');
       const contextBuf = Buffer.from(context);
-      const contextKidBuf = Buffer.from(contextKid);
+      const saltBuf = Buffer.from('');
       const scopedKey = {
         kty: 'oct',
         scope: options.identifier,
       };
 
-      this._deriveHKDF(keyRotationSecretBuf, inputKeyBuf, contextBuf, KEY_LENGTH)
+      this._deriveHKDF(saltBuf, Buffer.concat([inputKeyBuf, keyRotationSecretBuf]), contextBuf, KEY_LENGTH)
         .then((key) => {
-          scopedKey.k = base64url(key);
-
-          return this._deriveHKDF(keyRotationSecretBuf, inputKeyBuf, contextKidBuf, KEY_LENGTH);
-        })
-        .then((kidKey) => {
+          const kid = key.slice(0, 16);
+          const k = key.slice(16, 48);
           const keyTimestamp = Math.round(options.timestamp / 1000);
 
-          scopedKey.kid = keyTimestamp + '-' + base64url(kidKey);
+          scopedKey.k = base64url(k);
+          scopedKey.kid = keyTimestamp + '-' + base64url(kid);
 
           resolve(scopedKey);
         });

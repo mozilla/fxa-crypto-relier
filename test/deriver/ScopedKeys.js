@@ -24,8 +24,8 @@ describe('ScopedKeys', function () {
         };
 
         assert.equal(key.kty, 'oct');
-        assert.equal(key.k, '4HiCN5L8Bwt5xc2k9m9xAX-nazwF_Cp9Nuc3A85a1LM');
-        assert.equal(key.kid, '1494446723-22CKNr50kLef9dfvw5ByuRYlRtfLRzUfgH3Ip8eFj1o');
+        assert.equal(key.k, 'H8qB9ru8V-eDEkRwT8vox3On-iv9Zt_EtnUPCHw9gkw');
+        assert.equal(key.kid, '1494446723-AnJcmHpTKkeFJcT-4d6cjg');
         assert.equal(key.scope, identifier);
         return window.crypto.subtle.importKey('jwk', key, importSpec, false, ['encrypt']).then(function (rawKey) {
           assert.equal(rawKey.type, 'secret');

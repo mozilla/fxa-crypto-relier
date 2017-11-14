@@ -82108,7 +82108,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var HKDF = __webpack_require__(266);
 var base64url = __webpack_require__(83);
 
-var KEY_LENGTH = 32;
+var KEY_LENGTH = 48;
 
 /**
  * Scoped key deriver
@@ -82171,24 +82171,22 @@ var ScopedKeys = function () {
         }
 
         var context = 'identity.mozilla.com/picl/v1/scoped_key\n' + options.identifier;
-        var contextKid = 'identity.mozilla.com/picl/v1/scoped_kid\n' + options.identifier;
         var inputKeyBuf = Buffer.from(options.inputKey, 'hex');
         var keyRotationSecretBuf = Buffer.from(options.keyRotationSecret, 'hex');
         var contextBuf = Buffer.from(context);
-        var contextKidBuf = Buffer.from(contextKid);
+        var saltBuf = Buffer.from('');
         var scopedKey = {
           kty: 'oct',
           scope: options.identifier
         };
 
-        _this._deriveHKDF(keyRotationSecretBuf, inputKeyBuf, contextBuf, KEY_LENGTH).then(function (key) {
-          scopedKey.k = base64url(key);
-
-          return _this._deriveHKDF(keyRotationSecretBuf, inputKeyBuf, contextKidBuf, KEY_LENGTH);
-        }).then(function (kidKey) {
+        _this._deriveHKDF(saltBuf, Buffer.concat([inputKeyBuf, keyRotationSecretBuf]), contextBuf, KEY_LENGTH).then(function (key) {
+          var kid = key.slice(0, 16);
+          var k = key.slice(16, 48);
           var keyTimestamp = Math.round(options.timestamp / 1000);
 
-          scopedKey.kid = keyTimestamp + '-' + base64url(kidKey);
+          scopedKey.k = base64url(k);
+          scopedKey.kid = keyTimestamp + '-' + base64url(kid);
 
           resolve(scopedKey);
         });
