@@ -18,7 +18,7 @@ const KEY_LENGTH = 32;
  * return scopedKeys.deriveScopedKey({
  *   identifier: 'https://identity.mozilla.com/apps/notes',
  *   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
- *   keyMaterial: '0000000000000000000000000000000000000000000000000000000000000000',
+ *   keyRotationSecret: '0000000000000000000000000000000000000000000000000000000000000000',
  *   timestamp: 1494446722583
  * });
  * ```
@@ -29,7 +29,7 @@ class ScopedKeys {
    * @method deriveScopedKey
    * @param {object} options - required set of options to derive a scoped key
    * @param {string} options.inputKey - input key hex string that the scoped key is derived from
-   * @param {string} options.keyMaterial - a 32-byte hex string of additional entropy specific to this scoped key
+   * @param {string} options.keyRotationSecret - a 32-byte hex string of additional entropy specific to this scoped key
    * @param {number} options.timestamp
    *   A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed
    * @param {string} options.identifier - a unique URI string identifying the requested scoped key
@@ -41,8 +41,8 @@ class ScopedKeys {
         throw new Error('inputKey required');
       }
 
-      if (! options.keyMaterial) {
-        throw new Error('keyMaterial required');
+      if (! options.keyRotationSecret) {
+        throw new Error('keyRotationSecret required');
       }
 
       if (! options.timestamp) {
@@ -61,18 +61,20 @@ class ScopedKeys {
         options.identifier;
       const contextKid = 'identity.mozilla.com/picl/v1/scoped_kid\n' +
         options.identifier;
-      const contextHex = Buffer.from(context).toString('hex');
-      const contextKidHex = Buffer.from(contextKid).toString('hex');
+      const inputKeyBuf = Buffer.from(options.inputKey, 'hex');
+      const keyRotationSecretBuf = Buffer.from(options.keyRotationSecret, 'hex');
+      const contextBuf = Buffer.from(context);
+      const contextKidBuf = Buffer.from(contextKid);
       const scopedKey = {
         kty: 'oct',
         scope: options.identifier,
       };
 
-      this._deriveHKDF(options.keyMaterial, options.inputKey, contextHex, KEY_LENGTH)
+      this._deriveHKDF(keyRotationSecretBuf, inputKeyBuf, contextBuf, KEY_LENGTH)
         .then((key) => {
           scopedKey.k = base64url(key);
 
-          return this._deriveHKDF(options.keyMaterial, options.inputKey, contextKidHex, KEY_LENGTH);
+          return this._deriveHKDF(keyRotationSecretBuf, inputKeyBuf, contextKidBuf, KEY_LENGTH);
         })
         .then((kidKey) => {
           const keyTimestamp = Math.round(options.timestamp / 1000);
@@ -84,23 +86,21 @@ class ScopedKeys {
     });
   }
   /**
-   * Derive a key using HKDF
+   * Derive a key using HKDF.
+   * Ref: https://tools.ietf.org/html/rfc5869
    * @method _deriveHKDF
    * @private
-   * @param {string} keyMaterial - Hex string
-   * @param {string} inputKey - Hex string
-   * @param {string} context - Hex string
+   * @param {buffer} salt
+   * @param {buffer} initialKeyingMaterial
+   * @param {buffer} info
    * @param {number} keyLength - Key length
    * @returns {Promise}
    */
-  _deriveHKDF(keyMaterial, inputKey, context, keyLength) {
+  _deriveHKDF(salt, initialKeyingMaterial, info, keyLength) {
     return new Promise((resolve) => {
-      const keyMaterialBuf = Buffer.from(keyMaterial, 'hex');
-      const inputKeyBuf = Buffer.from(inputKey, 'hex');
-      const contextBuf = Buffer.from(context, 'hex');
-      const hkdf = new HKDF('sha256', keyMaterialBuf, inputKeyBuf);
+      const hkdf = new HKDF('sha256', salt, initialKeyingMaterial);
 
-      hkdf.derive(contextBuf, keyLength, (key) => {
+      hkdf.derive(info, keyLength, (key) => {
         return resolve(key);
       });
     });

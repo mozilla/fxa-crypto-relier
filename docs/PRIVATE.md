@@ -46,14 +46,14 @@ const scopedKeys = new fxaCryptoDeriver.ScopedKeys();
 return scopedKeys.deriveScopedKey({
   identifier: 'https://identity.mozilla.com/apps/notes',
   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
-  keyMaterial: '0000000000000000000000000000000000000000000000000000000000000000',
+  keyRotationSecret: '0000000000000000000000000000000000000000000000000000000000000000',
   timestamp: 1494446722583
 });
 ```
 
 * [deriver-ScopedKeys](#module_deriver-ScopedKeys)
     * [~deriveScopedKey(options)](#module_deriver-ScopedKeys..deriveScopedKey) ⇒ <code>Promise</code>
-    * [~_deriveHKDF(keyMaterial, inputKey, context, keyLength)](#module_deriver-ScopedKeys.._deriveHKDF) ⇒ <code>Promise</code> ℗
+    * [~_deriveHKDF(salt, initialKeyingMaterial, info, keyLength)](#module_deriver-ScopedKeys.._deriveHKDF) ⇒ <code>Promise</code> ℗
 
 <a name="module_deriver-ScopedKeys..deriveScopedKey"></a>
 
@@ -66,23 +66,24 @@ Derive a scoped key
 | --- | --- | --- |
 | options | <code>object</code> | required set of options to derive a scoped key |
 | options.inputKey | <code>string</code> | input key hex string that the scoped key is derived from |
-| options.keyMaterial | <code>string</code> | a 32-byte hex string of additional entropy specific to this scoped key |
+| options.keyRotationSecret | <code>string</code> | a 32-byte hex string of additional entropy specific to this scoped key |
 | options.timestamp | <code>number</code> | A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed |
 | options.identifier | <code>string</code> | a unique URI string identifying the requested scoped key |
 
 <a name="module_deriver-ScopedKeys.._deriveHKDF"></a>
 
-### deriver-ScopedKeys~_deriveHKDF(keyMaterial, inputKey, context, keyLength) ⇒ <code>Promise</code> ℗
-Derive a key using HKDF
+### deriver-ScopedKeys~_deriveHKDF(salt, initialKeyingMaterial, info, keyLength) ⇒ <code>Promise</code> ℗
+Derive a key using HKDF.
+Ref: https://tools.ietf.org/html/rfc5869
 
 **Kind**: inner method of [<code>deriver-ScopedKeys</code>](#module_deriver-ScopedKeys)  
 **Access**: private  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| keyMaterial | <code>string</code> | Hex string |
-| inputKey | <code>string</code> | Hex string |
-| context | <code>string</code> | Hex string |
+| salt | <code>buffer</code> |  |
+| initialKeyingMaterial | <code>buffer</code> |  |
+| info | <code>buffer</code> |  |
 | keyLength | <code>number</code> | Key length |
 
 <a name="module_relier-KeyUtils"></a>

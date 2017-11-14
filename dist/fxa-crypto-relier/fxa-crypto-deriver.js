@@ -82121,7 +82121,7 @@ var KEY_LENGTH = 32;
  * return scopedKeys.deriveScopedKey({
  *   identifier: 'https://identity.mozilla.com/apps/notes',
  *   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
- *   keyMaterial: '0000000000000000000000000000000000000000000000000000000000000000',
+ *   keyRotationSecret: '0000000000000000000000000000000000000000000000000000000000000000',
  *   timestamp: 1494446722583
  * });
  * ```
@@ -82140,7 +82140,7 @@ var ScopedKeys = function () {
      * @method deriveScopedKey
      * @param {object} options - required set of options to derive a scoped key
      * @param {string} options.inputKey - input key hex string that the scoped key is derived from
-     * @param {string} options.keyMaterial - a 32-byte hex string of additional entropy specific to this scoped key
+     * @param {string} options.keyRotationSecret - a 32-byte hex string of additional entropy specific to this scoped key
      * @param {number} options.timestamp
      *   A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed
      * @param {string} options.identifier - a unique URI string identifying the requested scoped key
@@ -82154,8 +82154,8 @@ var ScopedKeys = function () {
           throw new Error('inputKey required');
         }
 
-        if (!options.keyMaterial) {
-          throw new Error('keyMaterial required');
+        if (!options.keyRotationSecret) {
+          throw new Error('keyRotationSecret required');
         }
 
         if (!options.timestamp) {
@@ -82172,17 +82172,19 @@ var ScopedKeys = function () {
 
         var context = 'identity.mozilla.com/picl/v1/scoped_key\n' + options.identifier;
         var contextKid = 'identity.mozilla.com/picl/v1/scoped_kid\n' + options.identifier;
-        var contextHex = Buffer.from(context).toString('hex');
-        var contextKidHex = Buffer.from(contextKid).toString('hex');
+        var inputKeyBuf = Buffer.from(options.inputKey, 'hex');
+        var keyRotationSecretBuf = Buffer.from(options.keyRotationSecret, 'hex');
+        var contextBuf = Buffer.from(context);
+        var contextKidBuf = Buffer.from(contextKid);
         var scopedKey = {
           kty: 'oct',
           scope: options.identifier
         };
 
-        _this._deriveHKDF(options.keyMaterial, options.inputKey, contextHex, KEY_LENGTH).then(function (key) {
+        _this._deriveHKDF(keyRotationSecretBuf, inputKeyBuf, contextBuf, KEY_LENGTH).then(function (key) {
           scopedKey.k = base64url(key);
 
-          return _this._deriveHKDF(options.keyMaterial, options.inputKey, contextKidHex, KEY_LENGTH);
+          return _this._deriveHKDF(keyRotationSecretBuf, inputKeyBuf, contextKidBuf, KEY_LENGTH);
         }).then(function (kidKey) {
           var keyTimestamp = Math.round(options.timestamp / 1000);
 
@@ -82193,26 +82195,24 @@ var ScopedKeys = function () {
       });
     }
     /**
-     * Derive a key using HKDF
+     * Derive a key using HKDF.
+     * Ref: https://tools.ietf.org/html/rfc5869
      * @method _deriveHKDF
      * @private
-     * @param {string} keyMaterial - Hex string
-     * @param {string} inputKey - Hex string
-     * @param {string} context - Hex string
+     * @param {buffer} salt
+     * @param {buffer} initialKeyingMaterial
+     * @param {buffer} info
      * @param {number} keyLength - Key length
      * @returns {Promise}
      */
 
   }, {
     key: '_deriveHKDF',
-    value: function _deriveHKDF(keyMaterial, inputKey, context, keyLength) {
+    value: function _deriveHKDF(salt, initialKeyingMaterial, info, keyLength) {
       return new Promise(function (resolve) {
-        var keyMaterialBuf = Buffer.from(keyMaterial, 'hex');
-        var inputKeyBuf = Buffer.from(inputKey, 'hex');
-        var contextBuf = Buffer.from(context, 'hex');
-        var hkdf = new HKDF('sha256', keyMaterialBuf, inputKeyBuf);
+        var hkdf = new HKDF('sha256', salt, initialKeyingMaterial);
 
-        hkdf.derive(contextBuf, keyLength, function (key) {
+        hkdf.derive(info, keyLength, function (key) {
           return resolve(key);
         });
       });
