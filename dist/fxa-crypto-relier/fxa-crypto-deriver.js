@@ -82122,7 +82122,7 @@ var KEY_LENGTH = 48;
  *   identifier: 'https://identity.mozilla.com/apps/notes',
  *   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
  *   keyRotationSecret: '0000000000000000000000000000000000000000000000000000000000000000',
- *   timestamp: 1494446722583
+ *   keyRotationTimestamp: 1494446722583
  * });
  * ```
  */
@@ -82141,7 +82141,7 @@ var ScopedKeys = function () {
      * @param {object} options - required set of options to derive a scoped key
      * @param {string} options.inputKey - input key hex string that the scoped key is derived from
      * @param {string} options.keyRotationSecret - a 32-byte hex string of additional entropy specific to this scoped key
-     * @param {number} options.timestamp
+     * @param {number} options.keyRotationTimestamp
      *   A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed
      * @param {string} options.identifier - a unique URI string identifying the requested scoped key
      * @returns {Promise}
@@ -82158,16 +82158,16 @@ var ScopedKeys = function () {
           throw new Error('keyRotationSecret required');
         }
 
-        if (!options.timestamp) {
-          throw new Error('timestamp required');
+        if (!options.keyRotationTimestamp) {
+          throw new Error('keyRotationTimestamp required');
         }
 
         if (!options.identifier) {
           throw new Error('identifier required');
         }
 
-        if (options.timestamp.toString().length !== 13) {
-          throw new Error('timestamp must be a 13-digit number');
+        if (options.keyRotationTimestamp.toString().length !== 13) {
+          throw new Error('keyRotationTimestamp must be a 13-digit number');
         }
 
         var context = 'identity.mozilla.com/picl/v1/scoped_key\n' + options.identifier;
@@ -82183,7 +82183,7 @@ var ScopedKeys = function () {
         _this._deriveHKDF(saltBuf, Buffer.concat([inputKeyBuf, keyRotationSecretBuf]), contextBuf, KEY_LENGTH).then(function (key) {
           var kid = key.slice(0, 16);
           var k = key.slice(16, 48);
-          var keyTimestamp = Math.round(options.timestamp / 1000);
+          var keyTimestamp = Math.round(options.keyRotationTimestamp / 1000);
 
           scopedKey.k = base64url(k);
           scopedKey.kid = keyTimestamp + '-' + base64url(kid);

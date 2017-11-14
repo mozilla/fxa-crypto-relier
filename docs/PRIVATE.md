@@ -47,7 +47,7 @@ return scopedKeys.deriveScopedKey({
   identifier: 'https://identity.mozilla.com/apps/notes',
   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
   keyRotationSecret: '0000000000000000000000000000000000000000000000000000000000000000',
-  timestamp: 1494446722583
+  keyRotationTimestamp: 1494446722583
 });
 ```
 
@@ -67,7 +67,7 @@ Derive a scoped key
 | options | <code>object</code> | required set of options to derive a scoped key |
 | options.inputKey | <code>string</code> | input key hex string that the scoped key is derived from |
 | options.keyRotationSecret | <code>string</code> | a 32-byte hex string of additional entropy specific to this scoped key |
-| options.timestamp | <code>number</code> | A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed |
+| options.keyRotationTimestamp | <code>number</code> | A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed |
 | options.identifier | <code>string</code> | a unique URI string identifying the requested scoped key |
 
 <a name="module_deriver-ScopedKeys.._deriveHKDF"></a>

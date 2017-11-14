@@ -8,14 +8,14 @@ describe('ScopedKeys', function () {
   const Buffer = util.Buffer;
   const sampleKb = 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a';
   const identifier = 'https://identity.mozilla.com/apps/notes';
-  const timestamp = 1494446722583; // GMT Wednesday, May 10, 2017 8:05:22.583 PM
+  const keyRotationTimestamp = 1494446722583; // GMT Wednesday, May 10, 2017 8:05:22.583 PM
   const keyRotationSecret = '0000000000000000000000000000000000000000000000000000000000000000';
 
   it('should have HKDF work', () => {
     return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
       keyRotationSecret: keyRotationSecret,
-      timestamp: timestamp,
+      keyRotationTimestamp: keyRotationTimestamp,
       identifier: identifier
     })
       .then((key) => {
@@ -38,14 +38,14 @@ describe('ScopedKeys', function () {
       });
   });
 
-  it('validates timestamp', () => {
+  it('validates keyRotationTimestamp', () => {
     return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
       keyRotationSecret: keyRotationSecret,
-      timestamp: 100,
+      keyRotationTimestamp: 100,
       identifier: identifier
     }).catch((err) => {
-      assert.equal(err.message, 'timestamp must be a 13-digit number');
+      assert.equal(err.message, 'keyRotationTimestamp must be a 13-digit number');
     });
   });
 
