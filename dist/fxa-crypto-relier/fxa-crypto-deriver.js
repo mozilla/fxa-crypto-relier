@@ -8830,7 +8830,7 @@ Stream.prototype.pipe = function(dest, options) {
   };
 })(typeof module === 'undefined' || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ }),
 /* 10 */
@@ -9312,7 +9312,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 "use strict";
 
 
-var assert = __webpack_require__(31);
+var assert = __webpack_require__(32);
 var inherits = __webpack_require__(1);
 
 exports.inherits = inherits;
@@ -12997,7 +12997,7 @@ exports.shr64_lo = shr64_lo;
   };
 })(typeof module === 'undefined' || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ }),
 /* 19 */
@@ -13006,7 +13006,7 @@ exports.shr64_lo = shr64_lo;
 "use strict";
 
 
-var assert = __webpack_require__(32);
+var assert = __webpack_require__(33);
 var inherits = __webpack_require__(1);
 
 exports.inherits = inherits;
@@ -15079,7 +15079,7 @@ function stubFalse() {
 
 module.exports = clone;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(34)(module)))
 
 /***/ }),
 /* 22 */
@@ -17373,6 +17373,52 @@ function forEach(xs, f) {
 /* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global, process) {
+
+function oldBrowser () {
+  throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11')
+}
+
+var Buffer = __webpack_require__(269).Buffer
+var crypto = global.crypto || global.msCrypto
+
+if (crypto && crypto.getRandomValues) {
+  module.exports = randomBytes
+} else {
+  module.exports = oldBrowser
+}
+
+function randomBytes (size, cb) {
+  // phantomjs needs to throw
+  if (size > 65536) throw new Error('requested too many random bytes')
+  // in case browserify  isn't using the Uint8Array version
+  var rawBytes = new global.Uint8Array(size)
+
+  // This will not work in older browsers.
+  // See https://developer.mozilla.org/en-US/docs/Web/API/window.crypto.getRandomValues
+  if (size > 0) {  // getRandomValues fails on IE if size == 0
+    crypto.getRandomValues(rawBytes)
+  }
+
+  // XXX: phantomjs doesn't like a buffer being passed here
+  var bytes = Buffer.from(rawBytes.buffer)
+
+  if (typeof cb === 'function') {
+    return process.nextTick(function () {
+      cb(null, bytes)
+    })
+  }
+
+  return bytes
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /* eslint-disable node/no-deprecated-api */
 var buffer = __webpack_require__(0)
 var Buffer = buffer.Buffer
@@ -17438,23 +17484,6 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 31 */
-/***/ (function(module, exports) {
-
-module.exports = assert;
-
-function assert(val, msg) {
-  if (!val)
-    throw new Error(msg || 'Assertion failed');
-}
-
-assert.equal = function assertEqual(l, r, msg) {
-  if (l != r)
-    throw new Error(msg || ('Assertion failed: ' + l + ' != ' + r));
-};
-
-
-/***/ }),
 /* 32 */
 /***/ (function(module, exports) {
 
@@ -17473,6 +17502,23 @@ assert.equal = function assertEqual(l, r, msg) {
 
 /***/ }),
 /* 33 */
+/***/ (function(module, exports) {
+
+module.exports = assert;
+
+function assert(val, msg) {
+  if (!val)
+    throw new Error(msg || 'Assertion failed');
+}
+
+assert.equal = function assertEqual(l, r, msg) {
+  if (l != r)
+    throw new Error(msg || ('Assertion failed: ' + l + ' != ' + r));
+};
+
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -17500,7 +17546,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17531,56 +17577,10 @@ __webpack_require__(238);
 
 
 /***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global, process) {
-
-function oldBrowser () {
-  throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11')
-}
-
-var Buffer = __webpack_require__(269).Buffer
-var crypto = global.crypto || global.msCrypto
-
-if (crypto && crypto.getRandomValues) {
-  module.exports = randomBytes
-} else {
-  module.exports = oldBrowser
-}
-
-function randomBytes (size, cb) {
-  // phantomjs needs to throw
-  if (size > 65536) throw new Error('requested too many random bytes')
-  // in case browserify  isn't using the Uint8Array version
-  var rawBytes = new global.Uint8Array(size)
-
-  // This will not work in older browsers.
-  // See https://developer.mozilla.org/en-US/docs/Web/API/window.crypto.getRandomValues
-  if (size > 0) {  // getRandomValues fails on IE if size == 0
-    crypto.getRandomValues(rawBytes)
-  }
-
-  // XXX: phantomjs doesn't like a buffer being passed here
-  var bytes = Buffer.from(rawBytes.buffer)
-
-  if (typeof cb === 'function') {
-    return process.nextTick(function () {
-      cb(null, bytes)
-    })
-  }
-
-  return bytes
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
-
-/***/ }),
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Buffer = __webpack_require__(30).Buffer
+var Buffer = __webpack_require__(31).Buffer
 
 // prototype class for hash functions
 function Hash (blockSize, finalSize) {
@@ -20276,7 +20276,7 @@ module.exports = function createHash (alg) {
 
 
 var utils = __webpack_require__(17);
-var assert = __webpack_require__(31);
+var assert = __webpack_require__(32);
 
 function BlockHash() {
   this.pending = null;
@@ -20419,7 +20419,7 @@ base.Node = __webpack_require__(360);
 
 
 var utils = __webpack_require__(19);
-var assert = __webpack_require__(32);
+var assert = __webpack_require__(33);
 
 function BlockHash() {
   this.pending = null;
@@ -23957,7 +23957,7 @@ asn1.encoders = __webpack_require__(418);
   };
 })(typeof module === 'undefined' || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ }),
 /* 54 */
@@ -40410,7 +40410,7 @@ exports.EDE = __webpack_require__(321);
   };
 })(typeof module === 'undefined' || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ }),
 /* 100 */
@@ -40575,7 +40575,7 @@ if (typeof Promise === "undefined") {
 module.exports = {
   JWA: __webpack_require__(73),
   JWE: __webpack_require__(88),
-  JWK: __webpack_require__(34),
+  JWK: __webpack_require__(35),
   JWS: __webpack_require__(93),
   util: __webpack_require__(7),
   parse: __webpack_require__(261)
@@ -50670,7 +50670,7 @@ module.exports = assign;
 
 
 var CONSTANTS = __webpack_require__(20),
-    JWK = __webpack_require__(34);
+    JWK = __webpack_require__(35);
 
 module.exports = {
   slice: function(input, start) {
@@ -54340,7 +54340,7 @@ function hasOwnProperty(obj, prop) {
 
 var inherits = __webpack_require__(1)
 var Hash = __webpack_require__(36)
-var Buffer = __webpack_require__(30).Buffer
+var Buffer = __webpack_require__(31).Buffer
 
 var K = [
   0x428A2F98, 0x71374491, 0xB5C0FBCF, 0xE9B5DBA5,
@@ -54473,7 +54473,7 @@ module.exports = Sha256
 
 var inherits = __webpack_require__(1)
 var Hash = __webpack_require__(36)
-var Buffer = __webpack_require__(30).Buffer
+var Buffer = __webpack_require__(31).Buffer
 
 var K = [
   0x428a2f98, 0xd728ae22, 0x71374491, 0x23ef65cd,
@@ -56166,7 +56166,7 @@ module.exports = StreamCipher
 /* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var randomBytes = __webpack_require__(35);
+var randomBytes = __webpack_require__(30);
 module.exports = findPrime;
 findPrime.simpleSieve = simpleSieve;
 findPrime.fermatTest = fermatTest;
@@ -56525,7 +56525,7 @@ exports.g1_256 = g1_256;
 var utils = __webpack_require__(17);
 var common = __webpack_require__(47);
 var shaCommon = __webpack_require__(160);
-var assert = __webpack_require__(31);
+var assert = __webpack_require__(32);
 
 var sum32 = utils.sum32;
 var sum32_4 = utils.sum32_4;
@@ -56636,7 +56636,7 @@ SHA256.prototype._digest = function digest(enc) {
 
 var utils = __webpack_require__(17);
 var common = __webpack_require__(47);
-var assert = __webpack_require__(31);
+var assert = __webpack_require__(32);
 
 var rotr64_hi = utils.rotr64_hi;
 var rotr64_lo = utils.rotr64_lo;
@@ -58466,7 +58466,7 @@ exports.g1_256 = g1_256;
 var utils = __webpack_require__(19);
 var common = __webpack_require__(51);
 var shaCommon = __webpack_require__(179);
-var assert = __webpack_require__(32);
+var assert = __webpack_require__(33);
 
 var sum32 = utils.sum32;
 var sum32_4 = utils.sum32_4;
@@ -58577,7 +58577,7 @@ SHA256.prototype._digest = function digest(enc) {
 
 var utils = __webpack_require__(19);
 var common = __webpack_require__(51);
-var assert = __webpack_require__(32);
+var assert = __webpack_require__(33);
 
 var rotr64_hi = utils.rotr64_hi;
 var rotr64_lo = utils.rotr64_lo;
@@ -60182,7 +60182,7 @@ module.exports = withPublic;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bn = __webpack_require__(53);
-var randomBytes = __webpack_require__(35);
+var randomBytes = __webpack_require__(30);
 module.exports = crt;
 function blind(priv) {
   var r = getr(priv);
@@ -70030,7 +70030,7 @@ function stubFalse() {
 
 module.exports = merge;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(34)(module)))
 
 /***/ }),
 /* 225 */
@@ -71125,7 +71125,7 @@ var assign = __webpack_require__(123),
     clone = __webpack_require__(21),
     util = __webpack_require__(7),
     generateCEK = __webpack_require__(124).generateCEK,
-    JWK = __webpack_require__(34),
+    JWK = __webpack_require__(35),
     slice = __webpack_require__(124).slice,
     zlib = __webpack_require__(129),
     CONSTANTS = __webpack_require__(20);
@@ -80793,7 +80793,7 @@ module.exports = JWEDefaults;
 
 
 var base64url = __webpack_require__(57),
-    JWK = __webpack_require__(34),
+    JWK = __webpack_require__(35),
     merge = __webpack_require__(28),
     zlib = __webpack_require__(129);
 
@@ -81157,7 +81157,7 @@ var clone = __webpack_require__(21),
     merge = __webpack_require__(28),
     uniq = __webpack_require__(125),
     util = __webpack_require__(7),
-    JWK = __webpack_require__(34),
+    JWK = __webpack_require__(35),
     slice = __webpack_require__(258).slice;
 
 var DEFAULTS = __webpack_require__(259);
@@ -81582,7 +81582,7 @@ module.exports = JWSDefaults;
 var clone = __webpack_require__(21),
     merge = __webpack_require__(28),
     base64url = __webpack_require__(57),
-    JWK = __webpack_require__(34);
+    JWK = __webpack_require__(35);
 
 /**
  * @class JWS.Verifier
@@ -82298,7 +82298,7 @@ module.exports = HKDF;
 "use strict";
 
 
-exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = __webpack_require__(35)
+exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = __webpack_require__(30)
 exports.createHash = exports.Hash = __webpack_require__(45)
 exports.createHmac = exports.Hmac = __webpack_require__(141)
 
@@ -82362,6 +82362,11 @@ exports.privateDecrypt = publicEncrypt.privateDecrypt
 //     ].join('\n'))
 //   }
 // })
+
+var rf = __webpack_require__(435)
+
+exports.randomFill = rf.randomFill
+exports.randomFillSync = rf.randomFillSync
 
 exports.createCredentials = function () {
   throw new Error([
@@ -82971,7 +82976,7 @@ exports.sha512 = __webpack_require__(140)
 
 var inherits = __webpack_require__(1)
 var Hash = __webpack_require__(36)
-var Buffer = __webpack_require__(30).Buffer
+var Buffer = __webpack_require__(31).Buffer
 
 var K = [
   0x5a827999, 0x6ed9eba1, 0x8f1bbcdc | 0, 0xca62c1d6 | 0
@@ -83072,7 +83077,7 @@ module.exports = Sha
 
 var inherits = __webpack_require__(1)
 var Hash = __webpack_require__(36)
-var Buffer = __webpack_require__(30).Buffer
+var Buffer = __webpack_require__(31).Buffer
 
 var K = [
   0x5a827999, 0x6ed9eba1, 0x8f1bbcdc | 0, 0xca62c1d6 | 0
@@ -83177,7 +83182,7 @@ module.exports = Sha1
 var inherits = __webpack_require__(1)
 var Sha256 = __webpack_require__(139)
 var Hash = __webpack_require__(36)
-var Buffer = __webpack_require__(30).Buffer
+var Buffer = __webpack_require__(31).Buffer
 
 var W = new Array(64)
 
@@ -83228,7 +83233,7 @@ module.exports = Sha224
 var inherits = __webpack_require__(1)
 var SHA512 = __webpack_require__(140)
 var Hash = __webpack_require__(36)
-var Buffer = __webpack_require__(30).Buffer
+var Buffer = __webpack_require__(31).Buffer
 
 var W = new Array(160)
 
@@ -87069,7 +87074,7 @@ var TEN = new BN(10);
 var THREE = new BN(3);
 var SEVEN = new BN(7);
 var primes = __webpack_require__(157);
-var randomBytes = __webpack_require__(35);
+var randomBytes = __webpack_require__(30);
 module.exports = DH;
 
 function setPublicKey(pub, enc) {
@@ -87482,7 +87487,7 @@ module.exports.makeKey = makeKey
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bn = __webpack_require__(9);
-var randomBytes = __webpack_require__(35);
+var randomBytes = __webpack_require__(30);
 module.exports = crt;
 function blind(priv) {
   var r = getr(priv);
@@ -87534,7 +87539,7 @@ function getr(priv) {
 /* 333 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptography","main":"lib/elliptic.js","files":["lib"],"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","unit":"istanbul test _mocha --reporter=spec test/index.js","test":"npm run lint && npm run unit","version":"grunt dist && git add dist/"},"repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"keywords":["EC","Elliptic","curve","Cryptography"],"author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"license":"MIT","bugs":{"url":"https://github.com/indutny/elliptic/issues"},"homepage":"https://github.com/indutny/elliptic","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"gitHead":"6b0d2b76caae91471649c8e21f0b1d3ba0f96090","_id":"elliptic@6.4.0","_shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","_from":"elliptic@>=6.0.0 <7.0.0","_npmVersion":"3.10.8","_nodeVersion":"7.0.0","_npmUser":{"name":"indutny","email":"fedor@indutny.com"},"dist":{"shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","tarball":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz"},"maintainers":[{"name":"indutny","email":"fedor@indutny.com"}],"_npmOperationalInternal":{"host":"packages-18-east.internal.npmjs.com","tmp":"tmp/elliptic-6.4.0.tgz_1487798866428_0.30510620190761983"},"directories":{},"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","readme":"ERROR: No README data found!"}
+module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptography","main":"lib/elliptic.js","files":["lib"],"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","unit":"istanbul test _mocha --reporter=spec test/index.js","test":"npm run lint && npm run unit","version":"grunt dist && git add dist/"},"repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"keywords":["EC","Elliptic","curve","Cryptography"],"author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"license":"MIT","bugs":{"url":"https://github.com/indutny/elliptic/issues"},"homepage":"https://github.com/indutny/elliptic","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"readme":"# Elliptic [![Build Status](https://secure.travis-ci.org/indutny/elliptic.png)](http://travis-ci.org/indutny/elliptic) [![Coverage Status](https://coveralls.io/repos/indutny/elliptic/badge.svg?branch=master&service=github)](https://coveralls.io/github/indutny/elliptic?branch=master) [![Code Climate](https://codeclimate.com/github/indutny/elliptic/badges/gpa.svg)](https://codeclimate.com/github/indutny/elliptic)\n\n[![Saucelabs Test Status](https://saucelabs.com/browser-matrix/gh-indutny-elliptic.svg)](https://saucelabs.com/u/gh-indutny-elliptic)\n\nFast elliptic-curve cryptography in a plain javascript implementation.\n\nNOTE: Please take a look at http://safecurves.cr.yp.to/ before choosing a curve\nfor your cryptography operations.\n\n## Incentive\n\nECC is much slower than regular RSA cryptography, the JS implementations are\neven more slower.\n\n## Benchmarks\n\n```bash\n$ node benchmarks/index.js\nBenchmarking: sign\nelliptic#sign x 262 ops/sec ±0.51% (177 runs sampled)\neccjs#sign x 55.91 ops/sec ±0.90% (144 runs sampled)\n------------------------\nFastest is elliptic#sign\n========================\nBenchmarking: verify\nelliptic#verify x 113 ops/sec ±0.50% (166 runs sampled)\neccjs#verify x 48.56 ops/sec ±0.36% (125 runs sampled)\n------------------------\nFastest is elliptic#verify\n========================\nBenchmarking: gen\nelliptic#gen x 294 ops/sec ±0.43% (176 runs sampled)\neccjs#gen x 62.25 ops/sec ±0.63% (129 runs sampled)\n------------------------\nFastest is elliptic#gen\n========================\nBenchmarking: ecdh\nelliptic#ecdh x 136 ops/sec ±0.85% (156 runs sampled)\n------------------------\nFastest is elliptic#ecdh\n========================\n```\n\n## API\n\n### ECDSA\n\n```javascript\nvar EC = require('elliptic').ec;\n\n// Create and initialize EC context\n// (better do it once and reuse it)\nvar ec = new EC('secp256k1');\n\n// Generate keys\nvar key = ec.genKeyPair();\n\n// Sign message (must be an array, or it'll be treated as a hex sequence)\nvar msg = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];\nvar signature = key.sign(msg);\n\n// Export DER encoded signature in Array\nvar derSign = signature.toDER();\n\n// Verify signature\nconsole.log(key.verify(msg, derSign));\n\n// CHECK WITH NO PRIVATE KEY\n\n// Public key as '04 + x + y'\nvar pub = '04bb1fa3...';\n\n// Signature MUST be either:\n// 1) hex-string of DER-encoded signature; or\n// 2) DER-encoded signature as buffer; or\n// 3) object with two hex-string properties (r and s)\n\nvar signature = 'b102ac...'; // case 1\nvar signature = new Buffer('...'); // case 2\nvar signature = { r: 'b1fc...', s: '9c42...' }; // case 3\n\n// Import public key\nvar key = ec.keyFromPublic(pub, 'hex');\n\n// Verify signature\nconsole.log(key.verify(msg, signature));\n```\n\n### EdDSA\n\n```javascript\nvar EdDSA = require('elliptic').eddsa;\n\n// Create and initialize EdDSA context\n// (better do it once and reuse it)\nvar ec = new EdDSA('ed25519');\n\n// Create key pair from secret\nvar key = ec.keyFromSecret('693e3c...'); // hex string, array or Buffer\n\n// Sign message (must be an array, or it'll be treated as a hex sequence)\nvar msg = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];\nvar signature = key.sign(msg).toHex();\n\n// Verify signature\nconsole.log(key.verify(msg, signature));\n\n// CHECK WITH NO PRIVATE KEY\n\n// Import public key\nvar pub = '0a1af638...';\nvar key = ec.keyFromPublic(pub, 'hex');\n\n// Verify signature\nvar signature = '70bed1...';\nconsole.log(key.verify(msg, signature));\n```\n\n### ECDH\n\n```javascript\nvar EC = require('elliptic').ec;\nvar ec = new EC('curve25519');\n\n// Generate keys\nvar key1 = ec.genKeyPair();\nvar key2 = ec.genKeyPair();\n\nvar shared1 = key1.derive(key2.getPublic());\nvar shared2 = key2.derive(key1.getPublic());\n\nconsole.log('Both shared secrets are BN instances');\nconsole.log(shared1.toString(16));\nconsole.log(shared2.toString(16));\n```\n\nthree and more members:\n```javascript\nvar EC = require('elliptic').ec;\nvar ec = new EC('curve25519');\n\nvar A = ec.genKeyPair();\nvar B = ec.genKeyPair();\nvar C = ec.genKeyPair();\n\nvar AB = A.getPublic().mul(B.getPrivate())\nvar BC = B.getPublic().mul(C.getPrivate())\nvar CA = C.getPublic().mul(A.getPrivate())\n\nvar ABC = AB.mul(C.getPrivate())\nvar BCA = BC.mul(A.getPrivate())\nvar CAB = CA.mul(B.getPrivate())\n\nconsole.log(ABC.getX().toString(16))\nconsole.log(BCA.getX().toString(16))\nconsole.log(CAB.getX().toString(16))\n```\n\nNOTE: `.derive()` returns a [BN][1] instance.\n\n## Supported curves\n\nElliptic.js support following curve types:\n\n* Short Weierstrass\n* Montgomery\n* Edwards\n* Twisted Edwards\n\nFollowing curve 'presets' are embedded into the library:\n\n* `secp256k1`\n* `p192`\n* `p224`\n* `p256`\n* `p384`\n* `p521`\n* `curve25519`\n* `ed25519`\n\nNOTE: That `curve25519` could not be used for ECDSA, use `ed25519` instead.\n\n### Implementation details\n\nECDSA is using deterministic `k` value generation as per [RFC6979][0]. Most of\nthe curve operations are performed on non-affine coordinates (either projective\nor extended), various windowing techniques are used for different cases.\n\nAll operations are performed in reduction context using [bn.js][1], hashing is\nprovided by [hash.js][2]\n\n### Related projects\n\n* [eccrypto][3]: isomorphic implementation of ECDSA, ECDH and ECIES for both\n  browserify and node (uses `elliptic` for browser and [secp256k1-node][4] for\n  node)\n\n#### LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2014.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n\n[0]: http://tools.ietf.org/html/rfc6979\n[1]: https://github.com/indutny/bn.js\n[2]: https://github.com/indutny/hash.js\n[3]: https://github.com/bitchan/eccrypto\n[4]: https://github.com/wanderer/secp256k1-node\n","readmeFilename":"README.md","_id":"elliptic@6.4.0","_shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","_from":"elliptic@>=6.0.0 <7.0.0"}
 
 /***/ }),
 /* 334 */
@@ -87545,7 +87550,7 @@ module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptogr
 
 var utils = exports;
 var BN = __webpack_require__(9);
-var minAssert = __webpack_require__(31);
+var minAssert = __webpack_require__(32);
 var minUtils = __webpack_require__(159);
 
 utils.assert = minAssert;
@@ -90241,7 +90246,7 @@ var sh = [
 
 
 var utils = __webpack_require__(17);
-var assert = __webpack_require__(31);
+var assert = __webpack_require__(32);
 
 function Hmac(hash, key, enc) {
   if (!(this instanceof Hmac))
@@ -91329,7 +91334,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 var hash = __webpack_require__(100);
 var utils = __webpack_require__(159);
-var assert = __webpack_require__(31);
+var assert = __webpack_require__(32);
 
 function HmacDRBG(options) {
   if (!(this instanceof HmacDRBG))
@@ -94289,7 +94294,7 @@ function formatReturnValue(bn, enc, len) {
 /* 383 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptography","main":"lib/elliptic.js","files":["lib"],"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","unit":"istanbul test _mocha --reporter=spec test/index.js","test":"npm run lint && npm run unit","version":"grunt dist && git add dist/"},"repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"keywords":["EC","Elliptic","curve","Cryptography"],"author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"license":"MIT","bugs":{"url":"https://github.com/indutny/elliptic/issues"},"homepage":"https://github.com/indutny/elliptic","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"gitHead":"6b0d2b76caae91471649c8e21f0b1d3ba0f96090","_id":"elliptic@6.4.0","_shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","_from":"elliptic@>=6.0.0 <7.0.0","_npmVersion":"3.10.8","_nodeVersion":"7.0.0","_npmUser":{"name":"indutny","email":"fedor@indutny.com"},"dist":{"shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","tarball":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz"},"maintainers":[{"name":"indutny","email":"fedor@indutny.com"}],"_npmOperationalInternal":{"host":"packages-18-east.internal.npmjs.com","tmp":"tmp/elliptic-6.4.0.tgz_1487798866428_0.30510620190761983"},"directories":{},"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","readme":"ERROR: No README data found!"}
+module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptography","main":"lib/elliptic.js","files":["lib"],"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","unit":"istanbul test _mocha --reporter=spec test/index.js","test":"npm run lint && npm run unit","version":"grunt dist && git add dist/"},"repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"keywords":["EC","Elliptic","curve","Cryptography"],"author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"license":"MIT","bugs":{"url":"https://github.com/indutny/elliptic/issues"},"homepage":"https://github.com/indutny/elliptic","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"readme":"# Elliptic [![Build Status](https://secure.travis-ci.org/indutny/elliptic.png)](http://travis-ci.org/indutny/elliptic) [![Coverage Status](https://coveralls.io/repos/indutny/elliptic/badge.svg?branch=master&service=github)](https://coveralls.io/github/indutny/elliptic?branch=master) [![Code Climate](https://codeclimate.com/github/indutny/elliptic/badges/gpa.svg)](https://codeclimate.com/github/indutny/elliptic)\n\n[![Saucelabs Test Status](https://saucelabs.com/browser-matrix/gh-indutny-elliptic.svg)](https://saucelabs.com/u/gh-indutny-elliptic)\n\nFast elliptic-curve cryptography in a plain javascript implementation.\n\nNOTE: Please take a look at http://safecurves.cr.yp.to/ before choosing a curve\nfor your cryptography operations.\n\n## Incentive\n\nECC is much slower than regular RSA cryptography, the JS implementations are\neven more slower.\n\n## Benchmarks\n\n```bash\n$ node benchmarks/index.js\nBenchmarking: sign\nelliptic#sign x 262 ops/sec ±0.51% (177 runs sampled)\neccjs#sign x 55.91 ops/sec ±0.90% (144 runs sampled)\n------------------------\nFastest is elliptic#sign\n========================\nBenchmarking: verify\nelliptic#verify x 113 ops/sec ±0.50% (166 runs sampled)\neccjs#verify x 48.56 ops/sec ±0.36% (125 runs sampled)\n------------------------\nFastest is elliptic#verify\n========================\nBenchmarking: gen\nelliptic#gen x 294 ops/sec ±0.43% (176 runs sampled)\neccjs#gen x 62.25 ops/sec ±0.63% (129 runs sampled)\n------------------------\nFastest is elliptic#gen\n========================\nBenchmarking: ecdh\nelliptic#ecdh x 136 ops/sec ±0.85% (156 runs sampled)\n------------------------\nFastest is elliptic#ecdh\n========================\n```\n\n## API\n\n### ECDSA\n\n```javascript\nvar EC = require('elliptic').ec;\n\n// Create and initialize EC context\n// (better do it once and reuse it)\nvar ec = new EC('secp256k1');\n\n// Generate keys\nvar key = ec.genKeyPair();\n\n// Sign message (must be an array, or it'll be treated as a hex sequence)\nvar msg = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];\nvar signature = key.sign(msg);\n\n// Export DER encoded signature in Array\nvar derSign = signature.toDER();\n\n// Verify signature\nconsole.log(key.verify(msg, derSign));\n\n// CHECK WITH NO PRIVATE KEY\n\n// Public key as '04 + x + y'\nvar pub = '04bb1fa3...';\n\n// Signature MUST be either:\n// 1) hex-string of DER-encoded signature; or\n// 2) DER-encoded signature as buffer; or\n// 3) object with two hex-string properties (r and s)\n\nvar signature = 'b102ac...'; // case 1\nvar signature = new Buffer('...'); // case 2\nvar signature = { r: 'b1fc...', s: '9c42...' }; // case 3\n\n// Import public key\nvar key = ec.keyFromPublic(pub, 'hex');\n\n// Verify signature\nconsole.log(key.verify(msg, signature));\n```\n\n### EdDSA\n\n```javascript\nvar EdDSA = require('elliptic').eddsa;\n\n// Create and initialize EdDSA context\n// (better do it once and reuse it)\nvar ec = new EdDSA('ed25519');\n\n// Create key pair from secret\nvar key = ec.keyFromSecret('693e3c...'); // hex string, array or Buffer\n\n// Sign message (must be an array, or it'll be treated as a hex sequence)\nvar msg = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];\nvar signature = key.sign(msg).toHex();\n\n// Verify signature\nconsole.log(key.verify(msg, signature));\n\n// CHECK WITH NO PRIVATE KEY\n\n// Import public key\nvar pub = '0a1af638...';\nvar key = ec.keyFromPublic(pub, 'hex');\n\n// Verify signature\nvar signature = '70bed1...';\nconsole.log(key.verify(msg, signature));\n```\n\n### ECDH\n\n```javascript\nvar EC = require('elliptic').ec;\nvar ec = new EC('curve25519');\n\n// Generate keys\nvar key1 = ec.genKeyPair();\nvar key2 = ec.genKeyPair();\n\nvar shared1 = key1.derive(key2.getPublic());\nvar shared2 = key2.derive(key1.getPublic());\n\nconsole.log('Both shared secrets are BN instances');\nconsole.log(shared1.toString(16));\nconsole.log(shared2.toString(16));\n```\n\nthree and more members:\n```javascript\nvar EC = require('elliptic').ec;\nvar ec = new EC('curve25519');\n\nvar A = ec.genKeyPair();\nvar B = ec.genKeyPair();\nvar C = ec.genKeyPair();\n\nvar AB = A.getPublic().mul(B.getPrivate())\nvar BC = B.getPublic().mul(C.getPrivate())\nvar CA = C.getPublic().mul(A.getPrivate())\n\nvar ABC = AB.mul(C.getPrivate())\nvar BCA = BC.mul(A.getPrivate())\nvar CAB = CA.mul(B.getPrivate())\n\nconsole.log(ABC.getX().toString(16))\nconsole.log(BCA.getX().toString(16))\nconsole.log(CAB.getX().toString(16))\n```\n\nNOTE: `.derive()` returns a [BN][1] instance.\n\n## Supported curves\n\nElliptic.js support following curve types:\n\n* Short Weierstrass\n* Montgomery\n* Edwards\n* Twisted Edwards\n\nFollowing curve 'presets' are embedded into the library:\n\n* `secp256k1`\n* `p192`\n* `p224`\n* `p256`\n* `p384`\n* `p521`\n* `curve25519`\n* `ed25519`\n\nNOTE: That `curve25519` could not be used for ECDSA, use `ed25519` instead.\n\n### Implementation details\n\nECDSA is using deterministic `k` value generation as per [RFC6979][0]. Most of\nthe curve operations are performed on non-affine coordinates (either projective\nor extended), various windowing techniques are used for different cases.\n\nAll operations are performed in reduction context using [bn.js][1], hashing is\nprovided by [hash.js][2]\n\n### Related projects\n\n* [eccrypto][3]: isomorphic implementation of ECDSA, ECDH and ECIES for both\n  browserify and node (uses `elliptic` for browser and [secp256k1-node][4] for\n  node)\n\n#### LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2014.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n\n[0]: http://tools.ietf.org/html/rfc6979\n[1]: https://github.com/indutny/bn.js\n[2]: https://github.com/indutny/hash.js\n[3]: https://github.com/bitchan/eccrypto\n[4]: https://github.com/wanderer/secp256k1-node\n","readmeFilename":"README.md","_id":"elliptic@6.4.0","_shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","_from":"elliptic@>=6.0.0 <7.0.0"}
 
 /***/ }),
 /* 384 */
@@ -94300,7 +94305,7 @@ module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptogr
 
 var utils = exports;
 var BN = __webpack_require__(18);
-var minAssert = __webpack_require__(32);
+var minAssert = __webpack_require__(33);
 var minUtils = __webpack_require__(178);
 
 utils.assert = minAssert;
@@ -97002,7 +97007,7 @@ var sh = [
 
 
 var utils = __webpack_require__(19);
-var assert = __webpack_require__(32);
+var assert = __webpack_require__(33);
 
 function Hmac(hash, key, enc) {
   if (!(this instanceof Hmac))
@@ -98090,7 +98095,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 var hash = __webpack_require__(102);
 var utils = __webpack_require__(178);
-var assert = __webpack_require__(32);
+var assert = __webpack_require__(33);
 
 function HmacDRBG(options) {
   if (!(this instanceof HmacDRBG))
@@ -98790,7 +98795,7 @@ exports.publicDecrypt = function publicDecrypt(key, buf) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(182);
-var randomBytes = __webpack_require__(35);
+var randomBytes = __webpack_require__(30);
 var createHash = __webpack_require__(45);
 var mgf = __webpack_require__(195);
 var xor = __webpack_require__(196);
@@ -101047,6 +101052,190 @@ function compare(a, b){
   return dif;
 }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 435 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global, process) {
+
+function oldBrowser () {
+  throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11')
+}
+var safeBuffer = __webpack_require__(436)
+var randombytes = __webpack_require__(30)
+var Buffer = safeBuffer.Buffer
+var kBufferMaxLength = safeBuffer.kMaxLength
+var crypto = global.crypto || global.msCrypto
+var kMaxUint32 = Math.pow(2, 32) - 1
+function assertOffset (offset, length) {
+  if (typeof offset !== 'number' || offset !== offset) { // eslint-disable-line no-self-compare
+    throw new TypeError('offset must be a number')
+  }
+
+  if (offset > kMaxUint32 || offset < 0) {
+    throw new TypeError('offset must be a uint32')
+  }
+
+  if (offset > kBufferMaxLength || offset > length) {
+    throw new RangeError('offset out of range')
+  }
+}
+
+function assertSize (size, offset, length) {
+  if (typeof size !== 'number' || size !== size) { // eslint-disable-line no-self-compare
+    throw new TypeError('size must be a number')
+  }
+
+  if (size > kMaxUint32 || size < 0) {
+    throw new TypeError('size must be a uint32')
+  }
+
+  if (size + offset > length || size > kBufferMaxLength) {
+    throw new RangeError('buffer too small')
+  }
+}
+if ((crypto && crypto.getRandomValues) || !process.browser) {
+  exports.randomFill = randomFill
+  exports.randomFillSync = randomFillSync
+} else {
+  exports.randomFill = oldBrowser
+  exports.randomFillSync = oldBrowser
+}
+function randomFill (buf, offset, size, cb) {
+  if (!Buffer.isBuffer(buf) && !(buf instanceof global.Uint8Array)) {
+    throw new TypeError('"buf" argument must be a Buffer or Uint8Array')
+  }
+
+  if (typeof offset === 'function') {
+    cb = offset
+    offset = 0
+    size = buf.length
+  } else if (typeof size === 'function') {
+    cb = size
+    size = buf.length - offset
+  } else if (typeof cb !== 'function') {
+    throw new TypeError('"cb" argument must be a function')
+  }
+  assertOffset(offset, buf.length)
+  assertSize(size, offset, buf.length)
+  return actualFill(buf, offset, size, cb)
+}
+
+function actualFill (buf, offset, size, cb) {
+  if (process.browser) {
+    var ourBuf = buf.buffer
+    var uint = new Uint8Array(ourBuf, offset, size)
+    crypto.getRandomValues(uint)
+    if (cb) {
+      process.nextTick(function () {
+        cb(null, buf)
+      })
+      return
+    }
+    return buf
+  }
+  if (cb) {
+    randombytes(size, function (err, bytes) {
+      if (err) {
+        return cb(err)
+      }
+      bytes.copy(buf, offset)
+      cb(null, buf)
+    })
+    return
+  }
+  var bytes = randombytes(size)
+  bytes.copy(buf, offset)
+  return buf
+}
+function randomFillSync (buf, offset, size) {
+  if (typeof offset === 'undefined') {
+    offset = 0
+  }
+  if (!Buffer.isBuffer(buf) && !(buf instanceof global.Uint8Array)) {
+    throw new TypeError('"buf" argument must be a Buffer or Uint8Array')
+  }
+
+  assertOffset(offset, buf.length)
+
+  if (size === undefined) size = buf.length - offset
+
+  assertSize(size, offset, buf.length)
+
+  return actualFill(buf, offset, size)
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
+
+/***/ }),
+/* 436 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* eslint-disable node/no-deprecated-api */
+var buffer = __webpack_require__(0)
+var Buffer = buffer.Buffer
+
+// alternative to using Object.keys for old browsers
+function copyProps (src, dst) {
+  for (var key in src) {
+    dst[key] = src[key]
+  }
+}
+if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
+  module.exports = buffer
+} else {
+  // Copy properties from require('buffer')
+  copyProps(buffer, exports)
+  exports.Buffer = SafeBuffer
+}
+
+function SafeBuffer (arg, encodingOrOffset, length) {
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+// Copy static methods from Buffer
+copyProps(Buffer, SafeBuffer)
+
+SafeBuffer.from = function (arg, encodingOrOffset, length) {
+  if (typeof arg === 'number') {
+    throw new TypeError('Argument must not be a number')
+  }
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+SafeBuffer.alloc = function (size, fill, encoding) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  var buf = Buffer(size)
+  if (fill !== undefined) {
+    if (typeof encoding === 'string') {
+      buf.fill(fill, encoding)
+    } else {
+      buf.fill(fill)
+    }
+  } else {
+    buf.fill(0)
+  }
+  return buf
+}
+
+SafeBuffer.allocUnsafe = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return Buffer(size)
+}
+
+SafeBuffer.allocUnsafeSlow = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return buffer.SlowBuffer(size)
+}
+
 
 /***/ })
 /******/ ]);

@@ -38,6 +38,20 @@ describe('ScopedKeys', function () {
       });
   });
 
+  it('should match the output of test vectors generated via python script', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: '8b2e1303e21eee06a945683b8d495b9bf079ca30baa37eb8392d9ffa4767be45',
+      keyRotationSecret: '517d478cb4f994aa69930416648a416fdaa1762c5abf401a2acf11a0f185e98d',
+      keyRotationTimestamp: 1510726317000,
+      identifier: 'app_key:https%3A//example.com'
+    })
+      .then((key) => {
+        assert.equal(key.kty, 'oct');
+        assert.equal(key.k, 'rTcZ5olrrJWqVD6bVtLjHJT0P6d_9IdpEgWT4zVzMb0');
+        assert.equal(key.kid, '1510726317-UvyHCg_RD3zKl_hQdlRsfw');
+      });
+  });
+
   it('validates keyRotationTimestamp', () => {
     return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
