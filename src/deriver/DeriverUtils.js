@@ -22,6 +22,18 @@ class DeriverUtils {
 
     return jose.JWK.asKey(appJwk)
       .then(function (key) {
+        // To help reliers do the right thing, we reject keys that aren't exactly as we expect.
+        // In the future we might open up to additional key types, but for now it's better to
+        // be strict in what we accept.
+        if (key.kty !== 'EC') {
+          throw new Error('appJwk is not an EC key');
+        }
+        if (key.get('crv') !== 'P-256') {
+          throw new Error('appJwk is not on curve P-256');
+        }
+        if (key.has('d', true)) {
+          throw new Error('appJwk includes the private key');
+        }
         const recipient = {
           key: key,
           header: {
