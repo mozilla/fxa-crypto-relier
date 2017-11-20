@@ -10,13 +10,15 @@ describe('ScopedKeys', function () {
   const identifier = 'https://identity.mozilla.com/apps/notes';
   const keyRotationTimestamp = 1494446722583; // GMT Wednesday, May 10, 2017 8:05:22.583 PM
   const keyRotationSecret = '0000000000000000000000000000000000000000000000000000000000000000';
+  const uid = 'aeaa1725c7a24ff983c6295725d5fc9b';
 
   it('should have HKDF work', () => {
     return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
       keyRotationSecret: keyRotationSecret,
       keyRotationTimestamp: keyRotationTimestamp,
-      identifier: identifier
+      identifier: identifier,
+      uid: uid
     })
       .then((key) => {
         const importSpec = {
@@ -24,8 +26,8 @@ describe('ScopedKeys', function () {
         };
 
         assert.equal(key.kty, 'oct');
-        assert.equal(key.k, 'H8qB9ru8V-eDEkRwT8vox3On-iv9Zt_EtnUPCHw9gkw');
-        assert.equal(key.kid, '1494446723-AnJcmHpTKkeFJcT-4d6cjg');
+        assert.equal(key.k, 'b9SaftekqPfXDOEeZx8714ktkcG9mBbNnKIyoUmhShE');
+        assert.equal(key.kid, '1494446723-sXWpWP2sQkP-KsjIPGm1gg');
         assert.equal(key.scope, identifier);
         return window.crypto.subtle.importKey('jwk', key, importSpec, false, ['encrypt']).then(function (rawKey) {
           assert.equal(rawKey.type, 'secret');
@@ -43,12 +45,13 @@ describe('ScopedKeys', function () {
       inputKey: '8b2e1303e21eee06a945683b8d495b9bf079ca30baa37eb8392d9ffa4767be45',
       keyRotationSecret: '517d478cb4f994aa69930416648a416fdaa1762c5abf401a2acf11a0f185e98d',
       keyRotationTimestamp: 1510726317000,
-      identifier: 'app_key:https%3A//example.com'
+      identifier: 'app_key:https%3A//example.com',
+      uid: uid
     })
       .then((key) => {
         assert.equal(key.kty, 'oct');
-        assert.equal(key.k, 'rTcZ5olrrJWqVD6bVtLjHJT0P6d_9IdpEgWT4zVzMb0');
-        assert.equal(key.kid, '1510726317-UvyHCg_RD3zKl_hQdlRsfw');
+        assert.equal(key.k, 'Kkbk1_Q0oCcTmggeDH6880bQrxin2RLu5D00NcJazdQ');
+        assert.equal(key.kid, '1510726317-Voc-Eb9IpoTINuo9ll7bjA');
       });
   });
 
@@ -57,11 +60,24 @@ describe('ScopedKeys', function () {
       inputKey: sampleKb,
       keyRotationSecret: keyRotationSecret,
       keyRotationTimestamp: 100,
-      identifier: identifier
+      identifier: identifier,
+      uid: uid
     }).catch((err) => {
       assert.equal(err.message, 'keyRotationTimestamp must be a 13-digit number');
     });
   });
+
+  it('validates uid', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: 100,
+      identifier: identifier
+    }).catch((err) => {
+      assert.equal(err.message, 'uid required');
+    });
+  });
+
 
   describe('_deriveHKDF', () => {
     it('vector 1', () => {
