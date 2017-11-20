@@ -46,6 +46,7 @@ public_client = True
 
 kB = unhexlify('8b2e1303e21eee06a945683b8d495b9bf079ca30baa37eb8392d9ffa4767be45')
 key_rotation_secret = unhexlify('517d478cb4f994aa69930416648a416fdaa1762c5abf401a2acf11a0f185e98d')
+uid = unhexlify('aeaa1725c7a24ff983c6295725d5fc9b')
 key_rotation_timestamp = 1510726317
 
 assert len(kB) == 32
@@ -97,7 +98,7 @@ print "key_rotation_timestamp:\t{}".format(key_rotation_timestamp)
 # Calculate the scoped key and its fingerprint via HKDF.
 
 context = 'identity.mozilla.com/picl/v1/scoped_key\n' + scoped_key_identifier
-ks_bytes = hkdf.Hkdf(None, kB + key_rotation_secret).expand(context, 16 + 32)
+ks_bytes = hkdf.Hkdf(uid, kB + key_rotation_secret).expand(context, 16 + 32)
 
 kSfp = ks_bytes[:16]
 kS = ks_bytes[16:]

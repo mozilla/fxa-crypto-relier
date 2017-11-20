@@ -82650,7 +82650,8 @@ var KEY_LENGTH = 48;
  *   identifier: 'https://identity.mozilla.com/apps/notes',
  *   inputKey: 'bc3851e9e610f631df94d7883d5defd5e5f55ab520bd5a9ae33dae26575c6b1a',
  *   keyRotationSecret: '0000000000000000000000000000000000000000000000000000000000000000',
- *   keyRotationTimestamp: 1494446722583
+ *   keyRotationTimestamp: 1494446722583,
+ *   uid: 'aeaa1725c7a24ff983c6295725d5fc9b'
  * });
  * ```
  */
@@ -82672,6 +82673,7 @@ var ScopedKeys = function () {
      * @param {number} options.keyRotationTimestamp
      *   A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed
      * @param {string} options.identifier - a unique URI string identifying the requested scoped key
+     * @param {string} options.uid - a 16-byte Firefox Account UID hex string
      * @returns {Promise}
      */
     value: function deriveScopedKey(options) {
@@ -82694,15 +82696,19 @@ var ScopedKeys = function () {
           throw new Error('identifier required');
         }
 
+        if (!options.uid) {
+          throw new Error('uid required');
+        }
+
         if (options.keyRotationTimestamp.toString().length !== 13) {
           throw new Error('keyRotationTimestamp must be a 13-digit number');
         }
 
         var context = 'identity.mozilla.com/picl/v1/scoped_key\n' + options.identifier;
+        var contextBuf = Buffer.from(context);
         var inputKeyBuf = Buffer.from(options.inputKey, 'hex');
         var keyRotationSecretBuf = Buffer.from(options.keyRotationSecret, 'hex');
-        var contextBuf = Buffer.from(context);
-        var saltBuf = Buffer.from('');
+        var saltBuf = Buffer.from(options.uid, 'hex');
         var scopedKey = {
           kty: 'oct',
           scope: options.identifier
