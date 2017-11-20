@@ -1,3 +1,13 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.0.1...v2.1.0) (2017-11-20)
+
+
+### Features
+
+* **keys:** add UID salt ([#9](https://github.com/mozilla/fxa-crypto-relier/issues/9)) r=[@rfk](https://github.com/rfk) ([3aae563](https://github.com/mozilla/fxa-crypto-relier/commit/3aae563))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/mozilla/fxa-crypto-relier/compare/v2.0.0...v2.0.1) (2017-11-16)
 
