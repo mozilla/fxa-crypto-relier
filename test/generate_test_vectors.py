@@ -50,6 +50,7 @@ uid = unhexlify('aeaa1725c7a24ff983c6295725d5fc9b')
 key_rotation_timestamp = 1510726317
 
 assert len(kB) == 32
+assert len(uid) == 16
 assert len(key_rotation_secret) == 32
 
 # Here's the start of the OAuth dance.
@@ -73,6 +74,7 @@ keys_jwk_private = {
     "x":   "SiBn6uebjigmQqw4TpNzs3AUyCae1_sG2b9Fzhq3Fyo",
     "y":   "q99Xq1RWNTFpk99pdQOSjUvwELss51PkmAGCXhLfMV4"
 }
+print "rp ephemeral key:\t'{}'".format(json_encode(keys_jwk_private))
 
 keys_jwk_public = keys_jwk_private.copy()
 del keys_jwk_public['d']
@@ -84,6 +86,7 @@ print "keys_jwk:\t'{}'".format(keys_jwk)
 
 # Authenticate the user, fetch and unwrap kB.
 
+print "uid:\t<{}>".format(hexlify(uid))
 print "kB:\t<{}>".format(hexlify(kB))
 
 # Validate OAuth client details, and fetch scoped-key metadata.
@@ -133,6 +136,7 @@ epk = {
     "y": "4ncUxN6x_xT1T1kzy_S_V2fYZ7uUJT_HVRNZBLJRsxU"
 }
 jwcrypto.jwa.JWK.generate = classmethod(lambda c, **k: jwcrypto.jwk.JWK(**epk))
+print "fxa ephemeral key:\t'{}'".format(json_encode(epk))
 
 iv = unhexlify('ff4b187fb1dd5ae46fd9c334')
 jwcrypto.jwa._randombits = lambda s: iv
