@@ -31,7 +31,7 @@ describe('KeyUtils', function () {
 
     it('can decrypt a bundle', () => {
       const derivedKeys = {
-        'https://identity.mozilla.org/apps/notes': {
+        'https://identity.mozilla.com/apps/notes': {
           'kid': '<opaque key identifier>',
           'k': '<notes encryption key, b64url-encoded>',
           'kty': 'oct'
