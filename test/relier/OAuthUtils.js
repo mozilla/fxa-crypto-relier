@@ -6,7 +6,7 @@ describe('OAuthUtils', function () {
   const util = window.fxaCryptoRelier.OAuthUtils.__util;
   let keysJwk;
   let keysJwe;
-  let exampleScope = 'https://identity.mozilla.org/apps/notes';
+  let exampleScope = 'https://identity.mozilla.com/apps/notes';
   let keySample = {
     [exampleScope]: {
       kty: 'oct',

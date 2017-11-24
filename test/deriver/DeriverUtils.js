@@ -6,7 +6,7 @@ describe('DeriverUtils', function () {
   const deriverUtils = new window.fxaCryptoDeriver.DeriverUtils();
   const b64urlencode = window.fxaCryptoDeriver.jose.util.base64url.encode;
 
-  const exampleScope = 'https://identity.mozilla.org/apps/notes';
+  const exampleScope = 'https://identity.mozilla.com/apps/notes';
   const keySample = {
     [exampleScope]: {
       kty: 'oct',

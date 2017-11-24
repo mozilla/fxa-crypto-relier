@@ -59866,9 +59866,9 @@ var OAUTH_SERVER_URL = 'https://oauth.accounts.firefox.com/v1';
  *
  * fxaKeysUtil.launchWebExtensionKeyFlow('YOUR_CLIENT_ID', {
  *   redirectUri: browser.identity.getRedirectURL(),
- *   scopes: ['profile', 'https://identity.mozilla.org/apps/lockbox'],
+ *   scopes: ['profile', 'https://identity.mozilla.com/apps/lockbox'],
  * }).then((loginDetails) => {
- *   const key = loginDetails.keys['https://identity.mozilla.org/apps/lockbox'];
+ *   const key = loginDetails.keys['https://identity.mozilla.com/apps/lockbox'];
  *   const credentials = {
  *     access_token: loginDetails.access_token,
  *     refresh_token: loginDetails.refresh_token,
