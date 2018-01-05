@@ -60,7 +60,7 @@ define("fxaCryptoDeriver", [], function() { return /******/ (function(modules) {
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 198);
+/******/ 	return __webpack_require__(__webpack_require__.s = 199);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,9 +78,9 @@ define("fxaCryptoDeriver", [], function() { return /******/ (function(modules) {
 
 
 
-var base64 = __webpack_require__(201)
-var ieee754 = __webpack_require__(202)
-var isArray = __webpack_require__(203)
+var base64 = __webpack_require__(202)
+var ieee754 = __webpack_require__(203)
+var isArray = __webpack_require__(204)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -4872,7 +4872,7 @@ util.estimateCores = function(options, callback) {
   }
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(75).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(74).setImmediate))
 
 /***/ }),
 /* 4 */
@@ -4916,21 +4916,21 @@ module.exports = g;
 var forge = __webpack_require__(2);
 __webpack_require__(39);
 __webpack_require__(23);
+__webpack_require__(75);
 __webpack_require__(76);
+__webpack_require__(108);
 __webpack_require__(77);
-__webpack_require__(107);
-__webpack_require__(78);
 __webpack_require__(40);
-__webpack_require__(109);
-__webpack_require__(206);
-__webpack_require__(208);
-__webpack_require__(114);
-__webpack_require__(111);
-__webpack_require__(82);
-__webpack_require__(24);
-__webpack_require__(79);
 __webpack_require__(110);
-__webpack_require__(211);
+__webpack_require__(208);
+__webpack_require__(210);
+__webpack_require__(115);
+__webpack_require__(112);
+__webpack_require__(81);
+__webpack_require__(24);
+__webpack_require__(78);
+__webpack_require__(111);
+__webpack_require__(213);
 __webpack_require__(3);
 
 // Define AES "raw" cipher mode
@@ -5005,7 +5005,7 @@ if ("function" === typeof setImmediate) {
 
 module.exports = forge;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(75).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(74).setImmediate))
 
 /***/ }),
 /* 6 */
@@ -5247,7 +5247,7 @@ function randomBytes(len) {
 
 util = {
   base64url: __webpack_require__(57),
-  utf8: __webpack_require__(214),
+  utf8: __webpack_require__(216),
   asBuffer: asBuffer,
   randomBytes: randomBytes
 };
@@ -5282,15 +5282,15 @@ module.exports = util;
 
 module.exports = Stream;
 
-var EE = __webpack_require__(89).EventEmitter;
-var inherits = __webpack_require__(238);
+var EE = __webpack_require__(90).EventEmitter;
+var inherits = __webpack_require__(243);
 
 inherits(Stream, EE);
-Stream.Readable = __webpack_require__(90);
-Stream.Writable = __webpack_require__(245);
-Stream.Duplex = __webpack_require__(246);
-Stream.Transform = __webpack_require__(247);
-Stream.PassThrough = __webpack_require__(248);
+Stream.Readable = __webpack_require__(91);
+Stream.Writable = __webpack_require__(250);
+Stream.Duplex = __webpack_require__(251);
+Stream.Transform = __webpack_require__(252);
+Stream.PassThrough = __webpack_require__(253);
 
 // Backwards-compat with node 0.4.x
 Stream.Stream = Stream;
@@ -5444,7 +5444,7 @@ Stream.prototype.pipe = function(dest, options) {
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(333).Buffer;
+    Buffer = __webpack_require__(334).Buffer;
   } catch (e) {
   }
 
@@ -8831,15 +8831,15 @@ Stream.prototype.pipe = function(dest, options) {
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(334).version;
-elliptic.utils = __webpack_require__(335);
-elliptic.rand = __webpack_require__(336);
+elliptic.version = __webpack_require__(335).version;
+elliptic.utils = __webpack_require__(336);
+elliptic.rand = __webpack_require__(337);
 elliptic.curve = __webpack_require__(67);
-elliptic.curves = __webpack_require__(342);
+elliptic.curves = __webpack_require__(343);
 
 // Protocols
-elliptic.ec = __webpack_require__(350);
-elliptic.eddsa = __webpack_require__(354);
+elliptic.ec = __webpack_require__(351);
+elliptic.eddsa = __webpack_require__(355);
 
 
 /***/ }),
@@ -8851,15 +8851,15 @@ elliptic.eddsa = __webpack_require__(354);
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(384).version;
-elliptic.utils = __webpack_require__(385);
-elliptic.rand = __webpack_require__(387);
+elliptic.version = __webpack_require__(385).version;
+elliptic.utils = __webpack_require__(386);
+elliptic.rand = __webpack_require__(388);
 elliptic.curve = __webpack_require__(70);
-elliptic.curves = __webpack_require__(393);
+elliptic.curves = __webpack_require__(394);
 
 // Protocols
-elliptic.ec = __webpack_require__(401);
-elliptic.eddsa = __webpack_require__(405);
+elliptic.ec = __webpack_require__(402);
+elliptic.eddsa = __webpack_require__(406);
 
 
 /***/ }),
@@ -8908,9 +8908,6 @@ function getCryptoSubtle() {
     if ("undefined" !== typeof crypto.subtle) {
       return crypto.subtle;
     }
-    if ("undefined" !== typeof crypto.webkitSubtle) {
-      return crypto.webkitSubtle;
-    }
   }
 
   return undefined;
@@ -8918,7 +8915,7 @@ function getCryptoSubtle() {
 function getCryptoNodeJS() {
   var crypto;
   try {
-    crypto = __webpack_require__(204);
+    crypto = __webpack_require__(223);
   } catch (err) {
     return undefined;
   }
@@ -9611,7 +9608,7 @@ exports.shr64_lo = shr64_lo;
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(386).Buffer;
+    Buffer = __webpack_require__(387).Buffer;
   } catch (e) {
   }
 
@@ -13253,65 +13250,6 @@ exports.shr64_lo = shr64_lo;
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/*!
- * algorithms/constants.js - Constants used in Cryptographic Algorithms
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
- 
-
-module.exports = {
-  CHUNK_SIZE: 1024,
-  HASHLENGTH: {
-    "SHA-1": 160,
-    "SHA-256": 256,
-    "SHA-384": 384,
-    "SHA-512": 512
-  },
-  ENCLENGTH: {
-    "AES-128-CBC": 128,
-    "AES-192-CBC": 192,
-    "AES-256-CBC": 256,
-    "AES-128-KW": 128,
-    "AES-192-KW": 192,
-    "AES-256-KW": 256
-  },
-  KEYLENGTH: {
-    "A128CBC-HS256": 256,
-    "A192CBC-HS384": 384,
-    "A256CBC-HS512": 512,
-    "A128CBC+HS256": 256,
-    "A192CBC+HS384": 384,
-    "A256CBC+HS512": 512,
-    "A128GCM": 128,
-    "A192GCM": 192,
-    "A256GCM": 256,
-    "A128KW": 128,
-    "A192KW": 192,
-    "A256KW": 256,
-    "ECDH-ES+A128KW": 128,
-    "ECDH-ES+A192KW": 192,
-    "ECDH-ES+A256KW": 256
-  },
-  NONCELENGTH: {
-    "A128CBC-HS256": 128,
-    "A192CBC-HS384": 128,
-    "A256CBC-HS512": 128,
-    "A128CBC+HS256": 128,
-    "A192CBC+HS384": 128,
-    "A256CBC+HS512": 128,
-    "A128GCM": 96,
-    "A192GCM": 96,
-    "A256GCM": 96
-  }
-};
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
 /* WEBPACK VAR INJECTION */(function(global, module) {/**
  * lodash (Custom Build) <https://lodash.com/>
  * Build: `lodash modularize exports="npm" -o ./`
@@ -15072,6 +15010,65 @@ module.exports = clone;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(34)(module)))
 
 /***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * algorithms/constants.js - Constants used in Cryptographic Algorithms
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+ 
+
+module.exports = {
+  CHUNK_SIZE: 1024,
+  HASHLENGTH: {
+    "SHA-1": 160,
+    "SHA-256": 256,
+    "SHA-384": 384,
+    "SHA-512": 512
+  },
+  ENCLENGTH: {
+    "AES-128-CBC": 128,
+    "AES-192-CBC": 192,
+    "AES-256-CBC": 256,
+    "AES-128-KW": 128,
+    "AES-192-KW": 192,
+    "AES-256-KW": 256
+  },
+  KEYLENGTH: {
+    "A128CBC-HS256": 256,
+    "A192CBC-HS384": 384,
+    "A256CBC-HS512": 512,
+    "A128CBC+HS256": 256,
+    "A192CBC+HS384": 384,
+    "A256CBC+HS512": 512,
+    "A128GCM": 128,
+    "A192GCM": 192,
+    "A256GCM": 256,
+    "A128KW": 128,
+    "A192KW": 192,
+    "A256KW": 256,
+    "ECDH-ES+A128KW": 128,
+    "ECDH-ES+A192KW": 192,
+    "ECDH-ES+A256KW": 256
+  },
+  NONCELENGTH: {
+    "A128CBC-HS256": 128,
+    "A192CBC-HS384": 128,
+    "A256CBC-HS512": 128,
+    "A128CBC+HS256": 128,
+    "A192CBC+HS384": 128,
+    "A256CBC+HS512": 128,
+    "A128GCM": 96,
+    "A192GCM": 96,
+    "A256GCM": 96
+  }
+};
+
+
+/***/ }),
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15280,7 +15277,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
  */
 var forge = __webpack_require__(2);
 __webpack_require__(3);
-__webpack_require__(26);
+__webpack_require__(27);
 
 /* ASN.1 API */
 var asn1 = module.exports = forge.asn1 = forge.asn1 || {};
@@ -16574,8 +16571,8 @@ asn1.prettyPrint = function(obj, level, indentation) {
  */
 var forge = __webpack_require__(2);
 __webpack_require__(39);
-__webpack_require__(110);
 __webpack_require__(111);
+__webpack_require__(112);
 __webpack_require__(3);
 
 (function() {
@@ -16757,7 +16754,7 @@ module.exports = forge.random;
 "use strict";
 
 
-var Buffer = __webpack_require__(243).Buffer;
+var Buffer = __webpack_require__(248).Buffer;
 
 var isEncoding = Buffer.isEncoding || function (encoding) {
   encoding = '' + encoding;
@@ -17032,6 +17029,76 @@ function simpleEnd(buf) {
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * util/utf8.js - Implementation of UTF-8 Encoder/Decoder
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
+ */
+
+
+var partialRight = __webpack_require__(205),
+    merge = __webpack_require__(206);
+
+var typedArrayCtors = (function() {
+  var ctors = [];
+  if ("undefined" !== typeof Uint8ClampedArray) {
+    ctors.push(Uint8ClampedArray);
+  }
+  if ("undefined" !== typeof Uint8Array) {
+    ctors.push(Uint8Array);
+  }
+  if ("undefined" !== typeof Uint16Array) {
+    ctors.push(Uint16Array);
+  }
+  if ("undefined" !== typeof Uint32Array) {
+    ctors.push(Uint32Array);
+  }
+  if ("undefined" !== typeof Float32Array) {
+    ctors.push(Float32Array);
+  }
+  if ("undefined" !== typeof Float64Array) {
+    ctors.push(Float64Array);
+  }
+  return ctors;
+})();
+
+function findTypedArrayFor(ta) {
+  var ctor;
+  for (var idx = 0; !ctor && typedArrayCtors.length > idx; idx++) {
+    if (ta instanceof typedArrayCtors[idx]) {
+      ctor = typedArrayCtors[idx];
+    }
+  }
+  return ctor;
+}
+
+function mergeBuffer(a, b) {
+  // TODO: should this be a copy, or the reference itself?
+  if (Buffer.isBuffer(b)) {
+    b = new Buffer(b);
+  } else {
+    var Ctor = findTypedArrayFor(b);
+    b = Ctor ?
+        new Ctor(b, b.byteOffset, b.byteLength) :
+        undefined;
+  }
+
+  // TODO: QUESTION: create a merged <whatever-a-is>??
+  // for now, a is b
+  a = b;
+
+  return b;
+}
+
+module.exports = partialRight(merge, mergeBuffer);
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /**
  * Object IDs for ASN.1.
  *
@@ -17194,7 +17261,7 @@ _IN('1.3.6.1.5.5.7.3.8', 'timeStamping');
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -17209,76 +17276,6 @@ var forge = __webpack_require__(2);
 module.exports = forge.md = forge.md || {};
 forge.md.algorithms = forge.md.algorithms || {};
 
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * util/utf8.js - Implementation of UTF-8 Encoder/Decoder
- *
- * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
- */
-
-
-var partialRight = __webpack_require__(222),
-    merge = __webpack_require__(223);
-
-var typedArrayCtors = (function() {
-  var ctors = [];
-  if ("undefined" !== typeof Uint8ClampedArray) {
-    ctors.push(Uint8ClampedArray);
-  }
-  if ("undefined" !== typeof Uint8Array) {
-    ctors.push(Uint8Array);
-  }
-  if ("undefined" !== typeof Uint16Array) {
-    ctors.push(Uint16Array);
-  }
-  if ("undefined" !== typeof Uint32Array) {
-    ctors.push(Uint32Array);
-  }
-  if ("undefined" !== typeof Float32Array) {
-    ctors.push(Float32Array);
-  }
-  if ("undefined" !== typeof Float64Array) {
-    ctors.push(Float64Array);
-  }
-  return ctors;
-})();
-
-function findTypedArrayFor(ta) {
-  var ctor;
-  for (var idx = 0; !ctor && typedArrayCtors.length > idx; idx++) {
-    if (ta instanceof typedArrayCtors[idx]) {
-      ctor = typedArrayCtors[idx];
-    }
-  }
-  return ctor;
-}
-
-function mergeBuffer(a, b) {
-  // TODO: should this be a copy, or the reference itself?
-  if (Buffer.isBuffer(b)) {
-    b = new Buffer(b);
-  } else {
-    var Ctor = findTypedArrayFor(b);
-    b = Ctor ?
-        new Ctor(b, b.byteOffset, b.byteLength) :
-        undefined;
-  }
-
-  // TODO: QUESTION: create a merged <whatever-a-is>??
-  // for now, a is b
-  a = b;
-
-  return b;
-}
-
-module.exports = partialRight(merge, mergeBuffer);
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
 /* 29 */
@@ -17334,8 +17331,8 @@ var util = __webpack_require__(43);
 util.inherits = __webpack_require__(44);
 /*</replacement>*/
 
-var Readable = __webpack_require__(130);
-var Writable = __webpack_require__(92);
+var Readable = __webpack_require__(131);
+var Writable = __webpack_require__(93);
 
 util.inherits(Duplex, Readable);
 
@@ -17421,7 +17418,7 @@ function oldBrowser () {
   throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11')
 }
 
-var Buffer = __webpack_require__(274).Buffer
+var Buffer = __webpack_require__(275).Buffer
 var crypto = global.crypto || global.msCrypto
 
 if (crypto && crypto.getRandomValues) {
@@ -17598,7 +17595,7 @@ module.exports = function(module) {
  */
 
 
-var JWKStore = __webpack_require__(60);
+var JWKStore = __webpack_require__(58);
 
 // Public API -- Key and KeyStore methods
 Object.keys(JWKStore.KeyStore).forEach(function(name) {
@@ -17606,15 +17603,15 @@ Object.keys(JWKStore.KeyStore).forEach(function(name) {
 });
 
 // Public API -- constants
-var CONSTANTS = __webpack_require__(128);
+var CONSTANTS = __webpack_require__(127);
 Object.keys(CONSTANTS).forEach(function(name) {
   exports[name] = CONSTANTS[name];
 });
 
 // Registered Key Types
-__webpack_require__(235);
 __webpack_require__(236);
 __webpack_require__(237);
+__webpack_require__(238);
 
 
 /***/ }),
@@ -17900,8 +17897,8 @@ module.exports = Hash
  * Copyright (c) 2010-2014 Digital Bazaar, Inc.
  */
 var forge = __webpack_require__(2);
-__webpack_require__(76);
-__webpack_require__(106);
+__webpack_require__(75);
+__webpack_require__(107);
 __webpack_require__(3);
 
 /* AES API */
@@ -19705,11 +19702,11 @@ module.exports = forge.util.ByteBuffer = DataBuffer;
  */
 
 
-var clone = __webpack_require__(21),
+var clone = __webpack_require__(20),
     util = __webpack_require__(7),
     forge = __webpack_require__(5);
 
-var ALGORITHMS = __webpack_require__(73);
+var ALGORITHMS = __webpack_require__(83);
 
 // ### ASN.1 Validators
 // Adapted from digitalbazaar/node-forge/js/asn1.js
@@ -20240,10 +20237,10 @@ if (typeof Object.create === 'function') {
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
 var md5 = __webpack_require__(94)
-var RIPEMD160 = __webpack_require__(276)
-var sha = __webpack_require__(278)
+var RIPEMD160 = __webpack_require__(277)
+var sha = __webpack_require__(279)
 
-var Base = __webpack_require__(283)
+var Base = __webpack_require__(284)
 
 function HashNoConstructor (hash) {
   Base.call(this, 'digest')
@@ -20416,11 +20413,11 @@ var asn1 = exports;
 
 asn1.bignum = __webpack_require__(9);
 
-asn1.define = __webpack_require__(358).define;
+asn1.define = __webpack_require__(359).define;
 asn1.base = __webpack_require__(49);
-asn1.constants = __webpack_require__(165);
-asn1.decoders = __webpack_require__(364);
-asn1.encoders = __webpack_require__(366);
+asn1.constants = __webpack_require__(166);
+asn1.decoders = __webpack_require__(365);
+asn1.encoders = __webpack_require__(367);
 
 
 /***/ }),
@@ -20429,10 +20426,10 @@ asn1.encoders = __webpack_require__(366);
 
 var base = exports;
 
-base.Reporter = __webpack_require__(360).Reporter;
-base.DecoderBuffer = __webpack_require__(164).DecoderBuffer;
-base.EncoderBuffer = __webpack_require__(164).EncoderBuffer;
-base.Node = __webpack_require__(361);
+base.Reporter = __webpack_require__(361).Reporter;
+base.DecoderBuffer = __webpack_require__(165).DecoderBuffer;
+base.EncoderBuffer = __webpack_require__(165).EncoderBuffer;
+base.Node = __webpack_require__(362);
 
 
 /***/ }),
@@ -20559,11 +20556,11 @@ var asn1 = exports;
 
 asn1.bignum = __webpack_require__(53);
 
-asn1.define = __webpack_require__(412).define;
+asn1.define = __webpack_require__(413).define;
 asn1.base = __webpack_require__(54);
-asn1.constants = __webpack_require__(183);
-asn1.decoders = __webpack_require__(417);
-asn1.encoders = __webpack_require__(419);
+asn1.constants = __webpack_require__(184);
+asn1.decoders = __webpack_require__(418);
+asn1.encoders = __webpack_require__(420);
 
 
 /***/ }),
@@ -20622,7 +20619,7 @@ asn1.encoders = __webpack_require__(419);
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(411).Buffer;
+    Buffer = __webpack_require__(412).Buffer;
   } catch (e) {
   }
 
@@ -24006,10 +24003,10 @@ asn1.encoders = __webpack_require__(419);
 
 var base = exports;
 
-base.Reporter = __webpack_require__(413).Reporter;
-base.DecoderBuffer = __webpack_require__(182).DecoderBuffer;
-base.EncoderBuffer = __webpack_require__(182).EncoderBuffer;
-base.Node = __webpack_require__(414);
+base.Reporter = __webpack_require__(414).Reporter;
+base.DecoderBuffer = __webpack_require__(183).DecoderBuffer;
+base.EncoderBuffer = __webpack_require__(183).EncoderBuffer;
+base.Node = __webpack_require__(415);
 
 
 /***/ }),
@@ -24098,10 +24095,10 @@ base.Node = __webpack_require__(414);
  */
 var forge = __webpack_require__(2);
 __webpack_require__(23);
-__webpack_require__(113);
-__webpack_require__(26);
-__webpack_require__(109);
 __webpack_require__(114);
+__webpack_require__(27);
+__webpack_require__(110);
+__webpack_require__(115);
 __webpack_require__(24);
 __webpack_require__(3);
 
@@ -25843,7 +25840,7 @@ function _base64ToBigInt(b64) {
  */
 
 
-var impl = __webpack_require__(83);
+var impl = __webpack_require__(82);
 
 /**
  * @namespace base64url
@@ -25894,220 +25891,19 @@ module.exports = base64url;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/sha.js - Cryptographic Secure Hash Algorithms, versions 1 and 2
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var forge = __webpack_require__(5),
-    helpers = __webpack_require__(12);
-
-function hashDigestFN(hash) {
-  var md = hash.replace("SHA-", "SHA").toLowerCase();
-
-  var alg = {
-    name: hash
-  };
-
-  // ### Fallback Implementation -- uses forge
-  var fallback = function(pdata /* props */) {
-    var digest = forge.md[md].create();
-    digest.update(pdata);
-    digest = digest.digest().native();
-
-    return Promise.resolve(digest);
-  };
-
-  // ### WebCryptoAPI Implementation
-  var webcrypto = function(pdata /* props */) {
-    var promise;
-    promise = helpers.subtleCrypto.digest(alg, pdata);
-    promise = promise.then(function(result) {
-      result = new Buffer(result);
-      return result;
-    });
-    return promise;
-  };
-
-  // ### nodejs Implementation
-  var nodejs = function(pdata /* props */) {
-    var digest = helpers.nodeCrypto.createHash(md);
-    digest.update(pdata);
-    return digest.digest();
-  };
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-
-// Public API
-// * [name].digest
-var sha = {};
-[
-  "SHA-1",
-  "SHA-256",
-  "SHA-384",
-  "SHA-512"
-].forEach(function(name) {
-  sha[name] = {
-    digest: hashDigestFN(name)
-  };
-});
-
-module.exports = sha;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * deps/ciphermodes/pack.js - Pack/Unpack Functions
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var Long = __webpack_require__(84);
-
-var pack = module.exports = {
-  intToBigEndian: function(n, bs, off) {
-    if (typeof n === "number") {
-      switch (arguments.length) {
-        case 1:
-          bs = new Buffer(4);
-          bs.fill(0);
-          pack.intToBigEndian(n, bs, 0);
-          break;
-        case 3:
-          bs[off] = 0xff & (n >>> 24);
-          bs[++off] = 0xff & (n >>> 16);
-          bs[++off] = 0xff & (n >>> 8);
-          bs[++off] = 0xff & (n);
-          break;
-        default:
-          throw new TypeError("Expected 1 or 3 arguments.");
-      }
-    } else {
-      switch (arguments.length) {
-        case 1:
-          bs = new Buffer(4 * n.length);
-          bs.fill(0);
-          pack.intToBigEndian(n, bs, 0);
-          break;
-        case 3:
-          for (var i = 0; i < n.length; ++i) {
-            pack.intToBigEndian(n[i], bs, off);
-            off += 4;
-          }
-          break;
-        default:
-          throw new TypeError("Expected 1 or 3 arguments.");
-      }
-    }
-
-    return bs;
-  },
-  longToBigEndian: function(n, bs, off) {
-    if (!Array.isArray(n)) {
-      // Single
-      switch (arguments.length) {
-        case 1:
-          bs = new Buffer(8);
-          bs.fill(0);
-          pack.longToBigEndian(n, bs, 0);
-          break;
-        case 3:
-          var lo = n.low,
-              hi = n.high;
-          pack.intToBigEndian(hi, bs, off);
-          pack.intToBigEndian(lo, bs, off + 4);
-          break;
-        default:
-          throw new TypeError("Expected 1 or 3 arguments.");
-      }
-    } else {
-      // Array
-      switch (arguments.length) {
-        case 1:
-          bs = new Buffer(8 * n.length);
-          bs.fill(0);
-          pack.longToBigEndian(n, bs, 0);
-          break;
-        case 3:
-          for (var i = 0; i < n.length; ++i) {
-            pack.longToBigEndian(n[i], bs, off);
-            off += 8;
-          }
-          break;
-        default:
-          throw new TypeError("Expected 1 or 3 arguments.");
-      }
-    }
-
-    return bs;
-  },
-
-  bigEndianToInt: function(bs, off, ns) {
-    switch (arguments.length) {
-      case 2:
-        var n = bs[off] << 24;
-        n |= (bs[++off] & 0xff) << 16;
-        n |= (bs[++off] & 0xff) << 8;
-        n |= (bs[++off] & 0xff);
-        return n;
-      case 3:
-        for (var i = 0; i < ns.length; ++i) {
-          ns[i] = pack.bigEndianToInt(bs, off);
-          off += 4;
-        }
-        break;
-      default:
-        throw new TypeError("Expected 2 or 3 arguments.");
-    }
-  },
-  bigEndianToLong: function(bs, off, ns) {
-    switch (arguments.length) {
-      case 2:
-        var hi = pack.bigEndianToInt(bs, off);
-        var lo = pack.bigEndianToInt(bs, off + 4);
-        var num = new Long(lo, hi);
-        return num;
-      case 3:
-        for (var i = 0; i < ns.length; ++i) {
-          ns[i] = pack.bigEndianToLong(bs, off);
-          off += 8;
-        }
-        break;
-      default:
-        throw new TypeError("Expected 2 or 3 arguments.");
-    }
-  }
-};
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
  * jwk/keystore.js - JWK KeyStore Implementation
  *
  * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
  */
 
 
-var clone = __webpack_require__(21),
-    merge = __webpack_require__(28),
+var clone = __webpack_require__(20),
+    merge = __webpack_require__(26),
     forge = __webpack_require__(5),
     util = __webpack_require__(7);
 
 var JWK = {
-  BaseKey: __webpack_require__(61),
+  BaseKey: __webpack_require__(59),
   helpers: __webpack_require__(42)
 };
 
@@ -26410,6 +26206,8 @@ var JWKStore = function(registry, parent) {
       } else if (JWKStore.isKey(jwk)) {
         // assume a complete duplicate is desired
         jwk = jwk.toJSON(true);
+      } else {
+        jwk = clone(jwk);
       }
 
       var keytype = registry.get(jwk.kty);
@@ -26491,6 +26289,11 @@ var JWKStore = function(registry, parent) {
     value: function(props, local) {
       props = props || {};
 
+      // workaround for issues/109
+      if (props.kid !== undefined && props.kid !== null && typeof props.kid !== "string") {
+        props.kid = String(props.kid);
+      }
+
       var candidates = [];
       var matches = function(key) {
         // match on 'kty'
@@ -26570,6 +26373,11 @@ var JWKStore = function(registry, parent) {
       props = props || {};
       if (kid) {
         props.kid = kid;
+      }
+
+      // workaround for issues/109
+      if (props.kid !== undefined && props.kid !== null && typeof props.kid !== "string") {
+       props.kid = String(props.kid);
       }
 
       var candidates = this.all(props, true);
@@ -26770,7 +26578,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 61 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26781,18 +26589,18 @@ module.exports = {
  */
 
 
-var assign = __webpack_require__(123),
-    clone = __webpack_require__(21),
-    flatten = __webpack_require__(230),
-    intersection = __webpack_require__(231),
-    merge = __webpack_require__(28),
+var assign = __webpack_require__(117),
+    clone = __webpack_require__(20),
+    flatten = __webpack_require__(217),
+    intersection = __webpack_require__(218),
+    merge = __webpack_require__(26),
     omit = __webpack_require__(118),
     pick = __webpack_require__(119),
-    uniq = __webpack_require__(125),
-    uuid = __webpack_require__(232);
+    uniq = __webpack_require__(106),
+    uuid = __webpack_require__(219);
 
-var ALGORITHMS = __webpack_require__(73),
-    CONSTANTS = __webpack_require__(128),
+var ALGORITHMS = __webpack_require__(83),
+    CONSTANTS = __webpack_require__(127),
     HELPERS = __webpack_require__(42),
     UTIL = __webpack_require__(7);
 
@@ -27478,6 +27286,207 @@ module.exports = JWKBaseKeyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/sha.js - Cryptographic Secure Hash Algorithms, versions 1 and 2
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var forge = __webpack_require__(5),
+    helpers = __webpack_require__(12);
+
+function hashDigestFN(hash) {
+  var md = hash.replace("SHA-", "SHA").toLowerCase();
+
+  var alg = {
+    name: hash
+  };
+
+  // ### Fallback Implementation -- uses forge
+  var fallback = function(pdata /* props */) {
+    var digest = forge.md[md].create();
+    digest.update(pdata);
+    digest = digest.digest().native();
+
+    return Promise.resolve(digest);
+  };
+
+  // ### WebCryptoAPI Implementation
+  var webcrypto = function(pdata /* props */) {
+    var promise;
+    promise = helpers.subtleCrypto.digest(alg, pdata);
+    promise = promise.then(function(result) {
+      result = new Buffer(result);
+      return result;
+    });
+    return promise;
+  };
+
+  // ### nodejs Implementation
+  var nodejs = function(pdata /* props */) {
+    var digest = helpers.nodeCrypto.createHash(md);
+    digest.update(pdata);
+    return digest.digest();
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+// Public API
+// * [name].digest
+var sha = {};
+[
+  "SHA-1",
+  "SHA-256",
+  "SHA-384",
+  "SHA-512"
+].forEach(function(name) {
+  sha[name] = {
+    digest: hashDigestFN(name)
+  };
+});
+
+module.exports = sha;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * deps/ciphermodes/pack.js - Pack/Unpack Functions
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var Long = __webpack_require__(85);
+
+var pack = module.exports = {
+  intToBigEndian: function(n, bs, off) {
+    if (typeof n === "number") {
+      switch (arguments.length) {
+        case 1:
+          bs = new Buffer(4);
+          bs.fill(0);
+          pack.intToBigEndian(n, bs, 0);
+          break;
+        case 3:
+          bs[off] = 0xff & (n >>> 24);
+          bs[++off] = 0xff & (n >>> 16);
+          bs[++off] = 0xff & (n >>> 8);
+          bs[++off] = 0xff & (n);
+          break;
+        default:
+          throw new TypeError("Expected 1 or 3 arguments.");
+      }
+    } else {
+      switch (arguments.length) {
+        case 1:
+          bs = new Buffer(4 * n.length);
+          bs.fill(0);
+          pack.intToBigEndian(n, bs, 0);
+          break;
+        case 3:
+          for (var i = 0; i < n.length; ++i) {
+            pack.intToBigEndian(n[i], bs, off);
+            off += 4;
+          }
+          break;
+        default:
+          throw new TypeError("Expected 1 or 3 arguments.");
+      }
+    }
+
+    return bs;
+  },
+  longToBigEndian: function(n, bs, off) {
+    if (!Array.isArray(n)) {
+      // Single
+      switch (arguments.length) {
+        case 1:
+          bs = new Buffer(8);
+          bs.fill(0);
+          pack.longToBigEndian(n, bs, 0);
+          break;
+        case 3:
+          var lo = n.low,
+              hi = n.high;
+          pack.intToBigEndian(hi, bs, off);
+          pack.intToBigEndian(lo, bs, off + 4);
+          break;
+        default:
+          throw new TypeError("Expected 1 or 3 arguments.");
+      }
+    } else {
+      // Array
+      switch (arguments.length) {
+        case 1:
+          bs = new Buffer(8 * n.length);
+          bs.fill(0);
+          pack.longToBigEndian(n, bs, 0);
+          break;
+        case 3:
+          for (var i = 0; i < n.length; ++i) {
+            pack.longToBigEndian(n[i], bs, off);
+            off += 8;
+          }
+          break;
+        default:
+          throw new TypeError("Expected 1 or 3 arguments.");
+      }
+    }
+
+    return bs;
+  },
+
+  bigEndianToInt: function(bs, off, ns) {
+    switch (arguments.length) {
+      case 2:
+        var n = bs[off] << 24;
+        n |= (bs[++off] & 0xff) << 16;
+        n |= (bs[++off] & 0xff) << 8;
+        n |= (bs[++off] & 0xff);
+        return n;
+      case 3:
+        for (var i = 0; i < ns.length; ++i) {
+          ns[i] = pack.bigEndianToInt(bs, off);
+          off += 4;
+        }
+        break;
+      default:
+        throw new TypeError("Expected 2 or 3 arguments.");
+    }
+  },
+  bigEndianToLong: function(bs, off, ns) {
+    switch (arguments.length) {
+      case 2:
+        var hi = pack.bigEndianToInt(bs, off);
+        var lo = pack.bigEndianToInt(bs, off + 4);
+        var num = new Long(lo, hi);
+        return num;
+      case 3:
+        for (var i = 0; i < ns.length; ++i) {
+          ns[i] = pack.bigEndianToLong(bs, off);
+          off += 8;
+        }
+        break;
+      default:
+        throw new TypeError("Expected 2 or 3 arguments.");
+    }
+  }
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
 /* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28005,10 +28014,10 @@ assert.equal = function assertEqual(l, r, msg) {
 
 var curve = exports;
 
-curve.base = __webpack_require__(338);
-curve.short = __webpack_require__(339);
-curve.mont = __webpack_require__(340);
-curve.edwards = __webpack_require__(341);
+curve.base = __webpack_require__(339);
+curve.short = __webpack_require__(340);
+curve.mont = __webpack_require__(341);
+curve.edwards = __webpack_require__(342);
 
 
 /***/ }),
@@ -28359,10 +28368,10 @@ module.exports = CipherBase
 
 var curve = exports;
 
-curve.base = __webpack_require__(389);
-curve.short = __webpack_require__(390);
-curve.mont = __webpack_require__(391);
-curve.edwards = __webpack_require__(392);
+curve.base = __webpack_require__(390);
+curve.short = __webpack_require__(391);
+curve.mont = __webpack_require__(392);
+curve.edwards = __webpack_require__(393);
 
 
 /***/ }),
@@ -28710,329 +28719,22 @@ module.exports = CipherBase
 
 "use strict";
 /*!
- * algorithms/index.js - Cryptographic Algorithms Entry Point
+ * jws/index.js - JSON Web Signature (JWS) Entry Point
  *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
  */
 
 
-// setup implementations
-var implementations = [
-  __webpack_require__(200),
-  __webpack_require__(215),
-  __webpack_require__(85),
-  __webpack_require__(117),
-  __webpack_require__(220),
-  __webpack_require__(221),
-  __webpack_require__(225),
-  __webpack_require__(122),
-  __webpack_require__(74),
-  __webpack_require__(226),
-  __webpack_require__(227),
-  __webpack_require__(228),
-  __webpack_require__(58)
-];
-
-var ALGS_DIGEST = {};
-var ALGS_DERIVE = {};
-var ALGS_SIGN = {},
-    ALGS_VRFY = {};
-var ALGS_ENC = {},
-    ALGS_DEC = {};
-
-implementations.forEach(function(mod) {
-  Object.keys(mod).forEach(function(alg) {
-    var op = mod[alg];
-
-    if ("function" === typeof op.encrypt) {
-      ALGS_ENC[alg] = op.encrypt;
-    }
-    if ("function" === typeof op.decrypt) {
-      ALGS_DEC[alg] = op.decrypt;
-    }
-    if ("function" === typeof op.sign) {
-      ALGS_SIGN[alg] = op.sign;
-    }
-    if ("function" === typeof op.verify) {
-      ALGS_VRFY[alg] = op.verify;
-    }
-    if ("function" === typeof op.digest) {
-      ALGS_DIGEST[alg] = op.digest;
-    }
-    if ("function" === typeof op.derive) {
-      ALGS_DERIVE[alg] = op.derive;
-    }
-  });
-});
-
-// public API
-exports.digest = function(alg, data, props) {
-  var op = ALGS_DIGEST[alg];
-  if (!op) {
-    return Promise.reject(new Error("unsupported algorithm: " + alg));
-  }
-
-  return op(data, props);
+var JWS = {
+  createSign: __webpack_require__(201).createSign,
+  createVerify: __webpack_require__(241).createVerify
 };
 
-exports.derive = function(alg, key, props) {
-  var op = ALGS_DERIVE[alg];
-  if (!op) {
-    return Promise.reject(new Error("unsupported algorithm: " + alg));
-  }
-
-  return op(key, props);
-};
-
-exports.sign = function(alg, key, pdata, props) {
-  var op = ALGS_SIGN[alg];
-  if (!op) {
-    return Promise.reject(new Error("unsupported algorithm: " + alg));
-  }
-
-  return op(key, pdata, props || {});
-};
-
-exports.verify = function(alg, key, pdata, mac, props) {
-  var op = ALGS_VRFY[alg];
-  if (!op) {
-    return Promise.reject(new Error("unsupported algorithm: " + alg));
-  }
-
-  return op(key, pdata, mac, props || {});
-};
-
-exports.encrypt = function(alg, key, pdata, props) {
-  var op = ALGS_ENC[alg];
-  if (!op) {
-    return Promise.reject(new Error("unsupported algorithm: " + alg));
-  }
-
-  return op(key, pdata, props || {});
-};
-
-exports.decrypt = function(alg, key, cdata, props) {
-  var op = ALGS_DEC[alg];
-  if (!op) {
-    return Promise.reject(new Error("unsupported algorithm: " + alg));
-  }
-
-  return op(key, cdata, props || {});
-};
+module.exports = JWS;
 
 
 /***/ }),
 /* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/hmac.js - HMAC-based "signatures"
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var CONSTANTS = __webpack_require__(20),
-    forge = __webpack_require__(5),
-    DataBuffer = __webpack_require__(41),
-    helpers = __webpack_require__(12);
-
-function hmacSignFN(name) {
-  var md = name.replace("HS", "SHA").toLowerCase(),
-      hash = name.replace("HS", "SHA-");
-
-  // ### Fallback Implementation -- uses forge
-  var fallback = function(key, pdata, props) {
-    props = props || {};
-    if (!props.loose && CONSTANTS.HASHLENGTH[hash] > (key.length << 3)) {
-      return Promise.reject(new Error("invalid key length"));
-    }
-
-    var sig = forge.hmac.create();
-    sig.start(md, key.toString("binary"));
-    sig.update(pdata);
-    sig = sig.digest().native();
-
-    return Promise.resolve({
-      data: pdata,
-      mac: sig
-    });
-  };
-
-  // ### WebCryptoAPI Implementation
-  var webcrypto = function(key, pdata, props) {
-    props = props || {};
-    if (!props.loose && CONSTANTS.HASHLENGTH[hash] > (key.length << 3)) {
-      return Promise.reject(new Error("invalid key length"));
-    }
-
-    var alg = {
-      name: "HMAC",
-      hash: {
-        name: hash
-      }
-    };
-    var promise;
-    promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["sign"]);
-    promise = promise.then(function(key) {
-      return helpers.subtleCrypto.sign(alg, key, pdata);
-    });
-    promise = promise.then(function(result) {
-      var sig = new Buffer(result);
-      return {
-        data: pdata,
-        mac: sig
-      };
-    });
-
-    return promise;
-  };
-
-  // ### NodeJS implementation
-  var nodejs = function(key, pdata, props) {
-    props = props || {};
-    if (!props.loose && CONSTANTS.HASHLENGTH[hash] > (key.length << 3)) {
-      return Promise.reject(new Error("invalid key length"));
-    }
-
-    var hmac = helpers.nodeCrypto.createHmac(md, key);
-    hmac.update(pdata);
-
-    var sig = hmac.digest();
-    return {
-      data: pdata,
-      mac: sig
-    };
-  };
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-
-function hmacVerifyFN(name) {
-  var md = name.replace("HS", "SHA").toLowerCase(),
-      hash = name.replace("HS", "SHA-");
-
-  function compare(loose, expected, actual) {
-    var len = loose ? expected.length : CONSTANTS.HASHLENGTH[hash] / 8,
-        valid = true;
-    for (var idx = 0; len > idx; idx++) {
-      valid = valid && (expected[idx] === actual[idx]);
-    }
-    return valid;
-  }
-
-  // ### Fallback Implementation -- uses forge
-  var fallback = function(key, pdata, mac, props) {
-    props = props || {};
-    if (!props.loose && CONSTANTS.HASHLENGTH[hash] > (key.length << 3)) {
-      return Promise.reject(new Error("invalid key length"));
-    }
-
-    var vrfy = forge.hmac.create();
-    vrfy.start(md, new DataBuffer(key));
-    vrfy.update(pdata);
-    vrfy = vrfy.digest().native();
-
-    if (compare(props.loose, mac, vrfy)) {
-      return Promise.resolve({
-        data: pdata,
-        mac: mac,
-        valid: true
-      });
-    } else {
-      return Promise.reject(new Error("verification failed"));
-    }
-  };
-
-  var webcrypto = function(key, pdata, mac, props) {
-    props = props || {};
-    if (!props.loose && CONSTANTS.HASHLENGTH[hash] > (key.length << 3)) {
-      return Promise.reject(new Error("invalid key length"));
-    }
-
-    var alg = {
-      name: "HMAC",
-      hash: {
-        name: hash
-      }
-    };
-    var promise;
-    if (props.loose) {
-      promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["sign"]);
-      promise = promise.then(function(key) {
-        return helpers.subtleCrypto.sign(alg, key, pdata);
-      });
-      promise = promise.then(function(result) {
-        var sig = new Buffer(result);
-        return compare(true, mac, sig);
-      });
-    } else {
-      promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["verify"]);
-      promise = promise.then(function(key) {
-        return helpers.subtleCrypto.verify(alg, key, mac, pdata);
-      });
-    }
-    promise = promise.then(function(result) {
-      if (!result) {
-        return Promise.reject(new Error("verifaction failed"));
-      }
-
-      return {
-        data: pdata,
-        mac: mac,
-        valid: true
-      };
-    });
-
-    return promise;
-  };
-
-  var nodejs = function(key, pdata, mac, props) {
-    props = props || {};
-    if (!props.loose && CONSTANTS.HASHLENGTH[hash] > (key.length << 3)) {
-      return Promise.reject(new Error("invalid key length"));
-    }
-
-    var hmac = helpers.nodeCrypto.createHmac(md, key);
-    hmac.update(pdata);
-
-    var sig = hmac.digest();
-    if (!compare(props.loose, mac, sig)) {
-      throw new Error("verification failed");
-    }
-    return {
-      data: pdata,
-      mac: sig,
-      valid: true
-    };
-  };
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-
-// ### Public API
-// * [name].sign
-// * [name].verify
-var hmac = {};
-[
-  "HS1",
-  "HS256",
-  "HS384",
-  "HS512"
-].forEach(function(alg) {
-  hmac[alg] = {
-    sign: hmacSignFN(alg),
-    verify: hmacVerifyFN(alg)
-  };
-});
-
-module.exports = hmac;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -29085,13 +28787,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(205);
+__webpack_require__(207);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -29327,7 +29029,7 @@ BlockCipher.prototype.finish = function(pad) {
 
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -29340,7 +29042,7 @@ BlockCipher.prototype.finish = function(pad) {
  * Copyright (c) 2010-2012 Digital Bazaar, Inc. All rights reserved.
  */
 var forge = __webpack_require__(2);
-__webpack_require__(27);
+__webpack_require__(28);
 __webpack_require__(3);
 
 /* HMAC API */
@@ -29479,7 +29181,7 @@ hmac.create = function() {
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/**
@@ -29492,15 +29194,15 @@ hmac.create = function() {
  * Copyright (c) 2010-2013 Digital Bazaar, Inc.
  */
 var forge = __webpack_require__(2);
-__webpack_require__(77);
-__webpack_require__(27);
+__webpack_require__(76);
+__webpack_require__(28);
 __webpack_require__(3);
 
 var pkcs5 = forge.pkcs5 = forge.pkcs5 || {};
 
 var crypto;
 if(forge.util.isNodejs && !forge.options.usePureJavaScript) {
-  crypto = __webpack_require__(108);
+  crypto = __webpack_require__(109);
 }
 
 /**
@@ -29697,7 +29399,7 @@ module.exports = forge.pbkdf2 = pkcs5.pbkdf2 = function(
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -29708,7 +29410,7 @@ module.exports = forge.pbkdf2 = pkcs5.pbkdf2 = function(
  * Copyright (c) 2010-2015 Digital Bazaar, Inc.
  */
 var forge = __webpack_require__(2);
-__webpack_require__(27);
+__webpack_require__(28);
 __webpack_require__(3);
 
 var sha1 = module.exports = forge.sha1 = forge.sha1 || {};
@@ -30022,7 +29724,7 @@ function _update(s, w, bytes) {
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -30056,8 +29758,8 @@ function _update(s, w, bytes) {
  * Copyright (c) 2012-2014 Digital Bazaar, Inc.
  */
 var forge = __webpack_require__(2);
-__webpack_require__(76);
-__webpack_require__(106);
+__webpack_require__(75);
+__webpack_require__(107);
 __webpack_require__(3);
 
 /* DES API */
@@ -30523,7 +30225,7 @@ function _createCipher(options) {
 
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -30638,12 +30340,12 @@ function _createCipher(options) {
 var forge = __webpack_require__(2);
 __webpack_require__(39);
 __webpack_require__(23);
-__webpack_require__(80);
+__webpack_require__(79);
+__webpack_require__(28);
+__webpack_require__(209);
 __webpack_require__(27);
-__webpack_require__(207);
-__webpack_require__(26);
 __webpack_require__(40);
-__webpack_require__(82);
+__webpack_require__(81);
 __webpack_require__(56);
 __webpack_require__(3);
 
@@ -33788,7 +33490,7 @@ pki.verifyCertificateChain = function(caStore, chain, verify) {
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -34035,15 +33737,345 @@ pss.create = function(options) {
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(212).default;
+module.exports = __webpack_require__(214).default;
 module.exports.default = module.exports;
 
 
 /***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * algorithms/index.js - Cryptographic Algorithms Entry Point
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+// setup implementations
+var implementations = [
+  __webpack_require__(222),
+  __webpack_require__(224),
+  __webpack_require__(86),
+  __webpack_require__(123),
+  __webpack_require__(229),
+  __webpack_require__(230),
+  __webpack_require__(232),
+  __webpack_require__(126),
+  __webpack_require__(84),
+  __webpack_require__(233),
+  __webpack_require__(234),
+  __webpack_require__(235),
+  __webpack_require__(60)
+];
+
+var ALGS_DIGEST = {};
+var ALGS_DERIVE = {};
+var ALGS_SIGN = {},
+    ALGS_VRFY = {};
+var ALGS_ENC = {},
+    ALGS_DEC = {};
+
+implementations.forEach(function(mod) {
+  Object.keys(mod).forEach(function(alg) {
+    var op = mod[alg];
+
+    if ("function" === typeof op.encrypt) {
+      ALGS_ENC[alg] = op.encrypt;
+    }
+    if ("function" === typeof op.decrypt) {
+      ALGS_DEC[alg] = op.decrypt;
+    }
+    if ("function" === typeof op.sign) {
+      ALGS_SIGN[alg] = op.sign;
+    }
+    if ("function" === typeof op.verify) {
+      ALGS_VRFY[alg] = op.verify;
+    }
+    if ("function" === typeof op.digest) {
+      ALGS_DIGEST[alg] = op.digest;
+    }
+    if ("function" === typeof op.derive) {
+      ALGS_DERIVE[alg] = op.derive;
+    }
+  });
+});
+
+// public API
+exports.digest = function(alg, data, props) {
+  var op = ALGS_DIGEST[alg];
+  if (!op) {
+    return Promise.reject(new Error("unsupported algorithm: " + alg));
+  }
+
+  return op(data, props);
+};
+
+exports.derive = function(alg, key, props) {
+  var op = ALGS_DERIVE[alg];
+  if (!op) {
+    return Promise.reject(new Error("unsupported algorithm: " + alg));
+  }
+
+  return op(key, props);
+};
+
+exports.sign = function(alg, key, pdata, props) {
+  var op = ALGS_SIGN[alg];
+  if (!op) {
+    return Promise.reject(new Error("unsupported algorithm: " + alg));
+  }
+
+  return op(key, pdata, props || {});
+};
+
+exports.verify = function(alg, key, pdata, mac, props) {
+  var op = ALGS_VRFY[alg];
+  if (!op) {
+    return Promise.reject(new Error("unsupported algorithm: " + alg));
+  }
+
+  return op(key, pdata, mac, props || {});
+};
+
+exports.encrypt = function(alg, key, pdata, props) {
+  var op = ALGS_ENC[alg];
+  if (!op) {
+    return Promise.reject(new Error("unsupported algorithm: " + alg));
+  }
+
+  return op(key, pdata, props || {});
+};
+
+exports.decrypt = function(alg, key, cdata, props) {
+  var op = ALGS_DEC[alg];
+  if (!op) {
+    return Promise.reject(new Error("unsupported algorithm: " + alg));
+  }
+
+  return op(key, cdata, props || {});
+};
+
+
+/***/ }),
 /* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/hmac.js - HMAC-based "signatures"
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var CONSTANTS = __webpack_require__(21),
+    forge = __webpack_require__(5),
+    DataBuffer = __webpack_require__(41),
+    helpers = __webpack_require__(12);
+
+function hmacSignFN(name) {
+  var md = name.replace("HS", "SHA").toLowerCase(),
+      hash = name.replace("HS", "SHA-");
+
+  function checkKeyLength(len, key) {
+    len = (len || CONSTANTS.HASHLENGTH[hash]) / 8;
+    if (len > key.length) {
+      return Promise.reject(new Error("invalid key length"));
+    }
+
+    return Promise.resolve(key);
+  }
+
+  // ### Fallback Implementation -- uses forge
+  var fallback = function(key, pdata, props) {
+    props = props || {};
+    var promise;
+    promise = checkKeyLength(props.length, key);
+    promise = promise.then(function() {
+      var sig = forge.hmac.create();
+      sig.start(md, key.toString("binary"));
+      sig.update(pdata);
+      sig = sig.digest().native();
+
+      return {
+        data: pdata,
+        mac: sig
+      }
+    });
+    return promise;
+  };
+
+  // ### WebCryptoAPI Implementation
+  var webcrypto = function(key, pdata, props) {
+    props = props || {};
+
+    var alg = {
+      name: "HMAC",
+      hash: {
+        name: hash
+      }
+    };
+    var promise;
+    promise = checkKeyLength(props.length, key);
+    promise = promise.then(function() {
+      return helpers.subtleCrypto.importKey("raw", key, alg, true, ["sign"]);
+    });
+    promise = promise.then(function(key) {
+      return helpers.subtleCrypto.sign(alg, key, pdata);
+    });
+    promise = promise.then(function(result) {
+      var sig = new Buffer(result);
+      return {
+        data: pdata,
+        mac: sig
+      };
+    });
+
+    return promise;
+  };
+
+  // ### NodeJS implementation
+  var nodejs = function(key, pdata, props) {
+    props = props || {};
+
+    var promise;
+    promise = checkKeyLength(props.length, key);
+    promise = promise.then(function() {
+      var hmac = helpers.nodeCrypto.createHmac(md, key);
+      hmac.update(pdata);
+
+      var sig = hmac.digest();
+      return {
+        data: pdata,
+        mac: sig
+      };
+    });
+    return promise;
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+function hmacVerifyFN(name) {
+  var md = name.replace("HS", "SHA").toLowerCase(),
+      hash = name.replace("HS", "SHA-");
+
+  function compare(len, expected, actual) {
+    len = (len || CONSTANTS.HASHLENGTH[hash]) / 8;
+    var valid = true;
+    for (var idx = 0; len > idx; idx++) {
+      valid = valid && (expected[idx] === actual[idx]);
+    }
+    return valid;
+  }
+
+  // ### Fallback Implementation -- uses forge
+  var fallback = function(key, pdata, mac, props) {
+    props = props || {};
+
+    var vrfy = forge.hmac.create();
+    vrfy.start(md, new DataBuffer(key));
+    vrfy.update(pdata);
+    vrfy = vrfy.digest().native();
+
+    if (compare(props.length, mac, vrfy)) {
+      return Promise.resolve({
+        data: pdata,
+        mac: mac,
+        valid: true
+      });
+    } else {
+      return Promise.reject(new Error("verification failed"));
+    }
+  };
+
+  var webcrypto = function(key, pdata, mac, props) {
+    props = props || {};
+
+    var alg = {
+      name: "HMAC",
+      hash: {
+        name: hash
+      }
+    };
+    var promise;
+    if (props.length) {
+      promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["sign"]);
+      promise = promise.then(function(key) {
+        return helpers.subtleCrypto.sign(alg, key, pdata);
+      });
+      promise = promise.then(function(result) {
+        var sig = new Buffer(result);
+        return compare(props.length, mac, sig);
+      });
+    } else {
+      promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["verify"]);
+      promise = promise.then(function(key) {
+        return helpers.subtleCrypto.verify(alg, key, mac, pdata);
+      });
+    }
+    promise = promise.then(function(result) {
+      if (!result) {
+        return Promise.reject(new Error("verifaction failed"));
+      }
+
+      return {
+        data: pdata,
+        mac: mac,
+        valid: true
+      };
+    });
+
+    return promise;
+  };
+
+  var nodejs = function(key, pdata, mac, props) {
+    props = props || {};
+
+    var hmac = helpers.nodeCrypto.createHmac(md, key);
+    hmac.update(pdata);
+
+    var sig = hmac.digest();
+    if (!compare(props.length, mac, sig)) {
+      throw new Error("verification failed");
+    }
+    return {
+      data: pdata,
+      mac: sig,
+      valid: true
+    };
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+// ### Public API
+// * [name].sign
+// * [name].verify
+var hmac = {};
+[
+  "HS1",
+  "HS256",
+  "HS384",
+  "HS512"
+].forEach(function(alg) {
+  hmac[alg] = {
+    sign: hmacSignFN(alg),
+    verify: hmacVerifyFN(alg)
+  };
+});
+
+module.exports = hmac;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -35261,7 +35293,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35491,7 +35523,7 @@ module.exports = aesKw;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35502,8 +35534,8 @@ module.exports = aesKw;
  */
 
 
-var clone = __webpack_require__(21),
-    ecc = __webpack_require__(120),
+var clone = __webpack_require__(20),
+    ecc = __webpack_require__(124),
     forge = __webpack_require__(5),
     util = __webpack_require__(7);
 
@@ -35586,7 +35618,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35597,7 +35629,7 @@ module.exports = {
  */
 
 
-var clone = __webpack_require__(21),
+var clone = __webpack_require__(20),
     forge = __webpack_require__(5),
     util = __webpack_require__(7);
 
@@ -35666,7 +35698,7 @@ module.exports = {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35678,15 +35710,15 @@ module.exports = {
 
 
 var JWE = {
-  createEncrypt: __webpack_require__(229).createEncrypt,
-  createDecrypt: __webpack_require__(261).createDecrypt
+  createEncrypt: __webpack_require__(242).createEncrypt,
+  createDecrypt: __webpack_require__(266).createDecrypt
 };
 
 module.exports = JWE;
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -35994,20 +36026,20 @@ function isUndefined(arg) {
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(130);
+exports = module.exports = __webpack_require__(131);
 exports.Stream = exports;
 exports.Readable = exports;
-exports.Writable = __webpack_require__(92);
+exports.Writable = __webpack_require__(93);
 exports.Duplex = __webpack_require__(29);
-exports.Transform = __webpack_require__(133);
-exports.PassThrough = __webpack_require__(244);
+exports.Transform = __webpack_require__(134);
+exports.PassThrough = __webpack_require__(249);
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
@@ -36075,7 +36107,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36151,16 +36183,16 @@ util.inherits = __webpack_require__(44);
 
 /*<replacement>*/
 var internalUtil = {
-  deprecate: __webpack_require__(242)
+  deprecate: __webpack_require__(247)
 };
 /*</replacement>*/
 
 /*<replacement>*/
-var Stream = __webpack_require__(131);
+var Stream = __webpack_require__(132);
 /*</replacement>*/
 
 /*<replacement>*/
-var Buffer = __webpack_require__(91).Buffer;
+var Buffer = __webpack_require__(92).Buffer;
 var OurUint8Array = global.Uint8Array || function () {};
 function _uint8ArrayToBuffer(chunk) {
   return Buffer.from(chunk);
@@ -36170,7 +36202,7 @@ function _isUint8Array(obj) {
 }
 /*</replacement>*/
 
-var destroyImpl = __webpack_require__(132);
+var destroyImpl = __webpack_require__(133);
 
 util.inherits(Writable, Stream);
 
@@ -36743,27 +36775,7 @@ Writable.prototype._destroy = function (err, cb) {
   this.end();
   cb(err);
 };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(75).setImmediate, __webpack_require__(4)))
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * jws/index.js - JSON Web Signature (JWS) Entry Point
- *
- * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
- */
-
-
-var JWS = {
-  createSign: __webpack_require__(262).createSign,
-  createVerify: __webpack_require__(265).createVerify
-};
-
-module.exports = JWS;
-
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(74).setImmediate, __webpack_require__(4)))
 
 /***/ }),
 /* 94 */
@@ -36780,7 +36792,7 @@ module.exports = JWS;
  * See http://pajhome.org.uk/crypt/md5 for more info.
  */
 
-var makeHash = __webpack_require__(275)
+var makeHash = __webpack_require__(276)
 
 /*
  * Calculate the MD5 of an array of little-endian words, and a bit length
@@ -36928,17 +36940,17 @@ module.exports = function md5 (buf) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-exports.pbkdf2 = __webpack_require__(294)
+exports.pbkdf2 = __webpack_require__(295)
 
-exports.pbkdf2Sync = __webpack_require__(147)
+exports.pbkdf2Sync = __webpack_require__(148)
 
 
 /***/ }),
 /* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Buffer = __webpack_require__(150).Buffer
-var MD5 = __webpack_require__(303)
+var Buffer = __webpack_require__(151).Buffer
+var MD5 = __webpack_require__(304)
 
 /* eslint-disable camelcase */
 function EVP_BytesToKey (password, salt, keyBits, ivLen) {
@@ -36989,17 +37001,17 @@ module.exports = EVP_BytesToKey
 /***/ (function(module, exports, __webpack_require__) {
 
 var modeModules = {
-  ECB: __webpack_require__(307),
-  CBC: __webpack_require__(308),
-  CFB: __webpack_require__(309),
-  CFB8: __webpack_require__(310),
-  CFB1: __webpack_require__(311),
-  OFB: __webpack_require__(312),
-  CTR: __webpack_require__(151),
-  GCM: __webpack_require__(151)
+  ECB: __webpack_require__(308),
+  CBC: __webpack_require__(309),
+  CFB: __webpack_require__(310),
+  CFB8: __webpack_require__(311),
+  CFB1: __webpack_require__(312),
+  OFB: __webpack_require__(313),
+  CTR: __webpack_require__(152),
+  GCM: __webpack_require__(152)
 }
 
-var modes = __webpack_require__(153)
+var modes = __webpack_require__(154)
 
 for (var key in modes) {
   modes[key].module = modeModules[modes[key].mode]
@@ -37015,11 +37027,11 @@ module.exports = modes
 "use strict";
 
 
-exports.utils = __webpack_require__(318);
-exports.Cipher = __webpack_require__(319);
-exports.DES = __webpack_require__(320);
-exports.CBC = __webpack_require__(321);
-exports.EDE = __webpack_require__(322);
+exports.utils = __webpack_require__(319);
+exports.Cipher = __webpack_require__(320);
+exports.DES = __webpack_require__(321);
+exports.CBC = __webpack_require__(322);
+exports.EDE = __webpack_require__(323);
 
 
 /***/ }),
@@ -37078,7 +37090,7 @@ exports.EDE = __webpack_require__(322);
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(325).Buffer;
+    Buffer = __webpack_require__(326).Buffer;
   } catch (e) {
   }
 
@@ -40464,9 +40476,9 @@ var hash = exports;
 
 hash.utils = __webpack_require__(17);
 hash.common = __webpack_require__(47);
-hash.sha = __webpack_require__(343);
-hash.ripemd = __webpack_require__(347);
-hash.hmac = __webpack_require__(348);
+hash.sha = __webpack_require__(344);
+hash.ripemd = __webpack_require__(348);
+hash.hmac = __webpack_require__(349);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -40481,8 +40493,8 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 /* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Buffer = __webpack_require__(168).Buffer
-var MD5 = __webpack_require__(371)
+var Buffer = __webpack_require__(169).Buffer
+var MD5 = __webpack_require__(372)
 
 /* eslint-disable camelcase */
 function EVP_BytesToKey (password, salt, keyBits, ivLen) {
@@ -40536,9 +40548,9 @@ var hash = exports;
 
 hash.utils = __webpack_require__(19);
 hash.common = __webpack_require__(51);
-hash.sha = __webpack_require__(394);
-hash.ripemd = __webpack_require__(398);
-hash.hmac = __webpack_require__(399);
+hash.sha = __webpack_require__(395);
+hash.ripemd = __webpack_require__(399);
+hash.hmac = __webpack_require__(400);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -40553,8 +40565,8 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 /* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Buffer = __webpack_require__(186).Buffer
-var MD5 = __webpack_require__(424)
+var Buffer = __webpack_require__(187).Buffer
+var MD5 = __webpack_require__(425)
 
 /* eslint-disable camelcase */
 function EVP_BytesToKey (password, salt, keyBits, ivLen) {
@@ -40616,13 +40628,16 @@ if (typeof Promise === "undefined") {
   __webpack_require__(105).polyfill();
 }
 
+var JWS = __webpack_require__(73);
+
 module.exports = {
-  JWA: __webpack_require__(73),
-  JWE: __webpack_require__(88),
+  JWA: __webpack_require__(83),
+  JWE: __webpack_require__(89),
   JWK: __webpack_require__(35),
-  JWS: __webpack_require__(93),
+  JWS: JWS,
   util: __webpack_require__(7),
-  parse: __webpack_require__(266)
+  parse: __webpack_require__(267),
+  canYouSee: JWS.createVerify
 };
 
 
@@ -40635,7 +40650,7 @@ module.exports = {
  * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
  * @license   Licensed under MIT license
  *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
- * @version   4.1.1
+ * @version   v4.2.2+97478eb6
  */
 
 (function (global, factory) {
@@ -40653,7 +40668,9 @@ function isFunction(x) {
   return typeof x === 'function';
 }
 
-var _isArray = undefined;
+
+
+var _isArray = void 0;
 if (Array.isArray) {
   _isArray = Array.isArray;
 } else {
@@ -40665,8 +40682,8 @@ if (Array.isArray) {
 var isArray = _isArray;
 
 var len = 0;
-var vertxNext = undefined;
-var customSchedulerFn = undefined;
+var vertxNext = void 0;
+var customSchedulerFn = void 0;
 
 var asap = function asap(callback, arg) {
   queue[len] = callback;
@@ -40695,7 +40712,7 @@ function setAsap(asapFn) {
 var browserWindow = typeof window !== 'undefined' ? window : undefined;
 var browserGlobal = browserWindow || {};
 var BrowserMutationObserver = browserGlobal.MutationObserver || browserGlobal.WebKitMutationObserver;
-var isNode = typeof self === 'undefined' && typeof process !== 'undefined' && ({}).toString.call(process) === '[object process]';
+var isNode = typeof self === 'undefined' && typeof process !== 'undefined' && {}.toString.call(process) === '[object process]';
 
 // test for web worker but not in IE10
 var isWorker = typeof Uint8ClampedArray !== 'undefined' && typeof importScripts !== 'undefined' && typeof MessageChannel !== 'undefined';
@@ -40767,7 +40784,7 @@ function flush() {
 function attemptVertx() {
   try {
     var r = require;
-    var vertx = __webpack_require__(199);
+    var vertx = __webpack_require__(200);
     vertxNext = vertx.runOnLoop || vertx.runOnContext;
     return useVertxTimer();
   } catch (e) {
@@ -40775,7 +40792,7 @@ function attemptVertx() {
   }
 }
 
-var scheduleFlush = undefined;
+var scheduleFlush = void 0;
 // Decide what async method to use to triggering processing of queued callbacks:
 if (isNode) {
   scheduleFlush = useNextTick();
@@ -40790,8 +40807,6 @@ if (isNode) {
 }
 
 function then(onFulfillment, onRejection) {
-  var _arguments = arguments;
-
   var parent = this;
 
   var child = new this.constructor(noop);
@@ -40802,13 +40817,12 @@ function then(onFulfillment, onRejection) {
 
   var _state = parent._state;
 
+
   if (_state) {
-    (function () {
-      var callback = _arguments[_state - 1];
-      asap(function () {
-        return invokeCallback(_state, child, callback, parent._result);
-      });
-    })();
+    var callback = arguments[_state - 1];
+    asap(function () {
+      return invokeCallback(_state, child, callback, parent._result);
+    });
   } else {
     subscribe(parent, child, onFulfillment, onRejection);
   }
@@ -41000,6 +41014,7 @@ function subscribe(parent, child, onFulfillment, onRejection) {
   var _subscribers = parent._subscribers;
   var length = _subscribers.length;
 
+
   parent._onerror = null;
 
   _subscribers[length] = child;
@@ -41019,8 +41034,8 @@ function publish(promise) {
     return;
   }
 
-  var child = undefined,
-      callback = undefined,
+  var child = void 0,
+      callback = void 0,
       detail = promise._result;
 
   for (var i = 0; i < subscribers.length; i += 3) {
@@ -41054,10 +41069,10 @@ function tryCatch(callback, detail) {
 
 function invokeCallback(settled, promise, callback, detail) {
   var hasCallback = isFunction(callback),
-      value = undefined,
-      error = undefined,
-      succeeded = undefined,
-      failed = undefined;
+      value = void 0,
+      error = void 0,
+      succeeded = void 0,
+      failed = void 0;
 
   if (hasCallback) {
     value = tryCatch(callback, detail);
@@ -41082,14 +41097,14 @@ function invokeCallback(settled, promise, callback, detail) {
   if (promise._state !== PENDING) {
     // noop
   } else if (hasCallback && succeeded) {
-      resolve(promise, value);
-    } else if (failed) {
-      reject(promise, error);
-    } else if (settled === FULFILLED) {
-      fulfill(promise, value);
-    } else if (settled === REJECTED) {
-      reject(promise, value);
-    }
+    resolve(promise, value);
+  } else if (failed) {
+    reject(promise, error);
+  } else if (settled === FULFILLED) {
+    fulfill(promise, value);
+  } else if (settled === REJECTED) {
+    reject(promise, value);
+  }
 }
 
 function initializePromise(promise, resolver) {
@@ -41116,97 +41131,107 @@ function makePromise(promise) {
   promise._subscribers = [];
 }
 
-function Enumerator$1(Constructor, input) {
-  this._instanceConstructor = Constructor;
-  this.promise = new Constructor(noop);
-
-  if (!this.promise[PROMISE_ID]) {
-    makePromise(this.promise);
-  }
-
-  if (isArray(input)) {
-    this.length = input.length;
-    this._remaining = input.length;
-
-    this._result = new Array(this.length);
-
-    if (this.length === 0) {
-      fulfill(this.promise, this._result);
-    } else {
-      this.length = this.length || 0;
-      this._enumerate(input);
-      if (this._remaining === 0) {
-        fulfill(this.promise, this._result);
-      }
-    }
-  } else {
-    reject(this.promise, validationError());
-  }
+function validationError() {
+  return new Error('Array Methods must be provided an Array');
 }
 
 function validationError() {
   return new Error('Array Methods must be provided an Array');
 }
 
-Enumerator$1.prototype._enumerate = function (input) {
-  for (var i = 0; this._state === PENDING && i < input.length; i++) {
-    this._eachEntry(input[i], i);
+var Enumerator = function () {
+  function Enumerator(Constructor, input) {
+    this._instanceConstructor = Constructor;
+    this.promise = new Constructor(noop);
+
+    if (!this.promise[PROMISE_ID]) {
+      makePromise(this.promise);
+    }
+
+    if (isArray(input)) {
+      this.length = input.length;
+      this._remaining = input.length;
+
+      this._result = new Array(this.length);
+
+      if (this.length === 0) {
+        fulfill(this.promise, this._result);
+      } else {
+        this.length = this.length || 0;
+        this._enumerate(input);
+        if (this._remaining === 0) {
+          fulfill(this.promise, this._result);
+        }
+      }
+    } else {
+      reject(this.promise, validationError());
+    }
   }
-};
 
-Enumerator$1.prototype._eachEntry = function (entry, i) {
-  var c = this._instanceConstructor;
-  var resolve$$1 = c.resolve;
+  Enumerator.prototype._enumerate = function _enumerate(input) {
+    for (var i = 0; this._state === PENDING && i < input.length; i++) {
+      this._eachEntry(input[i], i);
+    }
+  };
 
-  if (resolve$$1 === resolve$1) {
-    var _then = getThen(entry);
+  Enumerator.prototype._eachEntry = function _eachEntry(entry, i) {
+    var c = this._instanceConstructor;
+    var resolve$$1 = c.resolve;
 
-    if (_then === then && entry._state !== PENDING) {
-      this._settledAt(entry._state, i, entry._result);
-    } else if (typeof _then !== 'function') {
+
+    if (resolve$$1 === resolve$1) {
+      var _then = getThen(entry);
+
+      if (_then === then && entry._state !== PENDING) {
+        this._settledAt(entry._state, i, entry._result);
+      } else if (typeof _then !== 'function') {
+        this._remaining--;
+        this._result[i] = entry;
+      } else if (c === Promise$1) {
+        var promise = new c(noop);
+        handleMaybeThenable(promise, entry, _then);
+        this._willSettleAt(promise, i);
+      } else {
+        this._willSettleAt(new c(function (resolve$$1) {
+          return resolve$$1(entry);
+        }), i);
+      }
+    } else {
+      this._willSettleAt(resolve$$1(entry), i);
+    }
+  };
+
+  Enumerator.prototype._settledAt = function _settledAt(state, i, value) {
+    var promise = this.promise;
+
+
+    if (promise._state === PENDING) {
       this._remaining--;
-      this._result[i] = entry;
-    } else if (c === Promise$2) {
-      var promise = new c(noop);
-      handleMaybeThenable(promise, entry, _then);
-      this._willSettleAt(promise, i);
-    } else {
-      this._willSettleAt(new c(function (resolve$$1) {
-        return resolve$$1(entry);
-      }), i);
+
+      if (state === REJECTED) {
+        reject(promise, value);
+      } else {
+        this._result[i] = value;
+      }
     }
-  } else {
-    this._willSettleAt(resolve$$1(entry), i);
-  }
-};
 
-Enumerator$1.prototype._settledAt = function (state, i, value) {
-  var promise = this.promise;
-
-  if (promise._state === PENDING) {
-    this._remaining--;
-
-    if (state === REJECTED) {
-      reject(promise, value);
-    } else {
-      this._result[i] = value;
+    if (this._remaining === 0) {
+      fulfill(promise, this._result);
     }
-  }
+  };
 
-  if (this._remaining === 0) {
-    fulfill(promise, this._result);
-  }
-};
+  Enumerator.prototype._willSettleAt = function _willSettleAt(promise, i) {
+    var enumerator = this;
 
-Enumerator$1.prototype._willSettleAt = function (promise, i) {
-  var enumerator = this;
+    subscribe(promise, undefined, function (value) {
+      return enumerator._settledAt(FULFILLED, i, value);
+    }, function (reason) {
+      return enumerator._settledAt(REJECTED, i, reason);
+    });
+  };
 
-  subscribe(promise, undefined, function (value) {
-    return enumerator._settledAt(FULFILLED, i, value);
-  }, function (reason) {
-    return enumerator._settledAt(REJECTED, i, reason);
-  });
-};
+  return Enumerator;
+}();
 
 /**
   `Promise.all` accepts an array of promises, and returns a new promise which
@@ -41255,8 +41280,8 @@ Enumerator$1.prototype._willSettleAt = function (promise, i) {
   fulfilled, or rejected if any of them become rejected.
   @static
 */
-function all$1(entries) {
-  return new Enumerator$1(this, entries).promise;
+function all(entries) {
+  return new Enumerator(this, entries).promise;
 }
 
 /**
@@ -41324,7 +41349,7 @@ function all$1(entries) {
   @return {Promise} a promise which settles in the same way as the first passed
   promise to settle.
 */
-function race$1(entries) {
+function race(entries) {
   /*jshint validthis:true */
   var Constructor = this;
 
@@ -41491,262 +41516,283 @@ function needsNew() {
   ```
 
   @class Promise
-  @param {function} resolver
+  @param {Function} resolver
   Useful for tooling.
   @constructor
 */
-function Promise$2(resolver) {
-  this[PROMISE_ID] = nextId();
-  this._result = this._state = undefined;
-  this._subscribers = [];
 
-  if (noop !== resolver) {
-    typeof resolver !== 'function' && needsResolver();
-    this instanceof Promise$2 ? initializePromise(this, resolver) : needsNew();
+var Promise$1 = function () {
+  function Promise(resolver) {
+    this[PROMISE_ID] = nextId();
+    this._result = this._state = undefined;
+    this._subscribers = [];
+
+    if (noop !== resolver) {
+      typeof resolver !== 'function' && needsResolver();
+      this instanceof Promise ? initializePromise(this, resolver) : needsNew();
+    }
   }
-}
-
-Promise$2.all = all$1;
-Promise$2.race = race$1;
-Promise$2.resolve = resolve$1;
-Promise$2.reject = reject$1;
-Promise$2._setScheduler = setScheduler;
-Promise$2._setAsap = setAsap;
-Promise$2._asap = asap;
-
-Promise$2.prototype = {
-  constructor: Promise$2,
 
   /**
-    The primary way of interacting with a promise is through its `then` method,
-    which registers callbacks to receive either a promise's eventual value or the
-    reason why the promise cannot be fulfilled.
-  
-    ```js
-    findUser().then(function(user){
-      // user is available
-    }, function(reason){
-      // user is unavailable, and you are given the reason why
-    });
-    ```
-  
-    Chaining
-    --------
-  
-    The return value of `then` is itself a promise.  This second, 'downstream'
-    promise is resolved with the return value of the first promise's fulfillment
-    or rejection handler, or rejected if the handler throws an exception.
-  
-    ```js
-    findUser().then(function (user) {
-      return user.name;
-    }, function (reason) {
-      return 'default name';
-    }).then(function (userName) {
-      // If `findUser` fulfilled, `userName` will be the user's name, otherwise it
-      // will be `'default name'`
-    });
-  
-    findUser().then(function (user) {
-      throw new Error('Found user, but still unhappy');
-    }, function (reason) {
-      throw new Error('`findUser` rejected and we're unhappy');
-    }).then(function (value) {
-      // never reached
-    }, function (reason) {
-      // if `findUser` fulfilled, `reason` will be 'Found user, but still unhappy'.
-      // If `findUser` rejected, `reason` will be '`findUser` rejected and we're unhappy'.
-    });
-    ```
-    If the downstream promise does not specify a rejection handler, rejection reasons will be propagated further downstream.
-  
-    ```js
-    findUser().then(function (user) {
-      throw new PedagogicalException('Upstream error');
-    }).then(function (value) {
-      // never reached
-    }).then(function (value) {
-      // never reached
-    }, function (reason) {
-      // The `PedgagocialException` is propagated all the way down to here
-    });
-    ```
-  
-    Assimilation
-    ------------
-  
-    Sometimes the value you want to propagate to a downstream promise can only be
-    retrieved asynchronously. This can be achieved by returning a promise in the
-    fulfillment or rejection handler. The downstream promise will then be pending
-    until the returned promise is settled. This is called *assimilation*.
-  
-    ```js
-    findUser().then(function (user) {
-      return findCommentsByAuthor(user);
-    }).then(function (comments) {
-      // The user's comments are now available
-    });
-    ```
-  
-    If the assimliated promise rejects, then the downstream promise will also reject.
-  
-    ```js
-    findUser().then(function (user) {
-      return findCommentsByAuthor(user);
-    }).then(function (comments) {
-      // If `findCommentsByAuthor` fulfills, we'll have the value here
-    }, function (reason) {
-      // If `findCommentsByAuthor` rejects, we'll have the reason here
-    });
-    ```
-  
-    Simple Example
-    --------------
-  
-    Synchronous Example
-  
-    ```javascript
-    let result;
-  
-    try {
-      result = findResult();
-      // success
-    } catch(reason) {
+  The primary way of interacting with a promise is through its `then` method,
+  which registers callbacks to receive either a promise's eventual value or the
+  reason why the promise cannot be fulfilled.
+   ```js
+  findUser().then(function(user){
+    // user is available
+  }, function(reason){
+    // user is unavailable, and you are given the reason why
+  });
+  ```
+   Chaining
+  --------
+   The return value of `then` is itself a promise.  This second, 'downstream'
+  promise is resolved with the return value of the first promise's fulfillment
+  or rejection handler, or rejected if the handler throws an exception.
+   ```js
+  findUser().then(function (user) {
+    return user.name;
+  }, function (reason) {
+    return 'default name';
+  }).then(function (userName) {
+    // If `findUser` fulfilled, `userName` will be the user's name, otherwise it
+    // will be `'default name'`
+  });
+   findUser().then(function (user) {
+    throw new Error('Found user, but still unhappy');
+  }, function (reason) {
+    throw new Error('`findUser` rejected and we're unhappy');
+  }).then(function (value) {
+    // never reached
+  }, function (reason) {
+    // if `findUser` fulfilled, `reason` will be 'Found user, but still unhappy'.
+    // If `findUser` rejected, `reason` will be '`findUser` rejected and we're unhappy'.
+  });
+  ```
+  If the downstream promise does not specify a rejection handler, rejection reasons will be propagated further downstream.
+   ```js
+  findUser().then(function (user) {
+    throw new PedagogicalException('Upstream error');
+  }).then(function (value) {
+    // never reached
+  }).then(function (value) {
+    // never reached
+  }, function (reason) {
+    // The `PedgagocialException` is propagated all the way down to here
+  });
+  ```
+   Assimilation
+  ------------
+   Sometimes the value you want to propagate to a downstream promise can only be
+  retrieved asynchronously. This can be achieved by returning a promise in the
+  fulfillment or rejection handler. The downstream promise will then be pending
+  until the returned promise is settled. This is called *assimilation*.
+   ```js
+  findUser().then(function (user) {
+    return findCommentsByAuthor(user);
+  }).then(function (comments) {
+    // The user's comments are now available
+  });
+  ```
+   If the assimliated promise rejects, then the downstream promise will also reject.
+   ```js
+  findUser().then(function (user) {
+    return findCommentsByAuthor(user);
+  }).then(function (comments) {
+    // If `findCommentsByAuthor` fulfills, we'll have the value here
+  }, function (reason) {
+    // If `findCommentsByAuthor` rejects, we'll have the reason here
+  });
+  ```
+   Simple Example
+  --------------
+   Synchronous Example
+   ```javascript
+  let result;
+   try {
+    result = findResult();
+    // success
+  } catch(reason) {
+    // failure
+  }
+  ```
+   Errback Example
+   ```js
+  findResult(function(result, err){
+    if (err) {
       // failure
-    }
-    ```
-  
-    Errback Example
-  
-    ```js
-    findResult(function(result, err){
-      if (err) {
-        // failure
-      } else {
-        // success
-      }
-    });
-    ```
-  
-    Promise Example;
-  
-    ```javascript
-    findResult().then(function(result){
+    } else {
       // success
-    }, function(reason){
+    }
+  });
+  ```
+   Promise Example;
+   ```javascript
+  findResult().then(function(result){
+    // success
+  }, function(reason){
+    // failure
+  });
+  ```
+   Advanced Example
+  --------------
+   Synchronous Example
+   ```javascript
+  let author, books;
+   try {
+    author = findAuthor();
+    books  = findBooksByAuthor(author);
+    // success
+  } catch(reason) {
+    // failure
+  }
+  ```
+   Errback Example
+   ```js
+   function foundBooks(books) {
+   }
+   function failure(reason) {
+   }
+   findAuthor(function(author, err){
+    if (err) {
+      failure(err);
       // failure
-    });
-    ```
-  
-    Advanced Example
-    --------------
-  
-    Synchronous Example
-  
-    ```javascript
-    let author, books;
-  
-    try {
-      author = findAuthor();
-      books  = findBooksByAuthor(author);
-      // success
-    } catch(reason) {
-      // failure
-    }
-    ```
-  
-    Errback Example
-  
-    ```js
-  
-    function foundBooks(books) {
-  
-    }
-  
-    function failure(reason) {
-  
-    }
-  
-    findAuthor(function(author, err){
-      if (err) {
-        failure(err);
-        // failure
-      } else {
-        try {
-          findBoooksByAuthor(author, function(books, err) {
-            if (err) {
-              failure(err);
-            } else {
-              try {
-                foundBooks(books);
-              } catch(reason) {
-                failure(reason);
-              }
+    } else {
+      try {
+        findBoooksByAuthor(author, function(books, err) {
+          if (err) {
+            failure(err);
+          } else {
+            try {
+              foundBooks(books);
+            } catch(reason) {
+              failure(reason);
             }
-          });
-        } catch(error) {
-          failure(err);
-        }
-        // success
+          }
+        });
+      } catch(error) {
+        failure(err);
       }
-    });
-    ```
-  
-    Promise Example;
-  
-    ```javascript
-    findAuthor().
-      then(findBooksByAuthor).
-      then(function(books){
-        // found books
-    }).catch(function(reason){
-      // something went wrong
-    });
-    ```
-  
-    @method then
-    @param {Function} onFulfilled
-    @param {Function} onRejected
-    Useful for tooling.
-    @return {Promise}
+      // success
+    }
+  });
+  ```
+   Promise Example;
+   ```javascript
+  findAuthor().
+    then(findBooksByAuthor).
+    then(function(books){
+      // found books
+  }).catch(function(reason){
+    // something went wrong
+  });
+  ```
+   @method then
+  @param {Function} onFulfilled
+  @param {Function} onRejected
+  Useful for tooling.
+  @return {Promise}
   */
-  then: then,
 
   /**
-    `catch` is simply sugar for `then(undefined, onRejection)` which makes it the same
-    as the catch block of a try/catch statement.
+  `catch` is simply sugar for `then(undefined, onRejection)` which makes it the same
+  as the catch block of a try/catch statement.
+  ```js
+  function findAuthor(){
+  throw new Error('couldn't find that author');
+  }
+  // synchronous
+  try {
+  findAuthor();
+  } catch(reason) {
+  // something went wrong
+  }
+  // async with promises
+  findAuthor().catch(function(reason){
+  // something went wrong
+  });
+  ```
+  @method catch
+  @param {Function} onRejection
+  Useful for tooling.
+  @return {Promise}
+  */
+
+
+  Promise.prototype.catch = function _catch(onRejection) {
+    return this.then(null, onRejection);
+  };
+
+  /**
+    `finally` will be invoked regardless of the promise's fate just as native
+    try/catch/finally behaves
+  
+    Synchronous example:
   
     ```js
-    function findAuthor(){
-      throw new Error('couldn't find that author');
+    findAuthor() {
+      if (Math.random() > 0.5) {
+        throw new Error();
+      }
+      return new Author();
     }
   
-    // synchronous
     try {
-      findAuthor();
-    } catch(reason) {
-      // something went wrong
+      return findAuthor(); // succeed or fail
+    } catch(error) {
+      return findOtherAuther();
+    } finally {
+      // always runs
+      // doesn't affect the return value
     }
+    ```
   
-    // async with promises
+    Asynchronous example:
+  
+    ```js
     findAuthor().catch(function(reason){
-      // something went wrong
+      return findOtherAuther();
+    }).finally(function(){
+      // author was either found, or not
     });
     ```
   
-    @method catch
-    @param {Function} onRejection
-    Useful for tooling.
+    @method finally
+    @param {Function} callback
     @return {Promise}
   */
-  'catch': function _catch(onRejection) {
-    return this.then(null, onRejection);
-  }
-};
+
+
+  Promise.prototype.finally = function _finally(callback) {
+    var promise = this;
+    var constructor = promise.constructor;
+
+    return promise.then(function (value) {
+      return constructor.resolve(callback()).then(function () {
+        return value;
+      });
+    }, function (reason) {
+      return constructor.resolve(callback()).then(function () {
+        throw reason;
+      });
+    });
+  };
+
+  return Promise;
+}();
+
+Promise$1.prototype.then = then;
+Promise$1.all = all;
+Promise$1.race = race;
+Promise$1.resolve = resolve$1;
+Promise$1.reject = reject$1;
+Promise$1._setScheduler = setScheduler;
+Promise$1._setAsap = setAsap;
+Promise$1._asap = asap;
 
 /*global self*/
-function polyfill$1() {
-    var local = undefined;
+function polyfill() {
+    var local = void 0;
 
     if (typeof global !== 'undefined') {
         local = global;
@@ -41775,16 +41821,18 @@ function polyfill$1() {
         }
     }
 
-    local.Promise = Promise$2;
+    local.Promise = Promise$1;
 }
 
 // Strange compat..
-Promise$2.polyfill = polyfill$1;
-Promise$2.Promise = Promise$2;
+Promise$1.polyfill = polyfill;
+Promise$1.Promise = Promise$1;
 
-return Promise$2;
+return Promise$1;
 
 })));
+
+
 
 //# sourceMappingURL=es6-promise.map
 
@@ -41792,6 +41840,909 @@ return Promise$2;
 
 /***/ }),
 /* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the size to enable large array optimizations. */
+var LARGE_ARRAY_SIZE = 200;
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** `Object#toString` result references. */
+var funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]';
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+/**
+ * A specialized version of `_.includes` for arrays without support for
+ * specifying an index to search from.
+ *
+ * @private
+ * @param {Array} [array] The array to inspect.
+ * @param {*} target The value to search for.
+ * @returns {boolean} Returns `true` if `target` is found, else `false`.
+ */
+function arrayIncludes(array, value) {
+  var length = array ? array.length : 0;
+  return !!length && baseIndexOf(array, value, 0) > -1;
+}
+
+/**
+ * This function is like `arrayIncludes` except that it accepts a comparator.
+ *
+ * @private
+ * @param {Array} [array] The array to inspect.
+ * @param {*} target The value to search for.
+ * @param {Function} comparator The comparator invoked per element.
+ * @returns {boolean} Returns `true` if `target` is found, else `false`.
+ */
+function arrayIncludesWith(array, value, comparator) {
+  var index = -1,
+      length = array ? array.length : 0;
+
+  while (++index < length) {
+    if (comparator(value, array[index])) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * The base implementation of `_.findIndex` and `_.findLastIndex` without
+ * support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {Function} predicate The function invoked per iteration.
+ * @param {number} fromIndex The index to search from.
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function baseFindIndex(array, predicate, fromIndex, fromRight) {
+  var length = array.length,
+      index = fromIndex + (fromRight ? 1 : -1);
+
+  while ((fromRight ? index-- : ++index < length)) {
+    if (predicate(array[index], index, array)) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+/**
+ * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} value The value to search for.
+ * @param {number} fromIndex The index to search from.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function baseIndexOf(array, value, fromIndex) {
+  if (value !== value) {
+    return baseFindIndex(array, baseIsNaN, fromIndex);
+  }
+  var index = fromIndex - 1,
+      length = array.length;
+
+  while (++index < length) {
+    if (array[index] === value) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+/**
+ * The base implementation of `_.isNaN` without support for number objects.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
+ */
+function baseIsNaN(value) {
+  return value !== value;
+}
+
+/**
+ * Checks if a cache value for `key` exists.
+ *
+ * @private
+ * @param {Object} cache The cache to query.
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function cacheHas(cache, key) {
+  return cache.has(key);
+}
+
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+/**
+ * Checks if `value` is a host object in IE < 9.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
+ */
+function isHostObject(value) {
+  // Many host objects are `Object` objects that can coerce to strings
+  // despite having improperly defined `toString` methods.
+  var result = false;
+  if (value != null && typeof value.toString != 'function') {
+    try {
+      result = !!(value + '');
+    } catch (e) {}
+  }
+  return result;
+}
+
+/**
+ * Converts `set` to an array of its values.
+ *
+ * @private
+ * @param {Object} set The set to convert.
+ * @returns {Array} Returns the values.
+ */
+function setToArray(set) {
+  var index = -1,
+      result = Array(set.size);
+
+  set.forEach(function(value) {
+    result[++index] = value;
+  });
+  return result;
+}
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype,
+    funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map'),
+    Set = getNative(root, 'Set'),
+    nativeCreate = getNative(Object, 'create');
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+}
+
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  return this.has(key) && delete this.__data__[key];
+}
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+}
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = hashClear;
+Hash.prototype['delete'] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+}
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  return true;
+}
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype['delete'] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.__data__ = {
+    'hash': new Hash,
+    'map': new (Map || ListCache),
+    'string': new Hash
+  };
+}
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  return getMapData(this, key)['delete'](key);
+}
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  getMapData(this, key).set(key, value);
+  return this;
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype['delete'] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+
+/**
+ *
+ * Creates an array cache object to store unique values.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [values] The values to cache.
+ */
+function SetCache(values) {
+  var index = -1,
+      length = values ? values.length : 0;
+
+  this.__data__ = new MapCache;
+  while (++index < length) {
+    this.add(values[index]);
+  }
+}
+
+/**
+ * Adds `value` to the array cache.
+ *
+ * @private
+ * @name add
+ * @memberOf SetCache
+ * @alias push
+ * @param {*} value The value to cache.
+ * @returns {Object} Returns the cache instance.
+ */
+function setCacheAdd(value) {
+  this.__data__.set(value, HASH_UNDEFINED);
+  return this;
+}
+
+/**
+ * Checks if `value` is in the array cache.
+ *
+ * @private
+ * @name has
+ * @memberOf SetCache
+ * @param {*} value The value to search for.
+ * @returns {number} Returns `true` if `value` is found, else `false`.
+ */
+function setCacheHas(value) {
+  return this.__data__.has(value);
+}
+
+// Add methods to `SetCache`.
+SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
+SetCache.prototype.has = setCacheHas;
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!isObject(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+
+/**
+ * The base implementation of `_.uniqBy` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {Function} [iteratee] The iteratee invoked per element.
+ * @param {Function} [comparator] The comparator invoked per element.
+ * @returns {Array} Returns the new duplicate free array.
+ */
+function baseUniq(array, iteratee, comparator) {
+  var index = -1,
+      includes = arrayIncludes,
+      length = array.length,
+      isCommon = true,
+      result = [],
+      seen = result;
+
+  if (comparator) {
+    isCommon = false;
+    includes = arrayIncludesWith;
+  }
+  else if (length >= LARGE_ARRAY_SIZE) {
+    var set = iteratee ? null : createSet(array);
+    if (set) {
+      return setToArray(set);
+    }
+    isCommon = false;
+    includes = cacheHas;
+    seen = new SetCache;
+  }
+  else {
+    seen = iteratee ? [] : result;
+  }
+  outer:
+  while (++index < length) {
+    var value = array[index],
+        computed = iteratee ? iteratee(value) : value;
+
+    value = (comparator || value !== 0) ? value : 0;
+    if (isCommon && computed === computed) {
+      var seenIndex = seen.length;
+      while (seenIndex--) {
+        if (seen[seenIndex] === computed) {
+          continue outer;
+        }
+      }
+      if (iteratee) {
+        seen.push(computed);
+      }
+      result.push(value);
+    }
+    else if (!includes(seen, computed, comparator)) {
+      if (seen !== result) {
+        seen.push(computed);
+      }
+      result.push(value);
+    }
+  }
+  return result;
+}
+
+/**
+ * Creates a set object of `values`.
+ *
+ * @private
+ * @param {Array} values The values to add to the set.
+ * @returns {Object} Returns the new set.
+ */
+var createSet = !(Set && (1 / setToArray(new Set([,-0]))[1]) == INFINITY) ? noop : function(values) {
+  return new Set(values);
+};
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to process.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+/**
+ * Creates a duplicate-free version of an array, using
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons, in which only the first occurrence of each
+ * element is kept.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Array
+ * @param {Array} array The array to inspect.
+ * @returns {Array} Returns the new duplicate free array.
+ * @example
+ *
+ * _.uniq([2, 1, 2]);
+ * // => [2, 1]
+ */
+function uniq(array) {
+  return (array && array.length)
+    ? baseUniq(array)
+    : [];
+}
+
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8-9 which returns 'object' for typed array and other constructors.
+  var tag = isObject(value) ? objectToString.call(value) : '';
+  return tag == funcTag || tag == genTag;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * This method returns `undefined`.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.3.0
+ * @category Util
+ * @example
+ *
+ * _.times(2, _.noop);
+ * // => [undefined, undefined]
+ */
+function noop() {
+  // No operation performed.
+}
+
+module.exports = uniq;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ }),
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -42784,7 +43735,7 @@ function from64To32(num) {
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -42847,13 +43798,13 @@ mgf1.create = function(md) {
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -42904,7 +43855,7 @@ mgf1.create = function(md) {
 var forge = __webpack_require__(2);
 __webpack_require__(3);
 __webpack_require__(24);
-__webpack_require__(79);
+__webpack_require__(78);
 
 // shortcut for PKCS#1 API
 var pkcs1 = module.exports = forge.pkcs1 = forge.pkcs1 || {};
@@ -43135,7 +44086,7 @@ function rsa_mgf1(seed, maskLength, hash) {
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -43148,7 +44099,7 @@ function rsa_mgf1(seed, maskLength, hash) {
  * Copyright (c) 2010-2015 Digital Bazaar, Inc.
  */
 var forge = __webpack_require__(2);
-__webpack_require__(27);
+__webpack_require__(28);
 __webpack_require__(3);
 
 var sha256 = module.exports = forge.sha256 = forge.sha256 || {};
@@ -43468,7 +44419,7 @@ function _update(s, w, bytes) {
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -43488,7 +44439,7 @@ __webpack_require__(3);
 var _crypto = null;
 if(forge.util.isNodejs && !forge.options.usePureJavaScript &&
   !process.versions['node-webkit']) {
-  _crypto = __webpack_require__(108);
+  _crypto = __webpack_require__(109);
 }
 
 /* PRNG API */
@@ -43876,7 +44827,7 @@ prng.create = function(plugin) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -44291,7 +45242,7 @@ p7v.recipientInfoValidator = {
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright (c) 2005  Tom Wu
@@ -45561,7 +46512,7 @@ BigInteger.prototype.isProbablePrime = bnIsProbablePrime;
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -45573,7 +46524,7 @@ BigInteger.prototype.isProbablePrime = bnIsProbablePrime;
  */
 var forge = __webpack_require__(2);
 __webpack_require__(3);
-__webpack_require__(113);
+__webpack_require__(114);
 __webpack_require__(24);
 
 (function() {
@@ -45864,7 +46815,7 @@ function getMillerRabinTests(bits) {
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -45889,13 +46840,13 @@ function getMillerRabinTests(bits) {
 var forge = __webpack_require__(2);
 __webpack_require__(39);
 __webpack_require__(23);
-__webpack_require__(80);
+__webpack_require__(79);
+__webpack_require__(28);
 __webpack_require__(27);
-__webpack_require__(26);
-__webpack_require__(78);
+__webpack_require__(77);
 __webpack_require__(40);
 __webpack_require__(24);
-__webpack_require__(209);
+__webpack_require__(211);
 __webpack_require__(56);
 __webpack_require__(3);
 
@@ -46893,350 +47844,647 @@ function createPbkdf2Params(salt, countBytes, dkLen, prfAlgorithm) {
 
 
 /***/ }),
-/* 116 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * deps/ciphermodes/gcm/helpers.js - AES-GCM Helper Functions
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var Long = __webpack_require__(84),
-    fill = __webpack_require__(218),
-    pack = __webpack_require__(59);
-
-var E1 = 0xe1000000,
-    E1B = 0xe1,
-    E1L = new Long(E1 >> 8);
-
-function generateLookup() {
-  var lookup = [];
-
-  for (var c = 0; c < 256; ++c) {
-    var v = 0;
-    for (var i = 7; i >= 0; --i) {
-      if ((c & (1 << i)) !== 0) {
-        v ^= (E1 >>> (7 - i));
-      }
-    }
-    lookup.push(v);
-  }
-
-  return lookup;
-}
-
-var helpers = module.exports = {
-  // ### Constants
-  E1: E1,
-  E1B: E1B,
-  E1L: E1L,
-  LOOKUP: generateLookup(),
-
-  // ### Array Helpers
-  arrayCopy: function(src, srcPos, dest, destPos, length) {
-    // Start by checking for negatives since arrays in JS auto-expand
-    if (srcPos < 0 || destPos < 0 || length < 0) {
-      throw new TypeError("Invalid input.");
-    }
-
-    if (dest instanceof Uint8Array) {
-      // Check for overflow if dest is a typed-array
-      if (destPos >= dest.length || (destPos + length) > dest.length) {
-        throw new TypeError("Invalid input.");
-      }
-
-      if (srcPos !== 0 || length < src.length) {
-        if (src instanceof Uint8Array) {
-          src = src.subarray(srcPos, srcPos + length);
-        } else {
-          src = src.slice(srcPos, srcPos + length);
-        }
-      }
-
-      dest.set(src, destPos);
-    } else {
-      for (var i = 0; i < length; ++i) {
-        dest[destPos + i] = src[srcPos + i];
-      }
-    }
-  },
-  arrayEqual: function(a1, a2) {
-    a1 = a1 || [];
-    a2 = a2 || [];
-
-    var len = Math.min(a1.length, a2.length),
-        result = (a1.length === a2.length);
-
-    for (var idx = 0; idx < len; idx++) {
-      result = result &&
-               ("undefined" !== typeof a1[idx]) &&
-               ("undefined" !== typeof a2[idx]) &&
-               (a1[idx] === a2[idx]);
-    }
-
-    return result;
-  },
-
-  // ### Conversions
-  asBytes: function(x, z) {
-    switch (arguments.length) {
-      case 1:
-        z = new Buffer(16);
-        z.fill(0);
-        pack.intToBigEndian(x, z, 0);
-        return z;
-      case 2:
-        pack.intToBigEndian(x, z, 0);
-        break;
-      default:
-        throw new TypeError("Expected 1 or 2 arguments.");
-    }
-  },
-  asInts: function(x, z) {
-    switch (arguments.length) {
-      case 1:
-        z = [];
-        fill(z, 0, 0, 4);
-        pack.bigEndianToInt(x, 0, z);
-        return z;
-      case 2:
-        pack.bigEndianToInt(x, 0, z);
-        break;
-      default:
-        throw new TypeError("Expected 1 or 2 arguments.");
-    }
-  },
-  oneAsInts: function() {
-    var tmp = [];
-    for (var c = 0; c < 4; ++c) {
-        tmp.push(1 << 31);
-    }
-    return tmp;
-  },
-
-  // ## Bit-wise
-  shiftRight: function(x, z) {
-    var b, c;
-    switch (arguments.length) {
-      case 1:
-        b = x[0];
-        x[0] = b >>> 1;
-        c = b << 31;
-        b = x[1];
-        x[1] = (b >>> 1) | c;
-        c = b << 31;
-        b = x[2];
-        x[2] = (b >>> 1) | c;
-        c = b << 31;
-        b = x[3];
-        x[3] = (b >>> 1) | c;
-        return (b << 31) & 0xffffffff;
-      case 2:
-        b = x[0];
-        z[0] = b >>> 1;
-        c = b << 31;
-        b = x[1];
-        z[1] = (b >>> 1) | c;
-        c = b << 31;
-        b = x[2];
-        z[2] = (b >>> 1) | c;
-        c = b << 31;
-        b = x[3];
-        z[3] = (b >>> 1) | c;
-        return (b << 31) & 0xffffffff;
-      default:
-        throw new TypeError("Expected 1 or 2 arguments.");
-    }
-  },
-  shiftRightN: function(x, n, z) {
-    var nInv, b, c;
-    switch (arguments.length) {
-      case 2:
-        b = x[0];
-        nInv = 32 - n;
-        x[0] = b >>> n;
-        c = b << nInv;
-        b = x[1];
-        x[1] = (b >>> n) | c;
-        c = b << nInv;
-        b = x[2];
-        x[2] = (b >>> n) | c;
-        c = b << nInv;
-        b = x[3];
-        x[3] = (b >>> n) | c;
-        return b << nInv;
-      case 3:
-        b = x[0];
-        nInv = 32 - n;
-        z[0] = b >>> n;
-        c = b << nInv;
-        b = x[1];
-        z[1] = (b >>> n) | c;
-        c = b << nInv;
-        b = x[2];
-        z[2] = (b >>> n) | c;
-        c = b << nInv;
-        b = x[3];
-        z[3] = (b >>> n) | c;
-        return b << nInv;
-      default:
-        throw new TypeError("Expected 2 or 3 arguments.");
-    }
-  },
-  xor: function(x, y, z) {
-    switch (arguments.length) {
-      case 2:
-        x[0] ^= y[0];
-        x[1] ^= y[1];
-        x[2] ^= y[2];
-        x[3] ^= y[3];
-        break;
-      case 3:
-        z[0] = x[0] ^ y[0];
-        z[1] = x[1] ^ y[1];
-        z[2] = x[2] ^ y[2];
-        z[3] = x[3] ^ y[3];
-        break;
-      default:
-        throw new TypeError("Expected 2 or 3 arguments.");
-    }
-  },
-
-  multiply: function(x, y) {
-    var r0 = x.slice();
-    var r1 = [];
-
-    for (var i = 0; i < 4; ++i) {
-      var bits = y[i];
-      for (var j = 31; j >= 0; --j) {
-        if ((bits & (1 << j)) !== 0) {
-          helpers.xor(r1, r0);
-        }
-
-        if (helpers.shiftRight(r0) !== 0) {
-          r0[0] ^= helpers.E1;
-        }
-      }
-    }
-
-    helpers.arrayCopy(r1, 0, x, 0, 4);
-  },
-  multiplyP: function(x, y) {
-    switch (arguments.length) {
-      case 1:
-        if (helpers.shiftRight(x) !== 0) {
-          x[0] ^= helpers.E1;
-        }
-        break;
-      case 2:
-        if (helpers.shiftRight(x, y) !== 0) {
-          y[0] ^= helpers.E1;
-        }
-        break;
-      default:
-        throw new TypeError("Expected 1 or 2 arguments.");
-    }
-  },
-  multiplyP8: function(x, y) {
-    var c;
-    switch (arguments.length) {
-      case 1:
-        c = helpers.shiftRightN(x, 8);
-        x[0] ^= helpers.LOOKUP[c >>> 24];
-        break;
-      case 2:
-        c = helpers.shiftRightN(x, 8, y);
-        y[0] ^= helpers.LOOKUP[c >>> 24];
-        break;
-      default:
-        throw new TypeError("Expected 1 or 2 arguments.");
-    }
-  }
-};
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
 /* 117 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/concat.js - Concat Key Derivation
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
 
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
 
-var CONSTANTS = __webpack_require__(20),
-    sha = __webpack_require__(58);
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]';
 
-function concatDeriveFn(name) {
-  name = name.replace("CONCAT-", "");
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
 
-  // NOTE: no nodejs/webcrypto/fallback model, since ConcatKDF is
-  //       implemented using the SHA algorithms
-
-  var fn = function(key, props) {
-    props = props || {};
-
-    var keyLen = props.length,
-        hashLen = CONSTANTS.HASHLENGTH[name];
-    if (!keyLen) {
-      return Promise.reject(new Error("invalid key length"));
-    }
-
-    // setup otherInfo
-    if (!props.otherInfo) {
-      return Promise.reject(new Error("invalid otherInfo"));
-    }
-    var otherInfo = props.otherInfo;
-
-    var op = sha[name].digest;
-    var N = Math.ceil(keyLen / hashLen),
-        idx = 0,
-        okm = [];
-    function step() {
-      if (N === idx++) {
-        return Buffer.concat(okm).slice(0, keyLen);
-      }
-
-      var T = new Buffer(4 + key.length + otherInfo.length);
-      T.writeUInt32BE(idx, 0);
-      key.copy(T, 4);
-      otherInfo.copy(T, 4 + key.length);
-      return op(T).then(function(result) {
-        okm.push(result);
-        return step();
-      });
-    }
-
-    return step();
-  };
-
-  return fn;
+/**
+ * A faster alternative to `Function#apply`, this function invokes `func`
+ * with the `this` binding of `thisArg` and the arguments of `args`.
+ *
+ * @private
+ * @param {Function} func The function to invoke.
+ * @param {*} thisArg The `this` binding of `func`.
+ * @param {Array} args The arguments to invoke `func` with.
+ * @returns {*} Returns the result of `func`.
+ */
+function apply(func, thisArg, args) {
+  switch (args.length) {
+    case 0: return func.call(thisArg);
+    case 1: return func.call(thisArg, args[0]);
+    case 2: return func.call(thisArg, args[0], args[1]);
+    case 3: return func.call(thisArg, args[0], args[1], args[2]);
+  }
+  return func.apply(thisArg, args);
 }
 
-// Public API
-// * [name].derive
-var concat = {};
-[
-  "CONCAT-SHA-1",
-  "CONCAT-SHA-256",
-  "CONCAT-SHA-384",
-  "CONCAT-SHA-512"
-].forEach(function(name) {
-  concat[name] = {
-    derive: concatDeriveFn(name)
+/**
+ * The base implementation of `_.times` without support for iteratee shorthands
+ * or max array length checks.
+ *
+ * @private
+ * @param {number} n The number of times to invoke `iteratee`.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the array of results.
+ */
+function baseTimes(n, iteratee) {
+  var index = -1,
+      result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+/**
+ * Creates a unary function that invokes `func` with its argument transformed.
+ *
+ * @private
+ * @param {Function} func The function to wrap.
+ * @param {Function} transform The argument transform.
+ * @returns {Function} Returns the new function.
+ */
+function overArg(func, transform) {
+  return function(arg) {
+    return func(transform(arg));
   };
+}
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = overArg(Object.keys, Object),
+    nativeMax = Math.max;
+
+/** Detect if properties shadowing those on `Object.prototype` are non-enumerable. */
+var nonEnumShadows = !propertyIsEnumerable.call({ 'valueOf': 1 }, 'valueOf');
+
+/**
+ * Creates an array of the enumerable property names of the array-like `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @param {boolean} inherited Specify returning inherited property names.
+ * @returns {Array} Returns the array of property names.
+ */
+function arrayLikeKeys(value, inherited) {
+  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+  // Safari 9 makes `arguments.length` enumerable in strict mode.
+  var result = (isArray(value) || isArguments(value))
+    ? baseTimes(value.length, String)
+    : [];
+
+  var length = result.length,
+      skipIndexes = !!length;
+
+  for (var key in value) {
+    if ((inherited || hasOwnProperty.call(value, key)) &&
+        !(skipIndexes && (key == 'length' || isIndex(key, length)))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/**
+ * Assigns `value` to `key` of `object` if the existing value is not equivalent
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function assignValue(object, key, value) {
+  var objValue = object[key];
+  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
+      (value === undefined && !(key in object))) {
+    object[key] = value;
+  }
+}
+
+/**
+ * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeys(object) {
+  if (!isPrototype(object)) {
+    return nativeKeys(object);
+  }
+  var result = [];
+  for (var key in Object(object)) {
+    if (hasOwnProperty.call(object, key) && key != 'constructor') {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/**
+ * The base implementation of `_.rest` which doesn't validate or coerce arguments.
+ *
+ * @private
+ * @param {Function} func The function to apply a rest parameter to.
+ * @param {number} [start=func.length-1] The start position of the rest parameter.
+ * @returns {Function} Returns the new function.
+ */
+function baseRest(func, start) {
+  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
+  return function() {
+    var args = arguments,
+        index = -1,
+        length = nativeMax(args.length - start, 0),
+        array = Array(length);
+
+    while (++index < length) {
+      array[index] = args[start + index];
+    }
+    index = -1;
+    var otherArgs = Array(start + 1);
+    while (++index < start) {
+      otherArgs[index] = args[index];
+    }
+    otherArgs[start] = array;
+    return apply(func, this, otherArgs);
+  };
+}
+
+/**
+ * Copies properties of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy properties from.
+ * @param {Array} props The property identifiers to copy.
+ * @param {Object} [object={}] The object to copy properties to.
+ * @param {Function} [customizer] The function to customize copied values.
+ * @returns {Object} Returns `object`.
+ */
+function copyObject(source, props, object, customizer) {
+  object || (object = {});
+
+  var index = -1,
+      length = props.length;
+
+  while (++index < length) {
+    var key = props[index];
+
+    var newValue = customizer
+      ? customizer(object[key], source[key], key, object, source)
+      : undefined;
+
+    assignValue(object, key, newValue === undefined ? source[key] : newValue);
+  }
+  return object;
+}
+
+/**
+ * Creates a function like `_.assign`.
+ *
+ * @private
+ * @param {Function} assigner The function to assign values.
+ * @returns {Function} Returns the new assigner function.
+ */
+function createAssigner(assigner) {
+  return baseRest(function(object, sources) {
+    var index = -1,
+        length = sources.length,
+        customizer = length > 1 ? sources[length - 1] : undefined,
+        guard = length > 2 ? sources[2] : undefined;
+
+    customizer = (assigner.length > 3 && typeof customizer == 'function')
+      ? (length--, customizer)
+      : undefined;
+
+    if (guard && isIterateeCall(sources[0], sources[1], guard)) {
+      customizer = length < 3 ? undefined : customizer;
+      length = 1;
+    }
+    object = Object(object);
+    while (++index < length) {
+      var source = sources[index];
+      if (source) {
+        assigner(object, source, index, customizer);
+      }
+    }
+    return object;
+  });
+}
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  length = length == null ? MAX_SAFE_INTEGER : length;
+  return !!length &&
+    (typeof value == 'number' || reIsUint.test(value)) &&
+    (value > -1 && value % 1 == 0 && value < length);
+}
+
+/**
+ * Checks if the given arguments are from an iteratee call.
+ *
+ * @private
+ * @param {*} value The potential iteratee value argument.
+ * @param {*} index The potential iteratee index or key argument.
+ * @param {*} object The potential iteratee object argument.
+ * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
+ *  else `false`.
+ */
+function isIterateeCall(value, index, object) {
+  if (!isObject(object)) {
+    return false;
+  }
+  var type = typeof index;
+  if (type == 'number'
+        ? (isArrayLike(object) && isIndex(index, object.length))
+        : (type == 'string' && index in object)
+      ) {
+    return eq(object[index], value);
+  }
+  return false;
+}
+
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+function isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+  return value === proto;
+}
+
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+/**
+ * Checks if `value` is likely an `arguments` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArguments(function() { return arguments; }());
+ * // => true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // => false
+ */
+function isArguments(value) {
+  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
+    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
+}
+
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(value.length) && !isFunction(value);
+}
+
+/**
+ * This method is like `_.isArrayLike` except that it also checks if `value`
+ * is an object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array-like object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArrayLikeObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLikeObject(document.body.children);
+ * // => true
+ *
+ * _.isArrayLikeObject('abc');
+ * // => false
+ *
+ * _.isArrayLikeObject(_.noop);
+ * // => false
+ */
+function isArrayLikeObject(value) {
+  return isObjectLike(value) && isArrayLike(value);
+}
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8-9 which returns 'object' for typed array and other constructors.
+  var tag = isObject(value) ? objectToString.call(value) : '';
+  return tag == funcTag || tag == genTag;
+}
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Assigns own enumerable string keyed properties of source objects to the
+ * destination object. Source objects are applied from left to right.
+ * Subsequent sources overwrite property assignments of previous sources.
+ *
+ * **Note:** This method mutates `object` and is loosely based on
+ * [`Object.assign`](https://mdn.io/Object/assign).
+ *
+ * @static
+ * @memberOf _
+ * @since 0.10.0
+ * @category Object
+ * @param {Object} object The destination object.
+ * @param {...Object} [sources] The source objects.
+ * @returns {Object} Returns `object`.
+ * @see _.assignIn
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ * }
+ *
+ * function Bar() {
+ *   this.c = 3;
+ * }
+ *
+ * Foo.prototype.b = 2;
+ * Bar.prototype.d = 4;
+ *
+ * _.assign({ 'a': 0 }, new Foo, new Bar);
+ * // => { 'a': 1, 'c': 3 }
+ */
+var assign = createAssigner(function(object, source) {
+  if (nonEnumShadows || isPrototype(source) || isArrayLike(source)) {
+    copyObject(source, keys(source), object);
+    return;
+  }
+  for (var key in source) {
+    if (hasOwnProperty.call(source, key)) {
+      assignValue(object, key, source[key]);
+    }
+  }
 });
 
-module.exports = concat;
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * for more details.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keys(new Foo);
+ * // => ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * _.keys('hi');
+ * // => ['0', '1']
+ */
+function keys(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+}
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+module.exports = assign;
+
 
 /***/ }),
 /* 118 */
@@ -49247,6 +50495,421 @@ module.exports = pick;
 /* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(global) {// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+var rng;
+
+var crypto = global.crypto || global.msCrypto; // for IE 11
+if (crypto && crypto.getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+  rng = function whatwgRNG() {
+    crypto.getRandomValues(rnds8);
+    return rnds8;
+  };
+}
+
+if (!rng) {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+  rng = function() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+module.exports = rng;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports) {
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  return bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]];
+}
+
+module.exports = bytesToUuid;
+
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * deps/ciphermodes/gcm/helpers.js - AES-GCM Helper Functions
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var Long = __webpack_require__(85),
+    fill = __webpack_require__(227),
+    pack = __webpack_require__(61);
+
+var E1 = 0xe1000000,
+    E1B = 0xe1,
+    E1L = new Long(E1 >> 8);
+
+function generateLookup() {
+  var lookup = [];
+
+  for (var c = 0; c < 256; ++c) {
+    var v = 0;
+    for (var i = 7; i >= 0; --i) {
+      if ((c & (1 << i)) !== 0) {
+        v ^= (E1 >>> (7 - i));
+      }
+    }
+    lookup.push(v);
+  }
+
+  return lookup;
+}
+
+var helpers = module.exports = {
+  // ### Constants
+  E1: E1,
+  E1B: E1B,
+  E1L: E1L,
+  LOOKUP: generateLookup(),
+
+  // ### Array Helpers
+  arrayCopy: function(src, srcPos, dest, destPos, length) {
+    // Start by checking for negatives since arrays in JS auto-expand
+    if (srcPos < 0 || destPos < 0 || length < 0) {
+      throw new TypeError("Invalid input.");
+    }
+
+    if (dest instanceof Uint8Array) {
+      // Check for overflow if dest is a typed-array
+      if (destPos >= dest.length || (destPos + length) > dest.length) {
+        throw new TypeError("Invalid input.");
+      }
+
+      if (srcPos !== 0 || length < src.length) {
+        if (src instanceof Uint8Array) {
+          src = src.subarray(srcPos, srcPos + length);
+        } else {
+          src = src.slice(srcPos, srcPos + length);
+        }
+      }
+
+      dest.set(src, destPos);
+    } else {
+      for (var i = 0; i < length; ++i) {
+        dest[destPos + i] = src[srcPos + i];
+      }
+    }
+  },
+  arrayEqual: function(a1, a2) {
+    a1 = a1 || [];
+    a2 = a2 || [];
+
+    var len = Math.min(a1.length, a2.length),
+        result = (a1.length === a2.length);
+
+    for (var idx = 0; idx < len; idx++) {
+      result = result &&
+               ("undefined" !== typeof a1[idx]) &&
+               ("undefined" !== typeof a2[idx]) &&
+               (a1[idx] === a2[idx]);
+    }
+
+    return result;
+  },
+
+  // ### Conversions
+  asBytes: function(x, z) {
+    switch (arguments.length) {
+      case 1:
+        z = new Buffer(16);
+        z.fill(0);
+        pack.intToBigEndian(x, z, 0);
+        return z;
+      case 2:
+        pack.intToBigEndian(x, z, 0);
+        break;
+      default:
+        throw new TypeError("Expected 1 or 2 arguments.");
+    }
+  },
+  asInts: function(x, z) {
+    switch (arguments.length) {
+      case 1:
+        z = [];
+        fill(z, 0, 0, 4);
+        pack.bigEndianToInt(x, 0, z);
+        return z;
+      case 2:
+        pack.bigEndianToInt(x, 0, z);
+        break;
+      default:
+        throw new TypeError("Expected 1 or 2 arguments.");
+    }
+  },
+  oneAsInts: function() {
+    var tmp = [];
+    for (var c = 0; c < 4; ++c) {
+        tmp.push(1 << 31);
+    }
+    return tmp;
+  },
+
+  // ## Bit-wise
+  shiftRight: function(x, z) {
+    var b, c;
+    switch (arguments.length) {
+      case 1:
+        b = x[0];
+        x[0] = b >>> 1;
+        c = b << 31;
+        b = x[1];
+        x[1] = (b >>> 1) | c;
+        c = b << 31;
+        b = x[2];
+        x[2] = (b >>> 1) | c;
+        c = b << 31;
+        b = x[3];
+        x[3] = (b >>> 1) | c;
+        return (b << 31) & 0xffffffff;
+      case 2:
+        b = x[0];
+        z[0] = b >>> 1;
+        c = b << 31;
+        b = x[1];
+        z[1] = (b >>> 1) | c;
+        c = b << 31;
+        b = x[2];
+        z[2] = (b >>> 1) | c;
+        c = b << 31;
+        b = x[3];
+        z[3] = (b >>> 1) | c;
+        return (b << 31) & 0xffffffff;
+      default:
+        throw new TypeError("Expected 1 or 2 arguments.");
+    }
+  },
+  shiftRightN: function(x, n, z) {
+    var nInv, b, c;
+    switch (arguments.length) {
+      case 2:
+        b = x[0];
+        nInv = 32 - n;
+        x[0] = b >>> n;
+        c = b << nInv;
+        b = x[1];
+        x[1] = (b >>> n) | c;
+        c = b << nInv;
+        b = x[2];
+        x[2] = (b >>> n) | c;
+        c = b << nInv;
+        b = x[3];
+        x[3] = (b >>> n) | c;
+        return b << nInv;
+      case 3:
+        b = x[0];
+        nInv = 32 - n;
+        z[0] = b >>> n;
+        c = b << nInv;
+        b = x[1];
+        z[1] = (b >>> n) | c;
+        c = b << nInv;
+        b = x[2];
+        z[2] = (b >>> n) | c;
+        c = b << nInv;
+        b = x[3];
+        z[3] = (b >>> n) | c;
+        return b << nInv;
+      default:
+        throw new TypeError("Expected 2 or 3 arguments.");
+    }
+  },
+  xor: function(x, y, z) {
+    switch (arguments.length) {
+      case 2:
+        x[0] ^= y[0];
+        x[1] ^= y[1];
+        x[2] ^= y[2];
+        x[3] ^= y[3];
+        break;
+      case 3:
+        z[0] = x[0] ^ y[0];
+        z[1] = x[1] ^ y[1];
+        z[2] = x[2] ^ y[2];
+        z[3] = x[3] ^ y[3];
+        break;
+      default:
+        throw new TypeError("Expected 2 or 3 arguments.");
+    }
+  },
+
+  multiply: function(x, y) {
+    var r0 = x.slice();
+    var r1 = [];
+
+    for (var i = 0; i < 4; ++i) {
+      var bits = y[i];
+      for (var j = 31; j >= 0; --j) {
+        if ((bits & (1 << j)) !== 0) {
+          helpers.xor(r1, r0);
+        }
+
+        if (helpers.shiftRight(r0) !== 0) {
+          r0[0] ^= helpers.E1;
+        }
+      }
+    }
+
+    helpers.arrayCopy(r1, 0, x, 0, 4);
+  },
+  multiplyP: function(x, y) {
+    switch (arguments.length) {
+      case 1:
+        if (helpers.shiftRight(x) !== 0) {
+          x[0] ^= helpers.E1;
+        }
+        break;
+      case 2:
+        if (helpers.shiftRight(x, y) !== 0) {
+          y[0] ^= helpers.E1;
+        }
+        break;
+      default:
+        throw new TypeError("Expected 1 or 2 arguments.");
+    }
+  },
+  multiplyP8: function(x, y) {
+    var c;
+    switch (arguments.length) {
+      case 1:
+        c = helpers.shiftRightN(x, 8);
+        x[0] ^= helpers.LOOKUP[c >>> 24];
+        break;
+      case 2:
+        c = helpers.shiftRightN(x, 8, y);
+        y[0] ^= helpers.LOOKUP[c >>> 24];
+        break;
+      default:
+        throw new TypeError("Expected 1 or 2 arguments.");
+    }
+  }
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/concat.js - Concat Key Derivation
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var CONSTANTS = __webpack_require__(21),
+    sha = __webpack_require__(60);
+
+function concatDeriveFn(name) {
+  name = name.replace("CONCAT-", "");
+
+  // NOTE: no nodejs/webcrypto/fallback model, since ConcatKDF is
+  //       implemented using the SHA algorithms
+
+  var fn = function(key, props) {
+    props = props || {};
+
+    var keyLen = props.length,
+        hashLen = CONSTANTS.HASHLENGTH[name];
+    if (!keyLen) {
+      return Promise.reject(new Error("invalid key length"));
+    }
+
+    // setup otherInfo
+    if (!props.otherInfo) {
+      return Promise.reject(new Error("invalid otherInfo"));
+    }
+    var otherInfo = props.otherInfo;
+
+    var op = sha[name].digest;
+    var N = Math.ceil(keyLen / hashLen),
+        idx = 0,
+        okm = [];
+    function step() {
+      if (N === idx++) {
+        return Buffer.concat(okm).slice(0, keyLen);
+      }
+
+      var T = new Buffer(4 + key.length + otherInfo.length);
+      T.writeUInt32BE(idx, 0);
+      key.copy(T, 4);
+      otherInfo.copy(T, 4 + key.length);
+      return op(T).then(function(result) {
+        okm.push(result);
+        return step();
+      });
+    }
+
+    return step();
+  };
+
+  return fn;
+}
+
+// Public API
+// * [name].derive
+var concat = {};
+[
+  "CONCAT-SHA-1",
+  "CONCAT-SHA-256",
+  "CONCAT-SHA-384",
+  "CONCAT-SHA-512"
+].forEach(function(name) {
+  concat[name] = {
+    derive: concatDeriveFn(name)
+  };
+});
+
+module.exports = concat;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/**
  * deps/ecc/index.js - Elliptic Curve Entry Point
@@ -49257,8 +50920,8 @@ module.exports = pick;
 
 var forge = __webpack_require__(5),
     BigInteger = forge.jsbn.BigInteger,
-    ec = __webpack_require__(121),
-    CURVES = __webpack_require__(224);
+    ec = __webpack_require__(125),
+    CURVES = __webpack_require__(231);
 
 // ### Helpers
 function hex2bn(s) {
@@ -49500,7 +51163,7 @@ exports.asPrivateKey = function(curve, d) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 121 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49964,7 +51627,7 @@ module.exports = {
 
 
 /***/ }),
-/* 122 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49975,8 +51638,8 @@ module.exports = {
  */
 
 
-var CONSTANTS = __webpack_require__(20),
-    hmac = __webpack_require__(74);
+var CONSTANTS = __webpack_require__(21),
+    hmac = __webpack_require__(84);
 
 function hkdfDeriveFn(name) {
   var hash = name.replace("HKDF-", ""),
@@ -50017,7 +51680,7 @@ function hkdfDeriveFn(name) {
         T = new Buffer(0);
       }
       T = Buffer.concat([T, info, new Buffer([idx])]);
-      T = op(key, T, { loose: true });
+      T = op(key, T);
       T = T.then(function(result) {
         T = result.mac;
         okm.push(T);
@@ -50028,7 +51691,7 @@ function hkdfDeriveFn(name) {
     }
 
     // Step 1: Extract
-    promise = op(salt, key, { loose: true });
+    promise = op(salt, key, { length: salt.length * 8 });
     promise = promise.then(function(result) {
       // Step 2: Expand
       return expand(result.mac);
@@ -50059,1654 +51722,7 @@ module.exports = hkdf;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 123 */
-/***/ (function(module, exports) {
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as references for various `Number` constants. */
-var MAX_SAFE_INTEGER = 9007199254740991;
-
-/** `Object#toString` result references. */
-var argsTag = '[object Arguments]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]';
-
-/** Used to detect unsigned integer values. */
-var reIsUint = /^(?:0|[1-9]\d*)$/;
-
-/**
- * A faster alternative to `Function#apply`, this function invokes `func`
- * with the `this` binding of `thisArg` and the arguments of `args`.
- *
- * @private
- * @param {Function} func The function to invoke.
- * @param {*} thisArg The `this` binding of `func`.
- * @param {Array} args The arguments to invoke `func` with.
- * @returns {*} Returns the result of `func`.
- */
-function apply(func, thisArg, args) {
-  switch (args.length) {
-    case 0: return func.call(thisArg);
-    case 1: return func.call(thisArg, args[0]);
-    case 2: return func.call(thisArg, args[0], args[1]);
-    case 3: return func.call(thisArg, args[0], args[1], args[2]);
-  }
-  return func.apply(thisArg, args);
-}
-
-/**
- * The base implementation of `_.times` without support for iteratee shorthands
- * or max array length checks.
- *
- * @private
- * @param {number} n The number of times to invoke `iteratee`.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the array of results.
- */
-function baseTimes(n, iteratee) {
-  var index = -1,
-      result = Array(n);
-
-  while (++index < n) {
-    result[index] = iteratee(index);
-  }
-  return result;
-}
-
-/**
- * Creates a unary function that invokes `func` with its argument transformed.
- *
- * @private
- * @param {Function} func The function to wrap.
- * @param {Function} transform The argument transform.
- * @returns {Function} Returns the new function.
- */
-function overArg(func, transform) {
-  return function(arg) {
-    return func(transform(arg));
-  };
-}
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/** Built-in value references. */
-var propertyIsEnumerable = objectProto.propertyIsEnumerable;
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeKeys = overArg(Object.keys, Object),
-    nativeMax = Math.max;
-
-/** Detect if properties shadowing those on `Object.prototype` are non-enumerable. */
-var nonEnumShadows = !propertyIsEnumerable.call({ 'valueOf': 1 }, 'valueOf');
-
-/**
- * Creates an array of the enumerable property names of the array-like `value`.
- *
- * @private
- * @param {*} value The value to query.
- * @param {boolean} inherited Specify returning inherited property names.
- * @returns {Array} Returns the array of property names.
- */
-function arrayLikeKeys(value, inherited) {
-  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-  // Safari 9 makes `arguments.length` enumerable in strict mode.
-  var result = (isArray(value) || isArguments(value))
-    ? baseTimes(value.length, String)
-    : [];
-
-  var length = result.length,
-      skipIndexes = !!length;
-
-  for (var key in value) {
-    if ((inherited || hasOwnProperty.call(value, key)) &&
-        !(skipIndexes && (key == 'length' || isIndex(key, length)))) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-/**
- * Assigns `value` to `key` of `object` if the existing value is not equivalent
- * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * for equality comparisons.
- *
- * @private
- * @param {Object} object The object to modify.
- * @param {string} key The key of the property to assign.
- * @param {*} value The value to assign.
- */
-function assignValue(object, key, value) {
-  var objValue = object[key];
-  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
-      (value === undefined && !(key in object))) {
-    object[key] = value;
-  }
-}
-
-/**
- * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- */
-function baseKeys(object) {
-  if (!isPrototype(object)) {
-    return nativeKeys(object);
-  }
-  var result = [];
-  for (var key in Object(object)) {
-    if (hasOwnProperty.call(object, key) && key != 'constructor') {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-/**
- * The base implementation of `_.rest` which doesn't validate or coerce arguments.
- *
- * @private
- * @param {Function} func The function to apply a rest parameter to.
- * @param {number} [start=func.length-1] The start position of the rest parameter.
- * @returns {Function} Returns the new function.
- */
-function baseRest(func, start) {
-  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
-  return function() {
-    var args = arguments,
-        index = -1,
-        length = nativeMax(args.length - start, 0),
-        array = Array(length);
-
-    while (++index < length) {
-      array[index] = args[start + index];
-    }
-    index = -1;
-    var otherArgs = Array(start + 1);
-    while (++index < start) {
-      otherArgs[index] = args[index];
-    }
-    otherArgs[start] = array;
-    return apply(func, this, otherArgs);
-  };
-}
-
-/**
- * Copies properties of `source` to `object`.
- *
- * @private
- * @param {Object} source The object to copy properties from.
- * @param {Array} props The property identifiers to copy.
- * @param {Object} [object={}] The object to copy properties to.
- * @param {Function} [customizer] The function to customize copied values.
- * @returns {Object} Returns `object`.
- */
-function copyObject(source, props, object, customizer) {
-  object || (object = {});
-
-  var index = -1,
-      length = props.length;
-
-  while (++index < length) {
-    var key = props[index];
-
-    var newValue = customizer
-      ? customizer(object[key], source[key], key, object, source)
-      : undefined;
-
-    assignValue(object, key, newValue === undefined ? source[key] : newValue);
-  }
-  return object;
-}
-
-/**
- * Creates a function like `_.assign`.
- *
- * @private
- * @param {Function} assigner The function to assign values.
- * @returns {Function} Returns the new assigner function.
- */
-function createAssigner(assigner) {
-  return baseRest(function(object, sources) {
-    var index = -1,
-        length = sources.length,
-        customizer = length > 1 ? sources[length - 1] : undefined,
-        guard = length > 2 ? sources[2] : undefined;
-
-    customizer = (assigner.length > 3 && typeof customizer == 'function')
-      ? (length--, customizer)
-      : undefined;
-
-    if (guard && isIterateeCall(sources[0], sources[1], guard)) {
-      customizer = length < 3 ? undefined : customizer;
-      length = 1;
-    }
-    object = Object(object);
-    while (++index < length) {
-      var source = sources[index];
-      if (source) {
-        assigner(object, source, index, customizer);
-      }
-    }
-    return object;
-  });
-}
-
-/**
- * Checks if `value` is a valid array-like index.
- *
- * @private
- * @param {*} value The value to check.
- * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
- * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
- */
-function isIndex(value, length) {
-  length = length == null ? MAX_SAFE_INTEGER : length;
-  return !!length &&
-    (typeof value == 'number' || reIsUint.test(value)) &&
-    (value > -1 && value % 1 == 0 && value < length);
-}
-
-/**
- * Checks if the given arguments are from an iteratee call.
- *
- * @private
- * @param {*} value The potential iteratee value argument.
- * @param {*} index The potential iteratee index or key argument.
- * @param {*} object The potential iteratee object argument.
- * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
- *  else `false`.
- */
-function isIterateeCall(value, index, object) {
-  if (!isObject(object)) {
-    return false;
-  }
-  var type = typeof index;
-  if (type == 'number'
-        ? (isArrayLike(object) && isIndex(index, object.length))
-        : (type == 'string' && index in object)
-      ) {
-    return eq(object[index], value);
-  }
-  return false;
-}
-
-/**
- * Checks if `value` is likely a prototype object.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
- */
-function isPrototype(value) {
-  var Ctor = value && value.constructor,
-      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
-
-  return value === proto;
-}
-
-/**
- * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * comparison between two values to determine if they are equivalent.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @example
- *
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
- *
- * _.eq(object, object);
- * // => true
- *
- * _.eq(object, other);
- * // => false
- *
- * _.eq('a', 'a');
- * // => true
- *
- * _.eq('a', Object('a'));
- * // => false
- *
- * _.eq(NaN, NaN);
- * // => true
- */
-function eq(value, other) {
-  return value === other || (value !== value && other !== other);
-}
-
-/**
- * Checks if `value` is likely an `arguments` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an `arguments` object,
- *  else `false`.
- * @example
- *
- * _.isArguments(function() { return arguments; }());
- * // => true
- *
- * _.isArguments([1, 2, 3]);
- * // => false
- */
-function isArguments(value) {
-  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
-    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
-}
-
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(document.body.children);
- * // => false
- *
- * _.isArray('abc');
- * // => false
- *
- * _.isArray(_.noop);
- * // => false
- */
-var isArray = Array.isArray;
-
-/**
- * Checks if `value` is array-like. A value is considered array-like if it's
- * not a function and has a `value.length` that's an integer greater than or
- * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
- * @example
- *
- * _.isArrayLike([1, 2, 3]);
- * // => true
- *
- * _.isArrayLike(document.body.children);
- * // => true
- *
- * _.isArrayLike('abc');
- * // => true
- *
- * _.isArrayLike(_.noop);
- * // => false
- */
-function isArrayLike(value) {
-  return value != null && isLength(value.length) && !isFunction(value);
-}
-
-/**
- * This method is like `_.isArrayLike` except that it also checks if `value`
- * is an object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array-like object,
- *  else `false`.
- * @example
- *
- * _.isArrayLikeObject([1, 2, 3]);
- * // => true
- *
- * _.isArrayLikeObject(document.body.children);
- * // => true
- *
- * _.isArrayLikeObject('abc');
- * // => false
- *
- * _.isArrayLikeObject(_.noop);
- * // => false
- */
-function isArrayLikeObject(value) {
-  return isObjectLike(value) && isArrayLike(value);
-}
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a function, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 8-9 which returns 'object' for typed array and other constructors.
-  var tag = isObject(value) ? objectToString.call(value) : '';
-  return tag == funcTag || tag == genTag;
-}
-
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This method is loosely based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- * @example
- *
- * _.isLength(3);
- * // => true
- *
- * _.isLength(Number.MIN_VALUE);
- * // => false
- *
- * _.isLength(Infinity);
- * // => false
- *
- * _.isLength('3');
- * // => false
- */
-function isLength(value) {
-  return typeof value == 'number' &&
-    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Assigns own enumerable string keyed properties of source objects to the
- * destination object. Source objects are applied from left to right.
- * Subsequent sources overwrite property assignments of previous sources.
- *
- * **Note:** This method mutates `object` and is loosely based on
- * [`Object.assign`](https://mdn.io/Object/assign).
- *
- * @static
- * @memberOf _
- * @since 0.10.0
- * @category Object
- * @param {Object} object The destination object.
- * @param {...Object} [sources] The source objects.
- * @returns {Object} Returns `object`.
- * @see _.assignIn
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- * }
- *
- * function Bar() {
- *   this.c = 3;
- * }
- *
- * Foo.prototype.b = 2;
- * Bar.prototype.d = 4;
- *
- * _.assign({ 'a': 0 }, new Foo, new Bar);
- * // => { 'a': 1, 'c': 3 }
- */
-var assign = createAssigner(function(object, source) {
-  if (nonEnumShadows || isPrototype(source) || isArrayLike(source)) {
-    copyObject(source, keys(source), object);
-    return;
-  }
-  for (var key in source) {
-    if (hasOwnProperty.call(source, key)) {
-      assignValue(object, key, source[key]);
-    }
-  }
-});
-
-/**
- * Creates an array of the own enumerable property names of `object`.
- *
- * **Note:** Non-object values are coerced to objects. See the
- * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
- * for more details.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.keys(new Foo);
- * // => ['a', 'b'] (iteration order is not guaranteed)
- *
- * _.keys('hi');
- * // => ['0', '1']
- */
-function keys(object) {
-  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
-}
-
-module.exports = assign;
-
-
-/***/ }),
-/* 124 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * jwe/helpers.js - JWE Internal Helper Functions
- *
- * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
- */
-
-
-var CONSTANTS = __webpack_require__(20),
-    JWK = __webpack_require__(35);
-
-module.exports = {
-  slice: function(input, start) {
-    return Array.prototype.slice.call(input, start || 0);
-  },
-  generateCEK: function(enc) {
-    var ks = JWK.createKeyStore();
-    var len = CONSTANTS.KEYLENGTH[enc];
-
-    if (len) {
-        return ks.generate("oct", len);
-    }
-
-    throw new Error("unsupported encryption algorithm");
-  }
-};
-
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as the size to enable large array optimizations. */
-var LARGE_ARRAY_SIZE = 200;
-
-/** Used to stand-in for `undefined` hash values. */
-var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/** `Object#toString` result references. */
-var funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]';
-
-/**
- * Used to match `RegExp`
- * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
- */
-var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
-
-/** Used to detect host constructors (Safari). */
-var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-/** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
-
-/** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-
-/** Used as a reference to the global object. */
-var root = freeGlobal || freeSelf || Function('return this')();
-
-/**
- * A specialized version of `_.includes` for arrays without support for
- * specifying an index to search from.
- *
- * @private
- * @param {Array} [array] The array to inspect.
- * @param {*} target The value to search for.
- * @returns {boolean} Returns `true` if `target` is found, else `false`.
- */
-function arrayIncludes(array, value) {
-  var length = array ? array.length : 0;
-  return !!length && baseIndexOf(array, value, 0) > -1;
-}
-
-/**
- * This function is like `arrayIncludes` except that it accepts a comparator.
- *
- * @private
- * @param {Array} [array] The array to inspect.
- * @param {*} target The value to search for.
- * @param {Function} comparator The comparator invoked per element.
- * @returns {boolean} Returns `true` if `target` is found, else `false`.
- */
-function arrayIncludesWith(array, value, comparator) {
-  var index = -1,
-      length = array ? array.length : 0;
-
-  while (++index < length) {
-    if (comparator(value, array[index])) {
-      return true;
-    }
-  }
-  return false;
-}
-
-/**
- * The base implementation of `_.findIndex` and `_.findLastIndex` without
- * support for iteratee shorthands.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {Function} predicate The function invoked per iteration.
- * @param {number} fromIndex The index to search from.
- * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {number} Returns the index of the matched value, else `-1`.
- */
-function baseFindIndex(array, predicate, fromIndex, fromRight) {
-  var length = array.length,
-      index = fromIndex + (fromRight ? 1 : -1);
-
-  while ((fromRight ? index-- : ++index < length)) {
-    if (predicate(array[index], index, array)) {
-      return index;
-    }
-  }
-  return -1;
-}
-
-/**
- * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {*} value The value to search for.
- * @param {number} fromIndex The index to search from.
- * @returns {number} Returns the index of the matched value, else `-1`.
- */
-function baseIndexOf(array, value, fromIndex) {
-  if (value !== value) {
-    return baseFindIndex(array, baseIsNaN, fromIndex);
-  }
-  var index = fromIndex - 1,
-      length = array.length;
-
-  while (++index < length) {
-    if (array[index] === value) {
-      return index;
-    }
-  }
-  return -1;
-}
-
-/**
- * The base implementation of `_.isNaN` without support for number objects.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
- */
-function baseIsNaN(value) {
-  return value !== value;
-}
-
-/**
- * Checks if a cache value for `key` exists.
- *
- * @private
- * @param {Object} cache The cache to query.
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function cacheHas(cache, key) {
-  return cache.has(key);
-}
-
-/**
- * Gets the value at `key` of `object`.
- *
- * @private
- * @param {Object} [object] The object to query.
- * @param {string} key The key of the property to get.
- * @returns {*} Returns the property value.
- */
-function getValue(object, key) {
-  return object == null ? undefined : object[key];
-}
-
-/**
- * Checks if `value` is a host object in IE < 9.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
- */
-function isHostObject(value) {
-  // Many host objects are `Object` objects that can coerce to strings
-  // despite having improperly defined `toString` methods.
-  var result = false;
-  if (value != null && typeof value.toString != 'function') {
-    try {
-      result = !!(value + '');
-    } catch (e) {}
-  }
-  return result;
-}
-
-/**
- * Converts `set` to an array of its values.
- *
- * @private
- * @param {Object} set The set to convert.
- * @returns {Array} Returns the values.
- */
-function setToArray(set) {
-  var index = -1,
-      result = Array(set.size);
-
-  set.forEach(function(value) {
-    result[++index] = value;
-  });
-  return result;
-}
-
-/** Used for built-in method references. */
-var arrayProto = Array.prototype,
-    funcProto = Function.prototype,
-    objectProto = Object.prototype;
-
-/** Used to detect overreaching core-js shims. */
-var coreJsData = root['__core-js_shared__'];
-
-/** Used to detect methods masquerading as native. */
-var maskSrcKey = (function() {
-  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
-  return uid ? ('Symbol(src)_1.' + uid) : '';
-}());
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/** Used to detect if a method is native. */
-var reIsNative = RegExp('^' +
-  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
-  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
-);
-
-/** Built-in value references. */
-var splice = arrayProto.splice;
-
-/* Built-in method references that are verified to be native. */
-var Map = getNative(root, 'Map'),
-    Set = getNative(root, 'Set'),
-    nativeCreate = getNative(Object, 'create');
-
-/**
- * Creates a hash object.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function Hash(entries) {
-  var index = -1,
-      length = entries ? entries.length : 0;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-/**
- * Removes all key-value entries from the hash.
- *
- * @private
- * @name clear
- * @memberOf Hash
- */
-function hashClear() {
-  this.__data__ = nativeCreate ? nativeCreate(null) : {};
-}
-
-/**
- * Removes `key` and its value from the hash.
- *
- * @private
- * @name delete
- * @memberOf Hash
- * @param {Object} hash The hash to modify.
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function hashDelete(key) {
-  return this.has(key) && delete this.__data__[key];
-}
-
-/**
- * Gets the hash value for `key`.
- *
- * @private
- * @name get
- * @memberOf Hash
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function hashGet(key) {
-  var data = this.__data__;
-  if (nativeCreate) {
-    var result = data[key];
-    return result === HASH_UNDEFINED ? undefined : result;
-  }
-  return hasOwnProperty.call(data, key) ? data[key] : undefined;
-}
-
-/**
- * Checks if a hash value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf Hash
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function hashHas(key) {
-  var data = this.__data__;
-  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
-}
-
-/**
- * Sets the hash `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf Hash
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the hash instance.
- */
-function hashSet(key, value) {
-  var data = this.__data__;
-  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
-  return this;
-}
-
-// Add methods to `Hash`.
-Hash.prototype.clear = hashClear;
-Hash.prototype['delete'] = hashDelete;
-Hash.prototype.get = hashGet;
-Hash.prototype.has = hashHas;
-Hash.prototype.set = hashSet;
-
-/**
- * Creates an list cache object.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function ListCache(entries) {
-  var index = -1,
-      length = entries ? entries.length : 0;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-/**
- * Removes all key-value entries from the list cache.
- *
- * @private
- * @name clear
- * @memberOf ListCache
- */
-function listCacheClear() {
-  this.__data__ = [];
-}
-
-/**
- * Removes `key` and its value from the list cache.
- *
- * @private
- * @name delete
- * @memberOf ListCache
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function listCacheDelete(key) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  if (index < 0) {
-    return false;
-  }
-  var lastIndex = data.length - 1;
-  if (index == lastIndex) {
-    data.pop();
-  } else {
-    splice.call(data, index, 1);
-  }
-  return true;
-}
-
-/**
- * Gets the list cache value for `key`.
- *
- * @private
- * @name get
- * @memberOf ListCache
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function listCacheGet(key) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  return index < 0 ? undefined : data[index][1];
-}
-
-/**
- * Checks if a list cache value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf ListCache
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function listCacheHas(key) {
-  return assocIndexOf(this.__data__, key) > -1;
-}
-
-/**
- * Sets the list cache `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf ListCache
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the list cache instance.
- */
-function listCacheSet(key, value) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  if (index < 0) {
-    data.push([key, value]);
-  } else {
-    data[index][1] = value;
-  }
-  return this;
-}
-
-// Add methods to `ListCache`.
-ListCache.prototype.clear = listCacheClear;
-ListCache.prototype['delete'] = listCacheDelete;
-ListCache.prototype.get = listCacheGet;
-ListCache.prototype.has = listCacheHas;
-ListCache.prototype.set = listCacheSet;
-
-/**
- * Creates a map cache object to store key-value pairs.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function MapCache(entries) {
-  var index = -1,
-      length = entries ? entries.length : 0;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-/**
- * Removes all key-value entries from the map.
- *
- * @private
- * @name clear
- * @memberOf MapCache
- */
-function mapCacheClear() {
-  this.__data__ = {
-    'hash': new Hash,
-    'map': new (Map || ListCache),
-    'string': new Hash
-  };
-}
-
-/**
- * Removes `key` and its value from the map.
- *
- * @private
- * @name delete
- * @memberOf MapCache
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function mapCacheDelete(key) {
-  return getMapData(this, key)['delete'](key);
-}
-
-/**
- * Gets the map value for `key`.
- *
- * @private
- * @name get
- * @memberOf MapCache
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function mapCacheGet(key) {
-  return getMapData(this, key).get(key);
-}
-
-/**
- * Checks if a map value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf MapCache
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function mapCacheHas(key) {
-  return getMapData(this, key).has(key);
-}
-
-/**
- * Sets the map `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf MapCache
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the map cache instance.
- */
-function mapCacheSet(key, value) {
-  getMapData(this, key).set(key, value);
-  return this;
-}
-
-// Add methods to `MapCache`.
-MapCache.prototype.clear = mapCacheClear;
-MapCache.prototype['delete'] = mapCacheDelete;
-MapCache.prototype.get = mapCacheGet;
-MapCache.prototype.has = mapCacheHas;
-MapCache.prototype.set = mapCacheSet;
-
-/**
- *
- * Creates an array cache object to store unique values.
- *
- * @private
- * @constructor
- * @param {Array} [values] The values to cache.
- */
-function SetCache(values) {
-  var index = -1,
-      length = values ? values.length : 0;
-
-  this.__data__ = new MapCache;
-  while (++index < length) {
-    this.add(values[index]);
-  }
-}
-
-/**
- * Adds `value` to the array cache.
- *
- * @private
- * @name add
- * @memberOf SetCache
- * @alias push
- * @param {*} value The value to cache.
- * @returns {Object} Returns the cache instance.
- */
-function setCacheAdd(value) {
-  this.__data__.set(value, HASH_UNDEFINED);
-  return this;
-}
-
-/**
- * Checks if `value` is in the array cache.
- *
- * @private
- * @name has
- * @memberOf SetCache
- * @param {*} value The value to search for.
- * @returns {number} Returns `true` if `value` is found, else `false`.
- */
-function setCacheHas(value) {
-  return this.__data__.has(value);
-}
-
-// Add methods to `SetCache`.
-SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
-SetCache.prototype.has = setCacheHas;
-
-/**
- * Gets the index at which the `key` is found in `array` of key-value pairs.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {*} key The key to search for.
- * @returns {number} Returns the index of the matched value, else `-1`.
- */
-function assocIndexOf(array, key) {
-  var length = array.length;
-  while (length--) {
-    if (eq(array[length][0], key)) {
-      return length;
-    }
-  }
-  return -1;
-}
-
-/**
- * The base implementation of `_.isNative` without bad shim checks.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a native function,
- *  else `false`.
- */
-function baseIsNative(value) {
-  if (!isObject(value) || isMasked(value)) {
-    return false;
-  }
-  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
-  return pattern.test(toSource(value));
-}
-
-/**
- * The base implementation of `_.uniqBy` without support for iteratee shorthands.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {Function} [iteratee] The iteratee invoked per element.
- * @param {Function} [comparator] The comparator invoked per element.
- * @returns {Array} Returns the new duplicate free array.
- */
-function baseUniq(array, iteratee, comparator) {
-  var index = -1,
-      includes = arrayIncludes,
-      length = array.length,
-      isCommon = true,
-      result = [],
-      seen = result;
-
-  if (comparator) {
-    isCommon = false;
-    includes = arrayIncludesWith;
-  }
-  else if (length >= LARGE_ARRAY_SIZE) {
-    var set = iteratee ? null : createSet(array);
-    if (set) {
-      return setToArray(set);
-    }
-    isCommon = false;
-    includes = cacheHas;
-    seen = new SetCache;
-  }
-  else {
-    seen = iteratee ? [] : result;
-  }
-  outer:
-  while (++index < length) {
-    var value = array[index],
-        computed = iteratee ? iteratee(value) : value;
-
-    value = (comparator || value !== 0) ? value : 0;
-    if (isCommon && computed === computed) {
-      var seenIndex = seen.length;
-      while (seenIndex--) {
-        if (seen[seenIndex] === computed) {
-          continue outer;
-        }
-      }
-      if (iteratee) {
-        seen.push(computed);
-      }
-      result.push(value);
-    }
-    else if (!includes(seen, computed, comparator)) {
-      if (seen !== result) {
-        seen.push(computed);
-      }
-      result.push(value);
-    }
-  }
-  return result;
-}
-
-/**
- * Creates a set object of `values`.
- *
- * @private
- * @param {Array} values The values to add to the set.
- * @returns {Object} Returns the new set.
- */
-var createSet = !(Set && (1 / setToArray(new Set([,-0]))[1]) == INFINITY) ? noop : function(values) {
-  return new Set(values);
-};
-
-/**
- * Gets the data for `map`.
- *
- * @private
- * @param {Object} map The map to query.
- * @param {string} key The reference key.
- * @returns {*} Returns the map data.
- */
-function getMapData(map, key) {
-  var data = map.__data__;
-  return isKeyable(key)
-    ? data[typeof key == 'string' ? 'string' : 'hash']
-    : data.map;
-}
-
-/**
- * Gets the native function at `key` of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {string} key The key of the method to get.
- * @returns {*} Returns the function if it's native, else `undefined`.
- */
-function getNative(object, key) {
-  var value = getValue(object, key);
-  return baseIsNative(value) ? value : undefined;
-}
-
-/**
- * Checks if `value` is suitable for use as unique object key.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
- */
-function isKeyable(value) {
-  var type = typeof value;
-  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
-    ? (value !== '__proto__')
-    : (value === null);
-}
-
-/**
- * Checks if `func` has its source masked.
- *
- * @private
- * @param {Function} func The function to check.
- * @returns {boolean} Returns `true` if `func` is masked, else `false`.
- */
-function isMasked(func) {
-  return !!maskSrcKey && (maskSrcKey in func);
-}
-
-/**
- * Converts `func` to its source code.
- *
- * @private
- * @param {Function} func The function to process.
- * @returns {string} Returns the source code.
- */
-function toSource(func) {
-  if (func != null) {
-    try {
-      return funcToString.call(func);
-    } catch (e) {}
-    try {
-      return (func + '');
-    } catch (e) {}
-  }
-  return '';
-}
-
-/**
- * Creates a duplicate-free version of an array, using
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * for equality comparisons, in which only the first occurrence of each
- * element is kept.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Array
- * @param {Array} array The array to inspect.
- * @returns {Array} Returns the new duplicate free array.
- * @example
- *
- * _.uniq([2, 1, 2]);
- * // => [2, 1]
- */
-function uniq(array) {
-  return (array && array.length)
-    ? baseUniq(array)
-    : [];
-}
-
-/**
- * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * comparison between two values to determine if they are equivalent.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @example
- *
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
- *
- * _.eq(object, object);
- * // => true
- *
- * _.eq(object, other);
- * // => false
- *
- * _.eq('a', 'a');
- * // => true
- *
- * _.eq('a', Object('a'));
- * // => false
- *
- * _.eq(NaN, NaN);
- * // => true
- */
-function eq(value, other) {
-  return value === other || (value !== value && other !== other);
-}
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a function, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 8-9 which returns 'object' for typed array and other constructors.
-  var tag = isObject(value) ? objectToString.call(value) : '';
-  return tag == funcTag || tag == genTag;
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * This method returns `undefined`.
- *
- * @static
- * @memberOf _
- * @since 2.3.0
- * @category Util
- * @example
- *
- * _.times(2, _.noop);
- * // => [undefined, undefined]
- */
-function noop() {
-  // No operation performed.
-}
-
-module.exports = uniq;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {// Unique ID creation requires a high quality random # generator.  In the
-// browser this is a little complicated due to unknown quality of Math.random()
-// and inconsistent support for the `crypto` API.  We do the best we can via
-// feature-detection
-var rng;
-
-var crypto = global.crypto || global.msCrypto; // for IE 11
-if (crypto && crypto.getRandomValues) {
-  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
-  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
-  rng = function whatwgRNG() {
-    crypto.getRandomValues(rnds8);
-    return rnds8;
-  };
-}
-
-if (!rng) {
-  // Math.random()-based (RNG)
-  //
-  // If all else fails, use Math.random().  It's fast, but is of unspecified
-  // quality.
-  var rnds = new Array(16);
-  rng = function() {
-    for (var i = 0, r; i < 16; i++) {
-      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
-      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
-    }
-
-    return rnds;
-  };
-}
-
-module.exports = rng;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ }),
 /* 127 */
-/***/ (function(module, exports) {
-
-/**
- * Convert array of 16 byte values to UUID string format of the form:
- * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
- */
-var byteToHex = [];
-for (var i = 0; i < 256; ++i) {
-  byteToHex[i] = (i + 0x100).toString(16).substr(1);
-}
-
-function bytesToUuid(buf, offset) {
-  var i = offset || 0;
-  var bth = byteToHex;
-  return bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]];
-}
-
-module.exports = bytesToUuid;
-
-
-/***/ }),
-/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51728,7 +51744,139 @@ module.exports = {
 
 
 /***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * util/algconfig.js - Functions for managing algorithm set options
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
+ */
+
+
+function quoteRE(str) {
+  return str.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
+}
+
+function makeRE(prefix, suffix) {
+  var parts = [];
+
+  parts.push("^");
+  if (prefix) {
+    prefix = quoteRE(prefix);
+    parts.push(prefix);
+  }
+  if (suffix) {
+    parts.push(".*?");
+    suffix = quoteRE(suffix);
+    parts.push(suffix);
+  } else if (!prefix) {
+    parts.push(".*");
+  }
+  parts.push("$");
+
+  return parts.join("");
+}
+
+var AlgConfig = function(algspec) {
+  if (!algspec) {
+    algspec = [];
+  } else if ("string" === typeof algspec) {
+    algspec = algspec.split(" ");
+  }
+
+  var specAllowed = [], specDisallowed = [];
+  var ptnAllowed = [], ptnDisallowed = [];
+  var ptn = /^(\!)?([^*]*)\*([^*]*)$/, fmt;
+  algspec.forEach(function (a) {
+    if (!a) { return; }
+
+    ptn.lastIndex = 0;
+    var parts = ptn.exec(a);
+    if (!parts) { return; }
+
+    fmt = "(" + makeRE(parts[2], parts[3]) + ")";
+    if (!parts[1]) {
+      // allowed pattern
+      ptnAllowed.push(fmt);
+      specAllowed.push(parts[0]);
+    } else {
+      // diallowed pattern
+      ptnDisallowed.push(fmt);
+      specDisallowed.push(parts[0]);
+    }
+  });
+
+  ptnAllowed = (ptnAllowed.length) ?
+            new RegExp(ptnAllowed.join("|")) :
+            null;
+  ptnDisallowed = (ptnDisallowed.length) ?
+               new RegExp(ptnDisallowed.join("|")) :
+               null;
+  if (!specAllowed.length) {
+    specAllowed = ["*"];
+  }
+
+  Object.defineProperty(this, "spec", {
+    value: specAllowed.join(" ") + " " + specDisallowed.join(" "),
+    enumerable: true
+  });
+  Object.defineProperty(this, "match", {
+    value: function(alg) {
+      var result = Boolean(alg);
+
+      if (result && ptnAllowed) {
+        ptnAllowed.lastIndex = 0;
+        result = ptnAllowed.test(alg);
+      }
+      if (result && ptnDisallowed) {
+        ptnDisallowed.lastIndex = 0;
+        result = !ptnDisallowed.test(alg);
+      }
+
+      return result;
+    }
+  });
+}
+
+module.exports = AlgConfig;
+
+
+/***/ }),
 /* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * jwe/helpers.js - JWE Internal Helper Functions
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
+ */
+
+
+var CONSTANTS = __webpack_require__(21),
+    JWK = __webpack_require__(35);
+
+module.exports = {
+  slice: function(input, start) {
+    return Array.prototype.slice.call(input, start || 0);
+  },
+  generateCEK: function(enc) {
+    var ks = JWK.createKeyStore();
+    var len = CONSTANTS.KEYLENGTH[enc];
+
+    if (len) {
+        return ks.generate("oct", len);
+    }
+
+    throw new Error("unsupported encryption algorithm");
+  }
+};
+
+
+/***/ }),
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51736,9 +51884,9 @@ module.exports = {
 
 var Buffer = __webpack_require__(0).Buffer;
 var Transform = __webpack_require__(8).Transform;
-var binding = __webpack_require__(249);
-var util = __webpack_require__(135);
-var assert = __webpack_require__(134).ok;
+var binding = __webpack_require__(254);
+var util = __webpack_require__(136);
+var assert = __webpack_require__(135).ok;
 var kMaxLength = __webpack_require__(0).kMaxLength;
 var kRangeErrorMessage = 'Cannot create final Buffer. It would be larger ' + 'than 0x' + kMaxLength.toString(16) + ' bytes';
 
@@ -52344,7 +52492,7 @@ util.inherits(Unzip, Zlib);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52379,7 +52527,7 @@ var processNextTick = __webpack_require__(62);
 module.exports = Readable;
 
 /*<replacement>*/
-var isArray = __webpack_require__(239);
+var isArray = __webpack_require__(244);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -52389,7 +52537,7 @@ var Duplex;
 Readable.ReadableState = ReadableState;
 
 /*<replacement>*/
-var EE = __webpack_require__(89).EventEmitter;
+var EE = __webpack_require__(90).EventEmitter;
 
 var EElistenerCount = function (emitter, type) {
   return emitter.listeners(type).length;
@@ -52397,13 +52545,13 @@ var EElistenerCount = function (emitter, type) {
 /*</replacement>*/
 
 /*<replacement>*/
-var Stream = __webpack_require__(131);
+var Stream = __webpack_require__(132);
 /*</replacement>*/
 
 // TODO(bmeurer): Change this back to const once hole checks are
 // properly optimized away early in Ignition+TurboFan.
 /*<replacement>*/
-var Buffer = __webpack_require__(91).Buffer;
+var Buffer = __webpack_require__(92).Buffer;
 var OurUint8Array = global.Uint8Array || function () {};
 function _uint8ArrayToBuffer(chunk) {
   return Buffer.from(chunk);
@@ -52419,7 +52567,7 @@ util.inherits = __webpack_require__(44);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(240);
+var debugUtil = __webpack_require__(245);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -52428,8 +52576,8 @@ if (debugUtil && debugUtil.debuglog) {
 }
 /*</replacement>*/
 
-var BufferList = __webpack_require__(241);
-var destroyImpl = __webpack_require__(132);
+var BufferList = __webpack_require__(246);
+var destroyImpl = __webpack_require__(133);
 var StringDecoder;
 
 util.inherits(Readable, Stream);
@@ -53358,14 +53506,14 @@ function indexOf(xs, x) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(89).EventEmitter;
+module.exports = __webpack_require__(90).EventEmitter;
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53443,7 +53591,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53663,7 +53811,7 @@ function done(stream, er, data) {
 }
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53735,7 +53883,7 @@ function isBuffer(b) {
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var util = __webpack_require__(135);
+var util = __webpack_require__(136);
 var hasOwn = Object.prototype.hasOwnProperty;
 var pSlice = Array.prototype.slice;
 var functionsHaveNames = (function () {
@@ -54161,7 +54309,7 @@ var objectKeys = Object.keys || function (obj) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -54689,7 +54837,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(250);
+exports.isBuffer = __webpack_require__(255);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -54733,7 +54881,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(251);
+exports.inherits = __webpack_require__(256);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -54754,7 +54902,7 @@ function hasOwnProperty(obj, prop) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54812,7 +54960,7 @@ module.exports = adler32;
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54878,7 +55026,7 @@ module.exports = crc32;
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -55019,7 +55167,7 @@ module.exports = Sha256
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1)
@@ -55285,19 +55433,19 @@ module.exports = Sha512
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var inherits = __webpack_require__(1)
-var Legacy = __webpack_require__(285)
-var Base = __webpack_require__(141)
+var Legacy = __webpack_require__(286)
+var Base = __webpack_require__(142)
 var Buffer = __webpack_require__(16).Buffer
 var md5 = __webpack_require__(94)
-var RIPEMD160 = __webpack_require__(286)
+var RIPEMD160 = __webpack_require__(287)
 
-var sha = __webpack_require__(288)
+var sha = __webpack_require__(289)
 
 var ZEROS = Buffer.alloc(128)
 
@@ -55354,7 +55502,7 @@ module.exports = function createHmac (alg, key) {
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(16).Buffer
@@ -55459,7 +55607,7 @@ module.exports = CipherBase
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -55600,7 +55748,7 @@ module.exports = Sha256
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1)
@@ -55866,13 +56014,13 @@ module.exports = Sha512
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports) {
 
 module.exports = {"sha224WithRSAEncryption":{"sign":"rsa","hash":"sha224","id":"302d300d06096086480165030402040500041c"},"RSA-SHA224":{"sign":"ecdsa/rsa","hash":"sha224","id":"302d300d06096086480165030402040500041c"},"sha256WithRSAEncryption":{"sign":"rsa","hash":"sha256","id":"3031300d060960864801650304020105000420"},"RSA-SHA256":{"sign":"ecdsa/rsa","hash":"sha256","id":"3031300d060960864801650304020105000420"},"sha384WithRSAEncryption":{"sign":"rsa","hash":"sha384","id":"3041300d060960864801650304020205000430"},"RSA-SHA384":{"sign":"ecdsa/rsa","hash":"sha384","id":"3041300d060960864801650304020205000430"},"sha512WithRSAEncryption":{"sign":"rsa","hash":"sha512","id":"3051300d060960864801650304020305000440"},"RSA-SHA512":{"sign":"ecdsa/rsa","hash":"sha512","id":"3051300d060960864801650304020305000440"},"RSA-SHA1":{"sign":"rsa","hash":"sha1","id":"3021300906052b0e03021a05000414"},"ecdsa-with-SHA1":{"sign":"ecdsa","hash":"sha1","id":""},"sha256":{"sign":"ecdsa","hash":"sha256","id":""},"sha224":{"sign":"ecdsa","hash":"sha224","id":""},"sha384":{"sign":"ecdsa","hash":"sha384","id":""},"sha512":{"sign":"ecdsa","hash":"sha512","id":""},"DSA-SHA":{"sign":"dsa","hash":"sha1","id":""},"DSA-SHA1":{"sign":"dsa","hash":"sha1","id":""},"DSA":{"sign":"dsa","hash":"sha1","id":""},"DSA-WITH-SHA224":{"sign":"dsa","hash":"sha224","id":""},"DSA-SHA224":{"sign":"dsa","hash":"sha224","id":""},"DSA-WITH-SHA256":{"sign":"dsa","hash":"sha256","id":""},"DSA-SHA256":{"sign":"dsa","hash":"sha256","id":""},"DSA-WITH-SHA384":{"sign":"dsa","hash":"sha384","id":""},"DSA-SHA384":{"sign":"dsa","hash":"sha384","id":""},"DSA-WITH-SHA512":{"sign":"dsa","hash":"sha512","id":""},"DSA-SHA512":{"sign":"dsa","hash":"sha512","id":""},"DSA-RIPEMD160":{"sign":"dsa","hash":"rmd160","id":""},"ripemd160WithRSA":{"sign":"rsa","hash":"rmd160","id":"3021300906052b2403020105000414"},"RSA-RIPEMD160":{"sign":"rsa","hash":"rmd160","id":"3021300906052b2403020105000414"},"md5WithRSAEncryption":{"sign":"rsa","hash":"md5","id":"3020300c06082a864886f70d020505000410"},"RSA-MD5":{"sign":"rsa","hash":"md5","id":"3020300c06082a864886f70d020505000410"}}
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports) {
 
 var MAX_ALLOC = Math.pow(2, 30) - 1 // default in iojs
@@ -55896,7 +56044,7 @@ module.exports = function (iterations, keylen) {
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {var defaultEncoding
@@ -55913,15 +56061,15 @@ module.exports = defaultEncoding
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var md5 = __webpack_require__(94)
-var rmd160 = __webpack_require__(295)
-var sha = __webpack_require__(297)
+var rmd160 = __webpack_require__(296)
+var sha = __webpack_require__(298)
 
-var checkParameters = __webpack_require__(145)
-var defaultEncoding = __webpack_require__(146)
+var checkParameters = __webpack_require__(146)
+var defaultEncoding = __webpack_require__(147)
 var Buffer = __webpack_require__(22).Buffer
 var ZEROS = Buffer.alloc(128)
 var sizes = {
@@ -56020,7 +56168,7 @@ module.exports = pbkdf2
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -56161,7 +56309,7 @@ module.exports = Sha256
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1)
@@ -56427,7 +56575,7 @@ module.exports = Sha512
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
@@ -56495,12 +56643,12 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var xor = __webpack_require__(46)
 var Buffer = __webpack_require__(13).Buffer
-var incr32 = __webpack_require__(152)
+var incr32 = __webpack_require__(153)
 
 function getBlock (self) {
   var out = self._cipher.encryptBlockRaw(self._prev)
@@ -56531,7 +56679,7 @@ exports.encrypt = function (self, chunk) {
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports) {
 
 function incr32 (iv) {
@@ -56552,22 +56700,22 @@ module.exports = incr32
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports) {
 
 module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","type":"block"},"aes-192-ecb":{"cipher":"AES","key":192,"iv":0,"mode":"ECB","type":"block"},"aes-256-ecb":{"cipher":"AES","key":256,"iv":0,"mode":"ECB","type":"block"},"aes-128-cbc":{"cipher":"AES","key":128,"iv":16,"mode":"CBC","type":"block"},"aes-192-cbc":{"cipher":"AES","key":192,"iv":16,"mode":"CBC","type":"block"},"aes-256-cbc":{"cipher":"AES","key":256,"iv":16,"mode":"CBC","type":"block"},"aes128":{"cipher":"AES","key":128,"iv":16,"mode":"CBC","type":"block"},"aes192":{"cipher":"AES","key":192,"iv":16,"mode":"CBC","type":"block"},"aes256":{"cipher":"AES","key":256,"iv":16,"mode":"CBC","type":"block"},"aes-128-cfb":{"cipher":"AES","key":128,"iv":16,"mode":"CFB","type":"stream"},"aes-192-cfb":{"cipher":"AES","key":192,"iv":16,"mode":"CFB","type":"stream"},"aes-256-cfb":{"cipher":"AES","key":256,"iv":16,"mode":"CFB","type":"stream"},"aes-128-cfb8":{"cipher":"AES","key":128,"iv":16,"mode":"CFB8","type":"stream"},"aes-192-cfb8":{"cipher":"AES","key":192,"iv":16,"mode":"CFB8","type":"stream"},"aes-256-cfb8":{"cipher":"AES","key":256,"iv":16,"mode":"CFB8","type":"stream"},"aes-128-cfb1":{"cipher":"AES","key":128,"iv":16,"mode":"CFB1","type":"stream"},"aes-192-cfb1":{"cipher":"AES","key":192,"iv":16,"mode":"CFB1","type":"stream"},"aes-256-cfb1":{"cipher":"AES","key":256,"iv":16,"mode":"CFB1","type":"stream"},"aes-128-ofb":{"cipher":"AES","key":128,"iv":16,"mode":"OFB","type":"stream"},"aes-192-ofb":{"cipher":"AES","key":192,"iv":16,"mode":"OFB","type":"stream"},"aes-256-ofb":{"cipher":"AES","key":256,"iv":16,"mode":"OFB","type":"stream"},"aes-128-ctr":{"cipher":"AES","key":128,"iv":16,"mode":"CTR","type":"stream"},"aes-192-ctr":{"cipher":"AES","key":192,"iv":16,"mode":"CTR","type":"stream"},"aes-256-ctr":{"cipher":"AES","key":256,"iv":16,"mode":"CTR","type":"stream"},"aes-128-gcm":{"cipher":"AES","key":128,"iv":12,"mode":"GCM","type":"auth"},"aes-192-gcm":{"cipher":"AES","key":192,"iv":12,"mode":"GCM","type":"auth"},"aes-256-gcm":{"cipher":"AES","key":256,"iv":12,"mode":"GCM","type":"auth"}}
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aes = __webpack_require__(64)
 var Buffer = __webpack_require__(13).Buffer
 var Transform = __webpack_require__(65)
 var inherits = __webpack_require__(1)
-var GHASH = __webpack_require__(313)
+var GHASH = __webpack_require__(314)
 var xor = __webpack_require__(46)
-var incr32 = __webpack_require__(152)
+var incr32 = __webpack_require__(153)
 
 function xorTest (a, b) {
   var out = 0
@@ -56681,7 +56829,7 @@ module.exports = StreamCipher
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aes = __webpack_require__(64)
@@ -56714,7 +56862,7 @@ module.exports = StreamCipher
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var randomBytes = __webpack_require__(30);
@@ -56723,7 +56871,7 @@ findPrime.simpleSieve = simpleSieve;
 findPrime.fermatTest = fermatTest;
 var BN = __webpack_require__(99);
 var TWENTYFOUR = new BN(24);
-var MillerRabin = __webpack_require__(157);
+var MillerRabin = __webpack_require__(158);
 var millerRabin = new MillerRabin();
 var ONE = new BN(1);
 var TWO = new BN(2);
@@ -56825,11 +56973,11 @@ function findPrime(bits, gen) {
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var bn = __webpack_require__(99);
-var brorand = __webpack_require__(326);
+var brorand = __webpack_require__(327);
 
 function MillerRabin(rand) {
   this.rand = rand || new brorand.Rand();
@@ -56946,7 +57094,7 @@ MillerRabin.prototype.getDivisor = function getDivisor(n, k) {
 
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57011,7 +57159,7 @@ utils.encode = function encode(arr, enc) {
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57067,7 +57215,7 @@ exports.g1_256 = g1_256;
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57075,7 +57223,7 @@ exports.g1_256 = g1_256;
 
 var utils = __webpack_require__(17);
 var common = __webpack_require__(47);
-var shaCommon = __webpack_require__(159);
+var shaCommon = __webpack_require__(160);
 var assert = __webpack_require__(32);
 
 var sum32 = utils.sum32;
@@ -57179,7 +57327,7 @@ SHA256.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57516,13 +57664,13 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(357)
-var aesid = __webpack_require__(369)
-var fixProc = __webpack_require__(370)
-var ciphers = __webpack_require__(169)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(358)
+var aesid = __webpack_require__(370)
+var fixProc = __webpack_require__(371)
+var ciphers = __webpack_require__(170)
 var compat = __webpack_require__(95)
 module.exports = parseKeys
 
@@ -57629,10 +57777,10 @@ function decrypt (data, password) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var indexOf = __webpack_require__(359);
+var indexOf = __webpack_require__(360);
 
 var Object_keys = function (obj) {
     if (Object.keys) return Object.keys(obj)
@@ -57773,7 +57921,7 @@ exports.createContext = Script.createContext = function (context) {
 
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
@@ -57895,7 +58043,7 @@ EncoderBuffer.prototype.join = function join(out, offset) {
 
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var constants = exports;
@@ -57916,11 +58064,11 @@ constants._reverse = function reverse(map) {
   return res;
 };
 
-constants.der = __webpack_require__(363);
+constants.der = __webpack_require__(364);
 
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
@@ -58250,7 +58398,7 @@ function derDecodeLen(buf, primitive, fail) {
 
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
@@ -58551,7 +58699,7 @@ function encodeTag(tag, primitive, cls, reporter) {
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
@@ -58619,12 +58767,12 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ciphers = __webpack_require__(373)
-var deciphers = __webpack_require__(381)
-var modes = __webpack_require__(173)
+var ciphers = __webpack_require__(374)
+var deciphers = __webpack_require__(382)
+var modes = __webpack_require__(174)
 
 function getCiphers () {
   return Object.keys(modes)
@@ -58638,21 +58786,21 @@ exports.listCiphers = exports.getCiphers = getCiphers
 
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var modeModules = {
-  ECB: __webpack_require__(374),
-  CBC: __webpack_require__(375),
-  CFB: __webpack_require__(376),
-  CFB8: __webpack_require__(377),
-  CFB1: __webpack_require__(378),
-  OFB: __webpack_require__(379),
-  CTR: __webpack_require__(171),
-  GCM: __webpack_require__(171)
+  ECB: __webpack_require__(375),
+  CBC: __webpack_require__(376),
+  CFB: __webpack_require__(377),
+  CFB8: __webpack_require__(378),
+  CFB1: __webpack_require__(379),
+  OFB: __webpack_require__(380),
+  CTR: __webpack_require__(172),
+  GCM: __webpack_require__(172)
 }
 
-var modes = __webpack_require__(173)
+var modes = __webpack_require__(174)
 
 for (var key in modes) {
   modes[key].module = modeModules[modes[key].mode]
@@ -58662,12 +58810,12 @@ module.exports = modes
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var xor = __webpack_require__(50)
 var Buffer = __webpack_require__(14).Buffer
-var incr32 = __webpack_require__(172)
+var incr32 = __webpack_require__(173)
 
 function getBlock (self) {
   var out = self._cipher.encryptBlockRaw(self._prev)
@@ -58698,7 +58846,7 @@ exports.encrypt = function (self, chunk) {
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports) {
 
 function incr32 (iv) {
@@ -58719,22 +58867,22 @@ module.exports = incr32
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports) {
 
 module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","type":"block"},"aes-192-ecb":{"cipher":"AES","key":192,"iv":0,"mode":"ECB","type":"block"},"aes-256-ecb":{"cipher":"AES","key":256,"iv":0,"mode":"ECB","type":"block"},"aes-128-cbc":{"cipher":"AES","key":128,"iv":16,"mode":"CBC","type":"block"},"aes-192-cbc":{"cipher":"AES","key":192,"iv":16,"mode":"CBC","type":"block"},"aes-256-cbc":{"cipher":"AES","key":256,"iv":16,"mode":"CBC","type":"block"},"aes128":{"cipher":"AES","key":128,"iv":16,"mode":"CBC","type":"block"},"aes192":{"cipher":"AES","key":192,"iv":16,"mode":"CBC","type":"block"},"aes256":{"cipher":"AES","key":256,"iv":16,"mode":"CBC","type":"block"},"aes-128-cfb":{"cipher":"AES","key":128,"iv":16,"mode":"CFB","type":"stream"},"aes-192-cfb":{"cipher":"AES","key":192,"iv":16,"mode":"CFB","type":"stream"},"aes-256-cfb":{"cipher":"AES","key":256,"iv":16,"mode":"CFB","type":"stream"},"aes-128-cfb8":{"cipher":"AES","key":128,"iv":16,"mode":"CFB8","type":"stream"},"aes-192-cfb8":{"cipher":"AES","key":192,"iv":16,"mode":"CFB8","type":"stream"},"aes-256-cfb8":{"cipher":"AES","key":256,"iv":16,"mode":"CFB8","type":"stream"},"aes-128-cfb1":{"cipher":"AES","key":128,"iv":16,"mode":"CFB1","type":"stream"},"aes-192-cfb1":{"cipher":"AES","key":192,"iv":16,"mode":"CFB1","type":"stream"},"aes-256-cfb1":{"cipher":"AES","key":256,"iv":16,"mode":"CFB1","type":"stream"},"aes-128-ofb":{"cipher":"AES","key":128,"iv":16,"mode":"OFB","type":"stream"},"aes-192-ofb":{"cipher":"AES","key":192,"iv":16,"mode":"OFB","type":"stream"},"aes-256-ofb":{"cipher":"AES","key":256,"iv":16,"mode":"OFB","type":"stream"},"aes-128-ctr":{"cipher":"AES","key":128,"iv":16,"mode":"CTR","type":"stream"},"aes-192-ctr":{"cipher":"AES","key":192,"iv":16,"mode":"CTR","type":"stream"},"aes-256-ctr":{"cipher":"AES","key":256,"iv":16,"mode":"CTR","type":"stream"},"aes-128-gcm":{"cipher":"AES","key":128,"iv":12,"mode":"GCM","type":"auth"},"aes-192-gcm":{"cipher":"AES","key":192,"iv":12,"mode":"GCM","type":"auth"},"aes-256-gcm":{"cipher":"AES","key":256,"iv":12,"mode":"GCM","type":"auth"}}
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aes = __webpack_require__(68)
 var Buffer = __webpack_require__(14).Buffer
 var Transform = __webpack_require__(69)
 var inherits = __webpack_require__(1)
-var GHASH = __webpack_require__(380)
+var GHASH = __webpack_require__(381)
 var xor = __webpack_require__(50)
-var incr32 = __webpack_require__(172)
+var incr32 = __webpack_require__(173)
 
 function xorTest (a, b) {
   var out = 0
@@ -58848,7 +58996,7 @@ module.exports = StreamCipher
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aes = __webpack_require__(68)
@@ -58881,13 +59029,13 @@ module.exports = StreamCipher
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports) {
 
 module.exports = {"1.3.132.0.10":"secp256k1","1.3.132.0.33":"p224","1.2.840.10045.3.1.1":"p192","1.2.840.10045.3.1.7":"p256","1.3.132.0.34":"p384","1.3.132.0.35":"p521"}
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58952,7 +59100,7 @@ utils.encode = function encode(arr, enc) {
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59008,7 +59156,7 @@ exports.g1_256 = g1_256;
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59016,7 +59164,7 @@ exports.g1_256 = g1_256;
 
 var utils = __webpack_require__(19);
 var common = __webpack_require__(51);
-var shaCommon = __webpack_require__(178);
+var shaCommon = __webpack_require__(179);
 var assert = __webpack_require__(33);
 
 var sum32 = utils.sum32;
@@ -59120,7 +59268,7 @@ SHA256.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59457,13 +59605,13 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(410)
-var aesid = __webpack_require__(422)
-var fixProc = __webpack_require__(423)
-var ciphers = __webpack_require__(187)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(411)
+var aesid = __webpack_require__(423)
+var fixProc = __webpack_require__(424)
+var ciphers = __webpack_require__(188)
 var compat = __webpack_require__(95)
 module.exports = parseKeys
 
@@ -59570,7 +59718,7 @@ function decrypt (data, password) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
@@ -59692,7 +59840,7 @@ EncoderBuffer.prototype.join = function join(out, offset) {
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var constants = exports;
@@ -59713,11 +59861,11 @@ constants._reverse = function reverse(map) {
   return res;
 };
 
-constants.der = __webpack_require__(416);
+constants.der = __webpack_require__(417);
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
@@ -60047,7 +60195,7 @@ function derDecodeLen(buf, primitive, fail) {
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
@@ -60348,7 +60496,7 @@ function encodeTag(tag, primitive, cls, reporter) {
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
@@ -60416,12 +60564,12 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ciphers = __webpack_require__(426)
-var deciphers = __webpack_require__(434)
-var modes = __webpack_require__(191)
+var ciphers = __webpack_require__(427)
+var deciphers = __webpack_require__(435)
+var modes = __webpack_require__(192)
 
 function getCiphers () {
   return Object.keys(modes)
@@ -60435,21 +60583,21 @@ exports.listCiphers = exports.getCiphers = getCiphers
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var modeModules = {
-  ECB: __webpack_require__(427),
-  CBC: __webpack_require__(428),
-  CFB: __webpack_require__(429),
-  CFB8: __webpack_require__(430),
-  CFB1: __webpack_require__(431),
-  OFB: __webpack_require__(432),
-  CTR: __webpack_require__(189),
-  GCM: __webpack_require__(189)
+  ECB: __webpack_require__(428),
+  CBC: __webpack_require__(429),
+  CFB: __webpack_require__(430),
+  CFB8: __webpack_require__(431),
+  CFB1: __webpack_require__(432),
+  OFB: __webpack_require__(433),
+  CTR: __webpack_require__(190),
+  GCM: __webpack_require__(190)
 }
 
-var modes = __webpack_require__(191)
+var modes = __webpack_require__(192)
 
 for (var key in modes) {
   modes[key].module = modeModules[modes[key].mode]
@@ -60459,12 +60607,12 @@ module.exports = modes
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var xor = __webpack_require__(55)
 var Buffer = __webpack_require__(15).Buffer
-var incr32 = __webpack_require__(190)
+var incr32 = __webpack_require__(191)
 
 function getBlock (self) {
   var out = self._cipher.encryptBlockRaw(self._prev)
@@ -60495,7 +60643,7 @@ exports.encrypt = function (self, chunk) {
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports) {
 
 function incr32 (iv) {
@@ -60516,22 +60664,22 @@ module.exports = incr32
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports) {
 
 module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","type":"block"},"aes-192-ecb":{"cipher":"AES","key":192,"iv":0,"mode":"ECB","type":"block"},"aes-256-ecb":{"cipher":"AES","key":256,"iv":0,"mode":"ECB","type":"block"},"aes-128-cbc":{"cipher":"AES","key":128,"iv":16,"mode":"CBC","type":"block"},"aes-192-cbc":{"cipher":"AES","key":192,"iv":16,"mode":"CBC","type":"block"},"aes-256-cbc":{"cipher":"AES","key":256,"iv":16,"mode":"CBC","type":"block"},"aes128":{"cipher":"AES","key":128,"iv":16,"mode":"CBC","type":"block"},"aes192":{"cipher":"AES","key":192,"iv":16,"mode":"CBC","type":"block"},"aes256":{"cipher":"AES","key":256,"iv":16,"mode":"CBC","type":"block"},"aes-128-cfb":{"cipher":"AES","key":128,"iv":16,"mode":"CFB","type":"stream"},"aes-192-cfb":{"cipher":"AES","key":192,"iv":16,"mode":"CFB","type":"stream"},"aes-256-cfb":{"cipher":"AES","key":256,"iv":16,"mode":"CFB","type":"stream"},"aes-128-cfb8":{"cipher":"AES","key":128,"iv":16,"mode":"CFB8","type":"stream"},"aes-192-cfb8":{"cipher":"AES","key":192,"iv":16,"mode":"CFB8","type":"stream"},"aes-256-cfb8":{"cipher":"AES","key":256,"iv":16,"mode":"CFB8","type":"stream"},"aes-128-cfb1":{"cipher":"AES","key":128,"iv":16,"mode":"CFB1","type":"stream"},"aes-192-cfb1":{"cipher":"AES","key":192,"iv":16,"mode":"CFB1","type":"stream"},"aes-256-cfb1":{"cipher":"AES","key":256,"iv":16,"mode":"CFB1","type":"stream"},"aes-128-ofb":{"cipher":"AES","key":128,"iv":16,"mode":"OFB","type":"stream"},"aes-192-ofb":{"cipher":"AES","key":192,"iv":16,"mode":"OFB","type":"stream"},"aes-256-ofb":{"cipher":"AES","key":256,"iv":16,"mode":"OFB","type":"stream"},"aes-128-ctr":{"cipher":"AES","key":128,"iv":16,"mode":"CTR","type":"stream"},"aes-192-ctr":{"cipher":"AES","key":192,"iv":16,"mode":"CTR","type":"stream"},"aes-256-ctr":{"cipher":"AES","key":256,"iv":16,"mode":"CTR","type":"stream"},"aes-128-gcm":{"cipher":"AES","key":128,"iv":12,"mode":"GCM","type":"auth"},"aes-192-gcm":{"cipher":"AES","key":192,"iv":12,"mode":"GCM","type":"auth"},"aes-256-gcm":{"cipher":"AES","key":256,"iv":12,"mode":"GCM","type":"auth"}}
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aes = __webpack_require__(71)
 var Buffer = __webpack_require__(15).Buffer
 var Transform = __webpack_require__(72)
 var inherits = __webpack_require__(1)
-var GHASH = __webpack_require__(433)
+var GHASH = __webpack_require__(434)
 var xor = __webpack_require__(55)
-var incr32 = __webpack_require__(190)
+var incr32 = __webpack_require__(191)
 
 function xorTest (a, b) {
   var out = 0
@@ -60645,7 +60793,7 @@ module.exports = StreamCipher
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aes = __webpack_require__(71)
@@ -60678,7 +60826,7 @@ module.exports = StreamCipher
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var createHash = __webpack_require__(45);
@@ -60700,7 +60848,7 @@ function i2ops(c) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports) {
 
 module.exports = function xor(a, b) {
@@ -60713,7 +60861,7 @@ module.exports = function xor(a, b) {
 };
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bn = __webpack_require__(53);
@@ -60729,7 +60877,7 @@ module.exports = withPublic;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bn = __webpack_require__(53);
@@ -60776,7 +60924,7 @@ function getr(priv) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60787,534 +60935,401 @@ function getr(priv) {
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 var jose = __webpack_require__(104);
-var base64url = __webpack_require__(83);
+var base64url = __webpack_require__(82);
 
 module.exports = {
   base64url: base64url,
-  DeriverUtils: __webpack_require__(269),
+  DeriverUtils: __webpack_require__(270),
   jose: jose,
-  ScopedKeys: __webpack_require__(270)
+  ScopedKeys: __webpack_require__(271)
 };
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/aes-cbc-hmac-sha2.js - AES-CBC-HMAC-SHA2 Composited Encryption
+ * jws/sign.js - Sign to JWS
  *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
  */
 
 
-var helpers = __webpack_require__(12),
-    HMAC = __webpack_require__(74),
-    sha = __webpack_require__(58),
-    forge = __webpack_require__(5),
-    DataBuffer = __webpack_require__(41),
-    util = __webpack_require__(7);
+var clone = __webpack_require__(20),
+    merge = __webpack_require__(26),
+    uniq = __webpack_require__(106),
+    util = __webpack_require__(7),
+    JWK = __webpack_require__(35),
+    slice = __webpack_require__(239).slice;
 
-function checkIv(iv) {
-  if (16 !== iv.length) {
-    throw new Error("invalid iv");
-  }
-}
+var DEFAULTS = __webpack_require__(240);
 
-function commonCbcEncryptFN(size) {
-  // ### 'fallback' implementation -- uses forge
-  var fallback = function(encKey, pdata, iv) {
-    try {
-      checkIv(iv);
-    } catch (err) {
-      return Promise.reject(err);
-    }
+/**
+ * @class JWS.Signer
+ * @classdesc Generator of signed content.
+ *
+ * @description
+ * **NOTE:** this class cannot be instantiated directly. Instead call {@link
+ * JWS.createSign}.
+ */
+var JWSSigner = function(cfg, signatories) {
+  var finalized = false,
+      format = cfg.format || "general",
+      content = new Buffer(0);
 
-    var promise = Promise.resolve();
+  /**
+  * @member {Boolean} JWS.Signer#compact
+  * @description
+  * Indicates whether the outuput of this signature generator is using
+  * the Compact serialization (`true`) or the JSON serialization
+  * (`false`).
+  */
+  Object.defineProperty(this, "compact", {
+    get: function() {
+      return "compact" === format;
+    },
+    enumerable: true
+  });
+  Object.defineProperty(this, "format", {
+    get: function() {
+      return format;
+    },
+    enumerable: true
+  });
 
-    promise = promise.then(function() {
-      var cipher = forge.cipher.createCipher("AES-CBC", new DataBuffer(encKey));
-      cipher.start({
-        iv: new DataBuffer(iv)
-      });
-
-      // TODO: chunk data
-      cipher.update(new DataBuffer(pdata));
-      if (!cipher.finish()) {
-        return Promise.reject(new Error("encryption failed"));
+  /**
+  * @method JWS.Signer#update
+  * @description
+  * Updates the signing content for this signature content. The content
+  * is appended to the end of any other content already applied.
+  *
+  * If {data} is a Buffer, {encoding} is ignored. Otherwise, {data} is
+  * converted to a Buffer internally to {encoding}.
+  *
+  * @param {Buffer|String} data The data to sign.
+  * @param {String} [encoding="binary"] The encoding of {data}.
+  * @returns {JWS.Signer} This signature generator.
+  * @throws {Error} If a signature has already been generated.
+  */
+  Object.defineProperty(this, "update", {
+    value: function(data, encoding) {
+      if (finalized) {
+        throw new Error("already final");
+      }
+      if (data != null) {
+        data = util.asBuffer(data, encoding);
+        if (content.length) {
+          content = Buffer.concat([content, data],
+                      content.length + data.length);
+        } else {
+          content = data;
+        }
       }
 
-      var cdata = cipher.output.native();
-      return cdata;
-    });
-
-    return promise;
-  };
-
-  // ### WebCryptoAPI implementation
-  // TODO: cache CryptoKey sooner
-  var webcrypto = function(encKey, pdata, iv) {
-    try {
-      checkIv(iv);
-    } catch (err) {
-      return Promise.reject(err);
+      return this;
     }
-
-    var promise = Promise.resolve();
-
-    promise = promise.then(function() {
-      var alg = {
-        name: "AES-CBC"
-      };
-      return helpers.subtleCrypto.importKey("raw", encKey, alg, true, ["encrypt"]);
-    });
-    promise = promise.then(function(key) {
-      var alg = {
-        name: "AES-CBC",
-        iv: iv
-      };
-      return helpers.subtleCrypto.encrypt(alg, key, pdata);
-    });
-    promise = promise.then(function(cdata) {
-      cdata = new Buffer(cdata);
-      return cdata;
-    });
-
-    return promise;
-  };
-
-  // ### NodeJS implementation
-  var nodejs = function(encKey, pdata, iv) {
-    try {
-      checkIv(iv);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var promise = Promise.resolve(pdata);
-
-    promise = promise.then(function(pdata) {
-      var name = "AES-" + size + "-CBC";
-      var cipher = helpers.nodeCrypto.createCipheriv(name, encKey, iv);
-      var cdata = Buffer.concat([
-        cipher.update(pdata),
-        cipher.final()
-      ]);
-      return cdata;
-    });
-
-    return promise;
-  };
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-
-function commonCbcDecryptFN(size) {
-  // ### 'fallback' implementation -- uses forge
-  var fallback = function(encKey, cdata, iv) {
-    // validate inputs
-    try {
-      checkIv(iv);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var promise = Promise.resolve();
-
-    promise = promise.then(function() {
-      var cipher = forge.cipher.createDecipher("AES-CBC", new DataBuffer(encKey));
-      cipher.start({
-        iv: new DataBuffer(iv)
-      });
-
-      // TODO: chunk data
-      cipher.update(new DataBuffer(cdata));
-      if (!cipher.finish()) {
-        return Promise.reject(new Error("encryption failed"));
+  });
+  /**
+  * @method JWS.Signer#final
+  * @description
+  * Finishes the signature operation.
+  *
+  * The returned Promise, when fulfilled, is the JSON Web Signature (JWS)
+  * object, either in the Compact (if {@link JWS.Signer#format} is
+  * `"compact"`), the flattened JSON (if {@link JWS.Signer#format} is
+  * "flattened"), or the general JSON serialization.
+  *
+  * @param {Buffer|String} [data] The final content to apply.
+  * @param {String} [encoding="binary"] The encoding of the final content
+  *        (if any).
+  * @returns {Promise} The promise for the signatures
+  * @throws {Error} If a signature has already been generated.
+  */
+  Object.defineProperty(this, "final", {
+    value: function(data, encoding) {
+      if (finalized) {
+        return Promise.reject(new Error("already final"));
       }
 
-      var pdata = cipher.output.native();
-      return pdata;
-    });
+      // last-minute data
+      this.update(data, encoding);
 
-    return promise;
-  };
-
-  // ### WebCryptoAPI implementation
-  // TODO: cache CryptoKey sooner
-  var webcrypto = function(encKey, cdata, iv) {
-    // validate inputs
-    try {
-      checkIv(iv);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var promise = Promise.resolve();
-
-    promise = promise.then(function() {
-      var alg = {
-        name: "AES-CBC"
-      };
-      return helpers.subtleCrypto.importKey("raw", encKey, alg, true, ["decrypt"]);
-    });
-    promise = promise.then(function(key) {
-      var alg = {
-        name: "AES-CBC",
-        iv: iv
-      };
-      return helpers.subtleCrypto.decrypt(alg, key, cdata);
-    });
-    promise = promise.then(function(pdata) {
-      pdata = new Buffer(pdata);
-      return pdata;
-    });
-
-    return promise;
-  };
-
-  // ### NodeJS implementation
-  var nodejs = function(encKey, cdata, iv) {
-    // validate inputs
-    try {
-      checkIv(iv);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var promise = Promise.resolve();
-
-    promise = promise.then(function() {
-      var name = "AES-" + size + "-CBC";
-      var cipher = helpers.nodeCrypto.createDecipheriv(name, encKey, iv);
-      var pdata = Buffer.concat([
-        cipher.update(cdata),
-        cipher.final()
-      ]);
-      return pdata;
-    });
-
-    return promise;
-  };
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-
-function checkKey(key, size) {
-  if ((size << 1) !== (key.length << 3)) {
-    throw new Error("invalid encryption key size");
-  }
-}
-
-function cbcHmacEncryptFN(size) {
-  var commonEncrypt = commonCbcEncryptFN(size);
-  return function(key, pdata, props) {
-    // validate inputs
-    try {
-      checkKey(key, size);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var eKey = key.slice(size / 8),
-        iKey = key.slice(0, size / 8),
-        iv = props.iv || new Buffer(0),
-        adata = props.aad || props.adata || new Buffer(0);
-
-    // STEP 1 -- Encrypt
-    var promise = commonEncrypt(eKey, pdata, iv);
-
-    // STEP 2 -- MAC
-    promise = promise.then(function(cdata){
-      var mdata = Buffer.concat([
-        adata,
-        iv,
-        cdata,
-        helpers.int64ToBuffer(adata.length * 8)
-      ]);
-
+      // mark as done...ish
+      finalized = true;
       var promise;
-      promise = HMAC["HS" + (size * 2)].sign(iKey, mdata, {
-        loose: true
+
+      // map signatory promises to just signatories
+      promise = Promise.all(signatories);
+      promise = promise.then(function(sigs) {
+        // prepare content
+        content = util.base64url.encode(content);
+
+        sigs = sigs.map(function(s) {
+          // prepare protected
+          var protect = {},
+              lenProtect = 0,
+              unprotect = clone(s.header),
+              lenUnprotect = Object.keys(unprotect).length;
+          s.protected.forEach(function(h) {
+            if (!(h in unprotect)) {
+              return;
+            }
+            protect[h] = unprotect[h];
+            lenProtect++;
+            delete unprotect[h];
+            lenUnprotect--;
+          });
+          if (lenProtect > 0) {
+            protect = JSON.stringify(protect);
+            protect = util.base64url.encode(protect);
+          } else {
+            protect = "";
+          }
+
+          // signit!
+          var data = new Buffer(protect + "." + content, "ascii");
+          s = s.key.sign(s.header.alg, data, s.header);
+          s = s.then(function(result) {
+            var sig = {};
+            if (0 < lenProtect) {
+              sig.protected = protect;
+            }
+            if (0 < lenUnprotect) {
+              sig.header = unprotect;
+            }
+            sig.signature = util.base64url.encode(result.mac);
+            return sig;
+          });
+          return s;
+        });
+        sigs = [Promise.resolve(content)].concat(sigs);
+        return Promise.all(sigs);
       });
-      promise = promise.then(function(result) {
-        // TODO: move slice to hmac.js
-        var tag = result.mac.slice(0, size / 8);
+      promise = promise.then(function(results) {
+        var content = results[0];
         return {
-          data: cdata,
-          tag: tag
+          payload: content,
+          signatures: results.slice(1)
         };
       });
+      switch (format) {
+        case "compact":
+          promise = promise.then(function(jws) {
+            var compact = [
+              jws.signatures[0].protected,
+              jws.payload,
+              jws.signatures[0].signature
+            ];
+            compact = compact.join(".");
+            return compact;
+          });
+          break;
+        case "flattened":
+          promise = promise.then(function(jws) {
+            var flattened = {};
+            flattened.payload = jws.payload;
+
+            var sig = jws.signatures[0];
+            if (sig.protected) {
+              flattened.protected = sig.protected;
+            }
+            if (sig.header) {
+              flattened.header = sig.header;
+            }
+            flattened.signature = sig.signature;
+
+            return flattened;
+          });
+          break;
+      }
+
       return promise;
-    });
+    }
+  });
+};
 
-    return promise;
-  };
-}
 
-function cbcHmacDecryptFN(size) {
-  var commonDecrypt = commonCbcDecryptFN(size);
+/**
+ * @description
+ * Creates a new JWS.Signer with the given options and signatories.
+ *
+ * @param {Object} [opts] The signing options
+ * @param {Boolean} [opts.compact] Use compact serialization?
+ * @param {String} [opts.format] The serialization format to use ("compact",
+ *                 "flattened", "general")
+ * @param {Object} [opts.fields] Additional header fields
+ * @param {JWK.Key[]|Object[]} [signs] Signatories, either as an array of
+ *        JWK.Key instances; or an array of objects, each with the following
+ *        properties
+ * @param {JWK.Key} signs.key Key used to sign content
+ * @param {Object} [signs.header] Per-signatory header fields
+ * @param {String} [signs.reference] Reference field to identify the key
+ * @param {String[]|String} [signs.protect] List of fields to integrity
+ *        protect ("*" to protect all fields)
+ * @returns {JWS.Signer} The signature generator.
+ * @throws {Error} If Compact serialization is requested but there are
+ *         multiple signatories
+ */
+function createSign(opts, signs) {
+  // fixup signatories
+  var options = opts,
+      signStart = 1,
+      signList = signs;
 
-  return function(key, cdata, props) {
-    // validate inputs
-    try {
-      checkKey(key, size);
-    } catch (err) {
-      return Promise.reject(err);
+  if (arguments.length === 0) {
+    throw new Error("at least one signatory must be provided");
+  }
+  if (arguments.length === 1) {
+    signList = opts;
+    signStart = 0;
+    options = {};
+  } else if (JWK.isKey(opts) ||
+            (opts && "kty" in opts) ||
+            (opts && "key" in opts &&
+            (JWK.isKey(opts.key) || "kty" in opts.key))) {
+    signList = opts;
+    signStart = 0;
+    options = {};
+  } else {
+    options = clone(opts);
+  }
+  if (!Array.isArray(signList)) {
+    signList = slice(arguments, signStart);
+  }
+
+  // fixup options
+  options = merge(clone(DEFAULTS), options);
+
+  // setup header fields
+  var allFields = options.fields || {};
+  // setup serialization format
+  var format = options.format;
+  if (!format) {
+    format = options.compact ? "compact" : "general";
+  }
+  if (("compact" === format || "flattened" === format) && 1 < signList.length) {
+    throw new Error("too many signatories for compact or flattened JSON serialization");
+  }
+
+  // note protected fields (globally)
+  // protected fields are per signature
+  var protectAll = ("*" === options.protect);
+  if (options.compact) {
+    protectAll = true;
+  }
+
+  signList = signList.map(function(s, idx) {
+    var p;
+
+    // resolve a key
+    if (s && "kty" in s) {
+      p = JWK.asKey(s);
+      p = p.then(function(k) {
+        return {
+          key: k
+        };
+      });
+    } else if (s) {
+      p = JWK.asKey(s.key);
+      p = p.then(function(k) {
+        return {
+          header: s.header,
+          reference: s.reference,
+          protect: s.protect,
+          key: k
+        };
+      });
+    } else {
+      p = Promise.reject(new Error("missing key for signatory " + idx));
     }
 
-    var eKey = key.slice(size / 8),
-        iKey = key.slice(0, size / 8),
-        iv = props.iv || new Buffer(0),
-        adata = props.aad || props.adata || new Buffer(0),
-        tag = props.tag || props.mac || new Buffer(0);
+    // resolve the complete signatory
+    p = p.then(function(signatory) {
+      var key = signatory.key;
 
-    var promise = Promise.resolve();
+      // make sure there is a header
+      var header = signatory.header || {};
+      header = merge(merge({}, allFields), header);
+      signatory.header = header;
 
-    // STEP 1 -- MAC
-    promise = promise.then(function() {
-      var promise;
-      // construct MAC input
-      var mdata = Buffer.concat([
-        adata,
-        iv,
-        cdata,
-        helpers.int64ToBuffer(adata.length * 8)
-      ]);
-      promise = HMAC["HS" + (size * 2)].verify(iKey, mdata, tag, {
-        loose: true
-      });
-      promise = promise.then(function() {
-        return cdata;
-      }, function() {
-        // failure -- invalid tag error
-        throw new Error("mac check failed");
-      });
-      return promise;
-    });
-
-    // STEP 2 -- Decrypt
-    promise = promise.then(function(){
-      return commonDecrypt(eKey, cdata, iv);
-    });
-
-    return promise;
-  };
-}
-
-var EncryptionLabel = new Buffer("Encryption", "utf8");
-var IntegrityLabel = new Buffer("Integrity", "utf8");
-var DotLabel = new Buffer(".", "utf8");
-
-function generateCek(masterKey, alg, epu, epv) {
-  var masterSize = masterKey.length * 8;
-  var cekSize = masterSize / 2;
-  var promise = Promise.resolve();
-
-  promise = promise.then(function(){
-    var input = Buffer.concat([
-      helpers.int32ToBuffer(1),
-      masterKey,
-      helpers.int32ToBuffer(cekSize),
-      new Buffer(alg, "utf8"),
-      epu,
-      epv,
-      EncryptionLabel
-    ]);
-
-    return input;
-  });
-
-  promise = promise.then( function(input) {
-    return sha["SHA-" + masterSize].digest(input).then(function(digest) {
-      return digest.slice(0, cekSize / 8);
-    });
-  });
-  promise = Promise.resolve(promise);
-
-  return promise;
-}
-
-function generateCik(masterKey, alg, epu, epv) {
-  var masterSize = masterKey.length * 8;
-  var cikSize = masterSize;
-  var promise = Promise.resolve();
-
-  promise = promise.then(function(){
-    var input = Buffer.concat([
-      helpers.int32ToBuffer(1),
-      masterKey,
-      helpers.int32ToBuffer(cikSize),
-      new Buffer(alg, "utf8"),
-      epu,
-      epv,
-      IntegrityLabel
-    ]);
-
-    return input;
-  });
-
-  promise = promise.then( function(input) {
-    return sha["SHA-" + masterSize].digest(input).then(function(digest) {
-      return digest.slice(0, cikSize / 8);
-    });
-  });
-  promise = Promise.resolve(promise);
-
-  return promise;
-}
-
-function concatKdfCbcHmacEncryptFN(size, alg) {
-  var commonEncrypt = commonCbcEncryptFN(size);
-
-  return function(key, pdata, props) {
-    var epu = props.epu || helpers.int32ToBuffer(0),
-        epv = props.epv || helpers.int32ToBuffer(0),
-        iv = props.iv || new Buffer(0),
-        adata = props.aad || props.adata || new Buffer(0),
-        kdata = props.kdata || new Buffer(0);
-
-    // Pre Step 1 -- Generate Keys
-    var promises = [
-      generateCek(key, alg, epu, epv),
-      generateCik(key, alg, epu, epv)
-    ];
-
-    var cek,
-        cik;
-    var promise = Promise.all(promises).then(function(keys) {
-      cek = keys[0];
-      cik = keys[1];
-    });
-
-    // STEP 1 -- Encrypt
-    promise = promise.then(function(){
-      return commonEncrypt(cek, pdata, iv);
-    });
-
-    // STEP 2 -- Mac
-    promise = promise.then(function(cdata){
-      var mdata = Buffer.concat([
-        adata,
-        DotLabel,
-        new Buffer(kdata),
-        DotLabel,
-        new Buffer(util.base64url.encode(iv), "utf8"),
-        DotLabel,
-        new Buffer(util.base64url.encode(cdata), "utf8")
-      ]);
-      return Promise.all([
-        Promise.resolve(cdata),
-        HMAC["HS" + (size * 2)].sign(cik, mdata, { loose: false })
-      ]);
-    });
-    promise = promise.then(function(result){
-      return {
-        data: result[0],
-        tag: result[1].mac
-      };
-    });
-
-    return promise;
-  };
-}
-
-function concatKdfCbcHmacDecryptFN(size, alg) {
-  var commonDecrypt = commonCbcDecryptFN(size);
-
-  return function(key, cdata, props) {
-    var epu = props.epu || helpers.int32ToBuffer(0),
-        epv = props.epv || helpers.int32ToBuffer(0),
-        iv = props.iv || new Buffer(0),
-        adata = props.aad || props.adata || new Buffer(0),
-        kdata = props.kdata || new Buffer(0),
-        tag = props.tag || props.mac || new Buffer(0);
-
-    // Pre Step 1 -- Generate Keys
-    var promises = [
-      generateCek(key, alg, epu, epv),
-      generateCik(key, alg, epu, epv)
-    ];
-
-    var cek,
-        cik;
-    var promise = Promise.all(promises).then(function(keys){
-      cek = keys[0];
-      cik = keys[1];
-    });
-
-
-    // STEP 1 -- MAC
-    promise = promise.then(function() {
-      // construct MAC input
-      var mdata = Buffer.concat([
-        adata,
-        DotLabel,
-        new Buffer(kdata),
-        DotLabel,
-        new Buffer(util.base64url.encode(iv), "utf8"),
-        DotLabel,
-        new Buffer(util.base64url.encode(cdata), "utf8")
-      ]);
-
-      try {
-        return HMAC["HS" + (size * 2)].verify(cik, mdata, tag, {
-          loose: false
-        });
-      } catch (e) {
-        throw new Error("mac check failed");
+      // ensure an algorithm
+      if (!header.alg) {
+        header.alg = key.algorithms(JWK.MODE_SIGN)[0] || "";
       }
+
+      // determine the key reference
+      var ref = signatory.reference;
+      delete signatory.reference;
+      if (undefined === ref) {
+        // header already contains the key reference
+        ref = ["kid", "jku", "x5c", "x5t", "x5u"].some(function(k) {
+          return (k in header);
+        });
+        ref = !ref ? "kid" : null;
+      } else if ("boolean" === typeof ref) {
+        // explicit (positive | negative) request for key reference
+        ref = ref ? "kid" : null;
+      }
+      var jwk;
+      if (ref) {
+        jwk = key.toJSON();
+        if ("jwk" === ref) {
+          if ("oct" === key.kty) {
+            return Promise.reject(new Error("cannot embed key"));
+          }
+          header.jwk = jwk;
+        } else if (ref in jwk) {
+          header[ref] = jwk[ref];
+        }
+      }
+
+      // determine protected fields
+      var protect = signatory.protect;
+      if (protectAll || "*" === protect) {
+        protect = Object.keys(header);
+      } else if ("string" === protect) {
+        protect = [protect];
+      } else if (Array.isArray(protect)) {
+        protect = protect.concat();
+      } else if (!protect) {
+        protect = [];
+      } else {
+        return Promise.reject(new Error("protect must be a list of fields"));
+      }
+      protect = uniq(protect);
+      signatory.protected = protect;
+
+      // freeze signatory
+      signatory = Object.freeze(signatory);
+      return signatory;
     });
 
-    // STEP 2 -- Decrypt
-    promise = promise.then(function(){
-      return commonDecrypt(cek, cdata, iv);
-    });
+    return p;
+  });
 
-    return promise;
+  var cfg = {
+    format: format
   };
+  return new JWSSigner(cfg,
+                       signList);
 }
 
-// ### Public API
-// * [name].encrypt
-// * [name].decrypt
-var aesCbcHmacSha2 = {};
-[
-  "A128CBC-HS256",
-  "A192CBC-HS384",
-  "A256CBC-HS512"
-].forEach(function(alg) {
-  var size = parseInt(/A(\d+)CBC-HS(\d+)?/g.exec(alg)[1]);
-  aesCbcHmacSha2[alg] = {
-    encrypt: cbcHmacEncryptFN(size),
-    decrypt: cbcHmacDecryptFN(size)
-  };
-});
-
-[
-  "A128CBC+HS256",
-  "A192CBC+HS384",
-  "A256CBC+HS512"
-].forEach(function(alg) {
-  var size = parseInt(/A(\d+)CBC\+HS(\d+)?/g.exec(alg)[1]);
-  aesCbcHmacSha2[alg] = {
-    encrypt: concatKdfCbcHmacEncryptFN(size, alg),
-    decrypt: concatKdfCbcHmacDecryptFN(size, alg)
-  };
-});
-
-module.exports = aesCbcHmacSha2;
+module.exports = {
+  signer: JWSSigner,
+  createSign: createSign
+};
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61435,7 +61450,7 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -61525,7 +61540,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -61536,5587 +61551,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 204 */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
 /* 205 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
-    "use strict";
-
-    if (global.setImmediate) {
-        return;
-    }
-
-    var nextHandle = 1; // Spec says greater than zero
-    var tasksByHandle = {};
-    var currentlyRunningATask = false;
-    var doc = global.document;
-    var registerImmediate;
-
-    function setImmediate(callback) {
-      // Callback can either be a function or a string
-      if (typeof callback !== "function") {
-        callback = new Function("" + callback);
-      }
-      // Copy function arguments
-      var args = new Array(arguments.length - 1);
-      for (var i = 0; i < args.length; i++) {
-          args[i] = arguments[i + 1];
-      }
-      // Store and register the task
-      var task = { callback: callback, args: args };
-      tasksByHandle[nextHandle] = task;
-      registerImmediate(nextHandle);
-      return nextHandle++;
-    }
-
-    function clearImmediate(handle) {
-        delete tasksByHandle[handle];
-    }
-
-    function run(task) {
-        var callback = task.callback;
-        var args = task.args;
-        switch (args.length) {
-        case 0:
-            callback();
-            break;
-        case 1:
-            callback(args[0]);
-            break;
-        case 2:
-            callback(args[0], args[1]);
-            break;
-        case 3:
-            callback(args[0], args[1], args[2]);
-            break;
-        default:
-            callback.apply(undefined, args);
-            break;
-        }
-    }
-
-    function runIfPresent(handle) {
-        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
-        // So if we're currently running a task, we'll need to delay this invocation.
-        if (currentlyRunningATask) {
-            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
-            // "too much recursion" error.
-            setTimeout(runIfPresent, 0, handle);
-        } else {
-            var task = tasksByHandle[handle];
-            if (task) {
-                currentlyRunningATask = true;
-                try {
-                    run(task);
-                } finally {
-                    clearImmediate(handle);
-                    currentlyRunningATask = false;
-                }
-            }
-        }
-    }
-
-    function installNextTickImplementation() {
-        registerImmediate = function(handle) {
-            process.nextTick(function () { runIfPresent(handle); });
-        };
-    }
-
-    function canUsePostMessage() {
-        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
-        // where `global.postMessage` means something completely different and can't be used for this purpose.
-        if (global.postMessage && !global.importScripts) {
-            var postMessageIsAsynchronous = true;
-            var oldOnMessage = global.onmessage;
-            global.onmessage = function() {
-                postMessageIsAsynchronous = false;
-            };
-            global.postMessage("", "*");
-            global.onmessage = oldOnMessage;
-            return postMessageIsAsynchronous;
-        }
-    }
-
-    function installPostMessageImplementation() {
-        // Installs an event handler on `global` for the `message` event: see
-        // * https://developer.mozilla.org/en/DOM/window.postMessage
-        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
-
-        var messagePrefix = "setImmediate$" + Math.random() + "$";
-        var onGlobalMessage = function(event) {
-            if (event.source === global &&
-                typeof event.data === "string" &&
-                event.data.indexOf(messagePrefix) === 0) {
-                runIfPresent(+event.data.slice(messagePrefix.length));
-            }
-        };
-
-        if (global.addEventListener) {
-            global.addEventListener("message", onGlobalMessage, false);
-        } else {
-            global.attachEvent("onmessage", onGlobalMessage);
-        }
-
-        registerImmediate = function(handle) {
-            global.postMessage(messagePrefix + handle, "*");
-        };
-    }
-
-    function installMessageChannelImplementation() {
-        var channel = new MessageChannel();
-        channel.port1.onmessage = function(event) {
-            var handle = event.data;
-            runIfPresent(handle);
-        };
-
-        registerImmediate = function(handle) {
-            channel.port2.postMessage(handle);
-        };
-    }
-
-    function installReadyStateChangeImplementation() {
-        var html = doc.documentElement;
-        registerImmediate = function(handle) {
-            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
-            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
-            var script = doc.createElement("script");
-            script.onreadystatechange = function () {
-                runIfPresent(handle);
-                script.onreadystatechange = null;
-                html.removeChild(script);
-                script = null;
-            };
-            html.appendChild(script);
-        };
-    }
-
-    function installSetTimeoutImplementation() {
-        registerImmediate = function(handle) {
-            setTimeout(runIfPresent, 0, handle);
-        };
-    }
-
-    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
-    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
-    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
-
-    // Don't get fooled by e.g. browserify environments.
-    if ({}.toString.call(global.process) === "[object process]") {
-        // For Node.js before 0.9
-        installNextTickImplementation();
-
-    } else if (canUsePostMessage()) {
-        // For non-IE10 modern browsers
-        installPostMessageImplementation();
-
-    } else if (global.MessageChannel) {
-        // For web workers, where supported
-        installMessageChannelImplementation();
-
-    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
-        // For IE 6–8
-        installReadyStateChangeImplementation();
-
-    } else {
-        // For older browsers
-        installSetTimeoutImplementation();
-    }
-
-    attachTo.setImmediate = setImmediate;
-    attachTo.clearImmediate = clearImmediate;
-}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
-
-/***/ }),
-/* 206 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Javascript implementation of PKCS#7 v1.5.
- *
- * @author Stefan Siegl
- * @author Dave Longley
- *
- * Copyright (c) 2012 Stefan Siegl <stesie@brokenpipe.de>
- * Copyright (c) 2012-2015 Digital Bazaar, Inc.
- *
- * Currently this implementation only supports ContentType of EnvelopedData,
- * EncryptedData, or SignedData at the root level. The top level elements may
- * contain only a ContentInfo of ContentType Data, i.e. plain data. Further
- * nesting is not (yet) supported.
- *
- * The Forge validators for PKCS #7's ASN.1 structures are available from
- * a separate file pkcs7asn1.js, since those are referenced from other
- * PKCS standards like PKCS #12.
- */
-var forge = __webpack_require__(2);
-__webpack_require__(39);
-__webpack_require__(23);
-__webpack_require__(80);
-__webpack_require__(26);
-__webpack_require__(40);
-__webpack_require__(112);
-__webpack_require__(24);
-__webpack_require__(3);
-__webpack_require__(81);
-
-// shortcut for ASN.1 API
-var asn1 = forge.asn1;
-
-// shortcut for PKCS#7 API
-var p7 = module.exports = forge.pkcs7 = forge.pkcs7 || {};
-
-/**
- * Converts a PKCS#7 message from PEM format.
- *
- * @param pem the PEM-formatted PKCS#7 message.
- *
- * @return the PKCS#7 message.
- */
-p7.messageFromPem = function(pem) {
-  var msg = forge.pem.decode(pem)[0];
-
-  if(msg.type !== 'PKCS7') {
-    var error = new Error('Could not convert PKCS#7 message from PEM; PEM ' +
-      'header type is not "PKCS#7".');
-    error.headerType = msg.type;
-    throw error;
-  }
-  if(msg.procType && msg.procType.type === 'ENCRYPTED') {
-    throw new Error('Could not convert PKCS#7 message from PEM; PEM is encrypted.');
-  }
-
-  // convert DER to ASN.1 object
-  var obj = asn1.fromDer(msg.body);
-
-  return p7.messageFromAsn1(obj);
-};
-
-/**
- * Converts a PKCS#7 message to PEM format.
- *
- * @param msg The PKCS#7 message object
- * @param maxline The maximum characters per line, defaults to 64.
- *
- * @return The PEM-formatted PKCS#7 message.
- */
-p7.messageToPem = function(msg, maxline) {
-  // convert to ASN.1, then DER, then PEM-encode
-  var pemObj = {
-    type: 'PKCS7',
-    body: asn1.toDer(msg.toAsn1()).getBytes()
-  };
-  return forge.pem.encode(pemObj, {maxline: maxline});
-};
-
-/**
- * Converts a PKCS#7 message from an ASN.1 object.
- *
- * @param obj the ASN.1 representation of a ContentInfo.
- *
- * @return the PKCS#7 message.
- */
-p7.messageFromAsn1 = function(obj) {
-  // validate root level ContentInfo and capture data
-  var capture = {};
-  var errors = [];
-  if(!asn1.validate(obj, p7.asn1.contentInfoValidator, capture, errors)) {
-    var error = new Error('Cannot read PKCS#7 message. ' +
-      'ASN.1 object is not an PKCS#7 ContentInfo.');
-    error.errors = errors;
-    throw error;
-  }
-
-  var contentType = asn1.derToOid(capture.contentType);
-  var msg;
-
-  switch(contentType) {
-    case forge.pki.oids.envelopedData:
-      msg = p7.createEnvelopedData();
-      break;
-
-    case forge.pki.oids.encryptedData:
-      msg = p7.createEncryptedData();
-      break;
-
-    case forge.pki.oids.signedData:
-      msg = p7.createSignedData();
-      break;
-
-    default:
-      throw new Error('Cannot read PKCS#7 message. ContentType with OID ' +
-        contentType + ' is not (yet) supported.');
-  }
-
-  msg.fromAsn1(capture.content.value[0]);
-  return msg;
-};
-
-p7.createSignedData = function() {
-  var msg = null;
-  msg = {
-    type: forge.pki.oids.signedData,
-    version: 1,
-    certificates: [],
-    crls: [],
-    // TODO: add json-formatted signer stuff here?
-    signers: [],
-    // populated during sign()
-    digestAlgorithmIdentifiers: [],
-    contentInfo: null,
-    signerInfos: [],
-
-    fromAsn1: function(obj) {
-      // validate SignedData content block and capture data.
-      _fromAsn1(msg, obj, p7.asn1.signedDataValidator);
-      msg.certificates = [];
-      msg.crls = [];
-      msg.digestAlgorithmIdentifiers = [];
-      msg.contentInfo = null;
-      msg.signerInfos = [];
-
-      var certs = msg.rawCapture.certificates.value;
-      for(var i = 0; i < certs.length; ++i) {
-        msg.certificates.push(forge.pki.certificateFromAsn1(certs[i]));
-      }
-
-      // TODO: parse crls
-    },
-
-    toAsn1: function() {
-      // degenerate case with no content
-      if(!msg.contentInfo) {
-        msg.sign();
-      }
-
-      var certs = [];
-      for(var i = 0; i < msg.certificates.length; ++i) {
-        certs.push(forge.pki.certificateToAsn1(msg.certificates[i]));
-      }
-
-      var crls = [];
-      // TODO: implement CRLs
-
-      // [0] SignedData
-      var signedData = asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-          // Version
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
-            asn1.integerToDer(msg.version).getBytes()),
-          // DigestAlgorithmIdentifiers
-          asn1.create(
-            asn1.Class.UNIVERSAL, asn1.Type.SET, true,
-            msg.digestAlgorithmIdentifiers),
-          // ContentInfo
-          msg.contentInfo
-        ])
-      ]);
-      if(certs.length > 0) {
-        // [0] IMPLICIT ExtendedCertificatesAndCertificates OPTIONAL
-        signedData.value[0].value.push(
-          asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, certs));
-      }
-      if(crls.length > 0) {
-        // [1] IMPLICIT CertificateRevocationLists OPTIONAL
-        signedData.value[0].value.push(
-          asn1.create(asn1.Class.CONTEXT_SPECIFIC, 1, true, crls));
-      }
-      // SignerInfos
-      signedData.value[0].value.push(
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true,
-          msg.signerInfos));
-
-      // ContentInfo
-      return asn1.create(
-        asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-          // ContentType
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-            asn1.oidToDer(msg.type).getBytes()),
-          // [0] SignedData
-          signedData
-        ]);
-    },
-
-    /**
-     * Add (another) entity to list of signers.
-     *
-     * Note: If authenticatedAttributes are provided, then, per RFC 2315,
-     * they must include at least two attributes: content type and
-     * message digest. The message digest attribute value will be
-     * auto-calculated during signing and will be ignored if provided.
-     *
-     * Here's an example of providing these two attributes:
-     *
-     * forge.pkcs7.createSignedData();
-     * p7.addSigner({
-     *   issuer: cert.issuer.attributes,
-     *   serialNumber: cert.serialNumber,
-     *   key: privateKey,
-     *   digestAlgorithm: forge.pki.oids.sha1,
-     *   authenticatedAttributes: [{
-     *     type: forge.pki.oids.contentType,
-     *     value: forge.pki.oids.data
-     *   }, {
-     *     type: forge.pki.oids.messageDigest
-     *   }]
-     * });
-     *
-     * TODO: Support [subjectKeyIdentifier] as signer's ID.
-     *
-     * @param signer the signer information:
-     *          key the signer's private key.
-     *          [certificate] a certificate containing the public key
-     *            associated with the signer's private key; use this option as
-     *            an alternative to specifying signer.issuer and
-     *            signer.serialNumber.
-     *          [issuer] the issuer attributes (eg: cert.issuer.attributes).
-     *          [serialNumber] the signer's certificate's serial number in
-     *           hexadecimal (eg: cert.serialNumber).
-     *          [digestAlgorithm] the message digest OID, as a string, to use
-     *            (eg: forge.pki.oids.sha1).
-     *          [authenticatedAttributes] an optional array of attributes
-     *            to also sign along with the content.
-     */
-    addSigner: function(signer) {
-      var issuer = signer.issuer;
-      var serialNumber = signer.serialNumber;
-      if(signer.certificate) {
-        var cert = signer.certificate;
-        if(typeof cert === 'string') {
-          cert = forge.pki.certificateFromPem(cert);
-        }
-        issuer = cert.issuer.attributes;
-        serialNumber = cert.serialNumber;
-      }
-      var key = signer.key;
-      if(!key) {
-        throw new Error(
-          'Could not add PKCS#7 signer; no private key specified.');
-      }
-      if(typeof key === 'string') {
-        key = forge.pki.privateKeyFromPem(key);
-      }
-
-      // ensure OID known for digest algorithm
-      var digestAlgorithm = signer.digestAlgorithm || forge.pki.oids.sha1;
-      switch(digestAlgorithm) {
-      case forge.pki.oids.sha1:
-      case forge.pki.oids.sha256:
-      case forge.pki.oids.sha384:
-      case forge.pki.oids.sha512:
-      case forge.pki.oids.md5:
-        break;
-      default:
-        throw new Error(
-          'Could not add PKCS#7 signer; unknown message digest algorithm: ' +
-          digestAlgorithm);
-      }
-
-      // if authenticatedAttributes is present, then the attributes
-      // must contain at least PKCS #9 content-type and message-digest
-      var authenticatedAttributes = signer.authenticatedAttributes || [];
-      if(authenticatedAttributes.length > 0) {
-        var contentType = false;
-        var messageDigest = false;
-        for(var i = 0; i < authenticatedAttributes.length; ++i) {
-          var attr = authenticatedAttributes[i];
-          if(!contentType && attr.type === forge.pki.oids.contentType) {
-            contentType = true;
-            if(messageDigest) {
-              break;
-            }
-            continue;
-          }
-          if(!messageDigest && attr.type === forge.pki.oids.messageDigest) {
-            messageDigest = true;
-            if(contentType) {
-              break;
-            }
-            continue;
-          }
-        }
-
-        if(!contentType || !messageDigest) {
-          throw new Error('Invalid signer.authenticatedAttributes. If ' +
-            'signer.authenticatedAttributes is specified, then it must ' +
-            'contain at least two attributes, PKCS #9 content-type and ' +
-            'PKCS #9 message-digest.');
-        }
-      }
-
-      msg.signers.push({
-        key: key,
-        version: 1,
-        issuer: issuer,
-        serialNumber: serialNumber,
-        digestAlgorithm: digestAlgorithm,
-        signatureAlgorithm: forge.pki.oids.rsaEncryption,
-        signature: null,
-        authenticatedAttributes: authenticatedAttributes,
-        unauthenticatedAttributes: []
-      });
-    },
-
-    /**
-     * Signs the content.
-     */
-    sign: function() {
-      // auto-generate content info
-      if(typeof msg.content !== 'object' || msg.contentInfo === null) {
-        // use Data ContentInfo
-        msg.contentInfo = asn1.create(
-          asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-            // ContentType
-            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-              asn1.oidToDer(forge.pki.oids.data).getBytes())
-          ]);
-
-        // add actual content, if present
-        if('content' in msg) {
-          var content;
-          if(msg.content instanceof forge.util.ByteBuffer) {
-            content = msg.content.bytes();
-          } else if(typeof msg.content === 'string') {
-            content = forge.util.encodeUtf8(msg.content);
-          }
-
-          msg.contentInfo.value.push(
-            // [0] EXPLICIT content
-            asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-              asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-                content)
-            ]));
-        }
-      }
-
-      // no signers, return early (degenerate case for certificate container)
-      if(msg.signers.length === 0) {
-        return;
-      }
-
-      // generate digest algorithm identifiers
-      var mds = addDigestAlgorithmIds();
-
-      // generate signerInfos
-      addSignerInfos(mds);
-    },
-
-    verify: function() {
-      throw new Error('PKCS#7 signature verification not yet implemented.');
-    },
-
-    /**
-     * Add a certificate.
-     *
-     * @param cert the certificate to add.
-     */
-    addCertificate: function(cert) {
-      // convert from PEM
-      if(typeof cert === 'string') {
-        cert = forge.pki.certificateFromPem(cert);
-      }
-      msg.certificates.push(cert);
-    },
-
-    /**
-     * Add a certificate revokation list.
-     *
-     * @param crl the certificate revokation list to add.
-     */
-    addCertificateRevokationList: function(crl) {
-      throw new Error('PKCS#7 CRL support not yet implemented.');
-    }
-  };
-  return msg;
-
-  function addDigestAlgorithmIds() {
-    var mds = {};
-
-    for(var i = 0; i < msg.signers.length; ++i) {
-      var signer = msg.signers[i];
-      var oid = signer.digestAlgorithm;
-      if(!(oid in mds)) {
-        // content digest
-        mds[oid] = forge.md[forge.pki.oids[oid]].create();
-      }
-      if(signer.authenticatedAttributes.length === 0) {
-        // no custom attributes to digest; use content message digest
-        signer.md = mds[oid];
-      } else {
-        // custom attributes to be digested; use own message digest
-        // TODO: optimize to just copy message digest state if that
-        // feature is ever supported with message digests
-        signer.md = forge.md[forge.pki.oids[oid]].create();
-      }
-    }
-
-    // add unique digest algorithm identifiers
-    msg.digestAlgorithmIdentifiers = [];
-    for(var oid in mds) {
-      msg.digestAlgorithmIdentifiers.push(
-        // AlgorithmIdentifier
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-          // algorithm
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-            asn1.oidToDer(oid).getBytes()),
-          // parameters (null)
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
-        ]));
-    }
-
-    return mds;
-  }
-
-  function addSignerInfos(mds) {
-    // Note: ContentInfo is a SEQUENCE with 2 values, second value is
-    // the content field and is optional for a ContentInfo but required here
-    // since signers are present
-    if(msg.contentInfo.value.length < 2) {
-      throw new Error(
-        'Could not sign PKCS#7 message; there is no content to sign.');
-    }
-
-    // get ContentInfo content type
-    var contentType = asn1.derToOid(msg.contentInfo.value[0].value);
-
-    // get ContentInfo content
-    var content = msg.contentInfo.value[1];
-    // skip [0] EXPLICIT content wrapper
-    content = content.value[0];
-
-    // serialize content
-    var bytes = asn1.toDer(content);
-
-    // skip identifier and length per RFC 2315 9.3
-    // skip identifier (1 byte)
-    bytes.getByte();
-    // read and discard length bytes
-    asn1.getBerValueLength(bytes);
-    bytes = bytes.getBytes();
-
-    // digest content DER value bytes
-    for(var oid in mds) {
-      mds[oid].start().update(bytes);
-    }
-
-    // sign content
-    var signingTime = new Date();
-    for(var i = 0; i < msg.signers.length; ++i) {
-      var signer = msg.signers[i];
-
-      if(signer.authenticatedAttributes.length === 0) {
-        // if ContentInfo content type is not "Data", then
-        // authenticatedAttributes must be present per RFC 2315
-        if(contentType !== forge.pki.oids.data) {
-          throw new Error(
-            'Invalid signer; authenticatedAttributes must be present ' +
-            'when the ContentInfo content type is not PKCS#7 Data.');
-        }
-      } else {
-        // process authenticated attributes
-        // [0] IMPLICIT
-        signer.authenticatedAttributesAsn1 = asn1.create(
-          asn1.Class.CONTEXT_SPECIFIC, 0, true, []);
-
-        // per RFC 2315, attributes are to be digested using a SET container
-        // not the above [0] IMPLICIT container
-        var attrsAsn1 = asn1.create(
-          asn1.Class.UNIVERSAL, asn1.Type.SET, true, []);
-
-        for(var ai = 0; ai < signer.authenticatedAttributes.length; ++ai) {
-          var attr = signer.authenticatedAttributes[ai];
-          if(attr.type === forge.pki.oids.messageDigest) {
-            // use content message digest as value
-            attr.value = mds[signer.digestAlgorithm].digest();
-          } else if(attr.type === forge.pki.oids.signingTime) {
-            // auto-populate signing time if not already set
-            if(!attr.value) {
-              attr.value = signingTime;
-            }
-          }
-
-          // convert to ASN.1 and push onto Attributes SET (for signing) and
-          // onto authenticatedAttributesAsn1 to complete SignedData ASN.1
-          // TODO: optimize away duplication
-          attrsAsn1.value.push(_attributeToAsn1(attr));
-          signer.authenticatedAttributesAsn1.value.push(_attributeToAsn1(attr));
-        }
-
-        // DER-serialize and digest SET OF attributes only
-        bytes = asn1.toDer(attrsAsn1).getBytes();
-        signer.md.start().update(bytes);
-      }
-
-      // sign digest
-      signer.signature = signer.key.sign(signer.md, 'RSASSA-PKCS1-V1_5');
-    }
-
-    // add signer info
-    msg.signerInfos = _signersToAsn1(msg.signers);
-  }
-};
-
-/**
- * Creates an empty PKCS#7 message of type EncryptedData.
- *
- * @return the message.
- */
-p7.createEncryptedData = function() {
-  var msg = null;
-  msg = {
-    type: forge.pki.oids.encryptedData,
-    version: 0,
-    encryptedContent: {
-      algorithm: forge.pki.oids['aes256-CBC']
-    },
-
-    /**
-     * Reads an EncryptedData content block (in ASN.1 format)
-     *
-     * @param obj The ASN.1 representation of the EncryptedData content block
-     */
-    fromAsn1: function(obj) {
-      // Validate EncryptedData content block and capture data.
-      _fromAsn1(msg, obj, p7.asn1.encryptedDataValidator);
-    },
-
-    /**
-     * Decrypt encrypted content
-     *
-     * @param key The (symmetric) key as a byte buffer
-     */
-    decrypt: function(key) {
-      if(key !== undefined) {
-        msg.encryptedContent.key = key;
-      }
-      _decryptContent(msg);
-    }
-  };
-  return msg;
-};
-
-/**
- * Creates an empty PKCS#7 message of type EnvelopedData.
- *
- * @return the message.
- */
-p7.createEnvelopedData = function() {
-  var msg = null;
-  msg = {
-    type: forge.pki.oids.envelopedData,
-    version: 0,
-    recipients: [],
-    encryptedContent: {
-      algorithm: forge.pki.oids['aes256-CBC']
-    },
-
-    /**
-     * Reads an EnvelopedData content block (in ASN.1 format)
-     *
-     * @param obj the ASN.1 representation of the EnvelopedData content block.
-     */
-    fromAsn1: function(obj) {
-      // validate EnvelopedData content block and capture data
-      var capture = _fromAsn1(msg, obj, p7.asn1.envelopedDataValidator);
-      msg.recipients = _recipientsFromAsn1(capture.recipientInfos.value);
-    },
-
-    toAsn1: function() {
-      // ContentInfo
-      return asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // ContentType
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-          asn1.oidToDer(msg.type).getBytes()),
-        // [0] EnvelopedData
-        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-            // Version
-            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
-              asn1.integerToDer(msg.version).getBytes()),
-            // RecipientInfos
-            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true,
-              _recipientsToAsn1(msg.recipients)),
-            // EncryptedContentInfo
-            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true,
-              _encryptedContentToAsn1(msg.encryptedContent))
-          ])
-        ])
-      ]);
-    },
-
-    /**
-     * Find recipient by X.509 certificate's issuer.
-     *
-     * @param cert the certificate with the issuer to look for.
-     *
-     * @return the recipient object.
-     */
-    findRecipient: function(cert) {
-      var sAttr = cert.issuer.attributes;
-
-      for(var i = 0; i < msg.recipients.length; ++i) {
-        var r = msg.recipients[i];
-        var rAttr = r.issuer;
-
-        if(r.serialNumber !== cert.serialNumber) {
-          continue;
-        }
-
-        if(rAttr.length !== sAttr.length) {
-          continue;
-        }
-
-        var match = true;
-        for(var j = 0; j < sAttr.length; ++j) {
-          if(rAttr[j].type !== sAttr[j].type ||
-            rAttr[j].value !== sAttr[j].value) {
-            match = false;
-            break;
-          }
-        }
-
-        if(match) {
-          return r;
-        }
-      }
-
-      return null;
-    },
-
-    /**
-     * Decrypt enveloped content
-     *
-     * @param recipient The recipient object related to the private key
-     * @param privKey The (RSA) private key object
-     */
-    decrypt: function(recipient, privKey) {
-      if(msg.encryptedContent.key === undefined && recipient !== undefined &&
-        privKey !== undefined) {
-        switch(recipient.encryptedContent.algorithm) {
-          case forge.pki.oids.rsaEncryption:
-          case forge.pki.oids.desCBC:
-            var key = privKey.decrypt(recipient.encryptedContent.content);
-            msg.encryptedContent.key = forge.util.createBuffer(key);
-            break;
-
-          default:
-            throw new Error('Unsupported asymmetric cipher, ' +
-              'OID ' + recipient.encryptedContent.algorithm);
-        }
-      }
-
-      _decryptContent(msg);
-    },
-
-    /**
-     * Add (another) entity to list of recipients.
-     *
-     * @param cert The certificate of the entity to add.
-     */
-    addRecipient: function(cert) {
-      msg.recipients.push({
-        version: 0,
-        issuer: cert.issuer.attributes,
-        serialNumber: cert.serialNumber,
-        encryptedContent: {
-          // We simply assume rsaEncryption here, since forge.pki only
-          // supports RSA so far.  If the PKI module supports other
-          // ciphers one day, we need to modify this one as well.
-          algorithm: forge.pki.oids.rsaEncryption,
-          key: cert.publicKey
-        }
-      });
-    },
-
-    /**
-     * Encrypt enveloped content.
-     *
-     * This function supports two optional arguments, cipher and key, which
-     * can be used to influence symmetric encryption.  Unless cipher is
-     * provided, the cipher specified in encryptedContent.algorithm is used
-     * (defaults to AES-256-CBC).  If no key is provided, encryptedContent.key
-     * is (re-)used.  If that one's not set, a random key will be generated
-     * automatically.
-     *
-     * @param [key] The key to be used for symmetric encryption.
-     * @param [cipher] The OID of the symmetric cipher to use.
-     */
-    encrypt: function(key, cipher) {
-      // Part 1: Symmetric encryption
-      if(msg.encryptedContent.content === undefined) {
-        cipher = cipher || msg.encryptedContent.algorithm;
-        key = key || msg.encryptedContent.key;
-
-        var keyLen, ivLen, ciphFn;
-        switch(cipher) {
-          case forge.pki.oids['aes128-CBC']:
-            keyLen = 16;
-            ivLen = 16;
-            ciphFn = forge.aes.createEncryptionCipher;
-            break;
-
-          case forge.pki.oids['aes192-CBC']:
-            keyLen = 24;
-            ivLen = 16;
-            ciphFn = forge.aes.createEncryptionCipher;
-            break;
-
-          case forge.pki.oids['aes256-CBC']:
-            keyLen = 32;
-            ivLen = 16;
-            ciphFn = forge.aes.createEncryptionCipher;
-            break;
-
-          case forge.pki.oids['des-EDE3-CBC']:
-            keyLen = 24;
-            ivLen = 8;
-            ciphFn = forge.des.createEncryptionCipher;
-            break;
-
-          default:
-            throw new Error('Unsupported symmetric cipher, OID ' + cipher);
-        }
-
-        if(key === undefined) {
-          key = forge.util.createBuffer(forge.random.getBytes(keyLen));
-        } else if(key.length() != keyLen) {
-          throw new Error('Symmetric key has wrong length; ' +
-            'got ' + key.length() + ' bytes, expected ' + keyLen + '.');
-        }
-
-        // Keep a copy of the key & IV in the object, so the caller can
-        // use it for whatever reason.
-        msg.encryptedContent.algorithm = cipher;
-        msg.encryptedContent.key = key;
-        msg.encryptedContent.parameter = forge.util.createBuffer(
-          forge.random.getBytes(ivLen));
-
-        var ciph = ciphFn(key);
-        ciph.start(msg.encryptedContent.parameter.copy());
-        ciph.update(msg.content);
-
-        // The finish function does PKCS#7 padding by default, therefore
-        // no action required by us.
-        if(!ciph.finish()) {
-          throw new Error('Symmetric encryption failed.');
-        }
-
-        msg.encryptedContent.content = ciph.output;
-      }
-
-      // Part 2: asymmetric encryption for each recipient
-      for(var i = 0; i < msg.recipients.length; ++i) {
-        var recipient = msg.recipients[i];
-
-        // Nothing to do, encryption already done.
-        if(recipient.encryptedContent.content !== undefined) {
-          continue;
-        }
-
-        switch(recipient.encryptedContent.algorithm) {
-          case forge.pki.oids.rsaEncryption:
-            recipient.encryptedContent.content =
-              recipient.encryptedContent.key.encrypt(
-                msg.encryptedContent.key.data);
-            break;
-
-          default:
-            throw new Error('Unsupported asymmetric cipher, OID ' +
-              recipient.encryptedContent.algorithm);
-        }
-      }
-    }
-  };
-  return msg;
-};
-
-/**
- * Converts a single recipient from an ASN.1 object.
- *
- * @param obj the ASN.1 RecipientInfo.
- *
- * @return the recipient object.
- */
-function _recipientFromAsn1(obj) {
-  // validate EnvelopedData content block and capture data
-  var capture = {};
-  var errors = [];
-  if(!asn1.validate(obj, p7.asn1.recipientInfoValidator, capture, errors)) {
-    var error = new Error('Cannot read PKCS#7 RecipientInfo. ' +
-      'ASN.1 object is not an PKCS#7 RecipientInfo.');
-    error.errors = errors;
-    throw error;
-  }
-
-  return {
-    version: capture.version.charCodeAt(0),
-    issuer: forge.pki.RDNAttributesAsArray(capture.issuer),
-    serialNumber: forge.util.createBuffer(capture.serial).toHex(),
-    encryptedContent: {
-      algorithm: asn1.derToOid(capture.encAlgorithm),
-      parameter: capture.encParameter.value,
-      content: capture.encKey
-    }
-  };
-}
-
-/**
- * Converts a single recipient object to an ASN.1 object.
- *
- * @param obj the recipient object.
- *
- * @return the ASN.1 RecipientInfo.
- */
-function _recipientToAsn1(obj) {
-  return asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-    // Version
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
-      asn1.integerToDer(obj.version).getBytes()),
-    // IssuerAndSerialNumber
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-      // Name
-      forge.pki.distinguishedNameToAsn1({attributes: obj.issuer}),
-      // Serial
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
-        forge.util.hexToBytes(obj.serialNumber))
-    ]),
-    // KeyEncryptionAlgorithmIdentifier
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-      // Algorithm
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-        asn1.oidToDer(obj.encryptedContent.algorithm).getBytes()),
-      // Parameter, force NULL, only RSA supported for now.
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
-    ]),
-    // EncryptedKey
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-      obj.encryptedContent.content)
-  ]);
-}
-
-/**
- * Map a set of RecipientInfo ASN.1 objects to recipient objects.
- *
- * @param infos an array of ASN.1 representations RecipientInfo (i.e. SET OF).
- *
- * @return an array of recipient objects.
- */
-function _recipientsFromAsn1(infos) {
-  var ret = [];
-  for(var i = 0; i < infos.length; ++i) {
-    ret.push(_recipientFromAsn1(infos[i]));
-  }
-  return ret;
-}
-
-/**
- * Map an array of recipient objects to ASN.1 RecipientInfo objects.
- *
- * @param recipients an array of recipientInfo objects.
- *
- * @return an array of ASN.1 RecipientInfos.
- */
-function _recipientsToAsn1(recipients) {
-  var ret = [];
-  for(var i = 0; i < recipients.length; ++i) {
-    ret.push(_recipientToAsn1(recipients[i]));
-  }
-  return ret;
-}
-
-/**
- * Converts a single signer from an ASN.1 object.
- *
- * @param obj the ASN.1 representation of a SignerInfo.
- *
- * @return the signer object.
- */
-function _signerFromAsn1(obj) {
-  // validate EnvelopedData content block and capture data
-  var capture = {};
-  var errors = [];
-  if(!asn1.validate(obj, p7.asn1.signerInfoValidator, capture, errors)) {
-    var error = new Error('Cannot read PKCS#7 SignerInfo. ' +
-      'ASN.1 object is not an PKCS#7 SignerInfo.');
-    error.errors = errors;
-    throw error;
-  }
-
-  var rval = {
-    version: capture.version.charCodeAt(0),
-    issuer: forge.pki.RDNAttributesAsArray(capture.issuer),
-    serialNumber: forge.util.createBuffer(capture.serial).toHex(),
-    digestAlgorithm: asn1.derToOid(capture.digestAlgorithm),
-    signatureAlgorithm: asn1.derToOid(capture.signatureAlgorithm),
-    signature: capture.signature,
-    authenticatedAttributes: [],
-    unauthenticatedAttributes: []
-  };
-
-  // TODO: convert attributes
-  var authenticatedAttributes = capture.authenticatedAttributes || [];
-  var unauthenticatedAttributes = capture.unauthenticatedAttributes || [];
-
-  return rval;
-}
-
-/**
- * Converts a single signerInfo object to an ASN.1 object.
- *
- * @param obj the signerInfo object.
- *
- * @return the ASN.1 representation of a SignerInfo.
- */
-function _signerToAsn1(obj) {
-  // SignerInfo
-  var rval = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-    // version
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
-      asn1.integerToDer(obj.version).getBytes()),
-    // issuerAndSerialNumber
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-      // name
-      forge.pki.distinguishedNameToAsn1({attributes: obj.issuer}),
-      // serial
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
-        forge.util.hexToBytes(obj.serialNumber))
-    ]),
-    // digestAlgorithm
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-      // algorithm
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-        asn1.oidToDer(obj.digestAlgorithm).getBytes()),
-      // parameters (null)
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
-    ])
-  ]);
-
-  // authenticatedAttributes (OPTIONAL)
-  if(obj.authenticatedAttributesAsn1) {
-    // add ASN.1 previously generated during signing
-    rval.value.push(obj.authenticatedAttributesAsn1);
-  }
-
-  // digestEncryptionAlgorithm
-  rval.value.push(asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-    // algorithm
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-      asn1.oidToDer(obj.signatureAlgorithm).getBytes()),
-    // parameters (null)
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
-  ]));
-
-  // encryptedDigest
-  rval.value.push(asn1.create(
-    asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false, obj.signature));
-
-  // unauthenticatedAttributes (OPTIONAL)
-  if(obj.unauthenticatedAttributes.length > 0) {
-    // [1] IMPLICIT
-    var attrsAsn1 = asn1.create(asn1.Class.CONTEXT_SPECIFIC, 1, true, []);
-    for(var i = 0; i < obj.unauthenticatedAttributes.length; ++i) {
-      var attr = obj.unauthenticatedAttributes[i];
-      attrsAsn1.values.push(_attributeToAsn1(attr));
-    }
-    rval.value.push(attrsAsn1);
-  }
-
-  return rval;
-}
-
-/**
- * Map a set of SignerInfo ASN.1 objects to an array of signer objects.
- *
- * @param signerInfoAsn1s an array of ASN.1 SignerInfos (i.e. SET OF).
- *
- * @return an array of signers objects.
- */
-function _signersFromAsn1(signerInfoAsn1s) {
-  var ret = [];
-  for(var i = 0; i < signerInfoAsn1s.length; ++i) {
-    ret.push(_signerFromAsn1(signerInfoAsn1s[i]));
-  }
-  return ret;
-}
-
-/**
- * Map an array of signer objects to ASN.1 objects.
- *
- * @param signers an array of signer objects.
- *
- * @return an array of ASN.1 SignerInfos.
- */
-function _signersToAsn1(signers) {
-  var ret = [];
-  for(var i = 0; i < signers.length; ++i) {
-    ret.push(_signerToAsn1(signers[i]));
-  }
-  return ret;
-}
-
-/**
- * Convert an attribute object to an ASN.1 Attribute.
- *
- * @param attr the attribute object.
- *
- * @return the ASN.1 Attribute.
- */
-function _attributeToAsn1(attr) {
-  var value;
-
-  // TODO: generalize to support more attributes
-  if(attr.type === forge.pki.oids.contentType) {
-    value = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-      asn1.oidToDer(attr.value).getBytes());
-  } else if(attr.type === forge.pki.oids.messageDigest) {
-    value = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-      attr.value.bytes());
-  } else if(attr.type === forge.pki.oids.signingTime) {
-    /* Note per RFC 2985: Dates between 1 January 1950 and 31 December 2049
-      (inclusive) MUST be encoded as UTCTime. Any dates with year values
-      before 1950 or after 2049 MUST be encoded as GeneralizedTime. [Further,]
-      UTCTime values MUST be expressed in Greenwich Mean Time (Zulu) and MUST
-      include seconds (i.e., times are YYMMDDHHMMSSZ), even where the
-      number of seconds is zero.  Midnight (GMT) must be represented as
-      "YYMMDD000000Z". */
-    // TODO: make these module-level constants
-    var jan_1_1950 = new Date('1950-01-01T00:00:00Z');
-    var jan_1_2050 = new Date('2050-01-01T00:00:00Z');
-    var date = attr.value;
-    if(typeof date === 'string') {
-      // try to parse date
-      var timestamp = Date.parse(date);
-      if(!isNaN(timestamp)) {
-        date = new Date(timestamp);
-      } else if(date.length === 13) {
-        // YYMMDDHHMMSSZ (13 chars for UTCTime)
-        date = asn1.utcTimeToDate(date);
-      } else {
-        // assume generalized time
-        date = asn1.generalizedTimeToDate(date);
-      }
-    }
-
-    if(date >= jan_1_1950 && date < jan_1_2050) {
-      value = asn1.create(
-        asn1.Class.UNIVERSAL, asn1.Type.UTCTIME, false,
-        asn1.dateToUtcTime(date));
-    } else {
-      value = asn1.create(
-        asn1.Class.UNIVERSAL, asn1.Type.GENERALIZEDTIME, false,
-        asn1.dateToGeneralizedTime(date));
-    }
-  }
-
-  // TODO: expose as common API call
-  // create a RelativeDistinguishedName set
-  // each value in the set is an AttributeTypeAndValue first
-  // containing the type (an OID) and second the value
-  return asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-    // AttributeType
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-      asn1.oidToDer(attr.type).getBytes()),
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true, [
-      // AttributeValue
-      value
-    ])
-  ]);
-}
-
-/**
- * Map messages encrypted content to ASN.1 objects.
- *
- * @param ec The encryptedContent object of the message.
- *
- * @return ASN.1 representation of the encryptedContent object (SEQUENCE).
- */
-function _encryptedContentToAsn1(ec) {
-  return [
-    // ContentType, always Data for the moment
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-      asn1.oidToDer(forge.pki.oids.data).getBytes()),
-    // ContentEncryptionAlgorithmIdentifier
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-      // Algorithm
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-        asn1.oidToDer(ec.algorithm).getBytes()),
-      // Parameters (IV)
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-        ec.parameter.getBytes())
-    ]),
-    // [0] EncryptedContent
-    asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-        ec.content.getBytes())
-    ])
-  ];
-}
-
-/**
- * Reads the "common part" of an PKCS#7 content block (in ASN.1 format)
- *
- * This function reads the "common part" of the PKCS#7 content blocks
- * EncryptedData and EnvelopedData, i.e. version number and symmetrically
- * encrypted content block.
- *
- * The result of the ASN.1 validate and capture process is returned
- * to allow the caller to extract further data, e.g. the list of recipients
- * in case of a EnvelopedData object.
- *
- * @param msg the PKCS#7 object to read the data to.
- * @param obj the ASN.1 representation of the content block.
- * @param validator the ASN.1 structure validator object to use.
- *
- * @return the value map captured by validator object.
- */
-function _fromAsn1(msg, obj, validator) {
-  var capture = {};
-  var errors = [];
-  if(!asn1.validate(obj, validator, capture, errors)) {
-    var error = new Error('Cannot read PKCS#7 message. ' +
-      'ASN.1 object is not a supported PKCS#7 message.');
-    error.errors = error;
-    throw error;
-  }
-
-  // Check contentType, so far we only support (raw) Data.
-  var contentType = asn1.derToOid(capture.contentType);
-  if(contentType !== forge.pki.oids.data) {
-    throw new Error('Unsupported PKCS#7 message. ' +
-      'Only wrapped ContentType Data supported.');
-  }
-
-  if(capture.encryptedContent) {
-    var content = '';
-    if(forge.util.isArray(capture.encryptedContent)) {
-      for(var i = 0; i < capture.encryptedContent.length; ++i) {
-        if(capture.encryptedContent[i].type !== asn1.Type.OCTETSTRING) {
-          throw new Error('Malformed PKCS#7 message, expecting encrypted ' +
-            'content constructed of only OCTET STRING objects.');
-        }
-        content += capture.encryptedContent[i].value;
-      }
-    } else {
-      content = capture.encryptedContent;
-    }
-    msg.encryptedContent = {
-      algorithm: asn1.derToOid(capture.encAlgorithm),
-      parameter: forge.util.createBuffer(capture.encParameter.value),
-      content: forge.util.createBuffer(content)
-    };
-  }
-
-  if(capture.content) {
-    var content = '';
-    if(forge.util.isArray(capture.content)) {
-      for(var i = 0; i < capture.content.length; ++i) {
-        if(capture.content[i].type !== asn1.Type.OCTETSTRING) {
-          throw new Error('Malformed PKCS#7 message, expecting ' +
-            'content constructed of only OCTET STRING objects.');
-        }
-        content += capture.content[i].value;
-      }
-    } else {
-      content = capture.content;
-    }
-    msg.content = forge.util.createBuffer(content);
-  }
-
-  msg.version = capture.version.charCodeAt(0);
-  msg.rawCapture = capture;
-
-  return capture;
-}
-
-/**
- * Decrypt the symmetrically encrypted content block of the PKCS#7 message.
- *
- * Decryption is skipped in case the PKCS#7 message object already has a
- * (decrypted) content attribute.  The algorithm, key and cipher parameters
- * (probably the iv) are taken from the encryptedContent attribute of the
- * message object.
- *
- * @param The PKCS#7 message object.
- */
-function _decryptContent(msg) {
-  if(msg.encryptedContent.key === undefined) {
-    throw new Error('Symmetric key not available.');
-  }
-
-  if(msg.content === undefined) {
-    var ciph;
-
-    switch(msg.encryptedContent.algorithm) {
-      case forge.pki.oids['aes128-CBC']:
-      case forge.pki.oids['aes192-CBC']:
-      case forge.pki.oids['aes256-CBC']:
-        ciph = forge.aes.createDecryptionCipher(msg.encryptedContent.key);
-        break;
-
-      case forge.pki.oids['desCBC']:
-      case forge.pki.oids['des-EDE3-CBC']:
-        ciph = forge.des.createDecryptionCipher(msg.encryptedContent.key);
-        break;
-
-      default:
-        throw new Error('Unsupported symmetric cipher, OID ' +
-          msg.encryptedContent.algorithm);
-    }
-    ciph.start(msg.encryptedContent.parameter);
-    ciph.update(msg.encryptedContent.content);
-
-    if(!ciph.finish()) {
-      throw new Error('Symmetric decryption failed.');
-    }
-
-    msg.content = ciph.output;
-  }
-}
-
-
-/***/ }),
-/* 207 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Node.js module for Forge mask generation functions.
- *
- * @author Stefan Siegl
- *
- * Copyright 2012 Stefan Siegl <stesie@brokenpipe.de>
- */
-var forge = __webpack_require__(2);
-__webpack_require__(107);
-
-module.exports = forge.mgf = forge.mgf || {};
-forge.mgf.mgf1 = forge.mgf1;
-
-
-/***/ }),
-/* 208 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Javascript implementation of a basic Public Key Infrastructure, including
- * support for RSA public and private keys.
- *
- * @author Dave Longley
- *
- * Copyright (c) 2010-2013 Digital Bazaar, Inc.
- */
-var forge = __webpack_require__(2);
-__webpack_require__(23);
-__webpack_require__(26);
-__webpack_require__(115);
-__webpack_require__(40);
-__webpack_require__(78);
-__webpack_require__(210);
-__webpack_require__(82);
-__webpack_require__(56);
-__webpack_require__(3);
-__webpack_require__(81);
-
-// shortcut for asn.1 API
-var asn1 = forge.asn1;
-
-/* Public Key Infrastructure (PKI) implementation. */
-var pki = module.exports = forge.pki = forge.pki || {};
-
-/**
- * NOTE: THIS METHOD IS DEPRECATED. Use pem.decode() instead.
- *
- * Converts PEM-formatted data to DER.
- *
- * @param pem the PEM-formatted data.
- *
- * @return the DER-formatted data.
- */
-pki.pemToDer = function(pem) {
-  var msg = forge.pem.decode(pem)[0];
-  if(msg.procType && msg.procType.type === 'ENCRYPTED') {
-    throw new Error('Could not convert PEM to DER; PEM is encrypted.');
-  }
-  return forge.util.createBuffer(msg.body);
-};
-
-/**
- * Converts an RSA private key from PEM format.
- *
- * @param pem the PEM-formatted private key.
- *
- * @return the private key.
- */
-pki.privateKeyFromPem = function(pem) {
-  var msg = forge.pem.decode(pem)[0];
-
-  if(msg.type !== 'PRIVATE KEY' && msg.type !== 'RSA PRIVATE KEY') {
-    var error = new Error('Could not convert private key from PEM; PEM ' +
-      'header type is not "PRIVATE KEY" or "RSA PRIVATE KEY".');
-    error.headerType = msg.type;
-    throw error;
-  }
-  if(msg.procType && msg.procType.type === 'ENCRYPTED') {
-    throw new Error('Could not convert private key from PEM; PEM is encrypted.');
-  }
-
-  // convert DER to ASN.1 object
-  var obj = asn1.fromDer(msg.body);
-
-  return pki.privateKeyFromAsn1(obj);
-};
-
-/**
- * Converts an RSA private key to PEM format.
- *
- * @param key the private key.
- * @param maxline the maximum characters per line, defaults to 64.
- *
- * @return the PEM-formatted private key.
- */
-pki.privateKeyToPem = function(key, maxline) {
-  // convert to ASN.1, then DER, then PEM-encode
-  var msg = {
-    type: 'RSA PRIVATE KEY',
-    body: asn1.toDer(pki.privateKeyToAsn1(key)).getBytes()
-  };
-  return forge.pem.encode(msg, {maxline: maxline});
-};
-
-/**
- * Converts a PrivateKeyInfo to PEM format.
- *
- * @param pki the PrivateKeyInfo.
- * @param maxline the maximum characters per line, defaults to 64.
- *
- * @return the PEM-formatted private key.
- */
-pki.privateKeyInfoToPem = function(pki, maxline) {
-  // convert to DER, then PEM-encode
-  var msg = {
-    type: 'PRIVATE KEY',
-    body: asn1.toDer(pki).getBytes()
-  };
-  return forge.pem.encode(msg, {maxline: maxline});
-};
-
-
-/***/ }),
-/* 209 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * RC2 implementation.
- *
- * @author Stefan Siegl
- *
- * Copyright (c) 2012 Stefan Siegl <stesie@brokenpipe.de>
- *
- * Information on the RC2 cipher is available from RFC #2268,
- * http://www.ietf.org/rfc/rfc2268.txt
- */
-var forge = __webpack_require__(2);
-__webpack_require__(3);
-
-var piTable = [
-  0xd9, 0x78, 0xf9, 0xc4, 0x19, 0xdd, 0xb5, 0xed, 0x28, 0xe9, 0xfd, 0x79, 0x4a, 0xa0, 0xd8, 0x9d,
-  0xc6, 0x7e, 0x37, 0x83, 0x2b, 0x76, 0x53, 0x8e, 0x62, 0x4c, 0x64, 0x88, 0x44, 0x8b, 0xfb, 0xa2,
-  0x17, 0x9a, 0x59, 0xf5, 0x87, 0xb3, 0x4f, 0x13, 0x61, 0x45, 0x6d, 0x8d, 0x09, 0x81, 0x7d, 0x32,
-  0xbd, 0x8f, 0x40, 0xeb, 0x86, 0xb7, 0x7b, 0x0b, 0xf0, 0x95, 0x21, 0x22, 0x5c, 0x6b, 0x4e, 0x82,
-  0x54, 0xd6, 0x65, 0x93, 0xce, 0x60, 0xb2, 0x1c, 0x73, 0x56, 0xc0, 0x14, 0xa7, 0x8c, 0xf1, 0xdc,
-  0x12, 0x75, 0xca, 0x1f, 0x3b, 0xbe, 0xe4, 0xd1, 0x42, 0x3d, 0xd4, 0x30, 0xa3, 0x3c, 0xb6, 0x26,
-  0x6f, 0xbf, 0x0e, 0xda, 0x46, 0x69, 0x07, 0x57, 0x27, 0xf2, 0x1d, 0x9b, 0xbc, 0x94, 0x43, 0x03,
-  0xf8, 0x11, 0xc7, 0xf6, 0x90, 0xef, 0x3e, 0xe7, 0x06, 0xc3, 0xd5, 0x2f, 0xc8, 0x66, 0x1e, 0xd7,
-  0x08, 0xe8, 0xea, 0xde, 0x80, 0x52, 0xee, 0xf7, 0x84, 0xaa, 0x72, 0xac, 0x35, 0x4d, 0x6a, 0x2a,
-  0x96, 0x1a, 0xd2, 0x71, 0x5a, 0x15, 0x49, 0x74, 0x4b, 0x9f, 0xd0, 0x5e, 0x04, 0x18, 0xa4, 0xec,
-  0xc2, 0xe0, 0x41, 0x6e, 0x0f, 0x51, 0xcb, 0xcc, 0x24, 0x91, 0xaf, 0x50, 0xa1, 0xf4, 0x70, 0x39,
-  0x99, 0x7c, 0x3a, 0x85, 0x23, 0xb8, 0xb4, 0x7a, 0xfc, 0x02, 0x36, 0x5b, 0x25, 0x55, 0x97, 0x31,
-  0x2d, 0x5d, 0xfa, 0x98, 0xe3, 0x8a, 0x92, 0xae, 0x05, 0xdf, 0x29, 0x10, 0x67, 0x6c, 0xba, 0xc9,
-  0xd3, 0x00, 0xe6, 0xcf, 0xe1, 0x9e, 0xa8, 0x2c, 0x63, 0x16, 0x01, 0x3f, 0x58, 0xe2, 0x89, 0xa9,
-  0x0d, 0x38, 0x34, 0x1b, 0xab, 0x33, 0xff, 0xb0, 0xbb, 0x48, 0x0c, 0x5f, 0xb9, 0xb1, 0xcd, 0x2e,
-  0xc5, 0xf3, 0xdb, 0x47, 0xe5, 0xa5, 0x9c, 0x77, 0x0a, 0xa6, 0x20, 0x68, 0xfe, 0x7f, 0xc1, 0xad
-];
-
-var s = [1, 2, 3, 5];
-
-/**
- * Rotate a word left by given number of bits.
- *
- * Bits that are shifted out on the left are put back in on the right
- * hand side.
- *
- * @param word The word to shift left.
- * @param bits The number of bits to shift by.
- * @return The rotated word.
- */
-var rol = function(word, bits) {
-  return ((word << bits) & 0xffff) | ((word & 0xffff) >> (16 - bits));
-};
-
-/**
- * Rotate a word right by given number of bits.
- *
- * Bits that are shifted out on the right are put back in on the left
- * hand side.
- *
- * @param word The word to shift right.
- * @param bits The number of bits to shift by.
- * @return The rotated word.
- */
-var ror = function(word, bits) {
-  return ((word & 0xffff) >> bits) | ((word << (16 - bits)) & 0xffff);
-};
-
-/* RC2 API */
-module.exports = forge.rc2 = forge.rc2 || {};
-
-/**
- * Perform RC2 key expansion as per RFC #2268, section 2.
- *
- * @param key variable-length user key (between 1 and 128 bytes)
- * @param effKeyBits number of effective key bits (default: 128)
- * @return the expanded RC2 key (ByteBuffer of 128 bytes)
- */
-forge.rc2.expandKey = function(key, effKeyBits) {
-  if(typeof key === 'string') {
-    key = forge.util.createBuffer(key);
-  }
-  effKeyBits = effKeyBits || 128;
-
-  /* introduce variables that match the names used in RFC #2268 */
-  var L = key;
-  var T = key.length();
-  var T1 = effKeyBits;
-  var T8 = Math.ceil(T1 / 8);
-  var TM = 0xff >> (T1 & 0x07);
-  var i;
-
-  for(i = T; i < 128; i++) {
-    L.putByte(piTable[(L.at(i - 1) + L.at(i - T)) & 0xff]);
-  }
-
-  L.setAt(128 - T8, piTable[L.at(128 - T8) & TM]);
-
-  for(i = 127 - T8; i >= 0; i--) {
-    L.setAt(i, piTable[L.at(i + 1) ^ L.at(i + T8)]);
-  }
-
-  return L;
-};
-
-/**
- * Creates a RC2 cipher object.
- *
- * @param key the symmetric key to use (as base for key generation).
- * @param bits the number of effective key bits.
- * @param encrypt false for decryption, true for encryption.
- *
- * @return the cipher.
- */
-var createCipher = function(key, bits, encrypt) {
-  var _finish = false, _input = null, _output = null, _iv = null;
-  var mixRound, mashRound;
-  var i, j, K = [];
-
-  /* Expand key and fill into K[] Array */
-  key = forge.rc2.expandKey(key, bits);
-  for(i = 0; i < 64; i++) {
-    K.push(key.getInt16Le());
-  }
-
-  if(encrypt) {
-    /**
-     * Perform one mixing round "in place".
-     *
-     * @param R Array of four words to perform mixing on.
-     */
-    mixRound = function(R) {
-      for(i = 0; i < 4; i++) {
-        R[i] += K[j] + (R[(i + 3) % 4] & R[(i + 2) % 4]) +
-          ((~R[(i + 3) % 4]) & R[(i + 1) % 4]);
-        R[i] = rol(R[i], s[i]);
-        j++;
-      }
-    };
-
-    /**
-     * Perform one mashing round "in place".
-     *
-     * @param R Array of four words to perform mashing on.
-     */
-    mashRound = function(R) {
-      for(i = 0; i < 4; i++) {
-        R[i] += K[R[(i + 3) % 4] & 63];
-      }
-    };
-  } else {
-    /**
-     * Perform one r-mixing round "in place".
-     *
-     * @param R Array of four words to perform mixing on.
-     */
-    mixRound = function(R) {
-      for(i = 3; i >= 0; i--) {
-        R[i] = ror(R[i], s[i]);
-        R[i] -= K[j] + (R[(i + 3) % 4] & R[(i + 2) % 4]) +
-          ((~R[(i + 3) % 4]) & R[(i + 1) % 4]);
-        j--;
-      }
-    };
-
-    /**
-     * Perform one r-mashing round "in place".
-     *
-     * @param R Array of four words to perform mashing on.
-     */
-    mashRound = function(R) {
-      for(i = 3; i >= 0; i--) {
-        R[i] -= K[R[(i + 3) % 4] & 63];
-      }
-    };
-  }
-
-  /**
-   * Run the specified cipher execution plan.
-   *
-   * This function takes four words from the input buffer, applies the IV on
-   * it (if requested) and runs the provided execution plan.
-   *
-   * The plan must be put together in form of a array of arrays.  Where the
-   * outer one is simply a list of steps to perform and the inner one needs
-   * to have two elements: the first one telling how many rounds to perform,
-   * the second one telling what to do (i.e. the function to call).
-   *
-   * @param {Array} plan The plan to execute.
-   */
-  var runPlan = function(plan) {
-    var R = [];
-
-    /* Get data from input buffer and fill the four words into R */
-    for(i = 0; i < 4; i++) {
-      var val = _input.getInt16Le();
-
-      if(_iv !== null) {
-        if(encrypt) {
-          /* We're encrypting, apply the IV first. */
-          val ^= _iv.getInt16Le();
-        } else {
-          /* We're decryption, keep cipher text for next block. */
-          _iv.putInt16Le(val);
-        }
-      }
-
-      R.push(val & 0xffff);
-    }
-
-    /* Reset global "j" variable as per spec. */
-    j = encrypt ? 0 : 63;
-
-    /* Run execution plan. */
-    for(var ptr = 0; ptr < plan.length; ptr++) {
-      for(var ctr = 0; ctr < plan[ptr][0]; ctr++) {
-        plan[ptr][1](R);
-      }
-    }
-
-    /* Write back result to output buffer. */
-    for(i = 0; i < 4; i++) {
-      if(_iv !== null) {
-        if(encrypt) {
-          /* We're encrypting in CBC-mode, feed back encrypted bytes into
-             IV buffer to carry it forward to next block. */
-          _iv.putInt16Le(R[i]);
-        } else {
-          R[i] ^= _iv.getInt16Le();
-        }
-      }
-
-      _output.putInt16Le(R[i]);
-    }
-  };
-
-  /* Create cipher object */
-  var cipher = null;
-  cipher = {
-    /**
-     * Starts or restarts the encryption or decryption process, whichever
-     * was previously configured.
-     *
-     * To use the cipher in CBC mode, iv may be given either as a string
-     * of bytes, or as a byte buffer.  For ECB mode, give null as iv.
-     *
-     * @param iv the initialization vector to use, null for ECB mode.
-     * @param output the output the buffer to write to, null to create one.
-     */
-    start: function(iv, output) {
-      if(iv) {
-        /* CBC mode */
-        if(typeof iv === 'string') {
-          iv = forge.util.createBuffer(iv);
-        }
-      }
-
-      _finish = false;
-      _input = forge.util.createBuffer();
-      _output = output || new forge.util.createBuffer();
-      _iv = iv;
-
-      cipher.output = _output;
-    },
-
-    /**
-     * Updates the next block.
-     *
-     * @param input the buffer to read from.
-     */
-    update: function(input) {
-      if(!_finish) {
-        // not finishing, so fill the input buffer with more input
-        _input.putBuffer(input);
-      }
-
-      while(_input.length() >= 8) {
-        runPlan([
-            [ 5, mixRound ],
-            [ 1, mashRound ],
-            [ 6, mixRound ],
-            [ 1, mashRound ],
-            [ 5, mixRound ]
-          ]);
-      }
-    },
-
-    /**
-     * Finishes encrypting or decrypting.
-     *
-     * @param pad a padding function to use, null for PKCS#7 padding,
-     *           signature(blockSize, buffer, decrypt).
-     *
-     * @return true if successful, false on error.
-     */
-    finish: function(pad) {
-      var rval = true;
-
-      if(encrypt) {
-        if(pad) {
-          rval = pad(8, _input, !encrypt);
-        } else {
-          // add PKCS#7 padding to block (each pad byte is the
-          // value of the number of pad bytes)
-          var padding = (_input.length() === 8) ? 8 : (8 - _input.length());
-          _input.fillWithByte(padding, padding);
-        }
-      }
-
-      if(rval) {
-        // do final update
-        _finish = true;
-        cipher.update();
-      }
-
-      if(!encrypt) {
-        // check for error: input data not a multiple of block size
-        rval = (_input.length() === 0);
-        if(rval) {
-          if(pad) {
-            rval = pad(8, _output, !encrypt);
-          } else {
-            // ensure padding byte count is valid
-            var len = _output.length();
-            var count = _output.at(len - 1);
-
-            if(count > len) {
-              rval = false;
-            } else {
-              // trim off padding bytes
-              _output.truncate(count);
-            }
-          }
-        }
-      }
-
-      return rval;
-    }
-  };
-
-  return cipher;
-};
-
-/**
- * Creates an RC2 cipher object to encrypt data in ECB or CBC mode using the
- * given symmetric key. The output will be stored in the 'output' member
- * of the returned cipher.
- *
- * The key and iv may be given as a string of bytes or a byte buffer.
- * The cipher is initialized to use 128 effective key bits.
- *
- * @param key the symmetric key to use.
- * @param iv the initialization vector to use.
- * @param output the buffer to write to, null to create one.
- *
- * @return the cipher.
- */
-forge.rc2.startEncrypting = function(key, iv, output) {
-  var cipher = forge.rc2.createEncryptionCipher(key, 128);
-  cipher.start(iv, output);
-  return cipher;
-};
-
-/**
- * Creates an RC2 cipher object to encrypt data in ECB or CBC mode using the
- * given symmetric key.
- *
- * The key may be given as a string of bytes or a byte buffer.
- *
- * To start encrypting call start() on the cipher with an iv and optional
- * output buffer.
- *
- * @param key the symmetric key to use.
- *
- * @return the cipher.
- */
-forge.rc2.createEncryptionCipher = function(key, bits) {
-  return createCipher(key, bits, true);
-};
-
-/**
- * Creates an RC2 cipher object to decrypt data in ECB or CBC mode using the
- * given symmetric key. The output will be stored in the 'output' member
- * of the returned cipher.
- *
- * The key and iv may be given as a string of bytes or a byte buffer.
- * The cipher is initialized to use 128 effective key bits.
- *
- * @param key the symmetric key to use.
- * @param iv the initialization vector to use.
- * @param output the buffer to write to, null to create one.
- *
- * @return the cipher.
- */
-forge.rc2.startDecrypting = function(key, iv, output) {
-  var cipher = forge.rc2.createDecryptionCipher(key, 128);
-  cipher.start(iv, output);
-  return cipher;
-};
-
-/**
- * Creates an RC2 cipher object to decrypt data in ECB or CBC mode using the
- * given symmetric key.
- *
- * The key may be given as a string of bytes or a byte buffer.
- *
- * To start decrypting call start() on the cipher with an iv and optional
- * output buffer.
- *
- * @param key the symmetric key to use.
- *
- * @return the cipher.
- */
-forge.rc2.createDecryptionCipher = function(key, bits) {
-  return createCipher(key, bits, false);
-};
-
-
-/***/ }),
-/* 210 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Javascript implementation of PKCS#12.
- *
- * @author Dave Longley
- * @author Stefan Siegl <stesie@brokenpipe.de>
- *
- * Copyright (c) 2010-2014 Digital Bazaar, Inc.
- * Copyright (c) 2012 Stefan Siegl <stesie@brokenpipe.de>
- *
- * The ASN.1 representation of PKCS#12 is as follows
- * (see ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-12/pkcs-12-tc1.pdf for details)
- *
- * PFX ::= SEQUENCE {
- *   version  INTEGER {v3(3)}(v3,...),
- *   authSafe ContentInfo,
- *   macData  MacData OPTIONAL
- * }
- *
- * MacData ::= SEQUENCE {
- *   mac DigestInfo,
- *   macSalt OCTET STRING,
- *   iterations INTEGER DEFAULT 1
- * }
- * Note: The iterations default is for historical reasons and its use is
- * deprecated. A higher value, like 1024, is recommended.
- *
- * DigestInfo is defined in PKCS#7 as follows:
- *
- * DigestInfo ::= SEQUENCE {
- *   digestAlgorithm DigestAlgorithmIdentifier,
- *   digest Digest
- * }
- *
- * DigestAlgorithmIdentifier ::= AlgorithmIdentifier
- *
- * The AlgorithmIdentifier contains an Object Identifier (OID) and parameters
- * for the algorithm, if any. In the case of SHA1 there is none.
- *
- * AlgorithmIdentifer ::= SEQUENCE {
- *    algorithm OBJECT IDENTIFIER,
- *    parameters ANY DEFINED BY algorithm OPTIONAL
- * }
- *
- * Digest ::= OCTET STRING
- *
- *
- * ContentInfo ::= SEQUENCE {
- *   contentType ContentType,
- *   content     [0] EXPLICIT ANY DEFINED BY contentType OPTIONAL
- * }
- *
- * ContentType ::= OBJECT IDENTIFIER
- *
- * AuthenticatedSafe ::= SEQUENCE OF ContentInfo
- * -- Data if unencrypted
- * -- EncryptedData if password-encrypted
- * -- EnvelopedData if public key-encrypted
- *
- *
- * SafeContents ::= SEQUENCE OF SafeBag
- *
- * SafeBag ::= SEQUENCE {
- *   bagId     BAG-TYPE.&id ({PKCS12BagSet})
- *   bagValue  [0] EXPLICIT BAG-TYPE.&Type({PKCS12BagSet}{@bagId}),
- *   bagAttributes SET OF PKCS12Attribute OPTIONAL
- * }
- *
- * PKCS12Attribute ::= SEQUENCE {
- *   attrId ATTRIBUTE.&id ({PKCS12AttrSet}),
- *   attrValues SET OF ATTRIBUTE.&Type ({PKCS12AttrSet}{@attrId})
- * } -- This type is compatible with the X.500 type ’Attribute’
- *
- * PKCS12AttrSet ATTRIBUTE ::= {
- *   friendlyName | -- from PKCS #9
- *   localKeyId, -- from PKCS #9
- *   ... -- Other attributes are allowed
- * }
- *
- * CertBag ::= SEQUENCE {
- *   certId    BAG-TYPE.&id   ({CertTypes}),
- *   certValue [0] EXPLICIT BAG-TYPE.&Type ({CertTypes}{@certId})
- * }
- *
- * x509Certificate BAG-TYPE ::= {OCTET STRING IDENTIFIED BY {certTypes 1}}
- *   -- DER-encoded X.509 certificate stored in OCTET STRING
- *
- * sdsiCertificate BAG-TYPE ::= {IA5String IDENTIFIED BY {certTypes 2}}
- * -- Base64-encoded SDSI certificate stored in IA5String
- *
- * CertTypes BAG-TYPE ::= {
- *   x509Certificate |
- *   sdsiCertificate,
- *   ... -- For future extensions
- * }
- */
-var forge = __webpack_require__(2);
-__webpack_require__(23);
-__webpack_require__(77);
-__webpack_require__(26);
-__webpack_require__(112);
-__webpack_require__(115);
-__webpack_require__(24);
-__webpack_require__(56);
-__webpack_require__(79);
-__webpack_require__(3);
-__webpack_require__(81);
-
-// shortcut for asn.1 & PKI API
-var asn1 = forge.asn1;
-var pki = forge.pki;
-
-// shortcut for PKCS#12 API
-var p12 = module.exports = forge.pkcs12 = forge.pkcs12 || {};
-
-var contentInfoValidator = {
-  name: 'ContentInfo',
-  tagClass: asn1.Class.UNIVERSAL,
-  type: asn1.Type.SEQUENCE,  // a ContentInfo
-  constructed: true,
-  value: [{
-    name: 'ContentInfo.contentType',
-    tagClass: asn1.Class.UNIVERSAL,
-    type: asn1.Type.OID,
-    constructed: false,
-    capture: 'contentType'
-  }, {
-    name: 'ContentInfo.content',
-    tagClass: asn1.Class.CONTEXT_SPECIFIC,
-    constructed: true,
-    captureAsn1: 'content'
-  }]
-};
-
-var pfxValidator = {
-  name: 'PFX',
-  tagClass: asn1.Class.UNIVERSAL,
-  type: asn1.Type.SEQUENCE,
-  constructed: true,
-  value: [{
-    name: 'PFX.version',
-    tagClass: asn1.Class.UNIVERSAL,
-    type: asn1.Type.INTEGER,
-    constructed: false,
-    capture: 'version'
-  },
-  contentInfoValidator, {
-    name: 'PFX.macData',
-    tagClass: asn1.Class.UNIVERSAL,
-    type: asn1.Type.SEQUENCE,
-    constructed: true,
-    optional: true,
-    captureAsn1: 'mac',
-    value: [{
-      name: 'PFX.macData.mac',
-      tagClass: asn1.Class.UNIVERSAL,
-      type: asn1.Type.SEQUENCE,  // DigestInfo
-      constructed: true,
-      value: [{
-        name: 'PFX.macData.mac.digestAlgorithm',
-        tagClass: asn1.Class.UNIVERSAL,
-        type: asn1.Type.SEQUENCE,  // DigestAlgorithmIdentifier
-        constructed: true,
-        value: [{
-          name: 'PFX.macData.mac.digestAlgorithm.algorithm',
-          tagClass: asn1.Class.UNIVERSAL,
-          type: asn1.Type.OID,
-          constructed: false,
-          capture: 'macAlgorithm'
-        }, {
-          name: 'PFX.macData.mac.digestAlgorithm.parameters',
-          tagClass: asn1.Class.UNIVERSAL,
-          captureAsn1: 'macAlgorithmParameters'
-        }]
-      }, {
-        name: 'PFX.macData.mac.digest',
-        tagClass: asn1.Class.UNIVERSAL,
-        type: asn1.Type.OCTETSTRING,
-        constructed: false,
-        capture: 'macDigest'
-      }]
-    }, {
-      name: 'PFX.macData.macSalt',
-      tagClass: asn1.Class.UNIVERSAL,
-      type: asn1.Type.OCTETSTRING,
-      constructed: false,
-      capture: 'macSalt'
-    }, {
-      name: 'PFX.macData.iterations',
-      tagClass: asn1.Class.UNIVERSAL,
-      type: asn1.Type.INTEGER,
-      constructed: false,
-      optional: true,
-      capture: 'macIterations'
-    }]
-  }]
-};
-
-var safeBagValidator = {
-  name: 'SafeBag',
-  tagClass: asn1.Class.UNIVERSAL,
-  type: asn1.Type.SEQUENCE,
-  constructed: true,
-  value: [{
-    name: 'SafeBag.bagId',
-    tagClass: asn1.Class.UNIVERSAL,
-    type: asn1.Type.OID,
-    constructed: false,
-    capture: 'bagId'
-  }, {
-    name: 'SafeBag.bagValue',
-    tagClass: asn1.Class.CONTEXT_SPECIFIC,
-    constructed: true,
-    captureAsn1: 'bagValue'
-  }, {
-    name: 'SafeBag.bagAttributes',
-    tagClass: asn1.Class.UNIVERSAL,
-    type: asn1.Type.SET,
-    constructed: true,
-    optional: true,
-    capture: 'bagAttributes'
-  }]
-};
-
-var attributeValidator = {
-  name: 'Attribute',
-  tagClass: asn1.Class.UNIVERSAL,
-  type: asn1.Type.SEQUENCE,
-  constructed: true,
-  value: [{
-    name: 'Attribute.attrId',
-    tagClass: asn1.Class.UNIVERSAL,
-    type: asn1.Type.OID,
-    constructed: false,
-    capture: 'oid'
-  }, {
-    name: 'Attribute.attrValues',
-    tagClass: asn1.Class.UNIVERSAL,
-    type: asn1.Type.SET,
-    constructed: true,
-    capture: 'values'
-  }]
-};
-
-var certBagValidator = {
-  name: 'CertBag',
-  tagClass: asn1.Class.UNIVERSAL,
-  type: asn1.Type.SEQUENCE,
-  constructed: true,
-  value: [{
-    name: 'CertBag.certId',
-    tagClass: asn1.Class.UNIVERSAL,
-    type: asn1.Type.OID,
-    constructed: false,
-    capture: 'certId'
-  }, {
-    name: 'CertBag.certValue',
-    tagClass: asn1.Class.CONTEXT_SPECIFIC,
-    constructed: true,
-    /* So far we only support X.509 certificates (which are wrapped in
-       an OCTET STRING, hence hard code that here). */
-    value: [{
-      name: 'CertBag.certValue[0]',
-      tagClass: asn1.Class.UNIVERSAL,
-      type: asn1.Class.OCTETSTRING,
-      constructed: false,
-      capture: 'cert'
-    }]
-  }]
-};
-
-/**
- * Search SafeContents structure for bags with matching attributes.
- *
- * The search can optionally be narrowed by a certain bag type.
- *
- * @param safeContents the SafeContents structure to search in.
- * @param attrName the name of the attribute to compare against.
- * @param attrValue the attribute value to search for.
- * @param [bagType] bag type to narrow search by.
- *
- * @return an array of matching bags.
- */
-function _getBagsByAttribute(safeContents, attrName, attrValue, bagType) {
-  var result = [];
-
-  for(var i = 0; i < safeContents.length; i++) {
-    for(var j = 0; j < safeContents[i].safeBags.length; j++) {
-      var bag = safeContents[i].safeBags[j];
-      if(bagType !== undefined && bag.type !== bagType) {
-        continue;
-      }
-      // only filter by bag type, no attribute specified
-      if(attrName === null) {
-        result.push(bag);
-        continue;
-      }
-      if(bag.attributes[attrName] !== undefined &&
-        bag.attributes[attrName].indexOf(attrValue) >= 0) {
-        result.push(bag);
-      }
-    }
-  }
-
-  return result;
-}
-
-/**
- * Converts a PKCS#12 PFX in ASN.1 notation into a PFX object.
- *
- * @param obj The PKCS#12 PFX in ASN.1 notation.
- * @param strict true to use strict DER decoding, false not to (default: true).
- * @param {String} password Password to decrypt with (optional).
- *
- * @return PKCS#12 PFX object.
- */
-p12.pkcs12FromAsn1 = function(obj, strict, password) {
-  // handle args
-  if(typeof strict === 'string') {
-    password = strict;
-    strict = true;
-  } else if(strict === undefined) {
-    strict = true;
-  }
-
-  // validate PFX and capture data
-  var capture = {};
-  var errors = [];
-  if(!asn1.validate(obj, pfxValidator, capture, errors)) {
-    var error = new Error('Cannot read PKCS#12 PFX. ' +
-      'ASN.1 object is not an PKCS#12 PFX.');
-    error.errors = error;
-    throw error;
-  }
-
-  var pfx = {
-    version: capture.version.charCodeAt(0),
-    safeContents: [],
-
-    /**
-     * Gets bags with matching attributes.
-     *
-     * @param filter the attributes to filter by:
-     *          [localKeyId] the localKeyId to search for.
-     *          [localKeyIdHex] the localKeyId in hex to search for.
-     *          [friendlyName] the friendly name to search for.
-     *          [bagType] bag type to narrow each attribute search by.
-     *
-     * @return a map of attribute type to an array of matching bags or, if no
-     *           attribute was given but a bag type, the map key will be the
-     *           bag type.
-     */
-    getBags: function(filter) {
-      var rval = {};
-
-      var localKeyId;
-      if('localKeyId' in filter) {
-        localKeyId = filter.localKeyId;
-      } else if('localKeyIdHex' in filter) {
-        localKeyId = forge.util.hexToBytes(filter.localKeyIdHex);
-      }
-
-      // filter on bagType only
-      if(localKeyId === undefined && !('friendlyName' in filter) &&
-        'bagType' in filter) {
-        rval[filter.bagType] = _getBagsByAttribute(
-          pfx.safeContents, null, null, filter.bagType);
-      }
-
-      if(localKeyId !== undefined) {
-        rval.localKeyId = _getBagsByAttribute(
-          pfx.safeContents, 'localKeyId',
-          localKeyId, filter.bagType);
-      }
-      if('friendlyName' in filter) {
-        rval.friendlyName = _getBagsByAttribute(
-          pfx.safeContents, 'friendlyName',
-          filter.friendlyName, filter.bagType);
-      }
-
-      return rval;
-    },
-
-    /**
-     * DEPRECATED: use getBags() instead.
-     *
-     * Get bags with matching friendlyName attribute.
-     *
-     * @param friendlyName the friendly name to search for.
-     * @param [bagType] bag type to narrow search by.
-     *
-     * @return an array of bags with matching friendlyName attribute.
-     */
-    getBagsByFriendlyName: function(friendlyName, bagType) {
-      return _getBagsByAttribute(
-        pfx.safeContents, 'friendlyName', friendlyName, bagType);
-    },
-
-    /**
-     * DEPRECATED: use getBags() instead.
-     *
-     * Get bags with matching localKeyId attribute.
-     *
-     * @param localKeyId the localKeyId to search for.
-     * @param [bagType] bag type to narrow search by.
-     *
-     * @return an array of bags with matching localKeyId attribute.
-     */
-    getBagsByLocalKeyId: function(localKeyId, bagType) {
-      return _getBagsByAttribute(
-        pfx.safeContents, 'localKeyId', localKeyId, bagType);
-    }
-  };
-
-  if(capture.version.charCodeAt(0) !== 3) {
-    var error = new Error('PKCS#12 PFX of version other than 3 not supported.');
-    error.version = capture.version.charCodeAt(0);
-    throw error;
-  }
-
-  if(asn1.derToOid(capture.contentType) !== pki.oids.data) {
-    var error = new Error('Only PKCS#12 PFX in password integrity mode supported.');
-    error.oid = asn1.derToOid(capture.contentType);
-    throw error;
-  }
-
-  var data = capture.content.value[0];
-  if(data.tagClass !== asn1.Class.UNIVERSAL ||
-     data.type !== asn1.Type.OCTETSTRING) {
-    throw new Error('PKCS#12 authSafe content data is not an OCTET STRING.');
-  }
-  data = _decodePkcs7Data(data);
-
-  // check for MAC
-  if(capture.mac) {
-    var md = null;
-    var macKeyBytes = 0;
-    var macAlgorithm = asn1.derToOid(capture.macAlgorithm);
-    switch(macAlgorithm) {
-    case pki.oids.sha1:
-      md = forge.md.sha1.create();
-      macKeyBytes = 20;
-      break;
-    case pki.oids.sha256:
-      md = forge.md.sha256.create();
-      macKeyBytes = 32;
-      break;
-    case pki.oids.sha384:
-      md = forge.md.sha384.create();
-      macKeyBytes = 48;
-      break;
-    case pki.oids.sha512:
-      md = forge.md.sha512.create();
-      macKeyBytes = 64;
-      break;
-    case pki.oids.md5:
-      md = forge.md.md5.create();
-      macKeyBytes = 16;
-      break;
-    }
-    if(md === null) {
-      throw new Error('PKCS#12 uses unsupported MAC algorithm: ' + macAlgorithm);
-    }
-
-    // verify MAC (iterations default to 1)
-    var macSalt = new forge.util.ByteBuffer(capture.macSalt);
-    var macIterations = (('macIterations' in capture) ?
-      parseInt(forge.util.bytesToHex(capture.macIterations), 16) : 1);
-    var macKey = p12.generateKey(
-      password, macSalt, 3, macIterations, macKeyBytes, md);
-    var mac = forge.hmac.create();
-    mac.start(md, macKey);
-    mac.update(data.value);
-    var macValue = mac.getMac();
-    if(macValue.getBytes() !== capture.macDigest) {
-      throw new Error('PKCS#12 MAC could not be verified. Invalid password?');
-    }
-  }
-
-  _decodeAuthenticatedSafe(pfx, data.value, strict, password);
-  return pfx;
-};
-
-/**
- * Decodes PKCS#7 Data. PKCS#7 (RFC 2315) defines "Data" as an OCTET STRING,
- * but it is sometimes an OCTET STRING that is composed/constructed of chunks,
- * each its own OCTET STRING. This is BER-encoding vs. DER-encoding. This
- * function transforms this corner-case into the usual simple,
- * non-composed/constructed OCTET STRING.
- *
- * This function may be moved to ASN.1 at some point to better deal with
- * more BER-encoding issues, should they arise.
- *
- * @param data the ASN.1 Data object to transform.
- */
-function _decodePkcs7Data(data) {
-  // handle special case of "chunked" data content: an octet string composed
-  // of other octet strings
-  if(data.composed || data.constructed) {
-    var value = forge.util.createBuffer();
-    for(var i = 0; i < data.value.length; ++i) {
-      value.putBytes(data.value[i].value);
-    }
-    data.composed = data.constructed = false;
-    data.value = value.getBytes();
-  }
-  return data;
-}
-
-/**
- * Decode PKCS#12 AuthenticatedSafe (BER encoded) into PFX object.
- *
- * The AuthenticatedSafe is a BER-encoded SEQUENCE OF ContentInfo.
- *
- * @param pfx The PKCS#12 PFX object to fill.
- * @param {String} authSafe BER-encoded AuthenticatedSafe.
- * @param strict true to use strict DER decoding, false not to.
- * @param {String} password Password to decrypt with (optional).
- */
-function _decodeAuthenticatedSafe(pfx, authSafe, strict, password) {
-  authSafe = asn1.fromDer(authSafe, strict);  /* actually it's BER encoded */
-
-  if(authSafe.tagClass !== asn1.Class.UNIVERSAL ||
-     authSafe.type !== asn1.Type.SEQUENCE ||
-     authSafe.constructed !== true) {
-    throw new Error('PKCS#12 AuthenticatedSafe expected to be a ' +
-      'SEQUENCE OF ContentInfo');
-  }
-
-  for(var i = 0; i < authSafe.value.length; i++) {
-    var contentInfo = authSafe.value[i];
-
-    // validate contentInfo and capture data
-    var capture = {};
-    var errors = [];
-    if(!asn1.validate(contentInfo, contentInfoValidator, capture, errors)) {
-      var error = new Error('Cannot read ContentInfo.');
-      error.errors = errors;
-      throw error;
-    }
-
-    var obj = {
-      encrypted: false
-    };
-    var safeContents = null;
-    var data = capture.content.value[0];
-    switch(asn1.derToOid(capture.contentType)) {
-    case pki.oids.data:
-      if(data.tagClass !== asn1.Class.UNIVERSAL ||
-         data.type !== asn1.Type.OCTETSTRING) {
-        throw new Error('PKCS#12 SafeContents Data is not an OCTET STRING.');
-      }
-      safeContents = _decodePkcs7Data(data).value;
-      break;
-    case pki.oids.encryptedData:
-      safeContents = _decryptSafeContents(data, password);
-      obj.encrypted = true;
-      break;
-    default:
-      var error = new Error('Unsupported PKCS#12 contentType.');
-      error.contentType = asn1.derToOid(capture.contentType);
-      throw error;
-    }
-
-    obj.safeBags = _decodeSafeContents(safeContents, strict, password);
-    pfx.safeContents.push(obj);
-  }
-}
-
-/**
- * Decrypt PKCS#7 EncryptedData structure.
- *
- * @param data ASN.1 encoded EncryptedContentInfo object.
- * @param password The user-provided password.
- *
- * @return The decrypted SafeContents (ASN.1 object).
- */
-function _decryptSafeContents(data, password) {
-  var capture = {};
-  var errors = [];
-  if(!asn1.validate(
-    data, forge.pkcs7.asn1.encryptedDataValidator, capture, errors)) {
-    var error = new Error('Cannot read EncryptedContentInfo.');
-    error.errors = errors;
-    throw error;
-  }
-
-  var oid = asn1.derToOid(capture.contentType);
-  if(oid !== pki.oids.data) {
-    var error = new Error(
-      'PKCS#12 EncryptedContentInfo ContentType is not Data.');
-    error.oid = oid;
-    throw error;
-  }
-
-  // get cipher
-  oid = asn1.derToOid(capture.encAlgorithm);
-  var cipher = pki.pbe.getCipher(oid, capture.encParameter, password);
-
-  // get encrypted data
-  var encryptedContentAsn1 = _decodePkcs7Data(capture.encryptedContentAsn1);
-  var encrypted = forge.util.createBuffer(encryptedContentAsn1.value);
-
-  cipher.update(encrypted);
-  if(!cipher.finish()) {
-    throw new Error('Failed to decrypt PKCS#12 SafeContents.');
-  }
-
-  return cipher.output.getBytes();
-}
-
-/**
- * Decode PKCS#12 SafeContents (BER-encoded) into array of Bag objects.
- *
- * The safeContents is a BER-encoded SEQUENCE OF SafeBag.
- *
- * @param {String} safeContents BER-encoded safeContents.
- * @param strict true to use strict DER decoding, false not to.
- * @param {String} password Password to decrypt with (optional).
- *
- * @return {Array} Array of Bag objects.
- */
-function _decodeSafeContents(safeContents, strict, password) {
-  // if strict and no safe contents, return empty safes
-  if(!strict && safeContents.length === 0) {
-    return [];
-  }
-
-  // actually it's BER-encoded
-  safeContents = asn1.fromDer(safeContents, strict);
-
-  if(safeContents.tagClass !== asn1.Class.UNIVERSAL ||
-    safeContents.type !== asn1.Type.SEQUENCE ||
-    safeContents.constructed !== true) {
-    throw new Error(
-      'PKCS#12 SafeContents expected to be a SEQUENCE OF SafeBag.');
-  }
-
-  var res = [];
-  for(var i = 0; i < safeContents.value.length; i++) {
-    var safeBag = safeContents.value[i];
-
-    // validate SafeBag and capture data
-    var capture = {};
-    var errors = [];
-    if(!asn1.validate(safeBag, safeBagValidator, capture, errors)) {
-      var error = new Error('Cannot read SafeBag.');
-      error.errors = errors;
-      throw error;
-    }
-
-    /* Create bag object and push to result array. */
-    var bag = {
-      type: asn1.derToOid(capture.bagId),
-      attributes: _decodeBagAttributes(capture.bagAttributes)
-    };
-    res.push(bag);
-
-    var validator, decoder;
-    var bagAsn1 = capture.bagValue.value[0];
-    switch(bag.type) {
-      case pki.oids.pkcs8ShroudedKeyBag:
-        /* bagAsn1 has a EncryptedPrivateKeyInfo, which we need to decrypt.
-           Afterwards we can handle it like a keyBag,
-           which is a PrivateKeyInfo. */
-        bagAsn1 = pki.decryptPrivateKeyInfo(bagAsn1, password);
-        if(bagAsn1 === null) {
-          throw new Error(
-            'Unable to decrypt PKCS#8 ShroudedKeyBag, wrong password?');
-        }
-
-        /* fall through */
-      case pki.oids.keyBag:
-        /* A PKCS#12 keyBag is a simple PrivateKeyInfo as understood by our
-           PKI module, hence we don't have to do validation/capturing here,
-           just pass what we already got. */
-        try {
-          bag.key = pki.privateKeyFromAsn1(bagAsn1);
-        } catch(e) {
-          // ignore unknown key type, pass asn1 value
-          bag.key = null;
-          bag.asn1 = bagAsn1;
-        }
-        continue;  /* Nothing more to do. */
-
-      case pki.oids.certBag:
-        /* A PKCS#12 certBag can wrap both X.509 and sdsi certificates.
-           Therefore put the SafeBag content through another validator to
-           capture the fields.  Afterwards check & store the results. */
-        validator = certBagValidator;
-        decoder = function() {
-          if(asn1.derToOid(capture.certId) !== pki.oids.x509Certificate) {
-            var error = new Error(
-              'Unsupported certificate type, only X.509 supported.');
-            error.oid = asn1.derToOid(capture.certId);
-            throw error;
-          }
-
-          // true=produce cert hash
-          var certAsn1 = asn1.fromDer(capture.cert, strict);
-          try {
-            bag.cert = pki.certificateFromAsn1(certAsn1, true);
-          } catch(e) {
-            // ignore unknown cert type, pass asn1 value
-            bag.cert = null;
-            bag.asn1 = certAsn1;
-          }
-        };
-        break;
-
-      default:
-        var error = new Error('Unsupported PKCS#12 SafeBag type.');
-        error.oid = bag.type;
-        throw error;
-    }
-
-    /* Validate SafeBag value (i.e. CertBag, etc.) and capture data if needed. */
-    if(validator !== undefined &&
-       !asn1.validate(bagAsn1, validator, capture, errors)) {
-      var error = new Error('Cannot read PKCS#12 ' + validator.name);
-      error.errors = errors;
-      throw error;
-    }
-
-    /* Call decoder function from above to store the results. */
-    decoder();
-  }
-
-  return res;
-}
-
-/**
- * Decode PKCS#12 SET OF PKCS12Attribute into JavaScript object.
- *
- * @param attributes SET OF PKCS12Attribute (ASN.1 object).
- *
- * @return the decoded attributes.
- */
-function _decodeBagAttributes(attributes) {
-  var decodedAttrs = {};
-
-  if(attributes !== undefined) {
-    for(var i = 0; i < attributes.length; ++i) {
-      var capture = {};
-      var errors = [];
-      if(!asn1.validate(attributes[i], attributeValidator, capture, errors)) {
-        var error = new Error('Cannot read PKCS#12 BagAttribute.');
-        error.errors = errors;
-        throw error;
-      }
-
-      var oid = asn1.derToOid(capture.oid);
-      if(pki.oids[oid] === undefined) {
-        // unsupported attribute type, ignore.
-        continue;
-      }
-
-      decodedAttrs[pki.oids[oid]] = [];
-      for(var j = 0; j < capture.values.length; ++j) {
-        decodedAttrs[pki.oids[oid]].push(capture.values[j].value);
-      }
-    }
-  }
-
-  return decodedAttrs;
-}
-
-/**
- * Wraps a private key and certificate in a PKCS#12 PFX wrapper. If a
- * password is provided then the private key will be encrypted.
- *
- * An entire certificate chain may also be included. To do this, pass
- * an array for the "cert" parameter where the first certificate is
- * the one that is paired with the private key and each subsequent one
- * verifies the previous one. The certificates may be in PEM format or
- * have been already parsed by Forge.
- *
- * @todo implement password-based-encryption for the whole package
- *
- * @param key the private key.
- * @param cert the certificate (may be an array of certificates in order
- *          to specify a certificate chain).
- * @param password the password to use, null for none.
- * @param options:
- *          algorithm the encryption algorithm to use
- *            ('aes128', 'aes192', 'aes256', '3des'), defaults to 'aes128'.
- *          count the iteration count to use.
- *          saltSize the salt size to use.
- *          useMac true to include a MAC, false not to, defaults to true.
- *          localKeyId the local key ID to use, in hex.
- *          friendlyName the friendly name to use.
- *          generateLocalKeyId true to generate a random local key ID,
- *            false not to, defaults to true.
- *
- * @return the PKCS#12 PFX ASN.1 object.
- */
-p12.toPkcs12Asn1 = function(key, cert, password, options) {
-  // set default options
-  options = options || {};
-  options.saltSize = options.saltSize || 8;
-  options.count = options.count || 2048;
-  options.algorithm = options.algorithm || options.encAlgorithm || 'aes128';
-  if(!('useMac' in options)) {
-    options.useMac = true;
-  }
-  if(!('localKeyId' in options)) {
-    options.localKeyId = null;
-  }
-  if(!('generateLocalKeyId' in options)) {
-    options.generateLocalKeyId = true;
-  }
-
-  var localKeyId = options.localKeyId;
-  var bagAttrs;
-  if(localKeyId !== null) {
-    localKeyId = forge.util.hexToBytes(localKeyId);
-  } else if(options.generateLocalKeyId) {
-    // use SHA-1 of paired cert, if available
-    if(cert) {
-      var pairedCert = forge.util.isArray(cert) ? cert[0] : cert;
-      if(typeof pairedCert === 'string') {
-        pairedCert = pki.certificateFromPem(pairedCert);
-      }
-      var sha1 = forge.md.sha1.create();
-      sha1.update(asn1.toDer(pki.certificateToAsn1(pairedCert)).getBytes());
-      localKeyId = sha1.digest().getBytes();
-    } else {
-      // FIXME: consider using SHA-1 of public key (which can be generated
-      // from private key components), see: cert.generateSubjectKeyIdentifier
-      // generate random bytes
-      localKeyId = forge.random.getBytes(20);
-    }
-  }
-
-  var attrs = [];
-  if(localKeyId !== null) {
-    attrs.push(
-      // localKeyID
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // attrId
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-          asn1.oidToDer(pki.oids.localKeyId).getBytes()),
-        // attrValues
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true, [
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-            localKeyId)
-        ])
-      ]));
-  }
-  if('friendlyName' in options) {
-    attrs.push(
-      // friendlyName
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // attrId
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-          asn1.oidToDer(pki.oids.friendlyName).getBytes()),
-        // attrValues
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true, [
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.BMPSTRING, false,
-            options.friendlyName)
-        ])
-      ]));
-  }
-
-  if(attrs.length > 0) {
-    bagAttrs = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true, attrs);
-  }
-
-  // collect contents for AuthenticatedSafe
-  var contents = [];
-
-  // create safe bag(s) for certificate chain
-  var chain = [];
-  if(cert !== null) {
-    if(forge.util.isArray(cert)) {
-      chain = cert;
-    } else {
-      chain = [cert];
-    }
-  }
-
-  var certSafeBags = [];
-  for(var i = 0; i < chain.length; ++i) {
-    // convert cert from PEM as necessary
-    cert = chain[i];
-    if(typeof cert === 'string') {
-      cert = pki.certificateFromPem(cert);
-    }
-
-    // SafeBag
-    var certBagAttrs = (i === 0) ? bagAttrs : undefined;
-    var certAsn1 = pki.certificateToAsn1(cert);
-    var certSafeBag =
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // bagId
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-          asn1.oidToDer(pki.oids.certBag).getBytes()),
-        // bagValue
-        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-          // CertBag
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-            // certId
-            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-              asn1.oidToDer(pki.oids.x509Certificate).getBytes()),
-            // certValue (x509Certificate)
-            asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-              asn1.create(
-                asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-                asn1.toDer(certAsn1).getBytes())
-            ])])]),
-        // bagAttributes (OPTIONAL)
-        certBagAttrs
-      ]);
-    certSafeBags.push(certSafeBag);
-  }
-
-  if(certSafeBags.length > 0) {
-    // SafeContents
-    var certSafeContents = asn1.create(
-      asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, certSafeBags);
-
-    // ContentInfo
-    var certCI =
-      // PKCS#7 ContentInfo
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // contentType
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-          // OID for the content type is 'data'
-          asn1.oidToDer(pki.oids.data).getBytes()),
-        // content
-        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-          asn1.create(
-            asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-            asn1.toDer(certSafeContents).getBytes())
-        ])
-      ]);
-    contents.push(certCI);
-  }
-
-  // create safe contents for private key
-  var keyBag = null;
-  if(key !== null) {
-    // SafeBag
-    var pkAsn1 = pki.wrapRsaPrivateKey(pki.privateKeyToAsn1(key));
-    if(password === null) {
-      // no encryption
-      keyBag = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // bagId
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-          asn1.oidToDer(pki.oids.keyBag).getBytes()),
-        // bagValue
-        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-          // PrivateKeyInfo
-          pkAsn1
-        ]),
-        // bagAttributes (OPTIONAL)
-        bagAttrs
-      ]);
-    } else {
-      // encrypted PrivateKeyInfo
-      keyBag = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // bagId
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-          asn1.oidToDer(pki.oids.pkcs8ShroudedKeyBag).getBytes()),
-        // bagValue
-        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-          // EncryptedPrivateKeyInfo
-          pki.encryptPrivateKeyInfo(pkAsn1, password, options)
-        ]),
-        // bagAttributes (OPTIONAL)
-        bagAttrs
-      ]);
-    }
-
-    // SafeContents
-    var keySafeContents =
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [keyBag]);
-
-    // ContentInfo
-    var keyCI =
-      // PKCS#7 ContentInfo
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // contentType
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-          // OID for the content type is 'data'
-          asn1.oidToDer(pki.oids.data).getBytes()),
-        // content
-        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-          asn1.create(
-            asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-            asn1.toDer(keySafeContents).getBytes())
-        ])
-      ]);
-    contents.push(keyCI);
-  }
-
-  // create AuthenticatedSafe by stringing together the contents
-  var safe = asn1.create(
-    asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, contents);
-
-  var macData;
-  if(options.useMac) {
-    // MacData
-    var sha1 = forge.md.sha1.create();
-    var macSalt = new forge.util.ByteBuffer(
-      forge.random.getBytes(options.saltSize));
-    var count = options.count;
-    // 160-bit key
-    var key = p12.generateKey(password, macSalt, 3, count, 20);
-    var mac = forge.hmac.create();
-    mac.start(sha1, key);
-    mac.update(asn1.toDer(safe).getBytes());
-    var macValue = mac.getMac();
-    macData = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-      // mac DigestInfo
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-        // digestAlgorithm
-        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-          // algorithm = SHA-1
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-            asn1.oidToDer(pki.oids.sha1).getBytes()),
-          // parameters = Null
-          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
-        ]),
-        // digest
-        asn1.create(
-          asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING,
-          false, macValue.getBytes())
-      ]),
-      // macSalt OCTET STRING
-      asn1.create(
-        asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false, macSalt.getBytes()),
-      // iterations INTEGER (XXX: Only support count < 65536)
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
-        asn1.integerToDer(count).getBytes()
-      )
-    ]);
-  }
-
-  // PFX
-  return asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-    // version (3)
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
-      asn1.integerToDer(3).getBytes()),
-    // PKCS#7 ContentInfo
-    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
-      // contentType
-      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
-        // OID for the content type is 'data'
-        asn1.oidToDer(pki.oids.data).getBytes()),
-      // content
-      asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
-        asn1.create(
-          asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
-          asn1.toDer(safe).getBytes())
-      ])
-    ]),
-    macData
-  ]);
-};
-
-/**
- * Derives a PKCS#12 key.
- *
- * @param password the password to derive the key material from, null or
- *          undefined for none.
- * @param salt the salt, as a ByteBuffer, to use.
- * @param id the PKCS#12 ID byte (1 = key material, 2 = IV, 3 = MAC).
- * @param iter the iteration count.
- * @param n the number of bytes to derive from the password.
- * @param md the message digest to use, defaults to SHA-1.
- *
- * @return a ByteBuffer with the bytes derived from the password.
- */
-p12.generateKey = forge.pbe.generatePkcs12Key;
-
-
-/***/ }),
-/* 211 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Secure Hash Algorithm with a 1024-bit block size implementation.
- *
- * This includes: SHA-512, SHA-384, SHA-512/224, and SHA-512/256. For
- * SHA-256 (block size 512 bits), see sha256.js.
- *
- * See FIPS 180-4 for details.
- *
- * @author Dave Longley
- *
- * Copyright (c) 2014-2015 Digital Bazaar, Inc.
- */
-var forge = __webpack_require__(2);
-__webpack_require__(27);
-__webpack_require__(3);
-
-var sha512 = module.exports = forge.sha512 = forge.sha512 || {};
-
-// SHA-512
-forge.md.sha512 = forge.md.algorithms.sha512 = sha512;
-
-// SHA-384
-var sha384 = forge.sha384 = forge.sha512.sha384 = forge.sha512.sha384 || {};
-sha384.create = function() {
-  return sha512.create('SHA-384');
-};
-forge.md.sha384 = forge.md.algorithms.sha384 = sha384;
-
-// SHA-512/256
-forge.sha512.sha256 = forge.sha512.sha256 || {
-  create: function() {
-    return sha512.create('SHA-512/256');
-  }
-};
-forge.md['sha512/256'] = forge.md.algorithms['sha512/256'] =
-  forge.sha512.sha256;
-
-// SHA-512/224
-forge.sha512.sha224 = forge.sha512.sha224 || {
-  create: function() {
-    return sha512.create('SHA-512/224');
-  }
-};
-forge.md['sha512/224'] = forge.md.algorithms['sha512/224'] =
-  forge.sha512.sha224;
-
-/**
- * Creates a SHA-2 message digest object.
- *
- * @param algorithm the algorithm to use (SHA-512, SHA-384, SHA-512/224,
- *          SHA-512/256).
- *
- * @return a message digest object.
- */
-sha512.create = function(algorithm) {
-  // do initialization as necessary
-  if(!_initialized) {
-    _init();
-  }
-
-  if(typeof algorithm === 'undefined') {
-    algorithm = 'SHA-512';
-  }
-
-  if(!(algorithm in _states)) {
-    throw new Error('Invalid SHA-512 algorithm: ' + algorithm);
-  }
-
-  // SHA-512 state contains eight 64-bit integers (each as two 32-bit ints)
-  var _state = _states[algorithm];
-  var _h = null;
-
-  // input buffer
-  var _input = forge.util.createBuffer();
-
-  // used for 64-bit word storage
-  var _w = new Array(80);
-  for(var wi = 0; wi < 80; ++wi) {
-    _w[wi] = new Array(2);
-  }
-
-  // determine digest length by algorithm name (default)
-  var digestLength = 64;
-  switch (algorithm) {
-    case 'SHA-384':
-      digestLength = 48;
-      break;
-    case 'SHA-512/256':
-      digestLength = 32;
-      break;
-    case 'SHA-512/224':
-      digestLength = 28;
-      break;
-  }
-
-  // message digest object
-  var md = {
-    // SHA-512 => sha512
-    algorithm: algorithm.replace('-', '').toLowerCase(),
-    blockLength: 128,
-    digestLength: digestLength,
-    // 56-bit length of message so far (does not including padding)
-    messageLength: 0,
-    // true message length
-    fullMessageLength: null,
-    // size of message length in bytes
-    messageLengthSize: 16
-  };
-
-  /**
-   * Starts the digest.
-   *
-   * @return this digest object.
-   */
-  md.start = function() {
-    // up to 56-bit message length for convenience
-    md.messageLength = 0;
-
-    // full message length (set md.messageLength128 for backwards-compatibility)
-    md.fullMessageLength = md.messageLength128 = [];
-    var int32s = md.messageLengthSize / 4;
-    for(var i = 0; i < int32s; ++i) {
-      md.fullMessageLength.push(0);
-    }
-    _input = forge.util.createBuffer();
-    _h = new Array(_state.length);
-    for(var i = 0; i < _state.length; ++i) {
-      _h[i] = _state[i].slice(0);
-    }
-    return md;
-  };
-  // start digest automatically for first time
-  md.start();
-
-  /**
-   * Updates the digest with the given message input. The given input can
-   * treated as raw input (no encoding will be applied) or an encoding of
-   * 'utf8' maybe given to encode the input using UTF-8.
-   *
-   * @param msg the message input to update with.
-   * @param encoding the encoding to use (default: 'raw', other: 'utf8').
-   *
-   * @return this digest object.
-   */
-  md.update = function(msg, encoding) {
-    if(encoding === 'utf8') {
-      msg = forge.util.encodeUtf8(msg);
-    }
-
-    // update message length
-    var len = msg.length;
-    md.messageLength += len;
-    len = [(len / 0x100000000) >>> 0, len >>> 0];
-    for(var i = md.fullMessageLength.length - 1; i >= 0; --i) {
-      md.fullMessageLength[i] += len[1];
-      len[1] = len[0] + ((md.fullMessageLength[i] / 0x100000000) >>> 0);
-      md.fullMessageLength[i] = md.fullMessageLength[i] >>> 0;
-      len[0] = ((len[1] / 0x100000000) >>> 0);
-    }
-
-    // add bytes to input buffer
-    _input.putBytes(msg);
-
-    // process bytes
-    _update(_h, _w, _input);
-
-    // compact input buffer every 2K or if empty
-    if(_input.read > 2048 || _input.length() === 0) {
-      _input.compact();
-    }
-
-    return md;
-  };
-
-  /**
-   * Produces the digest.
-   *
-   * @return a byte buffer containing the digest value.
-   */
-  md.digest = function() {
-    /* Note: Here we copy the remaining bytes in the input buffer and
-    add the appropriate SHA-512 padding. Then we do the final update
-    on a copy of the state so that if the user wants to get
-    intermediate digests they can do so. */
-
-    /* Determine the number of bytes that must be added to the message
-    to ensure its length is congruent to 896 mod 1024. In other words,
-    the data to be digested must be a multiple of 1024 bits (or 128 bytes).
-    This data includes the message, some padding, and the length of the
-    message. Since the length of the message will be encoded as 16 bytes (128
-    bits), that means that the last segment of the data must have 112 bytes
-    (896 bits) of message and padding. Therefore, the length of the message
-    plus the padding must be congruent to 896 mod 1024 because
-    1024 - 128 = 896.
-
-    In order to fill up the message length it must be filled with
-    padding that begins with 1 bit followed by all 0 bits. Padding
-    must *always* be present, so if the message length is already
-    congruent to 896 mod 1024, then 1024 padding bits must be added. */
-
-    var finalBlock = forge.util.createBuffer();
-    finalBlock.putBytes(_input.bytes());
-
-    // compute remaining size to be digested (include message length size)
-    var remaining = (
-      md.fullMessageLength[md.fullMessageLength.length - 1] +
-      md.messageLengthSize);
-
-    // add padding for overflow blockSize - overflow
-    // _padding starts with 1 byte with first bit is set (byte value 128), then
-    // there may be up to (blockSize - 1) other pad bytes
-    var overflow = remaining & (md.blockLength - 1);
-    finalBlock.putBytes(_padding.substr(0, md.blockLength - overflow));
-
-    // serialize message length in bits in big-endian order; since length
-    // is stored in bytes we multiply by 8 and add carry from next int
-    var next, carry;
-    var bits = md.fullMessageLength[0] * 8;
-    for(var i = 0; i < md.fullMessageLength.length - 1; ++i) {
-      next = md.fullMessageLength[i + 1] * 8;
-      carry = (next / 0x100000000) >>> 0;
-      bits += carry;
-      finalBlock.putInt32(bits >>> 0);
-      bits = next >>> 0;
-    }
-    finalBlock.putInt32(bits);
-
-    var h = new Array(_h.length);
-    for(var i = 0; i < _h.length; ++i) {
-      h[i] = _h[i].slice(0);
-    }
-    _update(h, _w, finalBlock);
-    var rval = forge.util.createBuffer();
-    var hlen;
-    if(algorithm === 'SHA-512') {
-      hlen = h.length;
-    } else if(algorithm === 'SHA-384') {
-      hlen = h.length - 2;
-    } else {
-      hlen = h.length - 4;
-    }
-    for(var i = 0; i < hlen; ++i) {
-      rval.putInt32(h[i][0]);
-      if(i !== hlen - 1 || algorithm !== 'SHA-512/224') {
-        rval.putInt32(h[i][1]);
-      }
-    }
-    return rval;
-  };
-
-  return md;
-};
-
-// sha-512 padding bytes not initialized yet
-var _padding = null;
-var _initialized = false;
-
-// table of constants
-var _k = null;
-
-// initial hash states
-var _states = null;
-
-/**
- * Initializes the constant tables.
- */
-function _init() {
-  // create padding
-  _padding = String.fromCharCode(128);
-  _padding += forge.util.fillString(String.fromCharCode(0x00), 128);
-
-  // create K table for SHA-512
-  _k = [
-    [0x428a2f98, 0xd728ae22], [0x71374491, 0x23ef65cd],
-    [0xb5c0fbcf, 0xec4d3b2f], [0xe9b5dba5, 0x8189dbbc],
-    [0x3956c25b, 0xf348b538], [0x59f111f1, 0xb605d019],
-    [0x923f82a4, 0xaf194f9b], [0xab1c5ed5, 0xda6d8118],
-    [0xd807aa98, 0xa3030242], [0x12835b01, 0x45706fbe],
-    [0x243185be, 0x4ee4b28c], [0x550c7dc3, 0xd5ffb4e2],
-    [0x72be5d74, 0xf27b896f], [0x80deb1fe, 0x3b1696b1],
-    [0x9bdc06a7, 0x25c71235], [0xc19bf174, 0xcf692694],
-    [0xe49b69c1, 0x9ef14ad2], [0xefbe4786, 0x384f25e3],
-    [0x0fc19dc6, 0x8b8cd5b5], [0x240ca1cc, 0x77ac9c65],
-    [0x2de92c6f, 0x592b0275], [0x4a7484aa, 0x6ea6e483],
-    [0x5cb0a9dc, 0xbd41fbd4], [0x76f988da, 0x831153b5],
-    [0x983e5152, 0xee66dfab], [0xa831c66d, 0x2db43210],
-    [0xb00327c8, 0x98fb213f], [0xbf597fc7, 0xbeef0ee4],
-    [0xc6e00bf3, 0x3da88fc2], [0xd5a79147, 0x930aa725],
-    [0x06ca6351, 0xe003826f], [0x14292967, 0x0a0e6e70],
-    [0x27b70a85, 0x46d22ffc], [0x2e1b2138, 0x5c26c926],
-    [0x4d2c6dfc, 0x5ac42aed], [0x53380d13, 0x9d95b3df],
-    [0x650a7354, 0x8baf63de], [0x766a0abb, 0x3c77b2a8],
-    [0x81c2c92e, 0x47edaee6], [0x92722c85, 0x1482353b],
-    [0xa2bfe8a1, 0x4cf10364], [0xa81a664b, 0xbc423001],
-    [0xc24b8b70, 0xd0f89791], [0xc76c51a3, 0x0654be30],
-    [0xd192e819, 0xd6ef5218], [0xd6990624, 0x5565a910],
-    [0xf40e3585, 0x5771202a], [0x106aa070, 0x32bbd1b8],
-    [0x19a4c116, 0xb8d2d0c8], [0x1e376c08, 0x5141ab53],
-    [0x2748774c, 0xdf8eeb99], [0x34b0bcb5, 0xe19b48a8],
-    [0x391c0cb3, 0xc5c95a63], [0x4ed8aa4a, 0xe3418acb],
-    [0x5b9cca4f, 0x7763e373], [0x682e6ff3, 0xd6b2b8a3],
-    [0x748f82ee, 0x5defb2fc], [0x78a5636f, 0x43172f60],
-    [0x84c87814, 0xa1f0ab72], [0x8cc70208, 0x1a6439ec],
-    [0x90befffa, 0x23631e28], [0xa4506ceb, 0xde82bde9],
-    [0xbef9a3f7, 0xb2c67915], [0xc67178f2, 0xe372532b],
-    [0xca273ece, 0xea26619c], [0xd186b8c7, 0x21c0c207],
-    [0xeada7dd6, 0xcde0eb1e], [0xf57d4f7f, 0xee6ed178],
-    [0x06f067aa, 0x72176fba], [0x0a637dc5, 0xa2c898a6],
-    [0x113f9804, 0xbef90dae], [0x1b710b35, 0x131c471b],
-    [0x28db77f5, 0x23047d84], [0x32caab7b, 0x40c72493],
-    [0x3c9ebe0a, 0x15c9bebc], [0x431d67c4, 0x9c100d4c],
-    [0x4cc5d4be, 0xcb3e42b6], [0x597f299c, 0xfc657e2a],
-    [0x5fcb6fab, 0x3ad6faec], [0x6c44198c, 0x4a475817]
-  ];
-
-  // initial hash states
-  _states = {};
-  _states['SHA-512'] = [
-    [0x6a09e667, 0xf3bcc908],
-    [0xbb67ae85, 0x84caa73b],
-    [0x3c6ef372, 0xfe94f82b],
-    [0xa54ff53a, 0x5f1d36f1],
-    [0x510e527f, 0xade682d1],
-    [0x9b05688c, 0x2b3e6c1f],
-    [0x1f83d9ab, 0xfb41bd6b],
-    [0x5be0cd19, 0x137e2179]
-  ];
-  _states['SHA-384'] = [
-    [0xcbbb9d5d, 0xc1059ed8],
-    [0x629a292a, 0x367cd507],
-    [0x9159015a, 0x3070dd17],
-    [0x152fecd8, 0xf70e5939],
-    [0x67332667, 0xffc00b31],
-    [0x8eb44a87, 0x68581511],
-    [0xdb0c2e0d, 0x64f98fa7],
-    [0x47b5481d, 0xbefa4fa4]
-  ];
-  _states['SHA-512/256'] = [
-    [0x22312194, 0xFC2BF72C],
-    [0x9F555FA3, 0xC84C64C2],
-    [0x2393B86B, 0x6F53B151],
-    [0x96387719, 0x5940EABD],
-    [0x96283EE2, 0xA88EFFE3],
-    [0xBE5E1E25, 0x53863992],
-    [0x2B0199FC, 0x2C85B8AA],
-    [0x0EB72DDC, 0x81C52CA2]
-  ];
-  _states['SHA-512/224'] = [
-    [0x8C3D37C8, 0x19544DA2],
-    [0x73E19966, 0x89DCD4D6],
-    [0x1DFAB7AE, 0x32FF9C82],
-    [0x679DD514, 0x582F9FCF],
-    [0x0F6D2B69, 0x7BD44DA8],
-    [0x77E36F73, 0x04C48942],
-    [0x3F9D85A8, 0x6A1D36C8],
-    [0x1112E6AD, 0x91D692A1]
-  ];
-
-  // now initialized
-  _initialized = true;
-}
-
-/**
- * Updates a SHA-512 state with the given byte buffer.
- *
- * @param s the SHA-512 state to update.
- * @param w the array to use to store words.
- * @param bytes the byte buffer to update with.
- */
-function _update(s, w, bytes) {
-  // consume 512 bit (128 byte) chunks
-  var t1_hi, t1_lo;
-  var t2_hi, t2_lo;
-  var s0_hi, s0_lo;
-  var s1_hi, s1_lo;
-  var ch_hi, ch_lo;
-  var maj_hi, maj_lo;
-  var a_hi, a_lo;
-  var b_hi, b_lo;
-  var c_hi, c_lo;
-  var d_hi, d_lo;
-  var e_hi, e_lo;
-  var f_hi, f_lo;
-  var g_hi, g_lo;
-  var h_hi, h_lo;
-  var i, hi, lo, w2, w7, w15, w16;
-  var len = bytes.length();
-  while(len >= 128) {
-    // the w array will be populated with sixteen 64-bit big-endian words
-    // and then extended into 64 64-bit words according to SHA-512
-    for(i = 0; i < 16; ++i) {
-      w[i][0] = bytes.getInt32() >>> 0;
-      w[i][1] = bytes.getInt32() >>> 0;
-    }
-    for(; i < 80; ++i) {
-      // for word 2 words ago: ROTR 19(x) ^ ROTR 61(x) ^ SHR 6(x)
-      w2 = w[i - 2];
-      hi = w2[0];
-      lo = w2[1];
-
-      // high bits
-      t1_hi = (
-        ((hi >>> 19) | (lo << 13)) ^ // ROTR 19
-        ((lo >>> 29) | (hi << 3)) ^ // ROTR 61/(swap + ROTR 29)
-        (hi >>> 6)) >>> 0; // SHR 6
-      // low bits
-      t1_lo = (
-        ((hi << 13) | (lo >>> 19)) ^ // ROTR 19
-        ((lo << 3) | (hi >>> 29)) ^ // ROTR 61/(swap + ROTR 29)
-        ((hi << 26) | (lo >>> 6))) >>> 0; // SHR 6
-
-      // for word 15 words ago: ROTR 1(x) ^ ROTR 8(x) ^ SHR 7(x)
-      w15 = w[i - 15];
-      hi = w15[0];
-      lo = w15[1];
-
-      // high bits
-      t2_hi = (
-        ((hi >>> 1) | (lo << 31)) ^ // ROTR 1
-        ((hi >>> 8) | (lo << 24)) ^ // ROTR 8
-        (hi >>> 7)) >>> 0; // SHR 7
-      // low bits
-      t2_lo = (
-        ((hi << 31) | (lo >>> 1)) ^ // ROTR 1
-        ((hi << 24) | (lo >>> 8)) ^ // ROTR 8
-        ((hi << 25) | (lo >>> 7))) >>> 0; // SHR 7
-
-      // sum(t1, word 7 ago, t2, word 16 ago) modulo 2^64 (carry lo overflow)
-      w7 = w[i - 7];
-      w16 = w[i - 16];
-      lo = (t1_lo + w7[1] + t2_lo + w16[1]);
-      w[i][0] = (t1_hi + w7[0] + t2_hi + w16[0] +
-        ((lo / 0x100000000) >>> 0)) >>> 0;
-      w[i][1] = lo >>> 0;
-    }
-
-    // initialize hash value for this chunk
-    a_hi = s[0][0];
-    a_lo = s[0][1];
-    b_hi = s[1][0];
-    b_lo = s[1][1];
-    c_hi = s[2][0];
-    c_lo = s[2][1];
-    d_hi = s[3][0];
-    d_lo = s[3][1];
-    e_hi = s[4][0];
-    e_lo = s[4][1];
-    f_hi = s[5][0];
-    f_lo = s[5][1];
-    g_hi = s[6][0];
-    g_lo = s[6][1];
-    h_hi = s[7][0];
-    h_lo = s[7][1];
-
-    // round function
-    for(i = 0; i < 80; ++i) {
-      // Sum1(e) = ROTR 14(e) ^ ROTR 18(e) ^ ROTR 41(e)
-      s1_hi = (
-        ((e_hi >>> 14) | (e_lo << 18)) ^ // ROTR 14
-        ((e_hi >>> 18) | (e_lo << 14)) ^ // ROTR 18
-        ((e_lo >>> 9) | (e_hi << 23))) >>> 0; // ROTR 41/(swap + ROTR 9)
-      s1_lo = (
-        ((e_hi << 18) | (e_lo >>> 14)) ^ // ROTR 14
-        ((e_hi << 14) | (e_lo >>> 18)) ^ // ROTR 18
-        ((e_lo << 23) | (e_hi >>> 9))) >>> 0; // ROTR 41/(swap + ROTR 9)
-
-      // Ch(e, f, g) (optimized the same way as SHA-1)
-      ch_hi = (g_hi ^ (e_hi & (f_hi ^ g_hi))) >>> 0;
-      ch_lo = (g_lo ^ (e_lo & (f_lo ^ g_lo))) >>> 0;
-
-      // Sum0(a) = ROTR 28(a) ^ ROTR 34(a) ^ ROTR 39(a)
-      s0_hi = (
-        ((a_hi >>> 28) | (a_lo << 4)) ^ // ROTR 28
-        ((a_lo >>> 2) | (a_hi << 30)) ^ // ROTR 34/(swap + ROTR 2)
-        ((a_lo >>> 7) | (a_hi << 25))) >>> 0; // ROTR 39/(swap + ROTR 7)
-      s0_lo = (
-        ((a_hi << 4) | (a_lo >>> 28)) ^ // ROTR 28
-        ((a_lo << 30) | (a_hi >>> 2)) ^ // ROTR 34/(swap + ROTR 2)
-        ((a_lo << 25) | (a_hi >>> 7))) >>> 0; // ROTR 39/(swap + ROTR 7)
-
-      // Maj(a, b, c) (optimized the same way as SHA-1)
-      maj_hi = ((a_hi & b_hi) | (c_hi & (a_hi ^ b_hi))) >>> 0;
-      maj_lo = ((a_lo & b_lo) | (c_lo & (a_lo ^ b_lo))) >>> 0;
-
-      // main algorithm
-      // t1 = (h + s1 + ch + _k[i] + _w[i]) modulo 2^64 (carry lo overflow)
-      lo = (h_lo + s1_lo + ch_lo + _k[i][1] + w[i][1]);
-      t1_hi = (h_hi + s1_hi + ch_hi + _k[i][0] + w[i][0] +
-        ((lo / 0x100000000) >>> 0)) >>> 0;
-      t1_lo = lo >>> 0;
-
-      // t2 = s0 + maj modulo 2^64 (carry lo overflow)
-      lo = s0_lo + maj_lo;
-      t2_hi = (s0_hi + maj_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-      t2_lo = lo >>> 0;
-
-      h_hi = g_hi;
-      h_lo = g_lo;
-
-      g_hi = f_hi;
-      g_lo = f_lo;
-
-      f_hi = e_hi;
-      f_lo = e_lo;
-
-      // e = (d + t1) modulo 2^64 (carry lo overflow)
-      lo = d_lo + t1_lo;
-      e_hi = (d_hi + t1_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-      e_lo = lo >>> 0;
-
-      d_hi = c_hi;
-      d_lo = c_lo;
-
-      c_hi = b_hi;
-      c_lo = b_lo;
-
-      b_hi = a_hi;
-      b_lo = a_lo;
-
-      // a = (t1 + t2) modulo 2^64 (carry lo overflow)
-      lo = t1_lo + t2_lo;
-      a_hi = (t1_hi + t2_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-      a_lo = lo >>> 0;
-    }
-
-    // update hash state (additional modulo 2^64)
-    lo = s[0][1] + a_lo;
-    s[0][0] = (s[0][0] + a_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-    s[0][1] = lo >>> 0;
-
-    lo = s[1][1] + b_lo;
-    s[1][0] = (s[1][0] + b_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-    s[1][1] = lo >>> 0;
-
-    lo = s[2][1] + c_lo;
-    s[2][0] = (s[2][0] + c_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-    s[2][1] = lo >>> 0;
-
-    lo = s[3][1] + d_lo;
-    s[3][0] = (s[3][0] + d_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-    s[3][1] = lo >>> 0;
-
-    lo = s[4][1] + e_lo;
-    s[4][0] = (s[4][0] + e_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-    s[4][1] = lo >>> 0;
-
-    lo = s[5][1] + f_lo;
-    s[5][0] = (s[5][0] + f_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-    s[5][1] = lo >>> 0;
-
-    lo = s[6][1] + g_lo;
-    s[6][0] = (s[6][0] + g_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-    s[6][1] = lo >>> 0;
-
-    lo = s[7][1] + h_lo;
-    s[7][0] = (s[7][0] + h_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
-    s[7][1] = lo >>> 0;
-
-    len -= 128;
-  }
-}
-
-
-/***/ }),
-/* 212 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-var pad_string_1 = __webpack_require__(213);
-function encode(input, encoding) {
-    if (encoding === void 0) { encoding = "utf8"; }
-    if (Buffer.isBuffer(input)) {
-        return fromBase64(input.toString("base64"));
-    }
-    return fromBase64(new Buffer(input, encoding).toString("base64"));
-}
-;
-function decode(base64url, encoding) {
-    if (encoding === void 0) { encoding = "utf8"; }
-    return new Buffer(toBase64(base64url), "base64").toString(encoding);
-}
-function toBase64(base64url) {
-    base64url = base64url.toString();
-    return pad_string_1.default(base64url)
-        .replace(/\-/g, "+")
-        .replace(/_/g, "/");
-}
-function fromBase64(base64) {
-    return base64
-        .replace(/=/g, "")
-        .replace(/\+/g, "-")
-        .replace(/\//g, "_");
-}
-function toBuffer(base64url) {
-    return new Buffer(toBase64(base64url), "base64");
-}
-var base64url = encode;
-base64url.encode = encode;
-base64url.decode = decode;
-base64url.toBase64 = toBase64;
-base64url.fromBase64 = fromBase64;
-base64url.toBuffer = toBuffer;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = base64url;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 213 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-function padString(input) {
-    var segmentLength = 4;
-    var stringLength = input.length;
-    var diff = stringLength % segmentLength;
-    if (!diff) {
-        return input;
-    }
-    var position = stringLength;
-    var padLength = segmentLength - diff;
-    var paddedStringLength = stringLength + padLength;
-    var buffer = new Buffer(paddedStringLength);
-    buffer.write(input);
-    while (padLength--) {
-        buffer.write("=", position++);
-    }
-    return buffer.toString();
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = padString;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 214 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * util/utf8.js - Implementation of UTF-8 Encoder/Decoder
- *
- * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
- */
-
-
-var utf8 = exports;
-
-utf8.encode = function(input) {
-  var output = encodeURIComponent(input || "");
-  output = output.replace(/\%([0-9a-fA-F]{2})/g, function(m, code) {
-    code = parseInt(code, 16);
-    return String.fromCharCode(code);
-  });
-
-  return output;
-};
-utf8.decode = function(input) {
-  var output = (input || "").replace(/[\u0080-\u00ff]/g, function(m) {
-    var code = (0x100 | m.charCodeAt(0)).toString(16).substring(1);
-    return "%" + code;
-  });
-  output = decodeURIComponent(output);
-
-  return output;
-};
-
-
-/***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/aes-gcm.js - AES-GCM Encryption and Key-Wrapping
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var helpers = __webpack_require__(12),
-    CONSTANTS = __webpack_require__(20),
-    GCM = __webpack_require__(216);
-
-function gcmEncryptFN(size) {
-  function commonChecks(key, iv) {
-    if (size !== (key.length << 3)) {
-       throw new Error("invalid key size");
-    }
-    if (12 !== iv.length) {
-      throw new Error("invalid iv");
-    }
-  }
-
-  // ### 'fallback' implementation -- uses forge
-  var fallback = function(key, pdata, props) {
-    var iv = props.iv || new Buffer(0),
-        adata = props.aad || props.adata || new Buffer(0),
-        cipher,
-        cdata;
-
-    // validate inputs
-    try {
-      commonChecks(key, iv, adata);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    // setup cipher
-    cipher = GCM.createCipher({
-      key: key,
-      iv: iv,
-      additionalData: adata
-    });
-    // ciphertext is the same length as plaintext
-    cdata = new Buffer(pdata.length);
-
-    var promise = new Promise(function(resolve, reject) {
-      var amt = CONSTANTS.CHUNK_SIZE,
-          clen = 0,
-          poff = 0;
-
-      (function doChunk() {
-        var plen = Math.min(amt, pdata.length - poff);
-        clen += cipher.update(pdata,
-                              poff,
-                              plen,
-                              cdata,
-                              clen);
-        poff += plen;
-        if (pdata.length > poff) {
-          setTimeout(doChunk, 0);
-          return;
-        }
-
-        // finish it
-        clen += cipher.finish(cdata, clen);
-        if (clen !== pdata.length) {
-          reject(new Error("encryption failed"));
-          return;
-        }
-
-        // resolve with output
-        var tag = cipher.tag;
-        resolve({
-          data: cdata,
-          tag: tag
-        });
-      })();
-    });
-
-    return promise;
-  };
-
-  // ### WebCryptoAPI implementation
-  // TODO: cache CryptoKey sooner
-  var webcrypto = function(key, pdata, props) {
-    var iv = props.iv || new Buffer(0),
-        adata = props.aad || props.adata || new Buffer(0);
-
-    try {
-      commonChecks(key, iv, adata);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var alg = {
-      name: "AES-GCM"
-    };
-    var promise;
-    promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["encrypt"]);
-    promise = promise.then(function(key) {
-      alg.iv = iv;
-      alg.tagLength = 128;
-      if (adata.length) {
-        alg.additionalData = adata;
-      }
-
-      return helpers.subtleCrypto.encrypt(alg, key, pdata);
-    });
-    promise = promise.then(function(result) {
-      var tagStart = result.byteLength - 16;
-
-      var tag = result.slice(tagStart);
-      tag = new Buffer(tag);
-
-      var cdata = result.slice(0, tagStart);
-      cdata = new Buffer(cdata);
-
-      return {
-        data: cdata,
-        tag: tag
-      };
-    });
-
-    return promise;
-  };
-
-  // ### NodeJS implementation
-  var nodejs = function(key, pdata, props) {
-    var iv = props.iv || new Buffer(0),
-        adata = props.aad || props.adata || new Buffer(0);
-
-    try {
-      commonChecks(key, iv, adata);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var alg = "aes-" + (key.length * 8) + "-gcm";
-    var cipher;
-    try {
-      cipher = helpers.nodeCrypto.createCipheriv(alg, key, iv);
-    } catch (err) {
-      throw new Error("unsupported algorithm: " + alg);
-    }
-    if ("function" !== typeof cipher.setAAD) {
-      throw new Error("unsupported algorithm: " + alg);
-    }
-    if (adata.length) {
-      cipher.setAAD(adata);
-    }
-
-    var cdata = Buffer.concat([
-      cipher.update(pdata),
-      cipher.final()
-    ]);
-    var tag = cipher.getAuthTag();
-
-    return {
-      data: cdata,
-      tag: tag
-    };
-  };
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-function gcmDecryptFN(size) {
-  function commonChecks(key, iv, tag) {
-    if (size !== (key.length << 3)) {
-      throw new Error("invalid key size");
-    }
-    if (12 !== iv.length) {
-      throw new Error("invalid iv");
-    }
-    if (16 !== tag.length) {
-      throw new Error("invalid tag length");
-    }
-  }
-
-  // ### fallback implementation -- uses forge
-  var fallback = function(key, cdata, props) {
-    var adata = props.aad || props.adata || new Buffer(0),
-        iv = props.iv || new Buffer(0),
-        tag = props.tag || props.mac || new Buffer(0),
-        cipher,
-        pdata;
-
-    // validate inputs
-    try {
-      commonChecks(key, iv, tag);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    // setup cipher
-    cipher = GCM.createDecipher({
-      key: key,
-      iv: iv,
-      additionalData: adata,
-      tag: tag
-    });
-    // plaintext is the same length as ciphertext
-    pdata = new Buffer(cdata.length);
-
-    var promise = new Promise(function(resolve, reject) {
-      var amt = CONSTANTS.CHUNK_SIZE,
-          plen = 0,
-          coff = 0;
-
-      (function doChunk() {
-        var clen = Math.min(amt, cdata.length - coff);
-        plen += cipher.update(cdata,
-                              coff,
-                              clen,
-                              pdata,
-                              plen);
-        coff += clen;
-        if (cdata.length > coff) {
-          setTimeout(doChunk, 0);
-          return;
-        }
-
-        try {
-          plen += cipher.finish(pdata, plen);
-        } catch (err) {
-          reject(new Error("decryption failed"));
-          return;
-        }
-
-        if (plen !== cdata.length) {
-          reject(new Error("decryption failed"));
-          return;
-        }
-
-        // resolve with output
-        resolve(pdata);
-      })();
-    });
-
-    return promise;
-  };
-
-  // ### WebCryptoAPI implementation
-  // TODO: cache CryptoKey sooner
-  var webcrypto = function(key, cdata, props) {
-    var adata = props.aad || props.adata || new Buffer(0),
-        iv = props.iv || new Buffer(0),
-        tag = props.tag || props.mac || new Buffer(0);
-
-    // validate inputs
-    try {
-      commonChecks(key, iv, tag);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var alg = {
-      name: "AES-GCM"
-    };
-    var promise;
-    promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["decrypt"]);
-    promise = promise.then(function(key) {
-      alg.iv = iv;
-      alg.tagLength = 128;
-      if (adata.length) {
-        alg.additionalData = adata;
-      }
-
-      // concatenate cdata and tag
-      cdata = Buffer.concat([cdata, tag], cdata.length + tag.length);
-
-      return helpers.subtleCrypto.decrypt(alg, key, cdata);
-    });
-    promise = promise.then(function(pdata) {
-      pdata = new Buffer(pdata);
-      return pdata;
-    });
-
-    return promise;
-  };
-
-  var nodejs = function(key, cdata, props) {
-    var adata = props.aad || props.adata || new Buffer(0),
-        iv = props.iv || new Buffer(0),
-        tag = props.tag || props.mac || new Buffer(0);
-
-    // validate inputs
-    try {
-      commonChecks(key, iv, tag);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-
-    var alg = "aes-" + (key.length * 8) + "-gcm";
-    var cipher;
-    try {
-      cipher = helpers.nodeCrypto.createDecipheriv(alg, key, iv);
-    } catch(err) {
-      throw new Error("unsupported algorithm: " + alg);
-    }
-    if ("function" !== typeof cipher.setAAD) {
-      throw new Error("unsupported algorithm: " + alg);
-    }
-    cipher.setAuthTag(tag);
-    if (adata.length) {
-      cipher.setAAD(adata);
-    }
-
-    try {
-      var pdata = Buffer.concat([
-        cipher.update(cdata),
-        cipher.final()
-      ]);
-
-      return pdata;
-    } catch (err) {
-      throw new Error("decryption failed");
-    }
-  };
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-
-// ### Public API
-// * [name].encrypt
-// * [name].decrypt
-var aesGcm = {};
-[
-  "A128GCM",
-  "A192GCM",
-  "A256GCM",
-  "A128GCMKW",
-  "A192GCMKW",
-  "A256GCMKW"
-].forEach(function(alg) {
-  var size = parseInt(/A(\d+)GCM(?:KW)?/g.exec(alg)[1]);
-  aesGcm[alg] = {
-    encrypt: gcmEncryptFN(size),
-    decrypt: gcmDecryptFN(size)
-  };
-});
-
-module.exports = aesGcm;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 216 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * deps/ciphermodes/gcm/index.js - AES-GCM implementation Entry Point
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
- 
-
-var Long = __webpack_require__(84),
-    forge = __webpack_require__(5),
-    multipliers = __webpack_require__(217),
-    helpers = __webpack_require__(116),
-    pack = __webpack_require__(59),
-    DataBuffer = __webpack_require__(41),
-    cipherHelpers = __webpack_require__(219);
-
-var BLOCK_SIZE = 16;
-
-// ### GCM Mode
-// ### Constructor
-function Gcm(options) {
-  options = options || {};
-
-  this.name = "GCM";
-  this.cipher = options.cipher;
-  this.blockSize = this.blockSize || 16;
-}
-
-// ### exports
-module.exports = {
-  createCipher: function(options) {
-    var alg = new forge.aes.Algorithm("AES-GCM", Gcm);
-    alg.initialize({
-      key: new DataBuffer(options.key)
-    });
-    alg.mode.start(options);
-
-    return alg.mode;
-  },
-  createDecipher: function(options) {
-    var alg = new forge.aes.Algorithm("AES-GCM", Gcm);
-    alg.initialize({
-      key: new DataBuffer(options.key)
-    });
-    alg.mode._decrypt = true;
-    alg.mode.start(options);
-
-    return alg.mode;
-  }
-};
-
-// ### Public API
-Gcm.prototype.start = function(options) {
-  this.tag = null;
-
-  options = options || {};
-
-  if (!("iv" in options)) {
-    throw new Error("Gcm needs ParametersWithIV or AEADParameters");
-  }
-  this.nonce = options.iv;
-  if (this.nonce == null || this.nonce.length < 1) {
-    throw new Error("IV must be at least 1 byte");
-  }
-
-  // TODO: variable tagLength?
-  this.tagLength = 16;
-
-  // TODO: validate tag
-  if ("tag" in options) {
-    this.tag = new Buffer(options.tag);
-  }
-
-  var bufLength = !this._decrypt ?
-                  this.blockSize :
-                  (this.blockSize + this.tagLength);
-  this.bufBlock = new Buffer(bufLength);
-  this.bufBlock.fill(0);
-
-  var multiplier = options.multiplier;
-  if (multiplier == null) {
-    multiplier = new (multipliers["8k"])();
-  }
-  this.multiplier = multiplier;
-
-  this.H = this.zeroBlock();
-  cipherHelpers.encrypt(this.cipher, this.H, 0, this.H, 0);
-
-  // GcmMultiplier tables don"t change unless the key changes
-  // (and are expensive to init)
-  this.multiplier.init(this.H);
-  this.exp = null;
-
-  this.J0 = this.zeroBlock();
-
-  if (this.nonce.length === 12) {
-    this.nonce.copy(this.J0, 0, 0, this.nonce.length);
-    this.J0[this.blockSize - 1] = 0x01;
-  } else {
-    this.gHASH(this.J0, this.nonce, this.nonce.length);
-    var X = this.zeroBlock();
-    pack.longToBigEndian(new Long(this.nonce.length).
-                         multiply(8), X, 8);
-    this.gHASHBlock(this.J0, X);
-  }
-
-  this.S = this.zeroBlock();
-  this.SAt = this.zeroBlock();
-  this.SAtPre = this.zeroBlock();
-  this.atBlock = this.zeroBlock();
-  this.atBlockPos = 0;
-  this.atLength = Long.ZERO;
-  this.atLengthPre = Long.ZERO;
-  this.counter = new Buffer(this.J0);
-  this.bufOff = 0;
-  this.totalLength = Long.ZERO;
-
-  if ("additionalData" in options) {
-    this.processAADBytes(options.additionalData, 0, options.additionalData.length);
-  }
-};
-
-Gcm.prototype.update = function(inV, inOff, len, out, outOff) {
-  var resultLen = 0;
-
-  while (len > 0) {
-    var inLen = Math.min(len, this.bufBlock.length - this.bufOff);
-    inV.copy(this.bufBlock, this.bufOff, inOff, inOff + inLen);
-    len -= inLen;
-    inOff += inLen;
-    this.bufOff += inLen;
-    if (this.bufOff === this.bufBlock.length) {
-      this.outputBlock(out, outOff + resultLen);
-      resultLen += this.blockSize;
-    }
-  }
-
-  return resultLen;
-};
-Gcm.prototype.finish = function(out, outOff) {
-  var resultLen = 0;
-
-  if (this._decrypt) {
-    // append tag
-    resultLen += this.update(this.tag, 0, this.tag.length, out, outOff);
-  }
-
-  if (this.totalLength.isZero()) {
-    this.initCipher();
-  }
-
-  var extra = this.bufOff;
-  if (this._decrypt) {
-    if (extra < this.tagLength) {
-      throw new Error("data too short");
-    }
-    extra -= this.tagLength;
-  }
-
-  if (extra > 0) {
-    this.gCTRPartial(this.bufBlock, 0, extra, out, outOff + resultLen);
-    resultLen += extra;
-  }
-
-  this.atLength = this.atLength.add(this.atBlockPos);
-
-  // Final gHASH
-  var X = this.zeroBlock();
-  pack.longToBigEndian(this.atLength.multiply(8),
-                       X,
-                       0);
-  pack.longToBigEndian(this.totalLength.multiply(8),
-                       X,
-                       8);
-
-  this.gHASHBlock(this.S, X);
-
-  // TODO Fix this if tagLength becomes configurable
-  // T = MSBt(GCTRk(J0,S))
-  var tag = new Buffer(this.blockSize);
-  tag.fill(0);
-  cipherHelpers.encrypt(this.cipher, this.J0, 0, tag, 0);
-  this.xor(tag, this.S);
-
-  if (this._decrypt) {
-    if (!helpers.arrayEqual(this.tag, tag)) {
-      throw new Error("mac check in Gcm failed");
-    }
-  } else {
-    // We place into tag our calculated value for T
-    this.tag = new Buffer(this.tagLength);
-    tag.copy(this.tag, 0, 0, this.tagLength);
-  }
-
-  return resultLen;
-};
-
-// ### "Internal" Helper Functions
-Gcm.prototype.initCipher = function() {
-  if (this.atLength.greaterThan(Long.ZERO)) {
-    this.SAt.copy(this.SAtPre, 0, 0, this.blockSize);
-    this.atLengthPre = this.atLength.add(Long.ZERO);
-  }
-
-  // Finish hash for partial AAD block
-  if (this.atBlockPos > 0) {
-    this.gHASHPartial(this.SAtPre, this.atBlock, 0, this.atBlockPos);
-    this.atLengthPre = this.atLengthPre.add(this.atBlockPos);
-  }
-
-  if (this.atLengthPre.greaterThan(Long.ZERO)) {
-    this.SAtPre.copy(this.S, 0, 0, this.blockSize);
-  }
-};
-
-Gcm.prototype.outputBlock = function(output, offset) {
-  if (this.totalLength.isZero()) {
-    this.initCipher();
-  }
-  this.gCTRBlock(this.bufBlock, output, offset);
-  if (!this._decrypt) {
-    this.bufOff = 0;
-  } else {
-    this.bufBlock.copy(this.bufBlock, 0, this.blockSize, this.blockSize + this.tagLength);
-    this.bufOff = this.tagLength;
-  }
-};
-
-Gcm.prototype.processAADBytes = function(inV, inOff, len) {
-  for (var i = 0; i < len; ++i) {
-    this.atBlock[this.atBlockPos] = inV[inOff + i];
-    if (++this.atBlockPos === this.blockSize) {
-      // Hash each block as it fills
-      this.gHASHBlock(this.SAt, this.atBlock);
-      this.atBlockPos = 0;
-      this.atLength = this.atLength.add(this.blockSize);
-    }
-  }
-};
-
-Gcm.prototype.getNextCounterBlock = function() {
-  for (var i = 15; i >= 12; --i) {
-    var b = ((this.counter[i] + 1) & 0xff);
-    this.counter[i] = b;
-
-    if (b !== 0) {
-      break;
-    }
-  }
-
-  // encrypt counter
-  var outb = new Buffer(this.blockSize);
-  outb.fill(0);
-  cipherHelpers.encrypt(this.cipher, this.counter, 0, outb, 0);
-
-  return outb;
-};
-
-Gcm.prototype.gCTRBlock = function(block, out, outOff) {
-  var tmp = this.getNextCounterBlock();
-
-  this.xor(tmp, block);
-  tmp.copy(out, outOff, 0, this.blockSize);
-
-  this.gHASHBlock(this.S, !this._decrypt ? tmp : block);
-
-  this.totalLength = this.totalLength.add(this.blockSize);
-};
-Gcm.prototype.gCTRPartial = function(buf, off, len, out, outOff) {
-  var tmp = this.getNextCounterBlock();
-
-  this.xor(tmp, buf, off, len);
-  tmp.copy(out, outOff, 0, len);
-
-  this.gHASHPartial(this.S, !this._decrypt ? tmp : buf, 0, len);
-
-  this.totalLength = this.totalLength.add(len);
-};
-
-Gcm.prototype.gHASHBlock = function(Y, b) {
-  this.xor(Y, b);
-  this.multiplier.multiplyH(Y);
-};
-Gcm.prototype.gHASHPartial = function(Y, b, off, len) {
-  this.xor(Y, b, off, len);
-  this.multiplier.multiplyH(Y);
-};
-
-Gcm.prototype.xor = function(block, val, off, len) {
-  switch (arguments.length) {
-    case 2:
-      for (var i = 15; i >= 0; --i) {
-        block[i] ^= val[i];
-      }
-      break;
-    case 4:
-      while (len-- > 0) {
-        block[len] ^= val[off + len];
-      }
-      break;
-    default:
-      throw new TypeError("Expected 2 or 4 arguments.");
-  }
-
-  return block;
-};
-
-Gcm.prototype.zeroBlock = function() {
-  var block = new Buffer(BLOCK_SIZE);
-  block.fill(0);
-  return block;
-};
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 217 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * deps/ciphermodes/gcm/multipliers.js - AES-GCM Multipliers
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
- 
-
-var helpers = __webpack_require__(116),
-    pack = __webpack_require__(59);
-
-
-// ### 8K Table Multiplier
-function Gcm8KMultiplier() {
-  this.H = [];
-  this.M = null;
-}
-
-Gcm8KMultiplier.prototype.init = function(H) {
-  var i, j, k;
-  if (this.M == null) {
-    // sc: I realize this UGLY...
-    //M = new int[32][16][4];
-    this.M = [];
-    for (i = 0; i < 32; ++i) {
-      this.M[i] = [];
-      for (j = 0; j < 16; ++j) {
-        this.M[i][j] = [];
-        for (k = 0; k < 4; ++k) {
-          this.M[i][j][k] = 0;
-        }
-      }
-    }
-  } else if (helpers.arrayEqual(this.H, H)) {
-    return;
-  }
-
-  this.H = H.slice();
-
-  // M[0][0] is ZEROES;
-  // M[1][0] is ZEROES;
-  helpers.asInts(H, this.M[1][8]);
-
-  for (j = 4; j >= 1; j >>= 1) {
-    helpers.multiplyP(this.M[1][j + j], this.M[1][j]);
-  }
-  helpers.multiplyP(this.M[1][1], this.M[0][8]);
-
-  for (j = 4; j >= 1; j >>= 1) {
-    helpers.multiplyP(this.M[0][j + j], this.M[0][j]);
-  }
-
-  i = 0;
-  for (;;) {
-    for (j = 2; j < 16; j += j) {
-      for (k = 1; k < j; ++k) {
-        helpers.xor(this.M[i][j], this.M[i][k], this.M[i][j + k]);
-      }
-    }
-
-    if (++i === 32) {
-      return;
-    }
-
-    if (i > 1) {
-      // M[i][0] is ZEROES;
-      for (j = 8; j > 0; j >>= 1) {
-        helpers.multiplyP8(this.M[i - 2][j], this.M[i][j]);
-      }
-    }
-  }
-};
-Gcm8KMultiplier.prototype.multiplyH = function(x) {
-  var z = [];
-  for (var i = 15; i >= 0; --i) {
-    var m = this.M[i + i][x[i] & 0x0f];
-    z[0] ^= m[0];
-    z[1] ^= m[1];
-    z[2] ^= m[2];
-    z[3] ^= m[3];
-    m = this.M[i + i + 1][(x[i] & 0xf0) >>> 4];
-    z[0] ^= m[0];
-    z[1] ^= m[1];
-    z[2] ^= m[2];
-    z[3] ^= m[3];
-  }
-
-  pack.intToBigEndian(z, x, 0);
-};
-
-
-module.exports = {
-  "8k": Gcm8KMultiplier
-};
-
-
-/***/ }),
-/* 218 */
-/***/ (function(module, exports) {
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0,
-    MAX_SAFE_INTEGER = 9007199254740991,
-    MAX_INTEGER = 1.7976931348623157e+308,
-    NAN = 0 / 0;
-
-/** Used as references for the maximum length and index of an array. */
-var MAX_ARRAY_LENGTH = 4294967295;
-
-/** `Object#toString` result references. */
-var funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]',
-    symbolTag = '[object Symbol]';
-
-/** Used to match leading and trailing whitespace. */
-var reTrim = /^\s+|\s+$/g;
-
-/** Used to detect bad signed hexadecimal string values. */
-var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-
-/** Used to detect binary string values. */
-var reIsBinary = /^0b[01]+$/i;
-
-/** Used to detect octal string values. */
-var reIsOctal = /^0o[0-7]+$/i;
-
-/** Used to detect unsigned integer values. */
-var reIsUint = /^(?:0|[1-9]\d*)$/;
-
-/** Built-in method references without a dependency on `root`. */
-var freeParseInt = parseInt;
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * The base implementation of `_.clamp` which doesn't coerce arguments.
- *
- * @private
- * @param {number} number The number to clamp.
- * @param {number} [lower] The lower bound.
- * @param {number} upper The upper bound.
- * @returns {number} Returns the clamped number.
- */
-function baseClamp(number, lower, upper) {
-  if (number === number) {
-    if (upper !== undefined) {
-      number = number <= upper ? number : upper;
-    }
-    if (lower !== undefined) {
-      number = number >= lower ? number : lower;
-    }
-  }
-  return number;
-}
-
-/**
- * The base implementation of `_.fill` without an iteratee call guard.
- *
- * @private
- * @param {Array} array The array to fill.
- * @param {*} value The value to fill `array` with.
- * @param {number} [start=0] The start position.
- * @param {number} [end=array.length] The end position.
- * @returns {Array} Returns `array`.
- */
-function baseFill(array, value, start, end) {
-  var length = array.length;
-
-  start = toInteger(start);
-  if (start < 0) {
-    start = -start > length ? 0 : (length + start);
-  }
-  end = (end === undefined || end > length) ? length : toInteger(end);
-  if (end < 0) {
-    end += length;
-  }
-  end = start > end ? 0 : toLength(end);
-  while (start < end) {
-    array[start++] = value;
-  }
-  return array;
-}
-
-/**
- * Checks if `value` is a valid array-like index.
- *
- * @private
- * @param {*} value The value to check.
- * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
- * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
- */
-function isIndex(value, length) {
-  length = length == null ? MAX_SAFE_INTEGER : length;
-  return !!length &&
-    (typeof value == 'number' || reIsUint.test(value)) &&
-    (value > -1 && value % 1 == 0 && value < length);
-}
-
-/**
- * Checks if the given arguments are from an iteratee call.
- *
- * @private
- * @param {*} value The potential iteratee value argument.
- * @param {*} index The potential iteratee index or key argument.
- * @param {*} object The potential iteratee object argument.
- * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
- *  else `false`.
- */
-function isIterateeCall(value, index, object) {
-  if (!isObject(object)) {
-    return false;
-  }
-  var type = typeof index;
-  if (type == 'number'
-        ? (isArrayLike(object) && isIndex(index, object.length))
-        : (type == 'string' && index in object)
-      ) {
-    return eq(object[index], value);
-  }
-  return false;
-}
-
-/**
- * Fills elements of `array` with `value` from `start` up to, but not
- * including, `end`.
- *
- * **Note:** This method mutates `array`.
- *
- * @static
- * @memberOf _
- * @since 3.2.0
- * @category Array
- * @param {Array} array The array to fill.
- * @param {*} value The value to fill `array` with.
- * @param {number} [start=0] The start position.
- * @param {number} [end=array.length] The end position.
- * @returns {Array} Returns `array`.
- * @example
- *
- * var array = [1, 2, 3];
- *
- * _.fill(array, 'a');
- * console.log(array);
- * // => ['a', 'a', 'a']
- *
- * _.fill(Array(3), 2);
- * // => [2, 2, 2]
- *
- * _.fill([4, 6, 8, 10], '*', 1, 3);
- * // => [4, '*', '*', 10]
- */
-function fill(array, value, start, end) {
-  var length = array ? array.length : 0;
-  if (!length) {
-    return [];
-  }
-  if (start && typeof start != 'number' && isIterateeCall(array, value, start)) {
-    start = 0;
-    end = length;
-  }
-  return baseFill(array, value, start, end);
-}
-
-/**
- * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * comparison between two values to determine if they are equivalent.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @example
- *
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
- *
- * _.eq(object, object);
- * // => true
- *
- * _.eq(object, other);
- * // => false
- *
- * _.eq('a', 'a');
- * // => true
- *
- * _.eq('a', Object('a'));
- * // => false
- *
- * _.eq(NaN, NaN);
- * // => true
- */
-function eq(value, other) {
-  return value === other || (value !== value && other !== other);
-}
-
-/**
- * Checks if `value` is array-like. A value is considered array-like if it's
- * not a function and has a `value.length` that's an integer greater than or
- * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
- * @example
- *
- * _.isArrayLike([1, 2, 3]);
- * // => true
- *
- * _.isArrayLike(document.body.children);
- * // => true
- *
- * _.isArrayLike('abc');
- * // => true
- *
- * _.isArrayLike(_.noop);
- * // => false
- */
-function isArrayLike(value) {
-  return value != null && isLength(value.length) && !isFunction(value);
-}
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a function, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 8-9 which returns 'object' for typed array and other constructors.
-  var tag = isObject(value) ? objectToString.call(value) : '';
-  return tag == funcTag || tag == genTag;
-}
-
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This method is loosely based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- * @example
- *
- * _.isLength(3);
- * // => true
- *
- * _.isLength(Number.MIN_VALUE);
- * // => false
- *
- * _.isLength(Infinity);
- * // => false
- *
- * _.isLength('3');
- * // => false
- */
-function isLength(value) {
-  return typeof value == 'number' &&
-    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-}
-
-/**
- * Converts `value` to a finite number.
- *
- * @static
- * @memberOf _
- * @since 4.12.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted number.
- * @example
- *
- * _.toFinite(3.2);
- * // => 3.2
- *
- * _.toFinite(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toFinite(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toFinite('3.2');
- * // => 3.2
- */
-function toFinite(value) {
-  if (!value) {
-    return value === 0 ? value : 0;
-  }
-  value = toNumber(value);
-  if (value === INFINITY || value === -INFINITY) {
-    var sign = (value < 0 ? -1 : 1);
-    return sign * MAX_INTEGER;
-  }
-  return value === value ? value : 0;
-}
-
-/**
- * Converts `value` to an integer.
- *
- * **Note:** This method is loosely based on
- * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted integer.
- * @example
- *
- * _.toInteger(3.2);
- * // => 3
- *
- * _.toInteger(Number.MIN_VALUE);
- * // => 0
- *
- * _.toInteger(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toInteger('3.2');
- * // => 3
- */
-function toInteger(value) {
-  var result = toFinite(value),
-      remainder = result % 1;
-
-  return result === result ? (remainder ? result - remainder : result) : 0;
-}
-
-/**
- * Converts `value` to an integer suitable for use as the length of an
- * array-like object.
- *
- * **Note:** This method is based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted integer.
- * @example
- *
- * _.toLength(3.2);
- * // => 3
- *
- * _.toLength(Number.MIN_VALUE);
- * // => 0
- *
- * _.toLength(Infinity);
- * // => 4294967295
- *
- * _.toLength('3.2');
- * // => 3
- */
-function toLength(value) {
-  return value ? baseClamp(toInteger(value), 0, MAX_ARRAY_LENGTH) : 0;
-}
-
-/**
- * Converts `value` to a number.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to process.
- * @returns {number} Returns the number.
- * @example
- *
- * _.toNumber(3.2);
- * // => 3.2
- *
- * _.toNumber(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toNumber(Infinity);
- * // => Infinity
- *
- * _.toNumber('3.2');
- * // => 3.2
- */
-function toNumber(value) {
-  if (typeof value == 'number') {
-    return value;
-  }
-  if (isSymbol(value)) {
-    return NAN;
-  }
-  if (isObject(value)) {
-    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
-    value = isObject(other) ? (other + '') : other;
-  }
-  if (typeof value != 'string') {
-    return value === 0 ? value : +value;
-  }
-  value = value.replace(reTrim, '');
-  var isBinary = reIsBinary.test(value);
-  return (isBinary || reIsOctal.test(value))
-    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
-    : (reIsBadHex.test(value) ? NAN : +value);
-}
-
-module.exports = fill;
-
-
-/***/ }),
-/* 219 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * deps/ciphermodes/helpers.js - Cipher Helper Functions
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var pack = __webpack_require__(59);
-
-function doEncrypt(cipher, inb, inOff, outb, outOff) {
-  var input = new Array(4),
-      output = new Array(4);
-
-  pack.bigEndianToInt(inb, inOff, input);
-  cipher.encrypt(input, output);
-  pack.intToBigEndian(output, outb, outOff);
-}
-
-module.exports = {
-  encrypt: doEncrypt
-};
-
-
-/***/ }),
-/* 220 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * algorithms/dir.js - Direct key mode
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-function dirEncryptFN(key) {
-  // NOTE: pdata unused
-  // NOTE: props unused
-  return Promise.resolve({
-    data: key,
-    once: true,
-    direct: true
-  });
-}
-function dirDecryptFN(key) {
-  // NOTE: pdata unused
-  // NOTE: props unused
-  return Promise.resolve(key);
-}
-
-// ### Public API
-// * [name].encrypt
-// * [name].decrypt
-var direct = {
-  dir: {
-    encrypt: dirEncryptFN,
-    decrypt: dirDecryptFN
-  }
-};
-
-module.exports = direct;
-
-
-/***/ }),
-/* 221 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/ecdh.js - Elliptic Curve Diffie-Hellman algorithms
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var clone = __webpack_require__(21),
-    merge = __webpack_require__(28),
-    omit = __webpack_require__(118),
-    pick = __webpack_require__(119),
-    util = __webpack_require__(7),
-    ecUtil = __webpack_require__(86),
-    hkdf = __webpack_require__(122),
-    concat = __webpack_require__(117),
-    aesKw = __webpack_require__(85),
-    helpers = __webpack_require__(12),
-    CONSTANTS = __webpack_require__(20);
-
-function idealHash(curve) {
-  switch (curve) {
-    case "P-256":
-      return "SHA-256";
-    case "P-384":
-      return "SHA-384";
-    case "P-521":
-      return "SHA-512";
-    default:
-      throw new Error("unsupported curve: " + curve);
-  }
-}
-
-// ### Exported
-var ecdh = module.exports = {};
-
-// ### Derivation algorithms
-// ### "raw" ECDH
-function ecdhDeriveFn() {
-  var alg = {
-    name: "ECDH"
-  };
-
-  var validatePublic = function(pk, form) {
-    var pubKey = pk && ecUtil.convertToForge(pk, true);
-    if (!pubKey || !pubKey.isValid()) {
-      return Promise.reject(new Error("invalid EC public key"));
-    }
-
-    switch (form) {
-      case "jwk":
-        pubKey = ecUtil.convertToJWK(pk, true);
-        break;
-      case "buffer":
-        pubKey = ecUtil.convertToBuffer(pk, true);
-        break;
-    }
-    return Promise.resolve(pubKey);
-  }
-
-  // ### fallback implementation -- uses ecc + forge
-  var fallback = function(key, props) {
-    props = props || {};
-    var keyLen = props.length || 0;
-    // assume {key} is privateKey
-    // assume {props.public} is publicKey
-    var privKey = ecUtil.convertToForge(key, false);
-
-    var p = validatePublic(props.public, "forge");
-    p = p.then(function(pubKey) {
-      // {pubKey} is "forge"
-
-      var secret = privKey.computeSecret(pubKey);
-      if (keyLen) {
-        // truncate to requested key length
-        if (secret.length < keyLen) {
-          return Promise.reject(new Error("key length too large: " + keyLen));
-        }
-        secret = secret.slice(0, keyLen);
-      }
-
-      return secret;
-    });
-    return p;
-  };
-
-  // ### WebCryptoAPI implementation
-  // TODO: cache CryptoKey sooner
-  var webcrypto = function(key, props) {
-    key = key || {};
-    props = props || {};
-
-    var keyLen = props.length || 0,
-        algParams = merge(clone(alg), {
-          namedCurve: key.crv
-        });
-
-    // assume {key} is privateKey
-    if (!keyLen) {
-      // calculate key length from private key size
-      keyLen = key.d.length;
-    }
-    var privKey = ecUtil.convertToJWK(key, false);
-    privKey = helpers.subtleCrypto.importKey("jwk",
-                                             privKey,
-                                             algParams,
-                                             false,
-                                             [ "deriveBits" ]);
-
-    // assume {props.public} is publicKey
-    var pubKey = validatePublic(props.public, "jwk");
-    pubKey = pubKey.then(function(pubKey) {
-      // {pubKey} is "jwk"
-      return helpers.subtleCrypto.importKey("jwk",
-                                            pubKey,
-                                            algParams,
-                                            false,
-                                            []);
-    });
-
-    var p = Promise.all([privKey, pubKey]);
-    p = p.then(function(keypair) {
-      var privKey = keypair[0],
-          pubKey = keypair[1];
-
-      var algParams = merge(clone(alg), {
-        public: pubKey
-      });
-      return helpers.subtleCrypto.deriveBits(algParams, privKey, keyLen * 8);
-    });
-    p = p.then(function(result) {
-      result = new Buffer(result);
-      return result;
-    });
-    return p;
-  };
-
-  var nodejs = function(key, props) {
-    if ("function" !== typeof helpers.nodeCrypto.createECDH) {
-      throw new Error("unsupported algorithm: ECDH");
-    }
-
-    props = props || {};
-    var keyLen = props.length || 0;
-    var curve;
-    switch (key.crv) {
-      case "P-256":
-        curve = "prime256v1";
-        break;
-      case "P-384":
-        curve = "secp384r1";
-        break;
-      case "P-521":
-        curve = "secp521r1";
-        break;
-      default:
-        return Promise.reject(new Error("invalid curve: " + curve));
-    }
-
-    // assume {key} is privateKey
-    // assume {props.public} is publicKey
-    var privKey = ecUtil.convertToBuffer(key, false);
-
-    var p = validatePublic(props.public, "buffer");
-    p = p.then(function(pubKey) {
-      // {pubKey} is "buffer"
-      var ecdh = helpers.nodeCrypto.createECDH(curve);
-      // dummy call so computeSecret doesn't fail
-      // ecdh.generateKeys();
-      ecdh.setPrivateKey(privKey);
-      var secret = ecdh.computeSecret(pubKey);
-      if (keyLen) {
-        if (secret.length < keyLen) {
-          return Promise.reject(new Error("key length too large: " + keyLen));
-        }
-        secret = secret.slice(0, keyLen);
-      }
-      return secret;
-    });
-    return p;
-  };
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-
-function ecdhConcatDeriveFn() {
-  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
-  //       implemented using other primitives
-
-  var fn = function(key, props) {
-    props = props || {};
-
-    var hash;
-    try {
-      hash = props.hash || idealHash(key.crv);
-      if (!hash) {
-        throw new Error("invalid hash: " + hash);
-      }
-      hash.toUpperCase();
-    } catch (ex) {
-      return Promise.reject(ex);
-    }
-
-    var params = ["public"];
-    // derive shared secret
-    // NOTE: whitelist items from {props} for ECDH
-    var promise = ecdh.ECDH.derive(key, pick(props, params));
-    // expand
-    promise = promise.then(function(shared) {
-      // NOTE: blacklist items from {props} for ECDH
-      return concat["CONCAT-" + hash].derive(shared, omit(props, params));
-    });
-    return promise;
-  };
-
-  return fn;
-}
-
-function ecdhHkdfDeriveFn() {
-  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
-  //       implemented using other primitives
-
-  var fn = function(key, props) {
-    props = props || {};
-
-    var hash;
-    try {
-      hash = props.hash || idealHash(key.crv);
-      if (!hash) {
-        throw new Error("invalid hash: " + hash);
-      }
-      hash.toUpperCase();
-    } catch (ex) {
-      return Promise.reject(ex);
-    }
-
-    var params = ["public"];
-    // derive shared secret
-    // NOTE: whitelist items from {props} for ECDH
-    var promise = ecdh.ECDH.derive(key, pick(props, params));
-    // extract-and-expand
-    promise = promise.then(function(shared) {
-      // NOTE: blacklist items from {props} for ECDH
-      return hkdf["HKDF-" + hash].derive(shared, omit(props, params));
-    });
-    return promise;
-  };
-
-  return fn;
-}
-
-// ### Wrap/Unwrap algorithms
-function doEcdhesCommonDerive(privKey, pubKey, props) {
-  function prependLen(input) {
-    return Buffer.concat([
-      helpers.int32ToBuffer(input.length),
-      input
-    ]);
-  }
-
-  var algId = props.algorithm || "",
-      keyLen = CONSTANTS.KEYLENGTH[algId],
-      apu = util.asBuffer(props.apu || "", "base64url"),
-      apv = util.asBuffer(props.apv || "", "base64url");
-  var otherInfo = Buffer.concat([
-    prependLen(new Buffer(algId, "utf8")),
-    prependLen(apu),
-    prependLen(apv),
-    helpers.int32ToBuffer(keyLen)
-  ]);
-
-  var params = {
-    public: pubKey,
-    length: keyLen / 8,
-    hash: "SHA-256",
-    otherInfo: otherInfo
-  };
-  return ecdh["ECDH-CONCAT"].derive(privKey, params);
-}
-
-function ecdhesDirEncryptFn() {
-  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
-  //       implemented using other primitives
-  var fn = function(key, pdata, props) {
-    props = props || {};
-
-    // {props.epk} is private
-    if (!props.epk || !props.epk.d) {
-      return Promise.reject(new Error("missing ephemeral private key"));
-    }
-    var epk = ecUtil.convertToObj(props.epk, false);
-
-    // {key} is public
-    if (!key || !key.x || !key.y) {
-      return Promise.reject(new Error("missing static public key"));
-    }
-    var spk = ecUtil.convertToObj(key, true);
-
-    // derive ECDH shared
-    var promise = doEcdhesCommonDerive(epk, spk, {
-      algorithm: props.enc,
-      apu: props.apu,
-      apv: props.apv
-    });
-    promise = promise.then(function(shared) {
-      return {
-        data: shared,
-        once: true,
-        direct: true
-      };
-    });
-    return promise;
-  };
-
-  return fn;
-}
-function ecdhesDirDecryptFn() {
-  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
-  //       implemented using other primitives
-  var fn = function(key, cdata, props) {
-    props = props || {};
-
-    // {props.epk} is public
-    if (!props.epk || !props.epk.x || !props.epk.y) {
-      return Promise.reject(new Error("missing ephemeral public key"));
-    }
-    var epk = ecUtil.convertToObj(props.epk, true);
-
-    // {key} is private
-    if (!key || !key.d) {
-      return Promise.reject(new Error("missing static private key"));
-    }
-    var spk = ecUtil.convertToObj(key, false);
-
-    // derive ECDH shared
-    var promise = doEcdhesCommonDerive(spk, epk, {
-      algorithm: props.enc,
-      apu: props.apu,
-      apv: props.apv
-    });
-    promise = promise.then(function(shared) {
-      return shared;
-    });
-    return promise;
-  };
-
-  return fn;
-}
-
-function ecdhesKwEncryptFn(wrap) {
-  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
-  //       implemented using other primitives
-  var fn = function(key, pdata, props) {
-    props = props || {};
-
-    // {props.epk} is private
-    if (!props.epk || !props.epk.d) {
-      return Promise.reject(new Error("missing ephemeral private key"));
-    }
-    var epk = ecUtil.convertToObj(props.epk, false);
-
-    // {key} is public
-    if (!key || !key.x || !key.y) {
-      return Promise.reject(new Error("missing static public key"));
-    }
-    var spk = ecUtil.convertToObj(key, true);
-
-    // derive ECDH shared
-    var promise = doEcdhesCommonDerive(epk, spk, {
-      algorithm: props.alg,
-      apu: props.apu,
-      apv: props.apv
-    });
-    promise = promise.then(function(shared) {
-      // wrap provided key with ECDH shared
-      return wrap(shared, pdata);
-    });
-    return promise;
-  };
-
-  return fn;
-}
-
-function ecdhesKwDecryptFn(unwrap) {
-  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
-  //       implemented using other primitives
-  var fn = function(key, cdata, props) {
-    props = props || {};
-
-    // {props.epk} is public
-    if (!props.epk || !props.epk.x || !props.epk.y) {
-      return Promise.reject(new Error("missing ephemeral public key"));
-    }
-    var epk = ecUtil.convertToObj(props.epk, true);
-
-    // {key} is private
-    if (!key || !key.d) {
-      return Promise.reject(new Error("missing static private key"));
-    }
-    var spk = ecUtil.convertToObj(key, false);
-
-    // derive ECDH shared
-    var promise = doEcdhesCommonDerive(spk, epk, {
-      algorithm: props.alg,
-      apu: props.apu,
-      apv: props.apv
-    });
-    promise = promise.then(function(shared) {
-      // unwrap provided key with ECDH shared
-      return unwrap(shared, cdata);
-    });
-    return promise;
-  };
-
-  return fn;
-}
-
-// ### Public API
-// * [name].derive
-[
-  "ECDH",
-  "ECDH-HKDF",
-  "ECDH-CONCAT"
-].forEach(function(name) {
-  var kdf = /^ECDH(?:-(\w+))?$/g.exec(name || "")[1];
-  var op = ecdh[name] = ecdh[name] || {};
-  switch (kdf || "") {
-    case "CONCAT":
-      op.derive = ecdhConcatDeriveFn();
-      break;
-    case "HKDF":
-      op.derive = ecdhHkdfDeriveFn();
-      break;
-    case "":
-      op.derive = ecdhDeriveFn();
-      break;
-    default:
-      op.derive = null;
-  }
-});
-
-// * [name].encrypt
-// * [name].decrypt
-[
-  "ECDH-ES",
-  "ECDH-ES+A128KW",
-  "ECDH-ES+A192KW",
-  "ECDH-ES+A256KW"
-].forEach(function(name) {
-  var kw = /^ECDH-ES(?:\+(.+))?/g.exec(name || "")[1];
-  var op = ecdh[name] = ecdh[name] || {};
-  if (!kw) {
-    op.encrypt = ecdhesDirEncryptFn();
-    op.decrypt = ecdhesDirDecryptFn();
-  } else {
-    kw = aesKw[kw];
-    if (kw) {
-      op.encrypt = ecdhesKwEncryptFn(kw.encrypt);
-      op.decrypt = ecdhesKwDecryptFn(kw.decrypt);
-    } else {
-      op.ecrypt = op.decrypt = null;
-    }
-  }
-});
-//*/
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -68370,7 +62805,7 @@ module.exports = partialRight;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 223 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -70584,1728 +65019,3743 @@ module.exports = merge;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(34)(module)))
 
 /***/ }),
-/* 224 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /**
- * deps/ecc/curves.js - Elliptic Curve NIST/SECG/X9.62 Parameters
- * Original Copyright (c) 2003-2005  Tom Wu.
- * Modifications Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ * Javascript implementation of PKCS#7 v1.5.
  *
- * Ported from Tom Wu, which is ported from BouncyCastle
- * Modified to reuse existing external NPM modules, restricted to the
- * NIST//SECG/X9.62 prime curves only, and formatted to match project
- * coding styles.
+ * @author Stefan Siegl
+ * @author Dave Longley
+ *
+ * Copyright (c) 2012 Stefan Siegl <stesie@brokenpipe.de>
+ * Copyright (c) 2012-2015 Digital Bazaar, Inc.
+ *
+ * Currently this implementation only supports ContentType of EnvelopedData,
+ * EncryptedData, or SignedData at the root level. The top level elements may
+ * contain only a ContentInfo of ContentType Data, i.e. plain data. Further
+ * nesting is not (yet) supported.
+ *
+ * The Forge validators for PKCS #7's ASN.1 structures are available from
+ * a separate file pkcs7asn1.js, since those are referenced from other
+ * PKCS standards like PKCS #12.
  */
+var forge = __webpack_require__(2);
+__webpack_require__(39);
+__webpack_require__(23);
+__webpack_require__(79);
+__webpack_require__(27);
+__webpack_require__(40);
+__webpack_require__(113);
+__webpack_require__(24);
+__webpack_require__(3);
+__webpack_require__(80);
 
+// shortcut for ASN.1 API
+var asn1 = forge.asn1;
 
-// Named EC curves
+// shortcut for PKCS#7 API
+var p7 = module.exports = forge.pkcs7 = forge.pkcs7 || {};
 
-var BigInteger = __webpack_require__(5).jsbn.BigInteger,
-    ec = __webpack_require__(121);
+/**
+ * Converts a PKCS#7 message from PEM format.
+ *
+ * @param pem the PEM-formatted PKCS#7 message.
+ *
+ * @return the PKCS#7 message.
+ */
+p7.messageFromPem = function(pem) {
+  var msg = forge.pem.decode(pem)[0];
 
-// ----------------
-// X9ECParameters
+  if(msg.type !== 'PKCS7') {
+    var error = new Error('Could not convert PKCS#7 message from PEM; PEM ' +
+      'header type is not "PKCS#7".');
+    error.headerType = msg.type;
+    throw error;
+  }
+  if(msg.procType && msg.procType.type === 'ENCRYPTED') {
+    throw new Error('Could not convert PKCS#7 message from PEM; PEM is encrypted.');
+  }
 
-// constructor
-function X9ECParameters(curve, g, n, h) {
-  this.curve = curve;
-  this.g = g;
-  this.n = n;
-  this.h = h;
-}
+  // convert DER to ASN.1 object
+  var obj = asn1.fromDer(msg.body);
 
-function x9getCurve() {
-  return this.curve;
-}
-
-function x9getG() {
-  return this.g;
-}
-
-function x9getN() {
-  return this.n;
-}
-
-function x9getH() {
-  return this.h;
-}
-
-X9ECParameters.prototype.getCurve = x9getCurve;
-X9ECParameters.prototype.getG = x9getG;
-X9ECParameters.prototype.getN = x9getN;
-X9ECParameters.prototype.getH = x9getH;
-
-// ----------------
-// SECNamedCurves
-
-function fromHex(s) { return new BigInteger(s, 16); }
-
-function secp256r1() {
-  // p = 2^224 (2^32 - 1) + 2^192 + 2^96 - 1
-  var p = fromHex("FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF");
-  var a = fromHex("FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFC");
-  var b = fromHex("5AC635D8AA3A93E7B3EBBD55769886BC651D06B0CC53B0F63BCE3C3E27D2604B");
-  var n = fromHex("FFFFFFFF00000000FFFFFFFFFFFFFFFFBCE6FAADA7179E84F3B9CAC2FC632551");
-  var h = BigInteger.ONE;
-  var curve = new ec.ECCurveFp(p, a, b);
-  var G = curve.decodePointHex("04"
-              + "6B17D1F2E12C4247F8BCE6E563A440F277037D812DEB33A0F4A13945D898C296"
-              + "4FE342E2FE1A7F9B8EE7EB4A7C0F9E162BCE33576B315ECECBB6406837BF51F5");
-  return new X9ECParameters(curve, G, n, h);
-}
-
-function secp384r1() {
-  // p = 2^384 - 2^128 - 2^96 + 2^32 - 1
-  var p = fromHex("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFF");
-  var a = fromHex("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFC");
-  var b = fromHex("B3312FA7E23EE7E4988E056BE3F82D19181D9C6EFE8141120314088F5013875AC656398D8A2ED19D2A85C8EDD3EC2AEF");
-  var n = fromHex("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC7634D81F4372DDF581A0DB248B0A77AECEC196ACCC52973");
-  var h = BigInteger.ONE;
-  var curve = new ec.ECCurveFp(p, a, b);
-  var G = curve.decodePointHex("04"
-              + "AA87CA22BE8B05378EB1C71EF320AD746E1D3B628BA79B9859F741E082542A385502F25DBF55296C3A545E3872760AB7"
-              + "3617DE4A96262C6F5D9E98BF9292DC29F8F41DBD289A147CE9DA3113B5F0B8C00A60B1CE1D7E819D7A431D7C90EA0E5F");
-  return new X9ECParameters(curve, G, n, h);
-}
-
-function secp521r1() {
-  // p = 2^521 - 1
-  var p = fromHex("01FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-  var a = fromHex("01FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC");
-  var b = fromHex("0051953EB9618E1C9A1F929A21A0B68540EEA2DA725B99B315F3B8B489918EF109E156193951EC7E937B1652C0BD3BB1BF073573DF883D2C34F1EF451FD46B503F00");
-  var n = fromHex("01FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA51868783BF2F966B7FCC0148F709A5D03BB5C9B8899C47AEBB6FB71E91386409");
-  var h = BigInteger.ONE;
-  var curve = new ec.ECCurveFp(p, a, b);
-  var G = curve.decodePointHex("04"
-                + "00C6858E06B70404E9CD9E3ECB662395B4429C648139053FB521F828AF606B4D3DBAA14B5E77EFE75928FE1DC127A2FFA8DE3348B3C1856A429BF97E7E31C2E5BD66"
-                + "011839296A789A3BC0045C8A5FB42C7D1BD998F54449579B446817AFBD17273E662C97EE72995EF42640C550B9013FAD0761353C7086A272C24088BE94769FD16650");
-  return new X9ECParameters(curve, G, n, h);
-}
-
-// ----------------
-// Public API
-
-var CURVES = module.exports = {
-  "secp256r1": secp256r1(),
-  "secp384r1": secp384r1(),
-  "secp521r1": secp521r1()
+  return p7.messageFromAsn1(obj);
 };
 
-// also export NIST names
-CURVES["P-256"] = CURVES.secp256r1;
-CURVES["P-384"] = CURVES.secp384r1;
-CURVES["P-521"] = CURVES.secp521r1;
-
-
-/***/ }),
-/* 225 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/ecdsa.js - Elliptic Curve Digitial Signature Algorithms
+/**
+ * Converts a PKCS#7 message to PEM format.
  *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ * @param msg The PKCS#7 message object
+ * @param maxline The maximum characters per line, defaults to 64.
+ *
+ * @return The PEM-formatted PKCS#7 message.
  */
+p7.messageToPem = function(msg, maxline) {
+  // convert to ASN.1, then DER, then PEM-encode
+  var pemObj = {
+    type: 'PKCS7',
+    body: asn1.toDer(msg.toAsn1()).getBytes()
+  };
+  return forge.pem.encode(pemObj, {maxline: maxline});
+};
 
+/**
+ * Converts a PKCS#7 message from an ASN.1 object.
+ *
+ * @param obj the ASN.1 representation of a ContentInfo.
+ *
+ * @return the PKCS#7 message.
+ */
+p7.messageFromAsn1 = function(obj) {
+  // validate root level ContentInfo and capture data
+  var capture = {};
+  var errors = [];
+  if(!asn1.validate(obj, p7.asn1.contentInfoValidator, capture, errors)) {
+    var error = new Error('Cannot read PKCS#7 message. ' +
+      'ASN.1 object is not an PKCS#7 ContentInfo.');
+    error.errors = errors;
+    throw error;
+  }
 
-var ecUtil = __webpack_require__(86),
-    helpers = __webpack_require__(12),
-    sha = __webpack_require__(58);
+  var contentType = asn1.derToOid(capture.contentType);
+  var msg;
 
-function idealCurve(hash) {
-  switch (hash) {
-    case "SHA-256":
-      return "P-256";
-    case "SHA-384":
-      return "P-384";
-    case "SHA-512":
-      return "P-521";
+  switch(contentType) {
+    case forge.pki.oids.envelopedData:
+      msg = p7.createEnvelopedData();
+      break;
+
+    case forge.pki.oids.encryptedData:
+      msg = p7.createEncryptedData();
+      break;
+
+    case forge.pki.oids.signedData:
+      msg = p7.createSignedData();
+      break;
+
     default:
-      throw new Error("unsupported hash: " + hash);
+      throw new Error('Cannot read PKCS#7 message. ContentType with OID ' +
+        contentType + ' is not (yet) supported.');
   }
-}
 
-function ecdsaSignFN(hash) {
-  var curve = idealCurve(hash);
+  msg.fromAsn1(capture.content.value[0]);
+  return msg;
+};
 
-  // ### Fallback implementation -- uses forge
-  var fallback = function(key, pdata /*, props */) {
-    if (curve !== key.crv) {
-      return Promise.reject(new Error("invalid curve"));
-    }
-    var pk = ecUtil.convertToForge(key, false);
+p7.createSignedData = function() {
+  var msg = null;
+  msg = {
+    type: forge.pki.oids.signedData,
+    version: 1,
+    certificates: [],
+    crls: [],
+    // TODO: add json-formatted signer stuff here?
+    signers: [],
+    // populated during sign()
+    digestAlgorithmIdentifiers: [],
+    contentInfo: null,
+    signerInfos: [],
 
-    var promise;
-    // generate hash
-    promise = sha[hash].digest(pdata);
-    // sign hash
-    promise = promise.then(function(result) {
-      result = pk.sign(result);
-      result = Buffer.concat([result.r, result.s]);
-      return {
-        data: pdata,
-        mac: result
-      };
-    });
-    return promise;
-  };
+    fromAsn1: function(obj) {
+      // validate SignedData content block and capture data.
+      _fromAsn1(msg, obj, p7.asn1.signedDataValidator);
+      msg.certificates = [];
+      msg.crls = [];
+      msg.digestAlgorithmIdentifiers = [];
+      msg.contentInfo = null;
+      msg.signerInfos = [];
 
-  // ### WebCrypto API implementation
-  var webcrypto = function(key, pdata /*, props */) {
-    if (curve !== key.crv) {
-      return Promise.reject(new Error("invalid curve"));
-    }
-    var pk = ecUtil.convertToJWK(key, false);
-
-    var promise;
-    var alg = {
-      name: "ECDSA",
-      namedCurve: pk.crv,
-      hash: {
-        name: hash
+      var certs = msg.rawCapture.certificates.value;
+      for(var i = 0; i < certs.length; ++i) {
+        msg.certificates.push(forge.pki.certificateFromAsn1(certs[i]));
       }
-    };
-    promise = helpers.subtleCrypto.importKey("jwk",
-                                             pk,
-                                             alg,
-                                             true,
-                                             [ "sign" ]);
-    promise = promise.then(function(key) {
-      return helpers.subtleCrypto.sign(alg, key, pdata);
-    });
-    promise = promise.then(function(result) {
-      result = new Buffer(result);
-      return {
-        data: pdata,
-        mac: result
-      };
-    });
-    return promise;
-  };
 
-  return helpers.setupFallback(null, webcrypto, fallback);
-}
+      // TODO: parse crls
+    },
 
-function ecdsaVerifyFN(hash) {
-  var curve = idealCurve(hash);
-
-  // ### Fallback implementation -- uses forge
-  var fallback = function(key, pdata, mac /*, props */) {
-    if (curve !== key.crv) {
-      return Promise.reject(new Error("invalid curve"));
-    }
-    var pk = ecUtil.convertToForge(key, true);
-
-    var promise;
-    // generate hash
-    promise = sha[hash].digest(pdata);
-    // verify hash
-    promise = promise.then(function(result) {
-      var len = mac.length / 2;
-      var rs = {
-        r: mac.slice(0, len),
-        s: mac.slice(len)
-      };
-      if (!pk.verify(result, rs)) {
-        return Promise.reject(new Error("verification failed"));
+    toAsn1: function() {
+      // degenerate case with no content
+      if(!msg.contentInfo) {
+        msg.sign();
       }
-      return {
-        data: pdata,
-        mac: mac,
-        valid: true
-      };
-    });
-    return promise;
-  };
 
-  // ### WebCrypto API implementation
-  var webcrypto = function(key, pdata, mac /* , props */) {
-    if (curve !== key.crv) {
-      return Promise.reject(new Error("invalid curve"));
-    }
-    var pk = ecUtil.convertToJWK(key, true);
-
-    var promise;
-    var alg = {
-      name: "ECDSA",
-      namedCurve: pk.crv,
-      hash: {
-        name: hash
+      var certs = [];
+      for(var i = 0; i < msg.certificates.length; ++i) {
+        certs.push(forge.pki.certificateToAsn1(msg.certificates[i]));
       }
-    };
-    promise = helpers.subtleCrypto.importKey("jwk",
-                                             pk,
-                                             alg,
-                                             true,
-                                             ["verify"]);
-    promise = promise.then(function(key) {
-      return helpers.subtleCrypto.verify(alg, key, mac, pdata);
-    });
-    promise = promise.then(function(result) {
-      if (!result) {
-        return Promise.reject(new Error("verification failed"));
-      }
-      return {
-        data: pdata,
-        mac: mac,
-        valid: true
-      };
-    });
-    return promise;
-  };
 
-  return helpers.setupFallback(null, webcrypto, fallback);
-}
+      var crls = [];
+      // TODO: implement CRLs
 
-// ### Public API
-var ecdsa = {};
-
-// * [name].sign
-// * [name].verify
-[
-  "ES256",
-  "ES384",
-  "ES512"
-].forEach(function(name) {
-  var hash = name.replace(/ES(\d+)/g, function(m, size) {
-    return "SHA-" + size;
-  });
-  ecdsa[name] = {
-    sign: ecdsaSignFN(hash),
-    verify: ecdsaVerifyFN(hash)
-  };
-});
-
-module.exports = ecdsa;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 226 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/pbes2.js - Password-Based Encryption (v2) Algorithms
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var forge = __webpack_require__(5),
-    util = __webpack_require__(7),
-    helpers = __webpack_require__(12),
-    CONSTANTS = __webpack_require__(20),
-    KW = __webpack_require__(85);
-
-var NULL_BUFFER = new Buffer([0]);
-
-function fixSalt(hmac, kw, salt) {
-  var alg = "PBES2-" + hmac + "+" + kw;
-  var output = [
-    new Buffer(alg, "utf8"),
-    NULL_BUFFER,
-    salt
-  ];
-  return Buffer.concat(output);
-}
-
-function pbes2EncryptFN(hmac, kw) {
-  var keyLen = CONSTANTS.KEYLENGTH[kw] / 8;
-
-  var fallback = function(key, pdata, props) {
-    props = props || {};
-
-    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
-        itrs = props.p2c || 0;
-
-    if (0 >= itrs) {
-      return Promise.reject(new Error("invalid iteration count"));
-    }
-
-    if (8 > salt.length) {
-      return Promise.reject(new Error("salt too small"));
-    }
-    salt = fixSalt(hmac, kw, salt);
-
-    var promise;
-
-    // STEP 1: derive shared key
-    promise = new Promise(function(resolve, reject) {
-      var md = forge.md[hmac.replace("HS", "SHA").toLowerCase()].create();
-      var cb = function(err, dk) {
-        if (err) {
-          reject(err);
-        } else {
-          dk = new Buffer(dk, "binary");
-          resolve(dk);
-        }
-      };
-
-      forge.pkcs5.pbkdf2(key.toString("binary"),
-                         salt.toString("binary"),
-                         itrs,
-                         keyLen,
-                         md,
-                         cb);
-    });
-
-    // STEP 2: encrypt cek
-    promise = promise.then(function(dk) {
-      return KW[kw].encrypt(dk, pdata);
-    });
-    return promise;
-  };
-
-  var webcrypto = function(key, pdata, props) {
-    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
-        itrs = props.p2c || 0;
-
-    if (0 >= itrs) {
-      return Promise.reject(new Error("invalid iteration count"));
-    }
-    if (8 > salt.length) {
-      return Promise.reject(new Error("salt too small"));
-    }
-    salt = fixSalt(hmac, kw, salt);
-
-    var promise;
-
-    // STEP 1: derive shared key
-    var hash = hmac.replace("HS", "SHA-");
-    promise = Promise.resolve(key);
-    promise = promise.then(function(keyval) {
-      return helpers.subtleCrypto.importKey("raw", keyval, "PBKDF2", false, ["deriveKey"]);
-    });
-    promise = promise.then(function(key) {
-      var mainAlgo = {
-        name: "PBKDF2",
-        salt: salt,
-        iterations: itrs,
-        hash: hash
-      };
-      var deriveAlgo = {
-        name: "AES-KW",
-        length: keyLen * 8
-      };
-
-      return helpers.subtleCrypto.deriveKey(mainAlgo, key, deriveAlgo, true, ["wrapKey", "unwrapKey"]);
-    });
-    // STEP 2: encrypt cek
-    promise = promise.then(function(dk) {
-      // assume subtleCrypto for keywrap
-      return Promise.all([
-        helpers.subtleCrypto.importKey("raw", pdata, { name: "HMAC", hash: "SHA-256" }, true, ["sign"]),
-        dk
+      // [0] SignedData
+      var signedData = asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+          // Version
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
+            asn1.integerToDer(msg.version).getBytes()),
+          // DigestAlgorithmIdentifiers
+          asn1.create(
+            asn1.Class.UNIVERSAL, asn1.Type.SET, true,
+            msg.digestAlgorithmIdentifiers),
+          // ContentInfo
+          msg.contentInfo
+        ])
       ]);
-    });
-    promise = promise.then(function(keys) {
-      return helpers.subtleCrypto.wrapKey("raw",
-                                          keys[0], // key
-                                          keys[1], // wrappingKey
-                                          "AES-KW");
-    });
-    promise = promise.then(function(result) {
-      result = new Buffer(result);
+      if(certs.length > 0) {
+        // [0] IMPLICIT ExtendedCertificatesAndCertificates OPTIONAL
+        signedData.value[0].value.push(
+          asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, certs));
+      }
+      if(crls.length > 0) {
+        // [1] IMPLICIT CertificateRevocationLists OPTIONAL
+        signedData.value[0].value.push(
+          asn1.create(asn1.Class.CONTEXT_SPECIFIC, 1, true, crls));
+      }
+      // SignerInfos
+      signedData.value[0].value.push(
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true,
+          msg.signerInfos));
 
-      return {
-        data: result
-      };
-    });
-    return promise;
-  };
+      // ContentInfo
+      return asn1.create(
+        asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+          // ContentType
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+            asn1.oidToDer(msg.type).getBytes()),
+          // [0] SignedData
+          signedData
+        ]);
+    },
 
-  var nodejs = function(key, pdata, props) {
-    if (6 > helpers.nodeCrypto.pbkdf2.length) {
-      throw new Error("unsupported algorithm: PBES2-" + hmac + "+" + kw);
-    }
+    /**
+     * Add (another) entity to list of signers.
+     *
+     * Note: If authenticatedAttributes are provided, then, per RFC 2315,
+     * they must include at least two attributes: content type and
+     * message digest. The message digest attribute value will be
+     * auto-calculated during signing and will be ignored if provided.
+     *
+     * Here's an example of providing these two attributes:
+     *
+     * forge.pkcs7.createSignedData();
+     * p7.addSigner({
+     *   issuer: cert.issuer.attributes,
+     *   serialNumber: cert.serialNumber,
+     *   key: privateKey,
+     *   digestAlgorithm: forge.pki.oids.sha1,
+     *   authenticatedAttributes: [{
+     *     type: forge.pki.oids.contentType,
+     *     value: forge.pki.oids.data
+     *   }, {
+     *     type: forge.pki.oids.messageDigest
+     *   }]
+     * });
+     *
+     * TODO: Support [subjectKeyIdentifier] as signer's ID.
+     *
+     * @param signer the signer information:
+     *          key the signer's private key.
+     *          [certificate] a certificate containing the public key
+     *            associated with the signer's private key; use this option as
+     *            an alternative to specifying signer.issuer and
+     *            signer.serialNumber.
+     *          [issuer] the issuer attributes (eg: cert.issuer.attributes).
+     *          [serialNumber] the signer's certificate's serial number in
+     *           hexadecimal (eg: cert.serialNumber).
+     *          [digestAlgorithm] the message digest OID, as a string, to use
+     *            (eg: forge.pki.oids.sha1).
+     *          [authenticatedAttributes] an optional array of attributes
+     *            to also sign along with the content.
+     */
+    addSigner: function(signer) {
+      var issuer = signer.issuer;
+      var serialNumber = signer.serialNumber;
+      if(signer.certificate) {
+        var cert = signer.certificate;
+        if(typeof cert === 'string') {
+          cert = forge.pki.certificateFromPem(cert);
+        }
+        issuer = cert.issuer.attributes;
+        serialNumber = cert.serialNumber;
+      }
+      var key = signer.key;
+      if(!key) {
+        throw new Error(
+          'Could not add PKCS#7 signer; no private key specified.');
+      }
+      if(typeof key === 'string') {
+        key = forge.pki.privateKeyFromPem(key);
+      }
 
-    props = props || {};
+      // ensure OID known for digest algorithm
+      var digestAlgorithm = signer.digestAlgorithm || forge.pki.oids.sha1;
+      switch(digestAlgorithm) {
+      case forge.pki.oids.sha1:
+      case forge.pki.oids.sha256:
+      case forge.pki.oids.sha384:
+      case forge.pki.oids.sha512:
+      case forge.pki.oids.md5:
+        break;
+      default:
+        throw new Error(
+          'Could not add PKCS#7 signer; unknown message digest algorithm: ' +
+          digestAlgorithm);
+      }
 
-    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
-        itrs = props.p2c || 0;
+      // if authenticatedAttributes is present, then the attributes
+      // must contain at least PKCS #9 content-type and message-digest
+      var authenticatedAttributes = signer.authenticatedAttributes || [];
+      if(authenticatedAttributes.length > 0) {
+        var contentType = false;
+        var messageDigest = false;
+        for(var i = 0; i < authenticatedAttributes.length; ++i) {
+          var attr = authenticatedAttributes[i];
+          if(!contentType && attr.type === forge.pki.oids.contentType) {
+            contentType = true;
+            if(messageDigest) {
+              break;
+            }
+            continue;
+          }
+          if(!messageDigest && attr.type === forge.pki.oids.messageDigest) {
+            messageDigest = true;
+            if(contentType) {
+              break;
+            }
+            continue;
+          }
+        }
 
-    if (0 >= itrs) {
-      return Promise.reject(new Error("invalid iteration count"));
-    }
-
-    if (8 > salt.length) {
-      return Promise.reject(new Error("salt too small"));
-    }
-    salt = fixSalt(hmac, kw, salt);
-
-    var promise;
-
-    // STEP 1: derive shared key
-    var hash = hmac.replace("HS", "SHA");
-    promise = new Promise(function(resolve, reject) {
-      function cb(err, dk) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(dk);
+        if(!contentType || !messageDigest) {
+          throw new Error('Invalid signer.authenticatedAttributes. If ' +
+            'signer.authenticatedAttributes is specified, then it must ' +
+            'contain at least two attributes, PKCS #9 content-type and ' +
+            'PKCS #9 message-digest.');
         }
       }
-      helpers.nodeCrypto.pbkdf2(key, salt, itrs, keyLen, hash, cb);
-    });
 
-    // STEP 2: encrypt cek
-    promise = promise.then(function(dk) {
-      return KW[kw].encrypt(dk, pdata);
-    });
+      msg.signers.push({
+        key: key,
+        version: 1,
+        issuer: issuer,
+        serialNumber: serialNumber,
+        digestAlgorithm: digestAlgorithm,
+        signatureAlgorithm: forge.pki.oids.rsaEncryption,
+        signature: null,
+        authenticatedAttributes: authenticatedAttributes,
+        unauthenticatedAttributes: []
+      });
+    },
 
-    return promise;
-  };
+    /**
+     * Signs the content.
+     */
+    sign: function() {
+      // auto-generate content info
+      if(typeof msg.content !== 'object' || msg.contentInfo === null) {
+        // use Data ContentInfo
+        msg.contentInfo = asn1.create(
+          asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+            // ContentType
+            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+              asn1.oidToDer(forge.pki.oids.data).getBytes())
+          ]);
 
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
+        // add actual content, if present
+        if('content' in msg) {
+          var content;
+          if(msg.content instanceof forge.util.ByteBuffer) {
+            content = msg.content.bytes();
+          } else if(typeof msg.content === 'string') {
+            content = forge.util.encodeUtf8(msg.content);
+          }
 
-function pbes2DecryptFN(hmac, kw) {
-  var keyLen = CONSTANTS.KEYLENGTH[kw] / 8;
-
-  var fallback = function(key, cdata, props) {
-    props = props || {};
-
-    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
-        itrs = props.p2c || 0;
-
-    if (0 >= itrs) {
-      return Promise.reject(new Error("invalid iteration count"));
-    }
-
-    if (8 > salt.length) {
-      return Promise.reject(new Error("salt too small"));
-    }
-    salt = fixSalt(hmac, kw, salt);
-
-    var promise;
-
-    // STEP 1: derived shared key
-    promise = new Promise(function(resolve, reject) {
-      var md = forge.md[hmac.replace("HS", "SHA").toLowerCase()].create();
-      var cb = function(err, dk) {
-        if (err) {
-          reject(err);
-        } else {
-          dk = new Buffer(dk, "binary");
-          resolve(dk);
-        }
-      };
-
-      forge.pkcs5.pbkdf2(key.toString("binary"),
-                         salt.toString("binary"),
-                         itrs,
-                         keyLen,
-                         md,
-                         cb);
-    });
-
-    // STEP 2: decrypt cek
-    promise = promise.then(function(dk) {
-      return KW[kw].decrypt(dk, cdata);
-    });
-    return promise;
-  };
-
-  var webcrypto = function(key, cdata, props) {
-    props = props || {};
-
-    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
-        itrs = props.p2c || 0;
-
-    if (0 >= itrs) {
-      return Promise.reject(new Error("invalid iteration count"));
-    }
-
-    if (8 > salt.length) {
-      return Promise.reject(new Error("salt too small"));
-    }
-    salt = fixSalt(hmac, kw, salt);
-
-    var hash = hmac.replace("HS", "SHA-");
-    var promise;
-    promise = Promise.resolve(key);
-    promise = promise.then(function(keyval) {
-      return helpers.subtleCrypto.importKey("raw", keyval, "PBKDF2", false, ["deriveKey"]);
-    });
-    promise = promise.then(function(key) {
-      var mainAlgo = {
-        name: "PBKDF2",
-        salt: salt,
-        iterations: itrs,
-        hash: hash
-      };
-      var deriveAlgo = {
-        name: "AES-KW",
-        length: keyLen * 8
-      };
-
-      return helpers.subtleCrypto.deriveKey(mainAlgo, key, deriveAlgo, true, ["wrapKey", "unwrapKey"]);
-    });
-    // STEP 2: decrypt cek
-    promise = promise.then(function(key) {
-      return helpers.subtleCrypto.unwrapKey("raw", cdata, key, "AES-KW", {name: "HMAC", hash: "SHA-256"}, true, ["sign"]);
-    });
-    promise = promise.then(function(result) {
-      // unwrapped CryptoKey -- extract raw
-      return helpers.subtleCrypto.exportKey("raw", result);
-    });
-    promise = promise.then(function(result) {
-      result = new Buffer(result);
-      return result;
-    });
-    return promise;
-  };
-
-  var nodejs = function(key, cdata, props) {
-    if (6 > helpers.nodeCrypto.pbkdf2.length) {
-      throw new Error("unsupported algorithm: PBES2-" + hmac + "+" + kw);
-    }
-
-    props = props || {};
-
-    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
-        itrs = props.p2c || 0;
-
-    if (0 >= itrs) {
-      return Promise.reject(new Error("invalid iteration count"));
-    }
-
-    if (8 > salt.length) {
-      return Promise.reject(new Error("salt too small"));
-    }
-    salt = fixSalt(hmac, kw, salt);
-
-    var promise;
-
-    // STEP 1: derive shared key
-    var hash = hmac.replace("HS", "SHA");
-    promise = new Promise(function(resolve, reject) {
-      function cb(err, dk) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(dk);
+          msg.contentInfo.value.push(
+            // [0] EXPLICIT content
+            asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+              asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+                content)
+            ]));
         }
       }
-      helpers.nodeCrypto.pbkdf2(key, salt, itrs, keyLen, hash, cb);
-    });
 
-    // STEP 2: decrypt cek
-    promise = promise.then(function(dk) {
-      return KW[kw].decrypt(dk, cdata);
-    });
+      // no signers, return early (degenerate case for certificate container)
+      if(msg.signers.length === 0) {
+        return;
+      }
 
-    return promise;
+      // generate digest algorithm identifiers
+      var mds = addDigestAlgorithmIds();
+
+      // generate signerInfos
+      addSignerInfos(mds);
+    },
+
+    verify: function() {
+      throw new Error('PKCS#7 signature verification not yet implemented.');
+    },
+
+    /**
+     * Add a certificate.
+     *
+     * @param cert the certificate to add.
+     */
+    addCertificate: function(cert) {
+      // convert from PEM
+      if(typeof cert === 'string') {
+        cert = forge.pki.certificateFromPem(cert);
+      }
+      msg.certificates.push(cert);
+    },
+
+    /**
+     * Add a certificate revokation list.
+     *
+     * @param crl the certificate revokation list to add.
+     */
+    addCertificateRevokationList: function(crl) {
+      throw new Error('PKCS#7 CRL support not yet implemented.');
+    }
   };
+  return msg;
 
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
+  function addDigestAlgorithmIds() {
+    var mds = {};
 
-// ### Public API
-// [name].encrypt
-// [name].decrypt
-var pbes2 = {};
-[
-  "PBES2-HS256+A128KW",
-  "PBES2-HS384+A192KW",
-  "PBES2-HS512+A256KW"
-].forEach(function(alg) {
-  var parts = /PBES2-(HS\d+)\+(A\d+KW)/g.exec(alg);
-  var hmac = parts[1],
-      kw = parts[2];
-  pbes2[alg] = {
-    encrypt: pbes2EncryptFN(hmac, kw),
-    decrypt: pbes2DecryptFN(hmac, kw)
-  };
-});
+    for(var i = 0; i < msg.signers.length; ++i) {
+      var signer = msg.signers[i];
+      var oid = signer.digestAlgorithm;
+      if(!(oid in mds)) {
+        // content digest
+        mds[oid] = forge.md[forge.pki.oids[oid]].create();
+      }
+      if(signer.authenticatedAttributes.length === 0) {
+        // no custom attributes to digest; use content message digest
+        signer.md = mds[oid];
+      } else {
+        // custom attributes to be digested; use own message digest
+        // TODO: optimize to just copy message digest state if that
+        // feature is ever supported with message digests
+        signer.md = forge.md[forge.pki.oids[oid]].create();
+      }
+    }
 
-module.exports = pbes2;
+    // add unique digest algorithm identifiers
+    msg.digestAlgorithmIdentifiers = [];
+    for(var oid in mds) {
+      msg.digestAlgorithmIdentifiers.push(
+        // AlgorithmIdentifier
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+          // algorithm
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+            asn1.oidToDer(oid).getBytes()),
+          // parameters (null)
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
+        ]));
+    }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 227 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/rsassa.js - RSA Signatures
- *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
- */
-
-
-var forge = __webpack_require__(5),
-    helpers = __webpack_require__(12),
-    DataBuffer = __webpack_require__(41),
-    rsaUtil = __webpack_require__(87);
-
-// ### RSAES-PKCS1-v1_5
-
-// ### RSAES-OAEP
-function rsaesEncryptFn(name) {
-  var alg = {
-    name: name
-  };
-
-  if ("RSA-OAEP-256" === name) {
-    alg.name = "RSA-OAEP";
-    alg.hash = {
-      name: "SHA-256"
-    };
-  } else if ("RSA-OAEP" === name) {
-    alg.hash = {
-      name: "SHA-1"
-    };
-  } else {
-    alg.name = "RSAES-PKCS1-v1_5";
+    return mds;
   }
 
-  // ### Fallback Implementation -- uses forge
-  var fallback = function(key, pdata) {
-    // convert pdata to byte string
-    pdata = new DataBuffer(pdata).bytes();
-
-    // encrypt it
-    var pki = rsaUtil.convertToForge(key, true),
-        params = {};
-    if ("RSA-OAEP" === alg.name) {
-      params.md = alg.hash.name.toLowerCase().replace(/\-/g, "");
-      params.md = forge.md[params.md].create();
+  function addSignerInfos(mds) {
+    // Note: ContentInfo is a SEQUENCE with 2 values, second value is
+    // the content field and is optional for a ContentInfo but required here
+    // since signers are present
+    if(msg.contentInfo.value.length < 2) {
+      throw new Error(
+        'Could not sign PKCS#7 message; there is no content to sign.');
     }
-    var cdata = pki.encrypt(pdata, alg.name.toUpperCase(), params);
 
-    // convert cdata to Buffer
-    cdata = new DataBuffer(cdata).native();
+    // get ContentInfo content type
+    var contentType = asn1.derToOid(msg.contentInfo.value[0].value);
 
-    return Promise.resolve({
-      data: cdata
-    });
+    // get ContentInfo content
+    var content = msg.contentInfo.value[1];
+    // skip [0] EXPLICIT content wrapper
+    content = content.value[0];
+
+    // serialize content
+    var bytes = asn1.toDer(content);
+
+    // skip identifier and length per RFC 2315 9.3
+    // skip identifier (1 byte)
+    bytes.getByte();
+    // read and discard length bytes
+    asn1.getBerValueLength(bytes);
+    bytes = bytes.getBytes();
+
+    // digest content DER value bytes
+    for(var oid in mds) {
+      mds[oid].start().update(bytes);
+    }
+
+    // sign content
+    var signingTime = new Date();
+    for(var i = 0; i < msg.signers.length; ++i) {
+      var signer = msg.signers[i];
+
+      if(signer.authenticatedAttributes.length === 0) {
+        // if ContentInfo content type is not "Data", then
+        // authenticatedAttributes must be present per RFC 2315
+        if(contentType !== forge.pki.oids.data) {
+          throw new Error(
+            'Invalid signer; authenticatedAttributes must be present ' +
+            'when the ContentInfo content type is not PKCS#7 Data.');
+        }
+      } else {
+        // process authenticated attributes
+        // [0] IMPLICIT
+        signer.authenticatedAttributesAsn1 = asn1.create(
+          asn1.Class.CONTEXT_SPECIFIC, 0, true, []);
+
+        // per RFC 2315, attributes are to be digested using a SET container
+        // not the above [0] IMPLICIT container
+        var attrsAsn1 = asn1.create(
+          asn1.Class.UNIVERSAL, asn1.Type.SET, true, []);
+
+        for(var ai = 0; ai < signer.authenticatedAttributes.length; ++ai) {
+          var attr = signer.authenticatedAttributes[ai];
+          if(attr.type === forge.pki.oids.messageDigest) {
+            // use content message digest as value
+            attr.value = mds[signer.digestAlgorithm].digest();
+          } else if(attr.type === forge.pki.oids.signingTime) {
+            // auto-populate signing time if not already set
+            if(!attr.value) {
+              attr.value = signingTime;
+            }
+          }
+
+          // convert to ASN.1 and push onto Attributes SET (for signing) and
+          // onto authenticatedAttributesAsn1 to complete SignedData ASN.1
+          // TODO: optimize away duplication
+          attrsAsn1.value.push(_attributeToAsn1(attr));
+          signer.authenticatedAttributesAsn1.value.push(_attributeToAsn1(attr));
+        }
+
+        // DER-serialize and digest SET OF attributes only
+        bytes = asn1.toDer(attrsAsn1).getBytes();
+        signer.md.start().update(bytes);
+      }
+
+      // sign digest
+      signer.signature = signer.key.sign(signer.md, 'RSASSA-PKCS1-V1_5');
+    }
+
+    // add signer info
+    msg.signerInfos = _signersToAsn1(msg.signers);
+  }
+};
+
+/**
+ * Creates an empty PKCS#7 message of type EncryptedData.
+ *
+ * @return the message.
+ */
+p7.createEncryptedData = function() {
+  var msg = null;
+  msg = {
+    type: forge.pki.oids.encryptedData,
+    version: 0,
+    encryptedContent: {
+      algorithm: forge.pki.oids['aes256-CBC']
+    },
+
+    /**
+     * Reads an EncryptedData content block (in ASN.1 format)
+     *
+     * @param obj The ASN.1 representation of the EncryptedData content block
+     */
+    fromAsn1: function(obj) {
+      // Validate EncryptedData content block and capture data.
+      _fromAsn1(msg, obj, p7.asn1.encryptedDataValidator);
+    },
+
+    /**
+     * Decrypt encrypted content
+     *
+     * @param key The (symmetric) key as a byte buffer
+     */
+    decrypt: function(key) {
+      if(key !== undefined) {
+        msg.encryptedContent.key = key;
+      }
+      _decryptContent(msg);
+    }
+  };
+  return msg;
+};
+
+/**
+ * Creates an empty PKCS#7 message of type EnvelopedData.
+ *
+ * @return the message.
+ */
+p7.createEnvelopedData = function() {
+  var msg = null;
+  msg = {
+    type: forge.pki.oids.envelopedData,
+    version: 0,
+    recipients: [],
+    encryptedContent: {
+      algorithm: forge.pki.oids['aes256-CBC']
+    },
+
+    /**
+     * Reads an EnvelopedData content block (in ASN.1 format)
+     *
+     * @param obj the ASN.1 representation of the EnvelopedData content block.
+     */
+    fromAsn1: function(obj) {
+      // validate EnvelopedData content block and capture data
+      var capture = _fromAsn1(msg, obj, p7.asn1.envelopedDataValidator);
+      msg.recipients = _recipientsFromAsn1(capture.recipientInfos.value);
+    },
+
+    toAsn1: function() {
+      // ContentInfo
+      return asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // ContentType
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+          asn1.oidToDer(msg.type).getBytes()),
+        // [0] EnvelopedData
+        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+            // Version
+            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
+              asn1.integerToDer(msg.version).getBytes()),
+            // RecipientInfos
+            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true,
+              _recipientsToAsn1(msg.recipients)),
+            // EncryptedContentInfo
+            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true,
+              _encryptedContentToAsn1(msg.encryptedContent))
+          ])
+        ])
+      ]);
+    },
+
+    /**
+     * Find recipient by X.509 certificate's issuer.
+     *
+     * @param cert the certificate with the issuer to look for.
+     *
+     * @return the recipient object.
+     */
+    findRecipient: function(cert) {
+      var sAttr = cert.issuer.attributes;
+
+      for(var i = 0; i < msg.recipients.length; ++i) {
+        var r = msg.recipients[i];
+        var rAttr = r.issuer;
+
+        if(r.serialNumber !== cert.serialNumber) {
+          continue;
+        }
+
+        if(rAttr.length !== sAttr.length) {
+          continue;
+        }
+
+        var match = true;
+        for(var j = 0; j < sAttr.length; ++j) {
+          if(rAttr[j].type !== sAttr[j].type ||
+            rAttr[j].value !== sAttr[j].value) {
+            match = false;
+            break;
+          }
+        }
+
+        if(match) {
+          return r;
+        }
+      }
+
+      return null;
+    },
+
+    /**
+     * Decrypt enveloped content
+     *
+     * @param recipient The recipient object related to the private key
+     * @param privKey The (RSA) private key object
+     */
+    decrypt: function(recipient, privKey) {
+      if(msg.encryptedContent.key === undefined && recipient !== undefined &&
+        privKey !== undefined) {
+        switch(recipient.encryptedContent.algorithm) {
+          case forge.pki.oids.rsaEncryption:
+          case forge.pki.oids.desCBC:
+            var key = privKey.decrypt(recipient.encryptedContent.content);
+            msg.encryptedContent.key = forge.util.createBuffer(key);
+            break;
+
+          default:
+            throw new Error('Unsupported asymmetric cipher, ' +
+              'OID ' + recipient.encryptedContent.algorithm);
+        }
+      }
+
+      _decryptContent(msg);
+    },
+
+    /**
+     * Add (another) entity to list of recipients.
+     *
+     * @param cert The certificate of the entity to add.
+     */
+    addRecipient: function(cert) {
+      msg.recipients.push({
+        version: 0,
+        issuer: cert.issuer.attributes,
+        serialNumber: cert.serialNumber,
+        encryptedContent: {
+          // We simply assume rsaEncryption here, since forge.pki only
+          // supports RSA so far.  If the PKI module supports other
+          // ciphers one day, we need to modify this one as well.
+          algorithm: forge.pki.oids.rsaEncryption,
+          key: cert.publicKey
+        }
+      });
+    },
+
+    /**
+     * Encrypt enveloped content.
+     *
+     * This function supports two optional arguments, cipher and key, which
+     * can be used to influence symmetric encryption.  Unless cipher is
+     * provided, the cipher specified in encryptedContent.algorithm is used
+     * (defaults to AES-256-CBC).  If no key is provided, encryptedContent.key
+     * is (re-)used.  If that one's not set, a random key will be generated
+     * automatically.
+     *
+     * @param [key] The key to be used for symmetric encryption.
+     * @param [cipher] The OID of the symmetric cipher to use.
+     */
+    encrypt: function(key, cipher) {
+      // Part 1: Symmetric encryption
+      if(msg.encryptedContent.content === undefined) {
+        cipher = cipher || msg.encryptedContent.algorithm;
+        key = key || msg.encryptedContent.key;
+
+        var keyLen, ivLen, ciphFn;
+        switch(cipher) {
+          case forge.pki.oids['aes128-CBC']:
+            keyLen = 16;
+            ivLen = 16;
+            ciphFn = forge.aes.createEncryptionCipher;
+            break;
+
+          case forge.pki.oids['aes192-CBC']:
+            keyLen = 24;
+            ivLen = 16;
+            ciphFn = forge.aes.createEncryptionCipher;
+            break;
+
+          case forge.pki.oids['aes256-CBC']:
+            keyLen = 32;
+            ivLen = 16;
+            ciphFn = forge.aes.createEncryptionCipher;
+            break;
+
+          case forge.pki.oids['des-EDE3-CBC']:
+            keyLen = 24;
+            ivLen = 8;
+            ciphFn = forge.des.createEncryptionCipher;
+            break;
+
+          default:
+            throw new Error('Unsupported symmetric cipher, OID ' + cipher);
+        }
+
+        if(key === undefined) {
+          key = forge.util.createBuffer(forge.random.getBytes(keyLen));
+        } else if(key.length() != keyLen) {
+          throw new Error('Symmetric key has wrong length; ' +
+            'got ' + key.length() + ' bytes, expected ' + keyLen + '.');
+        }
+
+        // Keep a copy of the key & IV in the object, so the caller can
+        // use it for whatever reason.
+        msg.encryptedContent.algorithm = cipher;
+        msg.encryptedContent.key = key;
+        msg.encryptedContent.parameter = forge.util.createBuffer(
+          forge.random.getBytes(ivLen));
+
+        var ciph = ciphFn(key);
+        ciph.start(msg.encryptedContent.parameter.copy());
+        ciph.update(msg.content);
+
+        // The finish function does PKCS#7 padding by default, therefore
+        // no action required by us.
+        if(!ciph.finish()) {
+          throw new Error('Symmetric encryption failed.');
+        }
+
+        msg.encryptedContent.content = ciph.output;
+      }
+
+      // Part 2: asymmetric encryption for each recipient
+      for(var i = 0; i < msg.recipients.length; ++i) {
+        var recipient = msg.recipients[i];
+
+        // Nothing to do, encryption already done.
+        if(recipient.encryptedContent.content !== undefined) {
+          continue;
+        }
+
+        switch(recipient.encryptedContent.algorithm) {
+          case forge.pki.oids.rsaEncryption:
+            recipient.encryptedContent.content =
+              recipient.encryptedContent.key.encrypt(
+                msg.encryptedContent.key.data);
+            break;
+
+          default:
+            throw new Error('Unsupported asymmetric cipher, OID ' +
+              recipient.encryptedContent.algorithm);
+        }
+      }
+    }
+  };
+  return msg;
+};
+
+/**
+ * Converts a single recipient from an ASN.1 object.
+ *
+ * @param obj the ASN.1 RecipientInfo.
+ *
+ * @return the recipient object.
+ */
+function _recipientFromAsn1(obj) {
+  // validate EnvelopedData content block and capture data
+  var capture = {};
+  var errors = [];
+  if(!asn1.validate(obj, p7.asn1.recipientInfoValidator, capture, errors)) {
+    var error = new Error('Cannot read PKCS#7 RecipientInfo. ' +
+      'ASN.1 object is not an PKCS#7 RecipientInfo.');
+    error.errors = errors;
+    throw error;
+  }
+
+  return {
+    version: capture.version.charCodeAt(0),
+    issuer: forge.pki.RDNAttributesAsArray(capture.issuer),
+    serialNumber: forge.util.createBuffer(capture.serial).toHex(),
+    encryptedContent: {
+      algorithm: asn1.derToOid(capture.encAlgorithm),
+      parameter: capture.encParameter.value,
+      content: capture.encKey
+    }
+  };
+}
+
+/**
+ * Converts a single recipient object to an ASN.1 object.
+ *
+ * @param obj the recipient object.
+ *
+ * @return the ASN.1 RecipientInfo.
+ */
+function _recipientToAsn1(obj) {
+  return asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+    // Version
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
+      asn1.integerToDer(obj.version).getBytes()),
+    // IssuerAndSerialNumber
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+      // Name
+      forge.pki.distinguishedNameToAsn1({attributes: obj.issuer}),
+      // Serial
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
+        forge.util.hexToBytes(obj.serialNumber))
+    ]),
+    // KeyEncryptionAlgorithmIdentifier
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+      // Algorithm
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+        asn1.oidToDer(obj.encryptedContent.algorithm).getBytes()),
+      // Parameter, force NULL, only RSA supported for now.
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
+    ]),
+    // EncryptedKey
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+      obj.encryptedContent.content)
+  ]);
+}
+
+/**
+ * Map a set of RecipientInfo ASN.1 objects to recipient objects.
+ *
+ * @param infos an array of ASN.1 representations RecipientInfo (i.e. SET OF).
+ *
+ * @return an array of recipient objects.
+ */
+function _recipientsFromAsn1(infos) {
+  var ret = [];
+  for(var i = 0; i < infos.length; ++i) {
+    ret.push(_recipientFromAsn1(infos[i]));
+  }
+  return ret;
+}
+
+/**
+ * Map an array of recipient objects to ASN.1 RecipientInfo objects.
+ *
+ * @param recipients an array of recipientInfo objects.
+ *
+ * @return an array of ASN.1 RecipientInfos.
+ */
+function _recipientsToAsn1(recipients) {
+  var ret = [];
+  for(var i = 0; i < recipients.length; ++i) {
+    ret.push(_recipientToAsn1(recipients[i]));
+  }
+  return ret;
+}
+
+/**
+ * Converts a single signer from an ASN.1 object.
+ *
+ * @param obj the ASN.1 representation of a SignerInfo.
+ *
+ * @return the signer object.
+ */
+function _signerFromAsn1(obj) {
+  // validate EnvelopedData content block and capture data
+  var capture = {};
+  var errors = [];
+  if(!asn1.validate(obj, p7.asn1.signerInfoValidator, capture, errors)) {
+    var error = new Error('Cannot read PKCS#7 SignerInfo. ' +
+      'ASN.1 object is not an PKCS#7 SignerInfo.');
+    error.errors = errors;
+    throw error;
+  }
+
+  var rval = {
+    version: capture.version.charCodeAt(0),
+    issuer: forge.pki.RDNAttributesAsArray(capture.issuer),
+    serialNumber: forge.util.createBuffer(capture.serial).toHex(),
+    digestAlgorithm: asn1.derToOid(capture.digestAlgorithm),
+    signatureAlgorithm: asn1.derToOid(capture.signatureAlgorithm),
+    signature: capture.signature,
+    authenticatedAttributes: [],
+    unauthenticatedAttributes: []
   };
 
-  // ### WebCryptoAPI Implementation
-  var webcrypto;
-  if ("RSAES-PKCS1-v1_5" !== alg.name) {
-    webcrypto = function(key, pdata) {
-      key = rsaUtil.convertToJWK(key, true);
-      var promise;
-      promise = helpers.subtleCrypto.importKey("jwk", key, alg, true, ["encrypt"]);
-      promise = promise.then(function(key) {
-        return helpers.subtleCrypto.encrypt(alg, key, pdata);
-      });
-      promise = promise.then(function(result) {
-        var cdata = new Buffer(result);
-        return {
-          data: cdata
+  // TODO: convert attributes
+  var authenticatedAttributes = capture.authenticatedAttributes || [];
+  var unauthenticatedAttributes = capture.unauthenticatedAttributes || [];
+
+  return rval;
+}
+
+/**
+ * Converts a single signerInfo object to an ASN.1 object.
+ *
+ * @param obj the signerInfo object.
+ *
+ * @return the ASN.1 representation of a SignerInfo.
+ */
+function _signerToAsn1(obj) {
+  // SignerInfo
+  var rval = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+    // version
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
+      asn1.integerToDer(obj.version).getBytes()),
+    // issuerAndSerialNumber
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+      // name
+      forge.pki.distinguishedNameToAsn1({attributes: obj.issuer}),
+      // serial
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
+        forge.util.hexToBytes(obj.serialNumber))
+    ]),
+    // digestAlgorithm
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+      // algorithm
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+        asn1.oidToDer(obj.digestAlgorithm).getBytes()),
+      // parameters (null)
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
+    ])
+  ]);
+
+  // authenticatedAttributes (OPTIONAL)
+  if(obj.authenticatedAttributesAsn1) {
+    // add ASN.1 previously generated during signing
+    rval.value.push(obj.authenticatedAttributesAsn1);
+  }
+
+  // digestEncryptionAlgorithm
+  rval.value.push(asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+    // algorithm
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+      asn1.oidToDer(obj.signatureAlgorithm).getBytes()),
+    // parameters (null)
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
+  ]));
+
+  // encryptedDigest
+  rval.value.push(asn1.create(
+    asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false, obj.signature));
+
+  // unauthenticatedAttributes (OPTIONAL)
+  if(obj.unauthenticatedAttributes.length > 0) {
+    // [1] IMPLICIT
+    var attrsAsn1 = asn1.create(asn1.Class.CONTEXT_SPECIFIC, 1, true, []);
+    for(var i = 0; i < obj.unauthenticatedAttributes.length; ++i) {
+      var attr = obj.unauthenticatedAttributes[i];
+      attrsAsn1.values.push(_attributeToAsn1(attr));
+    }
+    rval.value.push(attrsAsn1);
+  }
+
+  return rval;
+}
+
+/**
+ * Map a set of SignerInfo ASN.1 objects to an array of signer objects.
+ *
+ * @param signerInfoAsn1s an array of ASN.1 SignerInfos (i.e. SET OF).
+ *
+ * @return an array of signers objects.
+ */
+function _signersFromAsn1(signerInfoAsn1s) {
+  var ret = [];
+  for(var i = 0; i < signerInfoAsn1s.length; ++i) {
+    ret.push(_signerFromAsn1(signerInfoAsn1s[i]));
+  }
+  return ret;
+}
+
+/**
+ * Map an array of signer objects to ASN.1 objects.
+ *
+ * @param signers an array of signer objects.
+ *
+ * @return an array of ASN.1 SignerInfos.
+ */
+function _signersToAsn1(signers) {
+  var ret = [];
+  for(var i = 0; i < signers.length; ++i) {
+    ret.push(_signerToAsn1(signers[i]));
+  }
+  return ret;
+}
+
+/**
+ * Convert an attribute object to an ASN.1 Attribute.
+ *
+ * @param attr the attribute object.
+ *
+ * @return the ASN.1 Attribute.
+ */
+function _attributeToAsn1(attr) {
+  var value;
+
+  // TODO: generalize to support more attributes
+  if(attr.type === forge.pki.oids.contentType) {
+    value = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+      asn1.oidToDer(attr.value).getBytes());
+  } else if(attr.type === forge.pki.oids.messageDigest) {
+    value = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+      attr.value.bytes());
+  } else if(attr.type === forge.pki.oids.signingTime) {
+    /* Note per RFC 2985: Dates between 1 January 1950 and 31 December 2049
+      (inclusive) MUST be encoded as UTCTime. Any dates with year values
+      before 1950 or after 2049 MUST be encoded as GeneralizedTime. [Further,]
+      UTCTime values MUST be expressed in Greenwich Mean Time (Zulu) and MUST
+      include seconds (i.e., times are YYMMDDHHMMSSZ), even where the
+      number of seconds is zero.  Midnight (GMT) must be represented as
+      "YYMMDD000000Z". */
+    // TODO: make these module-level constants
+    var jan_1_1950 = new Date('1950-01-01T00:00:00Z');
+    var jan_1_2050 = new Date('2050-01-01T00:00:00Z');
+    var date = attr.value;
+    if(typeof date === 'string') {
+      // try to parse date
+      var timestamp = Date.parse(date);
+      if(!isNaN(timestamp)) {
+        date = new Date(timestamp);
+      } else if(date.length === 13) {
+        // YYMMDDHHMMSSZ (13 chars for UTCTime)
+        date = asn1.utcTimeToDate(date);
+      } else {
+        // assume generalized time
+        date = asn1.generalizedTimeToDate(date);
+      }
+    }
+
+    if(date >= jan_1_1950 && date < jan_1_2050) {
+      value = asn1.create(
+        asn1.Class.UNIVERSAL, asn1.Type.UTCTIME, false,
+        asn1.dateToUtcTime(date));
+    } else {
+      value = asn1.create(
+        asn1.Class.UNIVERSAL, asn1.Type.GENERALIZEDTIME, false,
+        asn1.dateToGeneralizedTime(date));
+    }
+  }
+
+  // TODO: expose as common API call
+  // create a RelativeDistinguishedName set
+  // each value in the set is an AttributeTypeAndValue first
+  // containing the type (an OID) and second the value
+  return asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+    // AttributeType
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+      asn1.oidToDer(attr.type).getBytes()),
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true, [
+      // AttributeValue
+      value
+    ])
+  ]);
+}
+
+/**
+ * Map messages encrypted content to ASN.1 objects.
+ *
+ * @param ec The encryptedContent object of the message.
+ *
+ * @return ASN.1 representation of the encryptedContent object (SEQUENCE).
+ */
+function _encryptedContentToAsn1(ec) {
+  return [
+    // ContentType, always Data for the moment
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+      asn1.oidToDer(forge.pki.oids.data).getBytes()),
+    // ContentEncryptionAlgorithmIdentifier
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+      // Algorithm
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+        asn1.oidToDer(ec.algorithm).getBytes()),
+      // Parameters (IV)
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+        ec.parameter.getBytes())
+    ]),
+    // [0] EncryptedContent
+    asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+        ec.content.getBytes())
+    ])
+  ];
+}
+
+/**
+ * Reads the "common part" of an PKCS#7 content block (in ASN.1 format)
+ *
+ * This function reads the "common part" of the PKCS#7 content blocks
+ * EncryptedData and EnvelopedData, i.e. version number and symmetrically
+ * encrypted content block.
+ *
+ * The result of the ASN.1 validate and capture process is returned
+ * to allow the caller to extract further data, e.g. the list of recipients
+ * in case of a EnvelopedData object.
+ *
+ * @param msg the PKCS#7 object to read the data to.
+ * @param obj the ASN.1 representation of the content block.
+ * @param validator the ASN.1 structure validator object to use.
+ *
+ * @return the value map captured by validator object.
+ */
+function _fromAsn1(msg, obj, validator) {
+  var capture = {};
+  var errors = [];
+  if(!asn1.validate(obj, validator, capture, errors)) {
+    var error = new Error('Cannot read PKCS#7 message. ' +
+      'ASN.1 object is not a supported PKCS#7 message.');
+    error.errors = error;
+    throw error;
+  }
+
+  // Check contentType, so far we only support (raw) Data.
+  var contentType = asn1.derToOid(capture.contentType);
+  if(contentType !== forge.pki.oids.data) {
+    throw new Error('Unsupported PKCS#7 message. ' +
+      'Only wrapped ContentType Data supported.');
+  }
+
+  if(capture.encryptedContent) {
+    var content = '';
+    if(forge.util.isArray(capture.encryptedContent)) {
+      for(var i = 0; i < capture.encryptedContent.length; ++i) {
+        if(capture.encryptedContent[i].type !== asn1.Type.OCTETSTRING) {
+          throw new Error('Malformed PKCS#7 message, expecting encrypted ' +
+            'content constructed of only OCTET STRING objects.');
+        }
+        content += capture.encryptedContent[i].value;
+      }
+    } else {
+      content = capture.encryptedContent;
+    }
+    msg.encryptedContent = {
+      algorithm: asn1.derToOid(capture.encAlgorithm),
+      parameter: forge.util.createBuffer(capture.encParameter.value),
+      content: forge.util.createBuffer(content)
+    };
+  }
+
+  if(capture.content) {
+    var content = '';
+    if(forge.util.isArray(capture.content)) {
+      for(var i = 0; i < capture.content.length; ++i) {
+        if(capture.content[i].type !== asn1.Type.OCTETSTRING) {
+          throw new Error('Malformed PKCS#7 message, expecting ' +
+            'content constructed of only OCTET STRING objects.');
+        }
+        content += capture.content[i].value;
+      }
+    } else {
+      content = capture.content;
+    }
+    msg.content = forge.util.createBuffer(content);
+  }
+
+  msg.version = capture.version.charCodeAt(0);
+  msg.rawCapture = capture;
+
+  return capture;
+}
+
+/**
+ * Decrypt the symmetrically encrypted content block of the PKCS#7 message.
+ *
+ * Decryption is skipped in case the PKCS#7 message object already has a
+ * (decrypted) content attribute.  The algorithm, key and cipher parameters
+ * (probably the iv) are taken from the encryptedContent attribute of the
+ * message object.
+ *
+ * @param The PKCS#7 message object.
+ */
+function _decryptContent(msg) {
+  if(msg.encryptedContent.key === undefined) {
+    throw new Error('Symmetric key not available.');
+  }
+
+  if(msg.content === undefined) {
+    var ciph;
+
+    switch(msg.encryptedContent.algorithm) {
+      case forge.pki.oids['aes128-CBC']:
+      case forge.pki.oids['aes192-CBC']:
+      case forge.pki.oids['aes256-CBC']:
+        ciph = forge.aes.createDecryptionCipher(msg.encryptedContent.key);
+        break;
+
+      case forge.pki.oids['desCBC']:
+      case forge.pki.oids['des-EDE3-CBC']:
+        ciph = forge.des.createDecryptionCipher(msg.encryptedContent.key);
+        break;
+
+      default:
+        throw new Error('Unsupported symmetric cipher, OID ' +
+          msg.encryptedContent.algorithm);
+    }
+    ciph.start(msg.encryptedContent.parameter);
+    ciph.update(msg.encryptedContent.content);
+
+    if(!ciph.finish()) {
+      throw new Error('Symmetric decryption failed.');
+    }
+
+    msg.content = ciph.output;
+  }
+}
+
+
+/***/ }),
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Node.js module for Forge mask generation functions.
+ *
+ * @author Stefan Siegl
+ *
+ * Copyright 2012 Stefan Siegl <stesie@brokenpipe.de>
+ */
+var forge = __webpack_require__(2);
+__webpack_require__(108);
+
+module.exports = forge.mgf = forge.mgf || {};
+forge.mgf.mgf1 = forge.mgf1;
+
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Javascript implementation of a basic Public Key Infrastructure, including
+ * support for RSA public and private keys.
+ *
+ * @author Dave Longley
+ *
+ * Copyright (c) 2010-2013 Digital Bazaar, Inc.
+ */
+var forge = __webpack_require__(2);
+__webpack_require__(23);
+__webpack_require__(27);
+__webpack_require__(116);
+__webpack_require__(40);
+__webpack_require__(77);
+__webpack_require__(212);
+__webpack_require__(81);
+__webpack_require__(56);
+__webpack_require__(3);
+__webpack_require__(80);
+
+// shortcut for asn.1 API
+var asn1 = forge.asn1;
+
+/* Public Key Infrastructure (PKI) implementation. */
+var pki = module.exports = forge.pki = forge.pki || {};
+
+/**
+ * NOTE: THIS METHOD IS DEPRECATED. Use pem.decode() instead.
+ *
+ * Converts PEM-formatted data to DER.
+ *
+ * @param pem the PEM-formatted data.
+ *
+ * @return the DER-formatted data.
+ */
+pki.pemToDer = function(pem) {
+  var msg = forge.pem.decode(pem)[0];
+  if(msg.procType && msg.procType.type === 'ENCRYPTED') {
+    throw new Error('Could not convert PEM to DER; PEM is encrypted.');
+  }
+  return forge.util.createBuffer(msg.body);
+};
+
+/**
+ * Converts an RSA private key from PEM format.
+ *
+ * @param pem the PEM-formatted private key.
+ *
+ * @return the private key.
+ */
+pki.privateKeyFromPem = function(pem) {
+  var msg = forge.pem.decode(pem)[0];
+
+  if(msg.type !== 'PRIVATE KEY' && msg.type !== 'RSA PRIVATE KEY') {
+    var error = new Error('Could not convert private key from PEM; PEM ' +
+      'header type is not "PRIVATE KEY" or "RSA PRIVATE KEY".');
+    error.headerType = msg.type;
+    throw error;
+  }
+  if(msg.procType && msg.procType.type === 'ENCRYPTED') {
+    throw new Error('Could not convert private key from PEM; PEM is encrypted.');
+  }
+
+  // convert DER to ASN.1 object
+  var obj = asn1.fromDer(msg.body);
+
+  return pki.privateKeyFromAsn1(obj);
+};
+
+/**
+ * Converts an RSA private key to PEM format.
+ *
+ * @param key the private key.
+ * @param maxline the maximum characters per line, defaults to 64.
+ *
+ * @return the PEM-formatted private key.
+ */
+pki.privateKeyToPem = function(key, maxline) {
+  // convert to ASN.1, then DER, then PEM-encode
+  var msg = {
+    type: 'RSA PRIVATE KEY',
+    body: asn1.toDer(pki.privateKeyToAsn1(key)).getBytes()
+  };
+  return forge.pem.encode(msg, {maxline: maxline});
+};
+
+/**
+ * Converts a PrivateKeyInfo to PEM format.
+ *
+ * @param pki the PrivateKeyInfo.
+ * @param maxline the maximum characters per line, defaults to 64.
+ *
+ * @return the PEM-formatted private key.
+ */
+pki.privateKeyInfoToPem = function(pki, maxline) {
+  // convert to DER, then PEM-encode
+  var msg = {
+    type: 'PRIVATE KEY',
+    body: asn1.toDer(pki).getBytes()
+  };
+  return forge.pem.encode(msg, {maxline: maxline});
+};
+
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * RC2 implementation.
+ *
+ * @author Stefan Siegl
+ *
+ * Copyright (c) 2012 Stefan Siegl <stesie@brokenpipe.de>
+ *
+ * Information on the RC2 cipher is available from RFC #2268,
+ * http://www.ietf.org/rfc/rfc2268.txt
+ */
+var forge = __webpack_require__(2);
+__webpack_require__(3);
+
+var piTable = [
+  0xd9, 0x78, 0xf9, 0xc4, 0x19, 0xdd, 0xb5, 0xed, 0x28, 0xe9, 0xfd, 0x79, 0x4a, 0xa0, 0xd8, 0x9d,
+  0xc6, 0x7e, 0x37, 0x83, 0x2b, 0x76, 0x53, 0x8e, 0x62, 0x4c, 0x64, 0x88, 0x44, 0x8b, 0xfb, 0xa2,
+  0x17, 0x9a, 0x59, 0xf5, 0x87, 0xb3, 0x4f, 0x13, 0x61, 0x45, 0x6d, 0x8d, 0x09, 0x81, 0x7d, 0x32,
+  0xbd, 0x8f, 0x40, 0xeb, 0x86, 0xb7, 0x7b, 0x0b, 0xf0, 0x95, 0x21, 0x22, 0x5c, 0x6b, 0x4e, 0x82,
+  0x54, 0xd6, 0x65, 0x93, 0xce, 0x60, 0xb2, 0x1c, 0x73, 0x56, 0xc0, 0x14, 0xa7, 0x8c, 0xf1, 0xdc,
+  0x12, 0x75, 0xca, 0x1f, 0x3b, 0xbe, 0xe4, 0xd1, 0x42, 0x3d, 0xd4, 0x30, 0xa3, 0x3c, 0xb6, 0x26,
+  0x6f, 0xbf, 0x0e, 0xda, 0x46, 0x69, 0x07, 0x57, 0x27, 0xf2, 0x1d, 0x9b, 0xbc, 0x94, 0x43, 0x03,
+  0xf8, 0x11, 0xc7, 0xf6, 0x90, 0xef, 0x3e, 0xe7, 0x06, 0xc3, 0xd5, 0x2f, 0xc8, 0x66, 0x1e, 0xd7,
+  0x08, 0xe8, 0xea, 0xde, 0x80, 0x52, 0xee, 0xf7, 0x84, 0xaa, 0x72, 0xac, 0x35, 0x4d, 0x6a, 0x2a,
+  0x96, 0x1a, 0xd2, 0x71, 0x5a, 0x15, 0x49, 0x74, 0x4b, 0x9f, 0xd0, 0x5e, 0x04, 0x18, 0xa4, 0xec,
+  0xc2, 0xe0, 0x41, 0x6e, 0x0f, 0x51, 0xcb, 0xcc, 0x24, 0x91, 0xaf, 0x50, 0xa1, 0xf4, 0x70, 0x39,
+  0x99, 0x7c, 0x3a, 0x85, 0x23, 0xb8, 0xb4, 0x7a, 0xfc, 0x02, 0x36, 0x5b, 0x25, 0x55, 0x97, 0x31,
+  0x2d, 0x5d, 0xfa, 0x98, 0xe3, 0x8a, 0x92, 0xae, 0x05, 0xdf, 0x29, 0x10, 0x67, 0x6c, 0xba, 0xc9,
+  0xd3, 0x00, 0xe6, 0xcf, 0xe1, 0x9e, 0xa8, 0x2c, 0x63, 0x16, 0x01, 0x3f, 0x58, 0xe2, 0x89, 0xa9,
+  0x0d, 0x38, 0x34, 0x1b, 0xab, 0x33, 0xff, 0xb0, 0xbb, 0x48, 0x0c, 0x5f, 0xb9, 0xb1, 0xcd, 0x2e,
+  0xc5, 0xf3, 0xdb, 0x47, 0xe5, 0xa5, 0x9c, 0x77, 0x0a, 0xa6, 0x20, 0x68, 0xfe, 0x7f, 0xc1, 0xad
+];
+
+var s = [1, 2, 3, 5];
+
+/**
+ * Rotate a word left by given number of bits.
+ *
+ * Bits that are shifted out on the left are put back in on the right
+ * hand side.
+ *
+ * @param word The word to shift left.
+ * @param bits The number of bits to shift by.
+ * @return The rotated word.
+ */
+var rol = function(word, bits) {
+  return ((word << bits) & 0xffff) | ((word & 0xffff) >> (16 - bits));
+};
+
+/**
+ * Rotate a word right by given number of bits.
+ *
+ * Bits that are shifted out on the right are put back in on the left
+ * hand side.
+ *
+ * @param word The word to shift right.
+ * @param bits The number of bits to shift by.
+ * @return The rotated word.
+ */
+var ror = function(word, bits) {
+  return ((word & 0xffff) >> bits) | ((word << (16 - bits)) & 0xffff);
+};
+
+/* RC2 API */
+module.exports = forge.rc2 = forge.rc2 || {};
+
+/**
+ * Perform RC2 key expansion as per RFC #2268, section 2.
+ *
+ * @param key variable-length user key (between 1 and 128 bytes)
+ * @param effKeyBits number of effective key bits (default: 128)
+ * @return the expanded RC2 key (ByteBuffer of 128 bytes)
+ */
+forge.rc2.expandKey = function(key, effKeyBits) {
+  if(typeof key === 'string') {
+    key = forge.util.createBuffer(key);
+  }
+  effKeyBits = effKeyBits || 128;
+
+  /* introduce variables that match the names used in RFC #2268 */
+  var L = key;
+  var T = key.length();
+  var T1 = effKeyBits;
+  var T8 = Math.ceil(T1 / 8);
+  var TM = 0xff >> (T1 & 0x07);
+  var i;
+
+  for(i = T; i < 128; i++) {
+    L.putByte(piTable[(L.at(i - 1) + L.at(i - T)) & 0xff]);
+  }
+
+  L.setAt(128 - T8, piTable[L.at(128 - T8) & TM]);
+
+  for(i = 127 - T8; i >= 0; i--) {
+    L.setAt(i, piTable[L.at(i + 1) ^ L.at(i + T8)]);
+  }
+
+  return L;
+};
+
+/**
+ * Creates a RC2 cipher object.
+ *
+ * @param key the symmetric key to use (as base for key generation).
+ * @param bits the number of effective key bits.
+ * @param encrypt false for decryption, true for encryption.
+ *
+ * @return the cipher.
+ */
+var createCipher = function(key, bits, encrypt) {
+  var _finish = false, _input = null, _output = null, _iv = null;
+  var mixRound, mashRound;
+  var i, j, K = [];
+
+  /* Expand key and fill into K[] Array */
+  key = forge.rc2.expandKey(key, bits);
+  for(i = 0; i < 64; i++) {
+    K.push(key.getInt16Le());
+  }
+
+  if(encrypt) {
+    /**
+     * Perform one mixing round "in place".
+     *
+     * @param R Array of four words to perform mixing on.
+     */
+    mixRound = function(R) {
+      for(i = 0; i < 4; i++) {
+        R[i] += K[j] + (R[(i + 3) % 4] & R[(i + 2) % 4]) +
+          ((~R[(i + 3) % 4]) & R[(i + 1) % 4]);
+        R[i] = rol(R[i], s[i]);
+        j++;
+      }
+    };
+
+    /**
+     * Perform one mashing round "in place".
+     *
+     * @param R Array of four words to perform mashing on.
+     */
+    mashRound = function(R) {
+      for(i = 0; i < 4; i++) {
+        R[i] += K[R[(i + 3) % 4] & 63];
+      }
+    };
+  } else {
+    /**
+     * Perform one r-mixing round "in place".
+     *
+     * @param R Array of four words to perform mixing on.
+     */
+    mixRound = function(R) {
+      for(i = 3; i >= 0; i--) {
+        R[i] = ror(R[i], s[i]);
+        R[i] -= K[j] + (R[(i + 3) % 4] & R[(i + 2) % 4]) +
+          ((~R[(i + 3) % 4]) & R[(i + 1) % 4]);
+        j--;
+      }
+    };
+
+    /**
+     * Perform one r-mashing round "in place".
+     *
+     * @param R Array of four words to perform mashing on.
+     */
+    mashRound = function(R) {
+      for(i = 3; i >= 0; i--) {
+        R[i] -= K[R[(i + 3) % 4] & 63];
+      }
+    };
+  }
+
+  /**
+   * Run the specified cipher execution plan.
+   *
+   * This function takes four words from the input buffer, applies the IV on
+   * it (if requested) and runs the provided execution plan.
+   *
+   * The plan must be put together in form of a array of arrays.  Where the
+   * outer one is simply a list of steps to perform and the inner one needs
+   * to have two elements: the first one telling how many rounds to perform,
+   * the second one telling what to do (i.e. the function to call).
+   *
+   * @param {Array} plan The plan to execute.
+   */
+  var runPlan = function(plan) {
+    var R = [];
+
+    /* Get data from input buffer and fill the four words into R */
+    for(i = 0; i < 4; i++) {
+      var val = _input.getInt16Le();
+
+      if(_iv !== null) {
+        if(encrypt) {
+          /* We're encrypting, apply the IV first. */
+          val ^= _iv.getInt16Le();
+        } else {
+          /* We're decryption, keep cipher text for next block. */
+          _iv.putInt16Le(val);
+        }
+      }
+
+      R.push(val & 0xffff);
+    }
+
+    /* Reset global "j" variable as per spec. */
+    j = encrypt ? 0 : 63;
+
+    /* Run execution plan. */
+    for(var ptr = 0; ptr < plan.length; ptr++) {
+      for(var ctr = 0; ctr < plan[ptr][0]; ctr++) {
+        plan[ptr][1](R);
+      }
+    }
+
+    /* Write back result to output buffer. */
+    for(i = 0; i < 4; i++) {
+      if(_iv !== null) {
+        if(encrypt) {
+          /* We're encrypting in CBC-mode, feed back encrypted bytes into
+             IV buffer to carry it forward to next block. */
+          _iv.putInt16Le(R[i]);
+        } else {
+          R[i] ^= _iv.getInt16Le();
+        }
+      }
+
+      _output.putInt16Le(R[i]);
+    }
+  };
+
+  /* Create cipher object */
+  var cipher = null;
+  cipher = {
+    /**
+     * Starts or restarts the encryption or decryption process, whichever
+     * was previously configured.
+     *
+     * To use the cipher in CBC mode, iv may be given either as a string
+     * of bytes, or as a byte buffer.  For ECB mode, give null as iv.
+     *
+     * @param iv the initialization vector to use, null for ECB mode.
+     * @param output the output the buffer to write to, null to create one.
+     */
+    start: function(iv, output) {
+      if(iv) {
+        /* CBC mode */
+        if(typeof iv === 'string') {
+          iv = forge.util.createBuffer(iv);
+        }
+      }
+
+      _finish = false;
+      _input = forge.util.createBuffer();
+      _output = output || new forge.util.createBuffer();
+      _iv = iv;
+
+      cipher.output = _output;
+    },
+
+    /**
+     * Updates the next block.
+     *
+     * @param input the buffer to read from.
+     */
+    update: function(input) {
+      if(!_finish) {
+        // not finishing, so fill the input buffer with more input
+        _input.putBuffer(input);
+      }
+
+      while(_input.length() >= 8) {
+        runPlan([
+            [ 5, mixRound ],
+            [ 1, mashRound ],
+            [ 6, mixRound ],
+            [ 1, mashRound ],
+            [ 5, mixRound ]
+          ]);
+      }
+    },
+
+    /**
+     * Finishes encrypting or decrypting.
+     *
+     * @param pad a padding function to use, null for PKCS#7 padding,
+     *           signature(blockSize, buffer, decrypt).
+     *
+     * @return true if successful, false on error.
+     */
+    finish: function(pad) {
+      var rval = true;
+
+      if(encrypt) {
+        if(pad) {
+          rval = pad(8, _input, !encrypt);
+        } else {
+          // add PKCS#7 padding to block (each pad byte is the
+          // value of the number of pad bytes)
+          var padding = (_input.length() === 8) ? 8 : (8 - _input.length());
+          _input.fillWithByte(padding, padding);
+        }
+      }
+
+      if(rval) {
+        // do final update
+        _finish = true;
+        cipher.update();
+      }
+
+      if(!encrypt) {
+        // check for error: input data not a multiple of block size
+        rval = (_input.length() === 0);
+        if(rval) {
+          if(pad) {
+            rval = pad(8, _output, !encrypt);
+          } else {
+            // ensure padding byte count is valid
+            var len = _output.length();
+            var count = _output.at(len - 1);
+
+            if(count > len) {
+              rval = false;
+            } else {
+              // trim off padding bytes
+              _output.truncate(count);
+            }
+          }
+        }
+      }
+
+      return rval;
+    }
+  };
+
+  return cipher;
+};
+
+/**
+ * Creates an RC2 cipher object to encrypt data in ECB or CBC mode using the
+ * given symmetric key. The output will be stored in the 'output' member
+ * of the returned cipher.
+ *
+ * The key and iv may be given as a string of bytes or a byte buffer.
+ * The cipher is initialized to use 128 effective key bits.
+ *
+ * @param key the symmetric key to use.
+ * @param iv the initialization vector to use.
+ * @param output the buffer to write to, null to create one.
+ *
+ * @return the cipher.
+ */
+forge.rc2.startEncrypting = function(key, iv, output) {
+  var cipher = forge.rc2.createEncryptionCipher(key, 128);
+  cipher.start(iv, output);
+  return cipher;
+};
+
+/**
+ * Creates an RC2 cipher object to encrypt data in ECB or CBC mode using the
+ * given symmetric key.
+ *
+ * The key may be given as a string of bytes or a byte buffer.
+ *
+ * To start encrypting call start() on the cipher with an iv and optional
+ * output buffer.
+ *
+ * @param key the symmetric key to use.
+ *
+ * @return the cipher.
+ */
+forge.rc2.createEncryptionCipher = function(key, bits) {
+  return createCipher(key, bits, true);
+};
+
+/**
+ * Creates an RC2 cipher object to decrypt data in ECB or CBC mode using the
+ * given symmetric key. The output will be stored in the 'output' member
+ * of the returned cipher.
+ *
+ * The key and iv may be given as a string of bytes or a byte buffer.
+ * The cipher is initialized to use 128 effective key bits.
+ *
+ * @param key the symmetric key to use.
+ * @param iv the initialization vector to use.
+ * @param output the buffer to write to, null to create one.
+ *
+ * @return the cipher.
+ */
+forge.rc2.startDecrypting = function(key, iv, output) {
+  var cipher = forge.rc2.createDecryptionCipher(key, 128);
+  cipher.start(iv, output);
+  return cipher;
+};
+
+/**
+ * Creates an RC2 cipher object to decrypt data in ECB or CBC mode using the
+ * given symmetric key.
+ *
+ * The key may be given as a string of bytes or a byte buffer.
+ *
+ * To start decrypting call start() on the cipher with an iv and optional
+ * output buffer.
+ *
+ * @param key the symmetric key to use.
+ *
+ * @return the cipher.
+ */
+forge.rc2.createDecryptionCipher = function(key, bits) {
+  return createCipher(key, bits, false);
+};
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Javascript implementation of PKCS#12.
+ *
+ * @author Dave Longley
+ * @author Stefan Siegl <stesie@brokenpipe.de>
+ *
+ * Copyright (c) 2010-2014 Digital Bazaar, Inc.
+ * Copyright (c) 2012 Stefan Siegl <stesie@brokenpipe.de>
+ *
+ * The ASN.1 representation of PKCS#12 is as follows
+ * (see ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-12/pkcs-12-tc1.pdf for details)
+ *
+ * PFX ::= SEQUENCE {
+ *   version  INTEGER {v3(3)}(v3,...),
+ *   authSafe ContentInfo,
+ *   macData  MacData OPTIONAL
+ * }
+ *
+ * MacData ::= SEQUENCE {
+ *   mac DigestInfo,
+ *   macSalt OCTET STRING,
+ *   iterations INTEGER DEFAULT 1
+ * }
+ * Note: The iterations default is for historical reasons and its use is
+ * deprecated. A higher value, like 1024, is recommended.
+ *
+ * DigestInfo is defined in PKCS#7 as follows:
+ *
+ * DigestInfo ::= SEQUENCE {
+ *   digestAlgorithm DigestAlgorithmIdentifier,
+ *   digest Digest
+ * }
+ *
+ * DigestAlgorithmIdentifier ::= AlgorithmIdentifier
+ *
+ * The AlgorithmIdentifier contains an Object Identifier (OID) and parameters
+ * for the algorithm, if any. In the case of SHA1 there is none.
+ *
+ * AlgorithmIdentifer ::= SEQUENCE {
+ *    algorithm OBJECT IDENTIFIER,
+ *    parameters ANY DEFINED BY algorithm OPTIONAL
+ * }
+ *
+ * Digest ::= OCTET STRING
+ *
+ *
+ * ContentInfo ::= SEQUENCE {
+ *   contentType ContentType,
+ *   content     [0] EXPLICIT ANY DEFINED BY contentType OPTIONAL
+ * }
+ *
+ * ContentType ::= OBJECT IDENTIFIER
+ *
+ * AuthenticatedSafe ::= SEQUENCE OF ContentInfo
+ * -- Data if unencrypted
+ * -- EncryptedData if password-encrypted
+ * -- EnvelopedData if public key-encrypted
+ *
+ *
+ * SafeContents ::= SEQUENCE OF SafeBag
+ *
+ * SafeBag ::= SEQUENCE {
+ *   bagId     BAG-TYPE.&id ({PKCS12BagSet})
+ *   bagValue  [0] EXPLICIT BAG-TYPE.&Type({PKCS12BagSet}{@bagId}),
+ *   bagAttributes SET OF PKCS12Attribute OPTIONAL
+ * }
+ *
+ * PKCS12Attribute ::= SEQUENCE {
+ *   attrId ATTRIBUTE.&id ({PKCS12AttrSet}),
+ *   attrValues SET OF ATTRIBUTE.&Type ({PKCS12AttrSet}{@attrId})
+ * } -- This type is compatible with the X.500 type ’Attribute’
+ *
+ * PKCS12AttrSet ATTRIBUTE ::= {
+ *   friendlyName | -- from PKCS #9
+ *   localKeyId, -- from PKCS #9
+ *   ... -- Other attributes are allowed
+ * }
+ *
+ * CertBag ::= SEQUENCE {
+ *   certId    BAG-TYPE.&id   ({CertTypes}),
+ *   certValue [0] EXPLICIT BAG-TYPE.&Type ({CertTypes}{@certId})
+ * }
+ *
+ * x509Certificate BAG-TYPE ::= {OCTET STRING IDENTIFIED BY {certTypes 1}}
+ *   -- DER-encoded X.509 certificate stored in OCTET STRING
+ *
+ * sdsiCertificate BAG-TYPE ::= {IA5String IDENTIFIED BY {certTypes 2}}
+ * -- Base64-encoded SDSI certificate stored in IA5String
+ *
+ * CertTypes BAG-TYPE ::= {
+ *   x509Certificate |
+ *   sdsiCertificate,
+ *   ... -- For future extensions
+ * }
+ */
+var forge = __webpack_require__(2);
+__webpack_require__(23);
+__webpack_require__(76);
+__webpack_require__(27);
+__webpack_require__(113);
+__webpack_require__(116);
+__webpack_require__(24);
+__webpack_require__(56);
+__webpack_require__(78);
+__webpack_require__(3);
+__webpack_require__(80);
+
+// shortcut for asn.1 & PKI API
+var asn1 = forge.asn1;
+var pki = forge.pki;
+
+// shortcut for PKCS#12 API
+var p12 = module.exports = forge.pkcs12 = forge.pkcs12 || {};
+
+var contentInfoValidator = {
+  name: 'ContentInfo',
+  tagClass: asn1.Class.UNIVERSAL,
+  type: asn1.Type.SEQUENCE,  // a ContentInfo
+  constructed: true,
+  value: [{
+    name: 'ContentInfo.contentType',
+    tagClass: asn1.Class.UNIVERSAL,
+    type: asn1.Type.OID,
+    constructed: false,
+    capture: 'contentType'
+  }, {
+    name: 'ContentInfo.content',
+    tagClass: asn1.Class.CONTEXT_SPECIFIC,
+    constructed: true,
+    captureAsn1: 'content'
+  }]
+};
+
+var pfxValidator = {
+  name: 'PFX',
+  tagClass: asn1.Class.UNIVERSAL,
+  type: asn1.Type.SEQUENCE,
+  constructed: true,
+  value: [{
+    name: 'PFX.version',
+    tagClass: asn1.Class.UNIVERSAL,
+    type: asn1.Type.INTEGER,
+    constructed: false,
+    capture: 'version'
+  },
+  contentInfoValidator, {
+    name: 'PFX.macData',
+    tagClass: asn1.Class.UNIVERSAL,
+    type: asn1.Type.SEQUENCE,
+    constructed: true,
+    optional: true,
+    captureAsn1: 'mac',
+    value: [{
+      name: 'PFX.macData.mac',
+      tagClass: asn1.Class.UNIVERSAL,
+      type: asn1.Type.SEQUENCE,  // DigestInfo
+      constructed: true,
+      value: [{
+        name: 'PFX.macData.mac.digestAlgorithm',
+        tagClass: asn1.Class.UNIVERSAL,
+        type: asn1.Type.SEQUENCE,  // DigestAlgorithmIdentifier
+        constructed: true,
+        value: [{
+          name: 'PFX.macData.mac.digestAlgorithm.algorithm',
+          tagClass: asn1.Class.UNIVERSAL,
+          type: asn1.Type.OID,
+          constructed: false,
+          capture: 'macAlgorithm'
+        }, {
+          name: 'PFX.macData.mac.digestAlgorithm.parameters',
+          tagClass: asn1.Class.UNIVERSAL,
+          captureAsn1: 'macAlgorithmParameters'
+        }]
+      }, {
+        name: 'PFX.macData.mac.digest',
+        tagClass: asn1.Class.UNIVERSAL,
+        type: asn1.Type.OCTETSTRING,
+        constructed: false,
+        capture: 'macDigest'
+      }]
+    }, {
+      name: 'PFX.macData.macSalt',
+      tagClass: asn1.Class.UNIVERSAL,
+      type: asn1.Type.OCTETSTRING,
+      constructed: false,
+      capture: 'macSalt'
+    }, {
+      name: 'PFX.macData.iterations',
+      tagClass: asn1.Class.UNIVERSAL,
+      type: asn1.Type.INTEGER,
+      constructed: false,
+      optional: true,
+      capture: 'macIterations'
+    }]
+  }]
+};
+
+var safeBagValidator = {
+  name: 'SafeBag',
+  tagClass: asn1.Class.UNIVERSAL,
+  type: asn1.Type.SEQUENCE,
+  constructed: true,
+  value: [{
+    name: 'SafeBag.bagId',
+    tagClass: asn1.Class.UNIVERSAL,
+    type: asn1.Type.OID,
+    constructed: false,
+    capture: 'bagId'
+  }, {
+    name: 'SafeBag.bagValue',
+    tagClass: asn1.Class.CONTEXT_SPECIFIC,
+    constructed: true,
+    captureAsn1: 'bagValue'
+  }, {
+    name: 'SafeBag.bagAttributes',
+    tagClass: asn1.Class.UNIVERSAL,
+    type: asn1.Type.SET,
+    constructed: true,
+    optional: true,
+    capture: 'bagAttributes'
+  }]
+};
+
+var attributeValidator = {
+  name: 'Attribute',
+  tagClass: asn1.Class.UNIVERSAL,
+  type: asn1.Type.SEQUENCE,
+  constructed: true,
+  value: [{
+    name: 'Attribute.attrId',
+    tagClass: asn1.Class.UNIVERSAL,
+    type: asn1.Type.OID,
+    constructed: false,
+    capture: 'oid'
+  }, {
+    name: 'Attribute.attrValues',
+    tagClass: asn1.Class.UNIVERSAL,
+    type: asn1.Type.SET,
+    constructed: true,
+    capture: 'values'
+  }]
+};
+
+var certBagValidator = {
+  name: 'CertBag',
+  tagClass: asn1.Class.UNIVERSAL,
+  type: asn1.Type.SEQUENCE,
+  constructed: true,
+  value: [{
+    name: 'CertBag.certId',
+    tagClass: asn1.Class.UNIVERSAL,
+    type: asn1.Type.OID,
+    constructed: false,
+    capture: 'certId'
+  }, {
+    name: 'CertBag.certValue',
+    tagClass: asn1.Class.CONTEXT_SPECIFIC,
+    constructed: true,
+    /* So far we only support X.509 certificates (which are wrapped in
+       an OCTET STRING, hence hard code that here). */
+    value: [{
+      name: 'CertBag.certValue[0]',
+      tagClass: asn1.Class.UNIVERSAL,
+      type: asn1.Class.OCTETSTRING,
+      constructed: false,
+      capture: 'cert'
+    }]
+  }]
+};
+
+/**
+ * Search SafeContents structure for bags with matching attributes.
+ *
+ * The search can optionally be narrowed by a certain bag type.
+ *
+ * @param safeContents the SafeContents structure to search in.
+ * @param attrName the name of the attribute to compare against.
+ * @param attrValue the attribute value to search for.
+ * @param [bagType] bag type to narrow search by.
+ *
+ * @return an array of matching bags.
+ */
+function _getBagsByAttribute(safeContents, attrName, attrValue, bagType) {
+  var result = [];
+
+  for(var i = 0; i < safeContents.length; i++) {
+    for(var j = 0; j < safeContents[i].safeBags.length; j++) {
+      var bag = safeContents[i].safeBags[j];
+      if(bagType !== undefined && bag.type !== bagType) {
+        continue;
+      }
+      // only filter by bag type, no attribute specified
+      if(attrName === null) {
+        result.push(bag);
+        continue;
+      }
+      if(bag.attributes[attrName] !== undefined &&
+        bag.attributes[attrName].indexOf(attrValue) >= 0) {
+        result.push(bag);
+      }
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Converts a PKCS#12 PFX in ASN.1 notation into a PFX object.
+ *
+ * @param obj The PKCS#12 PFX in ASN.1 notation.
+ * @param strict true to use strict DER decoding, false not to (default: true).
+ * @param {String} password Password to decrypt with (optional).
+ *
+ * @return PKCS#12 PFX object.
+ */
+p12.pkcs12FromAsn1 = function(obj, strict, password) {
+  // handle args
+  if(typeof strict === 'string') {
+    password = strict;
+    strict = true;
+  } else if(strict === undefined) {
+    strict = true;
+  }
+
+  // validate PFX and capture data
+  var capture = {};
+  var errors = [];
+  if(!asn1.validate(obj, pfxValidator, capture, errors)) {
+    var error = new Error('Cannot read PKCS#12 PFX. ' +
+      'ASN.1 object is not an PKCS#12 PFX.');
+    error.errors = error;
+    throw error;
+  }
+
+  var pfx = {
+    version: capture.version.charCodeAt(0),
+    safeContents: [],
+
+    /**
+     * Gets bags with matching attributes.
+     *
+     * @param filter the attributes to filter by:
+     *          [localKeyId] the localKeyId to search for.
+     *          [localKeyIdHex] the localKeyId in hex to search for.
+     *          [friendlyName] the friendly name to search for.
+     *          [bagType] bag type to narrow each attribute search by.
+     *
+     * @return a map of attribute type to an array of matching bags or, if no
+     *           attribute was given but a bag type, the map key will be the
+     *           bag type.
+     */
+    getBags: function(filter) {
+      var rval = {};
+
+      var localKeyId;
+      if('localKeyId' in filter) {
+        localKeyId = filter.localKeyId;
+      } else if('localKeyIdHex' in filter) {
+        localKeyId = forge.util.hexToBytes(filter.localKeyIdHex);
+      }
+
+      // filter on bagType only
+      if(localKeyId === undefined && !('friendlyName' in filter) &&
+        'bagType' in filter) {
+        rval[filter.bagType] = _getBagsByAttribute(
+          pfx.safeContents, null, null, filter.bagType);
+      }
+
+      if(localKeyId !== undefined) {
+        rval.localKeyId = _getBagsByAttribute(
+          pfx.safeContents, 'localKeyId',
+          localKeyId, filter.bagType);
+      }
+      if('friendlyName' in filter) {
+        rval.friendlyName = _getBagsByAttribute(
+          pfx.safeContents, 'friendlyName',
+          filter.friendlyName, filter.bagType);
+      }
+
+      return rval;
+    },
+
+    /**
+     * DEPRECATED: use getBags() instead.
+     *
+     * Get bags with matching friendlyName attribute.
+     *
+     * @param friendlyName the friendly name to search for.
+     * @param [bagType] bag type to narrow search by.
+     *
+     * @return an array of bags with matching friendlyName attribute.
+     */
+    getBagsByFriendlyName: function(friendlyName, bagType) {
+      return _getBagsByAttribute(
+        pfx.safeContents, 'friendlyName', friendlyName, bagType);
+    },
+
+    /**
+     * DEPRECATED: use getBags() instead.
+     *
+     * Get bags with matching localKeyId attribute.
+     *
+     * @param localKeyId the localKeyId to search for.
+     * @param [bagType] bag type to narrow search by.
+     *
+     * @return an array of bags with matching localKeyId attribute.
+     */
+    getBagsByLocalKeyId: function(localKeyId, bagType) {
+      return _getBagsByAttribute(
+        pfx.safeContents, 'localKeyId', localKeyId, bagType);
+    }
+  };
+
+  if(capture.version.charCodeAt(0) !== 3) {
+    var error = new Error('PKCS#12 PFX of version other than 3 not supported.');
+    error.version = capture.version.charCodeAt(0);
+    throw error;
+  }
+
+  if(asn1.derToOid(capture.contentType) !== pki.oids.data) {
+    var error = new Error('Only PKCS#12 PFX in password integrity mode supported.');
+    error.oid = asn1.derToOid(capture.contentType);
+    throw error;
+  }
+
+  var data = capture.content.value[0];
+  if(data.tagClass !== asn1.Class.UNIVERSAL ||
+     data.type !== asn1.Type.OCTETSTRING) {
+    throw new Error('PKCS#12 authSafe content data is not an OCTET STRING.');
+  }
+  data = _decodePkcs7Data(data);
+
+  // check for MAC
+  if(capture.mac) {
+    var md = null;
+    var macKeyBytes = 0;
+    var macAlgorithm = asn1.derToOid(capture.macAlgorithm);
+    switch(macAlgorithm) {
+    case pki.oids.sha1:
+      md = forge.md.sha1.create();
+      macKeyBytes = 20;
+      break;
+    case pki.oids.sha256:
+      md = forge.md.sha256.create();
+      macKeyBytes = 32;
+      break;
+    case pki.oids.sha384:
+      md = forge.md.sha384.create();
+      macKeyBytes = 48;
+      break;
+    case pki.oids.sha512:
+      md = forge.md.sha512.create();
+      macKeyBytes = 64;
+      break;
+    case pki.oids.md5:
+      md = forge.md.md5.create();
+      macKeyBytes = 16;
+      break;
+    }
+    if(md === null) {
+      throw new Error('PKCS#12 uses unsupported MAC algorithm: ' + macAlgorithm);
+    }
+
+    // verify MAC (iterations default to 1)
+    var macSalt = new forge.util.ByteBuffer(capture.macSalt);
+    var macIterations = (('macIterations' in capture) ?
+      parseInt(forge.util.bytesToHex(capture.macIterations), 16) : 1);
+    var macKey = p12.generateKey(
+      password, macSalt, 3, macIterations, macKeyBytes, md);
+    var mac = forge.hmac.create();
+    mac.start(md, macKey);
+    mac.update(data.value);
+    var macValue = mac.getMac();
+    if(macValue.getBytes() !== capture.macDigest) {
+      throw new Error('PKCS#12 MAC could not be verified. Invalid password?');
+    }
+  }
+
+  _decodeAuthenticatedSafe(pfx, data.value, strict, password);
+  return pfx;
+};
+
+/**
+ * Decodes PKCS#7 Data. PKCS#7 (RFC 2315) defines "Data" as an OCTET STRING,
+ * but it is sometimes an OCTET STRING that is composed/constructed of chunks,
+ * each its own OCTET STRING. This is BER-encoding vs. DER-encoding. This
+ * function transforms this corner-case into the usual simple,
+ * non-composed/constructed OCTET STRING.
+ *
+ * This function may be moved to ASN.1 at some point to better deal with
+ * more BER-encoding issues, should they arise.
+ *
+ * @param data the ASN.1 Data object to transform.
+ */
+function _decodePkcs7Data(data) {
+  // handle special case of "chunked" data content: an octet string composed
+  // of other octet strings
+  if(data.composed || data.constructed) {
+    var value = forge.util.createBuffer();
+    for(var i = 0; i < data.value.length; ++i) {
+      value.putBytes(data.value[i].value);
+    }
+    data.composed = data.constructed = false;
+    data.value = value.getBytes();
+  }
+  return data;
+}
+
+/**
+ * Decode PKCS#12 AuthenticatedSafe (BER encoded) into PFX object.
+ *
+ * The AuthenticatedSafe is a BER-encoded SEQUENCE OF ContentInfo.
+ *
+ * @param pfx The PKCS#12 PFX object to fill.
+ * @param {String} authSafe BER-encoded AuthenticatedSafe.
+ * @param strict true to use strict DER decoding, false not to.
+ * @param {String} password Password to decrypt with (optional).
+ */
+function _decodeAuthenticatedSafe(pfx, authSafe, strict, password) {
+  authSafe = asn1.fromDer(authSafe, strict);  /* actually it's BER encoded */
+
+  if(authSafe.tagClass !== asn1.Class.UNIVERSAL ||
+     authSafe.type !== asn1.Type.SEQUENCE ||
+     authSafe.constructed !== true) {
+    throw new Error('PKCS#12 AuthenticatedSafe expected to be a ' +
+      'SEQUENCE OF ContentInfo');
+  }
+
+  for(var i = 0; i < authSafe.value.length; i++) {
+    var contentInfo = authSafe.value[i];
+
+    // validate contentInfo and capture data
+    var capture = {};
+    var errors = [];
+    if(!asn1.validate(contentInfo, contentInfoValidator, capture, errors)) {
+      var error = new Error('Cannot read ContentInfo.');
+      error.errors = errors;
+      throw error;
+    }
+
+    var obj = {
+      encrypted: false
+    };
+    var safeContents = null;
+    var data = capture.content.value[0];
+    switch(asn1.derToOid(capture.contentType)) {
+    case pki.oids.data:
+      if(data.tagClass !== asn1.Class.UNIVERSAL ||
+         data.type !== asn1.Type.OCTETSTRING) {
+        throw new Error('PKCS#12 SafeContents Data is not an OCTET STRING.');
+      }
+      safeContents = _decodePkcs7Data(data).value;
+      break;
+    case pki.oids.encryptedData:
+      safeContents = _decryptSafeContents(data, password);
+      obj.encrypted = true;
+      break;
+    default:
+      var error = new Error('Unsupported PKCS#12 contentType.');
+      error.contentType = asn1.derToOid(capture.contentType);
+      throw error;
+    }
+
+    obj.safeBags = _decodeSafeContents(safeContents, strict, password);
+    pfx.safeContents.push(obj);
+  }
+}
+
+/**
+ * Decrypt PKCS#7 EncryptedData structure.
+ *
+ * @param data ASN.1 encoded EncryptedContentInfo object.
+ * @param password The user-provided password.
+ *
+ * @return The decrypted SafeContents (ASN.1 object).
+ */
+function _decryptSafeContents(data, password) {
+  var capture = {};
+  var errors = [];
+  if(!asn1.validate(
+    data, forge.pkcs7.asn1.encryptedDataValidator, capture, errors)) {
+    var error = new Error('Cannot read EncryptedContentInfo.');
+    error.errors = errors;
+    throw error;
+  }
+
+  var oid = asn1.derToOid(capture.contentType);
+  if(oid !== pki.oids.data) {
+    var error = new Error(
+      'PKCS#12 EncryptedContentInfo ContentType is not Data.');
+    error.oid = oid;
+    throw error;
+  }
+
+  // get cipher
+  oid = asn1.derToOid(capture.encAlgorithm);
+  var cipher = pki.pbe.getCipher(oid, capture.encParameter, password);
+
+  // get encrypted data
+  var encryptedContentAsn1 = _decodePkcs7Data(capture.encryptedContentAsn1);
+  var encrypted = forge.util.createBuffer(encryptedContentAsn1.value);
+
+  cipher.update(encrypted);
+  if(!cipher.finish()) {
+    throw new Error('Failed to decrypt PKCS#12 SafeContents.');
+  }
+
+  return cipher.output.getBytes();
+}
+
+/**
+ * Decode PKCS#12 SafeContents (BER-encoded) into array of Bag objects.
+ *
+ * The safeContents is a BER-encoded SEQUENCE OF SafeBag.
+ *
+ * @param {String} safeContents BER-encoded safeContents.
+ * @param strict true to use strict DER decoding, false not to.
+ * @param {String} password Password to decrypt with (optional).
+ *
+ * @return {Array} Array of Bag objects.
+ */
+function _decodeSafeContents(safeContents, strict, password) {
+  // if strict and no safe contents, return empty safes
+  if(!strict && safeContents.length === 0) {
+    return [];
+  }
+
+  // actually it's BER-encoded
+  safeContents = asn1.fromDer(safeContents, strict);
+
+  if(safeContents.tagClass !== asn1.Class.UNIVERSAL ||
+    safeContents.type !== asn1.Type.SEQUENCE ||
+    safeContents.constructed !== true) {
+    throw new Error(
+      'PKCS#12 SafeContents expected to be a SEQUENCE OF SafeBag.');
+  }
+
+  var res = [];
+  for(var i = 0; i < safeContents.value.length; i++) {
+    var safeBag = safeContents.value[i];
+
+    // validate SafeBag and capture data
+    var capture = {};
+    var errors = [];
+    if(!asn1.validate(safeBag, safeBagValidator, capture, errors)) {
+      var error = new Error('Cannot read SafeBag.');
+      error.errors = errors;
+      throw error;
+    }
+
+    /* Create bag object and push to result array. */
+    var bag = {
+      type: asn1.derToOid(capture.bagId),
+      attributes: _decodeBagAttributes(capture.bagAttributes)
+    };
+    res.push(bag);
+
+    var validator, decoder;
+    var bagAsn1 = capture.bagValue.value[0];
+    switch(bag.type) {
+      case pki.oids.pkcs8ShroudedKeyBag:
+        /* bagAsn1 has a EncryptedPrivateKeyInfo, which we need to decrypt.
+           Afterwards we can handle it like a keyBag,
+           which is a PrivateKeyInfo. */
+        bagAsn1 = pki.decryptPrivateKeyInfo(bagAsn1, password);
+        if(bagAsn1 === null) {
+          throw new Error(
+            'Unable to decrypt PKCS#8 ShroudedKeyBag, wrong password?');
+        }
+
+        /* fall through */
+      case pki.oids.keyBag:
+        /* A PKCS#12 keyBag is a simple PrivateKeyInfo as understood by our
+           PKI module, hence we don't have to do validation/capturing here,
+           just pass what we already got. */
+        try {
+          bag.key = pki.privateKeyFromAsn1(bagAsn1);
+        } catch(e) {
+          // ignore unknown key type, pass asn1 value
+          bag.key = null;
+          bag.asn1 = bagAsn1;
+        }
+        continue;  /* Nothing more to do. */
+
+      case pki.oids.certBag:
+        /* A PKCS#12 certBag can wrap both X.509 and sdsi certificates.
+           Therefore put the SafeBag content through another validator to
+           capture the fields.  Afterwards check & store the results. */
+        validator = certBagValidator;
+        decoder = function() {
+          if(asn1.derToOid(capture.certId) !== pki.oids.x509Certificate) {
+            var error = new Error(
+              'Unsupported certificate type, only X.509 supported.');
+            error.oid = asn1.derToOid(capture.certId);
+            throw error;
+          }
+
+          // true=produce cert hash
+          var certAsn1 = asn1.fromDer(capture.cert, strict);
+          try {
+            bag.cert = pki.certificateFromAsn1(certAsn1, true);
+          } catch(e) {
+            // ignore unknown cert type, pass asn1 value
+            bag.cert = null;
+            bag.asn1 = certAsn1;
+          }
         };
-      });
+        break;
 
-      return promise;
-    };
-  } else {
-    webcrypto = null;
-  }
-
-  return helpers.setupFallback(null, webcrypto, fallback);
-}
-
-function rsaesDecryptFn(name) {
-  var alg = {
-    name: name
-  };
-
-  if ("RSA-OAEP-256" === name) {
-    alg.name = "RSA-OAEP";
-    alg.hash = {
-      name: "SHA-256"
-    };
-  } else if ("RSA-OAEP" === name) {
-    alg.hash = {
-      name: "SHA-1"
-    };
-  } else {
-    alg.name = "RSAES-PKCS1-v1_5";
-  }
-
-  // ### Fallback Implementation -- uses forge
-  var fallback = function(key, cdata) {
-    // convert cdata to byte string
-    cdata = new DataBuffer(cdata).bytes();
-
-    // decrypt it
-    var pki = rsaUtil.convertToForge(key, false),
-        params = {};
-    if ("RSA-OAEP" === alg.name) {
-      params.md = alg.hash.name.toLowerCase().replace(/\-/g, "");
-      params.md = forge.md[params.md].create();
+      default:
+        var error = new Error('Unsupported PKCS#12 SafeBag type.');
+        error.oid = bag.type;
+        throw error;
     }
-    var pdata = pki.decrypt(cdata, alg.name.toUpperCase(), params);
 
-    // convert pdata to Buffer
-    pdata = new DataBuffer(pdata).native();
+    /* Validate SafeBag value (i.e. CertBag, etc.) and capture data if needed. */
+    if(validator !== undefined &&
+       !asn1.validate(bagAsn1, validator, capture, errors)) {
+      var error = new Error('Cannot read PKCS#12 ' + validator.name);
+      error.errors = errors;
+      throw error;
+    }
 
-    return Promise.resolve(pdata);
-  };
-
-  // ### WebCryptoAPI Implementation
-  var webcrypto;
-  if ("RSAES-PKCS1-v1_5" !== alg.name) {
-    webcrypto = function(key, pdata) {
-      key = rsaUtil.convertToJWK(key, false);
-      var promise;
-      promise = helpers.subtleCrypto.importKey("jwk", key, alg, true, ["decrypt"]);
-      promise = promise.then(function(key) {
-        return helpers.subtleCrypto.decrypt(alg, key, pdata);
-      });
-      promise = promise.then(function(result) {
-        var pdata = new Buffer(result);
-        return pdata;
-      });
-
-      return promise;
-    };
-  } else {
-    webcrypto = null;
+    /* Call decoder function from above to store the results. */
+    decoder();
   }
 
-  var nodejs;
-  if (helpers.nodeCrypto && name === "RSA-OAEP") { // node only support SHA1, plain RSA-OAEP
-    nodejs = function(key, pdata) {
-      key = rsaUtil.convertToPem(key, false);
-      return helpers.nodeCrypto.privateDecrypt(key, pdata);
-    };
-  }
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
+  return res;
 }
 
-// ### Public API
-// * [name].encrypt
-// * [name].decrypt
-var rsaes = {};
-[
-  "RSA-OAEP",
-  "RSA-OAEP-256",
-  "RSA1_5"
-].forEach(function(name) {
-  rsaes[name] = {
-    encrypt: rsaesEncryptFn(name),
-    decrypt: rsaesDecryptFn(name)
-  };
-});
-
-module.exports = rsaes;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 228 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * algorithms/rsassa.js - RSA Signatures
+/**
+ * Decode PKCS#12 SET OF PKCS12Attribute into JavaScript object.
  *
- * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ * @param attributes SET OF PKCS12Attribute (ASN.1 object).
+ *
+ * @return the decoded attributes.
  */
+function _decodeBagAttributes(attributes) {
+  var decodedAttrs = {};
 
-
-var forge = __webpack_require__(5),
-    CONSTANTS = __webpack_require__(20),
-    helpers = __webpack_require__(12),
-    rsaUtil = __webpack_require__(87);
-
-// ### RSASSA-PKCS1-v1_5
-
-function rsassaV15SignFn(name) {
-  var md = name.replace("RS", "SHA").toLowerCase(),
-      hash = name.replace("RS", "SHA-");
-
-  var alg = {
-    name: "RSASSA-PKCS1-V1_5",
-    hash: {
-      name: hash
-    }
-  };
-
-  // ### Fallback Implementation -- uses forge
-  var fallback = function(key, pdata) {
-    // create the digest
-    var digest = forge.md[md].create();
-    digest.start();
-    digest.update(pdata);
-
-    // sign it
-    var pki = rsaUtil.convertToForge(key, false);
-    var sig = pki.sign(digest, "RSASSA-PKCS1-V1_5");
-    sig = new Buffer(sig, "binary");
-
-    return Promise.resolve({
-      data: pdata,
-      mac: sig
-    });
-  };
-
-  // ### WebCryptoAPI Implementation
-  var webcrypto = function(key, pdata) {
-    key = rsaUtil.convertToJWK(key, false);
-    var promise;
-    promise = helpers.subtleCrypto.importKey("jwk", key, alg, true, ["sign"]);
-    promise = promise.then(function(key) {
-      return helpers.subtleCrypto.sign(alg, key, pdata);
-    });
-    promise = promise.then(function(result) {
-      var sig = new Buffer(result);
-      return {
-        data: pdata,
-        mac: sig
-      };
-    });
-
-    return promise;
-  };
-
-  var nodejs;
-  if (helpers.nodeCrypto && helpers.nodeCrypto.getHashes().indexOf(hash) > -1) {
-    nodejs = function(key, pdata) {
-      key = rsaUtil.convertToPem(key, false);
-      var sign = helpers.nodeCrypto.createSign(hash);
-      sign.update(pdata);
-
-      return {
-        data: pdata,
-        mac: sign.sign(rsaUtil.convertToPem(key, false))
-      };
-    };
-  }
-
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
-}
-
-function rsassaV15VerifyFn(name) {
-  var md = name.replace("RS", "SHA").toLowerCase(),
-      hash = name.replace("RS", "SHA-");
-  var alg = {
-    name: "RSASSA-PKCS1-V1_5",
-    hash: {
-      name: hash
-    }
-  };
-
-  // ### Fallback implementation -- uses forge
-  var fallback = function(key, pdata, mac) {
-    // create the digest
-    var digest = forge.md[md].create();
-    digest.start();
-    digest.update(pdata);
-    digest = digest.digest().bytes();
-
-    // verify it
-    var pki = rsaUtil.convertToForge(key, true);
-    var sig = mac.toString("binary");
-    var result = pki.verify(digest, sig, "RSASSA-PKCS1-V1_5");
-    if (!result) {
-      return Promise.reject(new Error("verification failed"));
-    }
-    return Promise.resolve({
-      data: pdata,
-      mac: mac,
-      valid: true
-    });
-  };
-
-  // ### WebCryptoAPI Implementation
-  var webcrypto = function(key, pdata, mac) {
-    key = rsaUtil.convertToJWK(key, true);
-    var promise;
-    promise = helpers.subtleCrypto.importKey("jwk", key, alg, true, ["verify"]);
-    promise = promise.then(function(key) {
-      return helpers.subtleCrypto.verify(alg, key, mac, pdata);
-    });
-    promise = promise.then(function(result) {
-      if (!result) {
-        return Promise.reject(new Error("verification failed"));
+  if(attributes !== undefined) {
+    for(var i = 0; i < attributes.length; ++i) {
+      var capture = {};
+      var errors = [];
+      if(!asn1.validate(attributes[i], attributeValidator, capture, errors)) {
+        var error = new Error('Cannot read PKCS#12 BagAttribute.');
+        error.errors = errors;
+        throw error;
       }
 
-      return {
-        data: pdata,
-        mac: mac,
-        valid: true
-      };
-    });
-
-    return promise;
-  };
-
-  var nodejs;
-  if (helpers.nodeCrypto && helpers.nodeCrypto.getHashes().indexOf(md) > -1) {
-    nodejs = function(key, pdata, mac) {
-      var verify = helpers.nodeCrypto.createVerify(md);
-      verify.update(pdata);
-      verify.end();
-      var result = verify.verify(rsaUtil.convertToPem(key, true), mac);
-      if (!result) {
-        return Promise.reject(new Error("verification failed"));
+      var oid = asn1.derToOid(capture.oid);
+      if(pki.oids[oid] === undefined) {
+        // unsupported attribute type, ignore.
+        continue;
       }
 
-      return {
-        data: pdata,
-        mac: mac,
-        valid: true,
-      };
-    };
+      decodedAttrs[pki.oids[oid]] = [];
+      for(var j = 0; j < capture.values.length; ++j) {
+        decodedAttrs[pki.oids[oid]].push(capture.values[j].value);
+      }
+    }
   }
 
-  return helpers.setupFallback(nodejs, webcrypto, fallback);
+  return decodedAttrs;
 }
 
-// ### RSA-PSS
-// NOTE: no WebCryptoAPI variant -- too many browsers don't
-// implement it yet (e.g., Firefox, Safari)
+/**
+ * Wraps a private key and certificate in a PKCS#12 PFX wrapper. If a
+ * password is provided then the private key will be encrypted.
+ *
+ * An entire certificate chain may also be included. To do this, pass
+ * an array for the "cert" parameter where the first certificate is
+ * the one that is paired with the private key and each subsequent one
+ * verifies the previous one. The certificates may be in PEM format or
+ * have been already parsed by Forge.
+ *
+ * @todo implement password-based-encryption for the whole package
+ *
+ * @param key the private key.
+ * @param cert the certificate (may be an array of certificates in order
+ *          to specify a certificate chain).
+ * @param password the password to use, null for none.
+ * @param options:
+ *          algorithm the encryption algorithm to use
+ *            ('aes128', 'aes192', 'aes256', '3des'), defaults to 'aes128'.
+ *          count the iteration count to use.
+ *          saltSize the salt size to use.
+ *          useMac true to include a MAC, false not to, defaults to true.
+ *          localKeyId the local key ID to use, in hex.
+ *          friendlyName the friendly name to use.
+ *          generateLocalKeyId true to generate a random local key ID,
+ *            false not to, defaults to true.
+ *
+ * @return the PKCS#12 PFX ASN.1 object.
+ */
+p12.toPkcs12Asn1 = function(key, cert, password, options) {
+  // set default options
+  options = options || {};
+  options.saltSize = options.saltSize || 8;
+  options.count = options.count || 2048;
+  options.algorithm = options.algorithm || options.encAlgorithm || 'aes128';
+  if(!('useMac' in options)) {
+    options.useMac = true;
+  }
+  if(!('localKeyId' in options)) {
+    options.localKeyId = null;
+  }
+  if(!('generateLocalKeyId' in options)) {
+    options.generateLocalKeyId = true;
+  }
 
-function rsassaPssSignFn(name) {
-  var md = name.replace("PS", "SHA").toLowerCase(),
-      hash = name.replace("PS", "SHA-");
-
-  return function(key, pdata) {
-    // create the digest
-    var digest = forge.md[md].create();
-    digest.start();
-    digest.update(pdata);
-
-    // setup padding
-    var pss = forge.pss.create({
-      md: forge.md[md].create(),
-      mgf: forge.mgf.mgf1.create(forge.md[md].create()),
-      saltLength: CONSTANTS.HASHLENGTH[hash] / 8
-    });
-
-    // sign it
-    var pki = rsaUtil.convertToForge(key, false);
-    var sig = pki.sign(digest, pss);
-    sig = new Buffer(sig, "binary");
-
-    return Promise.resolve({
-      data: pdata,
-      mac: sig
-    });
-  };
-}
-
-function rsassaPssVerifyFn(name) {
-  var md = name.replace("PS", "SHA").toLowerCase(),
-      hash = name.replace("PS", "SHA-");
-
-  // ### Fallback implementation -- uses forge
-  return function(key, pdata, mac) {
-    // create the digest
-    var digest = forge.md[md].create();
-    digest.start();
-    digest.update(pdata);
-    digest = digest.digest().bytes();
-
-    // setup padding
-    var pss = forge.pss.create({
-      md: forge.md[md].create(),
-      mgf: forge.mgf.mgf1.create(forge.md[md].create()),
-      saltLength: CONSTANTS.HASHLENGTH[hash] / 8
-    });
-
-    // verify it
-    var pki = rsaUtil.convertToForge(key, true);
-    var sig = mac.toString("binary");
-    var result = pki.verify(digest, sig, pss);
-    if (!result) {
-      return Promise.reject(new Error("verification failed"));
+  var localKeyId = options.localKeyId;
+  var bagAttrs;
+  if(localKeyId !== null) {
+    localKeyId = forge.util.hexToBytes(localKeyId);
+  } else if(options.generateLocalKeyId) {
+    // use SHA-1 of paired cert, if available
+    if(cert) {
+      var pairedCert = forge.util.isArray(cert) ? cert[0] : cert;
+      if(typeof pairedCert === 'string') {
+        pairedCert = pki.certificateFromPem(pairedCert);
+      }
+      var sha1 = forge.md.sha1.create();
+      sha1.update(asn1.toDer(pki.certificateToAsn1(pairedCert)).getBytes());
+      localKeyId = sha1.digest().getBytes();
+    } else {
+      // FIXME: consider using SHA-1 of public key (which can be generated
+      // from private key components), see: cert.generateSubjectKeyIdentifier
+      // generate random bytes
+      localKeyId = forge.random.getBytes(20);
     }
-    return Promise.resolve({
-      data: pdata,
-      mac: mac,
-      valid: true
-    });
+  }
+
+  var attrs = [];
+  if(localKeyId !== null) {
+    attrs.push(
+      // localKeyID
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // attrId
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+          asn1.oidToDer(pki.oids.localKeyId).getBytes()),
+        // attrValues
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true, [
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+            localKeyId)
+        ])
+      ]));
+  }
+  if('friendlyName' in options) {
+    attrs.push(
+      // friendlyName
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // attrId
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+          asn1.oidToDer(pki.oids.friendlyName).getBytes()),
+        // attrValues
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true, [
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.BMPSTRING, false,
+            options.friendlyName)
+        ])
+      ]));
+  }
+
+  if(attrs.length > 0) {
+    bagAttrs = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SET, true, attrs);
+  }
+
+  // collect contents for AuthenticatedSafe
+  var contents = [];
+
+  // create safe bag(s) for certificate chain
+  var chain = [];
+  if(cert !== null) {
+    if(forge.util.isArray(cert)) {
+      chain = cert;
+    } else {
+      chain = [cert];
+    }
+  }
+
+  var certSafeBags = [];
+  for(var i = 0; i < chain.length; ++i) {
+    // convert cert from PEM as necessary
+    cert = chain[i];
+    if(typeof cert === 'string') {
+      cert = pki.certificateFromPem(cert);
+    }
+
+    // SafeBag
+    var certBagAttrs = (i === 0) ? bagAttrs : undefined;
+    var certAsn1 = pki.certificateToAsn1(cert);
+    var certSafeBag =
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // bagId
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+          asn1.oidToDer(pki.oids.certBag).getBytes()),
+        // bagValue
+        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+          // CertBag
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+            // certId
+            asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+              asn1.oidToDer(pki.oids.x509Certificate).getBytes()),
+            // certValue (x509Certificate)
+            asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+              asn1.create(
+                asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+                asn1.toDer(certAsn1).getBytes())
+            ])])]),
+        // bagAttributes (OPTIONAL)
+        certBagAttrs
+      ]);
+    certSafeBags.push(certSafeBag);
+  }
+
+  if(certSafeBags.length > 0) {
+    // SafeContents
+    var certSafeContents = asn1.create(
+      asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, certSafeBags);
+
+    // ContentInfo
+    var certCI =
+      // PKCS#7 ContentInfo
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // contentType
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+          // OID for the content type is 'data'
+          asn1.oidToDer(pki.oids.data).getBytes()),
+        // content
+        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+          asn1.create(
+            asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+            asn1.toDer(certSafeContents).getBytes())
+        ])
+      ]);
+    contents.push(certCI);
+  }
+
+  // create safe contents for private key
+  var keyBag = null;
+  if(key !== null) {
+    // SafeBag
+    var pkAsn1 = pki.wrapRsaPrivateKey(pki.privateKeyToAsn1(key));
+    if(password === null) {
+      // no encryption
+      keyBag = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // bagId
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+          asn1.oidToDer(pki.oids.keyBag).getBytes()),
+        // bagValue
+        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+          // PrivateKeyInfo
+          pkAsn1
+        ]),
+        // bagAttributes (OPTIONAL)
+        bagAttrs
+      ]);
+    } else {
+      // encrypted PrivateKeyInfo
+      keyBag = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // bagId
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+          asn1.oidToDer(pki.oids.pkcs8ShroudedKeyBag).getBytes()),
+        // bagValue
+        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+          // EncryptedPrivateKeyInfo
+          pki.encryptPrivateKeyInfo(pkAsn1, password, options)
+        ]),
+        // bagAttributes (OPTIONAL)
+        bagAttrs
+      ]);
+    }
+
+    // SafeContents
+    var keySafeContents =
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [keyBag]);
+
+    // ContentInfo
+    var keyCI =
+      // PKCS#7 ContentInfo
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // contentType
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+          // OID for the content type is 'data'
+          asn1.oidToDer(pki.oids.data).getBytes()),
+        // content
+        asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+          asn1.create(
+            asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+            asn1.toDer(keySafeContents).getBytes())
+        ])
+      ]);
+    contents.push(keyCI);
+  }
+
+  // create AuthenticatedSafe by stringing together the contents
+  var safe = asn1.create(
+    asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, contents);
+
+  var macData;
+  if(options.useMac) {
+    // MacData
+    var sha1 = forge.md.sha1.create();
+    var macSalt = new forge.util.ByteBuffer(
+      forge.random.getBytes(options.saltSize));
+    var count = options.count;
+    // 160-bit key
+    var key = p12.generateKey(password, macSalt, 3, count, 20);
+    var mac = forge.hmac.create();
+    mac.start(sha1, key);
+    mac.update(asn1.toDer(safe).getBytes());
+    var macValue = mac.getMac();
+    macData = asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+      // mac DigestInfo
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+        // digestAlgorithm
+        asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+          // algorithm = SHA-1
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+            asn1.oidToDer(pki.oids.sha1).getBytes()),
+          // parameters = Null
+          asn1.create(asn1.Class.UNIVERSAL, asn1.Type.NULL, false, '')
+        ]),
+        // digest
+        asn1.create(
+          asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING,
+          false, macValue.getBytes())
+      ]),
+      // macSalt OCTET STRING
+      asn1.create(
+        asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false, macSalt.getBytes()),
+      // iterations INTEGER (XXX: Only support count < 65536)
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
+        asn1.integerToDer(count).getBytes()
+      )
+    ]);
+  }
+
+  // PFX
+  return asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+    // version (3)
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.INTEGER, false,
+      asn1.integerToDer(3).getBytes()),
+    // PKCS#7 ContentInfo
+    asn1.create(asn1.Class.UNIVERSAL, asn1.Type.SEQUENCE, true, [
+      // contentType
+      asn1.create(asn1.Class.UNIVERSAL, asn1.Type.OID, false,
+        // OID for the content type is 'data'
+        asn1.oidToDer(pki.oids.data).getBytes()),
+      // content
+      asn1.create(asn1.Class.CONTEXT_SPECIFIC, 0, true, [
+        asn1.create(
+          asn1.Class.UNIVERSAL, asn1.Type.OCTETSTRING, false,
+          asn1.toDer(safe).getBytes())
+      ])
+    ]),
+    macData
+  ]);
+};
+
+/**
+ * Derives a PKCS#12 key.
+ *
+ * @param password the password to derive the key material from, null or
+ *          undefined for none.
+ * @param salt the salt, as a ByteBuffer, to use.
+ * @param id the PKCS#12 ID byte (1 = key material, 2 = IV, 3 = MAC).
+ * @param iter the iteration count.
+ * @param n the number of bytes to derive from the password.
+ * @param md the message digest to use, defaults to SHA-1.
+ *
+ * @return a ByteBuffer with the bytes derived from the password.
+ */
+p12.generateKey = forge.pbe.generatePkcs12Key;
+
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Secure Hash Algorithm with a 1024-bit block size implementation.
+ *
+ * This includes: SHA-512, SHA-384, SHA-512/224, and SHA-512/256. For
+ * SHA-256 (block size 512 bits), see sha256.js.
+ *
+ * See FIPS 180-4 for details.
+ *
+ * @author Dave Longley
+ *
+ * Copyright (c) 2014-2015 Digital Bazaar, Inc.
+ */
+var forge = __webpack_require__(2);
+__webpack_require__(28);
+__webpack_require__(3);
+
+var sha512 = module.exports = forge.sha512 = forge.sha512 || {};
+
+// SHA-512
+forge.md.sha512 = forge.md.algorithms.sha512 = sha512;
+
+// SHA-384
+var sha384 = forge.sha384 = forge.sha512.sha384 = forge.sha512.sha384 || {};
+sha384.create = function() {
+  return sha512.create('SHA-384');
+};
+forge.md.sha384 = forge.md.algorithms.sha384 = sha384;
+
+// SHA-512/256
+forge.sha512.sha256 = forge.sha512.sha256 || {
+  create: function() {
+    return sha512.create('SHA-512/256');
+  }
+};
+forge.md['sha512/256'] = forge.md.algorithms['sha512/256'] =
+  forge.sha512.sha256;
+
+// SHA-512/224
+forge.sha512.sha224 = forge.sha512.sha224 || {
+  create: function() {
+    return sha512.create('SHA-512/224');
+  }
+};
+forge.md['sha512/224'] = forge.md.algorithms['sha512/224'] =
+  forge.sha512.sha224;
+
+/**
+ * Creates a SHA-2 message digest object.
+ *
+ * @param algorithm the algorithm to use (SHA-512, SHA-384, SHA-512/224,
+ *          SHA-512/256).
+ *
+ * @return a message digest object.
+ */
+sha512.create = function(algorithm) {
+  // do initialization as necessary
+  if(!_initialized) {
+    _init();
+  }
+
+  if(typeof algorithm === 'undefined') {
+    algorithm = 'SHA-512';
+  }
+
+  if(!(algorithm in _states)) {
+    throw new Error('Invalid SHA-512 algorithm: ' + algorithm);
+  }
+
+  // SHA-512 state contains eight 64-bit integers (each as two 32-bit ints)
+  var _state = _states[algorithm];
+  var _h = null;
+
+  // input buffer
+  var _input = forge.util.createBuffer();
+
+  // used for 64-bit word storage
+  var _w = new Array(80);
+  for(var wi = 0; wi < 80; ++wi) {
+    _w[wi] = new Array(2);
+  }
+
+  // determine digest length by algorithm name (default)
+  var digestLength = 64;
+  switch (algorithm) {
+    case 'SHA-384':
+      digestLength = 48;
+      break;
+    case 'SHA-512/256':
+      digestLength = 32;
+      break;
+    case 'SHA-512/224':
+      digestLength = 28;
+      break;
+  }
+
+  // message digest object
+  var md = {
+    // SHA-512 => sha512
+    algorithm: algorithm.replace('-', '').toLowerCase(),
+    blockLength: 128,
+    digestLength: digestLength,
+    // 56-bit length of message so far (does not including padding)
+    messageLength: 0,
+    // true message length
+    fullMessageLength: null,
+    // size of message length in bytes
+    messageLengthSize: 16
   };
+
+  /**
+   * Starts the digest.
+   *
+   * @return this digest object.
+   */
+  md.start = function() {
+    // up to 56-bit message length for convenience
+    md.messageLength = 0;
+
+    // full message length (set md.messageLength128 for backwards-compatibility)
+    md.fullMessageLength = md.messageLength128 = [];
+    var int32s = md.messageLengthSize / 4;
+    for(var i = 0; i < int32s; ++i) {
+      md.fullMessageLength.push(0);
+    }
+    _input = forge.util.createBuffer();
+    _h = new Array(_state.length);
+    for(var i = 0; i < _state.length; ++i) {
+      _h[i] = _state[i].slice(0);
+    }
+    return md;
+  };
+  // start digest automatically for first time
+  md.start();
+
+  /**
+   * Updates the digest with the given message input. The given input can
+   * treated as raw input (no encoding will be applied) or an encoding of
+   * 'utf8' maybe given to encode the input using UTF-8.
+   *
+   * @param msg the message input to update with.
+   * @param encoding the encoding to use (default: 'raw', other: 'utf8').
+   *
+   * @return this digest object.
+   */
+  md.update = function(msg, encoding) {
+    if(encoding === 'utf8') {
+      msg = forge.util.encodeUtf8(msg);
+    }
+
+    // update message length
+    var len = msg.length;
+    md.messageLength += len;
+    len = [(len / 0x100000000) >>> 0, len >>> 0];
+    for(var i = md.fullMessageLength.length - 1; i >= 0; --i) {
+      md.fullMessageLength[i] += len[1];
+      len[1] = len[0] + ((md.fullMessageLength[i] / 0x100000000) >>> 0);
+      md.fullMessageLength[i] = md.fullMessageLength[i] >>> 0;
+      len[0] = ((len[1] / 0x100000000) >>> 0);
+    }
+
+    // add bytes to input buffer
+    _input.putBytes(msg);
+
+    // process bytes
+    _update(_h, _w, _input);
+
+    // compact input buffer every 2K or if empty
+    if(_input.read > 2048 || _input.length() === 0) {
+      _input.compact();
+    }
+
+    return md;
+  };
+
+  /**
+   * Produces the digest.
+   *
+   * @return a byte buffer containing the digest value.
+   */
+  md.digest = function() {
+    /* Note: Here we copy the remaining bytes in the input buffer and
+    add the appropriate SHA-512 padding. Then we do the final update
+    on a copy of the state so that if the user wants to get
+    intermediate digests they can do so. */
+
+    /* Determine the number of bytes that must be added to the message
+    to ensure its length is congruent to 896 mod 1024. In other words,
+    the data to be digested must be a multiple of 1024 bits (or 128 bytes).
+    This data includes the message, some padding, and the length of the
+    message. Since the length of the message will be encoded as 16 bytes (128
+    bits), that means that the last segment of the data must have 112 bytes
+    (896 bits) of message and padding. Therefore, the length of the message
+    plus the padding must be congruent to 896 mod 1024 because
+    1024 - 128 = 896.
+
+    In order to fill up the message length it must be filled with
+    padding that begins with 1 bit followed by all 0 bits. Padding
+    must *always* be present, so if the message length is already
+    congruent to 896 mod 1024, then 1024 padding bits must be added. */
+
+    var finalBlock = forge.util.createBuffer();
+    finalBlock.putBytes(_input.bytes());
+
+    // compute remaining size to be digested (include message length size)
+    var remaining = (
+      md.fullMessageLength[md.fullMessageLength.length - 1] +
+      md.messageLengthSize);
+
+    // add padding for overflow blockSize - overflow
+    // _padding starts with 1 byte with first bit is set (byte value 128), then
+    // there may be up to (blockSize - 1) other pad bytes
+    var overflow = remaining & (md.blockLength - 1);
+    finalBlock.putBytes(_padding.substr(0, md.blockLength - overflow));
+
+    // serialize message length in bits in big-endian order; since length
+    // is stored in bytes we multiply by 8 and add carry from next int
+    var next, carry;
+    var bits = md.fullMessageLength[0] * 8;
+    for(var i = 0; i < md.fullMessageLength.length - 1; ++i) {
+      next = md.fullMessageLength[i + 1] * 8;
+      carry = (next / 0x100000000) >>> 0;
+      bits += carry;
+      finalBlock.putInt32(bits >>> 0);
+      bits = next >>> 0;
+    }
+    finalBlock.putInt32(bits);
+
+    var h = new Array(_h.length);
+    for(var i = 0; i < _h.length; ++i) {
+      h[i] = _h[i].slice(0);
+    }
+    _update(h, _w, finalBlock);
+    var rval = forge.util.createBuffer();
+    var hlen;
+    if(algorithm === 'SHA-512') {
+      hlen = h.length;
+    } else if(algorithm === 'SHA-384') {
+      hlen = h.length - 2;
+    } else {
+      hlen = h.length - 4;
+    }
+    for(var i = 0; i < hlen; ++i) {
+      rval.putInt32(h[i][0]);
+      if(i !== hlen - 1 || algorithm !== 'SHA-512/224') {
+        rval.putInt32(h[i][1]);
+      }
+    }
+    return rval;
+  };
+
+  return md;
+};
+
+// sha-512 padding bytes not initialized yet
+var _padding = null;
+var _initialized = false;
+
+// table of constants
+var _k = null;
+
+// initial hash states
+var _states = null;
+
+/**
+ * Initializes the constant tables.
+ */
+function _init() {
+  // create padding
+  _padding = String.fromCharCode(128);
+  _padding += forge.util.fillString(String.fromCharCode(0x00), 128);
+
+  // create K table for SHA-512
+  _k = [
+    [0x428a2f98, 0xd728ae22], [0x71374491, 0x23ef65cd],
+    [0xb5c0fbcf, 0xec4d3b2f], [0xe9b5dba5, 0x8189dbbc],
+    [0x3956c25b, 0xf348b538], [0x59f111f1, 0xb605d019],
+    [0x923f82a4, 0xaf194f9b], [0xab1c5ed5, 0xda6d8118],
+    [0xd807aa98, 0xa3030242], [0x12835b01, 0x45706fbe],
+    [0x243185be, 0x4ee4b28c], [0x550c7dc3, 0xd5ffb4e2],
+    [0x72be5d74, 0xf27b896f], [0x80deb1fe, 0x3b1696b1],
+    [0x9bdc06a7, 0x25c71235], [0xc19bf174, 0xcf692694],
+    [0xe49b69c1, 0x9ef14ad2], [0xefbe4786, 0x384f25e3],
+    [0x0fc19dc6, 0x8b8cd5b5], [0x240ca1cc, 0x77ac9c65],
+    [0x2de92c6f, 0x592b0275], [0x4a7484aa, 0x6ea6e483],
+    [0x5cb0a9dc, 0xbd41fbd4], [0x76f988da, 0x831153b5],
+    [0x983e5152, 0xee66dfab], [0xa831c66d, 0x2db43210],
+    [0xb00327c8, 0x98fb213f], [0xbf597fc7, 0xbeef0ee4],
+    [0xc6e00bf3, 0x3da88fc2], [0xd5a79147, 0x930aa725],
+    [0x06ca6351, 0xe003826f], [0x14292967, 0x0a0e6e70],
+    [0x27b70a85, 0x46d22ffc], [0x2e1b2138, 0x5c26c926],
+    [0x4d2c6dfc, 0x5ac42aed], [0x53380d13, 0x9d95b3df],
+    [0x650a7354, 0x8baf63de], [0x766a0abb, 0x3c77b2a8],
+    [0x81c2c92e, 0x47edaee6], [0x92722c85, 0x1482353b],
+    [0xa2bfe8a1, 0x4cf10364], [0xa81a664b, 0xbc423001],
+    [0xc24b8b70, 0xd0f89791], [0xc76c51a3, 0x0654be30],
+    [0xd192e819, 0xd6ef5218], [0xd6990624, 0x5565a910],
+    [0xf40e3585, 0x5771202a], [0x106aa070, 0x32bbd1b8],
+    [0x19a4c116, 0xb8d2d0c8], [0x1e376c08, 0x5141ab53],
+    [0x2748774c, 0xdf8eeb99], [0x34b0bcb5, 0xe19b48a8],
+    [0x391c0cb3, 0xc5c95a63], [0x4ed8aa4a, 0xe3418acb],
+    [0x5b9cca4f, 0x7763e373], [0x682e6ff3, 0xd6b2b8a3],
+    [0x748f82ee, 0x5defb2fc], [0x78a5636f, 0x43172f60],
+    [0x84c87814, 0xa1f0ab72], [0x8cc70208, 0x1a6439ec],
+    [0x90befffa, 0x23631e28], [0xa4506ceb, 0xde82bde9],
+    [0xbef9a3f7, 0xb2c67915], [0xc67178f2, 0xe372532b],
+    [0xca273ece, 0xea26619c], [0xd186b8c7, 0x21c0c207],
+    [0xeada7dd6, 0xcde0eb1e], [0xf57d4f7f, 0xee6ed178],
+    [0x06f067aa, 0x72176fba], [0x0a637dc5, 0xa2c898a6],
+    [0x113f9804, 0xbef90dae], [0x1b710b35, 0x131c471b],
+    [0x28db77f5, 0x23047d84], [0x32caab7b, 0x40c72493],
+    [0x3c9ebe0a, 0x15c9bebc], [0x431d67c4, 0x9c100d4c],
+    [0x4cc5d4be, 0xcb3e42b6], [0x597f299c, 0xfc657e2a],
+    [0x5fcb6fab, 0x3ad6faec], [0x6c44198c, 0x4a475817]
+  ];
+
+  // initial hash states
+  _states = {};
+  _states['SHA-512'] = [
+    [0x6a09e667, 0xf3bcc908],
+    [0xbb67ae85, 0x84caa73b],
+    [0x3c6ef372, 0xfe94f82b],
+    [0xa54ff53a, 0x5f1d36f1],
+    [0x510e527f, 0xade682d1],
+    [0x9b05688c, 0x2b3e6c1f],
+    [0x1f83d9ab, 0xfb41bd6b],
+    [0x5be0cd19, 0x137e2179]
+  ];
+  _states['SHA-384'] = [
+    [0xcbbb9d5d, 0xc1059ed8],
+    [0x629a292a, 0x367cd507],
+    [0x9159015a, 0x3070dd17],
+    [0x152fecd8, 0xf70e5939],
+    [0x67332667, 0xffc00b31],
+    [0x8eb44a87, 0x68581511],
+    [0xdb0c2e0d, 0x64f98fa7],
+    [0x47b5481d, 0xbefa4fa4]
+  ];
+  _states['SHA-512/256'] = [
+    [0x22312194, 0xFC2BF72C],
+    [0x9F555FA3, 0xC84C64C2],
+    [0x2393B86B, 0x6F53B151],
+    [0x96387719, 0x5940EABD],
+    [0x96283EE2, 0xA88EFFE3],
+    [0xBE5E1E25, 0x53863992],
+    [0x2B0199FC, 0x2C85B8AA],
+    [0x0EB72DDC, 0x81C52CA2]
+  ];
+  _states['SHA-512/224'] = [
+    [0x8C3D37C8, 0x19544DA2],
+    [0x73E19966, 0x89DCD4D6],
+    [0x1DFAB7AE, 0x32FF9C82],
+    [0x679DD514, 0x582F9FCF],
+    [0x0F6D2B69, 0x7BD44DA8],
+    [0x77E36F73, 0x04C48942],
+    [0x3F9D85A8, 0x6A1D36C8],
+    [0x1112E6AD, 0x91D692A1]
+  ];
+
+  // now initialized
+  _initialized = true;
 }
 
-// ### Public API
-// * [name].sign
-// * [name].verify
-var rsassa = {};
-[
-  "PS256",
-  "PS384",
-  "PS512"
-].forEach(function(name) {
-  rsassa[name] = {
-    sign: rsassaPssSignFn(name),
-    verify: rsassaPssVerifyFn(name)
-  };
-});
+/**
+ * Updates a SHA-512 state with the given byte buffer.
+ *
+ * @param s the SHA-512 state to update.
+ * @param w the array to use to store words.
+ * @param bytes the byte buffer to update with.
+ */
+function _update(s, w, bytes) {
+  // consume 512 bit (128 byte) chunks
+  var t1_hi, t1_lo;
+  var t2_hi, t2_lo;
+  var s0_hi, s0_lo;
+  var s1_hi, s1_lo;
+  var ch_hi, ch_lo;
+  var maj_hi, maj_lo;
+  var a_hi, a_lo;
+  var b_hi, b_lo;
+  var c_hi, c_lo;
+  var d_hi, d_lo;
+  var e_hi, e_lo;
+  var f_hi, f_lo;
+  var g_hi, g_lo;
+  var h_hi, h_lo;
+  var i, hi, lo, w2, w7, w15, w16;
+  var len = bytes.length();
+  while(len >= 128) {
+    // the w array will be populated with sixteen 64-bit big-endian words
+    // and then extended into 64 64-bit words according to SHA-512
+    for(i = 0; i < 16; ++i) {
+      w[i][0] = bytes.getInt32() >>> 0;
+      w[i][1] = bytes.getInt32() >>> 0;
+    }
+    for(; i < 80; ++i) {
+      // for word 2 words ago: ROTR 19(x) ^ ROTR 61(x) ^ SHR 6(x)
+      w2 = w[i - 2];
+      hi = w2[0];
+      lo = w2[1];
 
-[
-  "RS256",
-  "RS384",
-  "RS512"
-].forEach(function(name) {
-  rsassa[name] = {
-    sign: rsassaV15SignFn(name),
-    verify: rsassaV15VerifyFn(name)
-  };
-});
+      // high bits
+      t1_hi = (
+        ((hi >>> 19) | (lo << 13)) ^ // ROTR 19
+        ((lo >>> 29) | (hi << 3)) ^ // ROTR 61/(swap + ROTR 29)
+        (hi >>> 6)) >>> 0; // SHR 6
+      // low bits
+      t1_lo = (
+        ((hi << 13) | (lo >>> 19)) ^ // ROTR 19
+        ((lo << 3) | (hi >>> 29)) ^ // ROTR 61/(swap + ROTR 29)
+        ((hi << 26) | (lo >>> 6))) >>> 0; // SHR 6
 
-module.exports = rsassa;
+      // for word 15 words ago: ROTR 1(x) ^ ROTR 8(x) ^ SHR 7(x)
+      w15 = w[i - 15];
+      hi = w15[0];
+      lo = w15[1];
+
+      // high bits
+      t2_hi = (
+        ((hi >>> 1) | (lo << 31)) ^ // ROTR 1
+        ((hi >>> 8) | (lo << 24)) ^ // ROTR 8
+        (hi >>> 7)) >>> 0; // SHR 7
+      // low bits
+      t2_lo = (
+        ((hi << 31) | (lo >>> 1)) ^ // ROTR 1
+        ((hi << 24) | (lo >>> 8)) ^ // ROTR 8
+        ((hi << 25) | (lo >>> 7))) >>> 0; // SHR 7
+
+      // sum(t1, word 7 ago, t2, word 16 ago) modulo 2^64 (carry lo overflow)
+      w7 = w[i - 7];
+      w16 = w[i - 16];
+      lo = (t1_lo + w7[1] + t2_lo + w16[1]);
+      w[i][0] = (t1_hi + w7[0] + t2_hi + w16[0] +
+        ((lo / 0x100000000) >>> 0)) >>> 0;
+      w[i][1] = lo >>> 0;
+    }
+
+    // initialize hash value for this chunk
+    a_hi = s[0][0];
+    a_lo = s[0][1];
+    b_hi = s[1][0];
+    b_lo = s[1][1];
+    c_hi = s[2][0];
+    c_lo = s[2][1];
+    d_hi = s[3][0];
+    d_lo = s[3][1];
+    e_hi = s[4][0];
+    e_lo = s[4][1];
+    f_hi = s[5][0];
+    f_lo = s[5][1];
+    g_hi = s[6][0];
+    g_lo = s[6][1];
+    h_hi = s[7][0];
+    h_lo = s[7][1];
+
+    // round function
+    for(i = 0; i < 80; ++i) {
+      // Sum1(e) = ROTR 14(e) ^ ROTR 18(e) ^ ROTR 41(e)
+      s1_hi = (
+        ((e_hi >>> 14) | (e_lo << 18)) ^ // ROTR 14
+        ((e_hi >>> 18) | (e_lo << 14)) ^ // ROTR 18
+        ((e_lo >>> 9) | (e_hi << 23))) >>> 0; // ROTR 41/(swap + ROTR 9)
+      s1_lo = (
+        ((e_hi << 18) | (e_lo >>> 14)) ^ // ROTR 14
+        ((e_hi << 14) | (e_lo >>> 18)) ^ // ROTR 18
+        ((e_lo << 23) | (e_hi >>> 9))) >>> 0; // ROTR 41/(swap + ROTR 9)
+
+      // Ch(e, f, g) (optimized the same way as SHA-1)
+      ch_hi = (g_hi ^ (e_hi & (f_hi ^ g_hi))) >>> 0;
+      ch_lo = (g_lo ^ (e_lo & (f_lo ^ g_lo))) >>> 0;
+
+      // Sum0(a) = ROTR 28(a) ^ ROTR 34(a) ^ ROTR 39(a)
+      s0_hi = (
+        ((a_hi >>> 28) | (a_lo << 4)) ^ // ROTR 28
+        ((a_lo >>> 2) | (a_hi << 30)) ^ // ROTR 34/(swap + ROTR 2)
+        ((a_lo >>> 7) | (a_hi << 25))) >>> 0; // ROTR 39/(swap + ROTR 7)
+      s0_lo = (
+        ((a_hi << 4) | (a_lo >>> 28)) ^ // ROTR 28
+        ((a_lo << 30) | (a_hi >>> 2)) ^ // ROTR 34/(swap + ROTR 2)
+        ((a_lo << 25) | (a_hi >>> 7))) >>> 0; // ROTR 39/(swap + ROTR 7)
+
+      // Maj(a, b, c) (optimized the same way as SHA-1)
+      maj_hi = ((a_hi & b_hi) | (c_hi & (a_hi ^ b_hi))) >>> 0;
+      maj_lo = ((a_lo & b_lo) | (c_lo & (a_lo ^ b_lo))) >>> 0;
+
+      // main algorithm
+      // t1 = (h + s1 + ch + _k[i] + _w[i]) modulo 2^64 (carry lo overflow)
+      lo = (h_lo + s1_lo + ch_lo + _k[i][1] + w[i][1]);
+      t1_hi = (h_hi + s1_hi + ch_hi + _k[i][0] + w[i][0] +
+        ((lo / 0x100000000) >>> 0)) >>> 0;
+      t1_lo = lo >>> 0;
+
+      // t2 = s0 + maj modulo 2^64 (carry lo overflow)
+      lo = s0_lo + maj_lo;
+      t2_hi = (s0_hi + maj_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+      t2_lo = lo >>> 0;
+
+      h_hi = g_hi;
+      h_lo = g_lo;
+
+      g_hi = f_hi;
+      g_lo = f_lo;
+
+      f_hi = e_hi;
+      f_lo = e_lo;
+
+      // e = (d + t1) modulo 2^64 (carry lo overflow)
+      lo = d_lo + t1_lo;
+      e_hi = (d_hi + t1_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+      e_lo = lo >>> 0;
+
+      d_hi = c_hi;
+      d_lo = c_lo;
+
+      c_hi = b_hi;
+      c_lo = b_lo;
+
+      b_hi = a_hi;
+      b_lo = a_lo;
+
+      // a = (t1 + t2) modulo 2^64 (carry lo overflow)
+      lo = t1_lo + t2_lo;
+      a_hi = (t1_hi + t2_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+      a_lo = lo >>> 0;
+    }
+
+    // update hash state (additional modulo 2^64)
+    lo = s[0][1] + a_lo;
+    s[0][0] = (s[0][0] + a_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+    s[0][1] = lo >>> 0;
+
+    lo = s[1][1] + b_lo;
+    s[1][0] = (s[1][0] + b_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+    s[1][1] = lo >>> 0;
+
+    lo = s[2][1] + c_lo;
+    s[2][0] = (s[2][0] + c_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+    s[2][1] = lo >>> 0;
+
+    lo = s[3][1] + d_lo;
+    s[3][0] = (s[3][0] + d_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+    s[3][1] = lo >>> 0;
+
+    lo = s[4][1] + e_lo;
+    s[4][0] = (s[4][0] + e_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+    s[4][1] = lo >>> 0;
+
+    lo = s[5][1] + f_lo;
+    s[5][0] = (s[5][0] + f_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+    s[5][1] = lo >>> 0;
+
+    lo = s[6][1] + g_lo;
+    s[6][0] = (s[6][0] + g_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+    s[6][1] = lo >>> 0;
+
+    lo = s[7][1] + h_lo;
+    s[7][0] = (s[7][0] + h_hi + ((lo / 0x100000000) >>> 0)) >>> 0;
+    s[7][1] = lo >>> 0;
+
+    len -= 128;
+  }
+}
+
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+var pad_string_1 = __webpack_require__(215);
+function encode(input, encoding) {
+    if (encoding === void 0) { encoding = "utf8"; }
+    if (Buffer.isBuffer(input)) {
+        return fromBase64(input.toString("base64"));
+    }
+    return fromBase64(new Buffer(input, encoding).toString("base64"));
+}
+;
+function decode(base64url, encoding) {
+    if (encoding === void 0) { encoding = "utf8"; }
+    return new Buffer(toBase64(base64url), "base64").toString(encoding);
+}
+function toBase64(base64url) {
+    base64url = base64url.toString();
+    return pad_string_1.default(base64url)
+        .replace(/\-/g, "+")
+        .replace(/_/g, "/");
+}
+function fromBase64(base64) {
+    return base64
+        .replace(/=/g, "")
+        .replace(/\+/g, "-")
+        .replace(/\//g, "_");
+}
+function toBuffer(base64url) {
+    return new Buffer(toBase64(base64url), "base64");
+}
+var base64url = encode;
+base64url.encode = encode;
+base64url.decode = decode;
+base64url.toBase64 = toBase64;
+base64url.fromBase64 = fromBase64;
+base64url.toBuffer = toBuffer;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = base64url;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 229 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * jwe/encrypt.js - Encrypt to a JWE
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+function padString(input) {
+    var segmentLength = 4;
+    var stringLength = input.length;
+    var diff = stringLength % segmentLength;
+    if (!diff) {
+        return input;
+    }
+    var position = stringLength;
+    var padLength = segmentLength - diff;
+    var paddedStringLength = stringLength + padLength;
+    var buffer = new Buffer(paddedStringLength);
+    buffer.write(input);
+    while (padLength--) {
+        buffer.write("=", position++);
+    }
+    return buffer.toString();
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = padString;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * util/utf8.js - Implementation of UTF-8 Encoder/Decoder
  *
  * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
  */
 
 
-var assign = __webpack_require__(123),
-    clone = __webpack_require__(21),
-    util = __webpack_require__(7),
-    generateCEK = __webpack_require__(124).generateCEK,
-    JWK = __webpack_require__(35),
-    slice = __webpack_require__(124).slice,
-    zlib = __webpack_require__(129),
-    CONSTANTS = __webpack_require__(20);
+var utf8 = exports;
 
-var DEFAULTS = __webpack_require__(260);
-
-/**
- * @class JWE.Encrypter
- * @classdesc
- * Generator of encrypted data.
- *
- * @description
- * **NOTE:** This class cannot be instantiated directly. Instead call {@link
- * JWE.createEncrypt}.
- */
-function JWEEncrypter(cfg, fields, recipients) {
-  var finalized = false,
-    format = cfg.format || "general",
-    protectAll = !!cfg.protectAll,
-    content = new Buffer(0);
-
-  /**
-   * @member {String} JWE.Encrypter#zip
-   * @readonly
-   * @description
-   * Indicates the compression algorithm applied to the plaintext
-   * before it is encrypted.  The possible values are:
-   *
-   * + **`"DEF"`**: Compress the plaintext using the DEFLATE algorithm.
-   * + **`""`**: Do not compress the plaintext.
-   */
-  Object.defineProperty(this, "zip", {
-    get: function() {
-      return fields.zip || "";
-    },
-    enumerable: true
-  });
-  /**
-   * @member {Boolean} JWE.Encrypter#compact
-   * @readonly
-   * @description
-   * Indicates whether the output of this encryption generator is
-   * using the Compact serialization (`true`) or the JSON
-   * serialization (`false`).
-   */
-  Object.defineProperty(this, "compact", {
-    get: function() { return "compact" === format; },
-    enumerable: true
-  });
-  /**
-   * @member {String} JWE.Encrypter#format
-   * @readonly
-   * @description
-   * Indicates the format the output of this encryption generator takes.
-   */
-  Object.defineProperty(this, "format", {
-    get: function() { return format; },
-    enumerable: true
-  });
-  /**
-   * @member {String[]} JWE.Encrypter#protected
-   * @readonly
-   * @description
-   * The header parameter names that are protected. Protected header fields
-   * are first serialized to UTF-8 then encoded as util.base64url, then used as
-   * the additional authenticated data in the encryption operation.
-   */
-  Object.defineProperty(this, "protected", {
-    get: function() {
-      return clone(cfg.protect);
-    },
-    enumerable: true
-  });
-  /**
-   * @member {Object} JWE.Encrypter#header
-   * @readonly
-   * @description
-   * The global header parameters, both protected and unprotected. Call
-   * {@link JWE.Encrypter#protected} to determine which parameters will
-   * be protected.
-   */
-  Object.defineProperty(this, "header", {
-    get: function() {
-      return clone(fields);
-    },
-    enumerable: true
+utf8.encode = function(input) {
+  var output = encodeURIComponent(input || "");
+  output = output.replace(/\%([0-9a-fA-F]{2})/g, function(m, code) {
+    code = parseInt(code, 16);
+    return String.fromCharCode(code);
   });
 
-  /**
-   * @method JWE.Encrypter#update
-   * @description
-   * Updates the plaintext data for the encryption generator. The plaintext
-   * is appended to the end of any other plaintext already applied.
-   *
-   * If {data} is a Buffer, {encoding} is ignored. Otherwise, {data} is
-   * converted to a Buffer internally to {encoding}.
-   *
-   * @param {Buffer|String} [data] The plaintext to apply.
-   * @param {String} [encoding] The encoding of the plaintext.
-   * @returns {JWE.Encrypter} This encryption generator.
-   * @throws {Error} If ciphertext has already been generated.
-   */
-  Object.defineProperty(this, "update", {
-    value: function(data, encoding) {
-      if (finalized) {
-        throw new Error("already final");
-      }
-      if (data != null) {
-        data = util.asBuffer(data, encoding);
-        if (content.length) {
-          content = Buffer.concat([content, data],
-                      content.length + data.length);
-        } else {
-          content = data;
-        }
-      }
-
-      return this;
-    }
+  return output;
+};
+utf8.decode = function(input) {
+  var output = (input || "").replace(/[\u0080-\u00ff]/g, function(m) {
+    var code = (0x100 | m.charCodeAt(0)).toString(16).substring(1);
+    return "%" + code;
   });
-  /**
-   * @method JWE.Encrypter#final
-   * @description
-   * Finishes the encryption operation.
-   *
-   * The returned Promise, when fulfilled, is the JSON Web Encryption (JWE)
-   * object, either in the Compact (if {@link JWE.Encrypter#compact} is
-   * `true`) or the JSON serialization.
-   *
-   * @param {Buffer|String} [data] The final plaintext data to apply.
-   * @param {String} [encoding] The encoding of the final plaintext data
-   *        (if any).
-   * @returns {Promise} A promise for the encryption operation.
-   * @throws {Error} If ciphertext has already been generated.
-   */
-  Object.defineProperty(this, "final", {
-    value: function(data, encoding) {
-      if (finalized) {
-        return Promise.reject(new Error("already final"));
-      }
+  output = decodeURIComponent(output);
 
-      // last-minute data
-      this.update(data, encoding);
-
-      // mark as done...ish
-      finalized = true;
-      var promise = Promise.resolve({});
-
-      // determine CEK and IV
-      var encAlg = fields.enc;
-      var encKey;
-      promise = promise.then(function(jwe) {
-        if (cfg.cek) {
-          encKey = JWK.asKey(cfg.cek);
-        }
-        return jwe;
-      });
-
-      // process recipients
-      promise = promise.then(function(jwe) {
-        var procR = function(r, one) {
-          var props = {};
-          props = assign(props, fields);
-          props = assign(props, r.header);
-
-          var algKey = r.key,
-              algAlg = props.alg;
-
-          // generate Ephemeral EC Key
-          var tks,
-              rpromise;
-          if (props.alg.indexOf("ECDH-ES") === 0) {
-            tks = algKey.keystore.temp();
-            if (r.epk) {
-              rpromise = Promise.resolve(r.epk).
-                then(function(epk) {
-                  r.header.epk = epk.toJSON(false, ["kid"]);
-                  props.epk = epk.toObject(true, ["kid"]);
-                });
-            } else {
-              rpromise = tks.generate("EC", algKey.get("crv")).
-                then(function(epk) {
-                  r.header.epk = epk.toJSON(false, ["kid"]);
-                  props.epk = epk.toObject(true, ["kid"]);
-                });
-            }
-          } else {
-            rpromise = Promise.resolve();
-          }
-
-          // encrypt the CEK
-          rpromise = rpromise.then(function() {
-            var cek,
-                p;
-            // special case 'alg=dir'
-            if ("dir" === algAlg && one) {
-              encKey = Promise.resolve(algKey);
-              p = encKey.then(function(jwk) {
-                // fixup encAlg
-                if (!encAlg) {
-                  props.enc = fields.enc = encAlg = jwk.algorithms(JWK.MODE_ENCRYPT)[0];
-                }
-                return {
-                  once: true,
-                  direct: true
-                };
-              });
-            } else {
-              if (!encKey) {
-                if (!encAlg) {
-                  props.enc = fields.enc = encAlg = cfg.contentAlg;
-                }
-                encKey = generateCEK(encAlg);
-              }
-              p = encKey.then(function(jwk) {
-                cek = jwk.get("k", true);
-                // algKey may or may not be a promise
-                return algKey;
-              });
-              p = p.then(function(algKey) {
-                return algKey.wrap(algAlg, cek, props);
-              });
-            }
-            return p;
-          });
-          rpromise = rpromise.then(function(wrapped) {
-            if (wrapped.once && !one) {
-              return Promise.reject(new Error("cannot use 'alg':'" + algAlg + "' with multiple recipients"));
-            }
-
-            var rjwe = {},
-                cek;
-            if (wrapped.data) {
-              cek = wrapped.data;
-              cek = util.base64url.encode(cek);
-            }
-
-            if (wrapped.direct && cek) {
-              // replace content key
-              encKey = JWK.asKey({
-                kty: "oct",
-                k: cek
-              });
-            } else if (cek) {
-              /* eslint camelcase: [0] */
-              rjwe.encrypted_key = cek;
-            }
-
-            if (r.header && Object.keys(r.header).length) {
-              rjwe.header = clone(r.header || {});
-            }
-            if (wrapped.header) {
-              rjwe.header = assign(rjwe.header || {},
-                                     wrapped.header);
-            }
-
-            return rjwe;
-           });
-           return rpromise;
-        };
-
-        var p = Promise.all(recipients);
-        p = p.then(function(rcpts) {
-          var single = (1 === rcpts.length);
-          rcpts = rcpts.map(function(r) {
-            return procR(r, single);
-          });
-          return Promise.all(rcpts);
-        });
-        p = p.then(function(rcpts) {
-          jwe.recipients = rcpts.filter(function(r) { return !!r; });
-          return jwe;
-        });
-        return p;
-      });
-
-      // normalize headers
-      var props = {};
-      promise = promise.then(function(jwe) {
-        var protect,
-          lenProtect,
-          unprotect,
-          lenUnprotect;
-
-        unprotect = clone(fields);
-        if ((protectAll && jwe.recipients.length === 1) || "compact" === format) {
-          // merge single recipient into fields
-          protect = assign(jwe.recipients[0].header || {},
-                     unprotect);
-          lenProtect = Object.keys(protect).length;
-
-          unprotect = undefined;
-          lenUnprotect = 0;
-
-          delete jwe.recipients[0].header;
-          if (Object.keys(jwe.recipients[0]).length === 0) {
-            jwe.recipients.splice(0, 1);
-          }
-        } else {
-          protect = {};
-          lenProtect = 0;
-          lenUnprotect = Object.keys(unprotect).length;
-          cfg.protect.forEach(function(f) {
-            if (!(f in unprotect)) {
-              return;
-            }
-            protect[f] = unprotect[f];
-            lenProtect++;
-
-            delete unprotect[f];
-            lenUnprotect--;
-          });
-        }
-
-        if (!jwe.recipients || jwe.recipients.length === 0) {
-          delete jwe.recipients;
-        }
-
-        // "serialize" (and setup merged props)
-        if (unprotect && lenUnprotect > 0) {
-          props = assign(props, unprotect);
-          jwe.unprotected = unprotect;
-        }
-        if (protect && lenProtect > 0) {
-          props = assign(props, protect);
-          protect = JSON.stringify(protect);
-          jwe.protected = util.base64url.encode(protect, "utf8");
-        }
-
-        return jwe;
-      });
-
-      // (OPTIONAL) compress plaintext
-      promise = promise.then(function(jwe) {
-        var pdata = content;
-        if (!props.zip) {
-          jwe.plaintext = pdata;
-          return jwe;
-        } else if (props.zip === "DEF") {
-          return new Promise(function(resolve, reject) {
-            zlib.deflateRaw(new Buffer(pdata, "binary"), function(err, data) {
-              if (err) {
-                reject(err);
-              }
-              else {
-                jwe.plaintext = data;
-                resolve(jwe);
-              }
-            });
-          });
-        }
-        return Promise.reject(new Error("unsupported 'zip' mode"));
-      });
-
-      // encrypt plaintext
-      promise = promise.then(function(jwe) {
-        props.adata = jwe.protected;
-        if ("aad" in cfg && cfg.aad != null) {
-          props.adata += "." + cfg.aad;
-          props.adata = new Buffer(props.adata, "utf8");
-        }
-        // calculate IV
-        var iv = cfg.iv ||
-                 util.randomBytes(CONSTANTS.NONCELENGTH[encAlg] / 8);
-        if ("string" === typeof iv) {
-          iv = util.base64url.decode(iv);
-        }
-        props.iv = iv;
-
-        if ("recipients" in jwe && jwe.recipients.length === 1) {
-          props.kdata = jwe.recipients[0].encrypted_key;
-        }
-
-        if ("epu" in cfg && cfg.epu != null) {
-          props.epu = cfg.epu;
-        }
-
-        if ("epv" in cfg && cfg.epv != null) {
-          props.epv = cfg.epv;
-        }
-
-        var pdata = jwe.plaintext;
-        delete jwe.plaintext;
-        return encKey.then(function(encKey) {
-          var p = encKey.encrypt(encAlg, pdata, props);
-          p = p.then(function(result) {
-            jwe.iv = util.base64url.encode(iv, "binary");
-            if ("aad" in cfg && cfg.aad != null) {
-             jwe.aad = cfg.aad;
-            }
-            jwe.ciphertext = util.base64url.encode(result.data, "binary");
-            jwe.tag = util.base64url.encode(result.tag, "binary");
-            return jwe;
-          });
-          return p;
-        });
-      });
-
-      // (OPTIONAL) compact/flattened results
-      switch (format) {
-        case "compact":
-          promise = promise.then(function(jwe) {
-            var compact = new Array(5);
-
-            compact[0] = jwe.protected;
-            if (jwe.recipients && jwe.recipients[0]) {
-              compact[1] = jwe.recipients[0].encrypted_key;
-            }
-
-            compact[2] = jwe.iv;
-            compact[3] = jwe.ciphertext;
-            compact[4] = jwe.tag;
-            compact = compact.join(".");
-
-            return compact;
-          });
-          break;
-        case "flattened":
-          promise = promise.then(function(jwe) {
-            var flattened = {},
-                rcpt = jwe.recipients && jwe.recipients[0];
-
-            if (jwe.protected) {
-              flattened.protected = jwe.protected;
-            }
-            if (jwe.unprotected) {
-              flattened.unprotected = jwe.unprotected;
-            }
-            ["header", "encrypted_key"].forEach(function(f) {
-              if (!rcpt) { return; }
-              if (!(f in rcpt)) { return; }
-              flattened[f] = rcpt[f];
-            });
-            if (jwe.aad) {
-              flattened.aad = jwe.aad;
-            }
-            flattened.iv = jwe.iv;
-            flattened.ciphertext = jwe.ciphertext;
-            flattened.tag = jwe.tag;
-
-            return flattened;
-          });
-          break;
-      }
-
-      return promise;
-    }
-  });
-}
-
-function createEncrypt(opts, rcpts) {
-  // fixup recipients
-  var options = opts,
-    rcptStart = 1,
-    rcptList = rcpts;
-
-  if (arguments.length === 0) {
-    throw new Error("at least one recipient must be provided");
-  }
-  if (arguments.length === 1) {
-    // assume opts is the recipient list
-    rcptList = opts;
-    rcptStart = 0;
-    options = {};
-  } else if (JWK.isKey(opts) ||
-        (opts && "kty" in opts) ||
-        (opts && "key" in opts &&
-        (JWK.isKey(opts.key) || "kty" in opts.key))) {
-    rcptList = opts;
-    rcptStart = 0;
-    options = {};
-  } else {
-    options = clone(opts);
-  }
-  if (!Array.isArray(rcptList)) {
-    rcptList = slice(arguments, rcptStart);
-  }
-
-  // fixup options
-  options = assign(clone(DEFAULTS), options);
-
-  // setup header fields
-  var fields = clone(options.fields || {});
-  if (options.zip) {
-    fields.zip = (typeof options.zip === "boolean") ?
-           (options.zip ? "DEF" : false) :
-           options.zip;
-  }
-  options.format = (options.compact ? "compact" : options.format) || "general";
-  switch (options.format) {
-    case "compact":
-      if ("aad" in opts) {
-        throw new Error("additional authenticated data cannot be used for compact serialization");
-      }
-      /* eslint no-fallthrough: [0] */
-    case "flattened":
-      if (rcptList.length > 1) {
-        throw new Error("too many recipients for compact serialization");
-      }
-      break;
-  }
-
-  // note protected fields (globally)
-  // protected fields are global only
-  var protectAll = false;
-  if ("compact" === options.format || "*" === options.protect) {
-    protectAll = true;
-    options.protect = Object.keys(fields).concat("enc");
-  } else if (typeof options.protect === "string") {
-    options.protect = [options.protect];
-  } else if (Array.isArray(options.protect)) {
-    options.protect = options.protect.concat();
-  } else if (!options.protect) {
-    options.protect = [];
-  } else {
-    throw new Error("protect must be a list of fields");
-  }
-
-  if (protectAll && 1 < rcptList.length) {
-    throw new Error("too many recipients to protect all header parameters");
-  }
-
-  rcptList = rcptList.map(function(r, idx) {
-    var p;
-
-    // resolve a key
-    if (r && "kty" in r) {
-      p = JWK.asKey(r);
-      p = p.then(function(k) {
-        return {
-          key: k
-        };
-      });
-    } else if (r) {
-      p = JWK.asKey(r.key);
-      p = p.then(function(k) {
-        return {
-          header: r.header,
-          reference: r.reference,
-          key: k
-        };
-      });
-    } else {
-      p = Promise.reject(new Error("missing key for recipient " + idx));
-    }
-
-    // convert ephemeral key (if present)
-    if (r.epk) {
-      p = p.then(function(recipient) {
-        return JWK.asKey(r.epk).
-          then(function(epk) {
-            recipient.epk = epk;
-            return recipient;
-          });
-      });
-    }
-
-    // resolve the complete recipient
-    p = p.then(function(recipient) {
-      var key = recipient.key;
-
-      // prepare the recipient header
-      var header = recipient.header || {};
-      recipient.header = header;
-      var props = {};
-      props = assign(props, fields);
-      props = assign(props, recipient.header);
-
-      // ensure key protection algorithm is set
-      if (!props.alg) {
-        props.alg = key.algorithms(JWK.MODE_WRAP)[0];
-      }
-      header.alg = props.alg;
-
-      // determine the key reference
-      var ref = recipient.reference;
-      delete recipient.reference;
-      if (undefined === ref) {
-        // header already contains the key reference
-        ref = ["kid", "jku", "x5c", "x5t", "x5u"].some(function(k) {
-          return (k in header);
-        });
-        ref = !ref ? "kid" : null;
-      } else if ("boolean" === typeof ref) {
-        // explicit (positive | negative) request for key reference
-        ref = ref ? "kid" : null;
-      }
-      var jwk;
-      if (ref) {
-        jwk = key.toJSON();
-        if ("jwk" === ref) {
-          header.jwk = jwk;
-        } else if (ref in jwk) {
-          header[ref] = jwk[ref];
-        }
-      }
-
-      // freeze recipient
-      recipient = Object.freeze(recipient);
-      return recipient;
-    });
-
-    return p;
-  });
-
-  // create and configure encryption
-  var cfg = {
-    aad: ("aad" in options) ? util.base64url.encode(options.aad || "") : null,
-    contentAlg: options.contentAlg,
-    format: options.format,
-    protect: options.protect,
-    cek: options.cek,
-    iv: options.iv,
-    protectAll: protectAll
-  };
-  var enc = new JWEEncrypter(cfg, fields, rcptList);
-
-  return enc;
-}
-
-module.exports = {
-  encrypter: JWEEncrypter,
-  createEncrypt: createEncrypt
+  return output;
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 230 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -72661,7 +69111,7 @@ module.exports = flatten;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 231 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -73733,11 +70183,11 @@ module.exports = intersection;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 232 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var v1 = __webpack_require__(233);
-var v4 = __webpack_require__(234);
+var v1 = __webpack_require__(220);
+var v4 = __webpack_require__(221);
 
 var uuid = v4;
 uuid.v1 = v1;
@@ -73747,11 +70197,11 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 233 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var rng = __webpack_require__(126);
-var bytesToUuid = __webpack_require__(127);
+var rng = __webpack_require__(120);
+var bytesToUuid = __webpack_require__(121);
 
 // **`v1()` - Generate time-based UUID**
 //
@@ -73853,11 +70303,11 @@ module.exports = v1;
 
 
 /***/ }),
-/* 234 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var rng = __webpack_require__(126);
-var bytesToUuid = __webpack_require__(127);
+var rng = __webpack_require__(120);
+var bytesToUuid = __webpack_require__(121);
 
 function v4(options, buf, offset) {
   var i = buf && offset || 0;
@@ -73888,7 +70338,3566 @@ module.exports = v4;
 
 
 /***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/aes-cbc-hmac-sha2.js - AES-CBC-HMAC-SHA2 Composited Encryption
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var helpers = __webpack_require__(12),
+    HMAC = __webpack_require__(84),
+    sha = __webpack_require__(60),
+    forge = __webpack_require__(5),
+    DataBuffer = __webpack_require__(41),
+    util = __webpack_require__(7);
+
+function checkIv(iv) {
+  if (16 !== iv.length) {
+    throw new Error("invalid iv");
+  }
+}
+
+function commonCbcEncryptFN(size) {
+  // ### 'fallback' implementation -- uses forge
+  var fallback = function(encKey, pdata, iv) {
+    try {
+      checkIv(iv);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var promise = Promise.resolve();
+
+    promise = promise.then(function() {
+      var cipher = forge.cipher.createCipher("AES-CBC", new DataBuffer(encKey));
+      cipher.start({
+        iv: new DataBuffer(iv)
+      });
+
+      // TODO: chunk data
+      cipher.update(new DataBuffer(pdata));
+      if (!cipher.finish()) {
+        return Promise.reject(new Error("encryption failed"));
+      }
+
+      var cdata = cipher.output.native();
+      return cdata;
+    });
+
+    return promise;
+  };
+
+  // ### WebCryptoAPI implementation
+  // TODO: cache CryptoKey sooner
+  var webcrypto = function(encKey, pdata, iv) {
+    try {
+      checkIv(iv);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var promise = Promise.resolve();
+
+    promise = promise.then(function() {
+      var alg = {
+        name: "AES-CBC"
+      };
+      return helpers.subtleCrypto.importKey("raw", encKey, alg, true, ["encrypt"]);
+    });
+    promise = promise.then(function(key) {
+      var alg = {
+        name: "AES-CBC",
+        iv: iv
+      };
+      return helpers.subtleCrypto.encrypt(alg, key, pdata);
+    });
+    promise = promise.then(function(cdata) {
+      cdata = new Buffer(cdata);
+      return cdata;
+    });
+
+    return promise;
+  };
+
+  // ### NodeJS implementation
+  var nodejs = function(encKey, pdata, iv) {
+    try {
+      checkIv(iv);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var promise = Promise.resolve(pdata);
+
+    promise = promise.then(function(pdata) {
+      var name = "AES-" + size + "-CBC";
+      var cipher = helpers.nodeCrypto.createCipheriv(name, encKey, iv);
+      var cdata = Buffer.concat([
+        cipher.update(pdata),
+        cipher.final()
+      ]);
+      return cdata;
+    });
+
+    return promise;
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+function commonCbcDecryptFN(size) {
+  // ### 'fallback' implementation -- uses forge
+  var fallback = function(encKey, cdata, iv) {
+    // validate inputs
+    try {
+      checkIv(iv);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var promise = Promise.resolve();
+
+    promise = promise.then(function() {
+      var cipher = forge.cipher.createDecipher("AES-CBC", new DataBuffer(encKey));
+      cipher.start({
+        iv: new DataBuffer(iv)
+      });
+
+      // TODO: chunk data
+      cipher.update(new DataBuffer(cdata));
+      if (!cipher.finish()) {
+        return Promise.reject(new Error("encryption failed"));
+      }
+
+      var pdata = cipher.output.native();
+      return pdata;
+    });
+
+    return promise;
+  };
+
+  // ### WebCryptoAPI implementation
+  // TODO: cache CryptoKey sooner
+  var webcrypto = function(encKey, cdata, iv) {
+    // validate inputs
+    try {
+      checkIv(iv);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var promise = Promise.resolve();
+
+    promise = promise.then(function() {
+      var alg = {
+        name: "AES-CBC"
+      };
+      return helpers.subtleCrypto.importKey("raw", encKey, alg, true, ["decrypt"]);
+    });
+    promise = promise.then(function(key) {
+      var alg = {
+        name: "AES-CBC",
+        iv: iv
+      };
+      return helpers.subtleCrypto.decrypt(alg, key, cdata);
+    });
+    promise = promise.then(function(pdata) {
+      pdata = new Buffer(pdata);
+      return pdata;
+    });
+
+    return promise;
+  };
+
+  // ### NodeJS implementation
+  var nodejs = function(encKey, cdata, iv) {
+    // validate inputs
+    try {
+      checkIv(iv);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var promise = Promise.resolve();
+
+    promise = promise.then(function() {
+      var name = "AES-" + size + "-CBC";
+      var cipher = helpers.nodeCrypto.createDecipheriv(name, encKey, iv);
+      var pdata = Buffer.concat([
+        cipher.update(cdata),
+        cipher.final()
+      ]);
+      return pdata;
+    });
+
+    return promise;
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+function checkKey(key, size) {
+  if ((size << 1) !== (key.length << 3)) {
+    throw new Error("invalid encryption key size");
+  }
+}
+
+function cbcHmacEncryptFN(size) {
+  var commonEncrypt = commonCbcEncryptFN(size);
+  return function(key, pdata, props) {
+    // validate inputs
+    try {
+      checkKey(key, size);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var eKey = key.slice(size / 8),
+        iKey = key.slice(0, size / 8),
+        iv = props.iv || new Buffer(0),
+        adata = props.aad || props.adata || new Buffer(0);
+
+    // STEP 1 -- Encrypt
+    var promise = commonEncrypt(eKey, pdata, iv);
+
+    // STEP 2 -- MAC
+    promise = promise.then(function(cdata){
+      var mdata = Buffer.concat([
+        adata,
+        iv,
+        cdata,
+        helpers.int64ToBuffer(adata.length * 8)
+      ]);
+
+      var promise;
+      promise = HMAC["HS" + (size * 2)].sign(iKey, mdata, {
+        length: size
+      });
+      promise = promise.then(function(result) {
+        // TODO: move slice to hmac.js
+        var tag = result.mac.slice(0, size / 8);
+        return {
+          data: cdata,
+          tag: tag
+        };
+      });
+      return promise;
+    });
+
+    return promise;
+  };
+}
+
+function cbcHmacDecryptFN(size) {
+  var commonDecrypt = commonCbcDecryptFN(size);
+
+  return function(key, cdata, props) {
+    // validate inputs
+    try {
+      checkKey(key, size);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var eKey = key.slice(size / 8),
+        iKey = key.slice(0, size / 8),
+        iv = props.iv || new Buffer(0),
+        adata = props.aad || props.adata || new Buffer(0),
+        tag = props.tag || props.mac || new Buffer(0);
+
+    var promise = Promise.resolve();
+
+    // STEP 1 -- MAC
+    promise = promise.then(function() {
+      var promise;
+      // construct MAC input
+      var mdata = Buffer.concat([
+        adata,
+        iv,
+        cdata,
+        helpers.int64ToBuffer(adata.length * 8)
+      ]);
+      promise = HMAC["HS" + (size * 2)].verify(iKey, mdata, tag, {
+        length: size
+      });
+      promise = promise.then(function() {
+        return cdata;
+      }, function() {
+        // failure -- invalid tag error
+        throw new Error("mac check failed");
+      });
+      return promise;
+    });
+
+    // STEP 2 -- Decrypt
+    promise = promise.then(function(){
+      return commonDecrypt(eKey, cdata, iv);
+    });
+
+    return promise;
+  };
+}
+
+var EncryptionLabel = new Buffer("Encryption", "utf8");
+var IntegrityLabel = new Buffer("Integrity", "utf8");
+var DotLabel = new Buffer(".", "utf8");
+
+function generateCek(masterKey, alg, epu, epv) {
+  var masterSize = masterKey.length * 8;
+  var cekSize = masterSize / 2;
+  var promise = Promise.resolve();
+
+  promise = promise.then(function(){
+    var input = Buffer.concat([
+      helpers.int32ToBuffer(1),
+      masterKey,
+      helpers.int32ToBuffer(cekSize),
+      new Buffer(alg, "utf8"),
+      epu,
+      epv,
+      EncryptionLabel
+    ]);
+
+    return input;
+  });
+
+  promise = promise.then( function(input) {
+    return sha["SHA-" + masterSize].digest(input).then(function(digest) {
+      return digest.slice(0, cekSize / 8);
+    });
+  });
+  promise = Promise.resolve(promise);
+
+  return promise;
+}
+
+function generateCik(masterKey, alg, epu, epv) {
+  var masterSize = masterKey.length * 8;
+  var cikSize = masterSize;
+  var promise = Promise.resolve();
+
+  promise = promise.then(function(){
+    var input = Buffer.concat([
+      helpers.int32ToBuffer(1),
+      masterKey,
+      helpers.int32ToBuffer(cikSize),
+      new Buffer(alg, "utf8"),
+      epu,
+      epv,
+      IntegrityLabel
+    ]);
+
+    return input;
+  });
+
+  promise = promise.then( function(input) {
+    return sha["SHA-" + masterSize].digest(input).then(function(digest) {
+      return digest.slice(0, cikSize / 8);
+    });
+  });
+  promise = Promise.resolve(promise);
+
+  return promise;
+}
+
+function concatKdfCbcHmacEncryptFN(size, alg) {
+  var commonEncrypt = commonCbcEncryptFN(size);
+
+  return function(key, pdata, props) {
+    var epu = props.epu || helpers.int32ToBuffer(0),
+        epv = props.epv || helpers.int32ToBuffer(0),
+        iv = props.iv || new Buffer(0),
+        adata = props.aad || props.adata || new Buffer(0),
+        kdata = props.kdata || new Buffer(0);
+
+    // Pre Step 1 -- Generate Keys
+    var promises = [
+      generateCek(key, alg, epu, epv),
+      generateCik(key, alg, epu, epv)
+    ];
+
+    var cek,
+        cik;
+    var promise = Promise.all(promises).then(function(keys) {
+      cek = keys[0];
+      cik = keys[1];
+    });
+
+    // STEP 1 -- Encrypt
+    promise = promise.then(function(){
+      return commonEncrypt(cek, pdata, iv);
+    });
+
+    // STEP 2 -- Mac
+    promise = promise.then(function(cdata){
+      var mdata = Buffer.concat([
+        adata,
+        DotLabel,
+        new Buffer(kdata),
+        DotLabel,
+        new Buffer(util.base64url.encode(iv), "utf8"),
+        DotLabel,
+        new Buffer(util.base64url.encode(cdata), "utf8")
+      ]);
+      return Promise.all([
+        Promise.resolve(cdata),
+        HMAC["HS" + (size * 2)].sign(cik, mdata, { length: size })
+      ]);
+    });
+    promise = promise.then(function(result){
+      return {
+        data: result[0],
+        tag: result[1].mac
+      };
+    });
+
+    return promise;
+  };
+}
+
+function concatKdfCbcHmacDecryptFN(size, alg) {
+  var commonDecrypt = commonCbcDecryptFN(size);
+
+  return function(key, cdata, props) {
+    var epu = props.epu || helpers.int32ToBuffer(0),
+        epv = props.epv || helpers.int32ToBuffer(0),
+        iv = props.iv || new Buffer(0),
+        adata = props.aad || props.adata || new Buffer(0),
+        kdata = props.kdata || new Buffer(0),
+        tag = props.tag || props.mac || new Buffer(0);
+
+    // Pre Step 1 -- Generate Keys
+    var promises = [
+      generateCek(key, alg, epu, epv),
+      generateCik(key, alg, epu, epv)
+    ];
+
+    var cek,
+        cik;
+    var promise = Promise.all(promises).then(function(keys){
+      cek = keys[0];
+      cik = keys[1];
+    });
+
+
+    // STEP 1 -- MAC
+    promise = promise.then(function() {
+      // construct MAC input
+      var mdata = Buffer.concat([
+        adata,
+        DotLabel,
+        new Buffer(kdata),
+        DotLabel,
+        new Buffer(util.base64url.encode(iv), "utf8"),
+        DotLabel,
+        new Buffer(util.base64url.encode(cdata), "utf8")
+      ]);
+
+      try {
+        return HMAC["HS" + (size * 2)].verify(cik, mdata, tag, {
+          loose: false
+        });
+      } catch (e) {
+        throw new Error("mac check failed");
+      }
+    });
+
+    // STEP 2 -- Decrypt
+    promise = promise.then(function(){
+      return commonDecrypt(cek, cdata, iv);
+    });
+
+    return promise;
+  };
+}
+
+// ### Public API
+// * [name].encrypt
+// * [name].decrypt
+var aesCbcHmacSha2 = {};
+[
+  "A128CBC-HS256",
+  "A192CBC-HS384",
+  "A256CBC-HS512"
+].forEach(function(alg) {
+  var size = parseInt(/A(\d+)CBC-HS(\d+)?/g.exec(alg)[1]);
+  aesCbcHmacSha2[alg] = {
+    encrypt: cbcHmacEncryptFN(size),
+    decrypt: cbcHmacDecryptFN(size)
+  };
+});
+
+[
+  "A128CBC+HS256",
+  "A192CBC+HS384",
+  "A256CBC+HS512"
+].forEach(function(alg) {
+  var size = parseInt(/A(\d+)CBC\+HS(\d+)?/g.exec(alg)[1]);
+  aesCbcHmacSha2[alg] = {
+    encrypt: concatKdfCbcHmacEncryptFN(size, alg),
+    decrypt: concatKdfCbcHmacDecryptFN(size, alg)
+  };
+});
+
+module.exports = aesCbcHmacSha2;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/aes-gcm.js - AES-GCM Encryption and Key-Wrapping
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var helpers = __webpack_require__(12),
+    CONSTANTS = __webpack_require__(21),
+    GCM = __webpack_require__(225);
+
+function gcmEncryptFN(size) {
+  function commonChecks(key, iv) {
+    if (size !== (key.length << 3)) {
+       throw new Error("invalid key size");
+    }
+    if (12 !== iv.length) {
+      throw new Error("invalid iv");
+    }
+  }
+
+  // ### 'fallback' implementation -- uses forge
+  var fallback = function(key, pdata, props) {
+    var iv = props.iv || new Buffer(0),
+        adata = props.aad || props.adata || new Buffer(0),
+        cipher,
+        cdata;
+
+    // validate inputs
+    try {
+      commonChecks(key, iv, adata);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    // setup cipher
+    cipher = GCM.createCipher({
+      key: key,
+      iv: iv,
+      additionalData: adata
+    });
+    // ciphertext is the same length as plaintext
+    cdata = new Buffer(pdata.length);
+
+    var promise = new Promise(function(resolve, reject) {
+      var amt = CONSTANTS.CHUNK_SIZE,
+          clen = 0,
+          poff = 0;
+
+      (function doChunk() {
+        var plen = Math.min(amt, pdata.length - poff);
+        clen += cipher.update(pdata,
+                              poff,
+                              plen,
+                              cdata,
+                              clen);
+        poff += plen;
+        if (pdata.length > poff) {
+          setTimeout(doChunk, 0);
+          return;
+        }
+
+        // finish it
+        clen += cipher.finish(cdata, clen);
+        if (clen !== pdata.length) {
+          reject(new Error("encryption failed"));
+          return;
+        }
+
+        // resolve with output
+        var tag = cipher.tag;
+        resolve({
+          data: cdata,
+          tag: tag
+        });
+      })();
+    });
+
+    return promise;
+  };
+
+  // ### WebCryptoAPI implementation
+  // TODO: cache CryptoKey sooner
+  var webcrypto = function(key, pdata, props) {
+    var iv = props.iv || new Buffer(0),
+        adata = props.aad || props.adata || new Buffer(0);
+
+    try {
+      commonChecks(key, iv, adata);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var alg = {
+      name: "AES-GCM"
+    };
+    var promise;
+    promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["encrypt"]);
+    promise = promise.then(function(key) {
+      alg.iv = iv;
+      alg.tagLength = 128;
+      if (adata.length) {
+        alg.additionalData = adata;
+      }
+
+      return helpers.subtleCrypto.encrypt(alg, key, pdata);
+    });
+    promise = promise.then(function(result) {
+      var tagStart = result.byteLength - 16;
+
+      var tag = result.slice(tagStart);
+      tag = new Buffer(tag);
+
+      var cdata = result.slice(0, tagStart);
+      cdata = new Buffer(cdata);
+
+      return {
+        data: cdata,
+        tag: tag
+      };
+    });
+
+    return promise;
+  };
+
+  // ### NodeJS implementation
+  var nodejs = function(key, pdata, props) {
+    var iv = props.iv || new Buffer(0),
+        adata = props.aad || props.adata || new Buffer(0);
+
+    try {
+      commonChecks(key, iv, adata);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var alg = "aes-" + (key.length * 8) + "-gcm";
+    var cipher;
+    try {
+      cipher = helpers.nodeCrypto.createCipheriv(alg, key, iv);
+    } catch (err) {
+      throw new Error("unsupported algorithm: " + alg);
+    }
+    if ("function" !== typeof cipher.setAAD) {
+      throw new Error("unsupported algorithm: " + alg);
+    }
+    if (adata.length) {
+      cipher.setAAD(adata);
+    }
+
+    var cdata = Buffer.concat([
+      cipher.update(pdata),
+      cipher.final()
+    ]);
+    var tag = cipher.getAuthTag();
+
+    return {
+      data: cdata,
+      tag: tag
+    };
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+function gcmDecryptFN(size) {
+  function commonChecks(key, iv, tag) {
+    if (size !== (key.length << 3)) {
+      throw new Error("invalid key size");
+    }
+    if (12 !== iv.length) {
+      throw new Error("invalid iv");
+    }
+    if (16 !== tag.length) {
+      throw new Error("invalid tag length");
+    }
+  }
+
+  // ### fallback implementation -- uses forge
+  var fallback = function(key, cdata, props) {
+    var adata = props.aad || props.adata || new Buffer(0),
+        iv = props.iv || new Buffer(0),
+        tag = props.tag || props.mac || new Buffer(0),
+        cipher,
+        pdata;
+
+    // validate inputs
+    try {
+      commonChecks(key, iv, tag);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    // setup cipher
+    cipher = GCM.createDecipher({
+      key: key,
+      iv: iv,
+      additionalData: adata,
+      tag: tag
+    });
+    // plaintext is the same length as ciphertext
+    pdata = new Buffer(cdata.length);
+
+    var promise = new Promise(function(resolve, reject) {
+      var amt = CONSTANTS.CHUNK_SIZE,
+          plen = 0,
+          coff = 0;
+
+      (function doChunk() {
+        var clen = Math.min(amt, cdata.length - coff);
+        plen += cipher.update(cdata,
+                              coff,
+                              clen,
+                              pdata,
+                              plen);
+        coff += clen;
+        if (cdata.length > coff) {
+          setTimeout(doChunk, 0);
+          return;
+        }
+
+        try {
+          plen += cipher.finish(pdata, plen);
+        } catch (err) {
+          reject(new Error("decryption failed"));
+          return;
+        }
+
+        if (plen !== cdata.length) {
+          reject(new Error("decryption failed"));
+          return;
+        }
+
+        // resolve with output
+        resolve(pdata);
+      })();
+    });
+
+    return promise;
+  };
+
+  // ### WebCryptoAPI implementation
+  // TODO: cache CryptoKey sooner
+  var webcrypto = function(key, cdata, props) {
+    var adata = props.aad || props.adata || new Buffer(0),
+        iv = props.iv || new Buffer(0),
+        tag = props.tag || props.mac || new Buffer(0);
+
+    // validate inputs
+    try {
+      commonChecks(key, iv, tag);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var alg = {
+      name: "AES-GCM"
+    };
+    var promise;
+    promise = helpers.subtleCrypto.importKey("raw", key, alg, true, ["decrypt"]);
+    promise = promise.then(function(key) {
+      alg.iv = iv;
+      alg.tagLength = 128;
+      if (adata.length) {
+        alg.additionalData = adata;
+      }
+
+      // concatenate cdata and tag
+      cdata = Buffer.concat([cdata, tag], cdata.length + tag.length);
+
+      return helpers.subtleCrypto.decrypt(alg, key, cdata);
+    });
+    promise = promise.then(function(pdata) {
+      pdata = new Buffer(pdata);
+      return pdata;
+    });
+
+    return promise;
+  };
+
+  var nodejs = function(key, cdata, props) {
+    var adata = props.aad || props.adata || new Buffer(0),
+        iv = props.iv || new Buffer(0),
+        tag = props.tag || props.mac || new Buffer(0);
+
+    // validate inputs
+    try {
+      commonChecks(key, iv, tag);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var alg = "aes-" + (key.length * 8) + "-gcm";
+    var cipher;
+    try {
+      cipher = helpers.nodeCrypto.createDecipheriv(alg, key, iv);
+    } catch(err) {
+      throw new Error("unsupported algorithm: " + alg);
+    }
+    if ("function" !== typeof cipher.setAAD) {
+      throw new Error("unsupported algorithm: " + alg);
+    }
+    cipher.setAuthTag(tag);
+    if (adata.length) {
+      cipher.setAAD(adata);
+    }
+
+    try {
+      var pdata = Buffer.concat([
+        cipher.update(cdata),
+        cipher.final()
+      ]);
+
+      return pdata;
+    } catch (err) {
+      throw new Error("decryption failed");
+    }
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+// ### Public API
+// * [name].encrypt
+// * [name].decrypt
+var aesGcm = {};
+[
+  "A128GCM",
+  "A192GCM",
+  "A256GCM",
+  "A128GCMKW",
+  "A192GCMKW",
+  "A256GCMKW"
+].forEach(function(alg) {
+  var size = parseInt(/A(\d+)GCM(?:KW)?/g.exec(alg)[1]);
+  aesGcm[alg] = {
+    encrypt: gcmEncryptFN(size),
+    decrypt: gcmDecryptFN(size)
+  };
+});
+
+module.exports = aesGcm;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * deps/ciphermodes/gcm/index.js - AES-GCM implementation Entry Point
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+ 
+
+var Long = __webpack_require__(85),
+    forge = __webpack_require__(5),
+    multipliers = __webpack_require__(226),
+    helpers = __webpack_require__(122),
+    pack = __webpack_require__(61),
+    DataBuffer = __webpack_require__(41),
+    cipherHelpers = __webpack_require__(228);
+
+var BLOCK_SIZE = 16;
+
+// ### GCM Mode
+// ### Constructor
+function Gcm(options) {
+  options = options || {};
+
+  this.name = "GCM";
+  this.cipher = options.cipher;
+  this.blockSize = this.blockSize || 16;
+}
+
+// ### exports
+module.exports = {
+  createCipher: function(options) {
+    var alg = new forge.aes.Algorithm("AES-GCM", Gcm);
+    alg.initialize({
+      key: new DataBuffer(options.key)
+    });
+    alg.mode.start(options);
+
+    return alg.mode;
+  },
+  createDecipher: function(options) {
+    var alg = new forge.aes.Algorithm("AES-GCM", Gcm);
+    alg.initialize({
+      key: new DataBuffer(options.key)
+    });
+    alg.mode._decrypt = true;
+    alg.mode.start(options);
+
+    return alg.mode;
+  }
+};
+
+// ### Public API
+Gcm.prototype.start = function(options) {
+  this.tag = null;
+
+  options = options || {};
+
+  if (!("iv" in options)) {
+    throw new Error("Gcm needs ParametersWithIV or AEADParameters");
+  }
+  this.nonce = options.iv;
+  if (this.nonce == null || this.nonce.length < 1) {
+    throw new Error("IV must be at least 1 byte");
+  }
+
+  // TODO: variable tagLength?
+  this.tagLength = 16;
+
+  // TODO: validate tag
+  if ("tag" in options) {
+    this.tag = new Buffer(options.tag);
+  }
+
+  var bufLength = !this._decrypt ?
+                  this.blockSize :
+                  (this.blockSize + this.tagLength);
+  this.bufBlock = new Buffer(bufLength);
+  this.bufBlock.fill(0);
+
+  var multiplier = options.multiplier;
+  if (multiplier == null) {
+    multiplier = new (multipliers["8k"])();
+  }
+  this.multiplier = multiplier;
+
+  this.H = this.zeroBlock();
+  cipherHelpers.encrypt(this.cipher, this.H, 0, this.H, 0);
+
+  // GcmMultiplier tables don"t change unless the key changes
+  // (and are expensive to init)
+  this.multiplier.init(this.H);
+  this.exp = null;
+
+  this.J0 = this.zeroBlock();
+
+  if (this.nonce.length === 12) {
+    this.nonce.copy(this.J0, 0, 0, this.nonce.length);
+    this.J0[this.blockSize - 1] = 0x01;
+  } else {
+    this.gHASH(this.J0, this.nonce, this.nonce.length);
+    var X = this.zeroBlock();
+    pack.longToBigEndian(new Long(this.nonce.length).
+                         multiply(8), X, 8);
+    this.gHASHBlock(this.J0, X);
+  }
+
+  this.S = this.zeroBlock();
+  this.SAt = this.zeroBlock();
+  this.SAtPre = this.zeroBlock();
+  this.atBlock = this.zeroBlock();
+  this.atBlockPos = 0;
+  this.atLength = Long.ZERO;
+  this.atLengthPre = Long.ZERO;
+  this.counter = new Buffer(this.J0);
+  this.bufOff = 0;
+  this.totalLength = Long.ZERO;
+
+  if ("additionalData" in options) {
+    this.processAADBytes(options.additionalData, 0, options.additionalData.length);
+  }
+};
+
+Gcm.prototype.update = function(inV, inOff, len, out, outOff) {
+  var resultLen = 0;
+
+  while (len > 0) {
+    var inLen = Math.min(len, this.bufBlock.length - this.bufOff);
+    inV.copy(this.bufBlock, this.bufOff, inOff, inOff + inLen);
+    len -= inLen;
+    inOff += inLen;
+    this.bufOff += inLen;
+    if (this.bufOff === this.bufBlock.length) {
+      this.outputBlock(out, outOff + resultLen);
+      resultLen += this.blockSize;
+    }
+  }
+
+  return resultLen;
+};
+Gcm.prototype.finish = function(out, outOff) {
+  var resultLen = 0;
+
+  if (this._decrypt) {
+    // append tag
+    resultLen += this.update(this.tag, 0, this.tag.length, out, outOff);
+  }
+
+  if (this.totalLength.isZero()) {
+    this.initCipher();
+  }
+
+  var extra = this.bufOff;
+  if (this._decrypt) {
+    if (extra < this.tagLength) {
+      throw new Error("data too short");
+    }
+    extra -= this.tagLength;
+  }
+
+  if (extra > 0) {
+    this.gCTRPartial(this.bufBlock, 0, extra, out, outOff + resultLen);
+    resultLen += extra;
+  }
+
+  this.atLength = this.atLength.add(this.atBlockPos);
+
+  // Final gHASH
+  var X = this.zeroBlock();
+  pack.longToBigEndian(this.atLength.multiply(8),
+                       X,
+                       0);
+  pack.longToBigEndian(this.totalLength.multiply(8),
+                       X,
+                       8);
+
+  this.gHASHBlock(this.S, X);
+
+  // TODO Fix this if tagLength becomes configurable
+  // T = MSBt(GCTRk(J0,S))
+  var tag = new Buffer(this.blockSize);
+  tag.fill(0);
+  cipherHelpers.encrypt(this.cipher, this.J0, 0, tag, 0);
+  this.xor(tag, this.S);
+
+  if (this._decrypt) {
+    if (!helpers.arrayEqual(this.tag, tag)) {
+      throw new Error("mac check in Gcm failed");
+    }
+  } else {
+    // We place into tag our calculated value for T
+    this.tag = new Buffer(this.tagLength);
+    tag.copy(this.tag, 0, 0, this.tagLength);
+  }
+
+  return resultLen;
+};
+
+// ### "Internal" Helper Functions
+Gcm.prototype.initCipher = function() {
+  if (this.atLength.greaterThan(Long.ZERO)) {
+    this.SAt.copy(this.SAtPre, 0, 0, this.blockSize);
+    this.atLengthPre = this.atLength.add(Long.ZERO);
+  }
+
+  // Finish hash for partial AAD block
+  if (this.atBlockPos > 0) {
+    this.gHASHPartial(this.SAtPre, this.atBlock, 0, this.atBlockPos);
+    this.atLengthPre = this.atLengthPre.add(this.atBlockPos);
+  }
+
+  if (this.atLengthPre.greaterThan(Long.ZERO)) {
+    this.SAtPre.copy(this.S, 0, 0, this.blockSize);
+  }
+};
+
+Gcm.prototype.outputBlock = function(output, offset) {
+  if (this.totalLength.isZero()) {
+    this.initCipher();
+  }
+  this.gCTRBlock(this.bufBlock, output, offset);
+  if (!this._decrypt) {
+    this.bufOff = 0;
+  } else {
+    this.bufBlock.copy(this.bufBlock, 0, this.blockSize, this.blockSize + this.tagLength);
+    this.bufOff = this.tagLength;
+  }
+};
+
+Gcm.prototype.processAADBytes = function(inV, inOff, len) {
+  for (var i = 0; i < len; ++i) {
+    this.atBlock[this.atBlockPos] = inV[inOff + i];
+    if (++this.atBlockPos === this.blockSize) {
+      // Hash each block as it fills
+      this.gHASHBlock(this.SAt, this.atBlock);
+      this.atBlockPos = 0;
+      this.atLength = this.atLength.add(this.blockSize);
+    }
+  }
+};
+
+Gcm.prototype.getNextCounterBlock = function() {
+  for (var i = 15; i >= 12; --i) {
+    var b = ((this.counter[i] + 1) & 0xff);
+    this.counter[i] = b;
+
+    if (b !== 0) {
+      break;
+    }
+  }
+
+  // encrypt counter
+  var outb = new Buffer(this.blockSize);
+  outb.fill(0);
+  cipherHelpers.encrypt(this.cipher, this.counter, 0, outb, 0);
+
+  return outb;
+};
+
+Gcm.prototype.gCTRBlock = function(block, out, outOff) {
+  var tmp = this.getNextCounterBlock();
+
+  this.xor(tmp, block);
+  tmp.copy(out, outOff, 0, this.blockSize);
+
+  this.gHASHBlock(this.S, !this._decrypt ? tmp : block);
+
+  this.totalLength = this.totalLength.add(this.blockSize);
+};
+Gcm.prototype.gCTRPartial = function(buf, off, len, out, outOff) {
+  var tmp = this.getNextCounterBlock();
+
+  this.xor(tmp, buf, off, len);
+  tmp.copy(out, outOff, 0, len);
+
+  this.gHASHPartial(this.S, !this._decrypt ? tmp : buf, 0, len);
+
+  this.totalLength = this.totalLength.add(len);
+};
+
+Gcm.prototype.gHASHBlock = function(Y, b) {
+  this.xor(Y, b);
+  this.multiplier.multiplyH(Y);
+};
+Gcm.prototype.gHASHPartial = function(Y, b, off, len) {
+  this.xor(Y, b, off, len);
+  this.multiplier.multiplyH(Y);
+};
+
+Gcm.prototype.xor = function(block, val, off, len) {
+  switch (arguments.length) {
+    case 2:
+      for (var i = 15; i >= 0; --i) {
+        block[i] ^= val[i];
+      }
+      break;
+    case 4:
+      while (len-- > 0) {
+        block[len] ^= val[off + len];
+      }
+      break;
+    default:
+      throw new TypeError("Expected 2 or 4 arguments.");
+  }
+
+  return block;
+};
+
+Gcm.prototype.zeroBlock = function() {
+  var block = new Buffer(BLOCK_SIZE);
+  block.fill(0);
+  return block;
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * deps/ciphermodes/gcm/multipliers.js - AES-GCM Multipliers
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+ 
+
+var helpers = __webpack_require__(122),
+    pack = __webpack_require__(61);
+
+
+// ### 8K Table Multiplier
+function Gcm8KMultiplier() {
+  this.H = [];
+  this.M = null;
+}
+
+Gcm8KMultiplier.prototype.init = function(H) {
+  var i, j, k;
+  if (this.M == null) {
+    // sc: I realize this UGLY...
+    //M = new int[32][16][4];
+    this.M = [];
+    for (i = 0; i < 32; ++i) {
+      this.M[i] = [];
+      for (j = 0; j < 16; ++j) {
+        this.M[i][j] = [];
+        for (k = 0; k < 4; ++k) {
+          this.M[i][j][k] = 0;
+        }
+      }
+    }
+  } else if (helpers.arrayEqual(this.H, H)) {
+    return;
+  }
+
+  this.H = H.slice();
+
+  // M[0][0] is ZEROES;
+  // M[1][0] is ZEROES;
+  helpers.asInts(H, this.M[1][8]);
+
+  for (j = 4; j >= 1; j >>= 1) {
+    helpers.multiplyP(this.M[1][j + j], this.M[1][j]);
+  }
+  helpers.multiplyP(this.M[1][1], this.M[0][8]);
+
+  for (j = 4; j >= 1; j >>= 1) {
+    helpers.multiplyP(this.M[0][j + j], this.M[0][j]);
+  }
+
+  i = 0;
+  for (;;) {
+    for (j = 2; j < 16; j += j) {
+      for (k = 1; k < j; ++k) {
+        helpers.xor(this.M[i][j], this.M[i][k], this.M[i][j + k]);
+      }
+    }
+
+    if (++i === 32) {
+      return;
+    }
+
+    if (i > 1) {
+      // M[i][0] is ZEROES;
+      for (j = 8; j > 0; j >>= 1) {
+        helpers.multiplyP8(this.M[i - 2][j], this.M[i][j]);
+      }
+    }
+  }
+};
+Gcm8KMultiplier.prototype.multiplyH = function(x) {
+  var z = [];
+  for (var i = 15; i >= 0; --i) {
+    var m = this.M[i + i][x[i] & 0x0f];
+    z[0] ^= m[0];
+    z[1] ^= m[1];
+    z[2] ^= m[2];
+    z[3] ^= m[3];
+    m = this.M[i + i + 1][(x[i] & 0xf0) >>> 4];
+    z[0] ^= m[0];
+    z[1] ^= m[1];
+    z[2] ^= m[2];
+    z[3] ^= m[3];
+  }
+
+  pack.intToBigEndian(z, x, 0);
+};
+
+
+module.exports = {
+  "8k": Gcm8KMultiplier
+};
+
+
+/***/ }),
+/* 227 */
+/***/ (function(module, exports) {
+
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0,
+    MAX_SAFE_INTEGER = 9007199254740991,
+    MAX_INTEGER = 1.7976931348623157e+308,
+    NAN = 0 / 0;
+
+/** Used as references for the maximum length and index of an array. */
+var MAX_ARRAY_LENGTH = 4294967295;
+
+/** `Object#toString` result references. */
+var funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    symbolTag = '[object Symbol]';
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * The base implementation of `_.clamp` which doesn't coerce arguments.
+ *
+ * @private
+ * @param {number} number The number to clamp.
+ * @param {number} [lower] The lower bound.
+ * @param {number} upper The upper bound.
+ * @returns {number} Returns the clamped number.
+ */
+function baseClamp(number, lower, upper) {
+  if (number === number) {
+    if (upper !== undefined) {
+      number = number <= upper ? number : upper;
+    }
+    if (lower !== undefined) {
+      number = number >= lower ? number : lower;
+    }
+  }
+  return number;
+}
+
+/**
+ * The base implementation of `_.fill` without an iteratee call guard.
+ *
+ * @private
+ * @param {Array} array The array to fill.
+ * @param {*} value The value to fill `array` with.
+ * @param {number} [start=0] The start position.
+ * @param {number} [end=array.length] The end position.
+ * @returns {Array} Returns `array`.
+ */
+function baseFill(array, value, start, end) {
+  var length = array.length;
+
+  start = toInteger(start);
+  if (start < 0) {
+    start = -start > length ? 0 : (length + start);
+  }
+  end = (end === undefined || end > length) ? length : toInteger(end);
+  if (end < 0) {
+    end += length;
+  }
+  end = start > end ? 0 : toLength(end);
+  while (start < end) {
+    array[start++] = value;
+  }
+  return array;
+}
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  length = length == null ? MAX_SAFE_INTEGER : length;
+  return !!length &&
+    (typeof value == 'number' || reIsUint.test(value)) &&
+    (value > -1 && value % 1 == 0 && value < length);
+}
+
+/**
+ * Checks if the given arguments are from an iteratee call.
+ *
+ * @private
+ * @param {*} value The potential iteratee value argument.
+ * @param {*} index The potential iteratee index or key argument.
+ * @param {*} object The potential iteratee object argument.
+ * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
+ *  else `false`.
+ */
+function isIterateeCall(value, index, object) {
+  if (!isObject(object)) {
+    return false;
+  }
+  var type = typeof index;
+  if (type == 'number'
+        ? (isArrayLike(object) && isIndex(index, object.length))
+        : (type == 'string' && index in object)
+      ) {
+    return eq(object[index], value);
+  }
+  return false;
+}
+
+/**
+ * Fills elements of `array` with `value` from `start` up to, but not
+ * including, `end`.
+ *
+ * **Note:** This method mutates `array`.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.2.0
+ * @category Array
+ * @param {Array} array The array to fill.
+ * @param {*} value The value to fill `array` with.
+ * @param {number} [start=0] The start position.
+ * @param {number} [end=array.length] The end position.
+ * @returns {Array} Returns `array`.
+ * @example
+ *
+ * var array = [1, 2, 3];
+ *
+ * _.fill(array, 'a');
+ * console.log(array);
+ * // => ['a', 'a', 'a']
+ *
+ * _.fill(Array(3), 2);
+ * // => [2, 2, 2]
+ *
+ * _.fill([4, 6, 8, 10], '*', 1, 3);
+ * // => [4, '*', '*', 10]
+ */
+function fill(array, value, start, end) {
+  var length = array ? array.length : 0;
+  if (!length) {
+    return [];
+  }
+  if (start && typeof start != 'number' && isIterateeCall(array, value, start)) {
+    start = 0;
+    end = length;
+  }
+  return baseFill(array, value, start, end);
+}
+
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(value.length) && !isFunction(value);
+}
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8-9 which returns 'object' for typed array and other constructors.
+  var tag = isObject(value) ? objectToString.call(value) : '';
+  return tag == funcTag || tag == genTag;
+}
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Converts `value` to a finite number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.12.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted number.
+ * @example
+ *
+ * _.toFinite(3.2);
+ * // => 3.2
+ *
+ * _.toFinite(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toFinite(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toFinite('3.2');
+ * // => 3.2
+ */
+function toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+  value = toNumber(value);
+  if (value === INFINITY || value === -INFINITY) {
+    var sign = (value < 0 ? -1 : 1);
+    return sign * MAX_INTEGER;
+  }
+  return value === value ? value : 0;
+}
+
+/**
+ * Converts `value` to an integer.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted integer.
+ * @example
+ *
+ * _.toInteger(3.2);
+ * // => 3
+ *
+ * _.toInteger(Number.MIN_VALUE);
+ * // => 0
+ *
+ * _.toInteger(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toInteger('3.2');
+ * // => 3
+ */
+function toInteger(value) {
+  var result = toFinite(value),
+      remainder = result % 1;
+
+  return result === result ? (remainder ? result - remainder : result) : 0;
+}
+
+/**
+ * Converts `value` to an integer suitable for use as the length of an
+ * array-like object.
+ *
+ * **Note:** This method is based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted integer.
+ * @example
+ *
+ * _.toLength(3.2);
+ * // => 3
+ *
+ * _.toLength(Number.MIN_VALUE);
+ * // => 0
+ *
+ * _.toLength(Infinity);
+ * // => 4294967295
+ *
+ * _.toLength('3.2');
+ * // => 3
+ */
+function toLength(value) {
+  return value ? baseClamp(toInteger(value), 0, MAX_ARRAY_LENGTH) : 0;
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = fill;
+
+
+/***/ }),
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * deps/ciphermodes/helpers.js - Cipher Helper Functions
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var pack = __webpack_require__(61);
+
+function doEncrypt(cipher, inb, inOff, outb, outOff) {
+  var input = new Array(4),
+      output = new Array(4);
+
+  pack.bigEndianToInt(inb, inOff, input);
+  cipher.encrypt(input, output);
+  pack.intToBigEndian(output, outb, outOff);
+}
+
+module.exports = {
+  encrypt: doEncrypt
+};
+
+
+/***/ }),
+/* 229 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * algorithms/dir.js - Direct key mode
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+function dirEncryptFN(key) {
+  // NOTE: pdata unused
+  // NOTE: props unused
+  return Promise.resolve({
+    data: key,
+    once: true,
+    direct: true
+  });
+}
+function dirDecryptFN(key) {
+  // NOTE: pdata unused
+  // NOTE: props unused
+  return Promise.resolve(key);
+}
+
+// ### Public API
+// * [name].encrypt
+// * [name].decrypt
+var direct = {
+  dir: {
+    encrypt: dirEncryptFN,
+    decrypt: dirDecryptFN
+  }
+};
+
+module.exports = direct;
+
+
+/***/ }),
+/* 230 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/ecdh.js - Elliptic Curve Diffie-Hellman algorithms
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var clone = __webpack_require__(20),
+    merge = __webpack_require__(26),
+    omit = __webpack_require__(118),
+    pick = __webpack_require__(119),
+    util = __webpack_require__(7),
+    ecUtil = __webpack_require__(87),
+    hkdf = __webpack_require__(126),
+    concat = __webpack_require__(123),
+    aesKw = __webpack_require__(86),
+    helpers = __webpack_require__(12),
+    CONSTANTS = __webpack_require__(21);
+
+function idealHash(curve) {
+  switch (curve) {
+    case "P-256":
+      return "SHA-256";
+    case "P-384":
+      return "SHA-384";
+    case "P-521":
+      return "SHA-512";
+    default:
+      throw new Error("unsupported curve: " + curve);
+  }
+}
+
+// ### Exported
+var ecdh = module.exports = {};
+
+// ### Derivation algorithms
+// ### "raw" ECDH
+function ecdhDeriveFn() {
+  var alg = {
+    name: "ECDH"
+  };
+
+  var validatePublic = function(pk, form) {
+    var pubKey = pk && ecUtil.convertToForge(pk, true);
+    if (!pubKey || !pubKey.isValid()) {
+      return Promise.reject(new Error("invalid EC public key"));
+    }
+
+    switch (form) {
+      case "jwk":
+        pubKey = ecUtil.convertToJWK(pk, true);
+        break;
+      case "buffer":
+        pubKey = ecUtil.convertToBuffer(pk, true);
+        break;
+    }
+    return Promise.resolve(pubKey);
+  }
+
+  // ### fallback implementation -- uses ecc + forge
+  var fallback = function(key, props) {
+    props = props || {};
+    var keyLen = props.length || 0;
+    // assume {key} is privateKey
+    // assume {props.public} is publicKey
+    var privKey = ecUtil.convertToForge(key, false);
+
+    var p = validatePublic(props.public, "forge");
+    p = p.then(function(pubKey) {
+      // {pubKey} is "forge"
+
+      var secret = privKey.computeSecret(pubKey);
+      if (keyLen) {
+        // truncate to requested key length
+        if (secret.length < keyLen) {
+          return Promise.reject(new Error("key length too large: " + keyLen));
+        }
+        secret = secret.slice(0, keyLen);
+      }
+
+      return secret;
+    });
+    return p;
+  };
+
+  // ### WebCryptoAPI implementation
+  // TODO: cache CryptoKey sooner
+  var webcrypto = function(key, props) {
+    key = key || {};
+    props = props || {};
+
+    var keyLen = props.length || 0,
+        algParams = merge(clone(alg), {
+          namedCurve: key.crv
+        });
+
+    // assume {key} is privateKey
+    if (!keyLen) {
+      // calculate key length from private key size
+      keyLen = key.d.length;
+    }
+    var privKey = ecUtil.convertToJWK(key, false);
+    privKey = helpers.subtleCrypto.importKey("jwk",
+                                             privKey,
+                                             algParams,
+                                             false,
+                                             [ "deriveBits" ]);
+
+    // assume {props.public} is publicKey
+    var pubKey = validatePublic(props.public, "jwk");
+    pubKey = pubKey.then(function(pubKey) {
+      // {pubKey} is "jwk"
+      return helpers.subtleCrypto.importKey("jwk",
+                                            pubKey,
+                                            algParams,
+                                            false,
+                                            []);
+    });
+
+    var p = Promise.all([privKey, pubKey]);
+    p = p.then(function(keypair) {
+      var privKey = keypair[0],
+          pubKey = keypair[1];
+
+      var algParams = merge(clone(alg), {
+        public: pubKey
+      });
+      return helpers.subtleCrypto.deriveBits(algParams, privKey, keyLen * 8);
+    });
+    p = p.then(function(result) {
+      result = new Buffer(result);
+      return result;
+    });
+    return p;
+  };
+
+  var nodejs = function(key, props) {
+    if ("function" !== typeof helpers.nodeCrypto.createECDH) {
+      throw new Error("unsupported algorithm: ECDH");
+    }
+
+    props = props || {};
+    var keyLen = props.length || 0;
+    var curve;
+    switch (key.crv) {
+      case "P-256":
+        curve = "prime256v1";
+        break;
+      case "P-384":
+        curve = "secp384r1";
+        break;
+      case "P-521":
+        curve = "secp521r1";
+        break;
+      default:
+        return Promise.reject(new Error("invalid curve: " + curve));
+    }
+
+    // assume {key} is privateKey
+    // assume {props.public} is publicKey
+    var privKey = ecUtil.convertToBuffer(key, false);
+
+    var p = validatePublic(props.public, "buffer");
+    p = p.then(function(pubKey) {
+      // {pubKey} is "buffer"
+      var ecdh = helpers.nodeCrypto.createECDH(curve);
+      // dummy call so computeSecret doesn't fail
+      // ecdh.generateKeys();
+      ecdh.setPrivateKey(privKey);
+      var secret = ecdh.computeSecret(pubKey);
+      if (keyLen) {
+        if (secret.length < keyLen) {
+          return Promise.reject(new Error("key length too large: " + keyLen));
+        }
+        secret = secret.slice(0, keyLen);
+      }
+      return secret;
+    });
+    return p;
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+function ecdhConcatDeriveFn() {
+  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
+  //       implemented using other primitives
+
+  var fn = function(key, props) {
+    props = props || {};
+
+    var hash;
+    try {
+      hash = props.hash || idealHash(key.crv);
+      if (!hash) {
+        throw new Error("invalid hash: " + hash);
+      }
+      hash.toUpperCase();
+    } catch (ex) {
+      return Promise.reject(ex);
+    }
+
+    var params = ["public"];
+    // derive shared secret
+    // NOTE: whitelist items from {props} for ECDH
+    var promise = ecdh.ECDH.derive(key, pick(props, params));
+    // expand
+    promise = promise.then(function(shared) {
+      // NOTE: blacklist items from {props} for ECDH
+      return concat["CONCAT-" + hash].derive(shared, omit(props, params));
+    });
+    return promise;
+  };
+
+  return fn;
+}
+
+function ecdhHkdfDeriveFn() {
+  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
+  //       implemented using other primitives
+
+  var fn = function(key, props) {
+    props = props || {};
+
+    var hash;
+    try {
+      hash = props.hash || idealHash(key.crv);
+      if (!hash) {
+        throw new Error("invalid hash: " + hash);
+      }
+      hash.toUpperCase();
+    } catch (ex) {
+      return Promise.reject(ex);
+    }
+
+    var params = ["public"];
+    // derive shared secret
+    // NOTE: whitelist items from {props} for ECDH
+    var promise = ecdh.ECDH.derive(key, pick(props, params));
+    // extract-and-expand
+    promise = promise.then(function(shared) {
+      // NOTE: blacklist items from {props} for ECDH
+      return hkdf["HKDF-" + hash].derive(shared, omit(props, params));
+    });
+    return promise;
+  };
+
+  return fn;
+}
+
+// ### Wrap/Unwrap algorithms
+function doEcdhesCommonDerive(privKey, pubKey, props) {
+  function prependLen(input) {
+    return Buffer.concat([
+      helpers.int32ToBuffer(input.length),
+      input
+    ]);
+  }
+
+  var algId = props.algorithm || "",
+      keyLen = CONSTANTS.KEYLENGTH[algId],
+      apu = util.asBuffer(props.apu || "", "base64url"),
+      apv = util.asBuffer(props.apv || "", "base64url");
+  var otherInfo = Buffer.concat([
+    prependLen(new Buffer(algId, "utf8")),
+    prependLen(apu),
+    prependLen(apv),
+    helpers.int32ToBuffer(keyLen)
+  ]);
+
+  var params = {
+    public: pubKey,
+    length: keyLen / 8,
+    hash: "SHA-256",
+    otherInfo: otherInfo
+  };
+  return ecdh["ECDH-CONCAT"].derive(privKey, params);
+}
+
+function ecdhesDirEncryptFn() {
+  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
+  //       implemented using other primitives
+  var fn = function(key, pdata, props) {
+    props = props || {};
+
+    // {props.epk} is private
+    if (!props.epk || !props.epk.d) {
+      return Promise.reject(new Error("missing ephemeral private key"));
+    }
+    var epk = ecUtil.convertToObj(props.epk, false);
+
+    // {key} is public
+    if (!key || !key.x || !key.y) {
+      return Promise.reject(new Error("missing static public key"));
+    }
+    var spk = ecUtil.convertToObj(key, true);
+
+    // derive ECDH shared
+    var promise = doEcdhesCommonDerive(epk, spk, {
+      algorithm: props.enc,
+      apu: props.apu,
+      apv: props.apv
+    });
+    promise = promise.then(function(shared) {
+      return {
+        data: shared,
+        once: true,
+        direct: true
+      };
+    });
+    return promise;
+  };
+
+  return fn;
+}
+function ecdhesDirDecryptFn() {
+  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
+  //       implemented using other primitives
+  var fn = function(key, cdata, props) {
+    props = props || {};
+
+    // {props.epk} is public
+    if (!props.epk || !props.epk.x || !props.epk.y) {
+      return Promise.reject(new Error("missing ephemeral public key"));
+    }
+    var epk = ecUtil.convertToObj(props.epk, true);
+
+    // {key} is private
+    if (!key || !key.d) {
+      return Promise.reject(new Error("missing static private key"));
+    }
+    var spk = ecUtil.convertToObj(key, false);
+
+    // derive ECDH shared
+    var promise = doEcdhesCommonDerive(spk, epk, {
+      algorithm: props.enc,
+      apu: props.apu,
+      apv: props.apv
+    });
+    promise = promise.then(function(shared) {
+      return shared;
+    });
+    return promise;
+  };
+
+  return fn;
+}
+
+function ecdhesKwEncryptFn(wrap) {
+  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
+  //       implemented using other primitives
+  var fn = function(key, pdata, props) {
+    props = props || {};
+
+    // {props.epk} is private
+    if (!props.epk || !props.epk.d) {
+      return Promise.reject(new Error("missing ephemeral private key"));
+    }
+    var epk = ecUtil.convertToObj(props.epk, false);
+
+    // {key} is public
+    if (!key || !key.x || !key.y) {
+      return Promise.reject(new Error("missing static public key"));
+    }
+    var spk = ecUtil.convertToObj(key, true);
+
+    // derive ECDH shared
+    var promise = doEcdhesCommonDerive(epk, spk, {
+      algorithm: props.alg,
+      apu: props.apu,
+      apv: props.apv
+    });
+    promise = promise.then(function(shared) {
+      // wrap provided key with ECDH shared
+      return wrap(shared, pdata);
+    });
+    return promise;
+  };
+
+  return fn;
+}
+
+function ecdhesKwDecryptFn(unwrap) {
+  // NOTE: no nodejs/webcrypto/fallback model, since this algorithm is
+  //       implemented using other primitives
+  var fn = function(key, cdata, props) {
+    props = props || {};
+
+    // {props.epk} is public
+    if (!props.epk || !props.epk.x || !props.epk.y) {
+      return Promise.reject(new Error("missing ephemeral public key"));
+    }
+    var epk = ecUtil.convertToObj(props.epk, true);
+
+    // {key} is private
+    if (!key || !key.d) {
+      return Promise.reject(new Error("missing static private key"));
+    }
+    var spk = ecUtil.convertToObj(key, false);
+
+    // derive ECDH shared
+    var promise = doEcdhesCommonDerive(spk, epk, {
+      algorithm: props.alg,
+      apu: props.apu,
+      apv: props.apv
+    });
+    promise = promise.then(function(shared) {
+      // unwrap provided key with ECDH shared
+      return unwrap(shared, cdata);
+    });
+    return promise;
+  };
+
+  return fn;
+}
+
+// ### Public API
+// * [name].derive
+[
+  "ECDH",
+  "ECDH-HKDF",
+  "ECDH-CONCAT"
+].forEach(function(name) {
+  var kdf = /^ECDH(?:-(\w+))?$/g.exec(name || "")[1];
+  var op = ecdh[name] = ecdh[name] || {};
+  switch (kdf || "") {
+    case "CONCAT":
+      op.derive = ecdhConcatDeriveFn();
+      break;
+    case "HKDF":
+      op.derive = ecdhHkdfDeriveFn();
+      break;
+    case "":
+      op.derive = ecdhDeriveFn();
+      break;
+    default:
+      op.derive = null;
+  }
+});
+
+// * [name].encrypt
+// * [name].decrypt
+[
+  "ECDH-ES",
+  "ECDH-ES+A128KW",
+  "ECDH-ES+A192KW",
+  "ECDH-ES+A256KW"
+].forEach(function(name) {
+  var kw = /^ECDH-ES(?:\+(.+))?/g.exec(name || "")[1];
+  var op = ecdh[name] = ecdh[name] || {};
+  if (!kw) {
+    op.encrypt = ecdhesDirEncryptFn();
+    op.decrypt = ecdhesDirDecryptFn();
+  } else {
+    kw = aesKw[kw];
+    if (kw) {
+      op.encrypt = ecdhesKwEncryptFn(kw.encrypt);
+      op.decrypt = ecdhesKwDecryptFn(kw.decrypt);
+    } else {
+      op.ecrypt = op.decrypt = null;
+    }
+  }
+});
+//*/
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * deps/ecc/curves.js - Elliptic Curve NIST/SECG/X9.62 Parameters
+ * Original Copyright (c) 2003-2005  Tom Wu.
+ * Modifications Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ *
+ * Ported from Tom Wu, which is ported from BouncyCastle
+ * Modified to reuse existing external NPM modules, restricted to the
+ * NIST//SECG/X9.62 prime curves only, and formatted to match project
+ * coding styles.
+ */
+
+
+// Named EC curves
+
+var BigInteger = __webpack_require__(5).jsbn.BigInteger,
+    ec = __webpack_require__(125);
+
+// ----------------
+// X9ECParameters
+
+// constructor
+function X9ECParameters(curve, g, n, h) {
+  this.curve = curve;
+  this.g = g;
+  this.n = n;
+  this.h = h;
+}
+
+function x9getCurve() {
+  return this.curve;
+}
+
+function x9getG() {
+  return this.g;
+}
+
+function x9getN() {
+  return this.n;
+}
+
+function x9getH() {
+  return this.h;
+}
+
+X9ECParameters.prototype.getCurve = x9getCurve;
+X9ECParameters.prototype.getG = x9getG;
+X9ECParameters.prototype.getN = x9getN;
+X9ECParameters.prototype.getH = x9getH;
+
+// ----------------
+// SECNamedCurves
+
+function fromHex(s) { return new BigInteger(s, 16); }
+
+function secp256r1() {
+  // p = 2^224 (2^32 - 1) + 2^192 + 2^96 - 1
+  var p = fromHex("FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF");
+  var a = fromHex("FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFC");
+  var b = fromHex("5AC635D8AA3A93E7B3EBBD55769886BC651D06B0CC53B0F63BCE3C3E27D2604B");
+  var n = fromHex("FFFFFFFF00000000FFFFFFFFFFFFFFFFBCE6FAADA7179E84F3B9CAC2FC632551");
+  var h = BigInteger.ONE;
+  var curve = new ec.ECCurveFp(p, a, b);
+  var G = curve.decodePointHex("04"
+              + "6B17D1F2E12C4247F8BCE6E563A440F277037D812DEB33A0F4A13945D898C296"
+              + "4FE342E2FE1A7F9B8EE7EB4A7C0F9E162BCE33576B315ECECBB6406837BF51F5");
+  return new X9ECParameters(curve, G, n, h);
+}
+
+function secp384r1() {
+  // p = 2^384 - 2^128 - 2^96 + 2^32 - 1
+  var p = fromHex("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFF");
+  var a = fromHex("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFC");
+  var b = fromHex("B3312FA7E23EE7E4988E056BE3F82D19181D9C6EFE8141120314088F5013875AC656398D8A2ED19D2A85C8EDD3EC2AEF");
+  var n = fromHex("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC7634D81F4372DDF581A0DB248B0A77AECEC196ACCC52973");
+  var h = BigInteger.ONE;
+  var curve = new ec.ECCurveFp(p, a, b);
+  var G = curve.decodePointHex("04"
+              + "AA87CA22BE8B05378EB1C71EF320AD746E1D3B628BA79B9859F741E082542A385502F25DBF55296C3A545E3872760AB7"
+              + "3617DE4A96262C6F5D9E98BF9292DC29F8F41DBD289A147CE9DA3113B5F0B8C00A60B1CE1D7E819D7A431D7C90EA0E5F");
+  return new X9ECParameters(curve, G, n, h);
+}
+
+function secp521r1() {
+  // p = 2^521 - 1
+  var p = fromHex("01FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+  var a = fromHex("01FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC");
+  var b = fromHex("0051953EB9618E1C9A1F929A21A0B68540EEA2DA725B99B315F3B8B489918EF109E156193951EC7E937B1652C0BD3BB1BF073573DF883D2C34F1EF451FD46B503F00");
+  var n = fromHex("01FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA51868783BF2F966B7FCC0148F709A5D03BB5C9B8899C47AEBB6FB71E91386409");
+  var h = BigInteger.ONE;
+  var curve = new ec.ECCurveFp(p, a, b);
+  var G = curve.decodePointHex("04"
+                + "00C6858E06B70404E9CD9E3ECB662395B4429C648139053FB521F828AF606B4D3DBAA14B5E77EFE75928FE1DC127A2FFA8DE3348B3C1856A429BF97E7E31C2E5BD66"
+                + "011839296A789A3BC0045C8A5FB42C7D1BD998F54449579B446817AFBD17273E662C97EE72995EF42640C550B9013FAD0761353C7086A272C24088BE94769FD16650");
+  return new X9ECParameters(curve, G, n, h);
+}
+
+// ----------------
+// Public API
+
+var CURVES = module.exports = {
+  "secp256r1": secp256r1(),
+  "secp384r1": secp384r1(),
+  "secp521r1": secp521r1()
+};
+
+// also export NIST names
+CURVES["P-256"] = CURVES.secp256r1;
+CURVES["P-384"] = CURVES.secp384r1;
+CURVES["P-521"] = CURVES.secp521r1;
+
+
+/***/ }),
+/* 232 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/ecdsa.js - Elliptic Curve Digitial Signature Algorithms
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var ecUtil = __webpack_require__(87),
+    helpers = __webpack_require__(12),
+    sha = __webpack_require__(60);
+
+function idealCurve(hash) {
+  switch (hash) {
+    case "SHA-256":
+      return "P-256";
+    case "SHA-384":
+      return "P-384";
+    case "SHA-512":
+      return "P-521";
+    default:
+      throw new Error("unsupported hash: " + hash);
+  }
+}
+
+function ecdsaSignFN(hash) {
+  var curve = idealCurve(hash);
+
+  // ### Fallback implementation -- uses forge
+  var fallback = function(key, pdata /*, props */) {
+    if (curve !== key.crv) {
+      return Promise.reject(new Error("invalid curve"));
+    }
+    var pk = ecUtil.convertToForge(key, false);
+
+    var promise;
+    // generate hash
+    promise = sha[hash].digest(pdata);
+    // sign hash
+    promise = promise.then(function(result) {
+      result = pk.sign(result);
+      result = Buffer.concat([result.r, result.s]);
+      return {
+        data: pdata,
+        mac: result
+      };
+    });
+    return promise;
+  };
+
+  // ### WebCrypto API implementation
+  var webcrypto = function(key, pdata /*, props */) {
+    if (curve !== key.crv) {
+      return Promise.reject(new Error("invalid curve"));
+    }
+    var pk = ecUtil.convertToJWK(key, false);
+
+    var promise;
+    var alg = {
+      name: "ECDSA",
+      namedCurve: pk.crv,
+      hash: {
+        name: hash
+      }
+    };
+    promise = helpers.subtleCrypto.importKey("jwk",
+                                             pk,
+                                             alg,
+                                             true,
+                                             [ "sign" ]);
+    promise = promise.then(function(key) {
+      return helpers.subtleCrypto.sign(alg, key, pdata);
+    });
+    promise = promise.then(function(result) {
+      result = new Buffer(result);
+      return {
+        data: pdata,
+        mac: result
+      };
+    });
+    return promise;
+  };
+
+  return helpers.setupFallback(null, webcrypto, fallback);
+}
+
+function ecdsaVerifyFN(hash) {
+  var curve = idealCurve(hash);
+
+  // ### Fallback implementation -- uses forge
+  var fallback = function(key, pdata, mac /*, props */) {
+    if (curve !== key.crv) {
+      return Promise.reject(new Error("invalid curve"));
+    }
+    var pk = ecUtil.convertToForge(key, true);
+
+    var promise;
+    // generate hash
+    promise = sha[hash].digest(pdata);
+    // verify hash
+    promise = promise.then(function(result) {
+      var len = mac.length / 2;
+      var rs = {
+        r: mac.slice(0, len),
+        s: mac.slice(len)
+      };
+      if (!pk.verify(result, rs)) {
+        return Promise.reject(new Error("verification failed"));
+      }
+      return {
+        data: pdata,
+        mac: mac,
+        valid: true
+      };
+    });
+    return promise;
+  };
+
+  // ### WebCrypto API implementation
+  var webcrypto = function(key, pdata, mac /* , props */) {
+    if (curve !== key.crv) {
+      return Promise.reject(new Error("invalid curve"));
+    }
+    var pk = ecUtil.convertToJWK(key, true);
+
+    var promise;
+    var alg = {
+      name: "ECDSA",
+      namedCurve: pk.crv,
+      hash: {
+        name: hash
+      }
+    };
+    promise = helpers.subtleCrypto.importKey("jwk",
+                                             pk,
+                                             alg,
+                                             true,
+                                             ["verify"]);
+    promise = promise.then(function(key) {
+      return helpers.subtleCrypto.verify(alg, key, mac, pdata);
+    });
+    promise = promise.then(function(result) {
+      if (!result) {
+        return Promise.reject(new Error("verification failed"));
+      }
+      return {
+        data: pdata,
+        mac: mac,
+        valid: true
+      };
+    });
+    return promise;
+  };
+
+  return helpers.setupFallback(null, webcrypto, fallback);
+}
+
+// ### Public API
+var ecdsa = {};
+
+// * [name].sign
+// * [name].verify
+[
+  "ES256",
+  "ES384",
+  "ES512"
+].forEach(function(name) {
+  var hash = name.replace(/ES(\d+)/g, function(m, size) {
+    return "SHA-" + size;
+  });
+  ecdsa[name] = {
+    sign: ecdsaSignFN(hash),
+    verify: ecdsaVerifyFN(hash)
+  };
+});
+
+module.exports = ecdsa;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/pbes2.js - Password-Based Encryption (v2) Algorithms
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var forge = __webpack_require__(5),
+    util = __webpack_require__(7),
+    helpers = __webpack_require__(12),
+    CONSTANTS = __webpack_require__(21),
+    KW = __webpack_require__(86);
+
+var NULL_BUFFER = new Buffer([0]);
+
+function fixSalt(hmac, kw, salt) {
+  var alg = "PBES2-" + hmac + "+" + kw;
+  var output = [
+    new Buffer(alg, "utf8"),
+    NULL_BUFFER,
+    salt
+  ];
+  return Buffer.concat(output);
+}
+
+function pbkdf2Fn(hash) {
+  function prepareProps(props) {
+    props = props || {};
+    var keyLen = props.length || 0;
+    var salt = util.asBuffer(props.salt || new Buffer(0), "base64u4l"),
+        itrs = props.iterations || 0;
+
+    if (0 >= keyLen) {
+      throw new Error("invalid key length");
+    }
+    if (0 >= itrs) {
+      throw new Error("invalid iteration count");
+    }
+
+    props.length = keyLen;
+    props.salt = salt;
+    props.iterations = itrs;
+
+    return props;
+  }
+
+  var fallback = function(key, props) {
+    try {
+      props = prepareProps(props);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var keyLen = props.length,
+        salt = props.salt,
+        itrs = props.iterations;
+
+    var promise = new Promise(function(resolve, reject) {
+      var md = forge.md[hash.replace("-", "").toLowerCase()].create();
+      var cb = function(err, dk) {
+        if (err) {
+          reject(err);
+        } else {
+          dk = new Buffer(dk, "binary");
+          resolve(dk);
+        }
+      };
+
+      forge.pkcs5.pbkdf2(key.toString("binary"),
+                         salt.toString("binary"),
+                         itrs,
+                         keyLen,
+                         md,
+                         cb);
+    });
+    return promise;
+  };
+  var webcrypto = function(key, props) {
+    try {
+      props = prepareProps(props);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var keyLen = props.length,
+        salt = props.salt,
+        itrs = props.iterations;
+
+    var promise = Promise.resolve(key);
+    promise = promise.then(function(keyval) {
+      return helpers.subtleCrypto.importKey("raw", keyval, "PBKDF2", false, ["deriveBits"]);
+    });
+    promise = promise.then(function(key) {
+      var mainAlgo = {
+        name: "PBKDF2",
+        salt: salt,
+        iterations: itrs,
+        hash: hash
+      };
+
+      return helpers.subtleCrypto.deriveBits(mainAlgo, key, keyLen * 8);
+    });
+    promise = promise.then(function(result) {
+      return util.asBuffer(result);
+    });
+    return promise;
+  };
+  var nodejs = function(key, props) {
+    if (6 > helpers.nodeCrypto.pbkdf2.length) {
+      throw new Error("unsupported algorithm: PBES2-" + hmac + "+" + kw);
+    }
+
+    try {
+      props = prepareProps(props);
+    } catch (err) {
+      return Promise.reject(err);
+    }
+
+    var keyLen = props.length,
+        salt = props.salt,
+        itrs = props.iterations;
+
+        var md = hash.replace("-", "");
+    var promise = new Promise(function(resolve, reject) {
+      function cb(err, dk) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(dk);
+        }
+      }
+      helpers.nodeCrypto.pbkdf2(key, salt, itrs, keyLen, md, cb);
+    });
+    return promise;
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+function pbes2EncryptFN(hmac, kw) {
+  var keyLen = CONSTANTS.KEYLENGTH[kw] / 8;
+
+  var fallback = function(key, pdata, props) {
+    props = props || {};
+
+    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
+        itrs = props.p2c || 0;
+
+    if (0 >= itrs) {
+      throw new Error("invalid iteration count");
+    }
+    if (8 > salt.length) {
+      throw new Error("salt too small");
+    }
+    salt = fixSalt(hmac, kw, salt);
+
+    var promise;
+
+    // STEP 1: derive shared key
+    promise = new Promise(function(resolve, reject) {
+      var md = forge.md[hmac.replace("HS", "SHA").toLowerCase()].create();
+      var cb = function(err, dk) {
+        if (err) {
+          reject(err);
+        } else {
+          dk = new Buffer(dk, "binary");
+          resolve(dk);
+        }
+      };
+
+      forge.pkcs5.pbkdf2(key.toString("binary"),
+                         salt.toString("binary"),
+                         itrs,
+                         keyLen,
+                         md,
+                         cb);
+    });
+
+    // STEP 2: encrypt cek
+    promise = promise.then(function(dk) {
+      return KW[kw].encrypt(dk, pdata);
+    });
+    return promise;
+  };
+
+  var webcrypto = function(key, pdata, props) {
+    props = props || {};
+
+    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
+        itrs = props.p2c || 0;
+
+    if (0 >= itrs) {
+      throw new Error("invalid iteration count");
+    }
+    if (8 > salt.length) {
+      throw new Error("salt too small");
+    }
+    salt = fixSalt(hmac, kw, salt);
+
+    var promise;
+
+    // STEP 1: derive shared key
+    var hash = hmac.replace("HS", "SHA-");
+    promise = Promise.resolve(key);
+    promise = promise.then(function(keyval) {
+      return helpers.subtleCrypto.importKey("raw", keyval, "PBKDF2", false, ["deriveKey"]);
+    });
+    promise = promise.then(function(key) {
+      var mainAlgo = {
+        name: "PBKDF2",
+        salt: salt,
+        iterations: itrs,
+        hash: hash
+      };
+      var deriveAlgo = {
+        name: "AES-KW",
+        length: keyLen * 8
+      };
+
+      return helpers.subtleCrypto.deriveKey(mainAlgo, key, deriveAlgo, true, ["wrapKey", "unwrapKey"]);
+    });
+    // STEP 2: encrypt cek
+    promise = promise.then(function(dk) {
+      // assume subtleCrypto for keywrap
+      return Promise.all([
+        helpers.subtleCrypto.importKey("raw", pdata, { name: "HMAC", hash: "SHA-256" }, true, ["sign"]),
+        dk
+      ]);
+    });
+    promise = promise.then(function(keys) {
+      return helpers.subtleCrypto.wrapKey("raw",
+                                          keys[0], // key
+                                          keys[1], // wrappingKey
+                                          "AES-KW");
+    });
+    promise = promise.then(function(result) {
+      result = new Buffer(result);
+
+      return {
+        data: result
+      };
+    });
+    return promise;
+  };
+
+  var nodejs = function(key, pdata, props) {
+    if (6 > helpers.nodeCrypto.pbkdf2.length) {
+      throw new Error("unsupported algorithm: PBES2-" + hmac + "+" + kw);
+    }
+
+    props = props || {};
+
+    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
+        itrs = props.p2c || 0;
+
+    if (0 >= itrs) {
+      throw new Error("invalid iteration count");
+    }
+    if (8 > salt.length) {
+      throw new Error("salt too small");
+    }
+    salt = fixSalt(hmac, kw, salt);
+
+    var promise;
+
+    // STEP 1: derive shared key
+    var hash = hmac.replace("HS", "SHA");
+    promise = new Promise(function(resolve, reject) {
+      function cb(err, dk) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(dk);
+        }
+      }
+      helpers.nodeCrypto.pbkdf2(key, salt, itrs, keyLen, hash, cb);
+    });
+
+    // STEP 2: encrypt cek
+    promise = promise.then(function(dk) {
+      return KW[kw].encrypt(dk, pdata);
+    });
+
+    return promise;
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+function pbes2DecryptFN(hmac, kw) {
+  var keyLen = CONSTANTS.KEYLENGTH[kw] / 8;
+
+  var fallback = function(key, cdata, props) {
+    props = props || {};
+
+    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
+        itrs = props.p2c || 0;
+
+    if (0 >= itrs) {
+      return Promise.reject(new Error("invalid iteration count"));
+    }
+
+    if (8 > salt.length) {
+      return Promise.reject(new Error("salt too small"));
+    }
+    salt = fixSalt(hmac, kw, salt);
+
+    var promise;
+
+    // STEP 1: derived shared key
+    promise = new Promise(function(resolve, reject) {
+      var md = forge.md[hmac.replace("HS", "SHA").toLowerCase()].create();
+      var cb = function(err, dk) {
+        if (err) {
+          reject(err);
+        } else {
+          dk = new Buffer(dk, "binary");
+          resolve(dk);
+        }
+      };
+
+      forge.pkcs5.pbkdf2(key.toString("binary"),
+                         salt.toString("binary"),
+                         itrs,
+                         keyLen,
+                         md,
+                         cb);
+    });
+
+    // STEP 2: decrypt cek
+    promise = promise.then(function(dk) {
+      return KW[kw].decrypt(dk, cdata);
+    });
+    return promise;
+  };
+
+  var webcrypto = function(key, cdata, props) {
+    props = props || {};
+
+    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
+        itrs = props.p2c || 0;
+
+    if (0 >= itrs) {
+      return Promise.reject(new Error("invalid iteration count"));
+    }
+
+    if (8 > salt.length) {
+      return Promise.reject(new Error("salt too small"));
+    }
+    salt = fixSalt(hmac, kw, salt);
+
+    var hash = hmac.replace("HS", "SHA-");
+    var promise;
+    promise = Promise.resolve(key);
+    promise = promise.then(function(keyval) {
+      return helpers.subtleCrypto.importKey("raw", keyval, "PBKDF2", false, ["deriveKey"]);
+    });
+    promise = promise.then(function(key) {
+      var mainAlgo = {
+        name: "PBKDF2",
+        salt: salt,
+        iterations: itrs,
+        hash: hash
+      };
+      var deriveAlgo = {
+        name: "AES-KW",
+        length: keyLen * 8
+      };
+
+      return helpers.subtleCrypto.deriveKey(mainAlgo, key, deriveAlgo, true, ["wrapKey", "unwrapKey"]);
+    });
+    // STEP 2: decrypt cek
+    promise = promise.then(function(key) {
+      return helpers.subtleCrypto.unwrapKey("raw", cdata, key, "AES-KW", {name: "HMAC", hash: "SHA-256"}, true, ["sign"]);
+    });
+    promise = promise.then(function(result) {
+      // unwrapped CryptoKey -- extract raw
+      return helpers.subtleCrypto.exportKey("raw", result);
+    });
+    promise = promise.then(function(result) {
+      result = new Buffer(result);
+      return result;
+    });
+    return promise;
+  };
+
+  var nodejs = function(key, cdata, props) {
+    if (6 > helpers.nodeCrypto.pbkdf2.length) {
+      throw new Error("unsupported algorithm: PBES2-" + hmac + "+" + kw);
+    }
+
+    props = props || {};
+
+    var salt = util.asBuffer(props.p2s || new Buffer(0), "base64url"),
+        itrs = props.p2c || 0;
+
+    if (0 >= itrs) {
+      return Promise.reject(new Error("invalid iteration count"));
+    }
+
+    if (8 > salt.length) {
+      return Promise.reject(new Error("salt too small"));
+    }
+    salt = fixSalt(hmac, kw, salt);
+
+    var promise;
+
+    // STEP 1: derive shared key
+    var hash = hmac.replace("HS", "SHA");
+    promise = new Promise(function(resolve, reject) {
+      function cb(err, dk) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(dk);
+        }
+      }
+      helpers.nodeCrypto.pbkdf2(key, salt, itrs, keyLen, hash, cb);
+    });
+
+    // STEP 2: decrypt cek
+    promise = promise.then(function(dk) {
+      return KW[kw].decrypt(dk, cdata);
+    });
+
+    return promise;
+  };
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+// ### Public API
+var pbes2 = {};
+
+// * [name].derive
+[
+  "PBKDF2-SHA-256",
+  "PBKDF2-SHA-384",
+  "PBKDF2-SHA-512"
+].forEach(function(alg) {
+  var hash = alg.replace("PBKDF2-", "");
+  pbes2[alg] = {
+    derive: pbkdf2Fn(hash)
+  };
+});
+
+// [name].encrypt
+// [name].decrypt
+[
+  "PBES2-HS256+A128KW",
+  "PBES2-HS384+A192KW",
+  "PBES2-HS512+A256KW"
+].forEach(function(alg) {
+  var parts = /PBES2-(HS\d+)\+(A\d+KW)/g.exec(alg);
+  var hmac = parts[1],
+      kw = parts[2];
+  pbes2[alg] = {
+    encrypt: pbes2EncryptFN(hmac, kw),
+    decrypt: pbes2DecryptFN(hmac, kw)
+  };
+});
+
+module.exports = pbes2;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/rsassa.js - RSA Signatures
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var forge = __webpack_require__(5),
+    helpers = __webpack_require__(12),
+    DataBuffer = __webpack_require__(41),
+    rsaUtil = __webpack_require__(88);
+
+// ### RSAES-PKCS1-v1_5
+
+// ### RSAES-OAEP
+function rsaesEncryptFn(name) {
+  var alg = {
+    name: name
+  };
+
+  if ("RSA-OAEP-256" === name) {
+    alg.name = "RSA-OAEP";
+    alg.hash = {
+      name: "SHA-256"
+    };
+  } else if ("RSA-OAEP" === name) {
+    alg.hash = {
+      name: "SHA-1"
+    };
+  } else {
+    alg.name = "RSAES-PKCS1-v1_5";
+  }
+
+  // ### Fallback Implementation -- uses forge
+  var fallback = function(key, pdata) {
+    // convert pdata to byte string
+    pdata = new DataBuffer(pdata).bytes();
+
+    // encrypt it
+    var pki = rsaUtil.convertToForge(key, true),
+        params = {};
+    if ("RSA-OAEP" === alg.name) {
+      params.md = alg.hash.name.toLowerCase().replace(/\-/g, "");
+      params.md = forge.md[params.md].create();
+    }
+    var cdata = pki.encrypt(pdata, alg.name.toUpperCase(), params);
+
+    // convert cdata to Buffer
+    cdata = new DataBuffer(cdata).native();
+
+    return Promise.resolve({
+      data: cdata
+    });
+  };
+
+  // ### WebCryptoAPI Implementation
+  var webcrypto;
+  if ("RSAES-PKCS1-v1_5" !== alg.name) {
+    webcrypto = function(key, pdata) {
+      key = rsaUtil.convertToJWK(key, true);
+      var promise;
+      promise = helpers.subtleCrypto.importKey("jwk", key, alg, true, ["encrypt"]);
+      promise = promise.then(function(key) {
+        return helpers.subtleCrypto.encrypt(alg, key, pdata);
+      });
+      promise = promise.then(function(result) {
+        var cdata = new Buffer(result);
+        return {
+          data: cdata
+        };
+      });
+
+      return promise;
+    };
+  } else {
+    webcrypto = null;
+  }
+
+  return helpers.setupFallback(null, webcrypto, fallback);
+}
+
+function rsaesDecryptFn(name) {
+  var alg = {
+    name: name
+  };
+
+  if ("RSA-OAEP-256" === name) {
+    alg.name = "RSA-OAEP";
+    alg.hash = {
+      name: "SHA-256"
+    };
+  } else if ("RSA-OAEP" === name) {
+    alg.hash = {
+      name: "SHA-1"
+    };
+  } else {
+    alg.name = "RSAES-PKCS1-v1_5";
+  }
+
+  // ### Fallback Implementation -- uses forge
+  var fallback = function(key, cdata) {
+    // convert cdata to byte string
+    cdata = new DataBuffer(cdata).bytes();
+
+    // decrypt it
+    var pki = rsaUtil.convertToForge(key, false),
+        params = {};
+    if ("RSA-OAEP" === alg.name) {
+      params.md = alg.hash.name.toLowerCase().replace(/\-/g, "");
+      params.md = forge.md[params.md].create();
+    }
+    var pdata = pki.decrypt(cdata, alg.name.toUpperCase(), params);
+
+    // convert pdata to Buffer
+    pdata = new DataBuffer(pdata).native();
+
+    return Promise.resolve(pdata);
+  };
+
+  // ### WebCryptoAPI Implementation
+  var webcrypto;
+  if ("RSAES-PKCS1-v1_5" !== alg.name) {
+    webcrypto = function(key, pdata) {
+      key = rsaUtil.convertToJWK(key, false);
+      var promise;
+      promise = helpers.subtleCrypto.importKey("jwk", key, alg, true, ["decrypt"]);
+      promise = promise.then(function(key) {
+        return helpers.subtleCrypto.decrypt(alg, key, pdata);
+      });
+      promise = promise.then(function(result) {
+        var pdata = new Buffer(result);
+        return pdata;
+      });
+
+      return promise;
+    };
+  } else {
+    webcrypto = null;
+  }
+
+  var nodejs;
+  if (helpers.nodeCrypto && name === "RSA-OAEP") { // node only support SHA1, plain RSA-OAEP
+    nodejs = function(key, pdata) {
+      key = rsaUtil.convertToPem(key, false);
+      return helpers.nodeCrypto.privateDecrypt(key, pdata);
+    };
+  }
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+// ### Public API
+// * [name].encrypt
+// * [name].decrypt
+var rsaes = {};
+[
+  "RSA-OAEP",
+  "RSA-OAEP-256",
+  "RSA1_5"
+].forEach(function(name) {
+  rsaes[name] = {
+    encrypt: rsaesEncryptFn(name),
+    decrypt: rsaesDecryptFn(name)
+  };
+});
+
+module.exports = rsaes;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
 /* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * algorithms/rsassa.js - RSA Signatures
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc.  See LICENSE file.
+ */
+
+
+var forge = __webpack_require__(5),
+    CONSTANTS = __webpack_require__(21),
+    helpers = __webpack_require__(12),
+    rsaUtil = __webpack_require__(88);
+
+// ### RSASSA-PKCS1-v1_5
+
+function rsassaV15SignFn(name) {
+  var md = name.replace("RS", "SHA").toLowerCase(),
+      hash = name.replace("RS", "SHA-");
+
+  var alg = {
+    name: "RSASSA-PKCS1-V1_5",
+    hash: {
+      name: hash
+    }
+  };
+
+  // ### Fallback Implementation -- uses forge
+  var fallback = function(key, pdata) {
+    // create the digest
+    var digest = forge.md[md].create();
+    digest.start();
+    digest.update(pdata);
+
+    // sign it
+    var pki = rsaUtil.convertToForge(key, false);
+    var sig = pki.sign(digest, "RSASSA-PKCS1-V1_5");
+    sig = new Buffer(sig, "binary");
+
+    return Promise.resolve({
+      data: pdata,
+      mac: sig
+    });
+  };
+
+  // ### WebCryptoAPI Implementation
+  var webcrypto = function(key, pdata) {
+    key = rsaUtil.convertToJWK(key, false);
+    var promise;
+    promise = helpers.subtleCrypto.importKey("jwk", key, alg, true, ["sign"]);
+    promise = promise.then(function(key) {
+      return helpers.subtleCrypto.sign(alg, key, pdata);
+    });
+    promise = promise.then(function(result) {
+      var sig = new Buffer(result);
+      return {
+        data: pdata,
+        mac: sig
+      };
+    });
+
+    return promise;
+  };
+
+  var nodejs;
+  if (helpers.nodeCrypto && helpers.nodeCrypto.getHashes().indexOf(hash) > -1) {
+    nodejs = function(key, pdata) {
+      key = rsaUtil.convertToPem(key, false);
+      var sign = helpers.nodeCrypto.createSign(hash);
+      sign.update(pdata);
+
+      return {
+        data: pdata,
+        mac: sign.sign(rsaUtil.convertToPem(key, false))
+      };
+    };
+  }
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+function rsassaV15VerifyFn(name) {
+  var md = name.replace("RS", "SHA").toLowerCase(),
+      hash = name.replace("RS", "SHA-");
+  var alg = {
+    name: "RSASSA-PKCS1-V1_5",
+    hash: {
+      name: hash
+    }
+  };
+
+  // ### Fallback implementation -- uses forge
+  var fallback = function(key, pdata, mac) {
+    // create the digest
+    var digest = forge.md[md].create();
+    digest.start();
+    digest.update(pdata);
+    digest = digest.digest().bytes();
+
+    // verify it
+    var pki = rsaUtil.convertToForge(key, true);
+    var sig = mac.toString("binary");
+    var result = pki.verify(digest, sig, "RSASSA-PKCS1-V1_5");
+    if (!result) {
+      return Promise.reject(new Error("verification failed"));
+    }
+    return Promise.resolve({
+      data: pdata,
+      mac: mac,
+      valid: true
+    });
+  };
+
+  // ### WebCryptoAPI Implementation
+  var webcrypto = function(key, pdata, mac) {
+    key = rsaUtil.convertToJWK(key, true);
+    var promise;
+    promise = helpers.subtleCrypto.importKey("jwk", key, alg, true, ["verify"]);
+    promise = promise.then(function(key) {
+      return helpers.subtleCrypto.verify(alg, key, mac, pdata);
+    });
+    promise = promise.then(function(result) {
+      if (!result) {
+        return Promise.reject(new Error("verification failed"));
+      }
+
+      return {
+        data: pdata,
+        mac: mac,
+        valid: true
+      };
+    });
+
+    return promise;
+  };
+
+  var nodejs;
+  if (helpers.nodeCrypto && helpers.nodeCrypto.getHashes().indexOf(md) > -1) {
+    nodejs = function(key, pdata, mac) {
+      var verify = helpers.nodeCrypto.createVerify(md);
+      verify.update(pdata);
+      verify.end();
+      var result = verify.verify(rsaUtil.convertToPem(key, true), mac);
+      if (!result) {
+        return Promise.reject(new Error("verification failed"));
+      }
+
+      return {
+        data: pdata,
+        mac: mac,
+        valid: true,
+      };
+    };
+  }
+
+  return helpers.setupFallback(nodejs, webcrypto, fallback);
+}
+
+// ### RSA-PSS
+// NOTE: no WebCryptoAPI variant -- too many browsers don't
+// implement it yet (e.g., Firefox, Safari)
+
+function rsassaPssSignFn(name) {
+  var md = name.replace("PS", "SHA").toLowerCase(),
+      hash = name.replace("PS", "SHA-");
+
+  return function(key, pdata) {
+    // create the digest
+    var digest = forge.md[md].create();
+    digest.start();
+    digest.update(pdata);
+
+    // setup padding
+    var pss = forge.pss.create({
+      md: forge.md[md].create(),
+      mgf: forge.mgf.mgf1.create(forge.md[md].create()),
+      saltLength: CONSTANTS.HASHLENGTH[hash] / 8
+    });
+
+    // sign it
+    var pki = rsaUtil.convertToForge(key, false);
+    var sig = pki.sign(digest, pss);
+    sig = new Buffer(sig, "binary");
+
+    return Promise.resolve({
+      data: pdata,
+      mac: sig
+    });
+  };
+}
+
+function rsassaPssVerifyFn(name) {
+  var md = name.replace("PS", "SHA").toLowerCase(),
+      hash = name.replace("PS", "SHA-");
+
+  // ### Fallback implementation -- uses forge
+  return function(key, pdata, mac) {
+    // create the digest
+    var digest = forge.md[md].create();
+    digest.start();
+    digest.update(pdata);
+    digest = digest.digest().bytes();
+
+    // setup padding
+    var pss = forge.pss.create({
+      md: forge.md[md].create(),
+      mgf: forge.mgf.mgf1.create(forge.md[md].create()),
+      saltLength: CONSTANTS.HASHLENGTH[hash] / 8
+    });
+
+    // verify it
+    var pki = rsaUtil.convertToForge(key, true);
+    var sig = mac.toString("binary");
+    var result = pki.verify(digest, sig, pss);
+    if (!result) {
+      return Promise.reject(new Error("verification failed"));
+    }
+    return Promise.resolve({
+      data: pdata,
+      mac: mac,
+      valid: true
+    });
+  };
+}
+
+// ### Public API
+// * [name].sign
+// * [name].verify
+var rsassa = {};
+[
+  "PS256",
+  "PS384",
+  "PS512"
+].forEach(function(name) {
+  rsassa[name] = {
+    sign: rsassaPssSignFn(name),
+    verify: rsassaPssVerifyFn(name)
+  };
+});
+
+[
+  "RS256",
+  "RS384",
+  "RS512"
+].forEach(function(name) {
+  rsassa[name] = {
+    sign: rsassaV15SignFn(name),
+    verify: rsassaV15VerifyFn(name)
+  };
+});
+
+module.exports = rsassa;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73902,7 +73911,7 @@ module.exports = v4;
 var util = __webpack_require__(7);
 
 var JWK = {
-  BaseKey: __webpack_require__(61),
+  BaseKey: __webpack_require__(59),
   helpers: __webpack_require__(42)
 };
 
@@ -74114,12 +74123,12 @@ module.exports = Object.freeze({
 // registration
 (function(REGISTRY) {
   REGISTRY.register(JWKOctetFactory);
-})(__webpack_require__(60).registry);
+})(__webpack_require__(58).registry);
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74131,11 +74140,11 @@ module.exports = Object.freeze({
 
 
 var forge = __webpack_require__(5),
-    rsau = __webpack_require__(87),
+    rsau = __webpack_require__(88),
     nodeCrypto = __webpack_require__(12).nodeCrypto;
 
 var JWK = {
-  BaseKey: __webpack_require__(61),
+  BaseKey: __webpack_require__(59),
   helpers: __webpack_require__(42)
 };
 
@@ -74487,12 +74496,12 @@ module.exports = Object.freeze({
 // registration
 (function(REGISTRY) {
   REGISTRY.register(JWKRsaFactory);
-})(__webpack_require__(60).registry);
+})(__webpack_require__(58).registry);
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74503,12 +74512,12 @@ module.exports = Object.freeze({
  */
 
 
-var ecutil = __webpack_require__(86),
+var ecutil = __webpack_require__(87),
     forge = __webpack_require__(5),
-    depsecc = __webpack_require__(120);
+    depsecc = __webpack_require__(124);
 
 var JWK = {
-  BaseKey: __webpack_require__(61),
+  BaseKey: __webpack_require__(59),
   helpers: __webpack_require__(42)
 };
 
@@ -74901,12 +74910,989 @@ module.exports = Object.freeze({
 // registration
 (function(REGISTRY) {
   REGISTRY.register(JWKEcFactory);
-})(__webpack_require__(60).registry);
+})(__webpack_require__(58).registry);
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 238 */
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * jws/helpers.js - JWS Internal Helper Functions
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
+ */
+
+
+module.exports = {
+  slice: function(input, start) {
+    return Array.prototype.slice.call(input, start || 0);
+  }
+};
+
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * jws/defaults.js - Defaults for JWSs
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
+ */
+
+
+/**
+ * @description
+ * The default options for {@link JWS.createSign}.
+ *
+ * @property {Boolean} compact Determines if the output is the Compact
+ *           serialization (`true`) or the JSON serialization (**`false`**,
+ *           the default).
+ * @property {String|String[]} protect The names of the headers to integrity
+ *           protect.  The value `""` means that none of header parameters
+ *           are integrity protected, while `"*"` (the default) means that all
+ *           headers parameter sare integrity protected.
+ */
+var JWSDefaults = {
+    compact: false,
+    protect: "*"
+};
+
+module.exports = JWSDefaults;
+
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * jws/verify.js - Verifies from a JWS
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
+ */
+
+
+var clone = __webpack_require__(20),
+    merge = __webpack_require__(26),
+    base64url = __webpack_require__(57),
+    AlgConfig = __webpack_require__(128),
+    JWK = __webpack_require__(35);
+
+var DEFAULT_OPTIONS = {
+  algorithms: "*",
+  allowEmbeddedKey: false
+};
+
+/**
+ * @class JWS.Verifier
+ * @classdesc Parser of signed content.
+ *
+ * @description
+ * **NOTE:** this class cannot be instantiated directly. Instead call {@link
+ * JWS.createVerify}.
+ */
+var JWSVerifier = function(ks, globalOpts) {
+  var assumedKey,
+      keystore;
+
+  if (JWK.isKey(ks)) {
+    assumedKey = ks;
+    keystore = assumedKey.keystore;
+  } else if (JWK.isKeyStore(ks)) {
+    keystore = ks;
+  } else {
+    keystore = JWK.createKeyStore();
+  }
+
+  globalOpts = merge(DEFAULT_OPTIONS, globalOpts);
+
+  Object.defineProperty(this, "defaultKey", {
+    value: assumedKey || undefined,
+    enumerable: true
+  });
+  Object.defineProperty(this, "keystore", {
+    value: keystore,
+    enumerable: true
+  });
+
+  Object.defineProperty(this, "verify", {
+    value: function(input, opts) {
+      opts = merge({}, globalOpts, opts || {});
+      var extraHandlers = opts.handlers || {};
+      var handlerKeys = Object.keys(extraHandlers);
+      var algSpec = new AlgConfig(opts.algorithms);
+
+      if ("string" === typeof input) {
+        input = input.split(".");
+        input = {
+          payload: input[1],
+          signatures: [
+            {
+              protected: input[0],
+              signature: input[2]
+            }
+          ]
+        };
+      } else if (!input || "object" === input) {
+        throw new Error("invalid input");
+      }
+
+      // fixup "flattened JSON" to look like "general JSON"
+      if (input.signature) {
+        input.signatures = [
+          {
+            protected: input.protected || undefined,
+            header: input.header || undefined,
+            signature: input.signature
+          }
+        ];
+      }
+
+      // ensure signatories exists
+      var sigList = input.signatures || [{}];
+
+      // combine fields and decode signature per signatory
+      sigList = sigList.map(function(s) {
+        var header = clone(s.header || {});
+        var protect = s.protected ?
+                      JSON.parse(base64url.decode(s.protected, "utf8")) :
+                      {};
+        header = merge(header, protect);
+        var signature = base64url.decode(s.signature);
+
+        // process allowed algorithims
+        if (!algSpec.match(header.alg)) {
+          return Promise.reject(new Error("Algorithm not allowed: " + header.alg));
+        }
+
+        // process "crit" first
+        var crit = protect.crit;
+        if (crit) {
+          if (!Array.isArray(crit)) {
+            return Promise.reject(new Error("Invalid 'crit' header"));
+          }
+          for (var idx = 0; crit.length > idx; idx++) {
+            if (-1 === handlerKeys.indexOf(crit[idx])) {
+              return Promise.reject(new Error(
+                  "Critical extension is not supported: " + crit[idx]
+              ));
+            }
+          }
+        }
+        protect = Object.keys(protect);
+
+        return Promise.resolve({
+          protected: protect,
+          aad: s.protected || "",
+          header: header,
+          signature: signature
+        });
+      });
+
+      var promise = Promise.all(sigList);
+      promise = promise.then(function(sigList) {
+        return new Promise(function(resolve, reject) {
+          var processSig = function() {
+            var sig = sigList.shift();
+            if (!sig) {
+              reject(new Error("no key found"));
+              return;
+            }
+
+            sig = merge({}, sig, {
+              payload: input.payload
+            });
+            var p = Promise.resolve(sig);
+            // find the key
+            p = p.then(function(sig) {
+              var algKey;
+              // TODO: resolve jku, x5c, x5u
+              if (opts.allowEmbeddedKey && sig.header.jwk) {
+                algKey = JWK.asKey(sig.header.jwk);
+              } else if (opts.allowEmbeddedKey && sig.header.x5c) {
+                algKey = sig.header.x5c[0];
+                algKey = new Buffer(algKey, "base64");
+                // TODO: callback to validate chain
+                algKey = JWK.asKey(algKey, "pkix");
+              } else {
+                algKey = Promise.resolve(assumedKey || keystore.get({
+                  use: "sig",
+                  alg: sig.header.alg,
+                  kid: sig.header.kid
+                }));
+              }
+              return algKey.then(function(k) {
+                if (!k) {
+                  return Promise.reject(new Error("key does not match"));
+                }
+                sig.key = k;
+                return sig;
+              });
+            });
+
+            // process any prepare-verify handlers
+            p = p.then(function(sig) {
+              var processing = [];
+              handlerKeys.forEach(function(h) {
+                h = extraHandlers[h];
+                var p;
+                if ("function" === typeof h) {
+                  p = h(sig);
+                } else if ("object" === typeof h && "function" === typeof h.prepare) {
+                  p = h.prepare(sig);
+                }
+                if (p) {
+                  processing.push(Promise.resolve(p));
+                }
+              });
+              return Promise.all(processing).then(function() {
+                // don't actually care about individual handler results
+                // assume {sig} is updated
+                return sig;
+              });
+            });
+
+            // prepare verify inputs
+            p = p.then(function(sig) {
+              var aad = sig.aad || "",
+                  payload = sig.payload || "";
+              var content = new Buffer(1 + aad.length + payload.length),
+                  pos = 0;
+              content.write(aad, pos, "ascii");
+              pos += aad.length;
+              content.write(".", pos, "ascii");
+              pos++;
+
+              if (Buffer.isBuffer(payload)) {
+                payload.copy(content, pos);
+              } else {
+                content.write(payload, pos, "binary");
+              }
+              sig.content = content;
+              return sig;
+            });
+
+            p = p.then(function(sig) {
+              return sig.key.verify(sig.header.alg,
+                                    sig.content,
+                                    sig.signature);
+            });
+
+            p = p.then(function(result) {
+              var payload = sig.payload;
+              payload = base64url.decode(payload);
+              return {
+                protected: sig.protected,
+                header: sig.header,
+                payload: payload,
+                signature: result.mac,
+                key: sig.key
+              };
+            });
+
+            // process any post-verify handlers
+            p = p.then(function(jws) {
+              var processing = [];
+              handlerKeys.forEach(function(h) {
+                h = extraHandlers[h];
+                var p;
+                if ("object" === typeof h && "function" === typeof h.complete) {
+                  p = h.complete(jws);
+                }
+                if (p) {
+                  processing.push(Promise.resolve(p));
+                }
+              });
+              return Promise.all(processing).then(function() {
+                // don't actually care about individual handler results
+                // assume {jws} is updated
+                return jws;
+              });
+            });
+            p.then(resolve, processSig);
+          };
+          processSig();
+        });
+      });
+      return promise;
+    }
+  });
+};
+
+/**
+ * @description
+ * Creates a new JWS.Verifier with the given Key or KeyStore.
+ *
+ * @param {JWK.Key|JWK.KeyStore} ks The Key or KeyStore to use for verification.
+ * @returns {JWS.Verifier} The new Verifier.
+ */
+function createVerify(ks, opts) {
+  var vfy = new JWSVerifier(ks, opts);
+
+  return vfy;
+}
+
+module.exports = {
+  verifier: JWSVerifier,
+  createVerify: createVerify
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
+ * jwe/encrypt.js - Encrypt to a JWE
+ *
+ * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
+ */
+
+
+var assign = __webpack_require__(117),
+    clone = __webpack_require__(20),
+    util = __webpack_require__(7),
+    generateCEK = __webpack_require__(129).generateCEK,
+    JWK = __webpack_require__(35),
+    slice = __webpack_require__(129).slice,
+    zlib = __webpack_require__(130),
+    CONSTANTS = __webpack_require__(21);
+
+var DEFAULTS = __webpack_require__(265);
+
+/**
+ * @class JWE.Encrypter
+ * @classdesc
+ * Generator of encrypted data.
+ *
+ * @description
+ * **NOTE:** This class cannot be instantiated directly. Instead call {@link
+ * JWE.createEncrypt}.
+ */
+function JWEEncrypter(cfg, fields, recipients) {
+  var finalized = false,
+    format = cfg.format || "general",
+    protectAll = !!cfg.protectAll,
+    content = new Buffer(0);
+
+  /**
+   * @member {String} JWE.Encrypter#zip
+   * @readonly
+   * @description
+   * Indicates the compression algorithm applied to the plaintext
+   * before it is encrypted.  The possible values are:
+   *
+   * + **`"DEF"`**: Compress the plaintext using the DEFLATE algorithm.
+   * + **`""`**: Do not compress the plaintext.
+   */
+  Object.defineProperty(this, "zip", {
+    get: function() {
+      return fields.zip || "";
+    },
+    enumerable: true
+  });
+  /**
+   * @member {Boolean} JWE.Encrypter#compact
+   * @readonly
+   * @description
+   * Indicates whether the output of this encryption generator is
+   * using the Compact serialization (`true`) or the JSON
+   * serialization (`false`).
+   */
+  Object.defineProperty(this, "compact", {
+    get: function() { return "compact" === format; },
+    enumerable: true
+  });
+  /**
+   * @member {String} JWE.Encrypter#format
+   * @readonly
+   * @description
+   * Indicates the format the output of this encryption generator takes.
+   */
+  Object.defineProperty(this, "format", {
+    get: function() { return format; },
+    enumerable: true
+  });
+  /**
+   * @member {String[]} JWE.Encrypter#protected
+   * @readonly
+   * @description
+   * The header parameter names that are protected. Protected header fields
+   * are first serialized to UTF-8 then encoded as util.base64url, then used as
+   * the additional authenticated data in the encryption operation.
+   */
+  Object.defineProperty(this, "protected", {
+    get: function() {
+      return clone(cfg.protect);
+    },
+    enumerable: true
+  });
+  /**
+   * @member {Object} JWE.Encrypter#header
+   * @readonly
+   * @description
+   * The global header parameters, both protected and unprotected. Call
+   * {@link JWE.Encrypter#protected} to determine which parameters will
+   * be protected.
+   */
+  Object.defineProperty(this, "header", {
+    get: function() {
+      return clone(fields);
+    },
+    enumerable: true
+  });
+
+  /**
+   * @method JWE.Encrypter#update
+   * @description
+   * Updates the plaintext data for the encryption generator. The plaintext
+   * is appended to the end of any other plaintext already applied.
+   *
+   * If {data} is a Buffer, {encoding} is ignored. Otherwise, {data} is
+   * converted to a Buffer internally to {encoding}.
+   *
+   * @param {Buffer|String} [data] The plaintext to apply.
+   * @param {String} [encoding] The encoding of the plaintext.
+   * @returns {JWE.Encrypter} This encryption generator.
+   * @throws {Error} If ciphertext has already been generated.
+   */
+  Object.defineProperty(this, "update", {
+    value: function(data, encoding) {
+      if (finalized) {
+        throw new Error("already final");
+      }
+      if (data != null) {
+        data = util.asBuffer(data, encoding);
+        if (content.length) {
+          content = Buffer.concat([content, data],
+                      content.length + data.length);
+        } else {
+          content = data;
+        }
+      }
+
+      return this;
+    }
+  });
+  /**
+   * @method JWE.Encrypter#final
+   * @description
+   * Finishes the encryption operation.
+   *
+   * The returned Promise, when fulfilled, is the JSON Web Encryption (JWE)
+   * object, either in the Compact (if {@link JWE.Encrypter#compact} is
+   * `true`) or the JSON serialization.
+   *
+   * @param {Buffer|String} [data] The final plaintext data to apply.
+   * @param {String} [encoding] The encoding of the final plaintext data
+   *        (if any).
+   * @returns {Promise} A promise for the encryption operation.
+   * @throws {Error} If ciphertext has already been generated.
+   */
+  Object.defineProperty(this, "final", {
+    value: function(data, encoding) {
+      if (finalized) {
+        return Promise.reject(new Error("already final"));
+      }
+
+      // last-minute data
+      this.update(data, encoding);
+
+      // mark as done...ish
+      finalized = true;
+      var promise = Promise.resolve({});
+
+      // determine CEK and IV
+      var encAlg = fields.enc;
+      var encKey;
+      promise = promise.then(function(jwe) {
+        if (cfg.cek) {
+          encKey = JWK.asKey(cfg.cek);
+        }
+        return jwe;
+      });
+
+      // process recipients
+      promise = promise.then(function(jwe) {
+        var procR = function(r, one) {
+          var props = {};
+          props = assign(props, fields);
+          props = assign(props, r.header);
+
+          var algKey = r.key,
+              algAlg = props.alg;
+
+          // generate Ephemeral EC Key
+          var tks,
+              rpromise;
+          if (props.alg.indexOf("ECDH-ES") === 0) {
+            tks = algKey.keystore.temp();
+            if (r.epk) {
+              rpromise = Promise.resolve(r.epk).
+                then(function(epk) {
+                  r.header.epk = epk.toJSON(false, ["kid"]);
+                  props.epk = epk.toObject(true, ["kid"]);
+                });
+            } else {
+              rpromise = tks.generate("EC", algKey.get("crv")).
+                then(function(epk) {
+                  r.header.epk = epk.toJSON(false, ["kid"]);
+                  props.epk = epk.toObject(true, ["kid"]);
+                });
+            }
+          } else {
+            rpromise = Promise.resolve();
+          }
+
+          // encrypt the CEK
+          rpromise = rpromise.then(function() {
+            var cek,
+                p;
+            // special case 'alg=dir'
+            if ("dir" === algAlg && one) {
+              encKey = Promise.resolve(algKey);
+              p = encKey.then(function(jwk) {
+                // fixup encAlg
+                if (!encAlg) {
+                  props.enc = fields.enc = encAlg = jwk.algorithms(JWK.MODE_ENCRYPT)[0];
+                }
+                return {
+                  once: true,
+                  direct: true
+                };
+              });
+            } else {
+              if (!encKey) {
+                if (!encAlg) {
+                  props.enc = fields.enc = encAlg = cfg.contentAlg;
+                }
+                encKey = generateCEK(encAlg);
+              }
+              p = encKey.then(function(jwk) {
+                cek = jwk.get("k", true);
+                // algKey may or may not be a promise
+                return algKey;
+              });
+              p = p.then(function(algKey) {
+                return algKey.wrap(algAlg, cek, props);
+              });
+            }
+            return p;
+          });
+          rpromise = rpromise.then(function(wrapped) {
+            if (wrapped.once && !one) {
+              return Promise.reject(new Error("cannot use 'alg':'" + algAlg + "' with multiple recipients"));
+            }
+
+            var rjwe = {},
+                cek;
+            if (wrapped.data) {
+              cek = wrapped.data;
+              cek = util.base64url.encode(cek);
+            }
+
+            if (wrapped.direct && cek) {
+              // replace content key
+              encKey = JWK.asKey({
+                kty: "oct",
+                k: cek
+              });
+            } else if (cek) {
+              /* eslint camelcase: [0] */
+              rjwe.encrypted_key = cek;
+            }
+
+            if (r.header && Object.keys(r.header).length) {
+              rjwe.header = clone(r.header || {});
+            }
+            if (wrapped.header) {
+              rjwe.header = assign(rjwe.header || {},
+                                     wrapped.header);
+            }
+
+            return rjwe;
+           });
+           return rpromise;
+        };
+
+        var p = Promise.all(recipients);
+        p = p.then(function(rcpts) {
+          var single = (1 === rcpts.length);
+          rcpts = rcpts.map(function(r) {
+            return procR(r, single);
+          });
+          return Promise.all(rcpts);
+        });
+        p = p.then(function(rcpts) {
+          jwe.recipients = rcpts.filter(function(r) { return !!r; });
+          return jwe;
+        });
+        return p;
+      });
+
+      // normalize headers
+      var props = {};
+      promise = promise.then(function(jwe) {
+        var protect,
+          lenProtect,
+          unprotect,
+          lenUnprotect;
+
+        unprotect = clone(fields);
+        if ((protectAll && jwe.recipients.length === 1) || "compact" === format) {
+          // merge single recipient into fields
+          protect = assign(jwe.recipients[0].header || {},
+                     unprotect);
+          lenProtect = Object.keys(protect).length;
+
+          unprotect = undefined;
+          lenUnprotect = 0;
+
+          delete jwe.recipients[0].header;
+          if (Object.keys(jwe.recipients[0]).length === 0) {
+            jwe.recipients.splice(0, 1);
+          }
+        } else {
+          protect = {};
+          lenProtect = 0;
+          lenUnprotect = Object.keys(unprotect).length;
+          cfg.protect.forEach(function(f) {
+            if (!(f in unprotect)) {
+              return;
+            }
+            protect[f] = unprotect[f];
+            lenProtect++;
+
+            delete unprotect[f];
+            lenUnprotect--;
+          });
+        }
+
+        if (!jwe.recipients || jwe.recipients.length === 0) {
+          delete jwe.recipients;
+        }
+
+        // "serialize" (and setup merged props)
+        if (unprotect && lenUnprotect > 0) {
+          props = assign(props, unprotect);
+          jwe.unprotected = unprotect;
+        }
+        if (protect && lenProtect > 0) {
+          props = assign(props, protect);
+          protect = JSON.stringify(protect);
+          jwe.protected = util.base64url.encode(protect, "utf8");
+        }
+
+        return jwe;
+      });
+
+      // (OPTIONAL) compress plaintext
+      promise = promise.then(function(jwe) {
+        var pdata = content;
+        if (!props.zip) {
+          jwe.plaintext = pdata;
+          return jwe;
+        } else if (props.zip === "DEF") {
+          return new Promise(function(resolve, reject) {
+            zlib.deflateRaw(new Buffer(pdata, "binary"), function(err, data) {
+              if (err) {
+                reject(err);
+              }
+              else {
+                jwe.plaintext = data;
+                resolve(jwe);
+              }
+            });
+          });
+        }
+        return Promise.reject(new Error("unsupported 'zip' mode"));
+      });
+
+      // encrypt plaintext
+      promise = promise.then(function(jwe) {
+        props.adata = jwe.protected;
+        if ("aad" in cfg && cfg.aad != null) {
+          props.adata += "." + cfg.aad;
+          props.adata = new Buffer(props.adata, "utf8");
+        }
+        // calculate IV
+        var iv = cfg.iv ||
+                 util.randomBytes(CONSTANTS.NONCELENGTH[encAlg] / 8);
+        if ("string" === typeof iv) {
+          iv = util.base64url.decode(iv);
+        }
+        props.iv = iv;
+
+        if ("recipients" in jwe && jwe.recipients.length === 1) {
+          props.kdata = jwe.recipients[0].encrypted_key;
+        }
+
+        if ("epu" in cfg && cfg.epu != null) {
+          props.epu = cfg.epu;
+        }
+
+        if ("epv" in cfg && cfg.epv != null) {
+          props.epv = cfg.epv;
+        }
+
+        var pdata = jwe.plaintext;
+        delete jwe.plaintext;
+        return encKey.then(function(encKey) {
+          var p = encKey.encrypt(encAlg, pdata, props);
+          p = p.then(function(result) {
+            jwe.iv = util.base64url.encode(iv, "binary");
+            if ("aad" in cfg && cfg.aad != null) {
+             jwe.aad = cfg.aad;
+            }
+            jwe.ciphertext = util.base64url.encode(result.data, "binary");
+            jwe.tag = util.base64url.encode(result.tag, "binary");
+            return jwe;
+          });
+          return p;
+        });
+      });
+
+      // (OPTIONAL) compact/flattened results
+      switch (format) {
+        case "compact":
+          promise = promise.then(function(jwe) {
+            var compact = new Array(5);
+
+            compact[0] = jwe.protected;
+            if (jwe.recipients && jwe.recipients[0]) {
+              compact[1] = jwe.recipients[0].encrypted_key;
+            }
+
+            compact[2] = jwe.iv;
+            compact[3] = jwe.ciphertext;
+            compact[4] = jwe.tag;
+            compact = compact.join(".");
+
+            return compact;
+          });
+          break;
+        case "flattened":
+          promise = promise.then(function(jwe) {
+            var flattened = {},
+                rcpt = jwe.recipients && jwe.recipients[0];
+
+            if (jwe.protected) {
+              flattened.protected = jwe.protected;
+            }
+            if (jwe.unprotected) {
+              flattened.unprotected = jwe.unprotected;
+            }
+            ["header", "encrypted_key"].forEach(function(f) {
+              if (!rcpt) { return; }
+              if (!(f in rcpt)) { return; }
+              flattened[f] = rcpt[f];
+            });
+            if (jwe.aad) {
+              flattened.aad = jwe.aad;
+            }
+            flattened.iv = jwe.iv;
+            flattened.ciphertext = jwe.ciphertext;
+            flattened.tag = jwe.tag;
+
+            return flattened;
+          });
+          break;
+      }
+
+      return promise;
+    }
+  });
+}
+
+function createEncrypt(opts, rcpts) {
+  // fixup recipients
+  var options = opts,
+    rcptStart = 1,
+    rcptList = rcpts;
+
+  if (arguments.length === 0) {
+    throw new Error("at least one recipient must be provided");
+  }
+  if (arguments.length === 1) {
+    // assume opts is the recipient list
+    rcptList = opts;
+    rcptStart = 0;
+    options = {};
+  } else if (JWK.isKey(opts) ||
+        (opts && "kty" in opts) ||
+        (opts && "key" in opts &&
+        (JWK.isKey(opts.key) || "kty" in opts.key))) {
+    rcptList = opts;
+    rcptStart = 0;
+    options = {};
+  } else {
+    options = clone(opts);
+  }
+  if (!Array.isArray(rcptList)) {
+    rcptList = slice(arguments, rcptStart);
+  }
+
+  // fixup options
+  options = assign(clone(DEFAULTS), options);
+
+  // setup header fields
+  var fields = clone(options.fields || {});
+  if (options.zip) {
+    fields.zip = (typeof options.zip === "boolean") ?
+           (options.zip ? "DEF" : false) :
+           options.zip;
+  }
+  options.format = (options.compact ? "compact" : options.format) || "general";
+  switch (options.format) {
+    case "compact":
+      if ("aad" in opts) {
+        throw new Error("additional authenticated data cannot be used for compact serialization");
+      }
+      /* eslint no-fallthrough: [0] */
+    case "flattened":
+      if (rcptList.length > 1) {
+        throw new Error("too many recipients for compact serialization");
+      }
+      break;
+  }
+
+  // note protected fields (globally)
+  // protected fields are global only
+  var protectAll = false;
+  if ("compact" === options.format || "*" === options.protect) {
+    protectAll = true;
+    options.protect = Object.keys(fields).concat("enc");
+  } else if (typeof options.protect === "string") {
+    options.protect = [options.protect];
+  } else if (Array.isArray(options.protect)) {
+    options.protect = options.protect.concat();
+  } else if (!options.protect) {
+    options.protect = [];
+  } else {
+    throw new Error("protect must be a list of fields");
+  }
+
+  if (protectAll && 1 < rcptList.length) {
+    throw new Error("too many recipients to protect all header parameters");
+  }
+
+  rcptList = rcptList.map(function(r, idx) {
+    var p;
+
+    // resolve a key
+    if (r && "kty" in r) {
+      p = JWK.asKey(r);
+      p = p.then(function(k) {
+        return {
+          key: k
+        };
+      });
+    } else if (r) {
+      p = JWK.asKey(r.key);
+      p = p.then(function(k) {
+        return {
+          header: r.header,
+          reference: r.reference,
+          key: k
+        };
+      });
+    } else {
+      p = Promise.reject(new Error("missing key for recipient " + idx));
+    }
+
+    // convert ephemeral key (if present)
+    if (r.epk) {
+      p = p.then(function(recipient) {
+        return JWK.asKey(r.epk).
+          then(function(epk) {
+            recipient.epk = epk;
+            return recipient;
+          });
+      });
+    }
+
+    // resolve the complete recipient
+    p = p.then(function(recipient) {
+      var key = recipient.key;
+
+      // prepare the recipient header
+      var header = recipient.header || {};
+      recipient.header = header;
+      var props = {};
+      props = assign(props, fields);
+      props = assign(props, recipient.header);
+
+      // ensure key protection algorithm is set
+      if (!props.alg) {
+        props.alg = key.algorithms(JWK.MODE_WRAP)[0];
+      }
+      header.alg = props.alg;
+
+      // determine the key reference
+      var ref = recipient.reference;
+      delete recipient.reference;
+      if (undefined === ref) {
+        // header already contains the key reference
+        ref = ["kid", "jku", "x5c", "x5t", "x5u"].some(function(k) {
+          return (k in header);
+        });
+        ref = !ref ? "kid" : null;
+      } else if ("boolean" === typeof ref) {
+        // explicit (positive | negative) request for key reference
+        ref = ref ? "kid" : null;
+      }
+      var jwk;
+      if (ref) {
+        jwk = key.toJSON();
+        if ("jwk" === ref) {
+          if ("oct" === key.kty) {
+            return Promise.reject(new Error("cannot embed key"));
+          }
+          header.jwk = jwk;
+        } else if (ref in jwk) {
+          header[ref] = jwk[ref];
+        }
+      }
+
+      // freeze recipient
+      recipient = Object.freeze(recipient);
+      return recipient;
+    });
+
+    return p;
+  });
+
+  // create and configure encryption
+  var cfg = {
+    aad: ("aad" in options) ? util.base64url.encode(options.aad || "") : null,
+    contentAlg: options.contentAlg,
+    format: options.format,
+    protect: options.protect,
+    cek: options.cek,
+    iv: options.iv,
+    protectAll: protectAll
+  };
+  var enc = new JWEEncrypter(cfg, fields, rcptList);
+
+  return enc;
+}
+
+module.exports = {
+  encrypter: JWEEncrypter,
+  createEncrypt: createEncrypt
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
+
+/***/ }),
+/* 243 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -74935,7 +75921,7 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 239 */
+/* 244 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -74946,13 +75932,13 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 240 */
+/* 245 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 241 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74962,7 +75948,7 @@ module.exports = Array.isArray || function (arr) {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Buffer = __webpack_require__(91).Buffer;
+var Buffer = __webpack_require__(92).Buffer;
 /*</replacement>*/
 
 function copyBuffer(src, target, offset) {
@@ -75032,7 +76018,7 @@ module.exports = function () {
 }();
 
 /***/ }),
-/* 242 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -75106,7 +76092,7 @@ function config (name) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 243 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
@@ -75174,7 +76160,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 244 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75207,7 +76193,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 module.exports = PassThrough;
 
-var Transform = __webpack_require__(133);
+var Transform = __webpack_require__(134);
 
 /*<replacement>*/
 var util = __webpack_require__(43);
@@ -75227,47 +76213,47 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 };
 
 /***/ }),
-/* 245 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(92);
+module.exports = __webpack_require__(93);
 
 
 /***/ }),
-/* 246 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(29);
 
 
 /***/ }),
-/* 247 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(90).Transform
+module.exports = __webpack_require__(91).Transform
 
 
 /***/ }),
-/* 248 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(90).PassThrough
+module.exports = __webpack_require__(91).PassThrough
 
 
 /***/ }),
-/* 249 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {
 /* eslint camelcase: "off" */
 
-var assert = __webpack_require__(134);
+var assert = __webpack_require__(135);
 
-var Zstream = __webpack_require__(252);
-var zlib_deflate = __webpack_require__(253);
-var zlib_inflate = __webpack_require__(256);
-var constants = __webpack_require__(259);
+var Zstream = __webpack_require__(257);
+var zlib_deflate = __webpack_require__(258);
+var zlib_inflate = __webpack_require__(261);
+var constants = __webpack_require__(264);
 
 for (var key in constants) {
   exports[key] = constants[key];
@@ -75671,7 +76657,7 @@ exports.Zlib = Zlib;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(6)))
 
 /***/ }),
-/* 250 */
+/* 255 */
 /***/ (function(module, exports) {
 
 module.exports = function isBuffer(arg) {
@@ -75682,7 +76668,7 @@ module.exports = function isBuffer(arg) {
 }
 
 /***/ }),
-/* 251 */
+/* 256 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -75711,7 +76697,7 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 252 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75765,7 +76751,7 @@ module.exports = ZStream;
 
 
 /***/ }),
-/* 253 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75791,10 +76777,10 @@ module.exports = ZStream;
 // 3. This notice may not be removed or altered from any source distribution.
 
 var utils   = __webpack_require__(63);
-var trees   = __webpack_require__(254);
-var adler32 = __webpack_require__(136);
-var crc32   = __webpack_require__(137);
-var msg     = __webpack_require__(255);
+var trees   = __webpack_require__(259);
+var adler32 = __webpack_require__(137);
+var crc32   = __webpack_require__(138);
+var msg     = __webpack_require__(260);
 
 /* Public constants ==========================================================*/
 /* ===========================================================================*/
@@ -77646,7 +78632,7 @@ exports.deflateTune = deflateTune;
 
 
 /***/ }),
-/* 254 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78873,7 +79859,7 @@ exports._tr_align = _tr_align;
 
 
 /***/ }),
-/* 255 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78912,7 +79898,7 @@ module.exports = {
 
 
 /***/ }),
-/* 256 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78938,10 +79924,10 @@ module.exports = {
 // 3. This notice may not be removed or altered from any source distribution.
 
 var utils         = __webpack_require__(63);
-var adler32       = __webpack_require__(136);
-var crc32         = __webpack_require__(137);
-var inflate_fast  = __webpack_require__(257);
-var inflate_table = __webpack_require__(258);
+var adler32       = __webpack_require__(137);
+var crc32         = __webpack_require__(138);
+var inflate_fast  = __webpack_require__(262);
+var inflate_table = __webpack_require__(263);
 
 var CODES = 0;
 var LENS = 1;
@@ -80475,7 +81461,7 @@ exports.inflateUndermine = inflateUndermine;
 
 
 /***/ }),
-/* 257 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80827,7 +81813,7 @@ module.exports = function inflate_fast(strm, start) {
 
 
 /***/ }),
-/* 258 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81177,7 +82163,7 @@ module.exports = function inflate_table(type, lens, lens_index, codes, table, ta
 
 
 /***/ }),
-/* 259 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81252,7 +82238,7 @@ module.exports = {
 
 
 /***/ }),
-/* 260 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81297,7 +82283,7 @@ module.exports = JWEDefaults;
 
 
 /***/ }),
-/* 261 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81309,9 +82295,14 @@ module.exports = JWEDefaults;
 
 
 var base64url = __webpack_require__(57),
+    AlgConfig = __webpack_require__(128),
     JWK = __webpack_require__(35),
-    merge = __webpack_require__(28),
-    zlib = __webpack_require__(129);
+    merge = __webpack_require__(26),
+    zlib = __webpack_require__(130);
+
+var DEFAULT_OPTIONS = {
+  algorithms: "*"
+};
 
 /**
  * @class JWE.Decrypter
@@ -81334,7 +82325,7 @@ function JWEDecrypter(ks, globalOpts) {
     throw new TypeError("Keystore must be provided");
   }
 
-  globalOpts = merge({}, globalOpts);
+  globalOpts = merge(DEFAULT_OPTIONS, globalOpts);
 
   /**
    * Decrypts the given input.
@@ -81362,6 +82353,7 @@ function JWEDecrypter(ks, globalOpts) {
       opts = merge({}, globalOpts, opts || {});
       var extraHandlers = opts.handlers || {};
       var handlerKeys = Object.keys(extraHandlers);
+      var algSpec = new AlgConfig(opts.algorithms);
 
       /* eslint camelcase: [0] */
       if (typeof input === "string") {
@@ -81431,6 +82423,19 @@ function JWEDecrypter(ks, globalOpts) {
           header = merge(header, fields);
           r.header = header;
           r.protected = protect;
+
+          // check on allowed algorithms
+          if (!algSpec.match(header.alg)) {
+            promise = promise.then(function() {
+              return Promise.reject(new Error("Algorithm not allowed: " + header.alg));
+            });
+          }
+          if (!algSpec.match(header.enc)) {
+            promise = promise.then(function () {
+              return Promise.reject(new Error("Algorithm not allowed: " + header.enc));
+            });
+          }
+
           if (header.epk) {
             promise = promise.then(function() {
               return JWK.asKey(header.epk);
@@ -81658,700 +82663,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 262 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * jws/sign.js - Sign to JWS
- *
- * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
- */
-
-
-var clone = __webpack_require__(21),
-    merge = __webpack_require__(28),
-    uniq = __webpack_require__(125),
-    util = __webpack_require__(7),
-    JWK = __webpack_require__(35),
-    slice = __webpack_require__(263).slice;
-
-var DEFAULTS = __webpack_require__(264);
-
-/**
- * @class JWS.Signer
- * @classdesc Generator of signed content.
- *
- * @description
- * **NOTE:** this class cannot be instantiated directly. Instead call {@link
- * JWS.createSign}.
- */
-var JWSSigner = function(cfg, signatories) {
-  var finalized = false,
-      format = cfg.format || "general",
-      content = new Buffer(0);
-
-  /**
-  * @member {Boolean} JWS.Signer#compact
-  * @description
-  * Indicates whether the outuput of this signature generator is using
-  * the Compact serialization (`true`) or the JSON serialization
-  * (`false`).
-  */
-  Object.defineProperty(this, "compact", {
-    get: function() {
-      return "compact" === format;
-    },
-    enumerable: true
-  });
-  Object.defineProperty(this, "format", {
-    get: function() {
-      return format;
-    },
-    enumerable: true
-  });
-
-  /**
-  * @method JWS.Signer#update
-  * @description
-  * Updates the signing content for this signature content. The content
-  * is appended to the end of any other content already applied.
-  *
-  * If {data} is a Buffer, {encoding} is ignored. Otherwise, {data} is
-  * converted to a Buffer internally to {encoding}.
-  *
-  * @param {Buffer|String} data The data to sign.
-  * @param {String} [encoding="binary"] The encoding of {data}.
-  * @returns {JWS.Signer} This signature generator.
-  * @throws {Error} If a signature has already been generated.
-  */
-  Object.defineProperty(this, "update", {
-    value: function(data, encoding) {
-      if (finalized) {
-        throw new Error("already final");
-      }
-      if (data != null) {
-        data = util.asBuffer(data, encoding);
-        if (content.length) {
-          content = Buffer.concat([content, data],
-                      content.length + data.length);
-        } else {
-          content = data;
-        }
-      }
-
-      return this;
-    }
-  });
-  /**
-  * @method JWS.Signer#final
-  * @description
-  * Finishes the signature operation.
-  *
-  * The returned Promise, when fulfilled, is the JSON Web Signature (JWS)
-  * object, either in the Compact (if {@link JWS.Signer#format} is
-  * `"compact"`), the flattened JSON (if {@link JWS.Signer#format} is
-  * "flattened"), or the general JSON serialization.
-  *
-  * @param {Buffer|String} [data] The final content to apply.
-  * @param {String} [encoding="binary"] The encoding of the final content
-  *        (if any).
-  * @returns {Promise} The promise for the signatures
-  * @throws {Error} If a signature has already been generated.
-  */
-  Object.defineProperty(this, "final", {
-    value: function(data, encoding) {
-      if (finalized) {
-        return Promise.reject(new Error("already final"));
-      }
-
-      // last-minute data
-      this.update(data, encoding);
-
-      // mark as done...ish
-      finalized = true;
-      var promise;
-
-      // map signatory promises to just signatories
-      promise = Promise.all(signatories);
-      promise = promise.then(function(sigs) {
-        // prepare content
-        content = util.base64url.encode(content);
-
-        sigs = sigs.map(function(s) {
-          // prepare protected
-          var protect = {},
-              lenProtect = 0,
-              unprotect = clone(s.header),
-              lenUnprotect = Object.keys(unprotect).length;
-          s.protected.forEach(function(h) {
-            if (!(h in unprotect)) {
-              return;
-            }
-            protect[h] = unprotect[h];
-            lenProtect++;
-            delete unprotect[h];
-            lenUnprotect--;
-          });
-          if (lenProtect > 0) {
-            protect = JSON.stringify(protect);
-            protect = util.base64url.encode(protect);
-          } else {
-            protect = "";
-          }
-
-          // signit!
-          var data = new Buffer(protect + "." + content, "ascii");
-          s = s.key.sign(s.header.alg, data, s.header);
-          s = s.then(function(result) {
-            var sig = {};
-            if (0 < lenProtect) {
-              sig.protected = protect;
-            }
-            if (0 < lenUnprotect) {
-              sig.header = unprotect;
-            }
-            sig.signature = util.base64url.encode(result.mac);
-            return sig;
-          });
-          return s;
-        });
-        sigs = [Promise.resolve(content)].concat(sigs);
-        return Promise.all(sigs);
-      });
-      promise = promise.then(function(results) {
-        var content = results[0];
-        return {
-          payload: content,
-          signatures: results.slice(1)
-        };
-      });
-      switch (format) {
-        case "compact":
-          promise = promise.then(function(jws) {
-            var compact = [
-              jws.signatures[0].protected,
-              jws.payload,
-              jws.signatures[0].signature
-            ];
-            compact = compact.join(".");
-            return compact;
-          });
-          break;
-        case "flattened":
-          promise = promise.then(function(jws) {
-            var flattened = {};
-            flattened.payload = jws.payload;
-
-            var sig = jws.signatures[0];
-            if (sig.protected) {
-              flattened.protected = sig.protected;
-            }
-            if (sig.header) {
-              flattened.header = sig.header;
-            }
-            flattened.signature = sig.signature;
-
-            return flattened;
-          });
-          break;
-      }
-
-      return promise;
-    }
-  });
-};
-
-
-/**
- * @description
- * Creates a new JWS.Signer with the given options and signatories.
- *
- * @param {Object} [opts] The signing options
- * @param {Boolean} [opts.compact] Use compact serialization?
- * @param {String} [opts.format] The serialization format to use ("compact",
- *                 "flattened", "general")
- * @param {Object} [opts.fields] Additional header fields
- * @param {JWK.Key[]|Object[]} [signs] Signatories, either as an array of
- *        JWK.Key instances; or an array of objects, each with the following
- *        properties
- * @param {JWK.Key} signs.key Key used to sign content
- * @param {Object} [signs.header] Per-signatory header fields
- * @param {String} [signs.reference] Reference field to identify the key
- * @param {String[]|String} [signs.protect] List of fields to integrity
- *        protect ("*" to protect all fields)
- * @returns {JWS.Signer} The signature generator.
- * @throws {Error} If Compact serialization is requested but there are
- *         multiple signatories
- */
-function createSign(opts, signs) {
-  // fixup signatories
-  var options = opts,
-      signStart = 1,
-      signList = signs;
-
-  if (arguments.length === 0) {
-    throw new Error("at least one signatory must be provided");
-  }
-  if (arguments.length === 1) {
-    signList = opts;
-    signStart = 0;
-    options = {};
-  } else if (JWK.isKey(opts) ||
-            (opts && "kty" in opts) ||
-            (opts && "key" in opts &&
-            (JWK.isKey(opts.key) || "kty" in opts.key))) {
-    signList = opts;
-    signStart = 0;
-    options = {};
-  } else {
-    options = clone(opts);
-  }
-  if (!Array.isArray(signList)) {
-    signList = slice(arguments, signStart);
-  }
-
-  // fixup options
-  options = merge(clone(DEFAULTS), options);
-
-  // setup header fields
-  var allFields = options.fields || {};
-  // setup serialization format
-  var format = options.format;
-  if (!format) {
-    format = options.compact ? "compact" : "general";
-  }
-  if (("compact" === format || "flattened" === format) && 1 < signList.length) {
-    throw new Error("too many signatories for compact or flattened JSON serialization");
-  }
-
-  // note protected fields (globally)
-  // protected fields are per signature
-  var protectAll = ("*" === options.protect);
-  if (options.compact) {
-    protectAll = true;
-  }
-
-  signList = signList.map(function(s, idx) {
-    var p;
-
-    // resolve a key
-    if (s && "kty" in s) {
-      p = JWK.asKey(s);
-      p = p.then(function(k) {
-        return {
-          key: k
-        };
-      });
-    } else if (s) {
-      p = JWK.asKey(s.key);
-      p = p.then(function(k) {
-        return {
-          header: s.header,
-          reference: s.reference,
-          protect: s.protect,
-          key: k
-        };
-      });
-    } else {
-      p = Promise.reject(new Error("missing key for signatory " + idx));
-    }
-
-    // resolve the complete signatory
-    p = p.then(function(signatory) {
-      var key = signatory.key;
-
-      // make sure there is a header
-      var header = signatory.header || {};
-      header = merge(merge({}, allFields), header);
-      signatory.header = header;
-
-      // ensure an algorithm
-      if (!header.alg) {
-        header.alg = key.algorithms(JWK.MODE_SIGN)[0] || "";
-      }
-
-      // determine the key reference
-      var ref = signatory.reference;
-      delete signatory.reference;
-      if (undefined === ref) {
-        // header already contains the key reference
-        ref = ["kid", "jku", "x5c", "x5t", "x5u"].some(function(k) {
-          return (k in header);
-        });
-        ref = !ref ? "kid" : null;
-      } else if ("boolean" === typeof ref) {
-        // explicit (positive | negative) request for key reference
-        ref = ref ? "kid" : null;
-      }
-      var jwk;
-      if (ref) {
-        jwk = key.toJSON();
-        if ("jwk" === ref) {
-          header.jwk = jwk;
-        } else if (ref in jwk) {
-          header[ref] = jwk[ref];
-        }
-      }
-
-      // determine protected fields
-      var protect = signatory.protect;
-      if (protectAll || "*" === protect) {
-        protect = Object.keys(header);
-      } else if ("string" === protect) {
-        protect = [protect];
-      } else if (Array.isArray(protect)) {
-        protect = protect.concat();
-      } else if (!protect) {
-        protect = [];
-      } else {
-        return Promise.reject(new Error("protect must be a list of fields"));
-      }
-      protect = uniq(protect);
-      signatory.protected = protect;
-
-      // freeze signatory
-      signatory = Object.freeze(signatory);
-      return signatory;
-    });
-
-    return p;
-  });
-
-  var cfg = {
-    format: format
-  };
-  return new JWSSigner(cfg,
-                       signList);
-}
-
-module.exports = {
-  signer: JWSSigner,
-  createSign: createSign
-};
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 263 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * jws/helpers.js - JWS Internal Helper Functions
- *
- * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
- */
-
-
-module.exports = {
-  slice: function(input, start) {
-    return Array.prototype.slice.call(input, start || 0);
-  }
-};
-
-
-/***/ }),
-/* 264 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * jws/defaults.js - Defaults for JWSs
- *
- * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
- */
-
-
-/**
- * @description
- * The default options for {@link JWS.createSign}.
- *
- * @property {Boolean} compact Determines if the output is the Compact
- *           serialization (`true`) or the JSON serialization (**`false`**,
- *           the default).
- * @property {String|String[]} protect The names of the headers to integrity
- *           protect.  The value `""` means that none of header parameters
- *           are integrity protected, while `"*"` (the default) means that all
- *           headers parameter sare integrity protected.
- */
-var JWSDefaults = {
-    compact: false,
-    protect: "*"
-};
-
-module.exports = JWSDefaults;
-
-
-/***/ }),
-/* 265 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
- * jws/verify.js - Verifies from a JWS
- *
- * Copyright (c) 2015 Cisco Systems, Inc. See LICENSE file.
- */
-
-
-var clone = __webpack_require__(21),
-    merge = __webpack_require__(28),
-    base64url = __webpack_require__(57),
-    JWK = __webpack_require__(35);
-
-/**
- * @class JWS.Verifier
- * @classdesc Parser of signed content.
- *
- * @description
- * **NOTE:** this class cannot be instantiated directly. Instead call {@link
- * JWS.createVerify}.
- */
-var JWSVerifier = function(ks, globalOpts) {
-  var assumedKey,
-      keystore;
-
-  if (JWK.isKey(ks)) {
-    assumedKey = ks;
-    keystore = assumedKey.keystore;
-  } else if (JWK.isKeyStore(ks)) {
-    keystore = ks;
-  } else {
-    keystore = JWK.createKeyStore();
-  }
-
-  globalOpts = merge({}, globalOpts);
-
-  Object.defineProperty(this, "defaultKey", {
-    value: assumedKey || undefined,
-    enumerable: true
-  });
-  Object.defineProperty(this, "keystore", {
-    value: keystore,
-    enumerable: true
-  });
-
-  Object.defineProperty(this, "verify", {
-    value: function(input, opts) {
-      opts = merge({}, globalOpts, opts || {});
-      var extraHandlers = opts.handlers || {};
-      var handlerKeys = Object.keys(extraHandlers);
-
-      if ("string" === typeof input) {
-        input = input.split(".");
-        input = {
-          payload: input[1],
-          signatures: [
-            {
-              protected: input[0],
-              signature: input[2]
-            }
-          ]
-        };
-      } else if (!input || "object" === input) {
-        throw new Error("invalid input");
-      }
-
-      // fixup "flattened JSON" to look like "general JSON"
-      if (input.signature) {
-        input.signatures = [
-          {
-            protected: input.protected || undefined,
-            header: input.header || undefined,
-            signature: input.signature
-          }
-        ];
-      }
-
-      // ensure signatories exists
-      var sigList = input.signatures || [{}];
-
-      // combine fields and decode signature per signatory
-      sigList = sigList.map(function(s) {
-        var header = clone(s.header || {});
-        var protect = s.protected ?
-                      JSON.parse(base64url.decode(s.protected, "utf8")) :
-                      {};
-        header = merge(header, protect);
-        var signature = base64url.decode(s.signature);
-
-        // process "crit" first
-        var crit = protect.crit;
-        if (crit) {
-          if (!Array.isArray(crit)) {
-            return Promise.reject(new Error("Invalid 'crit' header"));
-          }
-          for (var idx = 0; crit.length > idx; idx++) {
-            if (-1 === handlerKeys.indexOf(crit[idx])) {
-              return Promise.reject(new Error(
-                  "Critical extension is not supported: " + crit[idx]
-              ));
-            }
-          }
-        }
-        protect = Object.keys(protect);
-
-        return Promise.resolve({
-          protected: protect,
-          aad: s.protected || "",
-          header: header,
-          signature: signature
-        });
-      });
-
-      var promise = Promise.all(sigList);
-      promise = promise.then(function(sigList) {
-        return new Promise(function(resolve, reject) {
-          var processSig = function() {
-            var sig = sigList.shift();
-            if (!sig) {
-              reject(new Error("no key found"));
-              return;
-            }
-
-            sig = merge({}, sig, {
-              payload: input.payload
-            });
-            var p = Promise.resolve(sig);
-            // find the key
-            p = p.then(function(sig) {
-              var algKey;
-              // TODO: resolve jku, x5c, x5u
-              if (sig.header.jwk) {
-                algKey = JWK.asKey(sig.header.jwk);
-              } else if (sig.header.x5c) {
-                algKey = sig.header.x5c[0];
-                algKey = new Buffer(algKey, "base64");
-                // TODO: callback to validate chain
-                algKey = JWK.asKey(algKey, "pkix");
-              } else {
-                algKey = Promise.resolve(assumedKey || keystore.get({
-                  use: "sig",
-                  alg: sig.header.alg,
-                  kid: sig.header.kid
-                }));
-              }
-              return algKey.then(function(k) {
-                if (!k) {
-                  return Promise.reject(new Error("key does not match"));
-                }
-                sig.key = k;
-                return sig;
-              });
-            });
-
-            // process any prepare-verify handlers
-            p = p.then(function(sig) {
-              var processing = [];
-              handlerKeys.forEach(function(h) {
-                h = extraHandlers[h];
-                var p;
-                if ("function" === typeof h) {
-                  p = h(sig);
-                } else if ("object" === typeof h && "function" === typeof h.prepare) {
-                  p = h.prepare(sig);
-                }
-                if (p) {
-                  processing.push(Promise.resolve(p));
-                }
-              });
-              return Promise.all(processing).then(function() {
-                // don't actually care about individual handler results
-                // assume {sig} is updated
-                return sig;
-              });
-            });
-
-            // prepare verify inputs
-            p = p.then(function(sig) {
-              var aad = sig.aad || "",
-                  payload = sig.payload || "";
-              var content = new Buffer(1 + aad.length + payload.length),
-                  pos = 0;
-              content.write(aad, pos, "ascii");
-              pos += aad.length;
-              content.write(".", pos, "ascii");
-              pos++;
-
-              if (Buffer.isBuffer(payload)) {
-                payload.copy(content, pos);
-              } else {
-                content.write(payload, pos, "binary");
-              }
-              sig.content = content;
-              return sig;
-            });
-
-            p = p.then(function(sig) {
-              return sig.key.verify(sig.header.alg,
-                                    sig.content,
-                                    sig.signature);
-            });
-
-            p = p.then(function(result) {
-              var payload = sig.payload;
-              payload = base64url.decode(payload);
-              return {
-                protected: sig.protected,
-                header: sig.header,
-                payload: payload,
-                signature: result.mac,
-                key: sig.key
-              };
-            });
-
-            // process any post-verify handlers
-            p = p.then(function(jws) {
-              var processing = [];
-              handlerKeys.forEach(function(h) {
-                h = extraHandlers[h];
-                var p;
-                if ("object" === typeof h && "function" === typeof h.complete) {
-                  p = h.complete(jws);
-                }
-                if (p) {
-                  processing.push(Promise.resolve(p));
-                }
-              });
-              return Promise.all(processing).then(function() {
-                // don't actually care about individual handler results
-                // assume {jws} is updated
-                return jws;
-              });
-            });
-            p.then(resolve, processSig);
-          };
-          processSig();
-        });
-      });
-      return promise;
-    }
-  });
-};
-
-/**
- * @description
- * Creates a new JWS.Verifier with the given Key or KeyStore.
- *
- * @param {JWK.Key|JWK.KeyStore} ks The Key or KeyStore to use for verification.
- * @returns {JWS.Verifier} The new Verifier.
- */
-function createVerify(ks) {
-  var vfy = new JWSVerifier(ks);
-
-  return vfy;
-}
-
-module.exports = {
-  verifier: JWSVerifier,
-  createVerify: createVerify
-};
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
-
-/***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82362,8 +82674,8 @@ module.exports = {
  */
 
 
-var compact = __webpack_require__(267),
-    json = __webpack_require__(268);
+var compact = __webpack_require__(268),
+    json = __webpack_require__(269);
 
 var parse = module.exports = function(input) {
   if (Buffer.isBuffer(input)) {
@@ -82384,7 +82696,7 @@ parse.json = json;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82396,8 +82708,8 @@ parse.json = json;
 
 
 var jose = {
-  JWE: __webpack_require__(88),
-  JWS: __webpack_require__(93),
+  JWE: __webpack_require__(89),
+  JWS: __webpack_require__(73),
   util: __webpack_require__(7)
 };
 
@@ -82409,16 +82721,16 @@ function parseCompact(input) {
   if (3 === parts.length) {
     // JWS
     type = "JWS";
-    op = function(ks) {
+    op = function(ks, opts) {
       return jose.JWS.createVerify(ks).
-             verify(input);
+             verify(input, opts);
     };
   } else if (5 === parts.length) {
     // JWE
     type = "JWE";
-    op = function(ks) {
+    op = function(ks, opts) {
       return jose.JWE.createDecrypt(ks).
-             decrypt(input);
+             decrypt(input, opts);
     };
   } else {
     throw new TypeError("invalid jose serialization");
@@ -82441,7 +82753,7 @@ module.exports = parseCompact;
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82452,11 +82764,11 @@ module.exports = parseCompact;
  */
 
 
-var merge = __webpack_require__(28);
+var merge = __webpack_require__(26);
 
 var jose = {
-  JWE: __webpack_require__(88),
-  JWS: __webpack_require__(93),
+  JWE: __webpack_require__(89),
+  JWS: __webpack_require__(73),
   util: __webpack_require__(7)
 };
 
@@ -82468,9 +82780,9 @@ function parseJSON(input) {
   if ("signatures" in input || "signature" in input) {
     // JWS
     type = "JWS";
-    op = function(ks) {
+    op = function(ks, opts) {
       return jose.JWS.createVerify(ks).
-             verify(input);
+             verify(input, opts);
     };
     // headers can be (signatures[].protected, signatures[].header, signature.protected, signature.header)
     headers = input.signatures ||
@@ -82498,9 +82810,9 @@ function parseJSON(input) {
   } else if ("ciphertext" in input) {
     // JWE
     type = "JWE";
-    op = function(ks) {
+    op = function(ks, opts) {
       return jose.JWE.createDecrypt(ks).
-             decrypt(input);
+             decrypt(input, opts);
     };
     // headers can be (protected, unprotected, recipients[].header)
     var root = {};
@@ -82543,7 +82855,7 @@ module.exports = parseJSON;
 
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82619,7 +82931,7 @@ var DeriverUtils = function () {
 module.exports = DeriverUtils;
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82633,8 +82945,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-var HKDF = __webpack_require__(271);
-var base64url = __webpack_require__(83);
+var HKDF = __webpack_require__(272);
+var base64url = __webpack_require__(82);
 
 var KEY_LENGTH = 48;
 
@@ -82758,13 +83070,13 @@ module.exports = ScopedKeys;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(272);
+module.exports = __webpack_require__(273);
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {//
@@ -82773,7 +83085,7 @@ module.exports = __webpack_require__(272);
 // https://tools.ietf.org/html/rfc5869
 //
 
-var crypto = __webpack_require__(273);
+var crypto = __webpack_require__(274);
 
 function zeros(length) {
   var buf = new Buffer(length);
@@ -82826,7 +83138,7 @@ module.exports = HKDF;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(6)))
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82834,9 +83146,9 @@ module.exports = HKDF;
 
 exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = __webpack_require__(30)
 exports.createHash = exports.Hash = __webpack_require__(45)
-exports.createHmac = exports.Hmac = __webpack_require__(140)
+exports.createHmac = exports.Hmac = __webpack_require__(141)
 
-var algos = __webpack_require__(293)
+var algos = __webpack_require__(294)
 var algoKeys = Object.keys(algos)
 var hashes = ['sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'md5', 'rmd160'].concat(algoKeys)
 exports.getHashes = function () {
@@ -82847,7 +83159,7 @@ var p = __webpack_require__(95)
 exports.pbkdf2 = p.pbkdf2
 exports.pbkdf2Sync = p.pbkdf2Sync
 
-var aes = __webpack_require__(302)
+var aes = __webpack_require__(303)
 
 exports.Cipher = aes.Cipher
 exports.createCipher = aes.createCipher
@@ -82860,7 +83172,7 @@ exports.createDecipheriv = aes.createDecipheriv
 exports.getCiphers = aes.getCiphers
 exports.listCiphers = aes.listCiphers
 
-var dh = __webpack_require__(324)
+var dh = __webpack_require__(325)
 
 exports.DiffieHellmanGroup = dh.DiffieHellmanGroup
 exports.createDiffieHellmanGroup = dh.createDiffieHellmanGroup
@@ -82868,16 +83180,16 @@ exports.getDiffieHellman = dh.getDiffieHellman
 exports.createDiffieHellman = dh.createDiffieHellman
 exports.DiffieHellman = dh.DiffieHellman
 
-var sign = __webpack_require__(330)
+var sign = __webpack_require__(331)
 
 exports.createSign = sign.createSign
 exports.Sign = sign.Sign
 exports.createVerify = sign.createVerify
 exports.Verify = sign.Verify
 
-exports.createECDH = __webpack_require__(383)
+exports.createECDH = __webpack_require__(384)
 
-var publicEncrypt = __webpack_require__(408)
+var publicEncrypt = __webpack_require__(409)
 
 exports.publicEncrypt = publicEncrypt.publicEncrypt
 exports.privateEncrypt = publicEncrypt.privateEncrypt
@@ -82897,7 +83209,7 @@ exports.privateDecrypt = publicEncrypt.privateDecrypt
 //   }
 // })
 
-var rf = __webpack_require__(436)
+var rf = __webpack_require__(437)
 
 exports.randomFill = rf.randomFill
 exports.randomFillSync = rf.randomFillSync
@@ -82930,7 +83242,7 @@ exports.constants = {
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
@@ -82998,7 +83310,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83036,13 +83348,13 @@ module.exports = function hash (buf, fn) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
-var HashBase = __webpack_require__(277)
+var HashBase = __webpack_require__(278)
 
 function RIPEMD160 () {
   HashBase.call(this, 64)
@@ -83335,7 +83647,7 @@ module.exports = RIPEMD160
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83426,7 +83738,7 @@ module.exports = HashBase
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var exports = module.exports = function SHA (algorithm) {
@@ -83438,16 +83750,16 @@ var exports = module.exports = function SHA (algorithm) {
   return new Algorithm()
 }
 
-exports.sha = __webpack_require__(279)
-exports.sha1 = __webpack_require__(280)
-exports.sha224 = __webpack_require__(281)
-exports.sha256 = __webpack_require__(138)
-exports.sha384 = __webpack_require__(282)
-exports.sha512 = __webpack_require__(139)
+exports.sha = __webpack_require__(280)
+exports.sha1 = __webpack_require__(281)
+exports.sha224 = __webpack_require__(282)
+exports.sha256 = __webpack_require__(139)
+exports.sha384 = __webpack_require__(283)
+exports.sha512 = __webpack_require__(140)
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -83547,7 +83859,7 @@ module.exports = Sha
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -83652,7 +83964,7 @@ module.exports = Sha1
 
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -83664,7 +83976,7 @@ module.exports = Sha1
  */
 
 var inherits = __webpack_require__(1)
-var Sha256 = __webpack_require__(138)
+var Sha256 = __webpack_require__(139)
 var Hash = __webpack_require__(36)
 var Buffer = __webpack_require__(31).Buffer
 
@@ -83711,11 +84023,11 @@ module.exports = Sha224
 
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1)
-var SHA512 = __webpack_require__(139)
+var SHA512 = __webpack_require__(140)
 var Hash = __webpack_require__(36)
 var Buffer = __webpack_require__(31).Buffer
 
@@ -83774,10 +84086,10 @@ module.exports = Sha384
 
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Buffer = __webpack_require__(284).Buffer
+var Buffer = __webpack_require__(285).Buffer
 var Transform = __webpack_require__(8).Transform
 var StringDecoder = __webpack_require__(25).StringDecoder
 var inherits = __webpack_require__(1)
@@ -83879,7 +84191,7 @@ module.exports = CipherBase
 
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
@@ -83947,7 +84259,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83955,7 +84267,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 var inherits = __webpack_require__(1)
 var Buffer = __webpack_require__(16).Buffer
 
-var Base = __webpack_require__(141)
+var Base = __webpack_require__(142)
 
 var ZEROS = Buffer.alloc(128)
 var blocksize = 64
@@ -84000,13 +84312,13 @@ module.exports = Hmac
 
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
-var HashBase = __webpack_require__(287)
+var HashBase = __webpack_require__(288)
 
 function RIPEMD160 () {
   HashBase.call(this, 64)
@@ -84299,7 +84611,7 @@ module.exports = RIPEMD160
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84390,7 +84702,7 @@ module.exports = HashBase
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var exports = module.exports = function SHA (algorithm) {
@@ -84402,16 +84714,16 @@ var exports = module.exports = function SHA (algorithm) {
   return new Algorithm()
 }
 
-exports.sha = __webpack_require__(289)
-exports.sha1 = __webpack_require__(290)
-exports.sha224 = __webpack_require__(291)
-exports.sha256 = __webpack_require__(142)
-exports.sha384 = __webpack_require__(292)
-exports.sha512 = __webpack_require__(143)
+exports.sha = __webpack_require__(290)
+exports.sha1 = __webpack_require__(291)
+exports.sha224 = __webpack_require__(292)
+exports.sha256 = __webpack_require__(143)
+exports.sha384 = __webpack_require__(293)
+exports.sha512 = __webpack_require__(144)
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -84511,7 +84823,7 @@ module.exports = Sha
 
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -84616,7 +84928,7 @@ module.exports = Sha1
 
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -84628,7 +84940,7 @@ module.exports = Sha1
  */
 
 var inherits = __webpack_require__(1)
-var Sha256 = __webpack_require__(142)
+var Sha256 = __webpack_require__(143)
 var Hash = __webpack_require__(37)
 var Buffer = __webpack_require__(16).Buffer
 
@@ -84675,11 +84987,11 @@ module.exports = Sha224
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1)
-var SHA512 = __webpack_require__(143)
+var SHA512 = __webpack_require__(144)
 var Hash = __webpack_require__(37)
 var Buffer = __webpack_require__(16).Buffer
 
@@ -84738,19 +85050,19 @@ module.exports = Sha384
 
 
 /***/ }),
-/* 293 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(144)
-
-
-/***/ }),
 /* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, process) {var checkParameters = __webpack_require__(145)
-var defaultEncoding = __webpack_require__(146)
-var sync = __webpack_require__(147)
+module.exports = __webpack_require__(145)
+
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {var checkParameters = __webpack_require__(146)
+var defaultEncoding = __webpack_require__(147)
+var sync = __webpack_require__(148)
 var Buffer = __webpack_require__(22).Buffer
 
 var ZERO_BUF
@@ -84850,13 +85162,13 @@ module.exports = function (password, salt, iterations, keylen, digest, callback)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
-var HashBase = __webpack_require__(296)
+var HashBase = __webpack_require__(297)
 
 function RIPEMD160 () {
   HashBase.call(this, 64)
@@ -85149,7 +85461,7 @@ module.exports = RIPEMD160
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85240,7 +85552,7 @@ module.exports = HashBase
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var exports = module.exports = function SHA (algorithm) {
@@ -85252,16 +85564,16 @@ var exports = module.exports = function SHA (algorithm) {
   return new Algorithm()
 }
 
-exports.sha = __webpack_require__(298)
-exports.sha1 = __webpack_require__(299)
-exports.sha224 = __webpack_require__(300)
-exports.sha256 = __webpack_require__(148)
-exports.sha384 = __webpack_require__(301)
-exports.sha512 = __webpack_require__(149)
+exports.sha = __webpack_require__(299)
+exports.sha1 = __webpack_require__(300)
+exports.sha224 = __webpack_require__(301)
+exports.sha256 = __webpack_require__(149)
+exports.sha384 = __webpack_require__(302)
+exports.sha512 = __webpack_require__(150)
 
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -85361,7 +85673,7 @@ module.exports = Sha
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -85466,7 +85778,7 @@ module.exports = Sha1
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -85478,7 +85790,7 @@ module.exports = Sha1
  */
 
 var inherits = __webpack_require__(1)
-var Sha256 = __webpack_require__(148)
+var Sha256 = __webpack_require__(149)
 var Hash = __webpack_require__(38)
 var Buffer = __webpack_require__(22).Buffer
 
@@ -85525,11 +85837,11 @@ module.exports = Sha224
 
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1)
-var SHA512 = __webpack_require__(149)
+var SHA512 = __webpack_require__(150)
 var Hash = __webpack_require__(38)
 var Buffer = __webpack_require__(22).Buffer
 
@@ -85588,13 +85900,13 @@ module.exports = Sha384
 
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ebtk = __webpack_require__(96)
-var aes = __webpack_require__(305)
-var DES = __webpack_require__(315)
-var desModes = __webpack_require__(323)
+var aes = __webpack_require__(306)
+var DES = __webpack_require__(316)
+var desModes = __webpack_require__(324)
 var aesModes = __webpack_require__(97)
 function createCipher (suite, password) {
   var keyLen, ivLen
@@ -85667,13 +85979,13 @@ exports.listCiphers = exports.getCiphers = getCiphers
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
-var HashBase = __webpack_require__(304)
+var HashBase = __webpack_require__(305)
 
 var ARRAY16 = new Array(16)
 
@@ -85820,12 +86132,12 @@ module.exports = MD5
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var Buffer = __webpack_require__(150).Buffer
+var Buffer = __webpack_require__(151).Buffer
 var Transform = __webpack_require__(8).Transform
 var inherits = __webpack_require__(1)
 
@@ -85922,12 +86234,12 @@ module.exports = HashBase
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ciphers = __webpack_require__(306)
-var deciphers = __webpack_require__(314)
-var modes = __webpack_require__(153)
+var ciphers = __webpack_require__(307)
+var deciphers = __webpack_require__(315)
+var modes = __webpack_require__(154)
 
 function getCiphers () {
   return Object.keys(modes)
@@ -85941,13 +86253,13 @@ exports.listCiphers = exports.getCiphers = getCiphers
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MODES = __webpack_require__(97)
-var AuthCipher = __webpack_require__(154)
+var AuthCipher = __webpack_require__(155)
 var Buffer = __webpack_require__(13).Buffer
-var StreamCipher = __webpack_require__(155)
+var StreamCipher = __webpack_require__(156)
 var Transform = __webpack_require__(65)
 var aes = __webpack_require__(64)
 var ebtk = __webpack_require__(96)
@@ -86061,7 +86373,7 @@ exports.createCipher = createCipher
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports) {
 
 exports.encrypt = function (self, block) {
@@ -86074,7 +86386,7 @@ exports.decrypt = function (self, block) {
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var xor = __webpack_require__(46)
@@ -86097,7 +86409,7 @@ exports.decrypt = function (self, block) {
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(13).Buffer
@@ -86136,7 +86448,7 @@ exports.encrypt = function (self, data, decrypt) {
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(13).Buffer
@@ -86167,7 +86479,7 @@ exports.encrypt = function (self, chunk, decrypt) {
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(13).Buffer
@@ -86215,7 +86527,7 @@ exports.encrypt = function (self, chunk, decrypt) {
 
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var xor = __webpack_require__(46)
@@ -86238,7 +86550,7 @@ exports.encrypt = function (self, chunk) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(13).Buffer
@@ -86333,13 +86645,13 @@ module.exports = GHASH
 
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var AuthCipher = __webpack_require__(154)
+var AuthCipher = __webpack_require__(155)
 var Buffer = __webpack_require__(13).Buffer
 var MODES = __webpack_require__(97)
-var StreamCipher = __webpack_require__(155)
+var StreamCipher = __webpack_require__(156)
 var Transform = __webpack_require__(65)
 var aes = __webpack_require__(64)
 var ebtk = __webpack_require__(96)
@@ -86460,10 +86772,10 @@ exports.createDecipheriv = createDecipheriv
 
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var CipherBase = __webpack_require__(316)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var CipherBase = __webpack_require__(317)
 var des = __webpack_require__(98)
 var inherits = __webpack_require__(1)
 
@@ -86510,10 +86822,10 @@ DES.prototype._final = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Buffer = __webpack_require__(317).Buffer
+var Buffer = __webpack_require__(318).Buffer
 var Transform = __webpack_require__(8).Transform
 var StringDecoder = __webpack_require__(25).StringDecoder
 var inherits = __webpack_require__(1)
@@ -86615,7 +86927,7 @@ module.exports = CipherBase
 
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
@@ -86683,7 +86995,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86946,7 +87258,7 @@ exports.padSplit = function padSplit(num, size, group) {
 
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87094,7 +87406,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
 
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87244,7 +87556,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
 
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87316,7 +87628,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
 
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87378,7 +87690,7 @@ EDE.prototype._unpad = DES.prototype._unpad;
 
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports) {
 
 exports['des-ecb'] = {
@@ -87408,13 +87720,13 @@ exports['des-ede'] = {
 
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var generatePrime = __webpack_require__(156)
-var primes = __webpack_require__(328)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var generatePrime = __webpack_require__(157)
+var primes = __webpack_require__(329)
 
-var DH = __webpack_require__(329)
+var DH = __webpack_require__(330)
 
 function getDiffieHellman (mod) {
   var prime = new Buffer(primes[mod].prime, 'hex')
@@ -87457,13 +87769,13 @@ exports.createDiffieHellman = exports.DiffieHellman = createDiffieHellman
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var r;
@@ -87521,7 +87833,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(327);
+    var crypto = __webpack_require__(328);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -87534,30 +87846,30 @@ if (typeof self === 'object') {
 
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports) {
 
 module.exports = {"modp1":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a63a3620ffffffffffffffff"},"modp2":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece65381ffffffffffffffff"},"modp5":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca237327ffffffffffffffff"},"modp14":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aacaa68ffffffffffffffff"},"modp15":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a93ad2caffffffffffffffff"},"modp16":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c934063199ffffffffffffffff"},"modp17":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dcc4024ffffffffffffffff"},"modp18":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dbe115974a3926f12fee5e438777cb6a932df8cd8bec4d073b931ba3bc832b68d9dd300741fa7bf8afc47ed2576f6936ba424663aab639c5ae4f5683423b4742bf1c978238f16cbe39d652de3fdb8befc848ad922222e04a4037c0713eb57a81a23f0c73473fc646cea306b4bcbc8862f8385ddfa9d4b7fa2c087e879683303ed5bdd3a062b3cf5b3a278a66d2a13f83f44f82ddf310ee074ab6a364597e899a0255dc164f31cc50846851df9ab48195ded7ea1b1d510bd7ee74d73faf36bc31ecfa268359046f4eb879f924009438b481c6cd7889a002ed5ee382bc9190da6fc026e479558e4475677e9aa9e3050e2765694dfc81f56e880b96e7160c980dd98edd3dfffffffffffffffff"}}
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var BN = __webpack_require__(99);
-var MillerRabin = __webpack_require__(157);
+var MillerRabin = __webpack_require__(158);
 var millerRabin = new MillerRabin();
 var TWENTYFOUR = new BN(24);
 var ELEVEN = new BN(11);
 var TEN = new BN(10);
 var THREE = new BN(3);
 var SEVEN = new BN(7);
-var primes = __webpack_require__(156);
+var primes = __webpack_require__(157);
 var randomBytes = __webpack_require__(30);
 module.exports = DH;
 
@@ -87717,16 +88029,16 @@ function formatReturnValue(bn, enc) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var createHash = __webpack_require__(45)
 var stream = __webpack_require__(8)
 var inherits = __webpack_require__(1)
-var sign = __webpack_require__(331)
-var verify = __webpack_require__(382)
+var sign = __webpack_require__(332)
+var verify = __webpack_require__(383)
 
-var algorithms = __webpack_require__(144)
+var algorithms = __webpack_require__(145)
 Object.keys(algorithms).forEach(function (key) {
   algorithms[key].id = new Buffer(algorithms[key].id, 'hex')
   algorithms[key.toLowerCase()] = algorithms[key]
@@ -87815,16 +88127,16 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
-var createHmac = __webpack_require__(140)
-var crt = __webpack_require__(332)
+var createHmac = __webpack_require__(141)
+var crt = __webpack_require__(333)
 var EC = __webpack_require__(10).ec
 var BN = __webpack_require__(9)
-var parseKeys = __webpack_require__(162)
-var curves = __webpack_require__(176)
+var parseKeys = __webpack_require__(163)
+var curves = __webpack_require__(177)
 
 function sign (hash, key, hashType, signType, tag) {
   var priv = parseKeys(key)
@@ -87967,7 +88279,7 @@ module.exports.makeKey = makeKey
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bn = __webpack_require__(9);
@@ -88014,19 +88326,19 @@ function getr(priv) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports) {
 
 module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptography","main":"lib/elliptic.js","files":["lib"],"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","unit":"istanbul test _mocha --reporter=spec test/index.js","test":"npm run lint && npm run unit","version":"grunt dist && git add dist/"},"repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"keywords":["EC","Elliptic","curve","Cryptography"],"author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"license":"MIT","bugs":{"url":"https://github.com/indutny/elliptic/issues"},"homepage":"https://github.com/indutny/elliptic","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"gitHead":"6b0d2b76caae91471649c8e21f0b1d3ba0f96090","_id":"elliptic@6.4.0","_shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","_from":"elliptic@>=6.0.0 <7.0.0","_npmVersion":"3.10.8","_nodeVersion":"7.0.0","_npmUser":{"name":"indutny","email":"fedor@indutny.com"},"dist":{"shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","tarball":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz"},"maintainers":[{"name":"indutny","email":"fedor@indutny.com"}],"_npmOperationalInternal":{"host":"packages-18-east.internal.npmjs.com","tmp":"tmp/elliptic-6.4.0.tgz_1487798866428_0.30510620190761983"},"directories":{},"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","readme":"ERROR: No README data found!"}
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88035,7 +88347,7 @@ module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptogr
 var utils = exports;
 var BN = __webpack_require__(9);
 var minAssert = __webpack_require__(32);
-var minUtils = __webpack_require__(158);
+var minUtils = __webpack_require__(159);
 
 utils.assert = minAssert;
 utils.toArray = minUtils.toArray;
@@ -88153,7 +88465,7 @@ utils.intFromLE = intFromLE;
 
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var r;
@@ -88211,7 +88523,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(337);
+    var crypto = __webpack_require__(338);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -88224,13 +88536,13 @@ if (typeof self === 'object') {
 
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88612,7 +88924,7 @@ BasePoint.prototype.dblp = function dblp(k) {
 
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89557,7 +89869,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89744,7 +90056,7 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90184,7 +90496,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90357,7 +90669,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(349);
+  pre = __webpack_require__(350);
 } catch (e) {
   pre = undefined;
 }
@@ -90396,21 +90708,21 @@ defineCurve('secp256k1', {
 
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(344);
-exports.sha224 = __webpack_require__(345);
-exports.sha256 = __webpack_require__(160);
-exports.sha384 = __webpack_require__(346);
-exports.sha512 = __webpack_require__(161);
+exports.sha1 = __webpack_require__(345);
+exports.sha224 = __webpack_require__(346);
+exports.sha256 = __webpack_require__(161);
+exports.sha384 = __webpack_require__(347);
+exports.sha512 = __webpack_require__(162);
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90418,7 +90730,7 @@ exports.sha512 = __webpack_require__(161);
 
 var utils = __webpack_require__(17);
 var common = __webpack_require__(47);
-var shaCommon = __webpack_require__(159);
+var shaCommon = __webpack_require__(160);
 
 var rotl32 = utils.rotl32;
 var sum32 = utils.sum32;
@@ -90491,14 +90803,14 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(17);
-var SHA256 = __webpack_require__(160);
+var SHA256 = __webpack_require__(161);
 
 function SHA224() {
   if (!(this instanceof SHA224))
@@ -90528,7 +90840,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90536,7 +90848,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 var utils = __webpack_require__(17);
 
-var SHA512 = __webpack_require__(161);
+var SHA512 = __webpack_require__(162);
 
 function SHA384() {
   if (!(this instanceof SHA384))
@@ -90570,7 +90882,7 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90723,7 +91035,7 @@ var sh = [
 
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90777,7 +91089,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -91563,20 +91875,20 @@ module.exports = {
 
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var BN = __webpack_require__(9);
-var HmacDRBG = __webpack_require__(351);
+var HmacDRBG = __webpack_require__(352);
 var elliptic = __webpack_require__(10);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(352);
-var Signature = __webpack_require__(353);
+var KeyPair = __webpack_require__(353);
+var Signature = __webpack_require__(354);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -91810,14 +92122,14 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var hash = __webpack_require__(100);
-var utils = __webpack_require__(158);
+var utils = __webpack_require__(159);
 var assert = __webpack_require__(32);
 
 function HmacDRBG(options) {
@@ -91930,7 +92242,7 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92056,7 +92368,7 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92198,7 +92510,7 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92209,8 +92521,8 @@ var elliptic = __webpack_require__(10);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(355);
-var Signature = __webpack_require__(356);
+var KeyPair = __webpack_require__(356);
+var Signature = __webpack_require__(357);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -92323,7 +92635,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 355 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92426,7 +92738,7 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 356 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92499,7 +92811,7 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92509,7 +92821,7 @@ module.exports = Signature;
 
 var asn1 = __webpack_require__(48)
 
-exports.certificate = __webpack_require__(368)
+exports.certificate = __webpack_require__(369)
 
 var RSAPrivateKey = asn1.define('RSAPrivateKey', function () {
   this.seq().obj(
@@ -92628,7 +92940,7 @@ exports.signature = asn1.define('signature', function () {
 
 
 /***/ }),
-/* 358 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var asn1 = __webpack_require__(48);
@@ -92651,7 +92963,7 @@ function Entity(name, body) {
 Entity.prototype._createNamed = function createNamed(base) {
   var named;
   try {
-    named = __webpack_require__(163).runInThisContext(
+    named = __webpack_require__(164).runInThisContext(
       '(function ' + this.name + '(entity) {\n' +
       '  this._initNamed(entity);\n' +
       '})'
@@ -92695,7 +93007,7 @@ Entity.prototype.encode = function encode(data, enc, /* internal */ reporter) {
 
 
 /***/ }),
-/* 359 */
+/* 360 */
 /***/ (function(module, exports) {
 
 
@@ -92710,7 +93022,7 @@ module.exports = function(arr, obj){
 };
 
 /***/ }),
-/* 360 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
@@ -92837,13 +93149,13 @@ ReporterError.prototype.rethrow = function rethrow(msg) {
 
 
 /***/ }),
-/* 361 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Reporter = __webpack_require__(49).Reporter;
 var EncoderBuffer = __webpack_require__(49).EncoderBuffer;
 var DecoderBuffer = __webpack_require__(49).DecoderBuffer;
-var assert = __webpack_require__(362);
+var assert = __webpack_require__(363);
 
 // Supported tags
 var tags = [
@@ -93477,7 +93789,7 @@ Node.prototype._isPrintstr = function isPrintstr(str) {
 
 
 /***/ }),
-/* 362 */
+/* 363 */
 /***/ (function(module, exports) {
 
 module.exports = assert;
@@ -93494,10 +93806,10 @@ assert.equal = function assertEqual(l, r, msg) {
 
 
 /***/ }),
-/* 363 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var constants = __webpack_require__(165);
+var constants = __webpack_require__(166);
 
 exports.tagClass = {
   0: 'universal',
@@ -93542,23 +93854,23 @@ exports.tagByName = constants._reverse(exports.tag);
 
 
 /***/ }),
-/* 364 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var decoders = exports;
 
-decoders.der = __webpack_require__(166);
-decoders.pem = __webpack_require__(365);
+decoders.der = __webpack_require__(167);
+decoders.pem = __webpack_require__(366);
 
 
 /***/ }),
-/* 365 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
 var Buffer = __webpack_require__(0).Buffer;
 
-var DERDecoder = __webpack_require__(166);
+var DERDecoder = __webpack_require__(167);
 
 function PEMDecoder(entity) {
   DERDecoder.call(this, entity);
@@ -93607,22 +93919,22 @@ PEMDecoder.prototype.decode = function decode(data, options) {
 
 
 /***/ }),
-/* 366 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var encoders = exports;
 
-encoders.der = __webpack_require__(167);
-encoders.pem = __webpack_require__(367);
+encoders.der = __webpack_require__(168);
+encoders.pem = __webpack_require__(368);
 
 
 /***/ }),
-/* 367 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
 
-var DEREncoder = __webpack_require__(167);
+var DEREncoder = __webpack_require__(168);
 
 function PEMEncoder(entity) {
   DEREncoder.call(this, entity);
@@ -93644,7 +93956,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
 
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93739,13 +94051,13 @@ module.exports = X509Certificate
 
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports) {
 
 module.exports = {"2.16.840.1.101.3.4.1.1":"aes-128-ecb","2.16.840.1.101.3.4.1.2":"aes-128-cbc","2.16.840.1.101.3.4.1.3":"aes-128-ofb","2.16.840.1.101.3.4.1.4":"aes-128-cfb","2.16.840.1.101.3.4.1.21":"aes-192-ecb","2.16.840.1.101.3.4.1.22":"aes-192-cbc","2.16.840.1.101.3.4.1.23":"aes-192-ofb","2.16.840.1.101.3.4.1.24":"aes-192-cfb","2.16.840.1.101.3.4.1.41":"aes-256-ecb","2.16.840.1.101.3.4.1.42":"aes-256-cbc","2.16.840.1.101.3.4.1.43":"aes-256-ofb","2.16.840.1.101.3.4.1.44":"aes-256-cfb"}
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// adapted from https://github.com/apatil/pemstrip
@@ -93753,7 +94065,7 @@ var findProc = /Proc-Type: 4,ENCRYPTED\n\r?DEK-Info: AES-((?:128)|(?:192)|(?:256
 var startRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----\n/m
 var fullRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----\n\r?([0-9A-z\n\r\+\/\=]+)\n\r?-----END \1-----$/m
 var evp = __webpack_require__(101)
-var ciphers = __webpack_require__(169)
+var ciphers = __webpack_require__(170)
 module.exports = function (okey, password) {
   var key = okey.toString()
   var match = key.match(findProc)
@@ -93782,13 +94094,13 @@ module.exports = function (okey, password) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
-var HashBase = __webpack_require__(372)
+var HashBase = __webpack_require__(373)
 
 var ARRAY16 = new Array(16)
 
@@ -93935,12 +94247,12 @@ module.exports = MD5
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var Buffer = __webpack_require__(168).Buffer
+var Buffer = __webpack_require__(169).Buffer
 var Transform = __webpack_require__(8).Transform
 var inherits = __webpack_require__(1)
 
@@ -94037,13 +94349,13 @@ module.exports = HashBase
 
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MODES = __webpack_require__(170)
-var AuthCipher = __webpack_require__(174)
+var MODES = __webpack_require__(171)
+var AuthCipher = __webpack_require__(175)
 var Buffer = __webpack_require__(14).Buffer
-var StreamCipher = __webpack_require__(175)
+var StreamCipher = __webpack_require__(176)
 var Transform = __webpack_require__(69)
 var aes = __webpack_require__(68)
 var ebtk = __webpack_require__(101)
@@ -94157,7 +94469,7 @@ exports.createCipher = createCipher
 
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports) {
 
 exports.encrypt = function (self, block) {
@@ -94170,7 +94482,7 @@ exports.decrypt = function (self, block) {
 
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var xor = __webpack_require__(50)
@@ -94193,7 +94505,7 @@ exports.decrypt = function (self, block) {
 
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(14).Buffer
@@ -94232,7 +94544,7 @@ exports.encrypt = function (self, data, decrypt) {
 
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(14).Buffer
@@ -94263,7 +94575,7 @@ exports.encrypt = function (self, chunk, decrypt) {
 
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(14).Buffer
@@ -94311,7 +94623,7 @@ exports.encrypt = function (self, chunk, decrypt) {
 
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var xor = __webpack_require__(50)
@@ -94334,7 +94646,7 @@ exports.encrypt = function (self, chunk) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(14).Buffer
@@ -94429,13 +94741,13 @@ module.exports = GHASH
 
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var AuthCipher = __webpack_require__(174)
+var AuthCipher = __webpack_require__(175)
 var Buffer = __webpack_require__(14).Buffer
-var MODES = __webpack_require__(170)
-var StreamCipher = __webpack_require__(175)
+var MODES = __webpack_require__(171)
+var StreamCipher = __webpack_require__(176)
 var Transform = __webpack_require__(69)
 var aes = __webpack_require__(68)
 var ebtk = __webpack_require__(101)
@@ -94556,14 +94868,14 @@ exports.createDecipheriv = createDecipheriv
 
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
 var BN = __webpack_require__(9)
 var EC = __webpack_require__(10).ec
-var parseKeys = __webpack_require__(162)
-var curves = __webpack_require__(176)
+var parseKeys = __webpack_require__(163)
+var curves = __webpack_require__(177)
 
 function verify (sig, hash, key, signType, tag) {
   var pub = parseKeys(key)
@@ -94646,7 +94958,7 @@ module.exports = verify
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var elliptic = __webpack_require__(11);
@@ -94775,13 +95087,13 @@ function formatReturnValue(bn, enc, len) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports) {
 
 module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptography","main":"lib/elliptic.js","files":["lib"],"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","unit":"istanbul test _mocha --reporter=spec test/index.js","test":"npm run lint && npm run unit","version":"grunt dist && git add dist/"},"repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"keywords":["EC","Elliptic","curve","Cryptography"],"author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"license":"MIT","bugs":{"url":"https://github.com/indutny/elliptic/issues"},"homepage":"https://github.com/indutny/elliptic","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"gitHead":"6b0d2b76caae91471649c8e21f0b1d3ba0f96090","_id":"elliptic@6.4.0","_shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","_from":"elliptic@>=6.0.0 <7.0.0","_npmVersion":"3.10.8","_nodeVersion":"7.0.0","_npmUser":{"name":"indutny","email":"fedor@indutny.com"},"dist":{"shasum":"cac9af8762c85836187003c8dfe193e5e2eae5df","tarball":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz"},"maintainers":[{"name":"indutny","email":"fedor@indutny.com"}],"_npmOperationalInternal":{"host":"packages-18-east.internal.npmjs.com","tmp":"tmp/elliptic-6.4.0.tgz_1487798866428_0.30510620190761983"},"directories":{},"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","readme":"ERROR: No README data found!"}
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -94790,7 +95102,7 @@ module.exports = {"name":"elliptic","version":"6.4.0","description":"EC cryptogr
 var utils = exports;
 var BN = __webpack_require__(18);
 var minAssert = __webpack_require__(33);
-var minUtils = __webpack_require__(177);
+var minUtils = __webpack_require__(178);
 
 utils.assert = minAssert;
 utils.toArray = minUtils.toArray;
@@ -94908,13 +95220,13 @@ utils.intFromLE = intFromLE;
 
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var r;
@@ -94972,7 +95284,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(388);
+    var crypto = __webpack_require__(389);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -94985,13 +95297,13 @@ if (typeof self === 'object') {
 
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -95373,7 +95685,7 @@ BasePoint.prototype.dblp = function dblp(k) {
 
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -96318,7 +96630,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -96505,7 +96817,7 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -96945,7 +97257,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97118,7 +97430,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(400);
+  pre = __webpack_require__(401);
 } catch (e) {
   pre = undefined;
 }
@@ -97157,21 +97469,21 @@ defineCurve('secp256k1', {
 
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(395);
-exports.sha224 = __webpack_require__(396);
-exports.sha256 = __webpack_require__(179);
-exports.sha384 = __webpack_require__(397);
-exports.sha512 = __webpack_require__(180);
+exports.sha1 = __webpack_require__(396);
+exports.sha224 = __webpack_require__(397);
+exports.sha256 = __webpack_require__(180);
+exports.sha384 = __webpack_require__(398);
+exports.sha512 = __webpack_require__(181);
 
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97179,7 +97491,7 @@ exports.sha512 = __webpack_require__(180);
 
 var utils = __webpack_require__(19);
 var common = __webpack_require__(51);
-var shaCommon = __webpack_require__(178);
+var shaCommon = __webpack_require__(179);
 
 var rotl32 = utils.rotl32;
 var sum32 = utils.sum32;
@@ -97252,14 +97564,14 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(19);
-var SHA256 = __webpack_require__(179);
+var SHA256 = __webpack_require__(180);
 
 function SHA224() {
   if (!(this instanceof SHA224))
@@ -97289,7 +97601,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97297,7 +97609,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 var utils = __webpack_require__(19);
 
-var SHA512 = __webpack_require__(180);
+var SHA512 = __webpack_require__(181);
 
 function SHA384() {
   if (!(this instanceof SHA384))
@@ -97331,7 +97643,7 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97484,7 +97796,7 @@ var sh = [
 
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97538,7 +97850,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -98324,20 +98636,20 @@ module.exports = {
 
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var BN = __webpack_require__(18);
-var HmacDRBG = __webpack_require__(402);
+var HmacDRBG = __webpack_require__(403);
 var elliptic = __webpack_require__(11);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(403);
-var Signature = __webpack_require__(404);
+var KeyPair = __webpack_require__(404);
+var Signature = __webpack_require__(405);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -98571,14 +98883,14 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var hash = __webpack_require__(102);
-var utils = __webpack_require__(177);
+var utils = __webpack_require__(178);
 var assert = __webpack_require__(33);
 
 function HmacDRBG(options) {
@@ -98691,7 +99003,7 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98817,7 +99129,7 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98959,7 +99271,7 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98970,8 +99282,8 @@ var elliptic = __webpack_require__(11);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(406);
-var Signature = __webpack_require__(407);
+var KeyPair = __webpack_require__(407);
+var Signature = __webpack_require__(408);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -99084,7 +99396,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -99187,7 +99499,7 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 407 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -99260,11 +99572,11 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 408 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.publicEncrypt = __webpack_require__(409);
-exports.privateDecrypt = __webpack_require__(435);
+exports.publicEncrypt = __webpack_require__(410);
+exports.privateDecrypt = __webpack_require__(436);
 
 exports.privateEncrypt = function privateEncrypt(key, buf) {
   return exports.publicEncrypt(key, buf, true);
@@ -99275,17 +99587,17 @@ exports.publicDecrypt = function publicDecrypt(key, buf) {
 };
 
 /***/ }),
-/* 409 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(181);
+/* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(182);
 var randomBytes = __webpack_require__(30);
 var createHash = __webpack_require__(45);
-var mgf = __webpack_require__(194);
-var xor = __webpack_require__(195);
+var mgf = __webpack_require__(195);
+var xor = __webpack_require__(196);
 var bn = __webpack_require__(53);
-var withPublic = __webpack_require__(196);
-var crt = __webpack_require__(197);
+var withPublic = __webpack_require__(197);
+var crt = __webpack_require__(198);
 
 var constants = {
   RSA_PKCS1_OAEP_PADDING: 4,
@@ -99376,7 +99688,7 @@ function nonZero(len, crypto) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 410 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -99386,7 +99698,7 @@ function nonZero(len, crypto) {
 
 var asn1 = __webpack_require__(52)
 
-exports.certificate = __webpack_require__(421)
+exports.certificate = __webpack_require__(422)
 
 var RSAPrivateKey = asn1.define('RSAPrivateKey', function () {
   this.seq().obj(
@@ -99505,13 +99817,13 @@ exports.signature = asn1.define('signature', function () {
 
 
 /***/ }),
-/* 411 */
+/* 412 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 412 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var asn1 = __webpack_require__(52);
@@ -99534,7 +99846,7 @@ function Entity(name, body) {
 Entity.prototype._createNamed = function createNamed(base) {
   var named;
   try {
-    named = __webpack_require__(163).runInThisContext(
+    named = __webpack_require__(164).runInThisContext(
       '(function ' + this.name + '(entity) {\n' +
       '  this._initNamed(entity);\n' +
       '})'
@@ -99578,7 +99890,7 @@ Entity.prototype.encode = function encode(data, enc, /* internal */ reporter) {
 
 
 /***/ }),
-/* 413 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
@@ -99705,13 +100017,13 @@ ReporterError.prototype.rethrow = function rethrow(msg) {
 
 
 /***/ }),
-/* 414 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Reporter = __webpack_require__(54).Reporter;
 var EncoderBuffer = __webpack_require__(54).EncoderBuffer;
 var DecoderBuffer = __webpack_require__(54).DecoderBuffer;
-var assert = __webpack_require__(415);
+var assert = __webpack_require__(416);
 
 // Supported tags
 var tags = [
@@ -100345,7 +100657,7 @@ Node.prototype._isPrintstr = function isPrintstr(str) {
 
 
 /***/ }),
-/* 415 */
+/* 416 */
 /***/ (function(module, exports) {
 
 module.exports = assert;
@@ -100362,10 +100674,10 @@ assert.equal = function assertEqual(l, r, msg) {
 
 
 /***/ }),
-/* 416 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var constants = __webpack_require__(183);
+var constants = __webpack_require__(184);
 
 exports.tagClass = {
   0: 'universal',
@@ -100410,23 +100722,23 @@ exports.tagByName = constants._reverse(exports.tag);
 
 
 /***/ }),
-/* 417 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var decoders = exports;
 
-decoders.der = __webpack_require__(184);
-decoders.pem = __webpack_require__(418);
+decoders.der = __webpack_require__(185);
+decoders.pem = __webpack_require__(419);
 
 
 /***/ }),
-/* 418 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
 var Buffer = __webpack_require__(0).Buffer;
 
-var DERDecoder = __webpack_require__(184);
+var DERDecoder = __webpack_require__(185);
 
 function PEMDecoder(entity) {
   DERDecoder.call(this, entity);
@@ -100475,22 +100787,22 @@ PEMDecoder.prototype.decode = function decode(data, options) {
 
 
 /***/ }),
-/* 419 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var encoders = exports;
 
-encoders.der = __webpack_require__(185);
-encoders.pem = __webpack_require__(420);
+encoders.der = __webpack_require__(186);
+encoders.pem = __webpack_require__(421);
 
 
 /***/ }),
-/* 420 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(1);
 
-var DEREncoder = __webpack_require__(185);
+var DEREncoder = __webpack_require__(186);
 
 function PEMEncoder(entity) {
   DEREncoder.call(this, entity);
@@ -100512,7 +100824,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
 
 
 /***/ }),
-/* 421 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100607,13 +100919,13 @@ module.exports = X509Certificate
 
 
 /***/ }),
-/* 422 */
+/* 423 */
 /***/ (function(module, exports) {
 
 module.exports = {"2.16.840.1.101.3.4.1.1":"aes-128-ecb","2.16.840.1.101.3.4.1.2":"aes-128-cbc","2.16.840.1.101.3.4.1.3":"aes-128-ofb","2.16.840.1.101.3.4.1.4":"aes-128-cfb","2.16.840.1.101.3.4.1.21":"aes-192-ecb","2.16.840.1.101.3.4.1.22":"aes-192-cbc","2.16.840.1.101.3.4.1.23":"aes-192-ofb","2.16.840.1.101.3.4.1.24":"aes-192-cfb","2.16.840.1.101.3.4.1.41":"aes-256-ecb","2.16.840.1.101.3.4.1.42":"aes-256-cbc","2.16.840.1.101.3.4.1.43":"aes-256-ofb","2.16.840.1.101.3.4.1.44":"aes-256-cfb"}
 
 /***/ }),
-/* 423 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// adapted from https://github.com/apatil/pemstrip
@@ -100621,7 +100933,7 @@ var findProc = /Proc-Type: 4,ENCRYPTED\n\r?DEK-Info: AES-((?:128)|(?:192)|(?:256
 var startRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----\n/m
 var fullRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----\n\r?([0-9A-z\n\r\+\/\=]+)\n\r?-----END \1-----$/m
 var evp = __webpack_require__(103)
-var ciphers = __webpack_require__(187)
+var ciphers = __webpack_require__(188)
 module.exports = function (okey, password) {
   var key = okey.toString()
   var match = key.match(findProc)
@@ -100650,13 +100962,13 @@ module.exports = function (okey, password) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 424 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
-var HashBase = __webpack_require__(425)
+var HashBase = __webpack_require__(426)
 
 var ARRAY16 = new Array(16)
 
@@ -100803,12 +101115,12 @@ module.exports = MD5
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 425 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var Buffer = __webpack_require__(186).Buffer
+var Buffer = __webpack_require__(187).Buffer
 var Transform = __webpack_require__(8).Transform
 var inherits = __webpack_require__(1)
 
@@ -100905,13 +101217,13 @@ module.exports = HashBase
 
 
 /***/ }),
-/* 426 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MODES = __webpack_require__(188)
-var AuthCipher = __webpack_require__(192)
+var MODES = __webpack_require__(189)
+var AuthCipher = __webpack_require__(193)
 var Buffer = __webpack_require__(15).Buffer
-var StreamCipher = __webpack_require__(193)
+var StreamCipher = __webpack_require__(194)
 var Transform = __webpack_require__(72)
 var aes = __webpack_require__(71)
 var ebtk = __webpack_require__(103)
@@ -101025,7 +101337,7 @@ exports.createCipher = createCipher
 
 
 /***/ }),
-/* 427 */
+/* 428 */
 /***/ (function(module, exports) {
 
 exports.encrypt = function (self, block) {
@@ -101038,7 +101350,7 @@ exports.decrypt = function (self, block) {
 
 
 /***/ }),
-/* 428 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var xor = __webpack_require__(55)
@@ -101061,7 +101373,7 @@ exports.decrypt = function (self, block) {
 
 
 /***/ }),
-/* 429 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(15).Buffer
@@ -101100,7 +101412,7 @@ exports.encrypt = function (self, data, decrypt) {
 
 
 /***/ }),
-/* 430 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(15).Buffer
@@ -101131,7 +101443,7 @@ exports.encrypt = function (self, chunk, decrypt) {
 
 
 /***/ }),
-/* 431 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(15).Buffer
@@ -101179,7 +101491,7 @@ exports.encrypt = function (self, chunk, decrypt) {
 
 
 /***/ }),
-/* 432 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var xor = __webpack_require__(55)
@@ -101202,7 +101514,7 @@ exports.encrypt = function (self, chunk) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 433 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(15).Buffer
@@ -101297,13 +101609,13 @@ module.exports = GHASH
 
 
 /***/ }),
-/* 434 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var AuthCipher = __webpack_require__(192)
+var AuthCipher = __webpack_require__(193)
 var Buffer = __webpack_require__(15).Buffer
-var MODES = __webpack_require__(188)
-var StreamCipher = __webpack_require__(193)
+var MODES = __webpack_require__(189)
+var StreamCipher = __webpack_require__(194)
 var Transform = __webpack_require__(72)
 var aes = __webpack_require__(71)
 var ebtk = __webpack_require__(103)
@@ -101424,16 +101736,16 @@ exports.createDecipheriv = createDecipheriv
 
 
 /***/ }),
-/* 435 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(181);
-var mgf = __webpack_require__(194);
-var xor = __webpack_require__(195);
+/* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(182);
+var mgf = __webpack_require__(195);
+var xor = __webpack_require__(196);
 var bn = __webpack_require__(53);
-var crt = __webpack_require__(197);
+var crt = __webpack_require__(198);
 var createHash = __webpack_require__(45);
-var withPublic = __webpack_require__(196);
+var withPublic = __webpack_require__(197);
 module.exports = function privateDecrypt(private_key, enc, reverse) {
   var padding;
   if (private_key.padding) {
@@ -101538,7 +101850,7 @@ function compare(a, b){
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 436 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101547,7 +101859,7 @@ function compare(a, b){
 function oldBrowser () {
   throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11')
 }
-var safeBuffer = __webpack_require__(437)
+var safeBuffer = __webpack_require__(438)
 var randombytes = __webpack_require__(30)
 var Buffer = safeBuffer.Buffer
 var kBufferMaxLength = safeBuffer.kMaxLength
@@ -101654,7 +101966,7 @@ function randomFillSync (buf, offset, size) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(6)))
 
 /***/ }),
-/* 437 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable node/no-deprecated-api */
