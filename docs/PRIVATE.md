@@ -54,12 +54,17 @@ return scopedKeys.deriveScopedKey({
 
 * [deriver-ScopedKeys](#module_deriver-ScopedKeys)
     * [~deriveScopedKey(options)](#module_deriver-ScopedKeys..deriveScopedKey) ⇒ <code>Promise</code>
+    * [~_deriveLegacySyncKey(options)](#module_deriver-ScopedKeys.._deriveLegacySyncKey) ⇒ <code>Promise</code> ℗
     * [~_deriveHKDF(salt, initialKeyingMaterial, info, keyLength)](#module_deriver-ScopedKeys.._deriveHKDF) ⇒ <code>Promise</code> ℗
 
 <a name="module_deriver-ScopedKeys..deriveScopedKey"></a>
 
 ### deriver-ScopedKeys~deriveScopedKey(options) ⇒ <code>Promise</code>
-Derive a scoped key
+Derive a scoped key.
+This method derives the key material for a particular scope from the user's master key material.
+For most scopes it will produce a JWK containing a 32-byte symmetric key.
+There is also special-case support for a legacy key-derivation algorithm used by Firefox Sync,
+which generates a 64-byte key when `options.identifier` is 'https://identity.mozilla.com/apps/oldsync'.
 
 **Kind**: inner method of [<code>deriver-ScopedKeys</code>](#module_deriver-ScopedKeys)  
 
@@ -71,6 +76,20 @@ Derive a scoped key
 | options.keyRotationTimestamp | <code>number</code> | A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed |
 | options.identifier | <code>string</code> | a unique URI string identifying the requested scoped key |
 | options.uid | <code>string</code> | a 16-byte Firefox Account UID hex string |
+
+<a name="module_deriver-ScopedKeys.._deriveLegacySyncKey"></a>
+
+### deriver-ScopedKeys~_deriveLegacySyncKey(options) ⇒ <code>Promise</code> ℗
+Derive a scoped key using the special legacy algorithm from Firefox Sync.
+
+**Kind**: inner method of [<code>deriver-ScopedKeys</code>](#module_deriver-ScopedKeys)  
+**Access**: private  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | required set of options to derive the scoped key |
+| options.inputKey | <code>string</code> | input key hex string that the scoped key is derived from |
+| options.keyRotationTimestamp | <code>number</code> | A 13-digit number, the timestamp in milliseconds at which this scoped key most recently changed |
 
 <a name="module_deriver-ScopedKeys.._deriveHKDF"></a>
 
