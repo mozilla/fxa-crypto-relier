@@ -8,6 +8,9 @@ const jose = require('node-jose');
 
 const KEY_LENGTH = 48;
 const LEGACY_SYNC_SCOPE = 'https://identity.mozilla.com/apps/oldsync';
+const REGEX_HEX32 = /^[0-9a-f]{32}$/i;
+const REGEX_HEX64 = /^[0-9a-f]{64}$/i;
+const REGEX_TIMESTAMP = /^[0-9]{13}$/;
 
 /**
  * Scoped key deriver
@@ -45,28 +48,28 @@ class ScopedKeys {
    */
   deriveScopedKey(options) {
     return new Promise((resolve) => {
-      if (! options.inputKey) {
-        throw new Error('inputKey required');
+      if (! REGEX_HEX64.test(options.inputKey)) {
+        throw new Error('inputKey must be a 64-character hex string');
       }
 
-      if (! options.keyRotationSecret) {
-        throw new Error('keyRotationSecret required');
+      if (! REGEX_HEX64.test(options.keyRotationSecret)) {
+        throw new Error('keyRotationSecret must be a 64-character hex string');
       }
 
-      if (! options.keyRotationTimestamp) {
-        throw new Error('keyRotationTimestamp required');
+      if (typeof options.keyRotationTimestamp !== 'number') {
+        throw new Error('keyRotationTimestamp must be a 13-digit integer');
       }
 
-      if (! options.identifier) {
-        throw new Error('identifier required');
+      if (! REGEX_TIMESTAMP.test(options.keyRotationTimestamp)) {
+        throw new Error('keyRotationTimestamp must be a 13-digit integer');
       }
 
-      if (! options.uid) {
-        throw new Error('uid required');
+      if (typeof options.identifier !== 'string' || options.identifier.length < 10) {
+        throw new Error('identifier must be a string of length >= 10');
       }
 
-      if (options.keyRotationTimestamp.toString().length !== 13) {
-        throw new Error('keyRotationTimestamp must be a 13-digit number');
+      if (! REGEX_HEX32.test(options.uid)) {
+        throw new Error('uid must be a 32-character hex string');
       }
 
       if (options.identifier === LEGACY_SYNC_SCOPE) {
