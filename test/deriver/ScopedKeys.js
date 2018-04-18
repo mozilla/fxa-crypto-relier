@@ -55,6 +55,21 @@ describe('ScopedKeys', function () {
       });
   });
 
+  it('should correctly derive legacy sync key to known test vectors', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: 'eaf9570b7219a4187d3d6bf3cec2770c2e0719b7cc0dfbb38243d6f1881675e9',
+      keyRotationSecret: '0000000000000000000000000000000000000000000000000000000000000000',
+      keyRotationTimestamp: 1510726317000,
+      identifier: 'https://identity.mozilla.com/apps/oldsync',
+      uid: uid
+    })
+      .then((key) => {
+        assert.equal(key.kty, 'oct');
+        assert.equal(key.k, 'DW_ll5GwX6SJ5GPqJVAuMUP2t6kDqhUulc2cbt26xbTcaKGQl-9l29FHAQ7kUiJETma4s9fIpEHrt909zgFang');
+        assert.equal(key.kid, '1510726317-IqQv4onc7VcVE1kTQkyyOw');
+      });
+  });
+
   it('validates keyRotationTimestamp', () => {
     return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
