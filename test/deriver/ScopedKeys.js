@@ -70,26 +70,190 @@ describe('ScopedKeys', function () {
       });
   });
 
-  it('validates keyRotationTimestamp', () => {
+  it('validates that inputKey is provided', () => {
+    return scopedKeys.deriveScopedKey({
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'inputKey must be a 64-character hex string');
+    });
+  });
+
+  it('validates that inputKey is a hex string', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: 'k' + sampleKb.slice(1),
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'inputKey must be a 64-character hex string');
+    });
+  });
+
+  it('validates that inputKey has the required length', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb.slice(0, 16),
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'inputKey must be a 64-character hex string');
+    });
+  });
+
+  it('validates that keyRotationSecret is provided', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'keyRotationSecret must be a 64-character hex string');
+    });
+  });
+
+  it('validates that keyRotationSecret is a hex string', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: 'Q' + keyRotationSecret.slice(1),
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'keyRotationSecret must be a 64-character hex string');
+    });
+  });
+
+  it('validates that keyRotationSecret has the required length', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret.slice(0, 16),
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'keyRotationSecret must be a 64-character hex string');
+    });
+  });
+
+  it('validates that keyRotationTimestamp is provided', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'keyRotationTimestamp must be a 13-digit integer');
+    });
+  });
+
+  it('validates that keyRotationTimestamp is a number', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: '1111111111111',
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'keyRotationTimestamp must be a 13-digit integer');
+    });
+  });
+
+  it('validates that keyRotationTimestamp is an integer', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: 1234567890.23,
+      identifier: identifier,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'keyRotationTimestamp must be a 13-digit integer');
+    });
+  });
+
+  it('validates that keyRotationTimestamp has correct number of digits', () => {
     return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
       keyRotationSecret: keyRotationSecret,
       keyRotationTimestamp: 100,
       identifier: identifier,
       uid: uid
-    }).catch((err) => {
-      assert.equal(err.message, 'keyRotationTimestamp must be a 13-digit number');
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'keyRotationTimestamp must be a 13-digit integer');
     });
   });
 
-  it('validates uid', () => {
+  it('validates that identifier is provided', () => {
     return scopedKeys.deriveScopedKey({
       inputKey: sampleKb,
       keyRotationSecret: keyRotationSecret,
-      keyRotationTimestamp: 100,
+      keyRotationTimestamp: keyRotationTimestamp,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'identifier must be a string of length >= 10');
+    });
+  });
+
+  it('validates that identifier is a string', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: true,
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'identifier must be a string of length >= 10');
+    });
+  });
+
+  it('validates that identifier is of non-trivial length', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: 'https://x',
+      uid: uid
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'identifier must be a string of length >= 10');
+    });
+  });
+
+  it('validates that uid is provided', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: keyRotationTimestamp,
       identifier: identifier
-    }).catch((err) => {
-      assert.equal(err.message, 'uid required');
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'uid must be a 32-character hex string');
+    });
+  });
+
+  it('validates that uid is a hex string', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: identifier,
+      uid: '!' + uid.slice(1)
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'uid must be a 32-character hex string');
+    });
+  });
+
+  it('validates that uid has the correct length', () => {
+    return scopedKeys.deriveScopedKey({
+      inputKey: sampleKb,
+      keyRotationSecret: keyRotationSecret,
+      keyRotationTimestamp: keyRotationTimestamp,
+      identifier: identifier,
+      uid: uid.slice(0, 16)
+    }).then(assert.fail, (err) => {
+      assert.equal(err.message, 'uid must be a 32-character hex string');
     });
   });
 
