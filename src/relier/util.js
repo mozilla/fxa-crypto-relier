@@ -84,5 +84,6 @@ module.exports = {
   extractUrlParam,
   objectToQueryString,
   sha256base64url,
-  Buffer
+  Buffer,
+  jose
 };
