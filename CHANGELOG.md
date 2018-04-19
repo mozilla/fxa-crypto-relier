@@ -1,3 +1,14 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.1.1...v2.2.0) (2018-04-19)
+
+
+### Features
+
+* **keys:** Add special-case derivation of legacy sync key. ([#14](https://github.com/mozilla/fxa-crypto-relier/issues/14)); r=vladikoff ([89ba7c7](https://github.com/mozilla/fxa-crypto-relier/commit/89ba7c7))
+* **lib:** export jose as a util lib ([#17](https://github.com/mozilla/fxa-crypto-relier/issues/17)) r=[@rfk](https://github.com/rfk) ([905804b](https://github.com/mozilla/fxa-crypto-relier/commit/905804b))
+
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/mozilla/fxa-crypto-relier/compare/v2.1.0...v2.1.1) (2018-02-08)
 
