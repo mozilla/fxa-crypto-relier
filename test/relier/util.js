@@ -6,6 +6,10 @@ const util = window.fxaCryptoRelier.OAuthUtils.__util;
 
 describe('relier.util', function () {
 
+  it('exports node-jose', () => {
+    assert.ok(util.jose);
+  });
+
   describe('createQueryParam', () => {
     it('can create query param', () => {
       const c = util.createQueryParam;
