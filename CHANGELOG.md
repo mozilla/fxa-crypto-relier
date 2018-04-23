@@ -1,3 +1,13 @@
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/mozilla/fxa-crypto-relier/compare/v2.2.0...v2.2.1) (2018-04-23)
+
+
+### Bug Fixes
+
+* **keys:** Use full millisecond timestamp in legacy sync kid. ([#19](https://github.com/mozilla/fxa-crypto-relier/issues/19)) r=[@vladikoff](https://github.com/vladikoff) ([c1553cc](https://github.com/mozilla/fxa-crypto-relier/commit/c1553cc))
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.1.1...v2.2.0) (2018-04-19)
 
