@@ -81,6 +81,12 @@ which generates a 64-byte key when `options.identifier` is 'https://identity.moz
 
 ### deriver-ScopedKeys~_deriveLegacySyncKey(options) ⇒ <code>Promise</code> ℗
 Derive a scoped key using the special legacy algorithm from Firefox Sync.
+To access data in Firefox Sync, clients need to know:
+  * 64 bytes of key material derived from kB using HKDF
+  * The first 16 bytes of the SHA-256 hash of kB
+  * The full millisecond precision timestamp of when kB was last changed.
+This method encodes that information as a JWK by using the first as the
+key material `k`, and combining the other two to form the `kid`.
 
 **Kind**: inner method of [<code>deriver-ScopedKeys</code>](#module_deriver-ScopedKeys)  
 **Access**: private  
