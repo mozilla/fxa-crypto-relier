@@ -105,6 +105,12 @@ class ScopedKeys {
 
   /**
    * Derive a scoped key using the special legacy algorithm from Firefox Sync.
+   * To access data in Firefox Sync, clients need to know:
+   *   * 64 bytes of key material derived from kB using HKDF
+   *   * The first 16 bytes of the SHA-256 hash of kB
+   *   * The full millisecond precision timestamp of when kB was last changed.
+   * This method encodes that information as a JWK by using the first as the
+   * key material `k`, and combining the other two to form the `kid`.
    * @method _deriveLegacySyncKey
    * @private
    * @param {object} options - required set of options to derive the scoped key
@@ -128,9 +134,7 @@ class ScopedKeys {
           scopedKey.k = base64url(key);
           return jose.JWA.digest('SHA-256', inputKeyBuf)
             .then((kHash) => {
-              const keyTimestamp = Math.round(options.keyRotationTimestamp / 1000);
-
-              scopedKey.kid = keyTimestamp + '-' + base64url(kHash.slice(0, 16));
+              scopedKey.kid = options.keyRotationTimestamp + '-' + base64url(kHash.slice(0, 16));
               return scopedKey;
             });
         })
