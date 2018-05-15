@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 const jose = require('node-jose');
-const base64url = require('base64url');
+const base64url = require('b64u');
 
 module.exports = {
   base64url: base64url,
