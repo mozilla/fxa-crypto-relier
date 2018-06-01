@@ -12,9 +12,9 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
-    "base64url": "^2.0.0",
+    "base64url": "^3.0.0",
     "node-hkdf": "0.0.2",
-    "node-jose": "0.11.0"
+    "node-jose": "1.0.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
