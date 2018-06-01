@@ -1,3 +1,13 @@
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.2.1...v2.3.0) (2018-06-01)
+
+
+### Bug Fixes
+
+* **deps:** update to node-jose 1 ([#21](https://github.com/mozilla/fxa-crypto-relier/issues/21)) r=[@rfk](https://github.com/rfk) ([8161634](https://github.com/mozilla/fxa-crypto-relier/commit/8161634))
+
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/mozilla/fxa-crypto-relier/compare/v2.2.0...v2.2.1) (2018-04-23)
 
