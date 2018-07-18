@@ -7,6 +7,7 @@ jobs:
       - checkout
       - run:
           command: |
+            sudo apt-get install python-setuptools python-dev build-essential
             sudo easy_install pip
             pip install mozdownload mozinstall
             mozdownload --version 56.0 --destination firefox.tar.bz2
