@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run:
+          command: |
+
+            pip install mozdownload mozinstall
+            mozdownload --version 56.0 --destination firefox.tar.bz2
+            mozinstall firefox.tar.bz2
+            npm test
+
+workflows:
+  version: 2
+
+  # workflow jobs are _not_ run in tag builds by default
+  # we use filters to whitelist jobs that should be run for tags
+
+  # workflow jobs are run in _all_ branch builds by default
+  # we use filters to blacklist jobs that shouldn't be run for a branch
+
+  # see: https://circleci.com/docs/2.0/workflows/#git-tag-job-execution
+
+  build-test-push:
+    jobs:
+      - build
