@@ -12,6 +12,8 @@ jobs:
             sudo pip install mozdownload mozinstall
             mozdownload --version 56.0 --destination firefox.tar.bz2
             mozinstall firefox.tar.bz2
+            npm install -g npm@6
+            npm install
             npm test
 
 workflows:
