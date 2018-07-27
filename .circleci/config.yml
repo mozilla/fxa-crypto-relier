@@ -7,14 +7,18 @@ jobs:
       - checkout
       - run:
           command: |
-            sudo apt-get install python-setuptools python-dev build-essential
+            sudo apt-get install -y python-setuptools python-dev build-essential xvfb
             sudo easy_install pip
             sudo pip install mozdownload mozinstall
             mozdownload --version 56.0 --destination firefox.tar.bz2
             mozinstall firefox.tar.bz2
             sudo npm install -g npm@6
             npm install
-            MOZ_HEADLESS=1 npm test
+
+      - run:
+          name: Run tests
+          shell: /bin/bash --login
+          command: DISPLAY=:99 xvfb-run npm test
 
 workflows:
   version: 2
