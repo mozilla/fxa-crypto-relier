@@ -9,11 +9,11 @@ jobs:
     steps:
       - checkout
       - run:
-        command: |
-          sudo apt-get install -y python-setuptools python-dev build-essential xvfb
-          sudo easy_install pip
-          sudo pip install mozdownload mozinstall
-          mozinstall firefox.tar.bz2
+          command: |
+            sudo apt-get install -y python-setuptools python-dev build-essential xvfb
+            sudo easy_install pip
+            sudo pip install mozdownload mozinstall
+            mozinstall firefox.tar.bz2
 
       - run:
           name: Running X virtual framebuffer
