@@ -12,13 +12,14 @@ jobs:
             sudo pip install mozdownload mozinstall
             mozdownload --version 56.0 --destination firefox.tar.bz2
             mozinstall firefox.tar.bz2
+            ls
             sudo npm install -g npm@6
             npm install
 
       - run:
           name: Run tests
           shell: /bin/bash --login
-          command: DISPLAY=:99 xvfb-run npm test
+          command: FIREFOX_BIN=./firefox/firefox-bin DISPLAY=:99 xvfb-run npm test
 
 workflows:
   version: 2
