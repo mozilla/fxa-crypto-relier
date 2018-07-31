@@ -9,6 +9,7 @@ jobs:
           command: |
             sudo npm install -g npm@6
             npm install
+            which firefox
             npm test
 
 workflows:
