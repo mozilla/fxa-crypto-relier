@@ -6,11 +6,12 @@ jobs:
     steps:
       - checkout
       - run:
+          shell: /bin/bash --login
           command: |
             sudo npm install -g npm@6
             npm install
             which firefox
-            npm test
+            xvfb-run FIREFOX_BIN=/usr/bin/firefox npm test
 
 workflows:
   version: 2
