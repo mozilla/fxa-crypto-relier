@@ -5,7 +5,6 @@ jobs:
       - image: circleci/node:8.11.3-stretch-browsers
         env:
           - DISPLAY=:99
-          - FIREFOX_BIN=/usr/bin/firefox
     steps:
       - checkout
       - run:
