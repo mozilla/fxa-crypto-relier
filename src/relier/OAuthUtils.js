@@ -42,6 +42,59 @@ class OAuthUtils {
   constructor(options = {}) {
     this.oauthServer = options.oauthServer || OAUTH_SERVER_URL;
   }
+
+  getKeyFlowParams(clientId, options = {}) {
+    const SCOPES = options.scopes || [];
+
+    const state = util.createRandomString(16);
+    const codeVerifier = util.createRandomString(43);
+    const params = {
+      access_type: 'offline', // eslint-disable-line camelcase
+      client_id: clientId, // eslint-disable-line camelcase
+      redirect_uri: options.redirectUri, // eslint-disable-line camelcase
+      scope: SCOPES.join(' '),
+      state: state
+    };
+
+    return util.sha256base64url(codeVerifier).then(codeChallenge => {
+      params.response_type = 'code'; // eslint-disable-line camelcase
+      params.code_challenge_method = 'S256'; // eslint-disable-line camelcase
+      params.code_challenge = codeChallenge; // eslint-disable-line camelcase
+
+      return fxaKeyUtils.createApplicationKeyPair();
+    }).then((keyTypes) => {
+      const base64JwkPublicKey = jose.util.base64url.encode(JSON.stringify(keyTypes.jwkPublicKey), 'utf8');
+
+      params.keys_jwk = base64JwkPublicKey; // eslint-disable-line camelcase
+
+      return {
+        codeVerifier,
+        params,
+      };
+    });
+  }
+
+  tradeCodeForKeys(clientId, code, codeVerifier, options = {}) {
+    const getBearerTokenRequest = options.getBearerTokenRequest || this._getBearerTokenRequest;
+
+    return getBearerTokenRequest(this.oauthServer, code, clientId, codeVerifier)
+      .then((tokenResult) => {
+        const bundle = tokenResult.keys_jwe;
+
+        if (! bundle) {
+          throw new Error('Failed to fetch bundle');
+        }
+
+        return fxaKeyUtils.decryptBundle(bundle)
+          .then(function (keys) {
+            delete tokenResult.keys_jwe;
+
+            tokenResult.keys = keys;
+            return tokenResult;
+          });
+      });
+  }
+
   /**
    * @method launchWebExtensionKeyFlow
    * @desc Used to launch the Firefox Accounts scope key login flow in WebExtensions
