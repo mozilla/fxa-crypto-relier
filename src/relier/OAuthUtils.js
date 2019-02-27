@@ -13,6 +13,7 @@ const util = require('./util');
 const fxaKeyUtils = new KeyUtils();
 
 const OAUTH_SERVER_URL = 'https://oauth.accounts.firefox.com/v1';
+const CONTENT_SERVER_URL = 'https://accounts.firefox.com';
 
 /**
  * OAuth methods to authenticate with Firefox Accounts and get scoped keys
@@ -38,9 +39,11 @@ class OAuthUtils {
    * @constructor
    * @param {object} [options]
    * @param {string} [options.oauthServer] - Custom Firefox Accounts OAuth server
+   * @param {string} [options.contentServer] - Custom Firefox Accounts Content server
    */
   constructor(options = {}) {
     this.oauthServer = options.oauthServer || OAUTH_SERVER_URL;
+    this.contentServer = options.contentServer || CONTENT_SERVER_URL;
   }
   /**
    * @method launchWebExtensionKeyFlow
@@ -83,7 +86,7 @@ class OAuthUtils {
 
       queryParams.keys_jwk = base64JwkPublicKey; // eslint-disable-line camelcase
 
-      const authUrl = `${this.oauthServer}/authorization` + util.objectToQueryString(queryParams);
+      const authUrl = `${this.contentServer}/authorization` + util.objectToQueryString(queryParams);
 
       return browserApi.identity.launchWebAuthFlow({
         interactive: true,
