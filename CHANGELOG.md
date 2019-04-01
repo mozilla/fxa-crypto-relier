@@ -6,9 +6,10 @@
 
 * **ci:** run update for python package in ci ([5607994](https://github.com/mozilla/fxa-crypto-relier/commit/5607994))
 
+
 ### Features
 
-* **ci:** update to circle 2 (#23) r=@vbudhram ([f94f441](https://github.com/mozilla/fxa-crypto-relier/commit/f94f441))
+* **ci:** update to circle 2 ([#23](https://github.com/mozilla/fxa-crypto-relier/issues/23)) r=[@vbudhram](https://github.com/vbudhram) ([f94f441](https://github.com/mozilla/fxa-crypto-relier/commit/f94f441))
 * **oauth:** migrate to content-sever authorization ([2e198d0](https://github.com/mozilla/fxa-crypto-relier/commit/2e198d0))
 
 
