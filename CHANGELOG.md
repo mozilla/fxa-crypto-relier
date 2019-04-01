@@ -1,3 +1,18 @@
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.3.0...v2.4.0) (2019-04-01)
+
+
+### Bug Fixes
+
+* **ci:** run update for python package in ci ([5607994](https://github.com/mozilla/fxa-crypto-relier/commit/5607994))
+
+### Features
+
+* **ci:** update to circle 2 (#23) r=@vbudhram ([f94f441](https://github.com/mozilla/fxa-crypto-relier/commit/f94f441))
+* **oauth:** migrate to content-sever authorization ([2e198d0](https://github.com/mozilla/fxa-crypto-relier/commit/2e198d0))
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.2.1...v2.3.0) (2018-06-01)
 
