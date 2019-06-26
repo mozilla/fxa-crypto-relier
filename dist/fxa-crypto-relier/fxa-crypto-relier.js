@@ -60273,16 +60273,26 @@ var OAuthUtils = function () {
         state: state
       };
 
+      console.log('queryParams');
+
       return util.sha256base64url(codeVerifier).then(function (codeChallenge) {
+        console.log('a');
         queryParams.response_type = 'code'; // eslint-disable-line camelcase
         queryParams.code_challenge_method = 'S256'; // eslint-disable-line camelcase
         queryParams.code_challenge = codeChallenge; // eslint-disable-line camelcase
 
-        return fxaKeyUtils.createApplicationKeyPair();
-      }).then(function (keyTypes) {
-        var base64JwkPublicKey = jose.util.base64url.encode(JSON.stringify(keyTypes.jwkPublicKey), 'utf8');
+        if (queryParams.scopes && queryParams.scopes.includes('https://')) {
+          return fxaKeyUtils.createApplicationKeyPair();
+          // if there is an https scope, then we would need to generate keys and add a keys_jwk param.
+        }
 
-        queryParams.keys_jwk = base64JwkPublicKey; // eslint-disable-line camelcase
+        return null;
+      }).then(function (keyTypes) {
+        if (keyTypes) {
+          var base64JwkPublicKey = jose.util.base64url.encode(JSON.stringify(keyTypes.jwkPublicKey), 'utf8');
+
+          queryParams.keys_jwk = base64JwkPublicKey; // eslint-disable-line camelcase
+        }
 
         var authUrl = _this.contentServer + '/authorization' + util.objectToQueryString(queryParams);
 
@@ -60300,18 +60310,21 @@ var OAuthUtils = function () {
 
         return getBearerTokenRequest(_this.oauthServer, code, clientId, codeVerifier);
       }).then(function (tokenResult) {
-        var bundle = tokenResult.keys_jwe;
+        if (tokenResult) {
+          var bundle = tokenResult.keys_jwe;
 
-        if (!bundle) {
-          throw new Error('Failed to fetch bundle');
+          if (!bundle) {
+            throw new Error('Failed to fetch bundle');
+          }
+
+          return fxaKeyUtils.decryptBundle(bundle).then(function (keys) {
+            delete tokenResult.keys_jwe;
+
+            tokenResult.keys = keys;
+            return tokenResult;
+          });
         }
-
-        return fxaKeyUtils.decryptBundle(bundle).then(function (keys) {
-          delete tokenResult.keys_jwe;
-
-          tokenResult.keys = keys;
-          return tokenResult;
-        });
+        return tokenResult;
       });
     }
     /**

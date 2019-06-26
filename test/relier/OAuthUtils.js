@@ -20,9 +20,12 @@ describe('OAuthUtils', function () {
     return {
       identity: {
         launchWebAuthFlow: (args) => {
+
+          console.log('zzz')
           const state = options.state || util.extractUrlParam(args.url, 'state');
           keysJwk = util.extractUrlParam(args.url, 'keys_jwk');
 
+          console.log('2', keysJwk)
           const fxaDeriverUtils = new window.fxaCryptoDeriver.DeriverUtils();
 
           return fxaDeriverUtils.encryptBundle(keysJwk, JSON.stringify(keySample))
@@ -48,6 +51,7 @@ describe('OAuthUtils', function () {
 
   it('should encrypt and decrypt the bundle', () => {
     return oAuthUtils.launchWebExtensionKeyFlow('clientId', {
+      scopes: [exampleScope],
       browserApi: getBrowserApi(),
       getBearerTokenRequest: getBearerTokenRequest,
     }).then((result) => {
@@ -63,6 +67,7 @@ describe('OAuthUtils', function () {
 
   it('fails if state does not match', () => {
     return oAuthUtils.launchWebExtensionKeyFlow('clientId', {
+      scopes: [exampleScope],
       browserApi: getBrowserApi({
         state: 'foo'
       }),
