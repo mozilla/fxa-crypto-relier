@@ -32,5 +32,6 @@ Used to launch the Firefox Accounts scope key login flow in WebExtensions
 | [options.scopes] | <code>array</code> | <code>[]</code> | Requested OAuth scopes |
 | [options.browserApi] | <code>object</code> | <code>browser</code> | Custom browser API override |
 | [options.getBearerTokenRequest] | <code>function</code> | <code>getBearerTokenRequest</code> | Custom getBearerTokenRequest function override |
+| [options.validateTokenResult] | <code>function</code> | <code>validateTokenResult</code> | Custom validateTokenResult function override |
 
 

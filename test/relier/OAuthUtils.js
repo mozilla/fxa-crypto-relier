@@ -73,4 +73,18 @@ describe('OAuthUtils', function () {
 
   });
 
+  it('should keep the bundle as it is, plus add extra attributes', () => {
+    return oAuthUtils.launchWebExtensionKeyFlow('clientId', {
+      browserApi: getBrowserApi(),
+      getBearerTokenRequest: getBearerTokenRequest,
+      validateTokenResult: tokenResult => {
+        tokenResult.allGood = 'sure';
+        return Promise.resolve(tokenResult);
+      }
+    }).then((result) => {
+      assert.ok('keys_jwe' in result, 'key_jwe still here');
+      assert.equal(result.allGood, 'sure');
+    });
+
+  });
 });

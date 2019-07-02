@@ -54,6 +54,8 @@ class OAuthUtils {
    * @param {object} [options.browserApi=browser] - Custom browser API override
    * @param {function} [options.getBearerTokenRequest=getBearerTokenRequest] -
    *   Custom getBearerTokenRequest function override
+   * @param {function} [options.validateTokenResult=validateTokenResult] -
+   *   Custom validateTokenResult function override
    * @returns {Promise}
    */
   launchWebExtensionKeyFlow(clientId, options = {}) {
@@ -63,6 +65,7 @@ class OAuthUtils {
 
     const browserApi = options.browserApi || browser;
     const getBearerTokenRequest = options.getBearerTokenRequest || this._getBearerTokenRequest;
+    const validateTokenResult = options.validateTokenResult || this._validateTokenResult;
     const SCOPES = options.scopes || [];
 
     const state = util.createRandomString(16);
@@ -102,19 +105,7 @@ class OAuthUtils {
 
       return getBearerTokenRequest(this.oauthServer, code, clientId, codeVerifier);
     }).then((tokenResult) => {
-      const bundle = tokenResult.keys_jwe;
-
-      if (! bundle) {
-        throw new Error('Failed to fetch bundle');
-      }
-
-      return fxaKeyUtils.decryptBundle(bundle)
-        .then(function (keys) {
-          delete tokenResult.keys_jwe;
-
-          tokenResult.keys = keys;
-          return tokenResult;
-        });
+      return validateTokenResult(tokenResult);
     });
   }
   /**
@@ -152,6 +143,28 @@ class OAuthUtils {
         throw new Error('Failed to fetch token');
       }
     });
+  }
+  /**
+   * @method _validateTokenResult
+   * @desc Used to validate a token
+   * @private
+   * @param {object} tokenResult - the token
+   * @returns {Promise}
+   */
+  _validateTokenResult(tokenResult) {
+    const bundle = tokenResult.keys_jwe;
+
+    if (! bundle) {
+      throw new Error('Failed to fetch bundle');
+    }
+
+    return fxaKeyUtils.decryptBundle(bundle)
+      .then(function (keys) {
+        delete tokenResult.keys_jwe;
+
+        tokenResult.keys = keys;
+        return tokenResult;
+      });
   }
 
 }

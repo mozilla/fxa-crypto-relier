@@ -165,6 +165,7 @@ fxaKeysUtil.launchWebExtensionKeyFlow('YOUR_CLIENT_ID', {
 * [relier-OAuthUtils](#module_relier-OAuthUtils)
     * [~launchWebExtensionKeyFlow(clientId, [options])](#module_relier-OAuthUtils..launchWebExtensionKeyFlow) ⇒ <code>Promise</code>
     * [~_getBearerTokenRequest(server, code, clientId, codeVerifier, [options])](#module_relier-OAuthUtils.._getBearerTokenRequest) ⇒ <code>Promise</code> ℗
+    * [~_validateTokenResult(tokenResult)](#module_relier-OAuthUtils.._validateTokenResult) ⇒ <code>Promise</code> ℗
 
 <a name="module_relier-OAuthUtils..launchWebExtensionKeyFlow"></a>
 
@@ -180,6 +181,7 @@ Used to launch the Firefox Accounts scope key login flow in WebExtensions
 | [options.scopes] | <code>array</code> | <code>[]</code> | Requested OAuth scopes |
 | [options.browserApi] | <code>object</code> | <code>browser</code> | Custom browser API override |
 | [options.getBearerTokenRequest] | <code>function</code> | <code>getBearerTokenRequest</code> | Custom getBearerTokenRequest function override |
+| [options.validateTokenResult] | <code>function</code> | <code>validateTokenResult</code> | Custom validateTokenResult function override |
 
 <a name="module_relier-OAuthUtils.._getBearerTokenRequest"></a>
 
@@ -197,6 +199,18 @@ Used to fetch the bearer token from the Firefox Accounts OAuth server
 | codeVerifier | <code>string</code> | PKCE code verifier |
 | [options] | <code>object</code> | custom options |
 | [options.fetch] | <code>function</code> | custom `fetch` interface |
+
+<a name="module_relier-OAuthUtils.._validateTokenResult"></a>
+
+### relier-OAuthUtils~_validateTokenResult(tokenResult) ⇒ <code>Promise</code> ℗
+Used to validate a token
+
+**Kind**: inner method of [<code>relier-OAuthUtils</code>](#module_relier-OAuthUtils)  
+**Access**: private  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| tokenResult | <code>object</code> | the token |
 
 <a name="module_relier-util"></a>
 
