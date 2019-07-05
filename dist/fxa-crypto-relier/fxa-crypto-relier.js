@@ -60197,7 +60197,6 @@ var KeyUtils = __webpack_require__(52);
 var util = __webpack_require__(160);
 var fxaKeyUtils = new KeyUtils();
 
-var OAUTH_SERVER_URL = 'https://oauth.accounts.firefox.com/v1';
 var CONTENT_SERVER_URL = 'https://accounts.firefox.com';
 
 /**
@@ -60232,16 +60231,20 @@ var OAuthUtils = function () {
 
     _classCallCheck(this, OAuthUtils);
 
-    this.oauthServer = options.oauthServer || OAUTH_SERVER_URL;
     this.contentServer = options.contentServer || CONTENT_SERVER_URL;
   }
+
   /**
-   * @method launchWebExtensionKeyFlow
-   * @desc Used to launch the Firefox Accounts scope key login flow in WebExtensions
+   * @method launchWebExtensionFlow
+   * @desc Used to launch the Firefox Accounts login flow in WebExtensions. Does not
+   * fetch scoped keys.
    * @param {string} clientId - FxA relier client id
    * @param {object} [options={}]
+   * @param {array} [options.redirectUri=''] - URI to redirect to when flow completes
    * @param {array} [options.scopes=[]] - Requested OAuth scopes
    * @param {object} [options.browserApi=browser] - Custom browser API override
+   * @param {function} [options.ensureOpenIDConfiguration=ensureOpenIDConfiguration] -
+   *   Custom ensureOpenIDConfiguration function override
    * @param {function} [options.getBearerTokenRequest=getBearerTokenRequest] -
    *   Custom getBearerTokenRequest function override
    * @returns {Promise}
@@ -60249,10 +60252,8 @@ var OAuthUtils = function () {
 
 
   _createClass(OAuthUtils, [{
-    key: 'launchWebExtensionKeyFlow',
-    value: function launchWebExtensionKeyFlow(clientId) {
-      var _this = this;
-
+    key: 'launchWebExtensionFlow',
+    value: function launchWebExtensionFlow(clientId) {
       var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
       if (!clientId) {
@@ -60260,6 +60261,7 @@ var OAuthUtils = function () {
       }
 
       var browserApi = options.browserApi || browser;
+      var ensureOpenIDConfiguration = options.ensureOpenIDConfiguration || this._ensureOpenIDConfiguration.bind(this);
       var getBearerTokenRequest = options.getBearerTokenRequest || this._getBearerTokenRequest;
       var SCOPES = options.scopes || [];
 
@@ -60273,18 +60275,21 @@ var OAuthUtils = function () {
         state: state
       };
 
+      var openIDConfiguration = void 0;
+
       return util.sha256base64url(codeVerifier).then(function (codeChallenge) {
         queryParams.response_type = 'code'; // eslint-disable-line camelcase
         queryParams.code_challenge_method = 'S256'; // eslint-disable-line camelcase
         queryParams.code_challenge = codeChallenge; // eslint-disable-line camelcase
 
-        return fxaKeyUtils.createApplicationKeyPair();
-      }).then(function (keyTypes) {
-        var base64JwkPublicKey = jose.util.base64url.encode(JSON.stringify(keyTypes.jwkPublicKey), 'utf8');
+        if (options.keysJwk) {
+          queryParams.keys_jwk = options.keysJwk; // eslint-disable-line camelcase
+        }
 
-        queryParams.keys_jwk = base64JwkPublicKey; // eslint-disable-line camelcase
-
-        var authUrl = _this.contentServer + '/authorization' + util.objectToQueryString(queryParams);
+        return ensureOpenIDConfiguration();
+      }).then(function (_openIDConfiguration) {
+        openIDConfiguration = _openIDConfiguration;
+        var authUrl = '' + openIDConfiguration.authorization_endpoint + util.objectToQueryString(queryParams);
 
         return browserApi.identity.launchWebAuthFlow({
           interactive: true,
@@ -60297,10 +60302,44 @@ var OAuthUtils = function () {
         if (state !== redirectState) {
           throw new Error('State does not match');
         }
+        return getBearerTokenRequest(openIDConfiguration.token_endpoint, code, clientId, codeVerifier);
+      });
+    }
 
-        return getBearerTokenRequest(_this.oauthServer, code, clientId, codeVerifier);
+    /**
+     * @method launchWebExtensionKeyFlow
+     * @desc Used to launch the Firefox Accounts scope key login flow in WebExtensions
+     * @param {string} clientId - FxA relier client id
+     * @param {object} [options={}]
+     * @param {array} [options.redirectUri=''] - URI to redirect to when flow completes
+     * @param {array} [options.scopes=[]] - Requested OAuth scopes
+     * @param {object} [options.browserApi=browser] - Custom browser API override
+     * @param {function} [options.ensureOpenIDConfiguration=ensureOpenIDConfiguration] -
+     *   Custom ensureOpenIDConfiguration function override
+     * @param {function} [options.getBearerTokenRequest=getBearerTokenRequest] -
+     *   Custom getBearerTokenRequest function override
+     * @returns {Promise}
+     */
+
+  }, {
+    key: 'launchWebExtensionKeyFlow',
+    value: function launchWebExtensionKeyFlow(clientId) {
+      var _this = this;
+
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      if (!clientId) {
+        throw new Error('clientId required');
+      }
+
+      return fxaKeyUtils.createApplicationKeyPair().then(function (keyTypes) {
+        var base64JwkPublicKey = jose.util.base64url.encode(JSON.stringify(keyTypes.jwkPublicKey), 'utf8');
+
+        options.keysJwk = base64JwkPublicKey; // eslint-disable-line camelcase
+
+        return _this.launchWebExtensionFlow(clientId, options);
       }).then(function (tokenResult) {
-        var bundle = tokenResult.keys_jwe;
+        var bundle = tokenResult.keys_jwe; // eslint-disable-line camelcase
 
         if (!bundle) {
           throw new Error('Failed to fetch bundle');
@@ -60318,7 +60357,7 @@ var OAuthUtils = function () {
      * @method _getBearerTokenRequest
      * @desc Used to fetch the bearer token from the Firefox Accounts OAuth server
      * @private
-     * @param {string} server - Firefox Accounts server
+     * @param {string} tokenEndpoint - The token endpoint
      * @param {string} code - OAuth redirect code
      * @param {string} clientId - OAuth client id
      * @param {string} codeVerifier - PKCE code verifier
@@ -60329,7 +60368,7 @@ var OAuthUtils = function () {
 
   }, {
     key: '_getBearerTokenRequest',
-    value: function _getBearerTokenRequest(server, code, clientId, codeVerifier) {
+    value: function _getBearerTokenRequest(tokenEndpoint, code, clientId, codeVerifier) {
       var options = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
 
       var fetchInterface = options.fetch || fetch;
@@ -60337,7 +60376,7 @@ var OAuthUtils = function () {
 
       headers.append('Content-Type', 'application/json');
 
-      var request = new Request(server + '/token', {
+      var request = new Request(tokenEndpoint, {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({
@@ -60353,6 +60392,31 @@ var OAuthUtils = function () {
         } else {
           // eslint-disable-line no-else-return
           throw new Error('Failed to fetch token');
+        }
+      });
+    }
+  }, {
+    key: '_ensureOpenIDConfiguration',
+    value: function _ensureOpenIDConfiguration() {
+      var _this2 = this;
+
+      var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      if (this.openIDConfiguration) {
+        return Promise.resolve(this.openIDConfiguration);
+      }
+
+      var fetchInterface = options.fetch || fetch;
+
+      return fetchInterface(this.contentServer + '/.well-known/openid-configuration', {
+        method: 'GET'
+      }).then(function (response) {
+        if (response.status === 200) {
+          _this2.openIDConfiguration = response.json();
+          return _this2.openIDConfiguration;
+        } else {
+          // eslint-disable-line no-else-return
+          throw new Error('Failed to /.well-known/openid-configuration');
         }
       });
     }
