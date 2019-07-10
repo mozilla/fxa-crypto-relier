@@ -1,4 +1,12 @@
-<a name="2.4.0"></a>
+# [2.5.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.4.0...v2.5.0) (2019-07-10)
+
+
+### Features
+
+* **interface:** Add `launchWebExtensionFlow`, get URLs from oidc discovery doc ([3160dac](https://github.com/mozilla/fxa-crypto-relier/commit/3160dac))
+
+
+
 # [2.4.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.3.0...v2.4.0) (2019-04-01)
 
 
@@ -14,7 +22,6 @@
 
 
 
-<a name="2.3.0"></a>
 # [2.3.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.2.1...v2.3.0) (2018-06-01)
 
 
@@ -24,7 +31,6 @@
 
 
 
-<a name="2.2.1"></a>
 ## [2.2.1](https://github.com/mozilla/fxa-crypto-relier/compare/v2.2.0...v2.2.1) (2018-04-23)
 
 
@@ -34,7 +40,6 @@
 
 
 
-<a name="2.2.0"></a>
 # [2.2.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.1.1...v2.2.0) (2018-04-19)
 
 
@@ -45,7 +50,6 @@
 
 
 
-<a name="2.1.1"></a>
 ## [2.1.1](https://github.com/mozilla/fxa-crypto-relier/compare/v2.1.0...v2.1.1) (2018-02-08)
 
 
@@ -56,7 +60,6 @@
 
 
 
-<a name="2.1.0"></a>
 # [2.1.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.0.1...v2.1.0) (2017-11-20)
 
 
@@ -66,7 +69,6 @@
 
 
 
-<a name="2.0.1"></a>
 ## [2.0.1](https://github.com/mozilla/fxa-crypto-relier/compare/v2.0.0...v2.0.1) (2017-11-16)
 
 
@@ -76,7 +78,6 @@
 
 
 
-<a name="2.0.0"></a>
 # [2.0.0](https://github.com/mozilla/fxa-crypto-relier/compare/ccfd667...v2.0.0) (2017-11-16)
 
 
