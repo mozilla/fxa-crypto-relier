@@ -1,3 +1,12 @@
+# [2.6.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.5.0...v2.6.0) (2019-07-19)
+
+
+### Features
+
+* **oauth:** Support `action` query parameter. ([e9aa2b5](https://github.com/mozilla/fxa-crypto-relier/commit/e9aa2b5)), closes [#46](https://github.com/mozilla/fxa-crypto-relier/issues/46)
+
+
+
 # [2.5.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.4.0...v2.5.0) (2019-07-10)
 
 
