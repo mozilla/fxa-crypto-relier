@@ -35,7 +35,8 @@ fetch scoped keys.
 | --- | --- | --- | --- |
 | clientId | <code>string</code> |  | FxA relier client id |
 | [options] | <code>object</code> | <code>{}</code> |  |
-| [options.redirectUri] | <code>array</code> | <code>&#x27;&#x27;</code> | URI to redirect to when flow completes |
+| [options.action] | <code>string</code> | <code>&quot;&#x27;email&#x27;&quot;</code> | Specifies the behavior of users sent to `/`.   Valid values are: `email`, `signin`, `signup` |
+| [options.redirectUri] | <code>URI</code> | <code>&#x27;&#x27;</code> | URI to redirect to when flow completes |
 | [options.scopes] | <code>array</code> | <code>[]</code> | Requested OAuth scopes |
 | [options.browserApi] | <code>object</code> | <code>browser</code> | Custom browser API override |
 | [options.ensureOpenIDConfiguration] | <code>function</code> | <code>ensureOpenIDConfiguration</code> | Custom ensureOpenIDConfiguration function override |
@@ -52,7 +53,8 @@ Used to launch the Firefox Accounts scope key login flow in WebExtensions
 | --- | --- | --- | --- |
 | clientId | <code>string</code> |  | FxA relier client id |
 | [options] | <code>object</code> | <code>{}</code> |  |
-| [options.redirectUri] | <code>array</code> | <code>&#x27;&#x27;</code> | URI to redirect to when flow completes |
+| [options.action] | <code>string</code> | <code>&quot;&#x27;email&#x27;&quot;</code> | Specifies the behavior of users sent to `/`.   Valid values are: `email`, `signin`, `signup` |
+| [options.redirectUri] | <code>URI</code> | <code>&#x27;&#x27;</code> | URI to redirect to when flow completes |
 | [options.scopes] | <code>array</code> | <code>[]</code> | Requested OAuth scopes |
 | [options.browserApi] | <code>object</code> | <code>browser</code> | Custom browser API override |
 | [options.ensureOpenIDConfiguration] | <code>function</code> | <code>ensureOpenIDConfiguration</code> | Custom ensureOpenIDConfiguration function override |

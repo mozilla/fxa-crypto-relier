@@ -4,6 +4,7 @@
 
 describe('OAuthUtils', function () {
   const util = window.fxaCryptoRelier.OAuthUtils.__util;
+  let action;
   let keysJwk;
   let keysJwe;
   let exampleScope = 'https://identity.mozilla.com/apps/notes';
@@ -25,6 +26,7 @@ describe('OAuthUtils', function () {
           // eslint-disable-next-line consistent-return
           return Promise.resolve().then(() => {
             keysJwk = util.extractUrlParam(args.url, 'keys_jwk');
+            action = util.extractUrlParam(args.url, 'action');
 
             if (keysJwk) {
               const fxaDeriverUtils = new window.fxaCryptoDeriver.DeriverUtils();
@@ -79,6 +81,18 @@ describe('OAuthUtils', function () {
         assert.isUndefined(result.keys_jwe);
         assert.strictEqual(result.access_token, 'access_token');
         assert.strictEqual(result.refresh_token, 'refresh_token');
+        assert.strictEqual(action, 'email');
+      });
+    });
+
+    it('should propagate the `action` parameter', () => {
+      return oAuthUtils.launchWebExtensionFlow('clientId', {
+        action: 'signin',
+        browserApi: getBrowserApi(),
+        ensureOpenIDConfiguration,
+        getBearerTokenRequest,
+      }).then((result) => {
+        assert.strictEqual(action, 'signin');
       });
     });
 
