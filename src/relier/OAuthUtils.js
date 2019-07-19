@@ -50,7 +50,9 @@ class OAuthUtils {
    * fetch scoped keys.
    * @param {string} clientId - FxA relier client id
    * @param {object} [options={}]
-   * @param {array} [options.redirectUri=''] - URI to redirect to when flow completes
+   * @param {string} [options.action='email'] - Specifies the behavior of users sent to `/`.
+   *   Valid values are: `email`, `signin`, `signup`
+   * @param {URI} [options.redirectUri=''] - URI to redirect to when flow completes
    * @param {array} [options.scopes=[]] - Requested OAuth scopes
    * @param {object} [options.browserApi=browser] - Custom browser API override
    * @param {function} [options.ensureOpenIDConfiguration=ensureOpenIDConfiguration] -
@@ -73,6 +75,7 @@ class OAuthUtils {
     const codeVerifier = util.createRandomString(43);
     const queryParams = {
       access_type: 'offline', // eslint-disable-line camelcase
+      action: options.action || 'email',
       client_id: clientId, // eslint-disable-line camelcase
       redirect_uri: options.redirectUri, // eslint-disable-line camelcase
       scope: SCOPES.join(' '),
@@ -115,7 +118,9 @@ class OAuthUtils {
    * @desc Used to launch the Firefox Accounts scope key login flow in WebExtensions
    * @param {string} clientId - FxA relier client id
    * @param {object} [options={}]
-   * @param {array} [options.redirectUri=''] - URI to redirect to when flow completes
+   * @param {string} [options.action='email'] - Specifies the behavior of users sent to `/`.
+   *   Valid values are: `email`, `signin`, `signup`
+   * @param {URI} [options.redirectUri=''] - URI to redirect to when flow completes
    * @param {array} [options.scopes=[]] - Requested OAuth scopes
    * @param {object} [options.browserApi=browser] - Custom browser API override
    * @param {function} [options.ensureOpenIDConfiguration=ensureOpenIDConfiguration] -
