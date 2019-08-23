@@ -53,6 +53,9 @@ class OAuthUtils {
    * @param {string} [options.action='email'] - Specifies the behavior of users sent to `/`.
    *   Valid values are: `email`, `signin`, `signup`
    * @param {URI} [options.redirectUri=''] - URI to redirect to when flow completes
+   * @param {string} [options.deviceId] - A valid deviceId for metrics, should be paired with flowId and flowBeginTime
+   * @param {string} [options.flowId] - A valid flowId for metrics, should be paired with deviceId and flowBeginTime
+   * @param {num} [options.flowBeginTime] - A valid flowBeginTime for metrics, should be paired with deviceId and flowId
    * @param {array} [options.scopes=[]] - Requested OAuth scopes
    * @param {object} [options.browserApi=browser] - Custom browser API override
    * @param {function} [options.ensureOpenIDConfiguration=ensureOpenIDConfiguration] -
@@ -81,6 +84,15 @@ class OAuthUtils {
       scope: SCOPES.join(' '),
       state: state
     };
+
+    // since metrics flows properties require one another, let's make sure we have them all
+    if (options.hasOwnProperty('flowId') &&
+        options.hasOwnProperty('deviceId') &&
+        options.hasOwnProperty('flowBeginTime')) {
+      queryParams.device_id = options.deviceId; // eslint-disable-line camelcase
+      queryParams.flow_begin_time = options.flowBeginTime; // eslint-disable-line camelcase
+      queryParams.flow_id = options.flowId; // eslint-disable-line camelcase
+    }
 
     let openIDConfiguration;
 

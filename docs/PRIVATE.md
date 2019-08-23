@@ -181,6 +181,9 @@ fetch scoped keys.
 | [options] | <code>object</code> | <code>{}</code> |  |
 | [options.action] | <code>string</code> | <code>&quot;&#x27;email&#x27;&quot;</code> | Specifies the behavior of users sent to `/`.   Valid values are: `email`, `signin`, `signup` |
 | [options.redirectUri] | <code>URI</code> | <code>&#x27;&#x27;</code> | URI to redirect to when flow completes |
+| [options.deviceId] | <code>string</code> |  | A valid deviceId for metrics, should be paired with flowId and flowBeginTime |
+| [options.flowId] | <code>string</code> |  | A valid flowId for metrics, should be paired with deviceId and flowBeginTime |
+| [options.flowBeginTime] | <code>num</code> |  | A valid flowBeginTime for metrics, should be paired with deviceId and flowId |
 | [options.scopes] | <code>array</code> | <code>[]</code> | Requested OAuth scopes |
 | [options.browserApi] | <code>object</code> | <code>browser</code> | Custom browser API override |
 | [options.ensureOpenIDConfiguration] | <code>function</code> | <code>ensureOpenIDConfiguration</code> | Custom ensureOpenIDConfiguration function override |
