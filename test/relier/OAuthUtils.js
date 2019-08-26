@@ -7,7 +7,7 @@ describe('OAuthUtils', function () {
   let action;
   let keysJwk;
   let keysJwe;
-  let flow_id; // eslint-disable-line camelcase
+  let flowId;
   let exampleScope = 'https://identity.mozilla.com/apps/notes';
   let keySample = {
     [exampleScope]: {
@@ -28,7 +28,7 @@ describe('OAuthUtils', function () {
           return Promise.resolve().then(() => {
             keysJwk = util.extractUrlParam(args.url, 'keys_jwk');
             action = util.extractUrlParam(args.url, 'action');
-            flow_id = util.extractUrlParam(args.url, 'flow_id'); // eslint-disable-line camelcase
+            flowId = util.extractUrlParam(args.url, 'flow_id');
 
             if (keysJwk) {
               const fxaDeriverUtils = new window.fxaCryptoDeriver.DeriverUtils();
@@ -107,7 +107,7 @@ describe('OAuthUtils', function () {
         ensureOpenIDConfiguration,
         getBearerTokenRequest,
       }).then((result) => {
-        assert.strictEqual(flow_id, 'c508fb7ac1ad6fd406d4b0180293d6b379fb1d4f83b28831cc4a211ddc192573');
+        assert.strictEqual(flowId, 'c508fb7ac1ad6fd406d4b0180293d6b379fb1d4f83b28831cc4a211ddc192573');
       });
     });
 
@@ -119,7 +119,7 @@ describe('OAuthUtils', function () {
         ensureOpenIDConfiguration,
         getBearerTokenRequest,
       }).then((result) => {
-        assert.isNull(flow_id);
+        assert.isNull(flowId);
       });
     });
 
