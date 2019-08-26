@@ -7,6 +7,7 @@ describe('OAuthUtils', function () {
   let action;
   let keysJwk;
   let keysJwe;
+  let flowId;
   let exampleScope = 'https://identity.mozilla.com/apps/notes';
   let keySample = {
     [exampleScope]: {
@@ -27,6 +28,7 @@ describe('OAuthUtils', function () {
           return Promise.resolve().then(() => {
             keysJwk = util.extractUrlParam(args.url, 'keys_jwk');
             action = util.extractUrlParam(args.url, 'action');
+            flowId = util.extractUrlParam(args.url, 'flow_id');
 
             if (keysJwk) {
               const fxaDeriverUtils = new window.fxaCryptoDeriver.DeriverUtils();
@@ -93,6 +95,31 @@ describe('OAuthUtils', function () {
         getBearerTokenRequest,
       }).then((result) => {
         assert.strictEqual(action, 'signin');
+      });
+    });
+
+    it('should propagate flow metrics params if all are available', () => {
+      return oAuthUtils.launchWebExtensionFlow('clientId', {
+        deviceId: 'dbc5d854ec2541b7b5d8782240c745d5',
+        flowId: 'c508fb7ac1ad6fd406d4b0180293d6b379fb1d4f83b28831cc4a211ddc192573',
+        flowBeginTime: 1566554833922,
+        browserApi: getBrowserApi(),
+        ensureOpenIDConfiguration,
+        getBearerTokenRequest,
+      }).then((result) => {
+        assert.strictEqual(flowId, 'c508fb7ac1ad6fd406d4b0180293d6b379fb1d4f83b28831cc4a211ddc192573');
+      });
+    });
+
+    it('should not propagate flow metrics if one is missing', () => {
+      return oAuthUtils.launchWebExtensionFlow('clientId', {
+        deviceId: 'dbc5d854ec2541b7b5d8782240c745d5',
+        flowId: 'c508fb7ac1ad6fd406d4b0180293d6b379fb1d4f83b28831cc4a211ddc192573',
+        browserApi: getBrowserApi(),
+        ensureOpenIDConfiguration,
+        getBearerTokenRequest,
+      }).then((result) => {
+        assert.isNull(flowId);
       });
     });
 
