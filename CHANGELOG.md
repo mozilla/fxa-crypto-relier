@@ -1,3 +1,12 @@
+# [2.7.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.6.0...v2.7.0) (2019-08-26)
+
+
+### Features
+
+* **metrics:** add optional flow metrics ([b0b763a](https://github.com/mozilla/fxa-crypto-relier/commit/b0b763a))
+
+
+
 # [2.6.0](https://github.com/mozilla/fxa-crypto-relier/compare/v2.5.0...v2.6.0) (2019-07-19)
 
 
