@@ -126,6 +126,84 @@ class OAuthUtils {
   }
 
   /**
+   * @method launchWebExtensionCodeFlow
+   * @desc Fetch an OAuth authorization code from Firefox Accounts in a WebExtension.
+   * @param {string} clientId - FxA relier client id
+   * @param {string} state - state token
+   * @param {object} [options={}]
+   * @param {string} [options.accessTpye='offline'] - `offline` or `online`. If `offline`, a refresh token
+   *   will be returned when trading the code for an access token.
+   * @param {string} [options.action='email'] - Specifies the behavior of users sent to `/`.
+   *   Valid values are: `email`, `signin`, `signup`
+   * @param {URI} [options.redirectUri=''] - URI to redirect to when flow completes
+   * @param {string} [options.deviceId] - A valid deviceId for metrics, should be paired with flowId and flowBeginTime
+   * @param {string} [options.flowId] - A valid flowId for metrics, should be paired with deviceId and flowBeginTime
+   * @param {num} [options.flowBeginTime] - A valid flowBeginTime for metrics, should be paired with deviceId and flowId
+   * @param {array} [options.scopes=[]] - Requested OAuth scopes
+   * @param {object} [options.browserApi=browser] - Custom browser API override
+   * @param {function} [options.ensureOpenIDConfiguration=ensureOpenIDConfiguration] -
+   *   Custom ensureOpenIDConfiguration function override
+   * @returns {Promise}
+   */
+  launchWebExtensionCodeFlow(clientId, state, options = {}) {
+    if (! clientId) {
+      throw new Error('clientId required');
+    }
+
+    if (! state) {
+      throw new Error('state required');
+    }
+
+    const browserApi = options.browserApi || browser;
+    const ensureOpenIDConfiguration = options.ensureOpenIDConfiguration || this._ensureOpenIDConfiguration.bind(this);
+    const SCOPES = options.scopes || [];
+
+    const queryParams = {
+      access_type: options.accessType || 'offline', // eslint-disable-line camelcase
+      action: options.action || 'email',
+      client_id: clientId, // eslint-disable-line camelcase
+      redirect_uri: options.redirectUri, // eslint-disable-line camelcase
+      response_type: 'code', // eslint-disable-line camelcase
+      scope: SCOPES.join(' '),
+      state: state
+    };
+
+    // since metrics flows properties require one another, let's make sure we have them all
+    if (options.hasOwnProperty('flowId') &&
+        options.hasOwnProperty('deviceId') &&
+        options.hasOwnProperty('flowBeginTime')) {
+      queryParams.device_id = options.deviceId; // eslint-disable-line camelcase
+      queryParams.flow_begin_time = options.flowBeginTime; // eslint-disable-line camelcase
+      queryParams.flow_id = options.flowId; // eslint-disable-line camelcase
+    }
+
+    let openIDConfiguration;
+
+    return ensureOpenIDConfiguration()
+      .then((_openIDConfiguration) => {
+        openIDConfiguration = _openIDConfiguration;
+        const authUrl = `${openIDConfiguration.authorization_endpoint}` + util.objectToQueryString(queryParams);
+
+        return browserApi.identity.launchWebAuthFlow({
+          interactive: true,
+          url: authUrl
+        });
+      }).then(redirectURL => {
+        const redirectState = util.extractUrlParam(redirectURL, 'state');
+        const code = util.extractUrlParam(redirectURL, 'code');
+
+        if (state !== redirectState) {
+          throw new Error('State does not match');
+        }
+
+        return {
+          code,
+          state,
+        };
+      });
+  }
+
+  /**
    * @method launchWebExtensionKeyFlow
    * @desc Used to launch the Firefox Accounts scope key login flow in WebExtensions
    * @param {string} clientId - FxA relier client id
